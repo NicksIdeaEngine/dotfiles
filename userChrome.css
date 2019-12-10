@@ -1,5 +1,5 @@
 :root {
-  --arrowpanel-border-color: #458588ff !important;
+  --arrowpanel-border-color: $testing !important;
   --arrowpanel-color: #3c3836ff !important;
   --arrowpanel-background: #f9f5d7ff !important;
   --autocomplete-popup-background: #f9f5d7ff !important;
