@@ -1,54 +1,54 @@
-! Base16 Tomorrow
-! Scheme: Chris Kempson (http://chriskempson.com)
+! gruvbox theme
 
-#define base00 #ffffff
-#define base01 #e0e0e0
-#define base02 #d6d6d6
-#define base03 #8e908c
-#define base04 #969896
-#define base05 #4d4d4c
-#define base06 #282a2e
-#define base07 #1d1f21
-#define base08 #c82829
-#define base09 #f5871f
-#define base0A #eab700
-#define base0B #718c00
-#define base0C #3e999f
-#define base0D #4271ae
-#define base0E #8959a8
-#define base0F #a3685a
+! bg and fg shades
+*background: #f9f5d7
+*bg: #f9f5d7
+*bg0: #f9f5d7
+*bg1: #ebdbb2
+*bg2: #d5c4a1
+*bg3: #bdae93
+*bg4: #a89984
+*foreground: #3c3836
+*fg: #3c3836
+*fg0: #282828
+*fg1: #3c3836
+*fg2: #504945
+*fg3: #665c54
+*fg4: #7c6f64
+! bg hard contrast
+*color0:  #f9f5d7
+! red
+*color1:  #cc241d
+! green
+*color2:  #98971a
+! yellow
+*color3:  #d79921
+! blue
+*color4:  #458588
+! purple
+*color5:  #b16286
+! aqua
+*color6:  #689d6a
+! dark gray
+*color7:  #7c6f64
+! light gray
+*color8:  #928374
+! dark red
+*color9:  #9d0006
+! dark green
+*color10: #79740e
+! dark yellow
+*color11: #b57614
+! dark blue
+*color12: #076678
+! dark purple
+*color13: #8f3f71
+! dark aqua
+*color14: #427b58
+! fg
+*color15: #3c3836
+! orange
+*color16: #d65d0e
+! dark orange
+*color17: #af3a03
 
-*foreground:   base05
-#ifdef background_opacity
-*background:   [background_opacity]base00
-#else
-*background:   base00
-#endif
-*cursorColor:  base05
-
-*color0:       base00
-*color1:       base08
-*color2:       base0B
-*color3:       base0A
-*color4:       base0D
-*color5:       base0E
-*color6:       base0C
-*color7:       base05
-
-*color8:       base03
-*color9:       base08
-*color10:      base0B
-*color11:      base0A
-*color12:      base0D
-*color13:      base0E
-*color14:      base0C
-*color15:      base07
-
-! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
-! use 'shell' template to set these if necessary
-*color16:      base09
-*color17:      base0F
-*color18:      base01
-*color19:      base02
-*color20:      base04
-*color21:      base06

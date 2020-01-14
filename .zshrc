@@ -6,7 +6,22 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$HOME/.local/bin:$PATH
+export PATH="$HOME/bin:$PATH"
+
+# Add scripts from Dropbox/scripts to path
+export PATH="/mnt/sdc1/Dropbox/scripts:$PATH"
+
+# Add ubuntu-make .desktop files to path
+export PATH="/home/efex/.local/share/applications:$PATH"
+
+# Add path for KiTTY
+export PATH="/home/efex/.local/kitty/kitty/launcher:$PATH"
+
+# Add Firefox Developer Edition executable path
+# export PATH="/home/efex/.local/share/umake/bin:$PATH"
+
+# Add rvm secure path export
+export rvmsudo_secure_path=1
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/efex/.oh-my-zsh"
@@ -14,12 +29,8 @@ export ZSH="/home/efex/.oh-my-zsh"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# Great themes: agnoster
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME=powerlevel10k/powerlevel10k
-
-#source /home/efex/.Xresources
-#PROMPT="%{$fg[white]%}[%{$fg[bright blue]%}%n%{$fg[white]%}@%{$fg[white]%}%m %{$fg[white]%}%1~]$ "
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -32,7 +43,7 @@ ZSH_THEME=powerlevel10k/powerlevel10k
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -79,77 +90,36 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# ADD tmux ???
-# Consider fasd, tmux, tmuxinator
 plugins=(catimg command-not-found git npm vi-mode vscode z)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-export EDITOR='vim'
-
-# enables completion 
-complete -F _todo t
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Hide "user@hostname" from terminal
-# DEFAULT_USER="$(whoami)"
-# prompt_context() { }
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-
-# enable color support of ls and also add handy aliases
+# enable color support of ls and add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto --group-directories-first'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+	alias ls='ls --color=auto --group-directories-first'
+	alias grep='grep --color=auto'
+	alias fgrep='fgrep --color=auto'
+	alias egrep='egrep --color=auto'
 fi
 
 # Load aliases
-if [ -f ~/.aliases.sh ]; then
-    . ~/.aliases.sh
+if [ -f ~/.aliases ]; then
+	. ~/.aliases
 fi
 
-# Import colorscheme from 'wal' asynchronously
-# &   # Run the process in the background.
-# ( ) # Hide shell job control messages.
-# . "/home/efex/.cache/wal/colors.sh"
-#(cat /home/efex/.cache/wal/sequences &)
+# Load zprofile
+if [ -f ~/.zprofile ]; then
+  . ~/.zprofile
+fi
 
-# To add support for TTYs this line can be optionally added.
-#source /home/efex/.cache/wal/colors-tty.sh
-
-(cat ~/.config/wpg/sequences &)
-
-xrdb -merge /home/efex/.Xresources
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-### Added by Zplugin's installer
-source "$HOME/.zplugin/bin/zplugin.zsh"
-autoload -Uz _zplugin
-(( ${+_comps} )) && _comps[zplugin]=_zplugin
-### End of Zplugin installer's chunk
+# MPD daemon start if not already
+[ ! -s ~/.config/mpd/pid ] && mpd
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Adding local gem bin path
+export PATH="/home/efex/.gem/ruby/2.5.0/bin:$PATH"
