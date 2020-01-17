@@ -101,25 +101,24 @@
 - gparted
 - qbittorrent
 - fancontrol
-- libtool
 - libtool-bin
 - ninja-build
 - neovim (nvim)
 - pynvim (for python3)
 - pynvim (for python2)
 - ruby-dev
-- neovim-ruby-host
 - gem install neovim
 - npm install -g neovim
 - gem install --user neovim
 - python3-pygments
-- figma-linux
 - kitty
 - libconfig9
 - libgl1-mesa-glx
 - asciidoc
 - libconfig-dev
 - compton
+- xsel
+-
 
 # Ideas
 
@@ -132,7 +131,7 @@ The mindset behind this setup is rapid web development and research through a mi
 - cfengine
 - puppet
 - ansible
--
+- tmuxp
 
 # Notes
 

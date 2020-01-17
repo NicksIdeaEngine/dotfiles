@@ -1,34 +1,42 @@
 # Notes from Luke Smith's "After Vimtutor" Video
 
-* gk and gj: move **visual** line up/down instead of logical lines
-* <F5> now sources init.vim
-* <F6> calls spellcheck
-* d$ and D will cut to end of line (leaves you in normal mode)
-* c$ and C will replace to end of line (leaving you in insert mode)
-* i: inner. so *ciw* is "change inner word" for replacing a word even if you're not at the beginning of it
-* a: around. so *daw* is "delete around word" which removes extra spacing around a word, but not punctuation
-* using s with d and c: s can mean sentence, so *das* is "delete around sentence"
-* using p with d and c: p can mean paragraph, so *dap* is "delete around paragraph"
-* dot command is versatile. If I *ciw* to change a word, than search for more uses of that word, I can use *n* *dot command* *n* *dot command* and so on to cycle through search results and repeat the same replacement
-* S begins the :%s///g command
-* 
+- gk and gj: move **visual** line up/down instead of logical lines
+- <F5> now sources init.vim
+- <F6> calls spellcheck
+- d\$ and D will cut to end of line (leaves you in normal mode)
+- c\$ and C will replace to end of line (leaving you in insert mode)
+- i: inner. so _ciw_ is "change inner word" for replacing a word even if you're not at the beginning of it
+- a: around. so _daw_ is "delete around word" which removes extra spacing around a word, but not punctuation
+- using s with d and c: s can mean sentence, so _das_ is "delete around sentence"
+- using p with d and c: p can mean paragraph, so _dap_ is "delete around paragraph"
+- dot command is versatile. If I _ciw_ to change a word, than search for more uses of that word, I can use _n_ _dot command_ _n_ _dot command_ and so on to cycle through search results and repeat the same replacement
+- S begins the :%s///g command
+
+# General Notes
+
+- ea: end of word, append
 
 # Plugin Hotkeys
 
 ## vim-surround
-*cs"'* changes "Hello world!" to 'Hello world!'
+
+_cs"'_ changes "Hello world!" to 'Hello world!'
 
 ## vim-commentary
-*gcc* in normal mode changes line to comment
-*gc* in visual mode changes selected lines to comment
+
+_gcc_ in normal mode changes line to comment
+_gc_ in visual mode changes selected lines to comment
 
 ## nerdtree
-* <Leader>n toggles NERDTree
+
+- <Leader>n toggles NERDTree
 
 ## vim-prettier
+
 <Leader>p to format
 
 ## emmet-vim
+
 <c-y>, to expand abbreviation
 <c-y>, also used to wrap selections
 <c-y>d balance tag inward
@@ -42,4 +50,3 @@
 <c-y>/ toggle comment of nearest surrounding tags
 <c-y>a make anchor from URL
 <c-y>A make quoted text from a URL
-
