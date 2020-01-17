@@ -86,7 +86,8 @@ alias instst="cd ~/.config/st && sudo make install && alert 'st has been rebuilt
 
 #### 3. Reference Files
 
-alias refls="echo 'vsCode Journey Linux MarkDown Ricing Ssh Tmux Vim Webdev temp(x) Zsh'"
+alias refls="echo 'manjAro vsCode Journey Linux MarkDown Ricing Ssh Tmux Vim Webdev temp(x) Zsh'"
+alias refa="vim $DBOX/refs/manjaroref.md"
 alias refc="vim $DBOX/refs/vscoderef.md"
 alias refj="vim $DBOX/refs/journeyref.md"
 alias refl="vim $DBOX/refs/linuxref.md"
@@ -113,9 +114,9 @@ alias projz="cd $CDIR/nickgarcia.me/ && code portfolio.code-workspace"
 # todo.txt aliases
 alias tls="echo 'todo: open todo.txt | t: show tasks | tg: graph | tfg: config | tm: many | ta: add | tp: t p | tdo: t do'"
 alias todo="vim $DBOX/todo/todo.txt"
-alias t="todo.sh -c -d ~/.todo/config"
+alias t="todo.sh -c -d ~/.config/todo/config"
 alias tg="t graph"
-alias tfg="vim ~/.todo/config"
+alias tfg="vim ~/.config/todo/config"
 alias tm="t many"
 alias ta="t add"
 alias tp="t p"
@@ -147,6 +148,12 @@ alias lsd="ls -lF | grep '^d'"
 alias lr="ls -tRFh"
 alias ldot="ls -ld .*"
 alias lS="ls -1FSsh"
+
+# autoload default tmux config file
+# alias tmux="tmux"
+
+# leave ranger and enter that directory in terminal
+alias ranger="source ranger"
 
 # use i3lock when afk
 alias afk="i3lock -ti /mnt/sdc1/Dropbox/pics/wallpaper/wall509.png"
@@ -195,8 +202,9 @@ alias update="sudo apt update && sudo apt upgrade && alert 'Update and upgrade c
 alias fresh="source ~/.zshrc;clear"
 
 # clean computer
+alias aptcheck="sudo du -sh /var/cache/apt"
 alias aptclean="sudo apt autoremove && sudo apt clean && alert 'apt autoremove and clean are complete!'"
-alias cachecheck="du -h /home/efex/.cache/thumbnails/"
+alias cachecheck="du -sh /home/efex/.cache/thumbnails/"
 alias cacheclean="rm -rf /home/efex/.cache/thumbnails/* && alert 'cacheclean is complete!'"
 alias imagecheck="dpkg --list 'linux-image*' && echo 'use \"sudo dpkg --purge linux-image-*\" to remove'"
 alias snapcheck="du -h /var/lib/snapd/snaps"
