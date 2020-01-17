@@ -134,7 +134,7 @@ mkcd () {
         case "$1" in /*) :;; *) set -- "./$1";; esac
         mkdir -p "$1" && cd "$1"
 }
-alias symswitch="/mnt/sdc1/Dropbox/scripts/symswitch"
+alias sym="/mnt/sdc1/Dropbox/scripts/symswitch"
 
 # ask when deleting multiple
 alias rm="rm -I"
