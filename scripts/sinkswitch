@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+case "$1" in
+	--speakers)
+    pactl set-default-sink alsa_output.pci-0000_0a_00.3.analog-stereo &
+		notify-send "Switched to speakers!"
+		;;
+  --headphones)
+    pactl set-default-sink alsa_output.usb-Logitech_Logitech_G430_Gaming_Headset-00.analog-stereo &
+    notify-send "Switched to headphones!"
+    ;;
+  --middle)
+    notify-send "Middle click!"
+    ;;
+	*)
+		echo "OUT"
+		;;
+esac

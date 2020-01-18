@@ -1,0 +1,19 @@
+#!/bin/zsh
+
+case "$1" in
+	--status)
+		if [ "$(pgrep rescuetime)" ]; then
+			notify-send "Rescuetime is up and running."
+      notify-send "Make great use of your time!"
+		else
+			notify-send "Rescuetime isn't running!"
+		fi
+		;;
+	*)			
+		if pgrep -x "rescuetime" > /dev/null; then
+			echo "RT"
+		else
+			echo "--"
+		fi
+		;;
+esac
