@@ -99,6 +99,7 @@ alias refv="vim $DBOX/refs/vimref.md"
 alias refw="vim $DBOX/refs/webdevref.md"
 alias refx="vim $DBOX/refs/tempref.md"
 alias refz="vim $DBOX/refs/zshref.md"
+alias misc="vim $DBOX/docs/misc.md"
 
 #### 4. Recent Projects
 
@@ -107,7 +108,7 @@ alias projls="echo 'a/learn-react-js b/pomodoro c/simonsays z/portfolio'"
 alias proja="cd $CDIR/coursework/learn-react-js && code learn-react-js.code-workspace"
 alias projb="cd $PDIR/fcc-pomodoro && code pomodoro.code-workspace"
 alias projc="cd $PDIR/fcc-simonsays && code simonsays.code-workspace"
-alias projz="cd $CDIR/nickgarcia.me/ && code portfolio.code-workspace"
+alias projz="cd $CDIR/nickgarcia.me && code portfolio.code-workspace"
 
 #### 5. Todotxt CLI
 

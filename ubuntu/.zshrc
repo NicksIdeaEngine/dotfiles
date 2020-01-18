@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH="$HOME/bin:$PATH"
+# export PATH="$HOME/bin:$PATH"
 
 # Add scripts from Dropbox/scripts to path
 export PATH="/mnt/sdc1/Dropbox/scripts:$PATH"
@@ -15,7 +15,7 @@ export PATH="/mnt/sdc1/Dropbox/scripts:$PATH"
 export PATH="/home/efex/.local/share/applications:$PATH"
 
 # Add path for KiTTY
-export PATH="/home/efex/.local/kitty/kitty/launcher:$PATH"
+# export PATH="/home/efex/.local/kitty/kitty/launcher:$PATH"
 
 # Add Firefox Developer Edition executable path
 # export PATH="/home/efex/.local/share/umake/bin:$PATH"
