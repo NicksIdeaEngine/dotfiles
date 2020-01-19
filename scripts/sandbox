@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+read YEAR MONTH DAYOFMONTH LAST <<< $(date '+%Y %-m %d')
+read DATE DAATE <<< $(date '+%Y %-m %d')
+
+# echo "$DATE"
+# echo "$DAATE"
+echo "$YEAR"
+echo "$MONTH"
+echo "$DAYOFMONTH"
+echo "$LAST"

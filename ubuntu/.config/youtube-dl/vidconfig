@@ -5,7 +5,7 @@
 -f mp4
 
 # use medium quality
---audio-quality best
+# --audio-quality best
 
 # add meta data
 --add-metadata
@@ -14,7 +14,7 @@
 --external-downloader curl
 
 # rate limit to 3M
--r 11M
+# -r 11M
 
 # do not overwrite
 -w
