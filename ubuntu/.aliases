@@ -179,6 +179,7 @@ alias gcm="git commit -m"
 alias gacm="git add . && git commit -m"
 alias gph="git push origin master"
 alias gpl="git pull origin master"
+alias gplr="git pull --rebase origin"
 
 #### 8. npm
 
