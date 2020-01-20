@@ -1,0 +1,357 @@
+#### Aliases
+# Table of Contents
+# 0. Variables
+# 1. Navigation
+# 2. Config Files
+# 3. Reference Files
+# 4. Recent Projects
+# 5. Todotxt CLI
+# 6. Useful Replacements
+# 7. git
+# 8. npm
+# Y. System Aliases
+# Z. Overflow
+
+#### 0. Variables
+
+# DBOX="/mnt/sdc1/Dropbox"
+# CDIR="$DBOX/code"
+# SDIR="$CDIR/snippets"
+# PDIR="$CDIR/projects"
+alias sudo="sudo "
+alias {v,vi,vim}="nvim"
+
+#### 1. Navigation
+
+# move to certain folders
+alias navls="echo 'dbx cfg doc dot dwn mzk pix ref scr tmp vds cdir sdir pdir pfol userchrome[dev]'"
+# alias dbx="cd $DBOX"
+alias cfg="cd ~/.config"
+alias doc="cd ~/docs"
+alias dot="cd ~/dots"
+alias dwn="cd ~/dwn"
+alias mzk="cd ~/music"
+alias pix="cd ~/pics"
+alias ref="cd ~/refs"
+alias scr="cd ~/scripts"
+alias tmp="cd ~/tmp"
+alias vds="cd ~/vids"
+# alias cdir="cd $CDIR"
+# alias sdir="cd $SDIR"
+# alias pdir="cd $PDIR"
+# alias pfol="cd $CDIR/nickgarcia.me"
+alias userchrome="cd ~/.mozilla/firefox/sv5rklav.default-release/chrome"
+alias userchromedev="cd ~/.mozilla/firefox/wmmhtufq.dev-edition-default-2/chrome"
+
+# sped up cd navigation
+alias cd.="cd .."
+alias cd..="cd .."
+alias {..,.1}="cd .."
+alias {...,.2}="cd ../.."
+alias {....,.3}="cd ../../.."
+alias {.....,.4}="cd ../../../.."
+
+#### 2. Config Files
+
+# open ricing workspace
+alias ricing="code ~/.config/i3/ricing.code-workspace"
+
+# open quantify workspace
+# alias quantify="code $DBOX/quant/quant.code-workspace"
+
+# config editing binds
+alias cfls="echo 'Alias Bashrc Compton Dunst Firefox FirefoxDev I3wm Kitty Mpd Nvim Polybar Ranger St Tmux Vim Xresources Ytdl[S,V] Zshrc'"
+alias cfa="vim ~/.aliases"
+alias cfb="vim ~/.bashrc"
+alias cfc="vim ~/.config/compton.conf"
+alias cfd="vim ~/.config/dunst/dunstrc"
+alias cff="vim ~/.mozilla/firefox/sv5rklav.default-release/chrome/userChrome.css"
+alias cffd="vim ~/.mozilla/firefox/wmmhtufq.dev-edition-default-2/chrome/userChrome.css"
+alias cfi="vim ~/.config/i3/config"
+alias cfk="vim ~/.config/kitty/kitty.conf"
+alias cfm="vim ~/.config/mpd/mpd.conf"
+alias cfn="vim ~/.config/nvim/init.vim"
+alias cfp="vim ~/.config/polybar/config.ini"
+alias cfr="vim ~/.config/ranger/rc.conf"
+alias cfs="vim ~/.config/st/config.h"
+alias cft="vim ~/.tmux.conf"
+alias cfv="vim ~/.vimrc"
+alias cfx="vim ~/.Xresources"
+alias cfys="vim ~/.config/youtube-dl/songconfig"
+alias cfyv="vim ~/.config/youtube-dl/vidconfig"
+alias cfz="vim ~/.zshrc"
+
+# recompile st terminal
+alias instst="cd ~/.config/st && sudo make install && alert 'st has been rebuilt'"
+
+#### 3. Reference Files
+
+alias refls="echo 'manjAro vsCode Journey Linux MarkDown Ricing Ssh Tmux Vim Webdev temp(x) Zsh'"
+alias refa="vim $HOME/refs/manjaroref.md"
+alias refc="vim $HOME/refs/vscoderef.md"
+alias refj="vim $HOME/refs/journeyref.md"
+alias refl="vim $HOME/refs/linuxref.md"
+alias refmd="vim $HOME/refs/markdown.md"
+alias refr="vim $HOME/refs/ricingref.md"
+alias refs="vim $HOME/refs/sshref.md"
+alias reft="vim $HOME/refs/tmuxref.md"
+alias refv="vim $HOME/refs/vimref.md"
+alias refw="vim $HOME/refs/webdevref.md"
+alias refx="vim $HOME/refs/tempref.md"
+alias refz="vim $HOME/refs/zshref.md"
+alias misc="vim $HOME/docs/misc.md"
+
+#### 4. Recent Projects
+
+# aliases for recent projects
+alias projls="echo 'a/learn-react-js b/pomodoro c/simonsays z/portfolio'"
+# alias proja="cd $CDIR/coursework/learn-react-js && code learn-react-js.code-workspace"
+# alias projb="cd $PDIR/fcc-pomodoro && code pomodoro.code-workspace"
+# alias projc="cd $PDIR/fcc-simonsays && code simonsays.code-workspace"
+# alias projz="cd $CDIR/nickgarcia.me && code portfolio.code-workspace"
+
+#### 5. Todotxt CLI
+
+# todo.txt aliases
+alias tls="echo 'todo: open todo.txt | t: show tasks | tg: graph | tfg: config | tm: many | ta: add | tp: t p | tdo: t do'"
+alias todo="vim $DBOX/todo/todo.txt"
+alias t="todo.sh -c -d ~/.config/todo/config"
+alias tg="t graph"
+alias tfg="vim ~/.config/todo/config"
+alias tm="t many"
+alias ta="t add"
+alias tp="t p"
+# alias tmp="tm p"
+alias tdo="t do"
+
+#### 6. Useful Replacements
+
+# useful replacements
+alias c="clear"
+alias h="history"
+alias :q="exit"
+alias mkdir="mkdir -pv"
+mkcd () {
+        case "$1" in /*) :;; *) set -- "./$1";; esac
+        mkdir -p "$1" && cd "$1"
+}
+alias sym="/mnt/sdc1/Dropbox/scripts/symswitch"
+
+# ask when deleting multiple
+alias rm="rm -I"
+alias rmf="rm -Irvf"
+
+# some more ls aliases
+alias ll="ls -halF"
+alias la="ls -A"
+alias l="ls -lFh"
+alias lsd="ls -lF | grep '^d'"
+alias lr="ls -tRFh"
+alias ldot="ls -ld .*"
+alias lS="ls -1FSsh"
+
+# autoload default tmux config file
+# alias tmux="tmux"
+
+# leave ranger and enter that directory in terminal
+alias ranger="source ranger"
+
+# use i3lock when afk
+alias afk="i3lock -ti /mnt/sdc1/Dropbox/pics/wallpaper/wall509.png"
+
+# grabbing audio from youtube
+# link to my "To DL" playlist
+alias grablist="youtube-dl --config-location ~/.config/youtube-dl/config \"https://www.youtube.com/playlist?list=PLedhaNZS3z5JfQ8lQIY3Drq3bvNX2TKSP\" && alert 'grablist complete'"
+alias grabsong="youtube-dl --config-location ~/.config/youtube-dl/songconfig \"https://\" && alert 'grabsong complete'"
+# alias grabvid="youtube-dl --config-location ~/.config/youtube-dl/vidconfig \"https://\" && alert 'grabvid complete'"
+alias grabvid="youtube-dl --config-location ~/.config/youtube-dl/vidconfig"
+
+# clear youtube-dl cache
+alias ytdlcache="youtube-dl --rm-cache-dir && alert 'youtube-dl cache removed!'"
+
+# play playlists
+alias tosort="vlc /home/efex/music/to-sort/current.xspf &"
+
+#### 7. git
+
+alias ga="git add ."
+alias gcm="git commit -m"
+alias gacm="git add . && git commit -m"
+alias gph="git push origin master"
+alias gpl="git pull origin master"
+
+#### 8. npm
+
+alias nis="npm install --save"
+alias nid="npm install --save-dev"
+
+#### Y. System Aliases
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=normal '
+
+alias alow='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+alias anorm='notify-send --urgency=normal -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+alias acrit='notify-send --urgency=critical -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# system tools
+alias update="sudo apt update && sudo apt upgrade && alert 'Update and upgrade complete!'"
+
+# refresh .zshrc file
+alias fresh="source ~/.zshrc;clear"
+
+# clean computer
+alias aptcheck="sudo du -sh /var/cache/apt"
+alias aptclean="sudo apt autoremove && sudo apt clean && alert 'apt autoremove and clean are complete!'"
+alias cachecheck="du -sh /home/efex/.cache/thumbnails/"
+alias cacheclean="rm -rf /home/efex/.cache/thumbnails/* && alert 'cacheclean is complete!'"
+alias imagecheck="dpkg --list 'linux-image*' && echo 'use \"sudo dpkg --purge linux-image-*\" to remove'"
+alias snapcheck="du -h /var/lib/snapd/snaps"
+alias snapclean="sudo $DBOX/scripts/snapclean && alert 'snapclean is complete!'"
+
+# backup system
+alias sysbackup="/mnt/sdc1/Dropbox/scripts/sysbackup"
+
+# pip and pip3 updaters
+alias pipupdate="pip freeze --local | sed -rn 's/^([^=# \t\\][^ \t=]*)=.*/echo; echo Processing \1 ...; pip install -U \1/p' | sh"
+alias pip3update="pip3 freeze --local | sed -rn 's/^([^=# \t\\][^ \t=]*)=.*/echo; echo Processing \1 ...; pip3 install -U \1/p' | sh"
+
+# .Xresources handling - reload, merge
+#alias xm="xrdb -merge ~/.Xresources"
+#alias xr="xrdb ~/.Xresources"
+
+# Set default sink
+alias speakers="pactl set-default-sink alsa_output.pci-0000_0a_00.3.analog-stereo"
+alias headphones="pactl set-default-sink alsa_output.usb-Logitech_Logitech_G430_Gaming_Headset-00.analog-stereo"
+
+# Screenshot capture
+alias scrotdel="gnome-screenshot --delay=5"
+
+#### Z. Overflow
+
+# get week number
+# alias week="date +%V"
+
+# Example aliases
+# alias lart="ls -1Fcart"
+# alias lrt="ls -1Fcrt"
+# alias h="history"
+# alias p="(processes for current user)"
+# alias H="| head"
+# alias T="| tail"
+# alias G="| grep"
+# alias L="| less"
+# alias M="| most"
+# alias LL="2>&1 | less"
+# alias CA="2>&1 | cat -A"
+# alias NE="2> /dev/null"
+# alias NUL="> /dev/null 2>&1"
+# alias P="2>&1| pygmentize -l pytb" 
+# Aliases for apt / apt-get
+# alias as [search term]        Search for packages
+# alias ad      Update packages
+# alias adg     Updgrade packages
+# alias ai [packages to install]        Install package(s)
+# alias ar [package to remove]  Remove package
+# alias app     Apt policy
+# alias acs [search term]       Search packages in cache
+# alias ac      Clean apt cache
+# alias age [parameters]        apt-get [parameters]
+# alias api [parameters]        aptitude [parameters]
+# alias aps [search term]       Search with aptitude
+# alias afs [search term]       Search files in packages
+# alias asrc [parameters]       apt-get source [parameters]
+# alias aac     Autoclean
+# alias abd     Build dependencies
+# alias adu     Update & (safe)upgrade
+# alias afu     Update & full-upgrade
+# alias ag      Upgrade (safe)
+# alias ail [list of packages]  Install all packages in list
+# alias ap      Purge
+# alias ads     Dselect upgrade
+# alias dia     Install all ./*.deb
+# alias di [glob]       Install all glob
+# alias kclean  Remove unused kernel images
+# alias allpkgs         Print all installed packages
+# alias mydeb   Create .deb package
+# alias apt-list-packages       List packages by size
+# alias kerndeb         Kernel-package building shortcut
+# alias apt-copy        Creates script to install all current packages on other machine
+# alias apt-history     Prints apt history
+
+# Git Aliases
+# alias gs='git status'
+# alias gstsh='git stash'
+# alias gst='git stash'
+# alias gsp='git stash pop'
+# alias gsa='git stash apply'
+# alias gsh='git show'
+# alias gshw='git show'
+# alias gshow='git show'
+# alias gi='vim .gitignore'
+# alias gcm='git ci -m'
+# alias gcim='git ci -m'
+# alias gci='git ci'
+# alias gco='git co'
+# alias gcp='git cp'
+# alias ga='git add -A'
+# alias gap='git add -p'
+# alias guns='git unstage'
+# alias gunc='git uncommit'
+# alias gm='git merge'
+# alias gms='git merge --squash'
+# alias gam='git amend --reset-author'
+# alias grv='git remote -v'
+# alias grr='git remote rm'
+# alias grad='git remote add'
+# alias gr='git rebase'
+# alias gra='git rebase --abort'
+# alias ggrc='git rebase --continue'
+# alias gbi='git rebase --interactive'
+# alias gl='git l'
+# alias glg='git l'
+# alias glog='git l'
+# alias co='git co'
+# alias gf='git fetch'
+# alias gfp='git fetch --prune'
+# alias gfa='git fetch --all'
+# alias gfap='git fetch --all --prune'
+# alias gfch='git fetch'
+# alias gd='git diff'
+# alias gb='git b'
+# # Staged and cached are the same thing
+# alias gdc='git diff --cached -w'
+# alias gds='git diff --staged -w'
+# alias gpub='grb publish'
+# alias gtr='grb track'
+# alias gpl='git pull'
+# alias gplr='git pull --rebase'
+# alias gps='git push'
+# alias gpsh='git push -u origin `git rev-parse --abbrev-ref HEAD`'
+# alias gnb='git nb' # new branch aka checkout -b
+# alias grs='git reset'
+# alias grsh='git reset --hard'
+# alias gcln='git clean'
+# alias gclndf='git clean -df'
+# alias gclndfx='git clean -dfx'
+# alias gsm='git submodule'
+# alias gsmi='git submodule init'
+# alias gsmu='git submodule update'
+# alias gt='git t'
+# alias gbg='git bisect good'
+# alias gbb='git bisect bad'
+# alias gdmb='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
+
+# # Common shell functions
+# alias less='less -r'
+# alias tf='tail -f'
+# alias l='less'
+# alias lh='ls -alt | head' # see the last modified files
+# alias screen='TERM=screen screen'
+# alias cl='clear'
+
+# # Zippin
+# alias gz='tar -zcvf'

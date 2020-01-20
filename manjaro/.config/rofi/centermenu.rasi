@@ -1,0 +1,26 @@
+configuration {
+    show-icons:		false;
+    lines:		25;
+}
+
+* {
+    background-color:	#3c3836;
+    text-color:		#f9f5d7;
+    font:		"Fira Code 14";
+}
+
+#window {
+    anchor:     center;
+    location:   center;
+    width:      50%;
+    padding:    8px;
+}
+
+#element {
+    padding: 4px 4px;
+}
+
+#element selected {
+    background-color: #f9f5d7;
+    text-color: #3c3836;
+}
