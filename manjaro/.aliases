@@ -40,8 +40,8 @@ alias vds="cd ~/vids"
 # alias sdir="cd $SDIR"
 # alias pdir="cd $PDIR"
 # alias pfol="cd $CDIR/nickgarcia.me"
-alias userchrome="cd ~/.mozilla/firefox/sv5rklav.default-release/chrome"
-alias userchromedev="cd ~/.mozilla/firefox/wmmhtufq.dev-edition-default-2/chrome"
+# alias userchrome="cd ~/.mozilla/firefox/sv5rklav.default-release/chrome"
+# alias userchromedev="cd ~/.mozilla/firefox/wmmhtufq.dev-edition-default-2/chrome"
 
 # sped up cd navigation
 alias cd.="cd .."
