@@ -55,7 +55,7 @@ set $scr /mnt/sdc1/Dropbox/scripts
 #### 1. System & Settings
 
 # titlebar settings
-font pango:myosevka 10
+font pango:Iosevka Nerd Font Complete Mono
 title_align center
 
 # general settings
