@@ -132,8 +132,8 @@ alias h="history"
 alias :q="exit"
 alias mkdir="mkdir -pv"
 mkcd () {
-        case "$1" in /*) :;; *) set -- "./$1";; esac
-        mkdir -p "$1" && cd "$1"
+  case "$1" in /*) :;; *) set -- "./$1";; esac
+  mkdir -p "$1" && cd "$1"
 }
 alias sym="/mnt/sdc1/Dropbox/scripts/symswitch"
 
@@ -180,6 +180,11 @@ alias gacm="git add . && git commit -m"
 alias gph="git push origin master"
 alias gpl="git pull origin master"
 alias gplr="git pull --rebase origin"
+gacmp () {
+  git add .
+  git commit -m "$1"
+  git push origin master
+}
 
 #### 8. npm
 
