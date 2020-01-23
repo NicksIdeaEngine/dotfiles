@@ -118,6 +118,8 @@
 - libconfig-dev
 - compton
 - xsel
+- adb
+- fastboot
 -
 
 # Ideas

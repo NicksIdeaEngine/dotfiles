@@ -96,3 +96,9 @@ Another option for copying is to select with mouse and press y before releasing 
 # SUPER HELPFUL MAN PAGE KEY
 
 Hit `K` to jump to the exact place in `man tmux` where the word under the cursor is explained
+
+# Tmux Plugins
+
+## installing plugins after adding to .tmux.conf
+
+press `prefix` + `I`
