@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-SOURCE_DIR="/home/efex/.config/gtk-3.0"
-DEST_DIR="/mnt/sdc1/Dropbox/dots/ubuntu/.config/gtk-3.0"
+SOURCE_DIR="/home/efex"
+DEST_DIR="/mnt/sdc1/Dropbox/dots/ubuntu"
 DEST_FILE="$DEST_DIR/$1"
 
 if [[ ! -f "$DEST_FILE" ]]; then

@@ -5,12 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Add scripts from Dropbox/scripts to path
-export PATH="/mnt/sdc1/Dropbox/scripts:$PATH"
-
-# Add ubuntu-make .desktop files to path
-export PATH="/home/efex/.local/share/applications:$PATH"
-
 # Add rvm secure path export
 export rvmsudo_secure_path=1
 
@@ -43,18 +37,8 @@ if [ -x /usr/bin/dircolors ]; then
 	alias egrep='egrep --color=auto'
 fi
 
-# Load aliases
-if [ -f ~/.aliases ]; then
-	. ~/.aliases
-fi
-
 # Load zprofile
-if [ -f ~/.zprofile ]; then
-  . ~/.zprofile
-fi
-
-# MPD daemon start if not already
-# [ ! -s ~/.config/mpd/pid ] && mpd
+[[ -f ~/.zprofile ]] && . ~/.zprofile
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
