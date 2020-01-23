@@ -130,7 +130,8 @@ alias tdo="t do"
 alias c="clear"
 alias h="history"
 alias :q="exit"
-alias mkdir="mkdir -pv"
+alias {md,mkdir}="mkdir -pv"
+alias {rd,rmdir}="rmdir -v"
 mkcd () {
   case "$1" in /*) :;; *) set -- "./$1";; esac
   mkdir -p "$1" && cd "$1"
@@ -144,7 +145,8 @@ alias rmf="rm -Irvf"
 # some more ls aliases
 alias ll="ls -halF"
 alias la="ls -A"
-alias l="ls -lFh"
+alias l="ls -hlF"
+alias lsa="ls -lah"
 alias lsd="ls -lF | grep '^d'"
 alias lr="ls -tRFh"
 alias ldot="ls -ld .*"
@@ -185,6 +187,7 @@ gacmp () {
   git commit -m "$1"
   git push origin master
 }
+alias gst="git status"
 
 #### 8. npm
 
