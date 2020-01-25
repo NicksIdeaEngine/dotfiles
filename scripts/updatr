@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+apt update && apt upgrade && alert 'Apt update and upgrade complete!'
+
+
