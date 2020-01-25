@@ -88,10 +88,6 @@ fi
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-# if [ -f ~/.aliases ]; then
-#     . ~/.aliases
-# fi
-
 [[ -f ~/.aliases ]] && . ~/.aliases
 
 # enable programmable completion features (you don't need to enable
