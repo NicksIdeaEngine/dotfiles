@@ -50,3 +50,7 @@ _gc_ in visual mode changes selected lines to comment
 <c-y>/ toggle comment of nearest surrounding tags
 <c-y>a make anchor from URL
 <c-y>A make quoted text from a URL
+
+# Notes from How to Configure Vim like VSCode video by Ben Awad
+
+[Link to Dot Files](https://gist.github.com/benawad/b768f5a5bbd92c8baabd363b7e79786f)

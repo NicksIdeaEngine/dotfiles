@@ -200,6 +200,9 @@ $mod4+m $ex "vlc /home/efex/music/to-sort/current.xspf"
 # monitor orientation since my primary is in the middle
 $ex xrandr --output HDMI-A-0 --auto --left-of DisplayPort-0
 
+# turn num lock on
+$ex xdotool key --clearmodifiers Num_Lock
+
 # set default sink to speakers and source to headset mic
 $exa pactl set-default-sink $speakers
 $exa pactl set-default-source $headmic

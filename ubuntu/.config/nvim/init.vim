@@ -378,6 +378,10 @@ nnoremap <Leader>/ za
 " highlight last inserted text
 nnoremap gV `[v`]
 
+" keep visual selection when indenting/outdenting
+vmap < <gv
+vmap > >gv
+
 " open NERDTree
 map <Leader>n :NERDTreeToggle<CR>
 
@@ -386,8 +390,8 @@ map <Leader>n :NERDTreeToggle<CR>
 " autocmd Filetype scss setlocal tabstop=4
 
 inoremap <C-w><Space> <Esc>/<++><Enter>"_c4l
-inoremap jj <Esc>
-nnoremap <Leader>W :w<CR>
+inoremap jk <Esc>
+nnoremap <Leader><Leader> :w<CR>
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
