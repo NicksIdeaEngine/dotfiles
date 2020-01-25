@@ -177,7 +177,7 @@ alias tosort="vlc /home/efex/music/to-sort/current.xspf &"
 
 #### 7. git
 
-alias ga="git add ."
+alias ga="git add"
 alias gcm="git commit -m"
 alias gacm="git add . && git commit -m"
 alias gph="git push origin master"
