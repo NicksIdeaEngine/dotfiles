@@ -55,7 +55,7 @@ alias {.....,.4}="cd ../../../.."
 #### 2. Config Files
 
 # open ricing workspace
-alias ricing="code ~/.config/i3/ricing.code-workspace"
+alias ricing="code ~/dots/dotfiles.code-workspace"
 
 # open quantify workspace
 alias quantify="code $DBOX/quant/quant.code-workspace"
@@ -207,18 +207,17 @@ alias anorm='notify-send --urgency=normal -i "$([ $? = 0 ] && echo terminal || e
 
 alias acrit='notify-send --urgency=critical -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# system tools
-alias update="sudo apt update && sudo apt upgrade && alert 'Update and upgrade complete!'"
-
 # refresh .zshrc file
 alias fresh="source ~/.zshrc;clear"
 
-# clean computer
+# system tools
+alias aptdate="sudo apt update && sudo apt upgrade && alert 'Update and upgrade complete!'"
 alias aptcheck="sudo du -sh /var/cache/apt"
 alias aptclean="sudo apt autoremove && sudo apt clean && alert 'apt autoremove and clean are complete!'"
 alias cachecheck="du -sh /home/efex/.cache/thumbnails/"
 alias cacheclean="rm -rf /home/efex/.cache/thumbnails/* && alert 'cacheclean is complete!'"
 alias imagecheck="dpkg --list 'linux-image*' && echo 'use \"sudo dpkg --purge linux-image-*\" to remove'"
+alias snupdate="sudo snap refresh"
 alias snapcheck="du -h /var/lib/snapd/snaps"
 alias snapclean="sudo $DBOX/scripts/snapclean && alert 'snapclean is complete!'"
 
