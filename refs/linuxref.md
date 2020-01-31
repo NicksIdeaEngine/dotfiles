@@ -120,7 +120,31 @@
 - xsel
 - adb
 - fastboot
--
+- live-build
+- cdebootstrap
+- devscripts
+- installed kali archive keyring and live-build packages to /root/
+  - `wget http://http.kali.org/pool/main/k/kali-archive-keyring/kali-archive-keyring_2018.2_all.deb`
+  - `wget https://archive.kali.org/kali/pool/main/l/live-build/live-build_20191221_all.deb`
+  - `sudo apt install -y git live-build cdebootstrap debootstrap curl`
+  - `sudo dpkg -i kali-archive-keyring_2018.2_all.deb`
+  - `sudo dpkg -i live-build_20191221_all.deb`
+  - `cd /usr/share/debootstrap/scripts/`
+  - `echo "default_mirror http://http.kali.org/kali"; sed -e "s/debian-archive-keyring.gpg/kali-archive-keyring.gpg/g" sid > /tmp/kali`
+  - `sudo mv /tmp/kali .`
+  - `sudo ln -s kali kali-rolling`
+- attempting to fix lm-sensors problem where `cpu_fan` always shows "0 RPM"
+  - [Solution Found Here](https://www.kubuntuforums.net/showthread.php/74401-Driver-for-Asus-B450-motherboard-to-enable-LM-Sensors-other-boards)
+  - `sudo demidecode -t 34`
+    - This identifies chipset that provides info to lm-sensors
+  - `echo "it87" | sudo tee -a /etc/modules`
+  - `sudo apt install git dkms build-essential linux-headers-generic`
+  - `cd ~/.config/repos`
+  - `git clone https://github.com/a1wong/it87.git`
+  - `cd it87/`
+  - `sudo make dkms`
+  - `sensors`
+- scrot
 
 # Ideas
 
@@ -134,9 +158,12 @@ The mindset behind this setup is rapid web development and research through a mi
 - puppet
 - ansible
 - tmuxp
-
-# Notes
-
+- Hiren's BootCD
+- UltimateBootCD
+- putty
+- [PortableApps](https://portableapps.com/)
+- Yumi for multi boot
+- rolling my own Kali Linux on a flash drive
 - less /etc/default/grub
   - shows grub config
 - df -ht ext4
@@ -145,6 +172,45 @@ The mindset behind this setup is rapid web development and research through a mi
   - list block devices, filter with "sd"
 - dmesg | grep wl
   - print kernal ring buffer, filter with "wl" to show network devices
+- [PenTesters Framework](https://github.com/trustedsec/ptf)
+- Notes Up
+- Dashlane
+- pCloud
+-
+
+## Tools for Creating Your Own Linux Distro
+
+- Linux Respin
+- Linux Live Kit
+- Linux From Scratch
+- Live Magic
+
+# Notes
+
+## Desktop Specs
+
+### Fan Setup
+
+- CPU fan: Cooler Master 82.9 CFM (fan1)
+  - Cooler Master 82.9 CFM 120mm
+  - Speed: 600 - 2000 RPM
+- Fan1: front fan, inflow (fan2)
+  - Phanteks 200mm (PH-F200) 110.1 CFM
+  - 250 - 850 RPM
+- Fan2: top fans, outflow (fan3)
+  - 2x Cooler Master SickleFlow 69 CFM 120mm
+  - Speed: 0 - 2000 RPM
+- Fan3: bottom fans, inflow (fan4)
+  - 2x Cooler Master SickleFlow 69 CFM 120mm
+  - Speed: 0 - 2000 RPM
+- AIO Pump: back fan, outflow (fan6)
+  - Phanteks 140mm (PH-F140) 78.1 CFM
+  - 0 - 1200 RPM
+- GPU Fans
+  - Nitro+ RX 590 8G G5
+  - Nominal fan speed 0 - 2280 (max is 3200)
+
+### Looking at fan speeds and system temperatures
 
 # Script ideas
 
