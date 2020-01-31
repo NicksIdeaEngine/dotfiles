@@ -30,7 +30,7 @@ set $cmod4 bindsym Mod4+Control
 set $scmod4 bindsym Mod4+Shift+Control
 
 # default terminal is suckless terminal
-set $terminal "kitty"
+set $terminal kitty
 
 # set audio commands to easy variables
 set $volup XF86AudioRaiseVolume
@@ -50,26 +50,26 @@ set $webcammic alsa_input.usb-Generic_FULL_HD_1080P_Webcam_200901010001-02.analo
 # clean up code
 set $ex exec --no-startup-id
 set $exa exec_always --no-startup-id
+set $br bindsym --release
 set $scr /mnt/sdc1/Dropbox/scripts
 
 #### 1. System & Settings
 
 # titlebar settings
-font pango:Iosevka Nerd Font Complete Mono
+font pango:FiraCode Nerd Font 12
 title_align center
 
 # general settings
 gaps outer 0
-gaps inner 15
+gaps inner 0
 default_border pixel 5
 default_floating_border pixel 5
 hide_edge_borders both
 popup_during_fullscreen smart
 workspace_auto_back_and_forth yes
 workspace_layout tabbed
-# new_window pixel
 floating_minimum_size 750 x 500
-floating_maximum_size 1500 x 1500
+floating_maximum_size 1500 x 1000
 
 # reload the configuration file
 $mod4+c reload
@@ -106,15 +106,24 @@ $smod3+k move up
 $smod3+l move right
 
 # resizing
+$cmod4+h resize shrink width 1 px or 1 ppt
+$cmod4+j resize shrink height 1 px or 1 ppt
+$cmod4+k resize grow height 1 px or 1 ppt
+$cmod4+l resize grow width 1 px or 1 ppt
 $cmod3+h resize shrink width 5 px or 5 ppt
 $cmod3+j resize shrink height 5 px or 5 ppt
 $cmod3+k resize grow height 5 px or 5 ppt
 $cmod3+l resize grow width 5 px or 5 ppt
+$scmod3+h resize shrink width 25 px or 25 ppt
+$scmod3+j resize shrink height 25 px or 25 ppt
+$scmod3+k resize grow height 25 px or 25 ppt
+$scmod3+l resize grow width 25 px or 25 ppt
 
 # enter fullscreen mode for the focused container
 $mod3+f fullscreen toggle
 $smod3+f focus parent; fullscreen toggle
-$cmod3+f focus parent; focus parent; focus parent; fullscreen toggle
+$cmod3+f focus parent; focus parent; fullscreen toggle
+$scmod3+f focus parent; focus parent; focus parent; fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 $mod3+z layout toggle tabbed splith splitv
@@ -171,7 +180,8 @@ $smod3+d $ex $scr/rofidropmenu
 $cmod3+d $ex $scr/autoscriptmenu
 
 # app launching
-$mod3+n         exec nemo
+$mod3+n         exec $terminal ranger
+$smod3+n        exec nemo
 $mod3+w         exec firefox
 $smod3+w        $ex firefox-developer
 $mod3+c         $ex code
@@ -179,17 +189,30 @@ $mod3+Return    $ex $terminal
 $smod3+Return   exec i3-sensible-terminal
 $mod3+t         $ex $terminal
 $smod3+t        exec i3-sensible-terminal
-$mod3+m         exec gnome-system-monitor
+$mod3+m         exec $terminal htop
+$smod3+m        exec gnome-system-monitor
 $mod3+g         exec google-chrome
-$scmod3+l       exec i3lock -ti /mnt/sdc1/Dropbox/pics/wallpaper/wall509.png
+$scmod4+l       $ex i3lock -ti /mnt/sdc1/Dropbox/pics/wallpaper/wall509.png
+
+# discord
+# filezilla
+# slack
+# htop
+# virtualbox
+# calculator
+# quantify
+# any other scripts?
 
 # launch music
 $mod4+m $ex "vlc /home/efex/music/to-sort/current.xspf"
 
 # screenshots
-# scrot area
-# scrot screen delay
-# scrot full
+$br Mod3+Print \
+  $ex scrot -q 100 -s -e 'mv $f ~/dwn/shots'
+$br Mod3+Shift+Print \
+  $ex scrot -q 100 -u -e 'mv $f ~/dwn/shots'
+$br Mod3+Control+Print \
+  $ex scrot -q 100 -m -e 'mv $f ~/dwn/shots'
 
 #### 5. Scripts
 
@@ -219,7 +242,7 @@ $ex dropbox start
 $ex $HOME/.fehbg
 $ex xflux -z 33101 -k 2800
 $exa $scr/polybarstart
-$ex sleep 60; $scr/sysbackup
+$ex sleep 10; $scr/sysbackup
 $ex compton -b
 
 # set default workspaces
@@ -433,16 +456,3 @@ mode "$mode_gaps_left" {
 }
 
 #### Z. Overflow
-# names of special characters in i3
-# mod + [ bracketleft
-# mod + ] bracketright
-# mod + ; semicolon
-# mod + ' apostrophe
-# mod + , comma
-# mod + . period
-# mod + / slash
-# mod + \ backslash
-# mod + - minus
-# mod + = equal
-# mod + ` grave?
-# mod + Print

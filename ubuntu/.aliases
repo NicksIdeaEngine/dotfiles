@@ -26,6 +26,7 @@ alias {v,vi,vim}="nvim"
 # move to certain folders
 alias navls="echo 'dbx cfg doc dot dwn mzk pix ref scr tmp vds cdir sdir pdir pfol userchrome[dev]'"
 alias dbx="cd $DBOX"
+alias bod="cd ~/body"
 alias cfg="cd ~/.config"
 alias cpy="cd ~/writing/copywriting"
 alias doc="cd ~/docs"
@@ -37,6 +38,7 @@ alias ref="cd ~/refs"
 alias scr="cd ~/scripts"
 alias tmp="cd ~/tmp"
 alias vds="cd ~/vids"
+alias wrt="cd ~/writing"
 alias cdir="cd $CDIR"
 alias sdir="cd $SDIR"
 alias pdir="cd $PDIR"
@@ -64,6 +66,8 @@ alias quantify="code $DBOX/quant/quant.code-workspace"
 alias cfls="echo 'Alias Bashrc Compton Dunst Firefox FirefoxDev I3wm Kitty Mpd Nvim Polybar Ranger St Tmux Vim Xresources Ytdl[S,V] Zshrc'"
 alias cfa="vim ~/.aliases"
 alias cfb="vim ~/.bashrc"
+alias cfbl="vim ~/.bash_logout"
+alias cfbp="vim ~/.profile"
 alias cfc="vim ~/.config/compton.conf"
 alias cfd="vim ~/.config/dunst/dunstrc"
 alias cff="vim ~/.mozilla/firefox/sv5rklav.default-release/chrome/userChrome.css"
@@ -81,6 +85,8 @@ alias cfx="vim ~/.Xresources"
 alias cfys="vim ~/.config/youtube-dl/songconfig"
 alias cfyv="vim ~/.config/youtube-dl/vidconfig"
 alias cfz="vim ~/.zshrc"
+alias cfze="vim ~/.zshenv"
+alias cfzp="vim ~/.zprofile"
 
 # recompile st terminal
 alias instst="cd ~/.config/st && sudo make install && alert 'st has been rebuilt'"
@@ -198,7 +204,6 @@ alias nid="npm install --save-dev"
 #### Y. System Aliases
 
 # Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
 alias alert='notify-send --urgency=normal '
 
 alias alow='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -235,9 +240,6 @@ alias pip3update="pip3 freeze --local | sed -rn 's/^([^=# \t\\][^ \t=]*)=.*/echo
 # Set default sink
 alias speakers="pactl set-default-sink alsa_output.pci-0000_0a_00.3.analog-stereo"
 alias headphones="pactl set-default-sink alsa_output.usb-Logitech_Logitech_G430_Gaming_Headset-00.analog-stereo"
-
-# Screenshot capture
-alias scrotdel="gnome-screenshot --delay=5"
 
 #### Z. Overflow
 

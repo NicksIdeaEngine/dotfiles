@@ -2,7 +2,7 @@
     background-color:      #3c3836;
     border-color:          #458588;
     text-color:            #f9f5d7;
-    font:                  "Fira Code 10";
+    font:                  "FiraCode Nerd Font 10";
 }
 
 #window {

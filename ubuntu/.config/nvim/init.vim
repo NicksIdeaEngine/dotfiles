@@ -312,10 +312,10 @@ let g:firenvim_config = {
   \ },
   \ 'localSettings': {
     \ '.*': {
-      \ 'cmdline': 'firenvim',
+      \ 'cmdline': 'neovim',
       \ 'priority': 0,
       \ 'selector': 'textarea',
-      \ 'takeover': 'never',
+      \ 'takeover': 'always',
     \ },
   \ }
 \ }
