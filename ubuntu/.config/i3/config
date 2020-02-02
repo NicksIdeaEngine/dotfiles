@@ -56,7 +56,7 @@ set $scr /mnt/sdc1/Dropbox/scripts
 #### 1. System & Settings
 
 # titlebar settings
-font pango:FiraCode Nerd Font 12
+font pango:FiraCode Nerd Font 10
 title_align center
 
 # general settings

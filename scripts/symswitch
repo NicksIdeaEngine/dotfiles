@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-SOURCE_DIR="/home/efex"
-DEST_DIR="/mnt/sdc1/Dropbox/dots/ubuntu"
+SOURCE_DIR="/home/efex/.local/kitty/kitty"
+DEST_DIR="/mnt/sdc1/Dropbox/dots/ubuntu/.local/kitty/kitty"
 DEST_FILE="$DEST_DIR/$1"
 
 if [[ ! -f "$DEST_FILE" ]]; then

@@ -14,6 +14,9 @@ export ZSH="/home/efex/.oh-my-zsh"
 # Set theme. See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME=powerlevel10k/powerlevel10k
 
+# remove extra space on right
+ZLE_RPROMPT_INDENT=0
+
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 HYPHEN_INSENSITIVE="true"
 
