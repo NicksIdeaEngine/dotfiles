@@ -1,5 +1,5 @@
 #!/bin/zsh
-
+. ~/.aliases
 case "$1" in
   --drop)
     /mnt/sdc1/Dropbox/scripts/rofidropmenu
@@ -7,8 +7,8 @@ case "$1" in
   --oneliner)
     /mnt/sdc1/Dropbox/scripts/rofioneliner
     ;;
-  --autoscript)
-    /mnt/sdc1/Dropbox/scripts/autoscript
+  --autoscript )
+    /mnt/sdc1/Dropbox/scripts/autoscriptmenu
     ;;
   *)
     echo "  "

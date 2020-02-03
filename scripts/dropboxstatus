@@ -10,7 +10,7 @@ case "$1" in
 		;;
 	*)			
 		if pgrep -x "dropbox" > /dev/null; then
-			echo " "
+			echo ""
 		else
 			echo "---"
 		fi
