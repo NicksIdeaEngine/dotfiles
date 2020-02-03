@@ -81,7 +81,7 @@ $mod4+r restart
 $mod4+e exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes' 'i3-msg exit'"
 
 # open sys menu
-$scmod3+0 $ex $scr/sysmenu
+$scmod3+0 $ex $scr/sysmenu --menu
 
 # restart polybar
 $mod4+p $ex $scr/polybarstart
