@@ -93,9 +93,10 @@ alias instst="cd ~/.config/st && sudo make install && alert 'st has been rebuilt
 
 #### 3. Reference Files
 
-alias refls="echo 'manjAro vsCode Journey Linux MarkDown Ricing Ssh Tmux Vim Webdev temp(x) Zsh'"
+alias refls="echo 'manjAro vsCode toDo Journey Linux MarkDown Ricing Ssh Tmux Vim Webdev temp(x) Zsh'"
 alias refa="vim $DBOX/refs/manjaroref.md"
 alias refc="vim $DBOX/refs/vscoderef.md"
+alias refd="vim $DBOX/refs/todoref.md"
 alias refj="vim $DBOX/refs/journeyref.md"
 alias refl="vim $DBOX/refs/linuxref.md"
 alias refmd="vim $DBOX/refs/markdown.md"
@@ -120,19 +121,27 @@ alias projz="cd $CDIR/nickgarcia.me && code portfolio.code-workspace"
 #### 5. Todotxt CLI
 
 # todo.txt aliases
-alias tls="echo 'todo: open todo.txt | t: show tasks | tg: graph | tfg: config | tm: many | ta: add | tp: t p | tdo: t do'"
+alias tls="echo 'todo: open todo.txt | t: show tasks by project | tg: graph \
+               \ntfg: config | tm: many | ta: wp add | tap: append | tdu: due \
+               \ntpp: prep | tp: pri | tv: view | tvp: view project | tdo: do'"
 alias todo="vim $DBOX/todo/todo.txt"
-alias t="todo.sh -c -d ~/.config/todo/config"
-alias tg="t graph"
+alias t="todo.sh -c -d ~/.config/todo/config view project"
+alias tg="todo.sh graph"
 alias tfg="vim ~/.config/todo/config"
-alias tm="t many"
-alias ta="t add"
-alias tp="t p"
-# alias tmp="tm p"
-alias tdo="t do"
+alias tm="todo.sh many"
+alias ta="todo.sh wp add"
+alias tap="todo.sh app"
+alias tdu="todo.sh due"
+alias tpp="todo.sh prep"
+alias tp="todo.sh p"
+alias tv="todo.sh view"
+alias tvp="todo.sh view project"
+alias tdo="todo.sh do"
 
 #### 6. Useful Replacements
 
+# helpful reference for creating sym links
+alias lnls="echo 'ln -s <file to be linked> <location of the link>'"
 # useful replacements
 alias c="clear"
 alias h="history"

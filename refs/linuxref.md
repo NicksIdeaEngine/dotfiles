@@ -145,6 +145,8 @@
   - `sudo make dkms`
   - `sensors`
 - scrot
+- python3-prettytable
+-
 
 # Ideas
 
