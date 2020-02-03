@@ -1,0 +1,16 @@
+#!/bin/zsh
+
+case "$1" in
+  --drop)
+    /mnt/sdc1/Dropbox/scripts/rofidropmenu
+    ;;
+  --oneliner)
+    /mnt/sdc1/Dropbox/scripts/rofioneliner
+    ;;
+  --autoscript)
+    /mnt/sdc1/Dropbox/scripts/autoscript
+    ;;
+  *)
+    echo "  "
+    ;;
+esac

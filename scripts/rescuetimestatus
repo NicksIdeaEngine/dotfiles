@@ -11,9 +11,9 @@ case "$1" in
 		;;
 	*)			
 		if pgrep -x "rescuetime" > /dev/null; then
-			echo "RT"
+			echo "祥"
 		else
-			echo "--"
+			echo "精"
 		fi
 		;;
 esac

@@ -22,7 +22,7 @@ case "$1" in
     ;;
 	*)			
 		if pgrep -x "xflux" > /dev/null; then
-			echo "FLX"
+			echo ""
 		else
 			echo "---"
 		fi

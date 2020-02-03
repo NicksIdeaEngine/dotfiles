@@ -21,6 +21,6 @@ case "$1" in
     notify-send "Middle click!"
     ;;
 	*)
-		echo "OUT"
+		echo "שׂ"
 		;;
 esac
