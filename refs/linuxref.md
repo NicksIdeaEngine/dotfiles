@@ -215,7 +215,7 @@ The mindset behind this setup is rapid web development and research through a mi
 
 ### Looking at fan speeds and system temperatures
 
-# Script ideas
+## Script ideas
 
 - File integrity checker: Keep a database of important file md5sum's and check those files daily to see if they have changed. If they have changed, have it alert you via mail. E.g., simplified Tripwire clone.
 - Backup script: Maintains up to 10 days worth of daily backups
@@ -375,3 +375,27 @@ perf lets you trace system calls faster than strace, profile your C / Go / C++ /
 - \$ " " " PID (profile PID until you press ctrl+c)
 - \$ " " " -a (profile every process until ctrl+c)
 - \$ " " " -p PID COMMAND (hybrid) (example: sudo perf record -p 8325 sleep 5)
+
+## Notes from The Linux Command Line Book
+
+### Useful Commands To Remember
+
+#### Chapter 1
+
+- `date`
+- `cal`
+- `df`
+- `free`
+- `ctrl+alt+f1`: seems to return me to the Ubuntu login screen
+- `ctrl+alt+f2`: puts me back into the Ubuntu GUI
+- `ctrl+alt+f3/f4/f5/f6`: gives me tty3/4/5/6 terminals
+- `ctrl+alt+f7`: gives me a screen that doesn't accept input which has `/dev/sda3: clean, XXXX/XXXX files, XXXX/XXXX blocks`
+
+#### Chapter 2
+
+- `pwd`
+- `cd`
+- `ls`
+- absolute paths: `/usr/bin`
+- relative paths: `./bin` or `../dev`
+  - single period `./` refers to current directory, double period `../` refers to parent directory
