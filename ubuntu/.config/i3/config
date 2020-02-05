@@ -194,6 +194,8 @@ $smod3+m        exec gnome-system-monitor
 $mod3+g         exec google-chrome
 $scmod4+l       $ex i3lock -ti /mnt/sdc1/Dropbox/pics/wallpaper/wall509.png
 
+
+
 # discord
 # filezilla
 # slack
@@ -202,6 +204,8 @@ $scmod4+l       $ex i3lock -ti /mnt/sdc1/Dropbox/pics/wallpaper/wall509.png
 # calculator
 # quantify
 # any other scripts?
+# launch quantify
+$mod4+q $ex "code /mnt/sdc1/Dropbox/quant/quant.code-workspace"
 
 # launch music
 $mod4+m $ex "vlc /home/efex/music/to-sort/current.xspf"

@@ -145,7 +145,8 @@
   - `sudo make dkms`
   - `sensors`
 - scrot
-- python3-prettytable
+- prettytable (pip)
+- termcolor (pip)
 -
 
 # Ideas
