@@ -11,6 +11,9 @@ export rvmsudo_secure_path=1
 # Path to your oh-my-zsh installation.
 export ZSH="/home/efex/.oh-my-zsh"
 
+# Move GOPATH into $DBOX/code/go
+export GOPATH="$HOME/code/go"
+
 # Set theme. See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME=powerlevel10k/powerlevel10k
 
