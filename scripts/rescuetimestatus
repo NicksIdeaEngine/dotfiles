@@ -9,6 +9,19 @@ case "$1" in
 			notify-send "Rescuetime isn't running!"
 		fi
 		;;
+  --reboot)
+    rescuetime &
+    notify-send "RescueTime is back up and running!"
+    ;;
+  --off)
+    if [ "$(pgrep rescuetime)" ]; then
+      killall rescuetime
+      notify-send "RescueTime is off!"
+    else
+      rescuetime
+      notify-send "RescueTime is back up and running!"
+    fi
+    ;;
 	*)			
 		if pgrep -x "rescuetime" > /dev/null; then
 			echo "祥"

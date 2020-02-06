@@ -10,14 +10,14 @@ case "$1" in
 		;;
   --reboot)
     if [ "$(pgrep xflux)" ]; then
-      killall xflux; sleep 1; xflux -z 33101 -k 2800 &; sleep 1; polybar -r
+      killall xflux; sleep 1; xflux -z 33101 -k 2800 &; sleep 5; polybar -r
     else
-      xflux -z 33101 -k 2800 &; sleep 1; polybar -r
+      xflux -z 33101 -k 2800 &; sleep 5; polybar -r
     fi
     ;;
   --off)
     if [ "$(pgrep xflux)" ]; then
-      killall xflux
+      killall xflux; sleep 5; polybar -r
     fi
     ;;
 	*)			
