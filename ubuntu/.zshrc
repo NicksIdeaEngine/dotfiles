@@ -14,6 +14,9 @@ export ZSH="/home/efex/.oh-my-zsh"
 # Move GOPATH into $DBOX/code/go
 export GOPATH="$HOME/code/go"
 
+# enable todo completion while using the `t` alias
+# complete -F _todo t
+
 # Set theme. See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME=powerlevel10k/powerlevel10k
 
@@ -31,8 +34,6 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(catimg command-not-found git npm vi-mode vscode z)
 
 source $ZSH/oh-my-zsh.sh
-
-# User configuration
 
 # enable color support of ls and add handy aliases
 if [ -x /usr/bin/dircolors ]; then

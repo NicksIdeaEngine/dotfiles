@@ -87,9 +87,9 @@ $scmod3+0 $ex $scr/sysmenu --menu
 $mod4+p $ex $scr/polybarstart
 
 # volume changing
-bindsym $volup $ex pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym $voldown $ex pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym $mute $ex pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym $volup $ex    pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym $voldown $ex  pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym $mute $ex     pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 #### 2. Window Navigation & Management
 
@@ -110,20 +110,22 @@ $cmod4+h resize shrink width 1 px or 1 ppt
 $cmod4+j resize shrink height 1 px or 1 ppt
 $cmod4+k resize grow height 1 px or 1 ppt
 $cmod4+l resize grow width 1 px or 1 ppt
+
 $cmod3+h resize shrink width 5 px or 5 ppt
 $cmod3+j resize shrink height 5 px or 5 ppt
 $cmod3+k resize grow height 5 px or 5 ppt
 $cmod3+l resize grow width 5 px or 5 ppt
+
 $scmod3+h resize shrink width 25 px or 25 ppt
 $scmod3+j resize shrink height 25 px or 25 ppt
 $scmod3+k resize grow height 25 px or 25 ppt
 $scmod3+l resize grow width 25 px or 25 ppt
 
 # enter fullscreen mode for the focused container
-$mod3+f fullscreen toggle
-$smod3+f focus parent; fullscreen toggle
-$cmod3+f focus parent; focus parent; fullscreen toggle
-$scmod3+f focus parent; focus parent; focus parent; fullscreen toggle
+$mod3+f     fullscreen toggle
+$smod3+f    focus parent; fullscreen toggle
+$cmod3+f    focus parent; focus parent; fullscreen toggle
+$scmod3+f   focus parent; focus parent; focus parent; fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 $mod3+z layout toggle tabbed splith splitv
@@ -168,42 +170,50 @@ $smod3+5 move container to workspace 5
 $smod3+6 move container to workspace 6
 
 # scratchpad
-$mod3+slash scratchpad show
-$smod3+slash move scratchpad
+$mod3+slash     scratchpad show
+$smod3+slash    move scratchpad
+$cmod3+slash    [floating] move scratchpad
+
+# marks
+$mod3+braceleft     exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
+$mod3+braceright    exec i3-input -F 'swap container with mark %s' -l 1 -P 'Mark: '
+$mod3+semicolon     mark --add --toggle swapee
+$smod3+semicolon    swap container with mark swapee
 
 #### 4. Application Management
 
 # app management
-$smod3+q kill
-$mod3+d $ex $scr/rofioneliner
-$smod3+d $ex $scr/rofidropmenu
-$cmod3+d $ex $scr/autoscriptmenu
+$smod3+q    kill
+$mod3+d     $ex $scr/rofioneliner
+$smod3+d    $ex $scr/rofidropmenu
+$cmod3+d    $ex $scr/autoscriptmenu
 
 # app launching
-$mod3+n         exec $terminal ranger
-$smod3+n        exec nemo
-$mod3+w         exec firefox
-$smod3+w        $ex firefox-developer
-$mod3+c         $ex code
-$mod3+Return    $ex $terminal
-$smod3+Return   exec i3-sensible-terminal
-$mod3+t         $ex $terminal
-$smod3+t        exec i3-sensible-terminal
-$mod3+m         exec $terminal htop
-$smod3+m        exec gnome-system-monitor
-$mod3+g         exec google-chrome
-$scmod4+l       $ex i3lock -ti /mnt/sdc1/Dropbox/pics/wallpaper/wall509.png
+$mod3+n         exec  $terminal ranger
+$smod3+n        exec  nemo
+$mod3+w         exec  firefox
+$smod3+w        $ex   firefox-developer
+$scmod3+w       $ex   tor-browser_en-US
+$mod3+c         $ex   code
+$mod3+Return    $ex   $terminal
+$smod3+Return   exec  i3-sensible-terminal
+$cmod3+Return   $ex   st
+$mod4+Return    exec  gnome-text-editor
+$mod3+t         $ex   $terminal
+$smod3+t        exec  i3-sensible-terminal
+$cmod3+t        $ex   st
+$mod4+t         exec  gnome-text-editor
+$mod3+m         exec  $terminal htop
+$smod3+m        exec  gnome-system-monitor
+$mod3+g         exec  google-chrome
+$scmod4+l       $ex   i3lock -ti /mnt/sdc1/Dropbox/pics/wallpaper/wall509.png
+$mod3+equal     exec  gnome-calculator
+$mod4+equal     exec  gnome-calculator
+$mod4+d         $ex   discord
+$mod4+f         exec  filezilla
+$mod4+s         $ex   slack
+$mod4+v         exec  virtualbox
 
-
-
-# discord
-# filezilla
-# slack
-# htop
-# virtualbox
-# calculator
-# quantify
-# any other scripts?
 # launch quantify
 $mod4+q $ex "code /mnt/sdc1/Dropbox/quant/quant.code-workspace"
 
@@ -240,14 +250,14 @@ $ex xset s off
 $ex xset dpms 0 0 1200
 
 # autostart apps
-$exa dunst
-$ex rescuetime
-$ex dropbox start
-$ex $HOME/.fehbg
-$ex xflux -z 33101 -k 2800
-$exa $scr/polybarstart
-$ex sleep 10; $scr/sysbackup
-$ex compton -b
+$exa    dunst
+$ex     rescuetime
+$ex     dropbox start
+$ex     $HOME/.fehbg
+$ex     xflux -z 33101 -k 2800
+$exa    $scr/polybarstart
+$ex     sleep 10; $scr/sysbackup
+$ex     compton -b
 
 # set default workspaces
 workspace 1 output DisplayPort-0
@@ -263,7 +273,9 @@ for_window [title="Calculator"] floating enable
 for_window [class="mpv"] border pixel 0
 for_window [class="vlc"] border pixel 0
 for_window [class="Firefox"] border pixel 0
-for_window [class="Discord"] border pixel 0
+for_window [class="discord"] floating enable
+for_window [class="Slack"] floating enable
+for_window [class="Org.gnome.gedit"] floating enable
 
 # workspace layouts
 # $exa "i3-msg 'workspace 1; append_layout /home/efex/.config/i3/layouts/main-workflow-1.json'"

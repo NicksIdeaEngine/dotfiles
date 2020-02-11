@@ -147,6 +147,9 @@
 - scrot
 - prettytable (pip)
 - termcolor (pip)
+- ppa:unit193/encryption
+- veracrypt
+- libasound2-dev
 -
 
 # Ideas
@@ -399,3 +402,11 @@ perf lets you trace system calls faster than strace, profile your C / Go / C++ /
 - absolute paths: `/usr/bin`
 - relative paths: `./bin` or `../dev`
   - single period `./` refers to current directory, double period `../` refers to parent directory
+
+#### Chapter 3
+
+- `file`
+- `less`
+- `ls`: `-a` all, including hidden - `-A` all, except `.` and `..` - `-S` sort by file size - `-t` sort by modification time - `-h` file sizes in human readable - `-F` adds `/` to directories and other indicator characters
+
+pg 16

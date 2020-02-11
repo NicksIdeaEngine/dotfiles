@@ -118,6 +118,7 @@ alias proja="cd $CDIR/coursework/learn-react-js && code learn-react-js.code-work
 alias projb="cd $PDIR/fcc-pomodoro && code pomodoro.code-workspace"
 alias projc="cd $PDIR/fcc-simonsays && code simonsays.code-workspace"
 alias projz="cd $CDIR/nickgarcia.me && code portfolio.code-workspace"
+alias sbox="cd $CDIR/sandbox && code sandbox.code-workspace"
 
 #### 5. Todotxt CLI
 
@@ -126,7 +127,7 @@ alias tls="echo 'todo: open todo.txt | t: show tasks by project | tg: graph \
                \ntfg: config | tm: many | ta: wp add | tap: append | tdu: due \
                \ntpp: prep | tp: pri | tv: view | tvp: view project | tdo: do'"
 alias todo="vim $DBOX/todo/todo.txt"
-alias t="todo.sh -c -d ~/.config/todo/config"
+alias t="clear;todo.sh -c -d ~/.config/todo/config"
 alias tg="todo.sh graph"
 alias tfg="vim ~/.config/todo/config"
 alias tm="todo.sh many"

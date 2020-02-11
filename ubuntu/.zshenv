@@ -12,3 +12,6 @@ export PATH="/usr/local/go/bin:$PATH"
 
 # Path for "go get" binaries
 export PATH="/mnt/sdc1/Dropbox/code/go/bin:$PATH"
+
+# t path
+export PATH="/home/efex/.config/repos/tor-browser_en-US:$PATH"
