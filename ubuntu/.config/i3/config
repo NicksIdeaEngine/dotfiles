@@ -106,20 +106,20 @@ $smod3+k move up
 $smod3+l move right
 
 # resizing
-$cmod4+h resize shrink width 1 px or 1 ppt
+$cmod4+h resize shrink width  1 px or 1 ppt
 $cmod4+j resize shrink height 1 px or 1 ppt
-$cmod4+k resize grow height 1 px or 1 ppt
-$cmod4+l resize grow width 1 px or 1 ppt
+$cmod4+k resize grow   height 1 px or 1 ppt
+$cmod4+l resize grow   width  1 px or 1 ppt
 
-$cmod3+h resize shrink width 5 px or 5 ppt
+$cmod3+h resize shrink width  5 px or 5 ppt
 $cmod3+j resize shrink height 5 px or 5 ppt
-$cmod3+k resize grow height 5 px or 5 ppt
-$cmod3+l resize grow width 5 px or 5 ppt
+$cmod3+k resize grow   height 5 px or 5 ppt
+$cmod3+l resize grow   width  5 px or 5 ppt
 
-$scmod3+h resize shrink width 25 px or 25 ppt
+$scmod3+h resize shrink width  25 px or 25 ppt
 $scmod3+j resize shrink height 25 px or 25 ppt
-$scmod3+k resize grow height 25 px or 25 ppt
-$scmod3+l resize grow width 25 px or 25 ppt
+$scmod3+k resize grow   height 25 px or 25 ppt
+$scmod3+l resize grow   width  25 px or 25 ppt
 
 # enter fullscreen mode for the focused container
 $mod3+f     fullscreen toggle

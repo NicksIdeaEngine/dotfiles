@@ -35,6 +35,7 @@ alias dwn="cd ~/dwn"
 alias mzk="cd ~/music"
 alias pix="cd ~/pics"
 alias ref="cd ~/refs"
+alias rpo="cd ~/.config/repos"
 alias scr="cd ~/scripts"
 alias tmp="cd ~/tmp"
 alias vds="cd ~/vids"
@@ -79,7 +80,7 @@ alias cfn="vim ~/.config/nvim/init.vim"
 alias cfp="vim ~/.config/polybar/config.ini"
 alias cfr="vim ~/.config/ranger/rc.conf"
 alias cfrt="vim ~/.config/RescueTime.com/.rtgoals"
-alias cfs="vim ~/.config/st/config.h"
+alias cfs="vim ~/.config/repos/st/config.h"
 alias cft="vim ~/.tmux.conf"
 alias cfv="vim ~/.vimrc"
 alias cfx="vim ~/.Xresources"
@@ -90,11 +91,11 @@ alias cfze="vim ~/.zshenv"
 alias cfzp="vim ~/.zprofile"
 
 # recompile st terminal
-alias instst="cd ~/.config/st && sudo make install && alert 'st has been rebuilt'"
+alias instst="cd ~/.config/repos/st && sudo make install && alert 'st has been rebuilt'"
 
 #### 3. Reference Files
 
-alias refls="echo 'manjAro vsCode toDo Journey Linux MarkDown Ricing Ssh Tmux Vim Webdev temp(x) Zsh'"
+alias refls="echo 'manjAro vsCode toDo Journey Linux MarkDown Ricing Ssh Tmux Vim Webdev temp(x) Zsh misc'"
 alias refa="vim $DBOX/refs/manjaroref.md"
 alias refc="vim $DBOX/refs/vscoderef.md"
 alias refd="vim $DBOX/refs/todoref.md"
@@ -113,7 +114,7 @@ alias misc="vim $DBOX/docs/misc.md"
 #### 4. Recent Projects
 
 # aliases for recent projects
-alias projls="echo 'a/learn-react-js b/pomodoro c/simonsays z/portfolio'"
+alias projls="echo 'a/learn-react-js b/pomodoro c/simonsays z/portfolio sbox'"
 alias proja="cd $CDIR/coursework/learn-react-js && code learn-react-js.code-workspace"
 alias projb="cd $PDIR/fcc-pomodoro && code pomodoro.code-workspace"
 alias projc="cd $PDIR/fcc-simonsays && code simonsays.code-workspace"
@@ -206,6 +207,7 @@ gacmp () {
   git push origin master
 }
 alias gst="git status"
+alias gfa="git fetch --all"
 
 #### 8. npm
 

@@ -1,0 +1,57 @@
+export TODO_DIR="/mnt/sdc1/Dropbox/todo"
+export TODO_FILE="$TODO_DIR/todo.txt"
+export DONE_FILE="$TODO_DIR/done.txt"
+export REPORT_FILE="$TODO_DIR/report.txt"
+export ARCHIVE_FILE="$TODO_DIR/archive.txt"
+export TMP_FILE="/tmp/todo.tmp"
+export TODOTXT_DEFAULT_ACTION=ls
+export TODOTXT_SORT_COMMAND="env LC_COLLATE=C sort -k 2,2 -k 1,1n"
+export TODO_ACTIONS_DIR="/home/efex/.config/todo/.actions.d"
+
+export BLACK='\\033[0;30m'
+export RED='\\033[0;31m'
+export GREEN='\\033[0;32m'
+export BROWN='\\033[0;33m'
+export BLUE='\\033[0;34m'
+export PURPLE='\\033[0;35m'
+export CYAN='\\033[0;36m'
+export LIGHT_GREY='\\033[0;37m'
+export DARK_GREY='\\033[1;30m'
+export LIGHT_RED='\\033[1;31m'
+export LIGHT_GREEN='\\033[1;32m'
+export YELLOW='\\033[1;33m'
+export LIGHT_BLUE='\\033[1;34m'
+export LIGHT_PURPLE='\\033[1;35m'
+export LIGHT_CYAN='\\033[1;36m'
+export WHITE='\\033[1;37m'
+export DEFAULT='\\033[0;37m'
+
+export PRI_A=$LIGHT_RED
+export PRI_B=$YELLOW
+export PRI_C=$LIGHT_BLUE
+export PRI_D=$LIGHT_PURPLE
+export PRI_E=$LIGHT_GREEN
+export PRI_F=$LIGHT_CYAN
+export PRI_G=$RED
+export PRI_H=$BROWN
+export PRI_I=$BLUE
+export PRI_J=$PURPLE
+export PRI_K=$GREEN
+export PRI_L=$CYAN
+export PRI_M=$DEFAULT
+export PRI_N=$LIGHT_RED
+export PRI_O=$YELLOW
+export PRI_P=$LIGHT_BLUE
+export PRI_Q=$LIGHT_PURPLE
+export PRI_R=$LIGHT_GREEN
+export PRI_S=$LIGHT_CYAN
+export PRI_T=$RED
+export PRI_U=$BROWN
+export PRI_V=$BLUE
+export PRI_W=$PURPLE
+export PRI_X=$GREEN
+export PRI_Y=$CYAN
+export PRI_Z=$DEFAULT
+
+export COLOR_PROJECT=$WHITE
+export COLOR_CONTEXT=$DEFAULT

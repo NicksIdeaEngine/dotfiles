@@ -10,10 +10,10 @@ QUARTER="$(( ($MONTH-1)/3+1 ))"
 DEST="/mnt/sdc1/Dropbox/backups"
 
 # directories to grab from $HOME
-HOME_SPEC=(".config" ".config/google-chrome/Default" ".config/gtk-3.0" ".config/mpd" ".config/ranger" ".config/st" ".config/Twine" ".icons" ".local/kitty/kitty" ".local/share/applications" ".mozilla/firefox/sv5rklav.default-release" ".mozilla/firefox/wmmhtufq.dev-edition-default-2" ".ssh" ".tmux/plugins" ".vim" "bin" "Twine")
+HOME_SPEC=(".config" ".config/google-chrome/Default" ".config/gtk-3.0" ".config/mpd" ".config/RescueTime.com" ".config/repos/st" ".config/todo" ".config/Twine" ".icons" ".local/kitty/kitty" ".local/share/applications" ".mozilla/firefox/sv5rklav.default-release" ".mozilla/firefox/wmmhtufq.dev-edition-default-2" ".ssh" ".tmux/plugins" ".vim" "bin" "Twine")
 
 # .config specifications
-CONFIG_SPEC=("autostart" "filezilla" "gtk-2.0" "gtk-4.0" "htop" "pulse" "todo" "vlc" "user-dirs.dirs")
+CONFIG_SPEC=("autostart" "filezilla" "gtk-2.0" "gtk-4.0" "htop" "pulse" "vlc" "user-dirs.dirs")
 
 # google chrome specific file
 CHROME_SPEC=("Preferences")
@@ -27,11 +27,14 @@ QUARTER_SPEC=(".fonts" ".themes")
 # mpd spec
 MPD_SPEC=("mpd.conf" "pid")
 
-# ranger spec
-RANGER_SPEC=("commands.py" "commands_full.py" "scope.sh")
+# RescueTime.com spec
+RESCUE_SPEC=(".rtgoals")
 
 # st spec
-ST_SPEC=("config.h" "st.info")
+ST_SPEC=(".Xdefaults" "config.h" "st.c" "st.info")
+
+# todo spec
+TODO_SPEC=(".actions.d" "todo_description.png")
 
 # .config/twine spec
 TWINE_SPEC=("prefs.json" "story-formats.json")
@@ -39,11 +42,11 @@ TWINE_SPEC=("prefs.json" "story-formats.json")
 # .icon specifications
 ICON_SPEC=("default" "st")
 
-# specific directories to grab within .local/share/applications
-LOCAL_FFX_SPEC=("firefox-developer.desktop" "kitty.desktop" "twine.desktop" "st.desktop")
-
 # specs for kitty terminal
 LOCAL_KITTY_SPEC=("layout.py")
+
+# specific directories to grab within .local/share/applications
+LOCAL_APP_SPEC=("firefox-developer.desktop" "kitty.desktop" "twine.desktop" "st.desktop")
 
 # .tmux/plugins spec
 TMUX_SPEC=("tpm")
@@ -68,9 +71,11 @@ backup() {
   local ARR=("$@")
 
   for I in "${ARR[@]}"; do
-    echo -n "Creating $SUB_DIR directory..."
-    mkdir -p "$DEST/$SUB_DIR"
-    echo "done!"
+    if [[ ! -d "$DEST/$SUB_DIR" ]]; then
+      echo -n "Creating $SUB_DIR directory..."
+      mkdir -p "$DEST/$SUB_DIR"
+      echo "done!"
+    fi
     echo -n "Backing up $I to $DEST/$SUB_DIR..."
     cp -rup -t "$DEST/$SUB_DIR" "$HOME_DIR/$I"
     echo "done!"
@@ -85,31 +90,33 @@ start_daily() {
     # directories if needed
     case "$I" in
       ".config" )
-        backup "$1" "/$I" "${CONFIG_SPEC[@]}" ;;
+        backup "$1" "$I" "${CONFIG_SPEC[@]}" ;;
       ".config/google-chrome/Default" )
-        backup "$1" "/$I" "${CHROME_SPEC[@]}" ;;
+        backup "$1" "$I" "${CHROME_SPEC[@]}" ;;
       ".config/gtk-3.0" )
-        backup "$1" "/$I" "${GTK_SPEC[@]}" ;;
+        backup "$1" "$I" "${GTK_SPEC[@]}" ;;
       ".config/mpd" )
-        backup "$1" "/$I" "${MPD_SPEC[@]}" ;;
-      ".config/ranger" )
-        backup "$1" "/$I" "${RANGER_SPEC[@]}" ;;
-      ".config/st" )
-        backup "$1" "/$I" "${ST_SPEC[@]}" ;;
+        backup "$1" "$I" "${MPD_SPEC[@]}" ;;
+      ".config/RescueTime.com" )
+        backup "$1" "$I" "${RESCUE_SPEC[@]}" ;;
+      ".config/repos/st" )
+        backup "$1" "$I" "${ST_SPEC[@]}" ;;
+      ".config/todo" )
+        backup "$1" "$I" "${TODO_SPEC[@]}" ;;
       ".config/Twine" )
-        backup "$1" "/$I" "${TWINE_SPEC[@]}" ;;
+        backup "$1" "$I" "${TWINE_SPEC[@]}" ;;
       ".icons" )
-        backup "$1" "/$I" "${ICON_SPEC[@]}" ;;
+        backup "$1" "$I" "${ICON_SPEC[@]}" ;;
       ".local/kitty/kitty" )
-        backup "$1" "/$I" "${LOCAL_KITTY_SPEC[@]}" ;;
+        backup "$1" "$I" "${LOCAL_KITTY_SPEC[@]}" ;;
       ".local/share/applications" )
-        backup "$1" "/$I" "${LOCAL_FFX_SPEC[@]}" ;;
+        backup "$1" "$I" "${LOCAL_APP_SPEC[@]}" ;;
       ".mozilla/firefox/"* )
-        backup "$1" "/$I" "chrome" ;;
+        backup "$1" "$I" "chrome" ;;
       ".tmux/plugins" )
-        backup "$1" "/$I" "${TMUX_SPEC[@]}" ;;
+        backup "$1" "$I" "${TMUX_SPEC[@]}" ;;
       ".vim" )
-        backup "$1" "/$I" "${VIM_SPEC[@]}" ;;
+        backup "$1" "$I" "${VIM_SPEC[@]}" ;;
       * )
         backup "$1" "" "$I" ;;
     esac

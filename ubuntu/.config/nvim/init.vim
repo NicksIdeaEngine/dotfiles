@@ -47,18 +47,18 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'mattn/emmet-vim'
 Plug 'tmux-plugins/vim-tmux'
-Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-github'
-Plug 'ncm2/ncm2-tmux'
-Plug 'ncm2/ncm2-cssomni'
-Plug 'ncm2/ncm2-tern', {'do': 'npm install'}
-Plug 'ncm2/ncm2-vim' | Plug 'Shougo/neco-vim'
-Plug 'glacambre/firenvim', {'do': { _ -> firenvim#install(0) } }
+" Plug 'roxma/nvim-yarp'
+" Plug 'ncm2/ncm2'
+" Plug 'ncm2/ncm2-bufword'
+" Plug 'ncm2/ncm2-path'
+" Plug 'ncm2/ncm2-github'
+" Plug 'ncm2/ncm2-tmux'
+" Plug 'ncm2/ncm2-cssomni'
+" Plug 'ncm2/ncm2-tern', {'do': 'npm install'}
+" Plug 'ncm2/ncm2-vim' | Plug 'Shougo/neco-vim'
+" Plug 'glacambre/firenvim', {'do': { _ -> firenvim#install(0) } }
 Plug 'morhetz/gruvbox'
-Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
+" Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
 Plug 'itchyny/lightline.vim'
 Plug 'sainnhe/artify.vim'
 Plug 'itchyny/vim-gitbranch'
@@ -293,49 +293,49 @@ endif
 " ======== ncm2 Config ========
 
 " enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
+" autocmd BufEnter * call ncm2#enable_for_buffer()
 
 " IMPORTANT: :help Ncm2PopupOpen for more info
-set completeopt=noinsert,menuone,noselect
+" set completeopt=noinsert,menuone,noselect
 
 " Use <TAB> to select the ncm2 popup menu
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " ======== firenvim Config ========
 
 " set firenvim to only load with <c-e>
 " first we'll build the default settings object
-let g:firenvim_config = {
-  \ 'globalSettings': {
-    \ 'alt': 'all',
-  \ },
-  \ 'localSettings': {
-    \ '.*': {
-      \ 'cmdline': 'neovim',
-      \ 'priority': 0,
-      \ 'selector': 'textarea',
-      \ 'takeover': 'always',
-    \ },
-  \ }
-\ }
+" let g:firenvim_config = {
+"   \ 'globalSettings': {
+"     \ 'alt': 'all',
+"   \ },
+"   \ 'localSettings': {
+"     \ '.*': {
+"       \ 'cmdline': 'neovim',
+"       \ 'priority': 0,
+"       \ 'selector': 'textarea',
+"       \ 'takeover': 'always',
+"     \ },
+"   \ }
+" \ }
 
-" set localSettings to shorthand
-let fc = g:firenvim_config['localSettings']
+" " set localSettings to shorthand
+" let fc = g:firenvim_config['localSettings']
 
-" enable automatic syntax for various sites
-if exists('g:started_by_firenvim')
-  nnoremap <Esc><Esc> :call firenvim#focus_page()<CR>
-  " nnoremap <Esc><> :call firenvim#press_keys("<>")
-  " autocmd BufEnter freecodecamp.org_* inoremap <CR> <Esc>:w<CR>:call firenvim#press_keys("<LT><CR>")<CR>ggdGa
-  augroup fcc_syntax
-    au!
-    autocmd BufNewFile,BufRead www.freecodecamp.**.txt set filetype=html
-    autocmd BufNewFile,BufRead leetcode.**.txt set filetype=js
-    autocmd BufNewFile,BufRead codewars.**.txt set filetype=js
-    autocmd BufNewFile,BufRead github.com_*.txt set filetype=markdown
-  augroup END
-endif
+" " enable automatic syntax for various sites
+" if exists('g:started_by_firenvim')
+"   nnoremap <Esc><Esc> :call firenvim#focus_page()<CR>
+"   " nnoremap <Esc><> :call firenvim#press_keys("<>")
+"   " autocmd BufEnter freecodecamp.org_* inoremap <CR> <Esc>:w<CR>:call firenvim#press_keys("<LT><CR>")<CR>ggdGa
+"   augroup fcc_syntax
+"     au!
+"     autocmd BufNewFile,BufRead www.freecodecamp.**.txt set filetype=html
+"     autocmd BufNewFile,BufRead leetcode.**.txt set filetype=js
+"     autocmd BufNewFile,BufRead codewars.**.txt set filetype=js
+"     autocmd BufNewFile,BufRead github.com_*.txt set filetype=markdown
+"   augroup END
+" endif
 
 " ======== Prettier Config ========
 
@@ -351,7 +351,7 @@ autocmd BufWritePre *.js,*.jsx,*.css,*.scss,*.json,*.md,*.yaml,*.html PrettierAs
 
 command PIU PlugInstall | PlugUpdate | PlugUpgrade
 map <F6> :setlocal spell! spelllang=en_us<CR>
-map <F5> :so $MYVIMRC<CR>
+" map! <F5> :so $MYVIMRC<CR>
 nnoremap S :%s///g<Left><Left><Left>
 " inoremap <Leader><Tab> <C-y>,
 
