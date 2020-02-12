@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-SOURCE_DIR="/home/efex/.tmux"
-DEST_DIR="/mnt/sdc1/Dropbox/dots/ubuntu/.tmux"
+SOURCE_DIR="/home/efex/.mozilla/firefox/sv5rklav.default-release/chrome/reference-files"
+DEST_DIR="/mnt/sdc1/Dropbox/dots/ubuntu/.mozilla/firefox/sv5rklav.default-release/chrome/reference-files"
 DEST_FILE="$DEST_DIR/$1"
 
 if [[ ! -f "$DEST_FILE" ]]; then
