@@ -8,4 +8,7 @@
 - added dotfiles repo to ~/dots
 - neovim
 - unzip
+- firefox
+- removed palemoon-bin
+- kitty
 - 
