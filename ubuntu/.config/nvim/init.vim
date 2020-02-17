@@ -16,11 +16,9 @@ set linebreak
 set number relativenumber
 set rnu
 set rulerformat=%l,%v
-" set scrolloff=15
 set shiftwidth=2
 set showcmd
 set showmatch
-" set sidescrolloff=15
 set sidescroll=1
 set smartcase           " enable case when searching if capital is typed
 set smarttab
@@ -47,18 +45,7 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'mattn/emmet-vim'
 Plug 'tmux-plugins/vim-tmux'
-" Plug 'roxma/nvim-yarp'
-" Plug 'ncm2/ncm2'
-" Plug 'ncm2/ncm2-bufword'
-" Plug 'ncm2/ncm2-path'
-" Plug 'ncm2/ncm2-github'
-" Plug 'ncm2/ncm2-tmux'
-" Plug 'ncm2/ncm2-cssomni'
-" Plug 'ncm2/ncm2-tern', {'do': 'npm install'}
-" Plug 'ncm2/ncm2-vim' | Plug 'Shougo/neco-vim'
-" Plug 'glacambre/firenvim', {'do': { _ -> firenvim#install(0) } }
 Plug 'morhetz/gruvbox'
-" Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
 Plug 'itchyny/lightline.vim'
 Plug 'sainnhe/artify.vim'
 Plug 'itchyny/vim-gitbranch'
@@ -83,12 +70,6 @@ augroup END
 " }}}
 
 " ======== Color Config ========
-
-" gruvbox-material configuration
-" set termguicolors
-" set background=light
-" let g:gruvbox_material_background = 'hard'
-" colorscheme gruvbox-material
 
 " gruvbox configuration
 set termguicolors
@@ -290,53 +271,6 @@ if g:vimIsInTmux == 1
 endif
 "}}}
 
-" ======== ncm2 Config ========
-
-" enable ncm2 for all buffers
-" autocmd BufEnter * call ncm2#enable_for_buffer()
-
-" IMPORTANT: :help Ncm2PopupOpen for more info
-" set completeopt=noinsert,menuone,noselect
-
-" Use <TAB> to select the ncm2 popup menu
-" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" ======== firenvim Config ========
-
-" set firenvim to only load with <c-e>
-" first we'll build the default settings object
-" let g:firenvim_config = {
-"   \ 'globalSettings': {
-"     \ 'alt': 'all',
-"   \ },
-"   \ 'localSettings': {
-"     \ '.*': {
-"       \ 'cmdline': 'neovim',
-"       \ 'priority': 0,
-"       \ 'selector': 'textarea',
-"       \ 'takeover': 'always',
-"     \ },
-"   \ }
-" \ }
-
-" " set localSettings to shorthand
-" let fc = g:firenvim_config['localSettings']
-
-" " enable automatic syntax for various sites
-" if exists('g:started_by_firenvim')
-"   nnoremap <Esc><Esc> :call firenvim#focus_page()<CR>
-"   " nnoremap <Esc><> :call firenvim#press_keys("<>")
-"   " autocmd BufEnter freecodecamp.org_* inoremap <CR> <Esc>:w<CR>:call firenvim#press_keys("<LT><CR>")<CR>ggdGa
-"   augroup fcc_syntax
-"     au!
-"     autocmd BufNewFile,BufRead www.freecodecamp.**.txt set filetype=html
-"     autocmd BufNewFile,BufRead leetcode.**.txt set filetype=js
-"     autocmd BufNewFile,BufRead codewars.**.txt set filetype=js
-"     autocmd BufNewFile,BufRead github.com_*.txt set filetype=markdown
-"   augroup END
-" endif
-
 " ======== Prettier Config ========
 
 let g:prettier#exec_cmd_async = 1
@@ -384,10 +318,6 @@ vmap > >gv
 
 " open NERDTree
 map <Leader>n :NERDTreeToggle<CR>
-
-" set tabs for specific filetypes
-" autocmd Filetype css setlocal tabstop=4
-" autocmd Filetype scss setlocal tabstop=4
 
 inoremap <C-w><Space> <Esc>/<++><Enter>"_c4l
 inoremap jk <Esc>

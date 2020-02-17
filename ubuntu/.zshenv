@@ -14,4 +14,4 @@ export PATH="/usr/local/go/bin:$PATH"
 export PATH="/mnt/sdc1/Dropbox/code/go/bin:$PATH"
 
 # t path
-export PATH="/home/efex/.config/repos/tor-browser_en-US:$PATH"
+export PATH="/home/efex/.local/share/applications/tor-browser_en-US:$PATH"

@@ -150,6 +150,8 @@
 - ppa:unit193/encryption
 - veracrypt
 - libasound2-dev
+- handbrake
+- handbrake-cli
 -
 
 # Ideas

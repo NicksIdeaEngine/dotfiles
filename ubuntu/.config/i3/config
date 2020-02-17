@@ -193,7 +193,7 @@ $mod3+n         exec  $terminal ranger
 $smod3+n        exec  nemo
 $mod3+w         exec  firefox
 $smod3+w        $ex   firefox-developer
-$scmod3+w       $ex   tor-browser_en-US
+$scmod3+w       $ex   start-tor-browser
 $mod3+c         $ex   code
 $mod3+Return    $ex   $terminal
 $smod3+Return   exec  i3-sensible-terminal
