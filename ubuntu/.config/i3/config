@@ -260,12 +260,12 @@ $ex     sleep 10; $scr/sysbackup
 $ex     compton -b
 
 # set default workspaces
-workspace 1 output DisplayPort-0
-workspace 2 output DisplayPort-1
-workspace 3 output HDMI-A-0
-workspace 4 output DisplayPort-0
-workspace 5 output DisplayPort-1
-workspace 6 output HDMI-A-0
+workspace 1 output HDMI-A-0
+workspace 2 output DisplayPort-0
+workspace 3 output DisplayPort-1
+workspace 4 output HDMI-A-0
+workspace 5 output DisplayPort-0
+workspace 6 output DisplayPort-1
 
 # window rules
 for_window [title="System Monitor"] border pixel 0
