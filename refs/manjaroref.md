@@ -11,4 +11,10 @@
 - firefox
 - removed palemoon-bin
 - kitty
-- 
+- redshift
+- reinstalling OS due to wanting a cleaner, more organized approach
+
+# Useful Commands
+
+- `man pacman-mirrors`: pulls up a package that helps generates a pacman mirrorlist
+
