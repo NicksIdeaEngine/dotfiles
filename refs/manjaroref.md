@@ -11,8 +11,34 @@
 - firefox
 - removed palemoon-bin
 - kitty
-- redshift
 - reinstalling OS due to wanting a cleaner, more organized approach
+
+# To Be Installed
+
+- timeshift
+- do the backlight fix
+- firefox
+- userChrome.css
+- dotfiles repo
+- openssh equivalent
+- neovim
+- update vim to v8
+- update ranger?
+- feh
+- vs code
+- rescuetime
+- unzip
+- kitty
+- polybar
+- rofi
+- zsh
+- oh-my-zsh
+- powerlevel10k
+- redshift
+- tmux
+- tor
+- remove palemoon-bin
+- 
 
 # Useful Commands
 
