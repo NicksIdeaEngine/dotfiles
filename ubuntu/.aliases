@@ -114,11 +114,12 @@ alias misc="vim $DBOX/docs/misc.md"
 #### 4. Recent Projects
 
 # aliases for recent projects
-alias projls="echo 'a/learn-react-js b/pomodoro c/simonsays z/portfolio sbox'"
+alias projls="echo 'a/learn-react-js b/pomodoro c/simonsays z/portfolio bork sbox'"
 alias proja="cd $CDIR/coursework/learn-react-js && code learn-react-js.code-workspace"
 alias projb="cd $PDIR/fcc-pomodoro && code pomodoro.code-workspace"
 alias projc="cd $PDIR/fcc-simonsays && code simonsays.code-workspace"
 alias projz="cd $CDIR/nickgarcia.me && code portfolio.code-workspace"
+alias bork="cd $CDIR/borksism && code borksism.code-workspace"
 alias sbox="cd $CDIR/sandbox && code sandbox.code-workspace"
 
 #### 5. Todotxt CLI

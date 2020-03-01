@@ -152,7 +152,7 @@
 - libasound2-dev
 - handbrake
 - handbrake-cli
--
+- unrar
 
 # Ideas
 
