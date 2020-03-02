@@ -26,17 +26,20 @@ alias {v,vi,vim}="nvim"
 # move to certain folders
 alias navls="echo 'dbx cfg doc dot dwn mzk pix ref scr tmp vds cdir sdir pdir pfol userchrome[dev]'"
 # alias dbx="cd $DBOX"
+# alias bod="cd ~/body"
 alias cfg="cd ~/.config"
-alias cpy="cd ~/writing/copywriting"
+# alias cpy="cd ~/writing/copywriting"
 alias doc="cd ~/docs"
 alias dot="cd ~/dots"
 alias dwn="cd ~/dwn"
 alias mzk="cd ~/music"
 alias pix="cd ~/pics"
 alias ref="cd ~/refs"
+alias rpo="cd ~/.config/repos"
 alias scr="cd ~/scripts"
-alias tmp="cd ~/tmp"
+# alias tmp="cd ~/tmp"
 alias vds="cd ~/vids"
+# alias wrt="cd ~/writing"
 # alias cdir="cd $CDIR"
 # alias sdir="cd $SDIR"
 # alias pdir="cd $PDIR"
@@ -64,6 +67,8 @@ alias ricing="code ~/.config/i3/ricing.code-workspace"
 alias cfls="echo 'Alias Bashrc Compton Dunst Firefox FirefoxDev I3wm Kitty Mpd Nvim Polybar Ranger St Tmux Vim Xresources Ytdl[S,V] Zshrc'"
 alias cfa="vim ~/.aliases"
 alias cfb="vim ~/.bashrc"
+alias cfbl="vim ~/.bash_logout"
+alias cfbp="vim ~/.profile"
 alias cfc="vim ~/.config/compton.conf"
 alias cfd="vim ~/.config/dunst/dunstrc"
 alias cff="vim ~/.mozilla/firefox/sv5rklav.default-release/chrome/userChrome.css"
@@ -74,59 +79,73 @@ alias cfm="vim ~/.config/mpd/mpd.conf"
 alias cfn="vim ~/.config/nvim/init.vim"
 alias cfp="vim ~/.config/polybar/config.ini"
 alias cfr="vim ~/.config/ranger/rc.conf"
-alias cfs="vim ~/.config/st/config.h"
+alias cfrt="vim ~/.config/RescueTime.com/.rtgoals"
+alias cfs="vim ~/.config/repos/st/config.h"
 alias cft="vim ~/.tmux.conf"
 alias cfv="vim ~/.vimrc"
 alias cfx="vim ~/.Xresources"
 alias cfys="vim ~/.config/youtube-dl/songconfig"
 alias cfyv="vim ~/.config/youtube-dl/vidconfig"
 alias cfz="vim ~/.zshrc"
+alias cfze="vim ~/.zshenv"
+alias cfzp="vim ~/.zprofile"
 
 # recompile st terminal
-alias instst="cd ~/.config/st && sudo make install && alert 'st has been rebuilt'"
+# alias instst="cd ~/.config/st && sudo make install && alert 'st has been rebuilt'"
 
 #### 3. Reference Files
 
-alias refls="echo 'manjAro vsCode Journey Linux MarkDown Ricing Ssh Tmux Vim Webdev temp(x) Zsh'"
-alias refa="vim $HOME/refs/manjaroref.md"
-alias refc="vim $HOME/refs/vscoderef.md"
-alias refj="vim $HOME/refs/journeyref.md"
-alias refl="vim $HOME/refs/linuxref.md"
-alias refmd="vim $HOME/refs/markdown.md"
-alias refr="vim $HOME/refs/ricingref.md"
-alias refs="vim $HOME/refs/sshref.md"
-alias reft="vim $HOME/refs/tmuxref.md"
-alias refv="vim $HOME/refs/vimref.md"
-alias refw="vim $HOME/refs/webdevref.md"
-alias refx="vim $HOME/refs/tempref.md"
-alias refz="vim $HOME/refs/zshref.md"
-alias misc="vim $HOME/docs/misc.md"
+alias refls="echo 'manjAro vsCode toDo Journey Linux MarkDown Ricing Ssh Tmux Vim Webdev temp(x) Zsh misc'"
+alias refa="vim $DBOX/refs/manjaroref.md"
+alias refc="vim $DBOX/refs/vscoderef.md"
+alias refd="vim $DBOX/refs/todoref.md"
+alias refj="vim $DBOX/refs/journeyref.md"
+alias refl="vim $DBOX/refs/linuxref.md"
+alias refmd="vim $DBOX/refs/markdown.md"
+alias refr="vim $DBOX/refs/ricingref.md"
+alias refs="vim $DBOX/refs/sshref.md"
+alias reft="vim $DBOX/refs/tmuxref.md"
+alias refv="vim $DBOX/refs/vimref.md"
+alias refw="vim $DBOX/refs/webdevref.md"
+alias refx="vim $DBOX/refs/tempref.md"
+alias refz="vim $DBOX/refs/zshref.md"
+alias misc="vim $DBOX/docs/misc.md"
 
 #### 4. Recent Projects
 
 # aliases for recent projects
-alias projls="echo 'a/learn-react-js b/pomodoro c/simonsays z/portfolio'"
-# alias proja="cd $CDIR/coursework/learn-react-js && code learn-react-js.code-workspace"
-# alias projb="cd $PDIR/fcc-pomodoro && code pomodoro.code-workspace"
-# alias projc="cd $PDIR/fcc-simonsays && code simonsays.code-workspace"
-# alias projz="cd $CDIR/nickgarcia.me && code portfolio.code-workspace"
+alias projls="echo 'a/learn-react-js b/pomodoro c/simonsays z/portfolio bork sbox'"
+alias proja="cd $CDIR/coursework/learn-react-js && code learn-react-js.code-workspace"
+alias projb="cd $PDIR/fcc-pomodoro && code pomodoro.code-workspace"
+alias projc="cd $PDIR/fcc-simonsays && code simonsays.code-workspace"
+alias projz="cd $CDIR/nickgarcia.me && code portfolio.code-workspace"
+alias bork="cd $CDIR/borksism && code borksism.code-workspace"
+alias sbox="cd $CDIR/sandbox && code sandbox.code-workspace"
 
 #### 5. Todotxt CLI
 
 # todo.txt aliases
-alias tls="echo 'todo: open todo.txt | t: show tasks | tg: graph | tfg: config | tm: many | ta: add | tp: t p | tdo: t do'"
+alias tls="echo 'todo: open todo.txt | t: show tasks by project | tg: graph \
+               \ntfg: config | tm: many | ta: wp add | tap: append | tdu: due \
+               \ntpp: prep | tp: pri | tv: view | tvp: view project | tdo: do'"
 alias todo="vim $DBOX/todo/todo.txt"
-alias t="todo.sh -c -d ~/.config/todo/config"
-alias tg="t graph"
+alias t="clear;todo.sh -c -d ~/.config/todo/config"
+alias tg="clear;todo.sh graph"
 alias tfg="vim ~/.config/todo/config"
-alias tm="t many"
-alias ta="t add"
-alias tp="t p"
-# alias tmp="tm p"
-alias tdo="t do"
+alias tm="todo.sh many"
+alias ta="todo.sh wp add"
+alias tap="todo.sh app"
+alias tdu="clear;todo.sh due"
+alias tpp="todo.sh prep"
+alias tp="todo.sh p"
+alias tv="todo.sh view"
+alias tvp="clear;todo.sh view project"
+alias tdo="todo.sh do"
 
 #### 6. Useful Replacements
 
+# helpful reference for creating sym links
+alias lnls="echo 'ln -s <file to be linked> <location of the link>'"
 # useful replacements
 alias c="clear"
 alias h="history"
@@ -134,11 +153,15 @@ alias :q="exit"
 alias {md,mkdir}="mkdir -pv"
 alias {rd,rmdir}="rmdir -v"
 mkcd () {
-        case "$1" in /*) :;; *) set -- "./$1";; esac
-        mkdir -p "$1" && cd "$1"
+  case "$1" in /*) :;; *) set -- "./$1";; esac
+  mkdir -p "$1" && cd "$1"
 }
 alias sym="/mnt/sdc1/Dropbox/scripts/symswitch"
 
+# diff analyzer
+differ () {
+  diff "/mnt/sdc1/Dropbox/dots/ubuntu/$1" "/mnt/sdc1/Dropbox/dots/manjaro/$1"
+}
 # ask when deleting multiple
 alias rm="rm -I"
 alias rmf="rm -Irvf"
@@ -189,6 +212,7 @@ gacmp () {
   git push origin master
 }
 alias gst="git status"
+alias gfa="git fetch --all"
 
 #### 8. npm
 
@@ -198,7 +222,6 @@ alias nid="npm install --save-dev"
 #### Y. System Aliases
 
 # Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
 alias alert='notify-send --urgency=normal '
 
 alias alow='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -207,18 +230,17 @@ alias anorm='notify-send --urgency=normal -i "$([ $? = 0 ] && echo terminal || e
 
 alias acrit='notify-send --urgency=critical -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# system tools
-alias update="sudo apt update && sudo apt upgrade && alert 'Update and upgrade complete!'"
-
 # refresh .zshrc file
 alias fresh="source ~/.zshrc;clear"
 
-# clean computer
+# system tools
+alias aptdate="sudo apt update && sudo apt upgrade && alert 'Update and upgrade complete!'"
 alias aptcheck="sudo du -sh /var/cache/apt"
 alias aptclean="sudo apt autoremove && sudo apt clean && alert 'apt autoremove and clean are complete!'"
 alias cachecheck="du -sh /home/efex/.cache/thumbnails/"
 alias cacheclean="rm -rf /home/efex/.cache/thumbnails/* && alert 'cacheclean is complete!'"
 alias imagecheck="dpkg --list 'linux-image*' && echo 'use \"sudo dpkg --purge linux-image-*\" to remove'"
+alias snupdate="sudo snap refresh"
 alias snapcheck="du -h /var/lib/snapd/snaps"
 alias snapclean="sudo $DBOX/scripts/snapclean && alert 'snapclean is complete!'"
 
@@ -236,9 +258,6 @@ alias pip3update="pip3 freeze --local | sed -rn 's/^([^=# \t\\][^ \t=]*)=.*/echo
 # Set default sink
 alias speakers="pactl set-default-sink alsa_output.pci-0000_0a_00.3.analog-stereo"
 alias headphones="pactl set-default-sink alsa_output.usb-Logitech_Logitech_G430_Gaming_Headset-00.analog-stereo"
-
-# Screenshot capture
-alias scrotdel="gnome-screenshot --delay=5"
 
 #### Z. Overflow
 

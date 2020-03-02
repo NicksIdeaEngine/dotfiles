@@ -158,6 +158,10 @@ mkcd () {
 }
 alias sym="/mnt/sdc1/Dropbox/scripts/symswitch"
 
+# diff analyzer
+differ () {
+  diff "/mnt/sdc1/Dropbox/dots/ubuntu/$1" "/mnt/sdc1/Dropbox/dots/manjaro/$1"
+}
 # ask when deleting multiple
 alias rm="rm -I"
 alias rmf="rm -Irvf"
