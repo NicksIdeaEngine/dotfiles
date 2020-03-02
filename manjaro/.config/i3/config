@@ -30,7 +30,7 @@ set $cmod4 bindsym Mod4+Control
 set $scmod4 bindsym Mod4+Shift+Control
 
 # default terminal is suckless terminal
-set $terminal "kitty"
+set $terminal kitty
 
 # set audio commands to easy variables
 set $volup XF86AudioRaiseVolume

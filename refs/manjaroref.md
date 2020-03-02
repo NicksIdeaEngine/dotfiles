@@ -10,27 +10,27 @@
 - rofi
 - tmux
 - added dotfiles repo to ~/dots
+- Added `acpi_osi=Linux acpi_backlight=vendor` to `GRUB_CMDLINE_LINUX_DEFAULT` to fix `failed to start load/save screen backlight brightness acpi_video0` error.
+- oh-my-zsh
+- unzip
+- ~/.fonts
+- powerlevel10k
+- moved ~/.i3/config to ~/.config/i3/config
+- vim-plug to ~/.vim/autoload/plug.vim and ~/.local/share/nvim/site/autoload/plug.vim
+- removed palemoon-bin
 - 
 
 # Old Timeline
 
-- Added `acpi_osi=Linux acpi_backlight=vendor` to `GRUB_CMDLINE_LINUX_DEFAULT` to fix `failed to start load/save screen backlight brightness acpi_video0` error.
-- added dotfiles repo to ~/dots
 - fixed a synaptics issue using [the info from this manjaro forum post](https://forum.manjaro.org/t/synaptics-touchpad-on-hp-pavilion-g6-laptop/101462)
-- unzip
 - removed palemoon-bin
 
 # To Be Installed
 
-- do the backlight fix
 - userChrome.css
-- dotfiles repo
 - openssh equivalent
 - vs code
 - rescuetime
-- unzip
-- oh-my-zsh
-- powerlevel10k
 - redshift
 - tor
 - remove palemoon-bin
@@ -41,7 +41,6 @@
 - vlc
 - youtube-dl
 - dropbox
-- fonts
 - firefox-dev
 - node
 - npm
