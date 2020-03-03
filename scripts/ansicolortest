@@ -1,0 +1,36 @@
+#!/bin/zsh
+
+clear
+
+echo "\\033[0m=== FG Codes ==="
+for ((i = 30; i < 38; i++)); do
+  echo "\\033[0m\\033[0;${i}m0;${i}m"
+done
+
+echo "\\033[0m=== BG Codes ==="
+for ((i = 40; i < 48; i++)); do
+  echo "\\033[0m\\033[0;${i}m0;${i}m"
+done
+
+echo "\\033[0m=== Bright FG Codes ==="
+for ((i = 90; i < 98; i++)); do
+  echo "\\033[0m\\033[0;${i}m0;${i}m"
+done
+
+echo "\\033[0m=== Bright BG Codes ==="
+for ((i = 100; i < 108; i++)); do
+  echo "\\033[0m\\033[0;${i}m0;${i}m"
+done
+
+echo "\\033[0m=== SGR Parameters ==="
+echo "\\033[0m\\033[0;34m0 Reset/Normal"
+echo "\\033[0m\\033[1;34m1 Bold"
+echo "\\033[0m\\033[2;34m2 Faint"
+echo "\\033[0m\\033[3;34m3 Italic"
+echo "\\033[0m\\033[4;34m4 Underline"
+echo "\\033[0m\\033[7;34m7 Swap FG/BG"
+echo "\\033[0m\\033[9;34m9 Strikethrough"
+echo "\\033[0m\\033[21;34m21 Double Underline"
+
+echo "\\033[0m=== Testing ==="
+echo "\\033[0m\\033[1;3;4;30;104mTesting"

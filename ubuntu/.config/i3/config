@@ -69,7 +69,7 @@ popup_during_fullscreen smart
 workspace_auto_back_and_forth yes
 workspace_layout tabbed
 floating_minimum_size 750 x 500
-floating_maximum_size 1500 x 1000
+floating_maximum_size 1500 x -1
 
 # reload the configuration file
 $mod4+c reload
