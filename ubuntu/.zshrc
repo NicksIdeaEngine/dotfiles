@@ -15,6 +15,9 @@ export ZSH="/home/efex/.oh-my-zsh"
 export GOPATH="$HOME/code/go"
 
 # enable todo completion while using the `t` alias
+# autoload -U +X bashcompinit && bashcompinit
+# autoload -U +X compinit && compinit
+# . /etc/bash_completion.d
 # complete -F _todo t
 
 # Set theme. See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
