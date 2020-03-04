@@ -129,18 +129,40 @@ alias tls="echo 'todo: open todo.txt | t: show tasks by project | tg: graph \
                \ntfg: config | tm: many | ta: wp add | tap: append | tdu: due \
                \ntpp: prep | tp: pri | tv: view | tvp: view project | tdo: do'"
 alias todo="vim $DBOX/todo/todo.txt"
-alias t="clear;todo.sh -c -d ~/.config/todo/config"
-alias tg="clear;todo.sh graph"
+alias tpr="clear;todo.sh -c -d ~/.config/todo/config"
+alias tg="clear;todo.sh graph 30"
+alias tgr="clear;todo.sh graph"
 alias tfg="vim ~/.config/todo/config"
+alias tfgalloc="vim ~/.config/todo/.actions.d/wp/allocations.conf"
 alias tm="todo.sh many"
 alias ta="todo.sh wp add"
 alias tap="todo.sh app"
+alias tdp="todo.sh depri"
 alias tdu="clear;todo.sh due"
 alias tpp="todo.sh prep"
-alias tp="todo.sh p"
-alias tv="todo.sh view"
+alias tp="todo.sh pri"
+alias trp="todo.sh replace"
+alias tv="clear;todo.sh view"
+alias tvc="clear;todo.sh view context"
 alias tvp="clear;todo.sh view project"
 alias tdo="todo.sh do"
+alias tag="todo.sh again"
+alias tch="todo.sh chcon"
+alias talloc="todo.sh wp alloc"
+alias twl="todo.sh wp ls"
+alias tdn="todo.sh donow"
+alias tws="todo.sh wp summary"
+alias twg="todo.sh wp graph"
+
+# todo.txt functions
+t () {
+  clear
+  if [ $# -eq 0 ]; then
+    todo.sh view project
+  else
+    todo.sh "$@"
+  fi
+}
 
 #### 6. Useful Replacements
 
@@ -156,7 +178,8 @@ mkcd () {
   case "$1" in /*) :;; *) set -- "./$1";; esac
   mkdir -p "$1" && cd "$1"
 }
-alias sym="/mnt/sdc1/Dropbox/scripts/symswitch"
+alias sym="/mnt/sdc1/Dropbox/scripts/symswitch.sh"
+alias updatr="/mnt/sdc1/Dropbox/scripts/updatr.sh"
 
 # diff analyzer
 differ () {
@@ -242,10 +265,10 @@ alias cacheclean="rm -rf /home/efex/.cache/thumbnails/* && alert 'cacheclean is 
 alias imagecheck="dpkg --list 'linux-image*' && echo 'use \"sudo dpkg --purge linux-image-*\" to remove'"
 alias snupdate="sudo snap refresh"
 alias snapcheck="du -h /var/lib/snapd/snaps"
-alias snapclean="sudo $DBOX/scripts/snapclean && alert 'snapclean is complete!'"
+alias snapclean="sudo $DBOX/scripts/snapclean.sh && alert 'snapclean is complete!'"
 
 # backup system
-alias sysbackup="/mnt/sdc1/Dropbox/scripts/sysbackup"
+alias sysbackup="/mnt/sdc1/Dropbox/scripts/sysbackup.sh"
 
 # pip and pip3 updaters
 alias pipupdate="pip freeze --local | sed -rn 's/^([^=# \t\\][^ \t=]*)=.*/echo; echo Processing \1 ...; pip install -U \1/p' | sh"

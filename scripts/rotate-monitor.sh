@@ -17,4 +17,4 @@ else
 	rotate="$alt"
 fi
 xrandr --output $screen --rotate $rotate
-/home/efex/.config/polybar/launch.sh
+/mnt/sdc1/Dropbox/scripts/polybarstart.sh

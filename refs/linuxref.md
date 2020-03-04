@@ -153,6 +153,8 @@
 - handbrake
 - handbrake-cli
 - unrar
+- `all_repri` (in `~/.config/todo/.actions.d`)
+- python3-prettytable
 
 # Ideas
 

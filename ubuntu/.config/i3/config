@@ -69,7 +69,7 @@ popup_during_fullscreen smart
 workspace_auto_back_and_forth yes
 workspace_layout tabbed
 floating_minimum_size 750 x 500
-floating_maximum_size 1500 x -1
+floating_maximum_size 1500 x 1500
 
 # reload the configuration file
 $mod4+c reload
@@ -81,10 +81,10 @@ $mod4+r restart
 $mod4+e exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes' 'i3-msg exit'"
 
 # open sys menu
-$scmod3+0 $ex $scr/sysmenu --menu
+$scmod3+0 $ex $scr/sysmenu.sh --menu
 
 # restart polybar
-$mod4+p $ex $scr/polybarstart
+$mod4+p $ex $scr/polybarstart.sh
 
 # volume changing
 bindsym $volup $ex    pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -184,9 +184,10 @@ $smod3+semicolon    swap container with mark swapee
 
 # app management
 $smod3+q    kill
-$mod3+d     $ex $scr/rofioneliner
-$smod3+d    $ex $scr/rofidropmenu
-$cmod3+d    $ex $scr/autoscriptmenu
+$mod3+d     $ex $scr/rofioneliner.sh
+$smod3+d    $ex $scr/rofidropmenu.sh
+$cmod3+d    $ex $scr/autoscriptmenu.sh
+$scmod3+d   $ex $scr/autorefmenu.sh
 
 # app launching
 $mod3+n         exec  $terminal ranger
@@ -255,8 +256,8 @@ $ex     rescuetime
 $ex     dropbox start
 $ex     $HOME/.fehbg
 $ex     xflux -z 33101 -k 2800
-$exa    $scr/polybarstart
-$ex     sleep 10; $scr/sysbackup
+$exa    $scr/polybarstart.sh
+$ex     sleep 10; $scr/sysbackup.sh
 $ex     compton -b
 
 # set default workspaces

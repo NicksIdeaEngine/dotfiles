@@ -102,3 +102,12 @@ Hit `K` to jump to the exact place in `man tmux` where the word under the cursor
 ## installing plugins after adding to .tmux.conf
 
 press `prefix` + `I`
+
+## tmux-resurrect
+
+* `prefix + Ctrl-s` to save
+* `prefix + Ctrl-r` to restore
+
+## tmux-contiuum
+
+

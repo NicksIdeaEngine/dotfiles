@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-. /home/efex/.aliases.sh
+. /home/efex/.aliases
 
 echo "Autoremoving and cleaning apt packages..."
 clean
