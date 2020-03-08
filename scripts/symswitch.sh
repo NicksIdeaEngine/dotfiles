@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-SOURCE_DIR="/home/efex/.mozilla/firefox/wmmhtufq.dev-edition-default-2/chrome"
-DEST_DIR="/mnt/sdc1/Dropbox/dots/ubuntu/.mozilla/firefox/wmmhtufq.dev-edition-default-2/chrome"
+SOURCE_DIR="/home/efex/"
+DEST_DIR="/home/efex/dots/manjaro/"
 DEST_FILE="$DEST_DIR/$1"
 
 if [[ ! -f "$DEST_FILE" ]]; then

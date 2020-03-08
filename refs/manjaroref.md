@@ -18,6 +18,7 @@
 - moved ~/.i3/config to ~/.config/i3/config
 - vim-plug to ~/.vim/autoload/plug.vim and ~/.local/share/nvim/site/autoload/plug.vim
 - removed palemoon-bin
+- removed and reinstalled kitty manually to ~/.local/kitty to configure layout
 - 
 
 # Old Timeline
