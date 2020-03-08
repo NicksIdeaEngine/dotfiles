@@ -37,14 +37,14 @@ alias pix="cd ~/pics"
 alias ref="cd ~/refs"
 alias rpo="cd ~/.config/repos"
 alias scr="cd ~/scripts"
-# alias tmp="cd ~/tmp"
+alias tmp="cd ~/tmp"
 alias vds="cd ~/vids"
 # alias wrt="cd ~/writing"
 # alias cdir="cd $CDIR"
 # alias sdir="cd $SDIR"
 # alias pdir="cd $PDIR"
 # alias pfol="cd $CDIR/nickgarcia.me"
-# alias userchrome="cd ~/.mozilla/firefox/sv5rklav.default-release/chrome"
+alias userchrome="cd ~/.mozilla/firefox/d3sh8gn9.default-release/chrome"
 # alias userchromedev="cd ~/.mozilla/firefox/wmmhtufq.dev-edition-default-2/chrome"
 
 # sped up cd navigation
@@ -58,7 +58,7 @@ alias {.....,.4}="cd ../../../.."
 #### 2. Config Files
 
 # open ricing workspace
-alias ricing="code ~/.config/i3/ricing.code-workspace"
+alias ricing="code ~/dots/dotfiles.code-workspace"
 
 # open quantify workspace
 # alias quantify="code $DBOX/quant/quant.code-workspace"
@@ -96,20 +96,20 @@ alias cfzp="vim ~/.zprofile"
 #### 3. Reference Files
 
 alias refls="echo 'manjAro vsCode toDo Journey Linux MarkDown Ricing Ssh Tmux Vim Webdev temp(x) Zsh misc'"
-alias refa="vim $DBOX/refs/manjaroref.md"
-alias refc="vim $DBOX/refs/vscoderef.md"
-alias refd="vim $DBOX/refs/todoref.md"
-alias refj="vim $DBOX/refs/journeyref.md"
-alias refl="vim $DBOX/refs/linuxref.md"
-alias refmd="vim $DBOX/refs/markdown.md"
-alias refr="vim $DBOX/refs/ricingref.md"
-alias refs="vim $DBOX/refs/sshref.md"
-alias reft="vim $DBOX/refs/tmuxref.md"
-alias refv="vim $DBOX/refs/vimref.md"
-alias refw="vim $DBOX/refs/webdevref.md"
-alias refx="vim $DBOX/refs/tempref.md"
-alias refz="vim $DBOX/refs/zshref.md"
-alias misc="vim $DBOX/docs/misc.md"
+alias refa="vim $HOME/refs/manjaroref.md"
+alias refc="vim $HOME/refs/vscoderef.md"
+alias refd="vim $HOME/refs/todoref.md"
+alias refj="vim $HOME/refs/journeyref.md"
+alias refl="vim $HOME/refs/linuxref.md"
+alias refmd="vim $HOME/refs/markdown.md"
+alias refr="vim $HOME/refs/ricingref.md"
+alias refs="vim $HOME/refs/sshref.md"
+alias reft="vim $HOME/refs/tmuxref.md"
+alias refv="vim $HOME/refs/vimref.md"
+alias refw="vim $HOME/refs/webdevref.md"
+alias refx="vim $HOME/refs/tempref.md"
+alias refz="vim $HOME/refs/zshref.md"
+alias misc="vim $HOME/docs/misc.md"
 
 #### 4. Recent Projects
 
@@ -156,7 +156,7 @@ mkcd () {
   case "$1" in /*) :;; *) set -- "./$1";; esac
   mkdir -p "$1" && cd "$1"
 }
-alias sym="/mnt/sdc1/Dropbox/scripts/symswitch"
+alias sym="/home/efex/scripts/symswitch.sh"
 
 # diff analyzer
 differ () {
