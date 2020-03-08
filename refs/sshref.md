@@ -53,3 +53,7 @@ You'll see a message upon first login asking if you want to add that server IP t
 It'll ask you for a password for the server (not the local machine you're on)
 
 That will display the welcome page.
+
+# Misc Notes
+
+- `ssh-agent && ssh-add` will add the passphrase for that session

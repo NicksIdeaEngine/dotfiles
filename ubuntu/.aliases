@@ -181,6 +181,12 @@ mkcd () {
 alias sym="/mnt/sdc1/Dropbox/scripts/symswitch.sh"
 alias updatr="/mnt/sdc1/Dropbox/scripts/updatr.sh"
 
+# ssh initialize for that session
+sshinit () {
+  ssh-agent
+  ssh-add
+}
+
 # diff analyzer
 differ () {
   diff "/mnt/sdc1/Dropbox/dots/ubuntu/$1" "/mnt/sdc1/Dropbox/dots/manjaro/$1"
@@ -236,6 +242,16 @@ gacmp () {
 }
 alias gst="git status"
 alias gfa="git fetch --all"
+gitcfg () {
+  git remote add origin "git@github.com:NicksIdeaEngine/$1.git"
+  git remote add github "git@github.com:NicksIdeaEngine/$1.git"
+  git remote set-url --add --push origin "git@github.com:NicksIdeaEngine/$1.git"
+  git remote add bb "git@bitbucket.org:nicksideaengine/$1.git"
+  git remote set-url --add --push origin "git@bitbucket.org:nicksideaengine/$1.git"
+  git remote add gitlab "git@gitlab.com:nicksideaengine/$1.git"
+  git remote set-url --add --push origin "git@gitlab.com:nicksideaengine/$1.git"
+  git remote show origin
+}
 
 #### 8. npm
 
