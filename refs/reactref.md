@@ -13,3 +13,5 @@
     - create a backup of the current way things are
   - `shouldComponentUpdate(nextProps, nextState)`
     - return true if want it to update, false if not
+
+## Fetching data from API

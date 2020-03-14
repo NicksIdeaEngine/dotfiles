@@ -97,18 +97,17 @@ alias instst="cd ~/.config/repos/st && sudo make install && alert 'st has been r
 
 alias refls="echo 'manjAro vsCode toDo Journey Linux MarkDown Ricing Ssh Tmux Vim Webdev temp(x) Zsh misc'"
 alias refa="vim $DBOX/refs/manjaroref.md"
-alias refc="vim $DBOX/refs/vscoderef.md"
 alias refd="vim $DBOX/refs/todoref.md"
 alias refj="vim $DBOX/refs/journeyref.md"
 alias refl="vim $DBOX/refs/linuxref.md"
 alias refmd="vim $DBOX/refs/markdown.md"
-alias refr="vim $DBOX/refs/ricingref.md"
+alias refp="vim $DBOX/refs/plagueref.md"
+alias refr="vim $DBOX/refs/reactref.md"
 alias refs="vim $DBOX/refs/sshref.md"
 alias reft="vim $DBOX/refs/tmuxref.md"
 alias refv="vim $DBOX/refs/vimref.md"
 alias refw="vim $DBOX/refs/webdevref.md"
-alias refx="vim $DBOX/refs/tempref.md"
-alias refz="vim $DBOX/refs/zshref.md"
+alias refx="vim $DBOX/refs/ricingref.md"
 alias misc="vim $DBOX/docs/misc.md"
 
 #### 4. Recent Projects
