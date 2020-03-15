@@ -19,12 +19,13 @@
 - vim-plug to ~/.vim/autoload/plug.vim and ~/.local/share/nvim/site/autoload/plug.vim
 - removed palemoon-bin
 - removed and reinstalled kitty manually to ~/.local/kitty to configure layout
+- generated public ssh key for use in repos
+- vs code
 - 
 
 # Old Timeline
 
 - fixed a synaptics issue using [the info from this manjaro forum post](https://forum.manjaro.org/t/synaptics-touchpad-on-hp-pavilion-g6-laptop/101462)
-- removed palemoon-bin
 
 # To Be Installed
 
