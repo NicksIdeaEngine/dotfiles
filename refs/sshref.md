@@ -57,3 +57,10 @@ That will display the welcome page.
 # Misc Notes
 
 - `ssh-agent && ssh-add` will add the passphrase for that session
+- ssh login attempts are saved at /var/log/auth.log
+- Made these changes to `/etc/ssh/sshd_config`
+  - LogLevel VERBOSE
+  - PasswordAuthentication no
+  - AllowTcpForwarding no
+  - X11Forwarding no
+  - AllowUsers <user>

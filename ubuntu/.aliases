@@ -185,6 +185,7 @@ sshinit () {
   ssh-agent
   ssh-add
 }
+alias sshrestart="sudo systemctl restart ssh.service"
 
 # diff analyzer
 differ () {

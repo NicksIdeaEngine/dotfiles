@@ -20,7 +20,7 @@
 - removed palemoon-bin
 - removed and reinstalled kitty manually to ~/.local/kitty to configure layout
 - generated public ssh key for use in repos
-- vs code
+- !vs code
 - 
 
 # Old Timeline
