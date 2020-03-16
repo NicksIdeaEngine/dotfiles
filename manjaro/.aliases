@@ -160,7 +160,7 @@ alias sym="/home/efex/scripts/symswitch.sh"
 
 # ssh initialize for that session
 sshinit () {
-  ssh-agent
+  # pkill ssh
   eval "$(ssh-agent)"
   ssh-add
 }
