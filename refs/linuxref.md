@@ -155,6 +155,12 @@
 - unrar
 - `all_repri` (in `~/.config/todo/.actions.d`)
 - python3-prettytable
+- edits to `/etc/ssh/sshd_config`
+  - LogLevel VERBOSE
+  - PasswordAuthentication no
+  - AllowTcpForwarding no
+  - X11Forwarding no
+  - AllowUsers <user>
 
 # Ideas
 

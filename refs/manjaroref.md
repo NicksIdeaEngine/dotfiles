@@ -20,6 +20,12 @@
 - removed palemoon-bin
 - removed and reinstalled kitty manually to ~/.local/kitty to configure layout
 - generated public ssh key for use in repos
+- edits to `/etc/ssh/sshd_config`
+  - LogLevel VERBOSE
+  - PasswordAuthentication no
+  - AllowTcpForwarding no
+  - X11Forwarding no
+  - AllowUsers <user>
 - !vs code
 - 
 
