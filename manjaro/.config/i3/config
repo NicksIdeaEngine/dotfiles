@@ -90,7 +90,7 @@ $mod4+r restart
 $mod4+e exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes' 'i3-msg exit'"
 
 # open sys menu
-# $scmod3+0 $ex $scr/sysmenu.sh
+$scmod3+0 $ex $scr/sysmenu.sh --menu
 
 # Set shut down, restart and locking features
 $mod3+0 mode "$mode_system"
@@ -110,7 +110,7 @@ mode "$mode_system" {
 }
 
 # restart polybar
-$mod4+p $ex $scr/polybarstart-manjaro.sh
+$mod4+p $ex $scr/polybarstart.sh
 
 # volume changing
 # bindsym $volup $ex pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -301,7 +301,7 @@ $exa dunst
 # $ex dropbox start
 $ex $HOME/.fehbg
 # $ex xflux -z 33101 -k 2800
-$exa $scr/polybarstart-manjaro.sh
+$exa $scr/polybarstart.sh
 # $ex sleep 60; $scr/sysbackup.sh
 $ex /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 $ex nitrogen --restore; sleep 1; compton -b

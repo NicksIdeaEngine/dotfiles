@@ -4,4 +4,4 @@ killall -q polybar
 
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-(polybar -c ~/dots/ubuntu/.config/polybar/config.ini mandelight &)
+(polybar -c ~/.config/polybar/config.ini mandelight &)
