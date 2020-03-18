@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 SOURCE_DIR="/home/efex"
-DEST_DIR="/home/efex/dots/ubuntu"
+DEST_DIR="/home/efex/dots/manjaro"
 DEST_FILE="$DEST_DIR/$1"
 
 if [[ ! -f "$DEST_FILE" ]]; then
