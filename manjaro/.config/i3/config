@@ -59,12 +59,13 @@ set $terminal /home/efex/.local/kitty/kitty/launcher/kitty
 # clean up code
 set $ex exec --no-startup-id
 set $exa exec_always --no-startup-id
+set $br bindsym --release
 set $scr /home/efex/scripts
 
 #### 1. System & Settings
 
 # titlebar settings
-font pango:Iosevka Nerd Font Complete Mono
+font pango:FiraCode Nerd Font 10
 title_align center
 
 # general settings
@@ -76,7 +77,6 @@ hide_edge_borders both
 popup_during_fullscreen smart
 workspace_auto_back_and_forth yes
 workspace_layout tabbed
-# new_window pixel
 floating_minimum_size 500 x 500
 floating_maximum_size 1000 x 1000
 
@@ -132,15 +132,26 @@ $smod3+k move up
 $smod3+l move right
 
 # resizing
-$cmod3+h resize shrink width 5 px or 5 ppt
+$cmod4+h resize shrink width  1 px or 1 ppt
+$cmod4+j resize shrink height 1 px or 1 ppt
+$cmod4+k resize grow   height 1 px or 1 ppt
+$cmod4+l resize grow   width  1 px or 1 ppt
+
+$cmod3+h resize shrink width  5 px or 5 ppt
 $cmod3+j resize shrink height 5 px or 5 ppt
-$cmod3+k resize grow height 5 px or 5 ppt
-$cmod3+l resize grow width 5 px or 5 ppt
+$cmod3+k resize grow   height 5 px or 5 ppt
+$cmod3+l resize grow   width  5 px or 5 ppt
+
+$scmod3+h resize shrink width  25 px or 25 ppt
+$scmod3+j resize shrink height 25 px or 25 ppt
+$scmod3+k resize grow   height 25 px or 25 ppt
+$scmod3+l resize grow   width  25 px or 25 ppt
 
 # enter fullscreen mode for the focused container
-$mod3+f fullscreen toggle
-$smod3+f focus parent; fullscreen toggle
-$cmod3+f focus parent; focus parent; focus parent; fullscreen toggle
+$mod3+f     fullscreen toggle
+$smod3+f    focus parent; fullscreen toggle
+$cmod3+f    focus parent; focus parent; fullscreen toggle
+$scmod3+f   focus parent; focus parent; focus parent; fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 $mod3+z layout toggle tabbed splith splitv
@@ -185,16 +196,51 @@ $smod3+5 move container to workspace 5
 $smod3+6 move container to workspace 6
 
 # scratchpad
-$mod3+slash scratchpad show
-$smod3+slash move scratchpad
+$mod3+slash     scratchpad show
+$smod3+slash    move scratchpad
+$cmod3+slash    [floating] move scratchpad
+
+# marks
+$mod3+braceleft     exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
+$mod3+braceright    exec i3-input -F 'swap container with mark %s' -l 1 -P 'Mark: '
+$mod3+semicolon     mark --add --toggle swapee
+$smod3+semicolon    swap container with mark swapee
 
 #### 4. Application Management
 
 # app management
-$smod3+q kill
-# $mod3+d $ex $scr/rofioneliner.sh
-# $smod3+d $ex $scr/rofidropmenu.sh
-# $cmod3+d $ex $scr/autoscriptmenu.sh
+$smod3+q    kill
+# $mod3+d     $ex $scr/rofioneliner.sh
+# $smod3+d    $ex $scr/rofidropmenu.sh
+# $cmod3+d    $ex $scr/autoscriptmenu.sh
+# $scmod3+d   $ex $scr/autorefmenu.sh
+
+# app launching
+$mod3+n         exec  $terminal ranger
+# $smod3+n        exec  nemo
+$mod3+w         exec  firefox
+# $smod3+w        $ex   firefox-developer
+# $scmod3+w       $ex   start-tor-browser
+# $mod3+c         $ex   code
+$mod3+Return    $ex   $terminal
+$smod3+Return   exec  i3-sensible-terminal
+# $cmod3+Return   $ex   st
+# $mod4+Return    exec  gnome-text-editor
+$mod3+t         $ex   $terminal
+$smod3+t        exec  i3-sensible-terminal
+# $cmod3+t        $ex   st
+# $mod4+t         exec  gnome-text-editor
+# $mod3+m         exec  $terminal htop
+# $smod3+m        exec  gnome-system-monitor
+# $mod3+g         exec  google-chrome
+# $scmod4+l       $ex   i3lock -ti /mnt/sdc1/Dropbox/pics/wallpaper/wall509.png
+$scmod3+l       $ex blurlock
+# $mod3+equal     exec  gnome-calculator
+# $mod4+equal     exec  gnome-calculator
+# $mod4+d         $ex   discord
+# $mod4+f         exec  filezilla
+# $mod4+s         $ex   slack
+# $mod4+v         exec  virtualbox
 
 # start program launcher
 $mod3+d $ex dmenu_recency
@@ -203,23 +249,9 @@ $cmod3+b exec $terminal -e 'bmenu'
 # launch categorized menu
 # bindsym $mod+Shift+z $ex morc_menu
 
-# app launching
-# $mod3+n         exec nemo
-$mod3+w         exec firefox
-# $smod3+w        $ex firefox-developer
-# $mod3+c         $ex code
-$mod3+Return    $ex $terminal
-$smod3+Return   exec i3-sensible-terminal
-$mod3+t         $ex $terminal
-$smod3+t        exec i3-sensible-terminal
-# $mod3+m         exec gnome-system-monitor
-# $mod3+g         exec google-chrome
-# $scmod3+l       exec i3lock -ti /home/efex/pics/wallpaper/wall509.png
-$scmod3+l       $ex blurlock
 
 # Start Applications
 # bindsym $mod+F3 exec pcmanfm
-# bindsym $mod+F3 exec ranger
 # bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 # bindsym $mod+F5 exec $terminal -e 'mocp'
 # bindsym $mod+t $ex pkill compton
@@ -235,9 +267,12 @@ $scmod3+l       $ex blurlock
 $mod4+m $ex "vlc /home/efex/music/to-sort/current.xspf"
 
 # screenshots
-# scrot area
-# scrot screen delay
-# scrot full
+$br Mod3+Print \
+  $ex scrot -q 100 -s -e 'mv $f ~/dwn/shots'
+$br Mod3+Shift+Print \
+  $ex scrot -q 100 -u -e 'mv $f ~/dwn/shots'
+$br Mod3+Control+Print \
+  $ex scrot -q 100 -m -e 'mv $f ~/dwn/shots'
 
 #### 5. Scripts
 
@@ -268,7 +303,6 @@ $exa dunst
 # $ex xflux -z 33101 -k 2800
 $exa $scr/polybarstart-manjaro.sh
 # $ex sleep 60; $scr/sysbackup.sh
-# Autostart applications
 $ex /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 $ex nitrogen --restore; sleep 1; compton -b
 # $ex manjaro-hello
@@ -276,7 +310,6 @@ $ex nm-applt
 $ex xfce4-power-manager
 $ex pamac-tray
 $ex clipit
-$ex $scr/polybarstart-manjaro.sh
 # $ex blueman-applet
 # $exa sbxkb
 # $ex start_conky_maia
@@ -286,12 +319,14 @@ $exa ff-theme-util
 $exa fix_xcursor
 
 # set default workspaces
-# workspace 1 output DisplayPort-0
-# workspace 2 output DisplayPort-1
-# workspace 3 output HDMI-A-0
-# workspace 4 output DisplayPort-0
-# workspace 5 output DisplayPort-1
-# workspace 6 output HDMI-A-0
+workspace 1 output primary
+workspace 2 output primary
+workspace 3 output primary
+workspace 4 output primary
+workspace 5 output primary
+workspace 6 output primary
+workspace 7 output primary
+workspace 8 output primary
 
 # window rules
 for_window [title="System Monitor"] border pixel 0
@@ -302,33 +337,33 @@ for_window [class="Firefox"] border pixel 0
 for_window [class="Discord"] border pixel 0
 
 # Open specific applications in floating mode
-# for_window [title="alsamixer"] floating enable border pixel 1
-# for_window [class="calamares"] floating enable border normal
-# for_window [class="Clipgrab"] floating enable
-# for_window [title="File Transfer*"] floating enable
-# for_window [class="fpakman"] floating enable
-# for_window [class="Galculator"] floating enable border pixel 1
-# for_window [class="GParted"] floating enable border normal
-# for_window [title="i3_help"] floating enable sticky enable border normal
-# for_window [class="Lightdm-settings"] floating enable
-# for_window [class="Lxappearance"] floating enable sticky enable border normal
-# for_window [class="Manjaro-hello"] floating enable
-# for_window [class="Manjaro Settings Manager"] floating enable border normal
-# for_window [title="MuseScore: Play Panel"] floating enable
-# for_window [class="Nitrogen"] floating enable sticky enable border normal
-# for_window [class="Oblogout"] fullscreen enable
-# for_window [class="octopi"] floating enable
-# for_window [title="About Pale Moon"] floating enable
-# for_window [class="Pamac-manager"] floating enable
-# for_window [class="Pavucontrol"] floating enable
-# for_window [class="qt5ct"] floating enable sticky enable border normal
-# for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
-# for_window [class="Simple-scan"] floating enable border normal
-# for_window [class="(?i)System-config-printer.py"] floating enable border normal
-# for_window [class="Skype"] floating enable border normal
-# for_window [class="Timeset-gui"] floating enable border normal
-# for_window [class="(?i)virtualbox"] floating enable border normal
-# for_window [class="Xfburn"] floating enable
+for_window [title="alsamixer"] floating enable border pixel 1
+for_window [class="calamares"] floating enable border normal
+for_window [class="Clipgrab"] floating enable
+for_window [title="File Transfer*"] floating enable
+for_window [class="fpakman"] floating enable
+for_window [class="Galculator"] floating enable border pixel 1
+for_window [class="GParted"] floating enable border normal
+for_window [title="i3_help"] floating enable sticky enable border normal
+for_window [class="Lightdm-settings"] floating enable
+for_window [class="Lxappearance"] floating enable sticky enable border normal
+for_window [class="Manjaro-hello"] floating enable
+for_window [class="Manjaro Settings Manager"] floating enable border normal
+for_window [title="MuseScore: Play Panel"] floating enable
+for_window [class="Nitrogen"] floating enable sticky enable border normal
+for_window [class="Oblogout"] fullscreen enable
+for_window [class="octopi"] floating enable
+for_window [title="About Pale Moon"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="qt5ct"] floating enable sticky enable border normal
+for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
+for_window [class="Simple-scan"] floating enable border normal
+for_window [class="(?i)System-config-printer.py"] floating enable border normal
+for_window [class="Skype"] floating enable border normal
+for_window [class="Timeset-gui"] floating enable border normal
+for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [class="Xfburn"] floating enable
 
 # workspace layouts
 # $exa "i3-msg 'workspace 1; append_layout /home/efex/.config/i3/layouts/main-workflow-1.json'"
@@ -525,16 +560,3 @@ mode "$mode_gaps_left" {
 }
 
 #### Z. Overflow
-# names of special characters in i3
-# mod + [ bracketleft
-# mod + ] bracketright
-# mod + ; semicolon
-# mod + ' apostrophe
-# mod + , comma
-# mod + . period
-# mod + / slash
-# mod + \ backslash
-# mod + - minus
-# mod + = equal
-# mod + ` grave?
-# mod + Print
