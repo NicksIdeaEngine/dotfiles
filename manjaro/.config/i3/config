@@ -92,23 +92,6 @@ $mod4+e exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes' 'i3-msg exit'"
 # open sys menu
 $scmod3+0 $ex $scr/sysmenu.sh --menu
 
-# Set shut down, restart and locking features
-$mod3+0 mode "$mode_system"
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
-mode "$mode_system" {
-    bindsym l $ex i3exit lock, mode "default"
-    bindsym s $ex i3exit suspend, mode "default"
-    bindsym u $ex i3exit switch_user, mode "default"
-    bindsym e $ex i3exit logout, mode "default"
-    bindsym h $ex i3exit hibernate, mode "default"
-    bindsym r $ex i3exit reboot, mode "default"
-    bindsym Shift+s $ex i3exit shutdown, mode "default"
-
-    # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
 # restart polybar
 $mod4+p $ex $scr/polybarstart.sh
 
@@ -186,6 +169,8 @@ $mod3+3 workspace 3
 $mod3+4 workspace 4
 $mod3+5 workspace 5
 $mod3+6 workspace 6
+$mod3+7 workspace 7
+$mod3+8 workspace 8
 
 # move focused container to workspace
 $smod3+1 move container to workspace 1
@@ -194,6 +179,8 @@ $smod3+3 move container to workspace 3
 $smod3+4 move container to workspace 4
 $smod3+5 move container to workspace 5
 $smod3+6 move container to workspace 6
+$smod3+7 move container to workspace 7
+$smod3+8 move container to workspace 8
 
 # scratchpad
 $mod3+slash     scratchpad show
@@ -210,10 +197,17 @@ $smod3+semicolon    swap container with mark swapee
 
 # app management
 $smod3+q    kill
-# $mod3+d     $ex $scr/rofioneliner.sh
-# $smod3+d    $ex $scr/rofidropmenu.sh
-# $cmod3+d    $ex $scr/autoscriptmenu.sh
-# $scmod3+d   $ex $scr/autorefmenu.sh
+$mod3+d     $ex $scr/rofioneliner.sh
+$smod3+d    $ex $scr/rofidropmenu.sh
+$cmod3+d    $ex $scr/autoscriptmenu.sh
+$scmod3+d   $ex $scr/autorefmenu.sh
+
+# start program launcher
+$mod4+d $ex dmenu_recency
+$cmod4+b exec $terminal -e 'bmenu'
+
+# launch categorized menu
+# bindsym $mod+Shift+z $ex morc_menu
 
 # app launching
 $mod3+n         exec  $terminal ranger
@@ -241,14 +235,6 @@ $scmod4+l       $ex blurlock
 # $mod4+f         exec  filezilla
 # $mod4+s         $ex   slack
 # $mod4+v         exec  virtualbox
-
-# start program launcher
-$mod3+d $ex dmenu_recency
-$cmod3+b exec $terminal -e 'bmenu'
-
-# launch categorized menu
-# bindsym $mod+Shift+z $ex morc_menu
-
 
 # Start Applications
 # bindsym $mod+F3 exec pcmanfm
@@ -296,13 +282,13 @@ $br Mod3+Control+Print \
 # $ex xset dpms 0 0 1200
 
 # autostart apps
-$exa dunst
-# $ex rescuetime
-# $ex dropbox start
-$ex $HOME/.fehbg
-# $ex xflux -z 33101 -k 2800
-$exa $scr/polybarstart.sh
-# $ex sleep 60; $scr/sysbackup.sh
+$exa    dunst
+# $ex     rescuetime
+# $ex     dropbox start
+$ex     $HOME/.fehbg
+# $ex     xflux -z 33101 -k 2800
+$exa    $scr/polybarstart.sh
+# $ex     sleep 10; $scr/sysbackup.sh
 $ex /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 $ex nitrogen --restore; sleep 1; compton -b
 # $ex manjaro-hello
@@ -334,7 +320,8 @@ for_window [title="Calculator"] floating enable
 for_window [class="mpv"] border pixel 0
 for_window [class="vlc"] border pixel 0
 for_window [class="Firefox"] border pixel 0
-for_window [class="Discord"] border pixel 0
+for_window [class="discord"] floating enable
+for_window [class="Slack"] floating enable
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
