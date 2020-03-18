@@ -1,6 +1,17 @@
-# Add local applications to path
+# Add scripts from Dropbox/scripts to path
+export PATH="/home/efex/scripts:$PATH"
+
+# Add ubuntu-make .desktop files to path
 export PATH="/home/efex/.local/share/applications:$PATH"
 
-# Add scripts to path
-export PATH="/home/efex/dots/scripts:$PATH"
+# Ubuntu make installation of Ubuntu Make binary symlink
+# export PATH="/home/efex/.local/share/umake/bin:$PATH"
 
+# Path for go lang
+# export PATH="/usr/local/go/bin:$PATH"
+
+# Path for "go get" binaries
+# export PATH="/home/efex/code/go/bin:$PATH"
+
+# t path
+# export PATH="/home/efex/.local/share/applications/tor-browser_en-US:$PATH"

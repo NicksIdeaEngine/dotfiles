@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-SOURCE_DIR="/home/efex/.config/polybar"
-DEST_DIR="/home/efex/dots/manjaro/.config/polybar"
+SOURCE_DIR="/home/efex/.config/ranger"
+DEST_DIR="/home/efex/dots/manjaro/.config/ranger"
 DEST_FILE="$DEST_DIR/$1"
 
 if [[ ! -f "$DEST_FILE" ]]; then

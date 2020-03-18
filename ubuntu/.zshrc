@@ -21,7 +21,7 @@ export GOPATH="$HOME/code/go"
 # complete -F _todo t
 
 # Set theme. See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME=powerlevel10k/powerlevel10k
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # remove extra space on right
 ZLE_RPROMPT_INDENT=0

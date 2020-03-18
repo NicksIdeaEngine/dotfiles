@@ -41,6 +41,7 @@ call plug#begin()
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-obsession'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'mattn/emmet-vim'
