@@ -30,7 +30,10 @@ set $cmod4 bindsym Mod4+Control
 set $scmod4 bindsym Mod4+Shift+Control
 
 # default terminal is suckless terminal
-set $terminal kitty
+set $terminal /home/efex/.local/kitty/kitty/launcher/kitty
+# set $terminal i3-sensible-terminal
+
+set $mod Mod3
 
 # set audio commands to easy variables
 set $volup XF86AudioRaiseVolume
@@ -221,6 +224,22 @@ $ex xflux -z 33101 -k 2800
 $exa $scr/polybarstart
 $ex sleep 60; $scr/sysbackup
 $ex compton -b
+# Autostart applications
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+# exec --no-startup-id manjaro-hello
+exec --no-startup-id nm-applet
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id pamac-tray
+exec --no-startup-id clipit
+exec --no-startup-id /home/efex/scripts/polybarstart-manjaro.sh
+# exec --no-startup-id blueman-applet
+# exec_always --no-startup-id sbxkb
+exec --no-startup-id start_conky_maia
+# exec --no-startup-id start_conky_green
+exec --no-startup-id xautolock -time 30 -locker blurlock
+exec_always --no-startup-id ff-theme-util
+exec_always --no-startup-id fix_xcursor
 
 # set default workspaces
 workspace 1 output DisplayPort-0
@@ -446,3 +465,76 @@ mode "$mode_gaps_left" {
 # mod + = equal
 # mod + ` grave?
 # mod + Print
+
+# start program launcher
+# bindsym $mod+d exec --no-startup-id dmenu_recency
+# launch categorized menu
+# bindsym $mod+Shift+z exec --no-startup-id morc_menu
+# exec --no-startup-id volumeicon
+# bindsym $mod+Ctrl+m exec $terminal -e 'alsamixer'
+#exec --no-startup-id pulseaudio
+#exec --no-startup-id pa-applet
+#bindsym $mod+Ctrl+m exec pavucontrol
+# Screen brightness controls
+# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
+# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+# Start Applications
+# bindsym $mod+Ctrl+b exec $terminal -e 'bmenu'
+# bindsym $mod+F3 exec pcmanfm
+# bindsym $mod+F3 exec ranger
+# bindsym $mod+Shift+F3 exec pcmanfm_pkexec
+# bindsym $mod+F5 exec $terminal -e 'mocp'
+# bindsym $mod+t exec --no-startup-id pkill compton
+# bindsym $mod+Ctrl+t exec --no-startup-id compton -b
+# bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+# bindsym Print exec --no-startup-id i3-scrot
+# bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
+# bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+# bindsym $mod+Shift+Control+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
+# bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+# Open specific applications in floating mode
+# for_window [title="alsamixer"] floating enable border pixel 1
+# for_window [class="calamares"] floating enable border normal
+# for_window [class="Clipgrab"] floating enable
+# for_window [title="File Transfer*"] floating enable
+# for_window [class="fpakman"] floating enable
+# for_window [class="Galculator"] floating enable border pixel 1
+# for_window [class="GParted"] floating enable border normal
+# for_window [title="i3_help"] floating enable sticky enable border normal
+# for_window [class="Lightdm-settings"] floating enable
+# for_window [class="Lxappearance"] floating enable sticky enable border normal
+# for_window [class="Manjaro-hello"] floating enable
+# for_window [class="Manjaro Settings Manager"] floating enable border normal
+# for_window [title="MuseScore: Play Panel"] floating enable
+# for_window [class="Nitrogen"] floating enable sticky enable border normal
+# for_window [class="Oblogout"] fullscreen enable
+# for_window [class="octopi"] floating enable
+# for_window [title="About Pale Moon"] floating enable
+# for_window [class="Pamac-manager"] floating enable
+# for_window [class="Pavucontrol"] floating enable
+# for_window [class="qt5ct"] floating enable sticky enable border normal
+# for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
+# for_window [class="Simple-scan"] floating enable border normal
+# for_window [class="(?i)System-config-printer.py"] floating enable border normal
+# for_window [class="Skype"] floating enable border normal
+# for_window [class="Timeset-gui"] floating enable border normal
+# for_window [class="(?i)virtualbox"] floating enable border normal
+# for_window [class="Xfburn"] floating enable
+# Set shut down, restart and locking features
+# bindsym $mod+0 mode "$mode_system"
+# set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+# mode "$mode_system" {
+#     bindsym l exec --no-startup-id i3exit lock, mode "default"
+#     bindsym s exec --no-startup-id i3exit suspend, mode "default"
+#     bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+#     bindsym e exec --no-startup-id i3exit logout, mode "default"
+#     bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+#     bindsym r exec --no-startup-id i3exit reboot, mode "default"
+#     bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+
+#     # exit system mode: "Enter" or "Escape"
+#     bindsym Return mode "default"
+#     bindsym Escape mode "default"
+# }
+# Lock screen
+# bindsym $mod+9 exec --no-startup-id blurlock
