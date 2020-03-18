@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-SOURCE_DIR="/home/efex/scripts"
-DEST_DIR="/home/efex/dots/scripts"
+SOURCE_DIR="/home/efex/.config/rofi"
+DEST_DIR="/home/efex/dots/manjaro/.config/rofi"
 DEST_FILE="$DEST_DIR/$1"
 
 if [[ ! -f "$DEST_FILE" ]]; then
