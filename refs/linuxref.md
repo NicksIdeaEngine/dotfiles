@@ -161,6 +161,22 @@
   - AllowTcpForwarding no
   - X11Forwarding no
   - AllowUsers <user>
+- reinstalled kitty and built from source, then made these changes:
+  - `kitty/layout.py`
+
+```
+cell_width = cell_height = 16
+all_borders = Borders(False, False, False, False)
+no_borders = Borders(True, True, True, True)
+draw_minimal_borders = False
+draw_active_borders = False
+align_top_left = True
+
+def layout_single_window(xdecoration_pairs: DecorationPairs, ydecoration_pairs: DecorationPairs, left_align: bool = True) -> WindowGeometry:
+    xstart, xnum = next(layout_dimension(central.left, central.width, cell_width, xdecoration_pairs, left_align=True))
+    ystart, ynum = next(layout_dimension(central.top, central.height, cell_height, ydecoration_pairs, left_align=True))
+    return window_geometry(xstart, xnum, ystart, ynum)
+```
 
 # Ideas
 
