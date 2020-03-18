@@ -14,7 +14,7 @@
 
 #### 0. Variables
 
-# DBOX="/mnt/sdc1/Dropbox"
+DBOX="$HOME"
 # CDIR="$DBOX/code"
 # SDIR="$CDIR/snippets"
 # PDIR="$CDIR/projects"
@@ -35,7 +35,7 @@ alias dwn="cd ~/dwn"
 alias mzk="cd ~/music"
 alias pix="cd ~/pics"
 alias ref="cd ~/refs"
-alias rpo="cd ~/.config/repos"
+# alias rpo="cd ~/.config/repos"
 alias scr="cd ~/scripts"
 alias tmp="cd ~/tmp"
 alias vds="cd ~/vids"
@@ -71,21 +71,21 @@ alias cfbl="vim ~/.bash_logout"
 alias cfbp="vim ~/.profile"
 alias cfc="vim ~/.config/compton.conf"
 alias cfd="vim ~/.config/dunst/dunstrc"
-alias cff="vim ~/.mozilla/firefox/sv5rklav.default-release/chrome/userChrome.css"
-alias cffd="vim ~/.mozilla/firefox/wmmhtufq.dev-edition-default-2/chrome/userChrome.css"
+alias cff="vim ~/.mozilla/firefox/d3sh8gn9.default-release/chrome/userChrome.css"
+# alias cffd="vim ~/.mozilla/firefox/wmmhtufq.dev-edition-default-2/chrome/userChrome.css"
 alias cfi="vim ~/.config/i3/config"
 alias cfk="vim ~/.config/kitty/kitty.conf"
-alias cfm="vim ~/.config/mpd/mpd.conf"
+# alias cfm="vim ~/.config/mpd/mpd.conf"
 alias cfn="vim ~/.config/nvim/init.vim"
 alias cfp="vim ~/.config/polybar/config.ini"
 alias cfr="vim ~/.config/ranger/rc.conf"
-alias cfrt="vim ~/.config/RescueTime.com/.rtgoals"
-alias cfs="vim ~/.config/repos/st/config.h"
+# alias cfrt="vim ~/.config/RescueTime.com/.rtgoals"
+# alias cfs="vim ~/.config/repos/st/config.h"
 alias cft="vim ~/.tmux.conf"
 alias cfv="vim ~/.vimrc"
 alias cfx="vim ~/.Xresources"
-alias cfys="vim ~/.config/youtube-dl/songconfig"
-alias cfyv="vim ~/.config/youtube-dl/vidconfig"
+# alias cfys="vim ~/.config/youtube-dl/songconfig"
+# alias cfyv="vim ~/.config/youtube-dl/vidconfig"
 alias cfz="vim ~/.zshrc"
 alias cfze="vim ~/.zshenv"
 alias cfzp="vim ~/.zprofile"
@@ -97,18 +97,17 @@ alias cfzp="vim ~/.zprofile"
 
 alias refls="echo 'manjAro vsCode toDo Journey Linux MarkDown Ricing Ssh Tmux Vim Webdev temp(x) Zsh misc'"
 alias refa="vim $HOME/refs/manjaroref.md"
-alias refc="vim $HOME/refs/vscoderef.md"
 alias refd="vim $HOME/refs/todoref.md"
 alias refj="vim $HOME/refs/journeyref.md"
 alias refl="vim $HOME/refs/linuxref.md"
 alias refmd="vim $HOME/refs/markdown.md"
-alias refr="vim $HOME/refs/ricingref.md"
+alias refp="vim $HOME/refs/plagueref.md"
+alias refr="vim $HOME/refs/reactref.md"
 alias refs="vim $HOME/refs/sshref.md"
 alias reft="vim $HOME/refs/tmuxref.md"
 alias refv="vim $HOME/refs/vimref.md"
 alias refw="vim $HOME/refs/webdevref.md"
-alias refx="vim $HOME/refs/tempref.md"
-alias refz="vim $HOME/refs/zshref.md"
+alias refx="vim $HOME/refs/ricingref.md"
 alias misc="vim $HOME/docs/misc.md"
 
 #### 4. Recent Projects
@@ -128,19 +127,41 @@ alias sbox="cd $CDIR/sandbox && code sandbox.code-workspace"
 alias tls="echo 'todo: open todo.txt | t: show tasks by project | tg: graph \
                \ntfg: config | tm: many | ta: wp add | tap: append | tdu: due \
                \ntpp: prep | tp: pri | tv: view | tvp: view project | tdo: do'"
-alias todo="vim $DBOX/todo/todo.txt"
-alias t="clear;todo.sh -c -d ~/.config/todo/config"
-alias tg="clear;todo.sh graph"
+alias todo="vim $HOME/todo/todo.txt"
+alias tpr="clear;todo.sh -c -d ~/.config/todo/config"
+alias tg="clear;todo.sh graph 30"
+alias tgr="clear;todo.sh graph"
 alias tfg="vim ~/.config/todo/config"
+alias tfgalloc="vim ~/.config/todo/.actions.d/wp/allocations.conf"
 alias tm="todo.sh many"
 alias ta="todo.sh wp add"
 alias tap="todo.sh app"
+alias tdp="todo.sh depri"
 alias tdu="clear;todo.sh due"
 alias tpp="todo.sh prep"
-alias tp="todo.sh p"
-alias tv="todo.sh view"
+alias tp="todo.sh pri"
+alias trp="todo.sh replace"
+alias tv="clear;todo.sh view"
+alias tvc="clear;todo.sh view context"
 alias tvp="clear;todo.sh view project"
 alias tdo="todo.sh do"
+alias tag="todo.sh again"
+alias tch="todo.sh chcon"
+alias talloc="todo.sh wp alloc"
+alias twl="todo.sh wp ls"
+alias tdn="todo.sh donow"
+alias tws="todo.sh wp summary"
+alias twg="todo.sh wp graph"
+
+# todo.txt functions
+t () {
+  clear
+  if [ $# -eq 0 ]; then
+    todo.sh view project
+  else
+    todo.sh "$@"
+  fi
+}
 
 #### 6. Useful Replacements
 
@@ -156,14 +177,15 @@ mkcd () {
   case "$1" in /*) :;; *) set -- "./$1";; esac
   mkdir -p "$1" && cd "$1"
 }
-alias sym="/home/efex/scripts/symswitch.sh"
+alias sym="$HOME/scripts/symswitch.sh"
+# alias updatr="$HOME/scripts/updatr.sh"
 
 # ssh initialize for that session
 sshinit () {
-  # pkill ssh
   eval "$(ssh-agent)"
   ssh-add
 }
+alias sshrestart="sudo systemctl restart ssh.service"
 
 # diff analyzer
 differ () {
@@ -259,10 +281,7 @@ alias cacheclean="rm -rf /home/efex/.cache/thumbnails/* && alert 'cacheclean is 
 alias imagecheck="dpkg --list 'linux-image*' && echo 'use \"sudo dpkg --purge linux-image-*\" to remove'"
 alias snupdate="sudo snap refresh"
 alias snapcheck="du -h /var/lib/snapd/snaps"
-alias snapclean="sudo $DBOX/scripts/snapclean && alert 'snapclean is complete!'"
-
-# backup system
-alias sysbackup="/mnt/sdc1/Dropbox/scripts/sysbackup"
+alias snapclean="sudo $HOME/scripts/snapclean.sh && alert 'snapclean is complete!'"
 
 # pip and pip3 updaters
 alias pipupdate="pip freeze --local | sed -rn 's/^([^=# \t\\][^ \t=]*)=.*/echo; echo Processing \1 ...; pip install -U \1/p' | sh"

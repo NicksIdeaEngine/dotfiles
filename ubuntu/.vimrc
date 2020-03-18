@@ -73,4 +73,3 @@
 " Set tabs for specific filetypes
 " autocmd Filetype css setlocal tabstop=4
 " autocmd Filetype scss setlocal tabstop=4
-

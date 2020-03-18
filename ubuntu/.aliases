@@ -61,7 +61,7 @@ alias {.....,.4}="cd ../../../.."
 alias ricing="code ~/dots/dotfiles.code-workspace"
 
 # open quantify workspace
-alias quantify="code $DBOX/quant/quant.code-workspace"
+alias quantify="code $HOME/quant/quant.code-workspace"
 
 # config editing binds
 alias cfls="echo 'Alias Bashrc Compton Dunst Firefox FirefoxDev I3wm Kitty Mpd Nvim Polybar Ranger St Tmux Vim Xresources Ytdl[S,V] Zshrc'"
@@ -96,19 +96,19 @@ alias instst="cd ~/.config/repos/st && sudo make install && alert 'st has been r
 #### 3. Reference Files
 
 alias refls="echo 'manjAro vsCode toDo Journey Linux MarkDown Ricing Ssh Tmux Vim Webdev temp(x) Zsh misc'"
-alias refa="vim $DBOX/refs/manjaroref.md"
-alias refd="vim $DBOX/refs/todoref.md"
-alias refj="vim $DBOX/refs/journeyref.md"
-alias refl="vim $DBOX/refs/linuxref.md"
-alias refmd="vim $DBOX/refs/markdown.md"
-alias refp="vim $DBOX/refs/plagueref.md"
-alias refr="vim $DBOX/refs/reactref.md"
-alias refs="vim $DBOX/refs/sshref.md"
-alias reft="vim $DBOX/refs/tmuxref.md"
-alias refv="vim $DBOX/refs/vimref.md"
-alias refw="vim $DBOX/refs/webdevref.md"
-alias refx="vim $DBOX/refs/ricingref.md"
-alias misc="vim $DBOX/docs/misc.md"
+alias refa="vim $HOME/refs/manjaroref.md"
+alias refd="vim $HOME/refs/todoref.md"
+alias refj="vim $HOME/refs/journeyref.md"
+alias refl="vim $HOME/refs/linuxref.md"
+alias refmd="vim $HOME/refs/markdown.md"
+alias refp="vim $HOME/refs/plagueref.md"
+alias refr="vim $HOME/refs/reactref.md"
+alias refs="vim $HOME/refs/sshref.md"
+alias reft="vim $HOME/refs/tmuxref.md"
+alias refv="vim $HOME/refs/vimref.md"
+alias refw="vim $HOME/refs/webdevref.md"
+alias refx="vim $HOME/refs/ricingref.md"
+alias misc="vim $HOME/docs/misc.md"
 
 #### 4. Recent Projects
 
@@ -127,7 +127,7 @@ alias sbox="cd $CDIR/sandbox && code sandbox.code-workspace"
 alias tls="echo 'todo: open todo.txt | t: show tasks by project | tg: graph \
                \ntfg: config | tm: many | ta: wp add | tap: append | tdu: due \
                \ntpp: prep | tp: pri | tv: view | tvp: view project | tdo: do'"
-alias todo="vim $DBOX/todo/todo.txt"
+alias todo="vim $HOME/todo/todo.txt"
 alias tpr="clear;todo.sh -c -d ~/.config/todo/config"
 alias tg="clear;todo.sh graph 30"
 alias tgr="clear;todo.sh graph"
@@ -177,8 +177,8 @@ mkcd () {
   case "$1" in /*) :;; *) set -- "./$1";; esac
   mkdir -p "$1" && cd "$1"
 }
-alias sym="/mnt/sdc1/Dropbox/scripts/symswitch.sh"
-alias updatr="/mnt/sdc1/Dropbox/scripts/updatr.sh"
+alias sym="$HOME/scripts/symswitch.sh"
+alias updatr="$HOME/scripts/updatr.sh"
 
 # ssh initialize for that session
 sshinit () {
@@ -281,10 +281,7 @@ alias cacheclean="rm -rf /home/efex/.cache/thumbnails/* && alert 'cacheclean is 
 alias imagecheck="dpkg --list 'linux-image*' && echo 'use \"sudo dpkg --purge linux-image-*\" to remove'"
 alias snupdate="sudo snap refresh"
 alias snapcheck="du -h /var/lib/snapd/snaps"
-alias snapclean="sudo $DBOX/scripts/snapclean.sh && alert 'snapclean is complete!'"
-
-# backup system
-alias sysbackup="/mnt/sdc1/Dropbox/scripts/sysbackup.sh"
+alias snapclean="sudo $HOME/scripts/snapclean.sh && alert 'snapclean is complete!'"
 
 # pip and pip3 updaters
 alias pipupdate="pip freeze --local | sed -rn 's/^([^=# \t\\][^ \t=]*)=.*/echo; echo Processing \1 ...; pip install -U \1/p' | sh"
