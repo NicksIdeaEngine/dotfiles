@@ -93,7 +93,7 @@ $mod4+e exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes' 'i3-msg exit'"
 # $scmod3+0 $ex $scr/sysmenu
 
 Set shut down, restart and locking features
-bindsym $mod+0 mode "$mode_system"
+$mod3+0 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
     bindsym l $ex i3exit lock, mode "default"
