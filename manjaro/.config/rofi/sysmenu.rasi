@@ -6,7 +6,7 @@ configuration {
     background-color:	#3c3836;
     border-color:	#458588;
     text-color:		#f9f5d7;
-    font:		"Fira Code 12";
+    font:		"FiraCode Nerd Font 12";
 }
 
 #window {
