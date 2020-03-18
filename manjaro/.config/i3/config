@@ -299,7 +299,7 @@ $br Mod3+Control+Print \
 $exa dunst
 # $ex rescuetime
 # $ex dropbox start
-# $ex $HOME/.fehbg
+$ex $HOME/.fehbg
 # $ex xflux -z 33101 -k 2800
 $exa $scr/polybarstart-manjaro.sh
 # $ex sleep 60; $scr/sysbackup.sh
