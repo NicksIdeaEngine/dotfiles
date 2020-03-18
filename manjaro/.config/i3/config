@@ -234,7 +234,7 @@ $smod3+t        exec  i3-sensible-terminal
 # $smod3+m        exec  gnome-system-monitor
 # $mod3+g         exec  google-chrome
 # $scmod4+l       $ex   i3lock -ti /mnt/sdc1/Dropbox/pics/wallpaper/wall509.png
-$scmod3+l       $ex blurlock
+$scmod4+l       $ex blurlock
 # $mod3+equal     exec  gnome-calculator
 # $mod4+equal     exec  gnome-calculator
 # $mod4+d         $ex   discord
