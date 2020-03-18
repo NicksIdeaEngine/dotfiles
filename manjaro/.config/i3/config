@@ -69,7 +69,7 @@ title_align center
 
 # general settings
 gaps outer 0
-gaps inner 4
+gaps inner 0
 default_border pixel 4
 default_floating_border pixel 4
 hide_edge_borders both
@@ -90,7 +90,7 @@ $mod4+r restart
 $mod4+e exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes' 'i3-msg exit'"
 
 # open sys menu
-# $scmod3+0 $ex $scr/sysmenu
+# $scmod3+0 $ex $scr/sysmenu.sh
 
 # Set shut down, restart and locking features
 $mod3+0 mode "$mode_system"
@@ -110,7 +110,7 @@ mode "$mode_system" {
 }
 
 # restart polybar
-$mod4+p $ex $scr/polybarstart
+$mod4+p $ex $scr/polybarstart-manjaro.sh
 
 # volume changing
 # bindsym $volup $ex pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -192,9 +192,9 @@ $smod3+slash move scratchpad
 
 # app management
 $smod3+q kill
-# $mod3+d $ex $scr/rofioneliner
-# $smod3+d $ex $scr/rofidropmenu
-# $cmod3+d $ex $scr/autoscriptmenu
+# $mod3+d $ex $scr/rofioneliner.sh
+# $smod3+d $ex $scr/rofidropmenu.sh
+# $cmod3+d $ex $scr/autoscriptmenu.sh
 
 # start program launcher
 $mod3+d $ex dmenu_recency
@@ -266,8 +266,8 @@ $exa dunst
 # $ex dropbox start
 # $ex $HOME/.fehbg
 # $ex xflux -z 33101 -k 2800
-$exa $scr/polybarstart
-# $ex sleep 60; $scr/sysbackup
+$exa $scr/polybarstart-manjaro.sh
+# $ex sleep 60; $scr/sysbackup.sh
 # Autostart applications
 $ex /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 $ex nitrogen --restore; sleep 1; compton -b
@@ -276,7 +276,7 @@ $ex nm-applt
 $ex xfce4-power-manager
 $ex pamac-tray
 $ex clipit
-$ex /home/efex/scripts/polybarstart-manjaro.sh
+$ex $scr/polybarstart-manjaro.sh
 # $ex blueman-applet
 # $exa sbxkb
 # $ex start_conky_maia
