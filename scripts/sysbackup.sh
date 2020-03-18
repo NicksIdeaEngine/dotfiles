@@ -55,7 +55,7 @@ TMUX_SPEC=("tpm")
 VIM_SPEC=("autoload" ".netrwhist")
 
 # dotfiles in $HOME
-DOTFILES=(".bash_history" ".fehbg" ".git-credentials" ".gitconfig" ".histfile" ".lesshst" ".node_repl_history" ".npmrc" ".nvimlog" ".python_history" ".rvmrc" ".selected_editor" ".viminfo" ".wakatime.cfg" ".wget-hsts" ".z" ".zsh_history")
+DOTFILES=(".bash_history" ".git-credentials" ".gitconfig" ".histfile" ".lesshst" ".node_repl_history" ".npmrc" ".nvimlog" ".python_history" ".rvmrc" ".selected_editor" ".viminfo" ".wakatime.cfg" ".wget-hsts" ".z" ".zsh_history")
 
 # backup one or more files or directories
 backup() {
