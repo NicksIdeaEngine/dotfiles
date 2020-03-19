@@ -2,13 +2,13 @@
 . ~/.aliases
 case "$1" in
   --drop)
-    /mnt/sdc1/Dropbox/scripts/rofidropmenu.sh
+    $HOME/scripts/rofidropmenu.sh
     ;;
   --oneliner)
-    /mnt/sdc1/Dropbox/scripts/rofioneliner.sh
+    $HOME/scripts/rofioneliner.sh
     ;;
   --autoscript )
-    /mnt/sdc1/Dropbox/scripts/autoscriptmenu.sh
+    $HOME/scripts/autoscriptmenu.sh
     ;;
   *)
     ;;

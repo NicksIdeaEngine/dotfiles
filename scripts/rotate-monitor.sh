@@ -17,4 +17,4 @@ else
 	rotate="$alt"
 fi
 xrandr --output $screen --rotate $rotate
-/mnt/sdc1/Dropbox/scripts/polybarstart.sh
+$HOME/scripts/polybarstart.sh
