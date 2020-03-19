@@ -30,7 +30,7 @@ set $cmod4 bindsym Mod4+Control
 set $scmod4 bindsym Mod4+Shift+Control
 
 # default terminal is suckless terminal
-set $terminal /home/efex/.local/kitty/kitty/launcher/kitty
+set $terminal /home/efex/bin/kitty
 
 # $ex volumeicon
 # bindsym $mod+Ctrl+m exec $terminal -e 'alsamixer'

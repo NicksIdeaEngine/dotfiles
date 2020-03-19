@@ -4,6 +4,8 @@ export PATH="/home/efex/scripts:$PATH"
 # Add ubuntu-make .desktop files to path
 export PATH="/home/efex/.local/share/applications:$PATH"
 
+export PATH="/home/efex/bin:$PATH"
+
 # Ubuntu make installation of Ubuntu Make binary symlink
 # export PATH="/home/efex/.local/share/umake/bin:$PATH"
 
