@@ -1,8 +1,8 @@
 #!/bin/zsh
 
-REF_FOLDER="/mnt/sdc1/Dropbox/dots/refs"
+REF_FOLDER="$HOME/dots/refs"
 REF_FILE="$REF_FOLDER/$1.md"
-LINK_FILE="/mnt/sdc1/Dropbox/refs/$1.md"
+LINK_FILE="$HOME/refs/$1.md"
 
 if [[ -f "$REF_FILE" ]]; then
   nvim "$REF_FILE"

@@ -242,6 +242,30 @@ The mindset behind this setup is rapid web development and research through a mi
   - Nitro+ RX 590 8G G5
   - Nominal fan speed 0 - 2280 (max is 3200)
 
+### Filesystem
+
+- `/bin`: binaries, programs or applications (like cat, ls, grep, etc)
+- `/boot`: don't mess with this, contains bootloaders
+- `/dev`: devices, hardware (webcam, keyboard, usually drivers will access this)
+- `/etc`: etcetera, contains all system-wide configurations, settings
+- `/home`: store personal files and documents, configurations and settings, hidden config files/directories, etc
+  - `~/.cache`: used by some applications to store temporary files
+  - `~/.config`, `~/.local`: store individual application settings
+- `/lib`, `/lib32`, `/lib64`: libraries applications use to perform various functions, required by binaries
+- `/media`: let the OS manage this
+- `/mnt`: find other mounted drives, floppy disk, network drive, used for manual mounts
+- `/opt`: optional, manually installed software
+- `/proc`: pseudo files containing info about system processes and resources
+- `/root`: root user's home directory, needs root permissions to access
+- `/run`: new, tempfs filesystem (runs in RAM), everything is gone each time the computer shuts down
+- `/sbin`: system binaries that a sysadmin would use but a normal user wouldn't have access to
+- `/snap`: snap packages, mostly for ubuntu
+- `/srv`: service directory, where service data is stored
+- `/sys`: system directory, a way to interact with a kernel, not physically written to disk
+- `/tmp`: temp directory, used for temporary files from applications, good to watch for stuff that won't go away
+- `/usr`: user application space where applications install that are used by the users (aka Unix System Resource)
+- `/var`: variable directory, files and directories that are expected to grow in size (crash, log, spool, metrics, etc)
+
 ### Looking at fan speeds and system temperatures
 
 ## Script ideas

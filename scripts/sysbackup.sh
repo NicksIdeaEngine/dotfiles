@@ -7,7 +7,7 @@ YEAR="$(date +%Y)"
 QUARTER="$(( ($MONTH-1)/3+1 ))"
 
 # destination folder in Dropbox
-DEST="/mnt/sdc1/Dropbox/backups"
+DEST="$HOME/backups"
 
 # directories to grab from $HOME
 HOME_SPEC=(".config" ".config/google-chrome/Default" ".config/gtk-3.0" ".config/mpd" ".config/RescueTime.com" ".config/repos/st" ".config/todo" ".config/Twine" ".icons" ".local/kitty/kitty" ".local/share/applications" ".mozilla/firefox/sv5rklav.default-release" ".mozilla/firefox/wmmhtufq.dev-edition-default-2" ".ssh" ".tmux/plugins" ".vim" "bin" "Twine")
@@ -25,7 +25,7 @@ GTK_SPEC=("bookmarks")
 QUARTER_SPEC=(".fonts" ".themes")
 
 # mpd spec
-MPD_SPEC=("mpd.conf" "pid")
+MPD_SPEC=("mpd.conf")
 
 # RescueTime.com spec
 RESCUE_SPEC=(".rtgoals")
@@ -52,7 +52,7 @@ LOCAL_APP_SPEC=("firefox-developer.desktop" "kitty.desktop" "twine.desktop" "st.
 TMUX_SPEC=("tpm")
 
 # .vim spec
-VIM_SPEC=("autoload" ".netrwhist")
+VIM_SPEC=("autoload")
 
 # dotfiles in $HOME
 DOTFILES=(".bash_history" ".git-credentials" ".gitconfig" ".histfile" ".lesshst" ".node_repl_history" ".npmrc" ".nvimlog" ".python_history" ".rvmrc" ".selected_editor" ".viminfo" ".wakatime.cfg" ".wget-hsts" ".z" ".zsh_history")
