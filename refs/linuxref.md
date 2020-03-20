@@ -178,6 +178,8 @@ def layout_single_window(xdecoration_pairs: DecorationPairs, ydecoration_pairs: 
     return window_geometry(xstart, xnum, ystart, ynum)
 ```
 
+- stow
+
 # Ideas
 
 The mindset behind this setup is rapid web development and research through a minimal, nearly-max real estate UI. Crisp, crystal clear, and low on eye strain.

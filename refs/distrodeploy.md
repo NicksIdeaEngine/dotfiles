@@ -66,7 +66,8 @@
     - neofetch
     - firefox-developer-edition
     - redshift
-    - ruby-sass and ruby-sass-listen
+    - ruby-sass
+    - ruby-sass-listen
     - tmux
     - wine
     - gimp
@@ -76,7 +77,6 @@
     - virtualbox
     - discord
     - qbittorrent
-    - xsel equivalent
     - unrar
 
 ### Manual Installs
@@ -86,7 +86,7 @@
 - rvm
 - twine
 - filezilla
-- rescuetime (look into timewarrior and taskwarrior and vit)
+- rescuetime (look into timewarrior and taskwarrior and vit, and rescuetime from yaourt)
 - .fonts
 - chrome
 - vs code
@@ -94,11 +94,9 @@
 - powerlevel10k zsh theme
 - oh-my-zsh
 - powerline-fonts
-- kitty
 - nvim
-- st
 - tor
-- it87
+- oh-my-zsh
 
 #### Package Tweaks
 
@@ -124,10 +122,12 @@ def layout_single_window(xdecoration_pairs: DecorationPairs, ydecoration_pairs: 
     return window_geometry(xstart, xnum, ystart, ynum)
 ```
 
-## Step 4: Dotfiles Deploy
+## Step 4: Dotfiles, Backup, Home, & Repo Deploy
 
-### QA Checklist
+`distrodeploy.sh`
 
-## Step 5: Repos Deploy
+- st
+- it87
+- kitty
 
 ### QA Checklist

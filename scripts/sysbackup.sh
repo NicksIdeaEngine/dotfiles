@@ -10,16 +10,13 @@ QUARTER="$(( ($MONTH-1)/3+1 ))"
 DEST="$HOME/backups"
 
 # directories to grab from $HOME
-HOME_SPEC=(".config" ".config/google-chrome/Default" ".config/gtk-3.0" ".config/mpd" ".config/RescueTime.com" ".config/repos/st" ".config/todo" ".config/Twine" ".icons" ".local/kitty/kitty" ".local/share/applications" ".mozilla/firefox/sv5rklav.default-release" ".mozilla/firefox/wmmhtufq.dev-edition-default-2" ".ssh" ".tmux/plugins" ".vim" "bin" "Twine")
+HOME_SPEC=(".config" ".config/google-chrome/Default" ".config/mpd" ".config/RescueTime.com" ".config/repos/st" ".config/todo" ".config/Twine" ".icons" ".local/kitty/kitty" ".local/share/applications" ".ssh" ".tmux/plugins" ".vim" "bin" "Twine")
 
 # .config specifications
-CONFIG_SPEC=("autostart" "filezilla" "gtk-2.0" "gtk-4.0" "htop" "pulse" "vlc" "user-dirs.dirs")
+CONFIG_SPEC=("autostart" "filezilla" "htop" "pulse" "vlc" "user-dirs.dirs")
 
 # google chrome specific file
 CHROME_SPEC=("Preferences")
-
-# .config/gtk-3.0 spec
-GTK_SPEC=("bookmarks")
 
 # quarterly backups
 QUARTER_SPEC=(".fonts" ".themes")
@@ -111,8 +108,6 @@ start_daily() {
         backup "$1" "$I" "${LOCAL_KITTY_SPEC[@]}" ;;
       ".local/share/applications" )
         backup "$1" "$I" "${LOCAL_APP_SPEC[@]}" ;;
-      ".mozilla/firefox/"* )
-        backup "$1" "$I" "chrome" ;;
       ".tmux/plugins" )
         backup "$1" "$I" "${TMUX_SPEC[@]}" ;;
       ".vim" )

@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-SOURCE_DIR="/home/efex/.config/todo"
-DEST_DIR="/home/efex/dots/manjaro/.config/todo"
+SOURCE_DIR="/home/efex/.config/gtk-4.0"
+DEST_DIR="/home/efex/dots/ubuntu/.config/gtk-4.0"
 DEST_FILE="$DEST_DIR/$1"
 
 if [[ ! -f "$DEST_FILE" ]]; then
