@@ -46,38 +46,13 @@
 
 ## Step 3: Package Installation
 
+### Rclone / Dropbox
+
+- Set up rclone/rsync and dropbox so that /mnt/sdc1/Dropbox exists
+
 ### Installs From Pacman
 
-- `sudo pacman -Syu`
-  - stuff to look for
-    - timeshift
-    - firefox
-    - neovim
-    - zsh
-    - st-manjaro
-    - rofi
-    - polybar
-    - feh
-    - youtube-dl
-    - curl
-    - wget
-    - nnn
-    - dunst
-    - neofetch
-    - firefox-developer-edition
-    - redshift
-    - ruby-sass
-    - ruby-sass-listen
-    - tmux
-    - wine
-    - gimp
-    - nodejs
-    - npm
-    - ruby
-    - virtualbox
-    - discord
-    - qbittorrent
-    - unrar
+- `sudo pacman -Syu timeshift firefox neovim zsh st-manjaro rofi polybar feh youtube-dl curl wget nnn dunst neofetch firefox-developer-edition redshift ruby-sass ruby-sass-listen tmux wine gimp nodejs npm ruby virtualbox discord qbittorrent unrar`
 
 ### Manual Installs
 
@@ -87,16 +62,13 @@
 - twine
 - filezilla
 - rescuetime (look into timewarrior and taskwarrior and vit, and rescuetime from yaourt)
-- .fonts
 - chrome
 - vs code
 - dropbox (look into rclone)
 - powerlevel10k zsh theme
 - oh-my-zsh
 - powerline-fonts
-- nvim
 - tor
-- oh-my-zsh
 
 #### Package Tweaks
 
@@ -130,4 +102,24 @@ def layout_single_window(xdecoration_pairs: DecorationPairs, ydecoration_pairs: 
 - it87
 - kitty
 
-### QA Checklist
+## Step 5: QA Checklist
+
+- Kitty layout and spacing looks good
+- i3 layout still shows correctly with zsh theme
+- keyboard volume buttons work
+- sinkswitch.sh works
+- monitor positioning works on login
+- `num_lock` is on upon login
+- xset equivalent is tuned properly
+- sysbackup.sh works
+- workspaces set to correct monitors
+- possibly re-setup ssh
+- verify all backups are deployed
+- all repos
+- all dotfiles
+- all symlinks for home and dotfiles
+-
+
+## Step 6: Make another snapshot
+
+- Take a timeshift snapshot after this is done

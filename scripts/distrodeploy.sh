@@ -55,17 +55,16 @@ deploy_repos() {
 
 start() {
   # Part X - Create file structure and links
-  # deploy_home_links
+  deploy_home_links
 
   # Part X - Put files from ~/backups into place
-  # deploy_backup
-  # cd ~/.fonts
-  # fc-cache
+  deploy_backup
+  cd ~/.fonts
+  fc-cache
 
   # Part X - Create symlinks for everything in ~/dots/manjaro
-  # cd ~
-  # deploy_dots
-
+  cd ~
+  deploy_dots
 }
 
 start
