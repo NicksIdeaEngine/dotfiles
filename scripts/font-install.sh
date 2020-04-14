@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 fonts_dir="${HOME}/.fonts"
 

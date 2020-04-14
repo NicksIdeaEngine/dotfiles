@@ -6,14 +6,9 @@ export PATH="/home/efex/.local/share/applications:$PATH"
 
 export PATH="/home/efex/bin:$PATH"
 
-# Ubuntu make installation of Ubuntu Make binary symlink
-# export PATH="/home/efex/.local/share/umake/bin:$PATH"
-
-# Path for go lang
-# export PATH="/usr/local/go/bin:$PATH"
-
 # Path for "go get" binaries
-# export PATH="/home/efex/code/go/bin:$PATH"
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
 
 # t path
 # export PATH="/home/efex/.local/share/applications/tor-browser_en-US:$PATH"

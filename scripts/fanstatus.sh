@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 front_fan="$(cat /sys/class/hwmon/hwmon0/fan2_input)"
 top_fans="$(cat /sys/class/hwmon/hwmon0/fan3_input)"

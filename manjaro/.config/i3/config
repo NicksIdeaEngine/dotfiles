@@ -30,37 +30,34 @@ set $cmod4 bindsym Mod4+Control
 set $scmod4 bindsym Mod4+Shift+Control
 
 # default terminal is suckless terminal
-set $terminal /home/efex/bin/kitty
+set $terminal kitty
 
 # $ex volumeicon
 # bindsym $mod+Ctrl+m exec $terminal -e 'alsamixer'
 #$ex pulseaudio
 #$ex pa-applet
 #bindsym $mod+Ctrl+m exec pavucontrol
-# Screen brightness controls
-# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # set audio commands to easy variables
-# set $volup XF86AudioRaiseVolume
-# set $voldown XF86AudioLowerVolume
-# set $mute XF86AudioMute
-# set $playnext XF86AudioNext
-# set $playprev XF86AudioPrev
-# set $play XF86AudioPlay
-# set $stop XF86AudioStop
+set $volup XF86AudioRaiseVolume
+set $voldown XF86AudioLowerVolume
+set $mute XF86AudioMute
+set $playnext XF86AudioNext
+set $playprev XF86AudioPrev
+set $play XF86AudioPlay
+set $stop XF86AudioStop
 
 # set audio sinks and sources
-# set $speakers alsa_output.pci-0000_0a_00.3.analog-stereo
-# set $headphones alsa_output.usb-Logitech_Logitech_G430_Gaming_Headset-00.analog-stereo
-# set $headmic alsa_input.usb-Logitech_Logitech_G430_Gaming_Headset-00.mono-fallback
-# set $webcammic alsa_input.usb-Generic_FULL_HD_1080P_Webcam_200901010001-02.analog-stereo
+set $speakers alsa_output.pci-0000_0a_00.3.analog-stereo
+set $headphones alsa_output.usb-Logitech_Logitech_G430_Gaming_Headset-00.analog-stereo
+set $headmic alsa_input.usb-Logitech_Logitech_G430_Gaming_Headset-00.mono-fallback
+set $webcammic alsa_input.usb-Generic_FULL_HD_1080P_Webcam_200901010001-02.analog-stereo
 
 # clean up code
 set $ex exec --no-startup-id
 set $exa exec_always --no-startup-id
 set $br bindsym --release
-set $scr /home/efex/scripts
+set $scr /home/efex/dots/scripts
 
 #### 1. System & Settings
 
@@ -71,14 +68,15 @@ title_align center
 # general settings
 gaps outer 0
 gaps inner 0
-default_border pixel 4
-default_floating_border pixel 4
+default_border pixel 5
+default_floating_border pixel 5
 hide_edge_borders both
 popup_during_fullscreen smart
 workspace_auto_back_and_forth yes
-workspace_layout tabbed
-floating_minimum_size 500 x 500
-floating_maximum_size 1000 x 1000
+workspace_layout default
+default_orientation horizontal
+floating_minimum_size 750 x 500
+floating_maximum_size 1250 x 1000
 
 # reload the configuration file
 $mod4+c reload
@@ -96,9 +94,9 @@ $scmod3+0 $ex $scr/sysmenu.sh --menu
 $mod4+p $ex $scr/polybarstart.sh
 
 # volume changing
-# bindsym $volup $ex pactl set-sink-volume @DEFAULT_SINK@ +5%
-# bindsym $voldown $ex pactl set-sink-volume @DEFAULT_SINK@ -5%
-# bindsym $mute $ex pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym $volup $ex pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym $voldown $ex pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym $mute $ex pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 #### 2. Window Navigation & Management
 
@@ -169,18 +167,14 @@ $mod3+3 workspace 3
 $mod3+4 workspace 4
 $mod3+5 workspace 5
 $mod3+6 workspace 6
-$mod3+7 workspace 7
-$mod3+8 workspace 8
 
 # move focused container to workspace
-$smod3+1 move container to workspace 1
-$smod3+2 move container to workspace 2
-$smod3+3 move container to workspace 3
-$smod3+4 move container to workspace 4
-$smod3+5 move container to workspace 5
-$smod3+6 move container to workspace 6
-$smod3+7 move container to workspace 7
-$smod3+8 move container to workspace 8
+$smod3+1 move container to workspace 1; workspace 1
+$smod3+2 move container to workspace 2; workspace 2
+$smod3+3 move container to workspace 3; workspace 3
+$smod3+4 move container to workspace 4; workspace 4
+$smod3+5 move container to workspace 5; workspace 5
+$smod3+6 move container to workspace 6; workspace 6
 
 # scratchpad
 $mod3+slash     scratchpad show
@@ -203,7 +197,7 @@ $cmod3+d    $ex $scr/autoscriptmenu.sh
 $scmod3+d   $ex $scr/autorefmenu.sh
 
 # start program launcher
-$mod4+d $ex dmenu_recency
+# $mod4+d $ex dmenu_recency
 $cmod4+b exec $terminal -e 'bmenu'
 
 # launch categorized menu
@@ -213,9 +207,9 @@ $cmod4+b exec $terminal -e 'bmenu'
 $mod3+n         exec  $terminal ranger
 # $smod3+n        exec  nemo
 $mod3+w         exec  firefox
-# $smod3+w        $ex   firefox-developer
+$smod3+w        $ex   firefox-developer-edition
 # $scmod3+w       $ex   start-tor-browser
-# $mod3+c         $ex   code
+$mod3+c         $ex   code
 $mod3+Return    $ex   $terminal
 $smod3+Return   exec  i3-sensible-terminal
 # $cmod3+Return   $ex   st
@@ -224,33 +218,27 @@ $mod3+t         $ex   $terminal
 $smod3+t        exec  i3-sensible-terminal
 # $cmod3+t        $ex   st
 # $mod4+t         exec  gnome-text-editor
-# $mod3+m         exec  $terminal htop
-# $smod3+m        exec  gnome-system-monitor
-# $mod3+g         exec  google-chrome
-# $scmod4+l       $ex   i3lock -ti /mnt/sdc1/Dropbox/pics/wallpaper/wall509.png
-$scmod4+l       $ex blurlock
+$mod3+m         exec  $terminal htop
+$mod3+g         exec  google-chrome-stable
+# $scmod4+l       $ex blurlock
+$scmod4+l         $ex xautolock -nowlocker blurlock
 # $mod3+equal     exec  gnome-calculator
 # $mod4+equal     exec  gnome-calculator
-# $mod4+d         $ex   discord
+$mod4+d         $ex   discord
 # $mod4+f         exec  filezilla
-# $mod4+s         $ex   slack
+$mod4+s         $ex   slack
 # $mod4+v         exec  virtualbox
+$mod4+o         $ex   obs
 
 # Start Applications
 # bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 # bindsym $mod+F5 exec $terminal -e 'mocp'
-# bindsym $mod+t $ex pkill compton
-# bindsym $mod+Ctrl+t $ex compton -b
-# bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-# bindsym Print $ex i3-scrot
-# bindsym $mod+Print --release $ex i3-scrot -w
-# bindsym $mod+Shift+Print --release $ex i3-scrot -s
 # bindsym $mod+Shift+Control+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 # bindsym $mod+Ctrl+x --release $ex xkill
 
 # launch music
-$mod4+m $ex "vlc /home/efex/music/to-sort/current.xspf"
+#$mod4+m $ex "vlc /home/efex/music/to-sort/current.xspf"
 
 # screenshots
 $br Mod3+Print \
@@ -267,30 +255,31 @@ $br Mod3+Control+Print \
 #### 8. Startup
 
 # monitor orientation since my primary is in the middle
-# $ex xrandr --output HDMI-A-0 --auto --left-of DisplayPort-0
+$ex xrandr --output HDMI-A-0 --auto --left-of DisplayPort-0
 
 # turn num lock on
-# $ex xdotool key --clearmodifiers Num_Lock
+$ex xdotool key --clearmodifiers Num_Lock
 
 # set default sink to speakers and source to headset mic
-# $exa pactl set-default-sink $speakers
-# $exa pactl set-default-source $headmic
-# $exa pactl set-sink-volume 0 '0%'
+$exa pulseaudio -D && $scr/polybarstart.sh
+$exa pactl set-default-sink $speakers
+$exa pactl set-default-source $headmic
+$exa pactl set-sink-volume 0 '0%'
 
 # set default screen timeout settings
 # $ex xset s off
-# $ex xset dpms 0 0 1200
+$ex xset dpms 0 0 1200
 
 # autostart apps
 $exa    dunst
 # $ex     rescuetime
 # $ex     dropbox start
 $ex     $HOME/.fehbg
-# $ex     xflux -z 33101 -k 2800
+$exa redshift -c /home/efex/.config/redshift.conf
 $exa    $scr/polybarstart.sh
 # $ex     sleep 10; $scr/sysbackup.sh
 $ex /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-$ex nitrogen --restore; sleep 1; compton -b
+# $ex nitrogen --restore; sleep 1; compton -b
 # $ex manjaro-hello
 $ex nm-applt
 $ex xfce4-power-manager
@@ -301,18 +290,16 @@ $ex clipit
 # $ex start_conky_maia
 # $ex start_conky_green
 # $ex xautolock -time 30 -locker blurlock
-$exa ff-theme-util
+# $exa ff-theme-util
 $exa fix_xcursor
 
 # set default workspaces
-workspace 1 output primary
-workspace 2 output primary
-workspace 3 output primary
-workspace 4 output primary
-workspace 5 output primary
-workspace 6 output primary
-workspace 7 output primary
-workspace 8 output primary
+workspace 1 output HDMI-A-0
+workspace 2 output DisplayPort-0
+workspace 3 output DisplayPort-1
+workspace 4 output HDMI-A-0
+workspace 5 output DisplayPort-0
+workspace 6 output DisplayPort-1
 
 # window rules
 for_window [title="System Monitor"] border pixel 0
@@ -405,10 +392,10 @@ set $mode_i3setup Show Container: prime_a (a) prime_b (s) aside_a (d) aside_b (f
 $smod3+i mode "$mode_i3setup"
 
 mode "$mode_i3setup" {
-  bindsym a $ex "/home/efex/.local/kitty/kitty/launcher/kitty --class=kitty --name=hub -T=hub"
-  bindsym s $ex "/home/efex/.local/kitty/kitty/launcher/kitty --class=kitty --name=sub -T=sub"
-  bindsym d $ex "/home/efex/.local/kitty/kitty/launcher/kitty --class=kitty --name=box -T=box"
-  bindsym f $ex "/home/efex/.local/kitty/kitty/launcher/kitty --class=kitty --name=bar -T=bar"
+  bindsym a $ex "kitty --class=kitty --name=hub -T=hub"
+  bindsym s $ex "kitty --class=kitty --name=sub -T=sub"
+  bindsym d $ex "kitty --class=kitty --name=box -T=box"
+  bindsym f $ex "kitty --class=kitty --name=bar -T=bar"
   bindsym r $ex "i3-msg 'append_layout /home/efex/.config/i3/layouts/main-workflow-1.json'"
 
 	bindsym Return mode "default"

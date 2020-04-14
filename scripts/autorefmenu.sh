@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 selected=$(ls "$HOME/refs" | rofi -dmenu -theme oneliner -p "autoref: ")
 [[ -z $selected ]] && exit

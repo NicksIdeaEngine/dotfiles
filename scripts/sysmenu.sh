@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 if [[ -f /etc/os-release ]]; then
   . /etc/os-release
@@ -14,7 +14,7 @@ case "$NAME" in
             *Lock) i3lock-fancy ;;
             *Logout) i3-msg exit ;;
             *Reboot) systemctl reboot ;;
-            *Shutdown) systemctl -i poweroff
+            *Shutdown) systemctl -i poweroff ;;
           esac
         ;;
       *)
@@ -30,7 +30,7 @@ case "$NAME" in
             *Lock) i3exit lock ;;
             *Logout) i3exit logout ;;
             *Reboot) i3exit reboot ;;
-            *Shutdown) i3exit shutdown ;;
+            *Shutdown) systemctl -i poweroff ;;
           esac
         ;;
       *)

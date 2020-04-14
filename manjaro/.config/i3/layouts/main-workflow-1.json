@@ -4,20 +4,20 @@
     "border": "pixel",
     "floating": "auto_off",
     "layout": "splitv",
-    "percent": 0.85,
+    "percent": 0.83,
     "type": "con",
     "nodes": [
         {
             // tabbed split container with 1 children
             "border": "pixel",
             "floating": "auto_off",
-            "layout": "tabbed",
-            "percent": 0.89,
+            "layout": "splith",
+            "percent": 0.84,
             "type": "con",
             "nodes": [
                 {
                     "border": "pixel",
-                    "current_border_width": 4,
+                    "current_border_width": 5,
                     "floating": "auto_off",
                     "geometry": {
                        "height": 480,
@@ -42,13 +42,13 @@
             // tabbed split container with 1 children
             "border": "pixel",
             "floating": "auto_off",
-            "layout": "tabbed",
-            "percent": 0.11,
+            "layout": "splith",
+            "percent": 0.16,
             "type": "con",
             "nodes": [
                 {
                     "border": "pixel",
-                    "current_border_width": 4,
+                    "current_border_width": 5,
                     "floating": "auto_off",
                     "geometry": {
                        "height": 480,
@@ -77,20 +77,20 @@
     "border": "pixel",
     "floating": "auto_off",
     "layout": "splitv",
-    "percent": 0.15,
+    "percent": 0.17,
     "type": "con",
     "nodes": [
         {
             // tabbed split container with 1 children
             "border": "pixel",
             "floating": "auto_off",
-            "layout": "tabbed",
+            "layout": "splith",
             "percent": 0.21,
             "type": "con",
             "nodes": [
                 {
                     "border": "pixel",
-                    "current_border_width": 4,
+                    "current_border_width": 5,
                     "floating": "auto_off",
                     "geometry": {
                        "height": 480,
@@ -115,13 +115,13 @@
             // tabbed split container with 1 children
             "border": "pixel",
             "floating": "auto_off",
-            "layout": "tabbed",
+            "layout": "splith",
             "percent": 0.79,
             "type": "con",
             "nodes": [
                 {
                     "border": "pixel",
-                    "current_border_width": 4,
+                    "current_border_width": 5,
                     "floating": "auto_off",
                     "geometry": {
                        "height": 480,

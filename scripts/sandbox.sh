@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 [[ -f ~/.aliases ]] && echo "and"
 

@@ -23,5 +23,5 @@
 #-e
 
 # save under ~/Dropbox/vids/to-sort
--o "/mnt/sdc1/Dropbox/vids/to-sort/%(title)s.%(ext)s"
+-o "/home/efex/vids/to-sort/%(title)s.%(ext)s"
 

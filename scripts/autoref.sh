@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 REF_FOLDER="$HOME/dots/refs"
 REF_FILE="$REF_FOLDER/$1.md"

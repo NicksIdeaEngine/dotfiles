@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 selected=$(ls "$HOME/scripts" | rofi -dmenu -theme oneliner -p "autoscript: ")
 [[ -z $selected ]] && exit

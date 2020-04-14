@@ -14,10 +14,10 @@
 
 #### 0. Variables
 
-DBOX="$HOME"
-# CDIR="$DBOX/code"
-# SDIR="$CDIR/snippets"
-# PDIR="$CDIR/projects"
+DBOX="/mnt/sdc1/dbx"
+CDIR="$DBOX/code"
+SDIR="$CDIR/snippets"
+PDIR="$CDIR/showcase"
 alias sudo="sudo "
 alias {v,vi,vim}="nvim"
 
@@ -25,7 +25,7 @@ alias {v,vi,vim}="nvim"
 
 # move to certain folders
 alias navls="echo 'dbx cfg doc dot dwn mzk pix ref scr tmp vds cdir sdir pdir pfol userchrome[dev]'"
-# alias dbx="cd $DBOX"
+alias dbx="cd $DBOX"
 # alias bod="cd ~/body"
 alias cfg="cd ~/.config"
 # alias cpy="cd ~/writing/copywriting"
@@ -40,10 +40,10 @@ alias scr="cd ~/scripts"
 alias tmp="cd ~/tmp"
 alias vds="cd ~/vids"
 # alias wrt="cd ~/writing"
-# alias cdir="cd $CDIR"
-# alias sdir="cd $SDIR"
-# alias pdir="cd $PDIR"
-# alias pfol="cd $CDIR/nickgarcia.me"
+alias cdir="cd $CDIR"
+alias sdir="cd $SDIR"
+alias pdir="cd $PDIR"
+alias pfol="cd $CDIR/nickgarcia.me"
 alias userchrome="cd ~/.mozilla/firefox/d3sh8gn9.default-release/chrome"
 # alias userchromedev="cd ~/.mozilla/firefox/wmmhtufq.dev-edition-default-2/chrome"
 
@@ -79,13 +79,13 @@ alias cfk="vim ~/.config/kitty/kitty.conf"
 alias cfn="vim ~/.config/nvim/init.vim"
 alias cfp="vim ~/.config/polybar/config.ini"
 alias cfr="vim ~/.config/ranger/rc.conf"
-# alias cfrt="vim ~/.config/RescueTime.com/.rtgoals"
+alias cfrt="vim ~/.config/rescuetime/.rtgoals"
 # alias cfs="vim ~/.config/repos/st/config.h"
 alias cft="vim ~/.tmux.conf"
 alias cfv="vim ~/.vimrc"
 alias cfx="vim ~/.Xresources"
-# alias cfys="vim ~/.config/youtube-dl/songconfig"
-# alias cfyv="vim ~/.config/youtube-dl/vidconfig"
+alias cfys="vim ~/.config/youtube-dl/songconfig"
+alias cfyv="vim ~/.config/youtube-dl/vidconfig"
 alias cfz="vim ~/.zshrc"
 alias cfze="vim ~/.zshenv"
 alias cfzp="vim ~/.zprofile"
@@ -114,9 +114,11 @@ alias misc="vim $HOME/docs/misc.md"
 
 # aliases for recent projects
 alias projls="echo 'a/learn-react-js b/pomodoro c/simonsays z/portfolio bork sbox'"
-alias proja="cd $CDIR/coursework/learn-react-js && code learn-react-js.code-workspace"
+alias proja="cd $PDIR/sudoku && code sudoku.code-workspace"
 alias projb="cd $PDIR/fcc-pomodoro && code pomodoro.code-workspace"
 alias projc="cd $PDIR/fcc-simonsays && code simonsays.code-workspace"
+alias projx="cd $CDIR/examples/tictactoe && code tictactoe.code-workspace"
+alias projy="cd $CDIR/coursework/learn-react-js && code learn-react-js.code-workspace"
 alias projz="cd $CDIR/nickgarcia.me && code portfolio.code-workspace"
 alias bork="cd $CDIR/borksism && code borksism.code-workspace"
 alias sbox="cd $CDIR/sandbox && code sandbox.code-workspace"
@@ -124,28 +126,29 @@ alias sbox="cd $CDIR/sandbox && code sandbox.code-workspace"
 #### 5. Todotxt CLI
 
 # todo.txt aliases
+alias _t="todo.sh -c -t -d ~/.config/todo/config"
 alias tls="echo 'todo: open todo.txt | t: show tasks by project | tg: graph \
                \ntfg: config | tm: many | ta: wp add | tap: append | tdu: due \
                \ntpp: prep | tp: pri | tv: view | tvp: view project | tdo: do'"
 alias todo="vim $HOME/todo/todo.txt"
-alias tpr="clear;todo.sh -c -d ~/.config/todo/config"
+alias tpr="clear;todo.sh -c -t -d ~/.config/todo/config"
 alias tg="clear;todo.sh graph 30"
 alias tgr="clear;todo.sh graph"
 alias tfg="vim ~/.config/todo/config"
 alias tfgalloc="vim ~/.config/todo/.actions.d/wp/allocations.conf"
-alias tm="todo.sh many"
-alias ta="todo.sh wp add"
+alias tm="_t many"
+alias ta="_t wp add"
 alias tap="todo.sh app"
 alias tdp="todo.sh depri"
 alias tdu="clear;todo.sh due"
 alias tpp="todo.sh prep"
 alias tp="todo.sh pri"
-alias trp="todo.sh replace"
+alias trp="_t replace"
 alias tv="clear;todo.sh view"
 alias tvc="clear;todo.sh view context"
 alias tvp="clear;todo.sh view project"
-alias tdo="todo.sh do"
-alias tag="todo.sh again"
+alias tdo="todo.sh again"
+# alias tag="todo.sh again"
 alias tch="todo.sh chcon"
 alias talloc="todo.sh wp alloc"
 alias twl="todo.sh wp ls"
@@ -159,7 +162,7 @@ t () {
   if [ $# -eq 0 ]; then
     todo.sh view project
   else
-    todo.sh "$@"
+    todo.sh -c -t -d "~/.config/todo/config" "$@"
   fi
 }
 
@@ -192,12 +195,18 @@ alias pms="pacman -Ss"
 
 # diff analyzer
 differ () {
-  diff "/mnt/sdc1/Dropbox/dots/ubuntu/$1" "/mnt/sdc1/Dropbox/dots/manjaro/$1"
+  diff "$HOME/dots/ubuntu/$1" "$HOME/dots/manjaro/$1"
 }
 
 # ask when deleting multiple
 alias rm="rm -I"
 alias rmf="rm -Irvf"
+
+# rclone aliases and functions
+rpurge() {
+  rclone purge "dbx:$1"
+  sudo rm -rvf "/mnt/sdc1/dbx/$1"
+}
 
 # some more ls aliases
 alias ll="ls -halF"
@@ -220,7 +229,7 @@ alias afk="i3lock -ti /mnt/sdc1/Dropbox/pics/wallpaper/wall509.png"
 
 # grabbing audio from youtube
 # link to my "To DL" playlist
-alias grablist="youtube-dl --config-location ~/.config/youtube-dl/config \"https://www.youtube.com/playlist?list=PLedhaNZS3z5JfQ8lQIY3Drq3bvNX2TKSP\" && alert 'grablist complete'"
+alias grablist="youtube-dl --config-location ~/.config/youtube-dl/songconfig \"https://www.youtube.com/playlist?list=PLedhaNZS3z5JfQ8lQIY3Drq3bvNX2TKSP\" && alert 'grablist complete'"
 alias grabsong="youtube-dl --config-location ~/.config/youtube-dl/songconfig \"https://\" && alert 'grabsong complete'"
 # alias grabvid="youtube-dl --config-location ~/.config/youtube-dl/vidconfig \"https://\" && alert 'grabvid complete'"
 alias grabvid="youtube-dl --config-location ~/.config/youtube-dl/vidconfig"

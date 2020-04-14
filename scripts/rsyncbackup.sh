@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 # directory to backup
 SRCDIR=$HOME/.config/autostart

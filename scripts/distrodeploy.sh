@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 backup_src="$HOME/backups/current/"
 backup_qtr="$HOME/backups/quarterly/1/"
@@ -10,22 +10,26 @@ home_links=("archives" "backups" "body" "code" "docs" "dots" "flow" "music" "pic
 remove_dirs=("Documents" "Music" "Pictures" "Videos")
 
 deploy_home_links() {
-  if [[ ! -s /home/efex/dbx ]]; then
-    ln -s /mnt/sdc1/Dropbox /home/efex/dbx
-  fi
+#  if [[ ! -s /home/efex/dbx ]]; then
+#    ln -s /mnt/sdc1/Dropbox /home/efex/dbx
+#  fi
 
-  for i in ${home_links[@]}; do
-    if [[ ! -s $HOME/$i ]]; then
-      ln -s $dbox_src/$i $HOME/$i
-      echo "linked $HOME/$i to $dbox_src/$i"
-    fi
-  done
+#  for i in ${home_links[@]}; do
+#    if [[ ! -s $HOME/$i ]]; then
+#      ln -s $dbox_src/$i $HOME/$i
+#      echo "linked $HOME/$i to $dbox_src/$i"
+#    fi
+#  done
 
-  for i in ${remove_dirs[@]}; do
-    rm -vd "/home/efex/$i"
-  done
+#  for i in ${remove_dirs[@]}; do
+#    rm -vd "/home/efex/$i"
+#  done
 
   mv /home/efex/Downloads /home/efex/dwn
+  mv /home/efex/Documents /home/efex/docs
+  mv /home/efex/Pictures /home/efex/pics
+  mv /home/efex/Music /home/efex/music
+  mv /home/efex/Videos /home/efex/vids
 }
 
 deploy_backup() {
@@ -38,7 +42,7 @@ deploy_dots() {
 }
 
 deploy_repos() {
-  local repodir=/home/efex/.config/repos
+  local repodir="/home/efex/.local"
   if [[ ! -d $repodir ]]; then
     mkdir $repodir
   fi
@@ -47,9 +51,7 @@ deploy_repos() {
 
   git clone git@github.com:a1wong/it87.git
   git clone git@github.com:LukeSmithxyz/st.git
-
-  cd "/home/efex/.local"
-  git clone https://github.com/kovidgoyal/kitty
+  git clone git@github.com:kovidgoyal/kitty.git
 
 }
 

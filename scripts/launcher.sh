@@ -1,5 +1,7 @@
-#!/bin/zsh
+#!/bin/bash
+
 . ~/.aliases
+
 case "$1" in
   --drop)
     $HOME/scripts/rofidropmenu.sh

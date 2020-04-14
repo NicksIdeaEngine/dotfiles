@@ -1,3 +1,3 @@
-#!/bin/zsh
+#!/bin/bash
 
 rofi -show run -theme oneliner

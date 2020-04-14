@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 # this is a temp file used for holding the list of Dropbox
 # directories you can add or remove from the exclude list

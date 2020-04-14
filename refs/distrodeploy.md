@@ -104,20 +104,20 @@ def layout_single_window(xdecoration_pairs: DecorationPairs, ydecoration_pairs: 
 
 ## Step 5: QA Checklist
 
-- Kitty layout and spacing looks good
-- i3 layout still shows correctly with zsh theme
-- keyboard volume buttons work
-- sinkswitch.sh works
-- monitor positioning works on login
-- `num_lock` is on upon login
-- xset equivalent is tuned properly
+> - Kitty layout and spacing looks good
+> - i3 layout still shows correctly with zsh theme
+> - keyboard volume buttons work
+> - sinkswitch.sh works
+> - monitor positioning works on login
+> - `num_lock` is on upon login
+> - xset equivalent is tuned properly
 - sysbackup.sh works
-- workspaces set to correct monitors
+> - workspaces set to correct monitors
 - possibly re-setup ssh
-- verify all backups are deployed
-- all repos
-- all dotfiles
-- all symlinks for home and dotfiles
+> - verify all backups are deployed
+> - all repos
+> - all dotfiles
+> - all symlinks for home and dotfiles
 -
 
 ## Step 6: Make another snapshot

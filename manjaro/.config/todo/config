@@ -1,4 +1,4 @@
-export TODO_DIR="/mnt/sdc1/Dropbox/todo"
+export TODO_DIR="/home/efex/todo"
 export TODO_FILE="$TODO_DIR/todo.txt"
 export DONE_FILE="$TODO_DIR/done.txt"
 export REPORT_FILE="$TODO_DIR/report.txt"
@@ -7,6 +7,8 @@ export TMP_FILE="/tmp/todo.tmp"
 export TODOTXT_DEFAULT_ACTION=ls
 export TODOTXT_SORT_COMMAND="env LC_COLLATE=C sort -k 2,2 -k 1,1n"
 export TODO_ACTIONS_DIR="/home/efex/.config/todo/.actions.d"
+export TODOTXT_FINAL_FILTER="${HOME}/.config/todo/.actions.d/again/againFilter.sh"
+export TODO_NO_AGAIN_IF_NOT_TAGGED=1
 
 export BLACK="\\033[30m"
 export RED="\\033[31m"

@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 # Based on: https://gist.github.com/XVilka/8346728
 

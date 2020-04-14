@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 ## ^ Tells bash what interpreter to use
 
 DST_DIR="~/.local/share/gnome-shell/extensions/"

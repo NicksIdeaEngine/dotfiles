@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 src_dir="/home/efex/dots"
 dest_dir="/home/efex"

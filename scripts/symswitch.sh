@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 SOURCE_DIR="/home/efex"
 DEST_DIR="/home/efex/dots/manjaro"

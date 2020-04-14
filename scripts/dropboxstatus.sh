@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 case "$1" in
 	--status)
