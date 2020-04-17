@@ -1,7 +1,8 @@
 #!/bin/bash
 
-SOURCE_DIR="/home/efex"
-DEST_DIR="/home/efex/dots/manjaro"
+MOD_DIR=".config/i3/layouts"
+SOURCE_DIR="/home/efex/$MOD_DIR"
+DEST_DIR="/home/efex/dots/$MOD_DIR"
 DEST_FILE="$DEST_DIR/$1"
 
 if [[ ! -f "$DEST_FILE" ]]; then

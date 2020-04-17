@@ -1,0 +1,73 @@
+! gruvbox-dark theme
+
+! bg shades
+*background: #1d2021
+*bg: #1d2021
+*bg0: #282828
+*bg1: #3c3836
+*bg2: #504945
+*bg3: #665c54
+*bg4: #7c6f64
+
+! fg shades
+*foreground: #ebdbb2
+*fg: #ebdbb2
+*fg0: #fbf1c7
+*fg1: #ebdbb2
+*fg2: #d5c4a1
+*fg3: #bdae93
+*fg4: #a89984
+
+! bg hard contrast
+*color0:  #282828
+
+! red
+*color1:  #cc241d
+
+! green
+*color2:  #98971a
+
+! yellow
+*color3:  #d79921
+
+! blue
+*color4:  #458588
+
+! purple
+*color5:  #b16286
+
+! aqua
+*color6:  #689d6a
+
+! dark gray
+*color7:  #a89984
+
+! light gray
+*color8:  #928374
+
+! dark red
+*color9:  #fb4934
+
+! dark green
+*color10: #b8bb26
+
+! dark yellow
+*color11: #fabd2f
+
+! dark blue
+*color12: #83a598
+
+! dark purple
+*color13: #d3869b
+
+! dark aqua
+*color14: #8ec07c
+
+! fg
+*color15: #ebdbb2
+
+! orange
+*color16: #d65d0e
+
+! dark orange
+*color17: #fe8019

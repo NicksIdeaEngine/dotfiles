@@ -10,25 +10,22 @@ QUARTER="$(( ($MONTH-1)/3+1 ))"
 DEST="$HOME/backups"
 
 # directories to grab from $HOME
-HOME_SPEC=(".config" ".config/google-chrome/Default" ".config/mpd" ".config/RescueTime.com" ".config/repos/st" ".config/todo" ".config/Twine" ".icons" ".local/kitty/kitty" ".local/share/applications" ".ssh" ".tmux/plugins" ".vim" "bin" "Twine")
+HOME_SPEC=(".config" ".config/google-chrome/Default" ".config/mpd" ".config/rclone" ".config/rescuetime" ".config/todo" ".config/Twine" ".icons" ".local/kitty/kitty" ".local/share/applications" ".ssh" ".tmux/plugins" ".vim" "bin" "Twine")
 
 # .config specifications
-CONFIG_SPEC=("autostart" "filezilla" "htop" "pulse" "vlc" "user-dirs.dirs")
+CONFIG_SPEC=("autostart" "filezilla" "htop" "pulse" "systemd" "vlc" "redshift.conf" "user-dirs.dirs")
 
 # google chrome specific file
 CHROME_SPEC=("Preferences")
 
-# quarterly backups
-QUARTER_SPEC=(".fonts" ".themes")
-
 # mpd spec
 MPD_SPEC=("mpd.conf")
 
+# rclone spec
+RCLONE_SPEC=("filter-from.txt" "rclone.conf")
+
 # RescueTime.com spec
 RESCUE_SPEC=(".rtgoals")
-
-# st spec
-ST_SPEC=(".Xdefaults" "config.h" "st.c" "st.info")
 
 # todo spec
 TODO_SPEC=(".actions.d" "todo_description.png")
@@ -52,7 +49,10 @@ TMUX_SPEC=("tpm")
 VIM_SPEC=("autoload")
 
 # dotfiles in $HOME
-DOTFILES=(".bash_history" ".git-credentials" ".gitconfig" ".histfile" ".lesshst" ".node_repl_history" ".npmrc" ".nvimlog" ".python_history" ".rvmrc" ".selected_editor" ".viminfo" ".wakatime.cfg" ".wget-hsts" ".z" ".zsh_history")
+DOTFILES=(".bash_history" ".git-credentials" ".gitconfig" ".histfile" ".lesshst" ".node_repl_history" ".npmrc" ".nvimlog" ".python_history" ".rvmrc" ".selected_editor" ".viminfo" ".wakatime.cfg" ".wget-hsts" ".Xclients" ".z" ".zsh_history")
+
+# quarterly backups
+QUARTER_SPEC=(".fonts" ".themes")
 
 # backup one or more files or directories
 backup() {
@@ -90,14 +90,12 @@ start_daily() {
         backup "$1" "$I" "${CONFIG_SPEC[@]}" ;;
       ".config/google-chrome/Default" )
         backup "$1" "$I" "${CHROME_SPEC[@]}" ;;
-      ".config/gtk-3.0" )
-        backup "$1" "$I" "${GTK_SPEC[@]}" ;;
       ".config/mpd" )
         backup "$1" "$I" "${MPD_SPEC[@]}" ;;
-      ".config/RescueTime.com" )
+      ".config/rclone" )
+        backup "$1" "$I" "${RCLONE_SPEC[@]}" ;;
+      ".config/rescuetime" )
         backup "$1" "$I" "${RESCUE_SPEC[@]}" ;;
-      ".config/repos/st" )
-        backup "$1" "$I" "${ST_SPEC[@]}" ;;
       ".config/todo" )
         backup "$1" "$I" "${TODO_SPEC[@]}" ;;
       ".config/Twine" )
