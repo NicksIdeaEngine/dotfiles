@@ -1,4 +1,6 @@
-# Tmux basics
+# Tmux Notes
+
+## Tmux basics
 
 - `tmux` - Run tmux
 - `ctrl-space d` - Detach from tmux
@@ -13,7 +15,7 @@
 - `tmux kill-server` - kill server
 - `ctrl-space r` - resource ~/.tmux.conf
 
-# Tmux window management
+## Tmux window management
 
 - `ctrl-space c` - create new window in home directory
 - `ctrl-space w` - create new window in current directory
@@ -25,23 +27,23 @@
 - `ctrl-space v` - open new pane to the side
 - `ctrl-space h` - open new pane below
 
-* `ctrl-space [` - enter copy mode
-* `-> v:` begin selection
-* `-> c:` copy selection
-* `ctrl-space ]:` paste from clipboard
-* `ctrl-shift-v: paste` from clipboard (this is a kitty terminal hotkey, not tmux)
+- `ctrl-space [` - enter copy mode
+- `-> v:` begin selection
+- `-> c:` copy selection
+- `ctrl-space ]:` paste from clipboard
+- `ctrl-shift-v: paste` from clipboard (this is a kitty terminal hotkey, not tmux)
 
 Another option for copying is to select with mouse and press y before releasing the mouse
 
-# SUPER HELPFUL MAN PAGE KEY
+## SUPER HELPFUL MAN PAGE KEY
 
 Hit `K` to jump to the exact place in `man tmux` where the word under the cursor is explained
 
-# Tmux Plugins
+## Tmux Plugins
 
-- `` prefix` + `I `` - installing plugins after adding to .tmux.conf
+- `prefix + I` - installing plugins after adding to .tmux.conf
 
 - `prefix + Ctrl-s` to save - tmux-resurrect
 - `prefix + Ctrl-r` to restore
 
-## tmux-contiuum
+### tmux-contiuum

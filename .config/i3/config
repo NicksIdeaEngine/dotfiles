@@ -1,5 +1,7 @@
 # i3 config file (v4)
-# Table of Contents
+
+# {{{ Table of Contents
+
 # 0. Variables
 # 1. System & Settings
 # 2. Window Navigation & Management
@@ -13,7 +15,8 @@
 # Y. Modes
 # Z. Overflow
 
-#### 0. Variables
+# }}}
+# {{{ 0. Variables
 
 # caps lock key is used for most frequent actions
 set $mod3key Mod3
@@ -59,7 +62,8 @@ set $exa exec_always --no-startup-id
 set $br bindsym --release
 set $scr /home/efex/dots/scripts
 
-#### 1. System & Settings
+# }}}
+# {{{ 1. System & Settings
 
 # titlebar settings
 font pango:FiraCode Nerd Font 10
@@ -98,7 +102,8 @@ bindsym $volup $ex pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym $voldown $ex pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym $mute $ex pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-#### 2. Window Navigation & Management
+# }}}
+# {{{ 2. Window Navigation & Management
 
 # change focus
 $mod3+h focus left
@@ -158,7 +163,8 @@ $smod3+a focus parent
 # focus the child container
 $smod3+c focus child
 
-#### 3. Workspaces
+# }}}
+# {{{ 3. Workspaces
 
 # switch to workspace
 $mod3+1 workspace 1
@@ -187,7 +193,8 @@ $mod3+braceright    exec i3-input -F 'swap container with mark %s' -l 1 -P 'Mark
 $mod3+semicolon     mark --add --toggle swapee
 $smod3+semicolon    swap container with mark swapee
 
-#### 4. Application Management
+# }}}
+# {{{ 4. Application Management
 
 # app management
 $smod3+q    kill
@@ -251,11 +258,13 @@ $br Mod3+Shift+Print \
 $br Mod3+Control+Print \
   $ex scrot -q 100 -m -e 'mv $f ~/dwn/shots'
 
-#### 5. Scripts
+# }}}
+# {{{ 5. Scripts
 
 #### 
 
-#### 8. Startup
+# }}}
+# {{{ 8. Startup
 
 # monitor orientation since my primary is in the middle
 $ex xrandr --output HDMI-A-0 --auto --left-of DisplayPort-0
@@ -342,7 +351,8 @@ for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 
-#### X. Colors
+# }}}
+# {{{ X. Colors
 
 set_from_resource $color0 color0 #ffffff
 set_from_resource $red color1 #ffffff
@@ -384,7 +394,8 @@ client.placeholder      $yellow		  $yellow		  $yellow	  $yellow	    $yellow
 
 client.background       #ffffff
 
-#### Y. Modes
+# }}}
+# {{{ Y. Modes
 
 # i3setup mode
 set $mode_i3setup Deploy Layout: 4 panel (r) 2 panel (t) | Deploy Container: prime_a (a) prime_b (s) aside_a (d) aside_b (f)
@@ -534,4 +545,7 @@ mode "$mode_gaps_left" {
         bindsym Escape mode "default"
 }
 
-#### Z. Overflow
+# }}}
+# {{{ Z. Overflow
+
+# }}}

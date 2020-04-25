@@ -1,5 +1,7 @@
 # Installation Timeline
 
+**Summary:** This was a timeline maintained while using Ubuntu on my desktop computer. I now use Manjaro-i3 and maintain [desktop-timeline.md](../desktop-timeline.md)
+
 - Ubuntu 19.10
 - Timeshift > take snapshot
 - i3-gaps

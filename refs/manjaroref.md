@@ -1,4 +1,8 @@
-# Timeline
+# Laptop Timeline
+
+**Summary:** This is an ongoing file where I track every system change made on my laptop, which uses Manjaro-i3.
+
+## Timeline
 
 - Installed Manjaro-i3 19.0.1
 - timeshift > ran manual backup
@@ -27,13 +31,13 @@
   - X11Forwarding no
   - AllowUsers <user>
 - !vs code
-- 
+-
 
-# Old Timeline
+## Old Timeline
 
 - fixed a synaptics issue using [the info from this manjaro forum post](https://forum.manjaro.org/t/synaptics-touchpad-on-hp-pavilion-g6-laptop/101462)
 
-# To Be Installed
+## To Be Installed
 
 - userChrome.css
 - openssh equivalent
@@ -54,6 +58,6 @@
 - npm
 -
 
-# Useful Commands
+## Useful Commands
 
 - `man pacman-mirrors`: pulls up a package that helps generates a pacman mirrorlist

@@ -1,8 +1,11 @@
 # WebDev Journey
 
+**Summary:** Notes I took while watching [Traversy Media's "Web Development in 2020" video.](https://www.youtube.com/watch?v=0pThnRneDjw)
+
 ## Fundamentals
 
 ### HTML & CSS (13 days)
+
 - [Semantic HTML5 elements](): 1 day (DONE!)
   - [article](): Specifies independent, self-contained content.  Should make sense on its own and be possible to distribute independently from the rest of the site.
     - Forum / blog posts, news stories, comments
@@ -28,7 +31,9 @@
 - Browser Dev Tools: 2 days
 
 ### Responsive Layout (7 days)
+
 Responsive layouts are no longer luxury, they are a necessity
+
 - Set viewport: 1 day
 - Fluid widths: 2 days
 - Media queries: 1 day
@@ -36,7 +41,9 @@ Responsive layouts are no longer luxury, they are a necessity
 - Mobile first, stacked columns: 2 days
 
 ### Sass Pre-Processor (6 days)
-Create your own modular, reusable CSS components to use in your projects.  Frameworks are less popular lately.
+
+Create your own modular, reusable CSS components to use in your projects. Frameworks are less popular lately.
+
 - Structured CSS: 1 day
 - Variables: 1 day
 - Conditionals: 1 day
@@ -45,14 +52,18 @@ Create your own modular, reusable CSS components to use in your projects.  Frame
 - Inheritance: 1 day
 
 ### HTML / CSS Framework (5 days)
+
 HTML / CSS frameworks are becoming a bit less relevant but you should still learn one.  They can make your life much easier and great for prototyping.
+
 - Bootstrap: 2 days
 - Tailwind CSS: 2 days
 - Materialize: 1 day
 - Bulma
 
 ### Vanilla JavaScript (11 days)
+
 Learn JS without any library or framework
+
 - Data types, functions, conditionals, loops, operators: 1 day
 - DOM Manipulation & Events: 2 days
 - JSON: 2 days
@@ -60,7 +71,9 @@ Learn JS without any library or framework
 - ES6+ (Arrow functions, promises, async / await, destructuring): 4 days
 
 ### Git & Tooling (13 days)
+
 Git is necessary for all web devs
+
 - Git (version control): 1 day (DONE)
 - Browser Dev Tools: 2 days
 - VSCode Extensions: 1 day (DONE)
@@ -73,7 +86,9 @@ Git is necessary for all web devs
 - Editor Extensions (ESLint, Prettier, Live Server, etc): 1 day (DONE)
 
 ### Basic Deployment (5 days)
+
 Learn to deploy static websites
+
 - Register a domain name (Google Domains) (DONE)
 - Manage shared hosting or VPS (Inmotion)
 - FTP, SFTP File Upload (Filezilla): 1 day (DONE)
@@ -83,7 +98,9 @@ Learn to deploy static websites
 - CLI & Git: 1 day (DONE)
 
 ### Basic Front-End Web Developer
+
 At this point you should be able to...
+
 - Build websites for individuals & small businesses
 - Create mobile friendly layouts
 - Create CSS animations and effects
@@ -99,11 +116,14 @@ Make sure projects focus on these types of skills to make them shine.
 #### SUB TOTAL TIME ESTIMATE:  60 DAYS
 
 ## What To Learn Next
+
 What to do next depends on what you want to do.  You have a few choices.
+
 - Front End JS Framework
 - Server Side Language & Database
 
 ### Front End JS Framework (5 days)
+
 - Very popular in the industry
 - More interactive & interesting UIs
 - Components & modular front end code
@@ -113,7 +133,9 @@ What to do next depends on what you want to do.  You have a few choices.
 - Angular: Fading a bit: used in enterprise
 
 ### State Mangement (4 days)
+
 For larger apps with a framework, you may need to learn methods to manage app-level state
+
 - React: Redux, Context API with Hooks: 3 days
 - Apollo (GraphQL Client)
 - Vue: Vuex
@@ -128,15 +150,15 @@ For larger apps with a framework, you may need to learn methods to manage app-le
   - Observables
 
 ### Full Fledged Front-End Web Developer (6 days)
+
 - Build incredible front-end applications: 3 days
 - Smooth & steady front-end workflow: 1 day
 - Work well with teams & familiar with Git: 1 day
 - Connect to backend APIs & work with data: 1 day
-You should be able to get a front-end job or work for yourself and do pretty well
+  You should be able to get a front-end job or work for yourself and do pretty well
 
 #### GRAND TOTAL TIME ESTIMATE: 75 days
 
-The rest of the video dives much deeper.  Keep taking notes at Server Side Rendering (30:40)
+The rest of the video dives much deeper. Keep taking notes at Server Side Rendering (30:40)
 
 https://www.youtube.com/watch?v=0pThnRneDjw
-

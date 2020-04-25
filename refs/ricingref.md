@@ -1,3 +1,7 @@
+# Reference File For All My Ricing
+
+## i3 Hotkeys
+
 mod3 = Caps lock (rebound as Hypder L)
 mod4 = Windows
 s = Shift

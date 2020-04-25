@@ -1,3 +1,6 @@
+! These changes removes Caps_Lock functionality, replacing it with Hyper_L.
+! Hyper_L is then added to mod3, which is the main mod key used in my i3 config.
+
 clear lock
 clear mod3
 clear mod4
@@ -5,6 +8,7 @@ keycode 66 = Hyper_L NoSymbol Hyper_L
 add mod3 = Hyper_L
 add mod4 = Super_R
 
+! #### Display Structure ####
 ! keycode ## = keysym1 keysym2 keysym3 keysym4 keysym5 keysym6
 ! keysym1 - Key
 ! keysym2 - Shift+Key
@@ -34,6 +38,6 @@ add mod4 = Super_R
 ! control     Control_L (0x25),  Control_R (0x69)
 ! mod1        Alt_L (0x40),  Alt_R (0x6c),  Meta_L (0xcd)
 ! mod2        Num_Lock (0x4d)
-! mod3      
+! mod3
 ! mod4        Super_L (0x85),  Super_R (0x86),  Super_L (0xce),  Hyper_L (0xcf)
 ! mod5        ISO_Level3_Shift (0x5c),  Mode_switch (0xcb)

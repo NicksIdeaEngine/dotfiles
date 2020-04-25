@@ -1,4 +1,6 @@
-# Main Todotxt Commands
+# Todotxt-cli Reference File
+
+## Main Todotxt Commands
 
 * _t: `todo.sh -c -t -d ~/.config/todo/config`
 * todo: `vim $HOME/todo/todo.txt`
@@ -22,15 +24,15 @@ t () {
 }
 ```
 
-# Plugins
+## Plugins
 
-## again
+### again
 
-### aliases
+#### again aliases
 
 * tag: `todo.sh again`
 
-### notes
+#### again notes
 
 * `todo.sh again N`: mark item N as done and recreate it. creation and due date set to today. deferral date unchanged.
 * `todo.sh again N ADJUST`: mark N done. recreate it. creation = today. due / deferral = ADJUST from today.
@@ -38,69 +40,69 @@ t () {
 * `t:DATE`: can set deferral dates that will be adjusted along with due dates.
 * `ADJUST format`: (+)X(d|b|w|m|y) - days | business days | weeks | months | years
 
-## chcon
+### chcon
 
-### aliases
+#### chcon aliases
 
 * tch: `todo.sh chcon`
 
-### notes
+#### chcon notes
 
 * `todo.sh chcon N @context`: replaces item N with entered context. give no context to remove all context.
 
-## donow
+### donow
 
-### aliases
+#### donow aliases
 
 * tdn: `todo.sh donow`
 
-### notes
+#### donow notes
 
 * `$HOME/todo/evidence.log`: log file for all `donow` entries
 
-## due
+### due
 
-### aliases
+#### aliases
 
 * tdu: `clear;todo.sh due`
 
-### notes
+#### notes
 
 * `todo.sh due N`: shows tasks due within next N days
 * `due:YYYY-MM-DD`: use this tag in tasks to mark due dates
 
-## graph
+### graph
 
-### aliases
+#### graph aliases
 
 * tg: `clear;todo.sh graph 30`
 * tgr: `clear;todo.sh graph`
 
-### notes
+#### graph notes
 
 * `todo.sh graph N`: visualize last N days of tasks
 
-## many
+### many
 
-### aliases
+#### many aliases
 
 * tm: `_t many`
 
-### notes
+#### many notes
 
 * `todo.sh many ACTION ITEMS COMMAND`: applies multiple commands from action to items
   * `todo.sh many pri 1-3,5 b`: marks items 1, 2, 3, and 5 priority (B)
   * `todo.sh many depri /@Phone/`: deprioritizes all tasks with context @Phone
 
-## view
+### view
 
-### aliases
+#### view aliases
 
 * tv: `clear;todo.sh view`
 * tvc: `clear;todo.sh view context`
 * tvp: `clear;todo.sh view project`
 
-### notes
+#### view notes
 
 * `todo.sh view project`: shows items grouped by project
 * `todo.sh view project @context`: shows items grouped by project and filtered by @context
@@ -109,10 +111,9 @@ t () {
 * `todo.sh view before`: shows items grouped by date before and with today
 * `todo.sh view before +project`: shows items grouped by date before and with today and filtered by +project
 
+### wp
 
-## wp
-
-### aliases
+#### wp aliases
 
 * tfgalloc: `vim ~/.config/todo/.actions.d/wp/allocations.conf`
 * ta: `_t wp add`
@@ -121,7 +122,7 @@ t () {
 * tws: `todo.sh wp summary`
 * twg: `todo.sh wp graph`
 
-### notes
+#### wp notes
 
 * `allocations.conf` in `.actions.d/wp` to set allocations for projects (by minutes per week)
 * `est:45`: sets 45 minutes for estimated time to complete task (required)

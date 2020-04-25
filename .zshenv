@@ -1,10 +1,10 @@
 # Add scripts from Dropbox/scripts to path
-export PATH="/home/efex/scripts:$PATH"
+export PATH="$HOME/scripts:$PATH"
 
 # Add ubuntu-make .desktop files to path
-export PATH="/home/efex/.local/share/applications:$PATH"
+export PATH="$HOME/.local/share/applications:$PATH"
 
-export PATH="/home/efex/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 # Path for "go get" binaries
 export GOPATH="$HOME/go"

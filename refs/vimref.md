@@ -1,4 +1,6 @@
-# Notes from Luke Smith's "After Vimtutor" Video
+# vim ref
+
+## Notes from Luke Smith's "After Vimtutor" Video
 
 - gk and gj: move **visual** line up/down instead of logical lines
 - <F5> now sources init.vim
@@ -12,30 +14,34 @@
 - dot command is versatile. If I _ciw_ to change a word, than search for more uses of that word, I can use _n_ _dot command_ _n_ _dot command_ and so on to cycle through search results and repeat the same replacement
 - S begins the :%s///g command
 
-# General Notes
+## General Notes
 
 - ea: end of word, append
 
-# Plugin Hotkeys
+### [vim](vim/summary.md) folds
 
-## vim-surround
+- `<leader>/`: fold this section
+
+## Plugin Hotkeys
+
+### vim-surround
 
 _cs"'_ changes "Hello world!" to 'Hello world!'
 
-## vim-commentary
+### vim-commentary
 
 _gcc_ in normal mode changes line to comment
 _gc_ in visual mode changes selected lines to comment
 
-## nerdtree
+### nerdtree
 
 - <Leader>n toggles NERDTree
 
-## vim-prettier
+### vim-prettier
 
 <Leader>p to format
 
-## emmet-vim
+### emmet-vim
 
 <c-y>, to expand abbreviation
 <c-y>, also used to wrap selections
@@ -51,6 +57,6 @@ _gc_ in visual mode changes selected lines to comment
 <c-y>a make anchor from URL
 <c-y>A make quoted text from a URL
 
-# Notes from How to Configure Vim like VSCode video by Ben Awad
+## Notes from How to Configure Vim like VSCode video by Ben Awad
 
 [Link to Dot Files](https://gist.github.com/benawad/b768f5a5bbd92c8baabd363b7e79786f)
