@@ -103,19 +103,6 @@ alias cfzp="vim ~/.zprofile"
 # }}}
 # {{{ 3. Reference Files
 
-alias refls="echo 'manjAro vsCode toDo Journey Linux MarkDown Ricing Ssh Tmux Vim Webdev temp(x) Zsh misc'"
-alias refa="vim $HOME/refs/manjaroref.md"
-alias refd="vim $HOME/refs/todoref.md"
-alias refj="vim $HOME/refs/journeyref.md"
-alias refl="vim $HOME/refs/linuxref.md"
-alias refmd="vim $HOME/refs/markdown.md"
-alias refp="vim $HOME/refs/plagueref.md"
-alias refr="vim $HOME/refs/reactref.md"
-alias refs="vim $HOME/refs/sshref.md"
-alias reft="vim $HOME/refs/tmuxref.md"
-alias refv="vim $HOME/refs/vimref.md"
-alias refw="vim $HOME/refs/webdevref.md"
-alias refx="vim $HOME/refs/ricingref.md"
 alias misc="vim $HOME/docs/misc.md"
 alias wiki="vim $HOME/refs/index.md"
 

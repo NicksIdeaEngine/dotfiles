@@ -53,6 +53,7 @@ Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'mattn/emmet-vim'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'vimwiki/vimwiki'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 Plug 'freitass/todo.txt-vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
