@@ -28,6 +28,7 @@
 - `ctrl-space h` - open new pane below
 
 - `ctrl-space [` - enter copy mode
+- `esc` or `enter` or `q` - exit copy mode
 - `-> v:` begin selection
 - `-> c:` copy selection
 - `ctrl-space ]:` paste from clipboard

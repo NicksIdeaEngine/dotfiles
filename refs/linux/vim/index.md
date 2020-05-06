@@ -2,4 +2,5 @@
 
 ## Map
 
-- [vimref.md](vimref.md)
+- [vimref](vimref.md)
+- [temp notes](temp-notes.md)

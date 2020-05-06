@@ -8,8 +8,15 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="/home/efex/.oh-my-zsh"
 
+# enable completion
 autoload -Uz compinit
 compinit
+
+# enable navi
+source <(navi widget zsh)
+
+# enable fzf with default options
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border=sharp --color='bg:237,bg+:236,info:143,border:240,spinner:108,hl:65,fg:252,header:65,fg+:252,pointer:161,marker:168,prompt:110,hl+:108' --tabstop=2"
 
 # Completion for kitty
 kitty + complete setup zsh | source /dev/stdin
@@ -28,7 +35,12 @@ COMPLETION_WAITING_DOTS="true"
 
 # Standard plugins: ~/.oh-my-zsh/plugins/* | Custom plugins: ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(catimg command-not-found git npm vi-mode vscode z)
+plugins=(catimg colored-man-pages command-not-found frontend-search fzf git npm vi-mode vscode z)
+
+export FRONTEND_SEARCH_FALLBACK='duckduckgo'
+
+# zstyle :omz:plugins:ssh-agent agent-forwarding on
+# zstyle :omz:plugins:ssh-agent lifetime 2h
 
 source $ZSH/oh-my-zsh.sh
 
@@ -48,6 +60,7 @@ ex () {
     case $1 in
       *.tar.bz2)   tar xjf $1   ;;
       *.tar.gz)    tar xzf $1   ;;
+      *.tar.xz)    tar xJf $1   ;;
       *.bz2)       bunzip2 $1   ;;
       *.rar)       unrar x $1   ;;
       *.gz)        gunzip $1    ;;

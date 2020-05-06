@@ -1,17 +1,30 @@
 # Todotxt-cli Reference File
 
+## Workflow Overview
+
+Use `tfgalloc` whenever time allocations need adjustment.
+
+1. Review this past week with `tws` and `tgw`. Clean up anything that needs it.
+2. Dump task ideas into `dump.txt` throughout the week.
+3. Move tasks from `dump.txt` into `todo.txt`, adding priority, deferral/due dates, estimated time, context, and project as you do.
+4. Go through all todos. If you aren't starting it this upcoming week, set a deferral date for next week.
+5. Make sure you've added enough tasks for each category in `tfgalloc`.
+6. Assign tasks to specific days. Aim for three to four goals that take about two hours or less.
+  - If goals take longer than that, it can probably be broken down further.
+7. 
+
 ## Main Todotxt Commands
 
-* _t: `todo.sh -c -t -d ~/.config/todo/config`
-* todo: `vim $HOME/todo/todo.txt`
-* tpr: `clear;todo.sh -c -t -d ~/.config/todo/config`
-* tfg: `vim ~/.config/todo/config`
-* tap: `todo.sh app`
-* tdp: `todo.sh depri`
-* tpp: `todo.sh prep`
-* tp: `todo.sh pri`
-* trp: `_t replace`
-* tdo: `todo.sh do`
+- todo.sh: `todo.sh -c -t -d ~/.config/todo/config`
+- todo: `vim $HOME/todo/todo.txt`
+- tpr: `clear;todo.sh -c -t -d ~/.config/todo/config`
+- tfg: `vim ~/.config/todo/config`
+- tap: `todo.sh app`
+- tdp: `todo.sh depri`
+- tpp: `todo.sh prep`
+- tp: `todo.sh pri`
+- trp: `_t replace`
+- tdo: `todo.sh do`
 
 ```bash
 t () {
@@ -77,6 +90,7 @@ t () {
 
 * tg: `clear;todo.sh graph 30`
 * tgr: `clear;todo.sh graph`
+* tgw: `clear;todo.sh graph 7`
 
 #### graph notes
 

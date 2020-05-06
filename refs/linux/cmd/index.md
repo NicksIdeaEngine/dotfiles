@@ -2,6 +2,8 @@
 
 ## Map
 
-- [linux cmd book.md](linux-cmd-book.md)
-- [tmuxref.md](tmuxref.md)
-- [todoref.md](todoref.md)
+- [notes from linux cmd book](linux-cmd-book.md)
+- [tmuxref](tmuxref.md)
+- [todoref](todoref.md)
+- [cmd apps](cmd-apps.md)
+- [oneliners](oneliners.md)

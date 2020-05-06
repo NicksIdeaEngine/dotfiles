@@ -1,36 +1,75 @@
-" ======== Summary ======== {{{
+" ======== summary ======== {{{
 "
 " }}}
-" ======== General Config ======== {{{
+" ======== general config ======== {{{
 
-" set nocompatible
-filetype plugin on
+" turn on syntax highlighting
 syntax on
-set autoindent
+
+" set relative numbers
+set nu rnu
+
+" only enable relative numbers for focused, non-insert mode window
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
+augroup END
+
+" reload files changed outside of vim
+set autoread
+
+" don't redraw screen while running macros, registers, or other non-typed comments
+set lazyredraw
+
+" send buffers to stay in background (instead of unloading) when abandoned
+set hidden
+
+" map <leader>q and <leader>w to buffer prev/next buffer
+noremap <leader>q :bp<cr>
+noremap <leader>w :bn<cr>
+
+" find next match while typing search
+set incsearch
+
+" enable highlighting while searching
+set hlsearch
+
+" suggestion for normal mode commands
+set wildmode=list:longest
+
+" indentation
+set expandtab       " use spaces instead of tabs
+set autoindent      " autoindent based on line above
+set smartindent     " smarter indent for C-like languages
+set smarttab        " smarter tab for C-like languages
+set shiftwidth=2    " when reading, tabs are 2 spaces
+set softtabstop=2   " in insert mode, tabs are 2 spaces
+
+" set syntax highlighting for config files
+autocmd BufNewFile,BufRead .aliases set filetype=sh
+" autocmd BufNewFile,BufRead *.conf set filetype=sh
+autocmd BufNewFile,BufRead config set filetype=sh
+autocmd BufNewFile,BufRead *.code-workspace set filetype=json
+
+" For regular expressions turn magic on
+set magic
+
 set cursorline
-set expandtab
 set foldenable
 set foldlevelstart=10
 set foldmethod=marker
 set foldnestmax=10
-set hlsearch            " enable highlighting while searching
 set ignorecase          " ignore case when searching
-set incsearch           " find next match while typing search
-set lazyredraw
 set linebreak
-set number relativenumber
-set rnu
 set rulerformat=%l,%v
-set shiftwidth=2
 set showcmd
-set showmatch
+set showmatch " show matching brackets when text indicator is over them
 set sidescroll=1
 set smartcase           " enable case when searching if capital is typed
-set smarttab
-set smartindent
+set spell
 set splitbelow
 set splitright
-set softtabstop=2
 set tabstop=2
 set timeoutlen=1000
 
@@ -41,60 +80,296 @@ let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
 
 " }}}
-" ======== Plugin Config ======== {{{
+" ======== plugin config ======== {{{
 
 call plug#begin()
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-rsi'
-Plug 'tpope/vim-obsession'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+
+" ======== emmet-vim config ======== {{{
+
 Plug 'mattn/emmet-vim'
-Plug 'tmux-plugins/vim-tmux'
-Plug 'vimwiki/vimwiki'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
-Plug 'freitass/todo.txt-vim'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'wellle/targets.vim'
-Plug 'morhetz/gruvbox'
-Plug 'maxmellon/vim-jsx-pretty', { 'as': 'vim-syntax-jsx', 'for': [ 'javascriptreact' ] }
-Plug 'tjdevries/coc-zsh'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'dbmrq/vim-ditto'
-Plug 'ryanoasis/vim-devicons'
-Plug 'itchyny/lightline.vim'
-Plug 'sainnhe/artify.vim'
-Plug 'itchyny/vim-gitbranch'
-Plug 'macthecadillac/lightline-gitdiff'
-Plug 'maximbaz/lightline-ale'
-Plug 'albertomontesg/lightline-asyncrun'
-Plug 'rmolin88/pomodoro.vim'
-Plug 'sainnhe/tmuxline.vim'
-call plug#end()
+
+" let g:user_emmet_leader_key = '<c-e>'
 
 " }}}
-" ======== Misc Config ======== {{{
-" set syntax highlighting for config files
-autocmd BufNewFile,BufRead .aliases set filetype=sh
-" autocmd BufNewFile,BufRead *.conf set filetype=sh
-autocmd BufNewFile,BufRead config set filetype=sh
-autocmd BufNewFile,BufRead *.code-workspace set filetype=json
+" ======== editorconfig-vim config ======== {{{
 
-" vim wiki
+" Plug 'editorconfig/editorconfig-vim'      
+
+" }}}
+" ======== vim-css-color config ======== {{{
+
+" Plug 'skammer/vim-css-color'      
+
+" }}}
+" ======== vim-css3-syntax config ======== {{{
+
+" Plug 'hail2u/vim-css3-syntax'     
+
+" }}}
+" ======== scss-syntax config ======== {{{
+
+" Plug 'cakebaker/scss-syntax.vim'     
+
+" }}}
+" ======== vim-javascript config ======== {{{
+
+" Plug 'pangloss/vim-javascript'     
+
+" }}}
+" ======== vim-jsx config ======== {{{
+
+" Plug 'mxw/vim-jsx'     
+" let g:jsx_ext_required=0
+
+" }}}
+" ======== vim-closetag config ======== {{{
+
+" Plug 'alvan/vim-closetag'
+" Update closetag to also work on js and html files, don't want ts since <> is used for type args
+" let g:closetag_filenames='*.html,*.css,*.scss,*.js,*.jsx,*.json'
+" let g:closetag_regions = {
+"     \ 'javascript.jsx': 'jsxRegion',
+"     \ 'javascriptreact': 'jsxRegion',
+"     \ }
+
+" }}}
+" ======== auto-pairs config ======== {{{
+
+" Plug 'jiangmiao/auto-pairs'
+
+" }}}
+" ======== vim-jsx-pretty config ======== {{{
+
+Plug 'maxmellon/vim-jsx-pretty', { 'as': 'vim-syntax-jsx', 'for': [ 'javascriptreact' ] }
+
+" }}}
+" ======== prettier config ======== {{{
+
+Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'css', 'scss', 'json', 'markdown', 'yaml', 'html'] }
+
+let g:prettier#exec_cmd_async = 1
+let g:prettier#autoformat = 0
+let g:prettier#quickfix_enabled = 0
+let g:prettier#config#single_quote = 'true'
+let g:prettier#config#arrow_parens = 'always'
+let g:prettier#config#trailing_comma = 'es5'
+autocmd BufWritePre *.js,*.jsx,*.css,*.scss,*.json,*.md,*.yaml,*.html PrettierAsync
+
+" }}}
+" ======== ultisnips config ======== {{{
+
+" needed for vim-react-snippets
+Plug 'SirVer/ultisnips'
+
+" }}}
+" ======== vim-react-snippets config ======== {{{
+
+Plug 'mlaursen/vim-react-snippets'
+
+" }}}
+" ======== react-md config ======== {{{
+
+Plug 'mlaursen/react-md'
+
+" }}}
+" ======== vim-surround config ======== {{{
+
+Plug 'tpope/vim-surround'
+
+" }}}
+" ======== vim-commentary config ======== {{{
+
+Plug 'tpope/vim-commentary'
+
+" }}}
+" ======== vim-obsession config ======== {{{
+
+Plug 'tpope/vim-obsession'
+
+" }}}
+" ======== nerdtree config ======== {{{
+
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+
+" always show hidden files
+let NERDTreeShowHidden=1
+
+" change default arrows
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
+
+" }}}
+" ======== nerdtree-git-plugin config ======== {{{
+
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" }}}
+" ======== vim-tmux config ======== {{{
+
+Plug 'tmux-plugins/vim-tmux'
+
+" }}}
+" ======== vimwiki config ======== {{{
+
+Plug 'vimwiki/vimwiki'
+
 let g:vimwiki_list = [{'path': '~/refs/', 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_diary_months = {
   \ 1: 'January', 2: 'February', 3: 'March', 4: 'April', 5: 'May',
   \ 6: 'June', 7: 'July', 8: 'August', 9: 'September', 10: 'October',
   \ 11: 'November', 12: 'December' }
 
+" }}}
+" ======== markdown-preview config ======== {{{
+
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
+
+" }}}
+" ======== todo.txt config ======== {{{
+
+Plug 'freitass/todo.txt-vim'
+
+" }}}
+" ======== goyo config ======== {{{
+
+Plug 'junegunn/goyo.vim'
+
+" }}}
+" ======== limelight config ======== {{{
+
+Plug 'junegunn/limelight.vim'
+
+" }}}
+" ======== fzf config ======== {{{
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+noremap <leader>f :FZF<cr>
+
+" }}}
+" ======== targets config ======== {{{
+
+Plug 'wellle/targets.vim'
+
+" }}}
+" ======== gruvbox config ======== {{{
+
+Plug 'morhetz/gruvbox'
+
+" }}}
+" ======== coc config ======== {{{
+
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+
+" longer updatetime = delays/lag (default is 4000ms)
+set updatetime=300
+
+" don't pass messages to |ins-completion-menu|
+set shortmess+=c
+
+let g:coc_global_extensions=[
+  \ 'coc-css',
+  \ 'coc-scssmodules',
+  \ 'coc-eslint',
+  \ 'coc-json',
+  \ 'coc-prettier',
+  \ 'coc-snippets',
+  \ ]
+
+inoremap <silent><expr> <c-e>
+  \ pumvisible() ? "\<c-n>" :
+  \ <SID>check_back_space() ? "\<c-e>" :
+  \ coc#refresh()
+inoremap <expr><c-r> pumvisible() ? "\<c-p>" : "\<c-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') -1
+  return !col || getline('.')[col - 1] =~# '\s'
+endfunction
+
+" let g:coc_snippet_next = '<c-semicolon>'
+" let g:coc_snippet_prev = '<m-semicolon>'
+
+" use <c-space> to trigger completion
+" inoremap <silent><expr> <c-space> coc#refresh()
+
+" }}}
+" ======== coc-zsh config ======== {{{
+
+Plug 'tjdevries/coc-zsh'
+
+" }}}
+" ======== vim-ditto config ======== {{{
+
+Plug 'dbmrq/vim-ditto'
+
+" }}}
+" ======== lightline config ======== {{{
+
+Plug 'itchyny/lightline.vim'
+
+" }}}
+" ======== vim-gitbranch config ======== {{{
+
+Plug 'itchyny/vim-gitbranch'
+
+" }}}
+" ======== artify config ======== {{{
+
+Plug 'sainnhe/artify.vim'
+
+" }}}
+" ======== lightline-gitdiff config ======== {{{
+
+Plug 'macthecadillac/lightline-gitdiff'
+
+" }}}
+" ======== lightlight-ale config ======== {{{
+
+Plug 'maximbaz/lightline-ale'
+
+" }}}
+" ======== lightlight-asyncrun config ======== {{{
+
+Plug 'albertomontesg/lightline-asyncrun'
+
+" }}}
+" ======== pomodoro config ======== {{{
+
+Plug 'rmolin88/pomodoro.vim'
+
+" }}}
+" ======== tmuxline config ======== {{{
+
+Plug 'sainnhe/tmuxline.vim'
+
+" }}}
+" ======== vim-devicons config ======== {{{
+
+Plug 'ryanoasis/vim-devicons'
+
+" }}}
+" ======== L9 config ======== {{{
+
+" Plug 'vim-scripts/L9'
+
+" }}}
+" ======== vim-easymotion config ======== {{{
+
+" Plug 'Lokaltog/vim-easymotion'    
+
+" }}}
+
+call plug#end()
+
+" }}}
+" ======== misc config ======== {{{
+
 " vim-ditto settings https://github.com/dbmrq/vim-ditto
 au FileType markdown,text,tex DittoOn " turn on ditto's autocmds
 nmap <leader>di <Plug>ToggleDitto     " turn ditto on and off
 
-" Vimscript file settings -------------------- {{{
+" vimscript file settings -------------------- {{{
 augroup filetype_vim
   autocmd!
   autocmd FileType vim setlocal foldmethod=marker
@@ -112,13 +387,13 @@ augroup goyoCustom
   autocmd! User GoyoEnter Limelight
   autocmd! User GoyoLeave Limelight!
 augroup END
-nnoremap <silent> <leader><leader>f :<C-u>Limelight!!<CR>
-nnoremap <silent> <leader><leader>r :<C-u>Goyo<CR>
+nnoremap <silent> <leader><leader>f :<c-u>Limelight!!<cr>
+nnoremap <silent> <leader><leader>r :<c-u>Goyo<cr>
 " let g:which_key_map["\<space>"]['f'] = 'focus mode'
 " let g:which_key_map["\<space>"]['r'] = 'reading mode'
 "}}}
 " }}}
-" ======== Color Config ======== {{{
+" ======== color config ======== {{{
 
 " gruvbox configuration
 set termguicolors
@@ -127,7 +402,7 @@ let g:gruvbox_contrast_light = 'hard'
 colorscheme gruvbox
 
 " }}}
-" ======== lightline Config ======== {{{
+" ======== lightline config ======== {{{
 "{{{lightline.vim
 "{{{lightline.vim-usage
 " :h 'statusline'
@@ -317,49 +592,87 @@ let g:lightline.component_visible_condition = {
       \ }
 "}}}
 " }}}
-" ======== Prettier Config ======== {{{
+" vim folds {{{
 
-let g:prettier#exec_cmd_async = 1
-let g:prettier#autoformat = 0
-let g:prettier#quickfix_enabled = 0
-let g:prettier#config#single_quote = 'true'
-let g:prettier#config#arrow_parens = 'always'
-let g:prettier#config#trailing_comma = 'es5'
-autocmd BufWritePre *.js,*.jsx,*.css,*.scss,*.json,*.md,*.yaml,*.html PrettierAsync
+" set auto saving/restoring of vim folds
+" au BufWinLeave * mkview
+" au BufWinEnter * silent loadview
+
+" }}}
+" ======== key mapping config ======== {{{
+
+command PIU PlugInstall | PlugUpdate | PlugUpgrade
+map <F6> :setlocal spell! spelllang=en_us<cr>
+" map! <F5> :so $MYVIMRC<cr>
+nnoremap S :%s///g<left><left><left>
+
+" Make it so that if files are changed externally (ex: changing git branches) update the vim buffers automatically
+" autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+" autocmd FileChangedShellPost *
+"   \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+
+if has("nvim")
+  " open terminal with 20 lines always at bottom
+  command! -nargs=* T belowright split | resize 20 | terminal <args>
+  " open terminal always right
+  command! -nargs=* VT botright vsplit | terminal <args>
+  " allow esc to exit terminal mode
+  tnoremap <ESC> :q<cr>
+endif
+
+" session management
+" :mksession filename.vim
+" vim -S filename.vim
+
+" start nerdtree on start-up if no files specified
+" but not when opening a saved session
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && v:this_session == "" | NERDTree | endif
+
+" close nvim if the only window left is NERDTree
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" open nerdtree
+map <leader>n :NERDTreeToggle<cr>
+
+" windows like clipboard {{{
+
+" yank to and paste from the clipboard without prepending "* to commands
+let &clipboard = has('unnamedplus') ? 'unnamedplus' : 'unnamed'
+
+" map c-x and c-v to work as they do in windows, only in insert mode
+vm <c-x> "+x
+vm <c-c> "+y
+cno <c-v> <c-r>+
+exe 'ino <script> <c-V>' paste#paste_cmd['i']
 
 " }}}
 
-" set auto saving/restoring of vim folds
-au BufWinLeave * mkview
-au BufWinEnter * silent loadview
+" auto indent pasted text
+" this creates odd jumping around, needs tweaking
+" nnoremap p p=`]<c-o>
+" nnoremap P P=`]<c-o>
 
-" ======== Key Mapping Config ======== {{{
+" add semicolon, colon, comma to eol
+nnoremap <leader>; m'A;<esc>`'
+nnoremap <leader>, m'A,<esc>`'
+nnoremap <leader>: m'A:<esc>`'
 
-command PIU PlugInstall | PlugUpdate | PlugUpgrade
-map <F6> :setlocal spell! spelllang=en_us<CR>
-" map! <F5> :so $MYVIMRC<CR>
-nnoremap S :%s///g<Left><Left><Left>
-" inoremap <Leader><Tab> <C-y>,
-
-" Auto indent pasted text
-" This creates odd jumping around, needs tweaking
-" nnoremap p p=`]<C-o>
-" nnoremap P P=`]<C-o>
-
-" Add semicolon, colon, comma to EOL
-nnoremap <Leader>; m'A;<ESC>`'
-nnoremap <Leader>, m'A,<ESC>`'
-nnoremap <Leader>: m'A:<ESC>`'
-
-" Switch line downwards/upwards
-nnoremap <Leader>j ddp
-nnoremap <Leader>k ddkP
+" change directory to folder of current file
+nnoremap <leader>cd :cd %:p:h<cr>
 
 " turn off search highlight
-nnoremap <Leader>h :nohlsearch<CR>
+nnoremap <leader>h :nohlsearch<cr>
+
+" switch line downwards/upwards
+nnoremap <leader>j ddp
+nnoremap <leader>k ddkP
+
+" select all
+noremap <leader>a ggVG
 
 " open/close folds
-nnoremap <Leader>/ za
+nnoremap <leader>/ za
 
 " highlight last inserted text
 nnoremap gV `[v`]
@@ -368,19 +681,23 @@ nnoremap gV `[v`]
 vmap < <gv
 vmap > >gv
 
-" open NERDTree
-map <Leader>n :NERDTreeToggle<CR>
+inoremap <c-w><Space> <esc>/<++><enter>"_c4l
+inoremap jk <esc>
+inoremap \<Tab> <esc>V><esc>la
+inoremap \<S-Tab> <esc>V<<esc>la
+nnoremap <leader><leader> :w<cr>
+nnoremap ZZ :wq<cr>
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+nnoremap <c-h> <c-w>h
+nnoremap <m-j> <c-w>J
+nnoremap <m-k> <c-w>K
+nnoremap <m-l> <c-w>L
+nnoremap <m-h> <c-w>H
+" nnoremap <c-w>h <c-w>s
 
-inoremap <C-w><Space> <Esc>/<++><Enter>"_c4l
-inoremap jk <Esc>
-nnoremap <Leader><Leader> :w<CR>
-nnoremap ZZ :wq<CR>
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-nnoremap <C-h> <C-w>h
-" nnoremap <C-w>h <C-w>s
-
-autocmd FileType html inoremap ;i <em></em><Space><++><Esc>FeT>i
-autocmd FileType html inoremap ;b <b></b><Space><++><Esc>FbT>i
+autocmd FileType html inoremap ;i <em></em><Space><++><esc>FeT>i
+autocmd FileType html inoremap ;b <b></b><Space><++><esc>FbT>i
 " }}}
+

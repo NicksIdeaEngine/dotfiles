@@ -29,7 +29,7 @@
 
 - attempting to fix lm-sensors problem where `cpu_fan` always shows "0 RPM"
   - [Solution Found Here](https://www.kubuntuforums.net/showthread.php/74401-Driver-for-Asus-B450-motherboard-to-enable-LM-Sensors-other-boards)
-  - `sudo demidecode -t 34`
+  - `sudo dmidecode -t 34`
     - This identifies chipset that provides info to lm-sensors
   - `echo "it87" | sudo tee -a /etc/modules`
   - `sudo apt install git dkms build-essential linux-headers-generic`

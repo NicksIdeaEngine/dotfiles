@@ -133,6 +133,7 @@ alias todo="vim $HOME/todo/todo.txt"
 alias tpr="clear;todo.sh -c -t -d ~/.config/todo/config"
 alias tg="clear;todo.sh graph 30"
 alias tgr="clear;todo.sh graph"
+alias tgw="clear;todo.sh graph 7"
 alias tfg="vim ~/.config/todo/config"
 alias tfgalloc="vim ~/.config/todo/.actions.d/wp/allocations.conf"
 alias tm="_t many"
@@ -147,13 +148,13 @@ alias tv="clear;todo.sh view"
 alias tvc="clear;todo.sh view context"
 alias tvp="clear;todo.sh view project"
 alias tdo="todo.sh again"
-# alias tag="todo.sh again"
 alias tch="todo.sh chcon"
 alias talloc="todo.sh wp alloc"
 alias twl="todo.sh wp ls"
 alias tdn="todo.sh donow"
 alias tws="todo.sh wp summary"
 alias twg="todo.sh wp graph"
+alias tdump="vim $HOME/todo/dump.txt"
 
 # todo.txt functions
 t () {
@@ -164,6 +165,7 @@ t () {
     todo.sh -c -t -d "~/.config/todo/config" "$@"
   fi
 }
+
 # }}}
 # {{{ 6. Useful Replacements
 
@@ -172,6 +174,8 @@ alias lnls="echo 'ln -s <file to be linked> <location of the link>'"
 # useful replacements
 alias c="clear"
 alias h="history"
+alias how='function hdi(){ howdoi $* -c -n 5; }; hdi'
+alias gcal="gcalcli"
 alias :q="exit"
 alias {md,mkdir}="mkdir -pv"
 alias {rd,rmdir}="rmdir -v"
@@ -189,8 +193,47 @@ sshinit () {
 }
 alias sshrestart="sudo systemctl restart ssh.service"
 
+# project initialization
+projinit() {
+  # first form will be for react, but later forms can take arguments for different projects
+  local proj_name="$1"
+  echo "Project name is $1"
+
+  local spark_dir="/mnt/sdc1/dbx/code/showcase/spark"
+  local new_dir="$(pwd)"
+  echo "Project dir is $new_dir"
+
+  # developer cleaner
+  if [[ "$proj_name" == "--clean" ]]; then
+    echo "Removing visible files and directories..."
+    rm -rvf $new_dir/*
+    echo "Done!"
+    echo "Removing hidden files and directories..."
+    rm -rvf $new_dir/.*
+    echo "Done!"
+    return 0
+  fi
+
+  for item in $spark_dir/{*,.*}; do
+    if [[ ! ${item##*/} == ".git" ]] && [[ ! ${item##*/} == "node_modules" ]] && [[ ! ${item##*/} == "package-lock.json" ]]; then
+      echo "Copying ${item##*/} to destination..."
+      cp -rv $item $new_dir/${item##*/}
+      echo "Done!"
+    fi
+  done
+
+  sed -i "s/Spark/$1/g" "$new_dir/src/index.html"
+  sed -i "s/spark/$1/g" "$new_dir/package.json"
+  mv "$new_dir/spark.code-workspace" "$new_dir/$1.code-workspace"
+
+  cd $new_dir && npm install
+}
+
 # pacman shortcuts
-alias pms="pacman -Ss"
+alias pmss="pacman -Ss"
+alias pmqs="pacman -Qs"
+alias pmsyu="sudo pacman -Syu"
+alias pmrsu="sudo pacman -Rsu"
 
 # diff analyzer
 differ () {
@@ -202,10 +245,10 @@ alias rm="rm -I"
 alias rmf="rm -Irvf"
 
 # rclone aliases and functions
-rpurge() {
-  rclone purge "dbx:$1"
-  sudo rm -rvf "/mnt/sdc1/dbx/$1"
-}
+# rpurge() {
+#   rclone purge "dbx:$1"
+#   sudo rm -rvf "/mnt/sdc1/dbx/$1"
+# }
 
 # some more ls aliases
 alias ll="ls -halF"

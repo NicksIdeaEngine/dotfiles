@@ -17,6 +17,7 @@
 ## General Notes
 
 - ea: end of word, append
+- tabs?
 
 ### [vim](vim/summary.md) folds
 

@@ -4,5 +4,5 @@
 
 ## Map
 
-- [distrodeploy.md](distrodeploy.md)
+- [desktop-distro-deploy.md](desktop-distro-deploy.md)
 - [ubunturef.md](ubunturef.md)

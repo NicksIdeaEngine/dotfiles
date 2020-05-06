@@ -9,6 +9,27 @@
 - 297.3Gb for `/home`
 - 18Gb for `swap`
 
+## Fan Setup
+
+- CPU fan: Cooler Master 82.9 CFM (fan1)
+  - Cooler Master 82.9 CFM 120mm
+  - Speed: 600 - 2000 RPM
+- Fan1: front fan, inflow (fan2)
+  - Phanteks 200mm (PH-F200) 110.1 CFM
+  - 250 - 850 RPM
+- Fan2: top fans, outflow (fan3)
+  - 2x Cooler Master SickleFlow 69 CFM 120mm
+  - Speed: 0 - 2000 RPM
+- Fan3: bottom fans, inflow (fan4)
+  - 2x Cooler Master SickleFlow 69 CFM 120mm
+  - Speed: 0 - 2000 RPM
+- AIO Pump: back fan, outflow (fan6)
+  - Phanteks 140mm (PH-F140) 78.1 CFM
+  - 0 - 1200 RPM
+- GPU Fans
+  - Nitro+ RX 590 8G G5
+  - Nominal fan speed 0 - 2280 (max is 3200)
+
 ## Post Install
 
 - updates
@@ -16,7 +37,7 @@
 - added `/dev/sdc1 /mnt/sdc1 ext4 defaults 1 2` to `/etc/fstab`
 - install timeshift
 - first manual snapshot
-- fixing sensors issue via kubuntu forums post (**Apr24/2020:** did not complete, still needs investigating)
+- fixing sensors issue via kubuntu forums post (*Apr24/2020:* did not complete, still needs investigating)(*May1/2020:* Completed! Refer to line 68)
   - `mkdir .repos && cd .repos`
   - `git clone https://github.com/a1wong/it87.git`
   - `cd it87`
@@ -54,6 +75,38 @@
 - installed obs-studio
 - installed yarn
 - installed fzf
+- installed rust
+- installed cargo
+- manually installed navi to ~/.local
+- manually installed mps-youtube to ~/.local
+- installed mpv
+- installed mplayer
+- installed mpd
+- manually installed ddgr
+- installed howdoi (pip3)
+- installed gcalcli (pip3)
+- installed i3-resurrect (yay)
+- second attempt at fixing sensors issue via [kubuntu forums post](https://www.kubuntuforums.net/showthread.php/74401-Driver-for-Asus-B450-motherboard-to-enable-LM-Sensors-other-boards)
+  - `sudo dmidecode -t 34` gives me "ITE IT8665E" for description
+  - `echo "it87" | sudo tee -a /etc/modules`
+  - `cd ~/.local`
+  - `git clone https://github.com/a1wong/it87.git`
+  - `cd it87/`
+  - `sudo make dkms` (**error**:
+    - install `linux54-headers`
+    - then reboot
+    - then `sudo make dkms_clean`
+    - then this worked)
+  - `sensors` now works!
+- enabled polybar modules for fans
+- **UNDOING** the attempted sensors fix from line 68 and 19
+  - disabling polybar modules temporarily
+  - `cd ~/.local/it87` && `sudo make dkms_clean`
+  - removed "it87" from `/etc/modules`
+  - removed `~/.local/it87`
+  - rebooted
+- installed python-prettytable again
+- rescuetime2 (yay)
 
 ## New Things To Explore
 

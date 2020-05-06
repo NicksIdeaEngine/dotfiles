@@ -6,6 +6,6 @@ I love exploring Linux. Here is an ongoing record of that journey.
 
 - [cmd](cmd/index.md)
 - [netsec](netsec/index.md)
-- [rice](rice/index.md)
+- [dotfiles](dotfiles/index.md)
 - [vim](vim/index.md)
 
