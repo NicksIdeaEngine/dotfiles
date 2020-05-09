@@ -55,6 +55,12 @@ autocmd BufNewFile,BufRead *.code-workspace set filetype=json
 " For regular expressions turn magic on
 set magic
 
+" auto change current directory to directory of current file
+set autochdir
+
+" if the above causes problems with plugins, here's an alternative way
+" autocmd BufEnter * silent! lcd %:p:h
+
 set cursorline
 set foldenable
 set foldlevelstart=10
@@ -88,59 +94,58 @@ call plug#begin()
 
 Plug 'mattn/emmet-vim'
 
-" let g:user_emmet_leader_key = '<c-e>'
+let g:user_emmet_mode='a'
+let g:user_emmet_leader_key = '<m-e>'
 
 " }}}
 " ======== editorconfig-vim config ======== {{{
 
-" Plug 'editorconfig/editorconfig-vim'      
+Plug 'editorconfig/editorconfig-vim'      
 
 " }}}
 " ======== vim-css-color config ======== {{{
 
-" Plug 'skammer/vim-css-color'      
+Plug 'skammer/vim-css-color'      
 
 " }}}
 " ======== vim-css3-syntax config ======== {{{
 
-" Plug 'hail2u/vim-css3-syntax'     
+Plug 'hail2u/vim-css3-syntax'     
 
 " }}}
 " ======== scss-syntax config ======== {{{
 
-" Plug 'cakebaker/scss-syntax.vim'     
+Plug 'cakebaker/scss-syntax.vim'     
 
 " }}}
-" ======== vim-javascript config ======== {{{
+" ======== vim-js config ======== {{{
 
-" Plug 'pangloss/vim-javascript'     
-
-" }}}
-" ======== vim-jsx config ======== {{{
-
-" Plug 'mxw/vim-jsx'     
-" let g:jsx_ext_required=0
-
-" }}}
-" ======== vim-closetag config ======== {{{
-
-" Plug 'alvan/vim-closetag'
-" Update closetag to also work on js and html files, don't want ts since <> is used for type args
-" let g:closetag_filenames='*.html,*.css,*.scss,*.js,*.jsx,*.json'
-" let g:closetag_regions = {
-"     \ 'javascript.jsx': 'jsxRegion',
-"     \ 'javascriptreact': 'jsxRegion',
-"     \ }
-
-" }}}
-" ======== auto-pairs config ======== {{{
-
-" Plug 'jiangmiao/auto-pairs'
+Plug 'yuezk/vim-js'
 
 " }}}
 " ======== vim-jsx-pretty config ======== {{{
 
 Plug 'maxmellon/vim-jsx-pretty', { 'as': 'vim-syntax-jsx', 'for': [ 'javascriptreact' ] }
+
+" }}}
+" ======== vim-closetag config ======== {{{
+
+Plug 'alvan/vim-closetag'
+
+" Update closetag to also work on js and html files, don't want ts since <> is used for type args
+let g:closetag_filenames='*.html,*.css,*.scss,*.js,*.jsx,*.json,*.md'
+let g:closetag_regions = {
+    \ 'javascript.jsx': 'jsxRegion',
+    \ 'javascriptreact': 'jsxRegion',
+    \ }
+
+" non-closing tags case sensitive (<Link> !== <link>)
+let g:closetag_emptyTags_caseSensitive = 1
+
+" }}}
+" ======== auto-pairs config ======== {{{
+
+" Plug 'jiangmiao/auto-pairs'
 
 " }}}
 " ======== prettier config ======== {{{
@@ -161,15 +166,14 @@ autocmd BufWritePre *.js,*.jsx,*.css,*.scss,*.json,*.md,*.yaml,*.html PrettierAs
 " needed for vim-react-snippets
 Plug 'SirVer/ultisnips'
 
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger='<c-b>'
+let g:UltiSnipsJumpBackwardTrigger='<c-z>'
+
 " }}}
 " ======== vim-react-snippets config ======== {{{
 
 Plug 'mlaursen/vim-react-snippets'
-
-" }}}
-" ======== react-md config ======== {{{
-
-Plug 'mlaursen/react-md'
 
 " }}}
 " ======== vim-surround config ======== {{{
@@ -181,10 +185,16 @@ Plug 'tpope/vim-surround'
 
 Plug 'tpope/vim-commentary'
 
+" example of adding favorite filetype support
+" autocmd FileType apache setlocal commentstring=#\ %s
+
 " }}}
 " ======== vim-obsession config ======== {{{
 
 Plug 'tpope/vim-obsession'
+
+" `:help obsession-status`
+" do I need something to create Session.vim file automatically?
 
 " }}}
 " ======== nerdtree config ======== {{{
@@ -203,10 +213,25 @@ let g:NERDTreeDirArrowCollapsible = ''
 
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+let g:NERDTreeShowIgnoredStatus = 1
+
+" let g:NERDTreeIndicatorMapCustom = {
+"     \ "Modified"  : "✹",
+"     \ "Staged"    : "✚",
+"     \ "Untracked" : "✭",
+"     \ "Renamed"   : "➜",
+"     \ "Unmerged"  : "═",
+"     \ "Deleted"   : "✖",
+"     \ "Dirty"     : "✗",
+"     \ "Clean"     : "✔︎",
+"     \ 'Ignored'   : '☒',
+"     \ "Unknown"   : "?"
+"     \ }
+
 " }}}
 " ======== vim-tmux config ======== {{{
 
-Plug 'tmux-plugins/vim-tmux'
+" Plug 'tmux-plugins/vim-tmux'
 
 " }}}
 " ======== vimwiki config ======== {{{
@@ -224,6 +249,11 @@ let g:vimwiki_diary_months = {
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 
+" example
+" nmap <C-s> <Plug>MarkdownPreview
+" nmap <M-s> <Plug>MarkdownPreviewStop
+" nmap <C-p> <Plug>MarkdownPreviewToggle
+
 " }}}
 " ======== todo.txt config ======== {{{
 
@@ -234,6 +264,42 @@ Plug 'freitass/todo.txt-vim'
 
 Plug 'junegunn/goyo.vim'
 
+let g:goyo_width = 95
+let g:goyo_height = 85
+let g:goyo_linenr = 0
+augroup goyoCustom
+  autocmd! User GoyoEnter Limelight
+  autocmd! User GoyoLeave Limelight!
+augroup END
+
+" focus mode
+nnoremap <silent> <leader><leader>f :<c-u>Limelight!!<cr>
+
+" reading mode
+nnoremap <silent> <leader><leader>r :<c-u>Goyo<cr>
+
+" ensure `:q` quits even when Goyo is active
+function! s:goyo_enter()
+  let b:quitting = 0
+  let b:quitting_bang = 0
+  autocmd QuitPre <buffer> let b:quitting = 1
+  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+endfunction
+
+function! s:goyo_leave()
+  " Quit Vim if this is the only remaining buffer
+  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+    if b:quitting_bang
+      qa!
+    else
+      qa
+    endif
+  endif
+endfunction
+
+autocmd! User GoyoEnter call <SID>goyo_enter()
+autocmd! User GoyoLeave call <SID>goyo_leave()
+
 " }}}
 " ======== limelight config ======== {{{
 
@@ -243,6 +309,7 @@ Plug 'junegunn/limelight.vim'
 " ======== fzf config ======== {{{
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 noremap <leader>f :FZF<cr>
 
@@ -270,10 +337,14 @@ set shortmess+=c
 let g:coc_global_extensions=[
   \ 'coc-css',
   \ 'coc-scssmodules',
+  \ 'coc-emmet',
+  \ 'coc-git',
+  \ 'coc-html',
   \ 'coc-eslint',
   \ 'coc-json',
   \ 'coc-prettier',
   \ 'coc-snippets',
+  \ 'coc-tsserver',
   \ ]
 
 inoremap <silent><expr> <c-e>
@@ -302,6 +373,10 @@ Plug 'tjdevries/coc-zsh'
 " ======== vim-ditto config ======== {{{
 
 Plug 'dbmrq/vim-ditto'
+
+" vim-ditto settings https://github.com/dbmrq/vim-ditto
+au FileType markdown,text,tex DittoOn " turn on ditto's autocmds
+nmap <leader>di <Plug>ToggleDitto     " turn ditto on and off
 
 " }}}
 " ======== lightline config ======== {{{
@@ -334,11 +409,6 @@ Plug 'maximbaz/lightline-ale'
 Plug 'albertomontesg/lightline-asyncrun'
 
 " }}}
-" ======== pomodoro config ======== {{{
-
-Plug 'rmolin88/pomodoro.vim'
-
-" }}}
 " ======== tmuxline config ======== {{{
 
 Plug 'sainnhe/tmuxline.vim'
@@ -347,11 +417,6 @@ Plug 'sainnhe/tmuxline.vim'
 " ======== vim-devicons config ======== {{{
 
 Plug 'ryanoasis/vim-devicons'
-
-" }}}
-" ======== L9 config ======== {{{
-
-" Plug 'vim-scripts/L9'
 
 " }}}
 " ======== vim-easymotion config ======== {{{
@@ -365,33 +430,11 @@ call plug#end()
 " }}}
 " ======== misc config ======== {{{
 
-" vim-ditto settings https://github.com/dbmrq/vim-ditto
-au FileType markdown,text,tex DittoOn " turn on ditto's autocmds
-nmap <leader>di <Plug>ToggleDitto     " turn ditto on and off
-
 " vimscript file settings -------------------- {{{
 augroup filetype_vim
   autocmd!
   autocmd FileType vim setlocal foldmethod=marker
 augroup END
-" }}}
-"{{{goyo.vim
-"{{{goyo.vim-usage
-" <leader>mr  toggle reading mode
-"}}}
-let g:goyo_width = 95
-let g:goyo_height = 85
-let g:goyo_linenr = 0
-"进入goyo模式后自动触发limelight,退出后则关闭
-augroup goyoCustom
-  autocmd! User GoyoEnter Limelight
-  autocmd! User GoyoLeave Limelight!
-augroup END
-nnoremap <silent> <leader><leader>f :<c-u>Limelight!!<cr>
-nnoremap <silent> <leader><leader>r :<c-u>Goyo<cr>
-" let g:which_key_map["\<space>"]['f'] = 'focus mode'
-" let g:which_key_map["\<space>"]['r'] = 'reading mode'
-"}}}
 " }}}
 " ======== color config ======== {{{
 
@@ -402,6 +445,8 @@ let g:gruvbox_contrast_light = 'hard'
 colorscheme gruvbox
 
 " }}}
+
+" }}}
 " ======== lightline config ======== {{{
 "{{{lightline.vim
 "{{{lightline.vim-usage
@@ -409,13 +454,6 @@ colorscheme gruvbox
 " :h g:lightline.component
 "}}}
 "{{{functions
-function! PomodoroStatus() abort"{{{
-  if pomo#remaining_time() ==# '0'
-    return "\ue001"
-  else
-    return "\ue003 ".pomo#remaining_time()
-  endif
-endfunction"}}}
 function! CocCurrentFunction()"{{{
   return get(b:, 'coc_current_function', '')
 endfunction"}}}
@@ -492,7 +530,7 @@ if g:lightlineArtify == 1
         \ 'left': [ [ 'artify_mode', 'paste' ],
         \           [ 'readonly', 'filename', 'modified', 'fileformat', 'devicons_filetype' ] ],
         \ 'right': [ [ 'artify_lineinfo' ],
-        \            [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok', 'pomodoro' ],
+        \            [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok', 'vim-obsession' ],
         \           [ 'asyncrun_status', 'coc_status' ] ]
         \ }
   let g:lightline.inactive = {
@@ -512,7 +550,7 @@ else
         \ 'left': [ [ 'mode', 'paste' ],
         \           [ 'readonly', 'filename', 'modified', 'fileformat', 'devicons_filetype' ] ],
         \ 'right': [ [ 'lineinfo' ],
-        \            [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok', 'pomodoro' ],
+        \            [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok', 'vim-obsession' ],
         \           [ 'asyncrun_status', 'coc_status' ] ]
         \ }
   let g:lightline.inactive = {
@@ -545,7 +583,7 @@ let g:lightline.component = {
       \ 'gitstatus' : '%{lightline_gitdiff#get_status()}',
       \ 'bufinfo': '%{bufname("%")}:%{bufnr("%")}',
       \ 'vim_logo': "\ue7c5",
-      \ 'pomodoro': '%{PomodoroStatus()}',
+      \ 'vim-obsession': '%{ObsessionStatus()}',
       \ 'mode': '%{lightline#mode()}',
       \ 'absolutepath': '%F',
       \ 'relativepath': '%f',
@@ -604,7 +642,7 @@ let g:lightline.component_visible_condition = {
 command PIU PlugInstall | PlugUpdate | PlugUpgrade
 map <F6> :setlocal spell! spelllang=en_us<cr>
 " map! <F5> :so $MYVIMRC<cr>
-nnoremap S :%s///g<left><left><left>
+nnoremap <leader>S :%s///g<left><left><left>
 
 " Make it so that if files are changed externally (ex: changing git branches) update the vim buffers automatically
 " autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif

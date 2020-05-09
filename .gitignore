@@ -6,3 +6,4 @@ scripts/private
 .config/ranger/plugins
 .config/todo/.actions.d
 .config/todo/todo_description.png
+Session.vim
