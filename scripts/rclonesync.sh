@@ -1,4 +1,7 @@
 #!/bin/bash
+# strict mode
+set -euo pipefail
+IFS=$'\n\t'
 
 filter_file=/home/efex/.config/rclone/filter-from.txt
 dropbox=/mnt/sdc1/dbx

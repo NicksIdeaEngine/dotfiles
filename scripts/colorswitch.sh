@@ -1,4 +1,7 @@
 #!/bin/bash
+# strict mode
+set -euo pipefail
+IFS=$'\n\t'
 
 switcher() {
   cp "$HOME/.Xresources-$1" "$HOME/.Xresources"

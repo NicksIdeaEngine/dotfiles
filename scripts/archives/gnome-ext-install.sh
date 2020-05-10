@@ -1,5 +1,7 @@
 #!/bin/bash
-## ^ Tells bash what interpreter to use
+# strict mode
+set -euo pipefail
+IFS=$'\n\t'
 
 DST_DIR="~/.local/share/gnome-shell/extensions/"
 

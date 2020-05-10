@@ -1,6 +1,11 @@
 #!/bin/bash
+# strict mode
+set -euo pipefail
+IFS=$'\n\t'
 
-case "$1" in
+arg="${1:-}"
+
+case "$arg" in
 --menu)
   MENU="$(rofi -theme sysmenu -sep '|' -dmenu -p 'System: ' <<<' Lock| Logout| Reboot| Shutdown')"
   case "$MENU" in

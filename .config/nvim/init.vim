@@ -103,11 +103,6 @@ let g:user_emmet_leader_key = '<m-e>'
 Plug 'editorconfig/editorconfig-vim'      
 
 " }}}
-" ======== vim-css-color config ======== {{{
-
-Plug 'skammer/vim-css-color'      
-
-" }}}
 " ======== vim-css3-syntax config ======== {{{
 
 Plug 'hail2u/vim-css3-syntax'     

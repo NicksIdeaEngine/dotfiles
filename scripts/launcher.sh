@@ -1,8 +1,13 @@
 #!/bin/bash
+# strict mode
+set -euo pipefail
+IFS=$'\n\t'
 
 . ~/.aliases
 
-case "$1" in
+arg="${1:-}"
+
+case "$arg" in
   --drop)
     $HOME/scripts/rofidropmenu.sh
     ;;

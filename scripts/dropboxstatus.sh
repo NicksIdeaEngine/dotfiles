@@ -1,6 +1,11 @@
 #!/bin/bash
+# strict mode
+set -euo pipefail
+IFS=$'\n\t'
 
-case "$1" in
+arg="${1:-}"
+
+case "$arg" in
 	--status)
 		if [ "$(pgrep dropbox)" ]; then
 			notify-send "$(dropbox status)"

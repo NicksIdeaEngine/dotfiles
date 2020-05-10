@@ -1,4 +1,7 @@
 #!/bin/bash
+# strict mode
+set -euo pipefail
+IFS=$'\n\t'
 
 backup_src="$HOME/backups/current/"
 backup_qtr="$HOME/backups/quarterly/1/"

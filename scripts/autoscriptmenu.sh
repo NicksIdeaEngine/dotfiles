@@ -1,4 +1,7 @@
 #!/bin/bash
+# strict mode
+set -euo pipefail
+IFS=$'\n\t'
 
 selected=$(ls "$HOME/scripts" "$HOME/scripts/archives" "$HOME/scripts/private" | rofi -dmenu -theme oneliner -p "autoscript: ")
 [[ -z $selected ]] && exit

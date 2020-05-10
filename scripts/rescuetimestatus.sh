@@ -1,8 +1,13 @@
 #!/bin/bash
+# strict mode
+set -euo pipefail
+IFS=$'\n\t'
 
-case "$1" in
+arg="${1:-}"
+
+case "$arg" in
 	--status)
-		if [ "$(pgrep rescuetime)" ]; then
+		if [[ $(pgrep rescuetime) ]]; then
 			notify-send "Rescuetime is up and running."
       notify-send "Make great use of your time!"
 		else
@@ -14,7 +19,7 @@ case "$1" in
     notify-send "RescueTime is back up and running!"
     ;;
   --off)
-    if [ "$(pgrep rescuetime)" ]; then
+    if [[ $(pgrep rescuetime) ]]; then
       killall rescuetime
       notify-send "RescueTime is off!"
     else

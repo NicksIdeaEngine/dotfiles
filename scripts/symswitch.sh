@@ -1,4 +1,7 @@
 #!/bin/bash
+# strict mode
+set -euo pipefail
+IFS=$'\n\t'
 
 MOD_DIR=".config/i3/layouts"
 SOURCE_DIR="/home/efex/$MOD_DIR"

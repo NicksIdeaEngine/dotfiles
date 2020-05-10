@@ -1,4 +1,7 @@
 #!/bin/bash
+# strict mode
+set -euo pipefail
+IFS=$'\n\t'
 
 # this is a temp file used for holding the list of Dropbox
 # directories you can add or remove from the exclude list

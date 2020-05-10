@@ -1,9 +1,14 @@
 #!/bin/bash
+# strict mode
+set -euo pipefail
+IFS=$'\n\t'
 
 TEMP="$(( $(cat /sys/class/hwmon/hwmon3/temp1_input) / 1000))"
 FAN="$(cat /sys/class/hwmon/hwmon3/fan1_input)"
 
-case "$1" in
+arg="${1:-}"
+
+case "$arg" in
   --poly)
     echo "  ${TEMP}  ${FAN}"
     ;;

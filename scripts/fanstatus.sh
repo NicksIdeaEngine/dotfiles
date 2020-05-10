@@ -1,4 +1,7 @@
 #!/bin/bash
+# strict mode
+set -euo pipefail
+IFS=$'\n\t'
 
 front_fan="$(cat /sys/class/hwmon/hwmon0/fan2_input)"
 top_fans="$(cat /sys/class/hwmon/hwmon0/fan3_input)"
@@ -10,7 +13,9 @@ temp4="$(( $(cat /sys/class/hwmon/hwmon0/temp4_input) / 1000))"
 temp5="$(( $(cat /sys/class/hwmon/hwmon0/temp5_input) / 1000))"
 temp6="$(( $(cat /sys/class/hwmon/hwmon0/temp6_input) / 1000))"
 
-case "$1" in
+arg="${1:-}"
+
+case "$arg" in
   --poly)
     echo "|   ${front_fan}  ${top_fans}  ${bottom_fans}  ${back_fan}  |  ${temp2} ${temp3}"
     ;;

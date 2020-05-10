@@ -1,4 +1,7 @@
 #!/bin/bash
+# strict mode
+set -euo pipefail
+IFS=$'\n\t'
 
 line1="$(date +'%A, %B %d')"
 line2="$(date +'%H:%M')"

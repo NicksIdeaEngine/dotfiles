@@ -11,3 +11,6 @@ Needed when stuff in `/mnt/sdc1/dbx/*` somehow became a mix of `efex:efex` and `
 - `find . -type f -exec chown efex:efex {} +`
 - `find . -type d -exec chown efex:efex {} +`
 
+## Adding lines of text to files at specific lines
+
+`sed -i "2i <text here>" <file/glob>`

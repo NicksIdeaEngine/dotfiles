@@ -1,4 +1,7 @@
 #!/bin/bash
+# strict mode
+set -euo pipefail
+IFS=$'\n\t'
 
 # set all date variables
 DAYOFMONTH="$(date +%d)"
@@ -7,7 +10,7 @@ YEAR="$(date +%Y)"
 QUARTER="$(( ($MONTH-1)/3+1 ))"
 
 # destination folder in Dropbox
-DEST="$HOME/backups"
+DEST="$HOME/zackups"
 
 # directories to grab from $HOME
 HOME_SPEC=(".config" ".config/google-chrome/Default" ".config/mpd" ".config/rclone" ".config/rescuetime" ".config/todo" ".config/Twine" ".icons" ".local/kitty/kitty" ".local/share/applications" ".ssh" ".tmux/plugins" ".vim" "bin" "Twine")
@@ -56,12 +59,15 @@ QUARTER_SPEC=(".fonts" ".themes")
 
 # backup one or more files or directories
 backup() {
-  if [[ "$2" == "" ]]; then
-    local SUB_DIR="$1"
+  local arg1="${1:-}"
+  local arg2="${2:-}"
+
+  if [[ "$arg2" == "" ]]; then
+    local SUB_DIR="$arg1"
     local HOME_DIR="$HOME"
   else
-    local SUB_DIR="$1/$2"
-    local HOME_DIR="$HOME/$2"
+    local SUB_DIR="$arg1/$arg2"
+    local HOME_DIR="$HOME/$arg2"
   fi
   shift
   shift
@@ -80,6 +86,8 @@ backup() {
 }
 
 start_daily() {
+  local arg1="${1:-}"
+
   # start by cycling through HOME_SPEC
   for I in "${HOME_SPEC[@]}"; do
 
@@ -87,47 +95,51 @@ start_daily() {
     # directories if needed
     case "$I" in
       ".config" )
-        backup "$1" "$I" "${CONFIG_SPEC[@]}" ;;
+        backup "$arg1" "$I" "${CONFIG_SPEC[@]}" ;;
       ".config/google-chrome/Default" )
-        backup "$1" "$I" "${CHROME_SPEC[@]}" ;;
+        backup "$arg1" "$I" "${CHROME_SPEC[@]}" ;;
       ".config/mpd" )
-        backup "$1" "$I" "${MPD_SPEC[@]}" ;;
+        backup "$arg1" "$I" "${MPD_SPEC[@]}" ;;
       ".config/rclone" )
-        backup "$1" "$I" "${RCLONE_SPEC[@]}" ;;
+        backup "$arg1" "$I" "${RCLONE_SPEC[@]}" ;;
       ".config/rescuetime" )
-        backup "$1" "$I" "${RESCUE_SPEC[@]}" ;;
+        backup "$arg1" "$I" "${RESCUE_SPEC[@]}" ;;
       ".config/todo" )
-        backup "$1" "$I" "${TODO_SPEC[@]}" ;;
+        backup "$arg1" "$I" "${TODO_SPEC[@]}" ;;
       ".config/Twine" )
-        backup "$1" "$I" "${TWINE_SPEC[@]}" ;;
+        backup "$arg1" "$I" "${TWINE_SPEC[@]}" ;;
       ".icons" )
-        backup "$1" "$I" "${ICON_SPEC[@]}" ;;
+        backup "$arg1" "$I" "${ICON_SPEC[@]}" ;;
       ".local/kitty/kitty" )
-        backup "$1" "$I" "${LOCAL_KITTY_SPEC[@]}" ;;
+        backup "$arg1" "$I" "${LOCAL_KITTY_SPEC[@]}" ;;
       ".local/share/applications" )
-        backup "$1" "$I" "${LOCAL_APP_SPEC[@]}" ;;
+        backup "$arg1" "$I" "${LOCAL_APP_SPEC[@]}" ;;
       ".tmux/plugins" )
-        backup "$1" "$I" "${TMUX_SPEC[@]}" ;;
+        backup "$arg1" "$I" "${TMUX_SPEC[@]}" ;;
       ".vim" )
-        backup "$1" "$I" "${VIM_SPEC[@]}" ;;
+        backup "$arg1" "$I" "${VIM_SPEC[@]}" ;;
       * )
-        backup "$1" "" "$I" ;;
+        backup "$arg1" "" "$I" ;;
     esac
   done
 
   # run backup() for DOTFILES
-  backup "$1" "" "${DOTFILES[@]}"
+  backup "$arg1" "" "${DOTFILES[@]}"
 }
 
 start_quarterly() {
-  backup "$1" "" "${QUARTER_SPEC[@]}"
+  local arg1="${1:-}"
+  backup "$arg1" "" "${QUARTER_SPEC[@]}"
 }
 
 # remove and remake directory, then add file to signal when that update was made
 clean_dir() {
-  rm -rf "$1"
-  mkdir -p "$1"
-  touch "$1/$2"
+  local arg1="${1:-}"
+  local arg2="${2:-}"
+  rm -rf "$arg1"
+  mkdir -p "$arg1"
+  touch "$arg1/$arg2"
+  echo "Created $arg1/$arg2"
 }
 
 # check for signal file to see if update is needed

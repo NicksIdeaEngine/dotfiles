@@ -1,5 +1,8 @@
 #!/bin/bash
-#
+# strict mode
+set -euo pipefail
+IFS=$'\n\t'
+
 # find-driver - find the driver exporting a chip as reported by 'sensors'
 # Copyright (C) 2018  Ondřej Lysoněk
 #

@@ -1,4 +1,7 @@
 #!/bin/bash
+# strict mode
+set -euo pipefail
+IFS=$'\n\t'
 
 src_dir="/home/efex/dots"
 dest_dir="/home/efex"

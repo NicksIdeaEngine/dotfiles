@@ -1,4 +1,7 @@
 #!/bin/bash
+# strict mode
+set -euo pipefail
+IFS=$'\n\t'
 
 # directory to backup
 SRCDIR=$HOME/.config/autostart

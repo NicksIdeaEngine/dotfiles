@@ -1,6 +1,11 @@
 #!/bin/bash
+# strict mode
+set -euo pipefail
+IFS=$'\n\t'
 
-case "$1" in
+arg="${1:-}"
+
+case "$arg" in
 	--speakers)
     SINK="alsa_output.pci-0000_0a_00.3.analog-stereo"
     pacmd set-default-sink "$SINK"
