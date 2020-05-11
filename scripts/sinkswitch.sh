@@ -1,7 +1,7 @@
 #!/bin/bash
 # strict mode
-set -euo pipefail
-IFS=$'\n\t'
+# set -euo pipefail
+# IFS=$'\n\t'
 
 arg="${1:-}"
 

@@ -20,8 +20,7 @@
 
 DBOX="/mnt/sdc1/dbx"
 CDIR="$DBOX/code"
-SDIR="$CDIR/snippets"
-PDIR="$CDIR/showcase"
+PDIR="$DBOX/proj"
 alias sudo="sudo "
 alias {v,vi,vim}="nvim"
 
@@ -29,28 +28,25 @@ alias {v,vi,vim}="nvim"
 # {{{ 1. Navigation
 
 # move to certain folders
-alias navls="echo 'dbx cfg doc dot dwn mzk pix ref scr tmp vds cdir sdir pdir pfol userchrome[dev]'"
+alias navls="echo 'dbx cfg doc dot dwn mzk pix ref scr tmp vds cdir pdir pfol userchrome[dev]'"
 alias dbx="cd $DBOX"
-# alias bod="cd ~/body"
 alias cfg="cd ~/.config"
-# alias cpy="cd ~/writing/copywriting"
+alias cpy="cd ~/writing/copywriting"
 alias doc="cd ~/docs"
 alias dot="cd ~/dots"
 alias dwn="cd ~/dwn"
 alias mzk="cd ~/music"
 alias pix="cd ~/pics"
 alias ref="cd ~/refs"
-# alias rpo="cd ~/.config/repos"
 alias scr="cd ~/scripts"
 alias tmp="cd ~/tmp"
 alias vds="cd ~/vids"
-# alias wrt="cd ~/writing"
+alias wrt="cd ~/writing"
 alias cdir="cd $CDIR"
-alias sdir="cd $SDIR"
 alias pdir="cd $PDIR"
-alias pfol="cd $CDIR/nickgarcia.me"
-alias userchrome="cd ~/.mozilla/firefox/d3sh8gn9.default-release/chrome"
-# alias userchromedev="cd ~/.mozilla/firefox/wmmhtufq.dev-edition-default-2/chrome"
+alias pfol="cd $PDIR/nickgarcia.me"
+alias userchrome="cd ~/.mozilla/firefox/65rf3aso.default-release/chrome"
+alias userchromedev="cd ~/.mozilla/firefox/ad1fuz9r.dev-edition-default/chrome"
 
 # sped up cd navigation
 alias cd.="cd .."
@@ -77,17 +73,17 @@ alias cfbl="vim ~/.bash_logout"
 alias cfbp="vim ~/.bash_profile"
 alias cfc="vim ~/.config/compton.conf"
 alias cfd="vim ~/.config/dunst/dunstrc"
-alias cff="vim ~/.mozilla/firefox/d3sh8gn9.default-release/chrome/userChrome.css"
-# alias cffd="vim ~/.mozilla/firefox/wmmhtufq.dev-edition-default-2/chrome/userChrome.css"
+alias cff="vim ~/.mozilla/firefox/65rf3aso.default-release/chrome/userChrome.css"
+alias cffd="vim ~/.mozilla/firefox/ad1fuz9r.dev-edition-default/chrome/userChrome.css"
 alias cfi="vim ~/.config/i3/config"
 alias cfk="vim ~/.config/kitty/kitty.conf"
-# alias cfm="vim ~/.config/mpd/mpd.conf"
+alias cfm="vim ~/.config/mpd/mpd.conf"
 alias cfn="vim ~/.config/nvim/init.vim"
 alias cfp="vim ~/.config/polybar/config.ini"
 alias cfpr="vim ~/.profile"
 alias cfr="vim ~/.config/ranger/rc.conf"
 alias cfrt="vim ~/.config/rescuetime/.rtgoals"
-# alias cfs="vim ~/.config/repos/st/config.h"
+alias cfs="vim ~/.local/st/config.h"
 alias cft="vim ~/.tmux.conf"
 alias cfv="vim ~/.vimrc"
 alias cfx="vim ~/.Xresources"
@@ -109,6 +105,8 @@ alias wiki="vim $HOME/refs/index.md"
 # }}}
 # {{{ 4. Recent Projects
 
+# check for vim session, or create one
+
 # aliases for recent projects
 alias projls="echo 'a/sudoku b/pomodoro c/simonsays x/tictactoe y/learn-react-js z/portfolio bork sbox'"
 alias proja="cd $PDIR/sudoku && code sudoku.code-workspace"
@@ -120,6 +118,7 @@ alias projy="cd $CDIR/coursework/learn-react-js && code learn-react-js.code-work
 alias projz="cd $CDIR/nickgarcia.me && code portfolio.code-workspace"
 alias bork="cd $CDIR/borksism && code borksism.code-workspace"
 alias sbox="cd $CDIR/sandbox && code sandbox.code-workspace"
+alias spark="cd $CDIR/sandbox && code sandbox.code-workspace"
 
 # }}}
 # {{{ 5. Todotxt CLI

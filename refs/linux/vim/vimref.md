@@ -18,10 +18,28 @@
 
 - ea: end of word, append
 - tabs?
+- `:verbose imap <c-e>` gives you info on that key binding
+- `<c-o>`: back in history
+- `<c-i>`: forward in history
 
 ### vim folds
 
 - `<leader>/`: fold this section
+- via (https://www.linux.com/learn/tutorials/442438-vim-tips-folding-fun)
+  - `zf#j` creates a fold from the cursor down # lines.
+  - `zf/string` creates a fold from the cursor to string .
+  - `zj` moves the cursor to the next fold.
+  - `zk` moves the cursor to the previous fold.
+  - `zo` opens a fold at the cursor.
+  - `zO` opens all folds at the cursor.
+  - `zm` increases the foldlevel by one.
+  - `zM` closes all open folds.
+  - `zr` decreases the foldlevel by one.
+  - `zR` decreases the foldlevel to zero -- all folds will be open.
+  - `zd` deletes the fold at the cursor.
+  - `zE` deletes all folds.
+  - `[z` move to start of open fold.
+  - `]z` move to end of open fold.
 
 ## Plugin Hotkeys
 
@@ -48,7 +66,7 @@
 - `cst"` to go back around to `"Hello world!"`
 - `ds"` to remove delimiters
 - `ysiw]` to wrap word in `[]`
-- `cs]{` to `change surrounding [] to {  }` (`{` adds space, `}` does not)
+- `cs]{` to `change surrounding [] to { }` (`{` adds space, `}` does not)
 - `yssb` or `yss)` to yank surround sentence with parentheses
 - `ds{ds)` changes `({ Hello } world!)` to `Hello world!`
 - `ysiw<em>` wraps word in emphasis tags

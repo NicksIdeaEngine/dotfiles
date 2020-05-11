@@ -61,6 +61,8 @@ set autochdir
 " if the above causes problems with plugins, here's an alternative way
 " autocmd BufEnter * silent! lcd %:p:h
 
+set guifont=FiraCode\ Nerd\ Font\ 12
+set conceallevel=2
 set cursorline
 set foldenable
 set foldlevelstart=10
@@ -90,45 +92,59 @@ let g:python3_host_prog = '/usr/bin/python3'
 
 call plug#begin()
 
-" ======== emmet-vim config ======== {{{
+" ======== mattn/emmet-vim config ======== {{{
+" https://github.com/mattn/emmet-vim
 
 Plug 'mattn/emmet-vim'
 
+" enable all functions in all modes
 let g:user_emmet_mode='a'
+
+" only enable for specific filetypes
+let g:user_emmet_install_global = 0
+autocmd FileType html,css,scss,js,jsx EmmetInstall
+
+" rebind leader to alt-e
 let g:user_emmet_leader_key = '<m-e>'
 
 " }}}
-" ======== editorconfig-vim config ======== {{{
+" ======== editorconfig/editorconfig-vim config ======== {{{
+" https://github.com/editorconfig/editorconfig-vim
 
 Plug 'editorconfig/editorconfig-vim'      
 
 " }}}
-" ======== vim-css3-syntax config ======== {{{
+" ======== hail2u/vim-css3-syntax config ======== {{{
+" https://github.com/hail2u/vim-css3-syntax
 
 Plug 'hail2u/vim-css3-syntax'     
 
 " }}}
-" ======== scss-syntax config ======== {{{
+" ======== cakebaker/scss-syntax config ======== {{{
+" https://github.com/cakebaker/scss-syntax.vim
 
 Plug 'cakebaker/scss-syntax.vim'     
 
 " }}}
 " ======== vim-js config ======== {{{
+" https://github.com/yuezk/vim-js
 
 Plug 'yuezk/vim-js'
 
 " }}}
 " ======== vim-jsx-pretty config ======== {{{
+" https://github.com/MaxMEllon/vim-jsx-pretty
 
 Plug 'maxmellon/vim-jsx-pretty', { 'as': 'vim-syntax-jsx', 'for': [ 'javascriptreact' ] }
 
 " }}}
 " ======== vim-closetag config ======== {{{
+" https://github.com/alvan/vim-closetag
 
 Plug 'alvan/vim-closetag'
 
 " Update closetag to also work on js and html files, don't want ts since <> is used for type args
-let g:closetag_filenames='*.html,*.css,*.scss,*.js,*.jsx,*.json,*.md'
+let g:closetag_filenames='*.html,*.js,*.jsx'
 let g:closetag_regions = {
     \ 'javascript.jsx': 'jsxRegion',
     \ 'javascriptreact': 'jsxRegion',
@@ -139,24 +155,28 @@ let g:closetag_emptyTags_caseSensitive = 1
 
 " }}}
 " ======== auto-pairs config ======== {{{
+" https://github.com/jiangmiao/auto-pairs
 
-" Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 
 " }}}
 " ======== prettier config ======== {{{
+" https://github.com/prettier/vim-prettier
 
-Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'css', 'scss', 'json', 'markdown', 'yaml', 'html'] }
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 let g:prettier#exec_cmd_async = 1
-let g:prettier#autoformat = 0
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_config_present = 1
 let g:prettier#quickfix_enabled = 0
 let g:prettier#config#single_quote = 'true'
 let g:prettier#config#arrow_parens = 'always'
-let g:prettier#config#trailing_comma = 'es5'
+let g:prettier#config#trailing_comma = 'all'
 autocmd BufWritePre *.js,*.jsx,*.css,*.scss,*.json,*.md,*.yaml,*.html PrettierAsync
 
 " }}}
 " ======== ultisnips config ======== {{{
+" https://github.com/SirVer/ultisnips
 
 " needed for vim-react-snippets
 Plug 'SirVer/ultisnips'
@@ -167,16 +187,19 @@ let g:UltiSnipsJumpBackwardTrigger='<c-z>'
 
 " }}}
 " ======== vim-react-snippets config ======== {{{
+" https://github.com/mlaursen/vim-react-snippets
 
 Plug 'mlaursen/vim-react-snippets'
 
 " }}}
 " ======== vim-surround config ======== {{{
+" https://github.com/tpope/vim-surround
 
 Plug 'tpope/vim-surround'
 
 " }}}
 " ======== vim-commentary config ======== {{{
+" https://github.com/tpope/vim-commentary
 
 Plug 'tpope/vim-commentary'
 
@@ -185,6 +208,7 @@ Plug 'tpope/vim-commentary'
 
 " }}}
 " ======== vim-obsession config ======== {{{
+" https://github.com/tpope/vim-obsession
 
 Plug 'tpope/vim-obsession'
 
@@ -193,6 +217,7 @@ Plug 'tpope/vim-obsession'
 
 " }}}
 " ======== nerdtree config ======== {{{
+" https://github.com/preservim/nerdtree
 
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 
@@ -205,6 +230,7 @@ let g:NERDTreeDirArrowCollapsible = ''
 
 " }}}
 " ======== nerdtree-git-plugin config ======== {{{
+" https://github.com/Xuyuanp/nerdtree-git-plugin
 
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
@@ -219,7 +245,7 @@ let g:NERDTreeShowIgnoredStatus = 1
 "     \ "Deleted"   : "✖",
 "     \ "Dirty"     : "✗",
 "     \ "Clean"     : "✔︎",
-"     \ 'Ignored'   : '☒',
+"     \ "Ignored"   : "☒",
 "     \ "Unknown"   : "?"
 "     \ }
 
@@ -230,6 +256,7 @@ let g:NERDTreeShowIgnoredStatus = 1
 
 " }}}
 " ======== vimwiki config ======== {{{
+" https://github.com/vimwiki/vimwiki
 
 Plug 'vimwiki/vimwiki'
 
@@ -241,6 +268,7 @@ let g:vimwiki_diary_months = {
 
 " }}}
 " ======== markdown-preview config ======== {{{
+" https://github.com/iamcco/markdown-preview.nvim
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 
@@ -251,11 +279,13 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 
 " }}}
 " ======== todo.txt config ======== {{{
+" https://github.com/freitass/todo.txt-vim
 
 Plug 'freitass/todo.txt-vim'
 
 " }}}
 " ======== goyo config ======== {{{
+" https://github.com/junegunn/goyo.vim
 
 Plug 'junegunn/goyo.vim'
 
@@ -297,11 +327,13 @@ autocmd! User GoyoLeave call <SID>goyo_leave()
 
 " }}}
 " ======== limelight config ======== {{{
+" https://github.com/junegunn/limelight.vim
 
 Plug 'junegunn/limelight.vim'
 
 " }}}
 " ======== fzf config ======== {{{
+" https://github.com/junegunn/fzf
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -310,16 +342,19 @@ noremap <leader>f :FZF<cr>
 
 " }}}
 " ======== targets config ======== {{{
+" https://github.com/wellle/targets.vim
 
 Plug 'wellle/targets.vim'
 
 " }}}
 " ======== gruvbox config ======== {{{
+" https://github.com/morhetz/gruvbox
 
 Plug 'morhetz/gruvbox'
 
 " }}}
 " ======== coc config ======== {{{
+" https://github.com/neoclide/coc.nvim
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
@@ -361,11 +396,13 @@ endfunction
 
 " }}}
 " ======== coc-zsh config ======== {{{
+" https://github.com/tjdevries/coc-zsh
 
 Plug 'tjdevries/coc-zsh'
 
 " }}}
 " ======== vim-ditto config ======== {{{
+" https://github.com/dbmrq/vim-ditto
 
 Plug 'dbmrq/vim-ditto'
 
@@ -419,6 +456,75 @@ Plug 'ryanoasis/vim-devicons'
 " Plug 'Lokaltog/vim-easymotion'    
 
 " }}}
+" ======== vim-nerdtree-syntax-highlight config ======== {{{
+" https://github.com/tiagofumo/vim-nerdtree-syntax-highlight
+
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+" NERDTrees File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+ exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+ exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
+call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
+autocmd VimEnter * call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+" call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
+call NERDTreeHighlightFile('ds_store', 'Gray', 'none', '#686868', '#151515')
+call NERDTreeHighlightFile('gitconfig', 'Gray', 'none', '#686868', '#151515')
+call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#686868', '#151515')
+call NERDTreeHighlightFile('bashrc', 'Gray', 'none', '#686868', '#151515')
+call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#686868', '#151515')
+
+" " highlight full name, not just icons
+" let g:NERDTreeFileExtensionHighlightFullName = 1
+" let g:NERDTreeExactMatchHighlightFullName = 1
+" let g:NERDTreePatternMatchHighlightFullName = 1
+
+" let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
+" let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
+
+" " you can add these colors to your .vimrc to help customizing
+" let s:brown = "905532"
+" let s:aqua =  "3AFFDB"
+" let s:blue = "689FB6"
+" let s:darkBlue = "44788E"
+" let s:purple = "834F79"
+" let s:lightPurple = "834F79"
+" let s:red = "AE403F"
+" let s:beige = "F5C06F"
+" let s:yellow = "F09F17"
+" let s:orange = "D4843E"
+" let s:darkOrange = "F16529"
+" let s:pink = "CB6F6F"
+" let s:salmon = "EE6E73"
+" let s:green = "8FAA54"
+" let s:lightGreen = "31B53E"
+" let s:white = "FFFFFF"
+" let s:rspec_red = 'FE405F'
+" let s:git_orange = 'F54D27'
+
+" let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
+" let g:NERDTreeExtensionHighlightColor['css'] = s:blue " sets the color of css files to blue
+
+" let g:NERDTreeExactMatchHighlightColor = {} " this line is needed to avoid error
+" let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the color for .gitignore files
+
+" let g:NERDTreePatternMatchHighlightColor = {} " this line is needed to avoid error
+" let g:NERDTreePatternMatchHighlightColor['.*_spec\.rb$'] = s:rspec_red " sets the color for files ending with _spec.rb
+
+" }}}
 
 call plug#end()
 
@@ -431,16 +537,6 @@ augroup filetype_vim
   autocmd FileType vim setlocal foldmethod=marker
 augroup END
 " }}}
-" ======== color config ======== {{{
-
-" gruvbox configuration
-set termguicolors
-set background=light
-let g:gruvbox_contrast_light = 'hard'
-colorscheme gruvbox
-
-" }}}
-
 " }}}
 " ======== lightline config ======== {{{
 "{{{lightline.vim
@@ -625,25 +721,22 @@ let g:lightline.component_visible_condition = {
       \ }
 "}}}
 " }}}
-" vim folds {{{
+" ======== vim folds ======== {{{
 
 " set auto saving/restoring of vim folds
+" currently causes issues, unsure why
 " au BufWinLeave * mkview
 " au BufWinEnter * silent loadview
 
 " }}}
-" ======== key mapping config ======== {{{
-
-command PIU PlugInstall | PlugUpdate | PlugUpgrade
-map <F6> :setlocal spell! spelllang=en_us<cr>
-" map! <F5> :so $MYVIMRC<cr>
-nnoremap <leader>S :%s///g<left><left><left>
+" ======== functions ======== {{{
 
 " Make it so that if files are changed externally (ex: changing git branches) update the vim buffers automatically
 " autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
 " autocmd FileChangedShellPost *
 "   \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
+" open terminal at bottom with :T or right with :VT
 if has("nvim")
   " open terminal with 20 lines always at bottom
   command! -nargs=* T belowright split | resize 20 | terminal <args>
@@ -657,6 +750,11 @@ endif
 " :mksession filename.vim
 " vim -S filename.vim
 
+" === nerdtree === {{{
+
+" start nerdtree if starting vim by opening a directory
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+
 " start nerdtree on start-up if no files specified
 " but not when opening a saved session
 autocmd StdinReadPre * let s:std_in=1
@@ -665,9 +763,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && v:this_session == ""
 " close nvim if the only window left is NERDTree
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" open nerdtree
-map <leader>n :NERDTreeToggle<cr>
-
+" }}}
 " windows like clipboard {{{
 
 " yank to and paste from the clipboard without prepending "* to commands
@@ -680,11 +776,24 @@ cno <c-v> <c-r>+
 exe 'ino <script> <c-V>' paste#paste_cmd['i']
 
 " }}}
+" }}}
+" ======== color config ======== {{{
 
-" auto indent pasted text
-" this creates odd jumping around, needs tweaking
-" nnoremap p p=`]<c-o>
-" nnoremap P P=`]<c-o>
+set termguicolors
+set background=light
+let g:gruvbox_contrast_light = 'hard'
+colorscheme gruvbox
+
+" }}}
+" ======== key maps ======== {{{
+
+command PIU PlugInstall | PlugUpdate | PlugUpgrade
+map <F6> :setlocal spell! spelllang=en_us<cr>
+" map! <F5> :so $MYVIMRC<cr>
+nnoremap <leader>S :%s///g<left><left><left>
+
+" open nerdtree
+map <leader>n :NERDTreeToggle<cr>
 
 " add semicolon, colon, comma to eol
 nnoremap <leader>; m'A;<esc>`'
@@ -696,6 +805,11 @@ nnoremap <leader>cd :cd %:p:h<cr>
 
 " turn off search highlight
 nnoremap <leader>h :nohlsearch<cr>
+
+" coc hotkeys
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
+nnoremap <c-p> :GFiles<cr>
 
 " switch line downwards/upwards
 nnoremap <leader>j ddp
@@ -732,5 +846,26 @@ nnoremap <m-h> <c-w>H
 
 autocmd FileType html inoremap ;i <em></em><Space><++><esc>FeT>i
 autocmd FileType html inoremap ;b <b></b><Space><++><esc>FbT>i
+" }}}
+" ======== ideas ======== {{{
+
+" `npm run devserver`
+" deploy workspace setups
+" snippets and snippet searching (with fzf?)
+" markdown open preview
+" vertical/horizontal split
+" moving editors around to different panes
+" beautify for HTML
+" eslint
+" indent rainbow
+" intellisense
+" working nerdtree icons
+" rescuetime
+" wakatime
+" remove vim and vim icon
+" remove the utf-8 section
+" add timers for rescuetime / wakatime
+" add todotxt.cli integration
+
 " }}}
 

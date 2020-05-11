@@ -92,8 +92,8 @@ $mod4+e exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes' 'i3-msg exit'"
 # open sys menu
 $scmod3+0 $ex $scr/sysmenu.sh --menu
 
-# restart polybar
-$mod4+p $ex $scr/polybarstart.sh
+# toggle polybar
+$mod4+p $ex $scr/toggle-polybar.sh
 
 # volume changing
 bindsym $volup      $ex pactl set-sink-volume @DEFAULT_SINK@ +5%
