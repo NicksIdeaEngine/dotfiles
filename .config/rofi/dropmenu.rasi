@@ -1,27 +1,29 @@
+@import "globals.rasi"
+
 configuration {
-    show-icons:		true;
-    lines:		53;
+  show-icons:		true;
+  lines:		53;
 }
 
 * {
-    background-color:	#3c3836;
-    border-color:	#458588;
-    text-color:		#f9f5d7;
-    font:		"FiraCode Nerd Font 10";
+  background-color:	#3c3836;
+  border-color:	#458588;
+  text-color:		#f9f5d7;
+  font:		"FiraCode Nerd Font 10";
 }
 
 #window {
-    anchor:     northwest;
-    location:   northwest;
-    width:      15%;
-    padding:    2px;
+  anchor: northwest;
+  location: northwest;
+  width: 15%;
+  padding: 2px;
 }
 
 #element {
-    padding: 0px 2px;
+  padding: 0px 2px;
 }
 
 #element selected {
-    background-color: #f9f5d7;
-    text-color: #3c3836;
+  background-color: #f9f5d7;
+  text-color: #3c3836;
 }

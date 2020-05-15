@@ -3,4 +3,4 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-rofi -show drun -theme dropmenu
+rofi -show drun -theme appmenu

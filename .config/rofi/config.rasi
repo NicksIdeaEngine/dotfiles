@@ -1,0 +1,127 @@
+* {
+  font-xsmall:  "FiraCode Nerd Font 10";
+  font-small:   "FiraCode Nerd Font 14";
+  font-medium:  "FiraCode Nerd Font 24";
+  font-large:   "FiraCode Nerd Font 38";
+  font-xlarge:  "FiraCode Nerd Font 50";
+}
+
+window {
+  background-color: @bg;
+  border: 2px;
+  padding: 2px;
+}
+
+mainbox {
+  border: 0;
+  padding: 0;
+}
+
+message {
+  border: 2px 0 0;
+  border-color: @bg2;
+  padding: 1px;
+}
+
+textbox {
+  highlight: @yellow;
+  text-color: @fg;
+}
+
+listview {
+  border: 2px solid 0 0;
+  padding: 2px 0 0;
+  border-color: @bg2;
+  spacing: 2px;
+  scrollbar: @bg1;
+}
+
+element {
+  border: 0;
+  padding: 2px;
+}
+
+element.normal.normal {
+  background-color: @bg;
+  text-color: @fg;
+}
+
+element.normal.urgent {
+  background-color: @red;
+  text-color: @fg0;
+}
+
+element.normal.active {
+  background-color: @bg;
+  text-color: @fg;
+}
+
+element.selected.normal {
+  background-color: @bg;
+  text-color: @fg;
+}
+
+element.selected.urgent {
+  background-color: @bg;
+  text-color: @fg;
+}
+
+element.selected.active {
+  background-color: @bg;
+  text-color: @fg;
+}
+
+element.alternate.normal {
+  background-color: @bg;
+  text-color: @fg;
+}
+
+element.alternate.urgent {
+  background-color: @bg;
+  text-color: @fg;
+}
+
+element.alternate.active {
+  background-color: @bg;
+  text-color: @fg;
+}
+
+scrollbar {
+  width: 4px;
+  border: 0;
+  handle-color: @bg4;
+  handle-width: 8px;
+  padding: 0;
+}
+
+mode-switcher {
+  border: 2px 0 0;
+  border-color: @bg3;
+}
+
+inputbar {
+  spacing: 0;
+  text-color: @fg3;
+  padding: 2px;
+  children: [ prompt, textbox-prompt-sep, entry, case-indicator ];
+}
+
+case-indicator,
+entry,
+prompt,
+button {
+  spacing: 0;
+  text-color: @fg2;
+}
+
+button.selected {
+  background-color: @bg2;
+  text-color: @fg2;
+}
+
+textbox-prompt-sep {
+  expand: false;
+  str: ":";
+  text-color: @fg1;
+  margin: 0 0.3em 0 0;
+}

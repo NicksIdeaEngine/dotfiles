@@ -37,7 +37,7 @@
 - added `/dev/sdc1 /mnt/sdc1 ext4 defaults 1 2` to `/etc/fstab`
 - install timeshift
 - first manual snapshot
-- fixing sensors issue via kubuntu forums post (*Apr24/2020:* did not complete, still needs investigating)(*May1/2020:* Completed! Refer to line 68)
+- fixing sensors issue via kubuntu forums post (_Apr24/2020:_ did not complete, still needs investigating)(_May1/2020:_ Completed! Refer to line 68)
   - `mkdir .repos && cd .repos`
   - `git clone https://github.com/a1wong/it87.git`
   - `cd it87`
@@ -107,6 +107,8 @@
   - rebooted
 - installed python-prettytable again
 - rescuetime2 (yay)
+- installed the_silver_searcher
+- installed nethack
 
 ## New Things To Explore
 

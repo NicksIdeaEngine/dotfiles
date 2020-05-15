@@ -1,7 +1,20 @@
-" ======== summary ======== {{{
-"
+" nvim config file
+" created by Nick Garcia
+" https://github.com/NicksIdeaEngine/dotfiles
+
+" {{{ table of contents
+
+" 0. globals
+" 1. plugin call
+" 2. plugin config
+" 3. general config
+" 4. lightline config
+" 5. functions
+" 6. key maps
+" z. overflow
+
 " }}}
-" ======== globals ======== {{{
+" 0. globals {{{
 
 let mapleader=' '           " Leader The Way
 nnoremap <space> <nop>      " remove default space bindings
@@ -9,7 +22,7 @@ filetype plugin indent on   "
 syntax enable               " turn on syntax highlighting
 
 " }}}
-" ======== plugin call ======== {{{;
+" 1. plugin call {{{
 
 call plug#begin()
 " https://github.com/mattn/emmet-vim
@@ -94,6 +107,9 @@ Plug 'tjdevries/coc-zsh'
 " https://github.com/dbmrq/vim-ditto
 Plug 'dbmrq/vim-ditto'
 
+" https://github.com/justinmk/vim-sneak
+Plug 'justinmk/vim-sneak'
+
 Plug 'itchyny/lightline.vim'
 
 Plug 'itchyny/vim-gitbranch'
@@ -110,15 +126,19 @@ Plug 'sainnhe/tmuxline.vim'
 
 Plug 'ryanoasis/vim-devicons'
 
+Plug 'francoiscabrol/ranger.vim'
+
+Plug 'rbgrouleff/bclose.vim'
+
 " https://github.com/tiagofumo/vim-nerdtree-syntax-highlight
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 call plug#end()
 
 " }}}
-" ======== plugin config ======== {{{
+" 2. plugin config {{{
 
-" ======== mattn/emmet-vim config ======== {{{
+" mattn/emmet-vim config {{{
 
 " enable all functions in all modes
 let g:user_emmet_mode='a'
@@ -131,7 +151,7 @@ autocmd FileType html,css,scss,js,jsx EmmetInstall
 let g:user_emmet_leader_key = '<m-e>'
 
 " }}}
-" ======== vim-closetag config ======== {{{
+" vim-closetag config {{{
 
 " Update closetag to also work on js and html files, don't want ts since <> is used for type args
 let g:closetag_filenames='*.html,*.js,*.jsx'
@@ -144,7 +164,7 @@ let g:closetag_regions = {
 let g:closetag_emptyTags_caseSensitive = 1
 
 " }}}
-" ======== prettier config ======== {{{
+" prettier config {{{
 
 let g:prettier#exec_cmd_async = 1
 let g:prettier#autoformat = 1
@@ -156,26 +176,26 @@ let g:prettier#config#trailing_comma = 'all'
 autocmd BufWritePre *.js,*.jsx,*.css,*.scss,*.json,*.md,*.yaml,*.html PrettierAsync
 
 " }}}
-" ======== ultisnips config ======== {{{
+" ultisnips config {{{
 
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<c-b>'
 let g:UltiSnipsJumpBackwardTrigger='<c-z>'
 
 " }}}
-" ======== vim-commentary config ======== {{{
+" vim-commentary config {{{
 
 " example of adding favorite filetype support
 " autocmd FileType apache setlocal commentstring=#\ %s
 
 " }}}
-" ======== vim-obsession config ======== {{{
+" vim-obsession config {{{
 
 " `:help obsession-status`
 " do I need something to create Session.vim file automatically?
 
 " }}}
-" ======== nerdtree config ======== {{{
+" nerdtree config {{{
 
 " always show hidden files
 let g:NERDTreeShowHidden = 1
@@ -200,7 +220,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && v:this_session == ""
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " }}}
-" ======== nerdtree-git-plugin config ======== {{{
+" nerdtree-git-plugin config {{{
 
 let g:NERDTreeShowIgnoredStatus = 1
 
@@ -218,7 +238,7 @@ let g:NERDTreeShowIgnoredStatus = 1
 "     \ }
 
 " }}}
-" ======== vimwiki config ======== {{{
+" vimwiki config {{{
 
 let g:vimwiki_list = [{'path': '~/refs/', 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_diary_months = {
@@ -227,7 +247,7 @@ let g:vimwiki_diary_months = {
   \ 11: 'November', 12: 'December' }
 
 " }}}
-" ======== markdown-preview config ======== {{{
+" markdown-preview config {{{
 
 " example
 " nmap <C-s> <Plug>MarkdownPreview
@@ -235,7 +255,7 @@ let g:vimwiki_diary_months = {
 " nmap <C-p> <Plug>MarkdownPreviewToggle
 
 " }}}
-" ======== goyo config ======== {{{
+" goyo config {{{
 
 let g:goyo_width = 95
 let g:goyo_height = 85
@@ -279,7 +299,7 @@ autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
 
 " }}}
-" ======== fzf config ======== {{{
+" fzf config {{{
 
 nnoremap <leader>f :FZF<cr>
 let g:fzf_action = {
@@ -306,7 +326,7 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }
 
 " }}}
-" ======== coc config ======== {{{
+" coc config {{{
 
 " longer updatetime = delays/lag (default is 4000ms)
 set updatetime=300
@@ -345,14 +365,23 @@ endfunction
 " inoremap <silent><expr> <c-space> coc#refresh()
 
 " }}}
-" ======== vim-ditto config ======== {{{
+" ranger.vim config {{{
+
+let g:ranger_map_keys = 0
+let g:NERDTreeHijackNetrw = 0
+let g:ranger_replace_netrw = 1
+map <leader>l :Ranger<cr>
+map <leader>L :RangerNewTab<cr>
+
+" }}}
+" vim-ditto config {{{
 
 " vim-ditto settings https://github.com/dbmrq/vim-ditto
 au FileType markdown,text,tex DittoOn " turn on ditto's autocmds
 nmap <leader>di <Plug>ToggleDitto     " turn ditto on and off
 
 " }}}
-" ======== vim-nerdtree-syntax-highlight config ======== {{{
+" vim-nerdtree-syntax-highlight config {{{
 
 " NERDTrees File highlighting
 " function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -418,14 +447,14 @@ nmap <leader>di <Plug>ToggleDitto     " turn ditto on and off
 " let g:NERDTreePatternMatchHighlightColor['.*_spec\.rb$'] = s:rspec_red " sets the color for files ending with _spec.rb
 
 " }}}
-" ======== vim-devicons config ======== {{{
+" vim-devicons config {{{
 
 " placeholder
 
 " }}}
 
 " }}}
-" ======== general config ======== {{{
+" 3. general config {{{
 
 " colors
 if (has("termguicolors"))
@@ -448,8 +477,8 @@ augroup END
 " reload files changed outside of vim
 set autoread
 
-" save on losing focus
-au FocusLost * :wa
+" save on losing focus, leaving buffer, or leaving insert mode
+au BufLeave,FocusLost,InsertLeave * :wa
 
 " don't redraw screen while running macros, registers, or other non-typed comments
 set lazyredraw
@@ -472,7 +501,10 @@ set showmatch
 
 " suggestion for normal mode commands
 set wildmode=list:longest
-set wildignore=*.swp,*.bak
+set wildignore+=*.swp,*.bak,**/node_modules/**,**/.git/**
+
+" add current path to path
+set path+=**
 
 " indentation
 set expandtab       " use spaces instead of tabs
@@ -552,7 +584,7 @@ augroup filetype_vim
 augroup END
 
 " }}}
-" ======== lightline config ======== {{{
+" 4. lightline config {{{
 " {{{lightline.vim
 " {{{ functions
 function! CocCurrentFunction() " {{{
@@ -701,7 +733,7 @@ let g:lightline.component_visible_condition = {
       \ }
 " }}}
 " }}}
-" ======== functions ======== {{{
+" 5. functions {{{
 
 " Make it so that if files are changed externally (ex: changing git branches) update the vim buffers automatically
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
@@ -814,7 +846,7 @@ exe 'ino <script> <c-V>' paste#paste_cmd['i']
 
 " }}}
 " }}}
-" ======== key maps ======== {{{
+" 6. key maps {{{
 
 command PIU PlugInstall | PlugUpdate | PlugUpgrade
 map <F6> :setlocal spell! spelllang=en_us<cr>
@@ -913,7 +945,7 @@ if exists('g:loaded_webdevicons')
 endif
 
 " }}}
-" ======== ideas ======== {{{
+" z. overflow {{{
 
 " `npm run devserver`
 " deploy workspace setups
@@ -932,6 +964,15 @@ endif
 " remove the utf-8 section
 " add timers for rescuetime / wakatime
 " add todotxt.cli integration
+" ranger
+" image viewing?
+" startify
+" vim-which-key
+" polyglot
+" colorizer
+" echodoc
+" rainbow
+" pane/split movement?
 
 " }}}
 

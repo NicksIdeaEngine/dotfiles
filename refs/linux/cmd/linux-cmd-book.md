@@ -89,7 +89,7 @@ Examples:
 - `[![:digit:]]*`: any file not beginning with a numeral
 - `*[[:lower:]123]`: any file ending with a lowercase letter or the three numerals `1`, `2`, or `3`
 
-Wildcards work in some GUI as  well.
+Wildcards work in some GUI as well.
 
 **Caution** when using `rm`:
 
@@ -102,4 +102,5 @@ Wildcards work in some GUI as  well.
 
 - `ln file link`: creates hardlink to `file` at location `link`
 - `ln -s file link`: creates symbolic link to `file` at location `link`
-- 
+
+Hard links can't reference a file outside its own file system (disk partition), nor can it reference a directory.

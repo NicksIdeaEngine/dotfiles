@@ -1,24 +1,25 @@
 # i3 config file (v4)
+# created by Nick Garcia
+# https://github.com/NicksIdeaEngine/dotfiles
 
-# {{{ Table of Contents
+# {{{ table of contents
 
-# 0. Variables
-# 1. System & Settings
-# 2. Window Navigation & Management
-# 3. Workspaces
-# 4. Application Management
-# 5. Scripts
-# 6.
-# 7.
-# 8. Startup
-# X. Colors
-# Y. Modes
-# Z. Overflow
+# 0. variables
+# 1. system & settings
+# 2. window navigation & management
+# 3. workspaces
+# 4. application management
+# 5. scripts
+# 9. startup
+# x. colors
+# y. modes
+# z. overflow
 
 # }}}
-# {{{ 0. Variables
+# {{{ 0. variables
 
 # caps lock key is used for most frequent actions
+# see ~/.Xmodmap for key rebinding config
 set $mod3key    Mod3
 set $mod3       bindsym Mod3
 set $smod3      bindsym Mod3+Shift
@@ -58,10 +59,10 @@ set $webcammic \
 set $ex     exec --no-startup-id
 set $exa    exec_always --no-startup-id
 set $br     bindsym --release
-set $scr    /home/efex/dots/scripts
+set $scr    /home/efex/scripts
 
 # }}}
-# {{{ 1. System & Settings
+# {{{ 1. system & settings
 
 # titlebar settings
 font pango:FiraCode Nerd Font 10
@@ -101,7 +102,7 @@ bindsym $voldown    $ex pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym $mute       $ex pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # }}}
-# {{{ 2. Window Navigation & Management
+# {{{ 2. window navigation & management
 
 # change focus
 $mod3+h focus left
@@ -162,7 +163,7 @@ $smod3+a focus parent
 $smod3+c focus child
 
 # }}}
-# {{{ 3. Workspaces
+# {{{ 3. workspaces
 
 # switch to workspace
 $mod3+1 workspace 1
@@ -212,7 +213,7 @@ $smod3+semicolon \
   swap container with mark swapee
 
 # }}}
-# {{{ 4. Application Management
+# {{{ 4. application management
 
 # app management
 $smod3+q    kill
@@ -239,7 +240,7 @@ $mod3+t           $ex   $terminal
 $smod3+t          exec  i3-sensible-terminal
 $mod3+m           exec  $terminal htop
 $mod3+g           exec  google-chrome-stable
-$scmod4+l         $ex   xautolock -nowlocker blurlock
+$scmod4+l         $ex   blurlock
 $mod4+d           $ex   discord
 $mod4+s           $ex   slack
 $mod4+o           $ex   obs
@@ -251,12 +252,12 @@ $mod4+i           $ex   zoom
 # $scmod3+w       $ex   start-tor-browser
 # $cmod3+t        $ex   st
 # $mod4+t         exec  gnome-text-editor
-# $mod?+F3        exec pcmanfm
-# $smod?+F3       exec pcmanfm_pkexec
-# $mod?+F5        exec $terminal -e 'mocp'
-# $scmod?+h       exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
+# $mod?+F3        exec  pcmanfm
+# $smod?+F3       exec  pcmanfm_pkexec
+# $mod?+F5        exec  $terminal -e 'mocp'
+# $scmod?+h       exec  xdg-open /usr/share/doc/manjaro/i3_help.pdf
 # $mod?+Ctrl+x    --release $ex xkill
-# $mod4+m         $ex "vlc /home/efex/music/to-sort/current.xspf"
+# $mod4+m         $ex   "vlc /home/efex/music/to-sort/current.xspf"
 
 # dunst test
 $mod4+u $ex "notify-send '.U. UwU :3'"
@@ -270,18 +271,19 @@ $br Mod3+Control+Print \
   $ex scrot -q 100 -m -e 'mv $f ~/dwn/shots'
 
 # }}}
-# {{{ 5. Scripts
+# {{{ 5. scripts
 
-$mod4+0 $ex $scr/date-alert.sh
-# syncswitch
+$mod4+0     $ex $scr/alertr.sh --date --notify
+$mod4+9     $ex $scr/sink-switch.sh --speakers
+$smod4+9    $ex $scr/sink-switch.sh --headphones
+$mod4+8     $ex $scr/alertr.sh --cpustatus --notify
+$mod4+7     $ex $scr/alertr.sh --gpustatus --notify
+$mod4+6     $ex $scr/alertr.sh --fanstatus --notify
 # general computer stats report
-# cpustatus (which is only temp/fan right now)
-# gpustatus
-# fanstatus
 # redshift
 
 # }}}
-# {{{ 8. Startup
+# {{{ 9. startup
 
 # monitor orientation since my primary is in the middle
 $ex xrandr --output HDMI-A-0 --auto --left-of DisplayPort-0
@@ -307,13 +309,12 @@ $ex       nm-applt
 $ex       xfce4-power-manager
 $ex       pamac-tray
 $ex       clipit
-$exa      dunst
+$ex       rescuetime
+$ex       redshift -c /home/efex/.config/redshift.conf
+$ex       dunst
 $exa      fix_xcursor
-$exa      redshift -c /home/efex/.config/redshift.conf
-$exa      $scr/polybarstart.sh
 # $ex     nitrogen --restore; sleep 1; compton -b
 # $ex     manjaro-hello
-# $ex     rescuetime
 # $ex     blueman-applet
 # $exa    sbxkb
 # $ex     start_conky_maia
@@ -338,7 +339,6 @@ for_window [class="vlc"] border pixel 0
 for_window [class="Firefox"] border pixel 0
 for_window [class="discord"] floating enable
 for_window [class="Slack"] floating enable
-for_window [class="kitty" floating] resize set 250 250
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -370,7 +370,7 @@ for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 
 # }}}
-# {{{ X. Colors
+# {{{ x. colors
 
 # pull in gruvbox colors
 set_from_resource $color0 color0 #ffffff
@@ -419,7 +419,27 @@ client.placeholder \
 client.background     #ffffff
 
 # }}}
-# {{{ Y. Modes
+# {{{ y. modes
+# {{{ floating resizer
+
+# set floating window size to comfy default
+# $mod4+space $ex $scr/float-resize.sh 53 74
+# for_window [class="kitty" floating] resize set 500 1000
+
+set $mode_resizer (1) Wiki (2) YT (3) 1080p (4) (5) (6) (7) (8) (9)
+
+$mod4+space mode "$mode_resizer"
+
+mode "$mode_resizer" {
+  bindsym 1 $ex $scr/float-resize.sh 53 74
+  bindsym 2 $ex $scr/float-resize.sh 54 41
+  bindsym 3 $ex $scr/float-resize.sh 119 74
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  $mod4+space mode "default"
+}
+
+# }}}
 # {{{ i3setup mode
 
 set $mode_i3setup Deploy Layout: (2)-panel (3)-panel (4)-panel | Deploy Container: prime_a (a) prime_b (s) aside_a (d) aside_b (f)
@@ -667,6 +687,6 @@ mode "$mode_gaps_left" {
 
 # }}}
 # }}}
-# {{{ Z. Overflow
+# {{{ z. overflow
 
 # }}}

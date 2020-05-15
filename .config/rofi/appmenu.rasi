@@ -1,17 +1,19 @@
 configuration {
-  lines: 4;
+  lines: 20;
+  show-icons: true;
+  columns: 2;
 }
 
 * {
-  background-color:	@bg1;
-  text-color: @color12;
-  font:	@font-xlarge;
+  background-color:	@fg1;
+  text-color: @bg1;
+  font:	@font-medium;
 }
 
 window {
   anchor: center;
   location: center;
-  width: 25%;
+  width: 65%;
   padding: 10px;
   border: 0;
 }
@@ -21,8 +23,8 @@ element {
 }
 
 element selected {
-  background-color: @color12;
-  text-color: @bg1;
+  background-color: @bg1;
+  text-color: @fg1;
 }
 
 @import "config.rasi"

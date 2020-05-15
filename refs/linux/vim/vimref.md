@@ -13,6 +13,9 @@
 - using p with d and c: p can mean paragraph, so _dap_ is "delete around paragraph"
 - dot command is versatile. If I _ciw_ to change a word, than search for more uses of that word, I can use _n_ _dot command_ _n_ _dot command_ and so on to cycle through search results and repeat the same replacement
 - <leader>S begins the :%s///g command
+- `f*` and `t*` move to or just before the next character (\*)
+- `F*` and `T*` move backwards to or just after the previous character (\*)
+- `;` will mimic the previous `fFtT` command
 
 ## General Notes
 
@@ -21,6 +24,15 @@
 - `:verbose imap <c-e>` gives you info on that key binding
 - `<c-o>`: back in history
 - `<c-i>`: forward in history
+- `<c-w>` and `=`: resize all windows based on splits
+- `vi{`: visualize inside curly brackets
+- `:sort` to sort selection
+- `:sort u` to sort selection, leaving only unique lines
+- `:-3 t .` copy line (-3) (t)o current line (.)
+- `:m . -4` (m)ove current line (.) four lines up (-4)
+- `:-4,-3 t .` copy lines (-4) to (-3) (t)o current line (.)
+- `:buffers` to show buffers
+  - 
 
 ### vim folds
 

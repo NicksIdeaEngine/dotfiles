@@ -1,39 +1,41 @@
+@import "globals.rasi"
+
 * {
-    background-color:      #3c3836;
-    border-color:          #458588;
-    text-color:            #f9f5d7;
-    font:                  "FiraCode Nerd Font 10";
+  background-color: #3c3836;
+  border-color: #458588;
+  text-color: #f9f5d7;
+  font: "FiraCode Nerd Font 10";
 }
 
 #window {
-    anchor:     north;
-    location:   north;
-    width:      100%;
-    padding:    2px;
-    children:   [ horibox ];
+  anchor: north;
+  location: north;
+  width: 100%;
+  padding: 2px;
+  children: [ horibox ];
 }
 
 #horibox {
-    orientation: horizontal;
-    children:   [ prompt, entry, listview ];
+  orientation: horizontal;
+  children: [ prompt, entry, listview ];
 }
 
 #listview {
-    layout:     horizontal;
-    spacing:    4px;
-    lines:      100;
+  layout: horizontal;
+  spacing: 4px;
+  lines: 100;
 }
 
 #entry {
-    expand:     false;
-    width:      10em;
+  expand: false;
+  width: 10em;
 }
 
 #element {
-    padding: 0px 2px;
+  padding: 0px 2px;
 }
 
 #element selected {
-    background-color: #f9f5d7;
-    text-color: #3c3836;
+  background-color: #f9f5d7;
+  text-color: #3c3836;
 }
