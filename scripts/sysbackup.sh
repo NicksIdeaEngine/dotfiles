@@ -13,10 +13,10 @@ QUARTER="$(( ($MONTH-1)/3+1 ))"
 DEST="$HOME/zackups"
 
 # directories to grab from $HOME
-HOME_SPEC=(".config" ".config/google-chrome/Default" ".config/mpd" ".config/rclone" ".config/rescuetime" ".config/todo" ".config/Twine" ".icons" ".local/kitty/kitty" ".local/share/applications" ".ssh" ".tmux/plugins" ".vim" "bin" "Twine")
+HOME_SPEC=(".config" ".config/google-chrome/Default" ".config/mpd" ".config/rclone" ".config/rescuetime" ".config/systemd/user" ".config/Twine" ".icons" ".local/share/applications" ".ssh" ".vim")
 
 # .config specifications
-CONFIG_SPEC=("autostart" "filezilla" "htop" "pulse" "systemd" "vlc" "redshift.conf" "user-dirs.dirs")
+CONFIG_SPEC=("autostart" "htop" "vlc" "redshift.conf" "user-dirs.dirs")
 
 # google chrome specific file
 CHROME_SPEC=("Preferences")
@@ -30,23 +30,17 @@ RCLONE_SPEC=("filter-from.txt" "rclone.conf")
 # RescueTime.com spec
 RESCUE_SPEC=(".rtgoals")
 
-# todo spec
-TODO_SPEC=(".actions.d" "todo_description.png")
-
-# .config/twine spec
-TWINE_SPEC=("prefs.json" "story-formats.json")
+# systemd spec
+SYSTEMD_SPEC=("dropbox-watch.service")
 
 # .icon specifications
 ICON_SPEC=("default" "st")
 
 # specs for kitty terminal
-LOCAL_KITTY_SPEC=("layout.py")
+# LOCAL_KITTY_SPEC=("layout.py")
 
 # specific directories to grab within .local/share/applications
 LOCAL_APP_SPEC=("firefox-developer.desktop" "kitty.desktop" "twine.desktop" "st.desktop")
-
-# .tmux/plugins spec
-TMUX_SPEC=("tpm")
 
 # .vim spec
 VIM_SPEC=("autoload")
@@ -104,8 +98,8 @@ start_daily() {
         backup "$arg1" "$I" "${RCLONE_SPEC[@]}" ;;
       ".config/rescuetime" )
         backup "$arg1" "$I" "${RESCUE_SPEC[@]}" ;;
-      ".config/todo" )
-        backup "$arg1" "$I" "${TODO_SPEC[@]}" ;;
+      ".config/systemd/user" )
+        backup "$arg1" "$I" "${SYSTEMD_SPEC[@]}" ;;
       ".config/Twine" )
         backup "$arg1" "$I" "${TWINE_SPEC[@]}" ;;
       ".icons" )
@@ -114,8 +108,6 @@ start_daily() {
         backup "$arg1" "$I" "${LOCAL_KITTY_SPEC[@]}" ;;
       ".local/share/applications" )
         backup "$arg1" "$I" "${LOCAL_APP_SPEC[@]}" ;;
-      ".tmux/plugins" )
-        backup "$arg1" "$I" "${TMUX_SPEC[@]}" ;;
       ".vim" )
         backup "$arg1" "$I" "${VIM_SPEC[@]}" ;;
       * )
@@ -168,4 +160,3 @@ else
 fi
 
 notify-send "$DAILY_MSG"$'\n'"$CURRENT_MSG"$'\n'"$QUARTER_MSG"
-

@@ -3,4 +3,4 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-rofi -show run -theme centermenu
+rofi -show run -theme cmdmenu

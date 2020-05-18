@@ -1,11 +1,3 @@
-* {
-  font-xsmall:  "FiraCode Nerd Font 10";
-  font-small:   "FiraCode Nerd Font 14";
-  font-medium:  "FiraCode Nerd Font 24";
-  font-large:   "FiraCode Nerd Font 38";
-  font-xlarge:  "FiraCode Nerd Font 50";
-}
-
 window {
   background-color: @bg;
   border: 2px;

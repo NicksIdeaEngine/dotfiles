@@ -8,17 +8,17 @@
 " 1. plugin call
 " 2. plugin config
 " 3. general config
-" 4. lightline config
-" 5. functions
-" 6. key maps
+" 4. functions
+" 5. key maps
 " z. overflow
 
 " }}}
 " 0. globals {{{
 
-let mapleader=' '           " Leader The Way
+let mapleader=' '
+let maplocalleader='\'
 nnoremap <space> <nop>      " remove default space bindings
-filetype plugin indent on   " 
+filetype plugin indent on
 syntax enable               " turn on syntax highlighting
 
 " }}}
@@ -29,13 +29,13 @@ call plug#begin()
 Plug 'mattn/emmet-vim'
 
 " https://github.com/editorconfig/editorconfig-vim
-Plug 'editorconfig/editorconfig-vim'      
+Plug 'editorconfig/editorconfig-vim'
 
 " https://github.com/hail2u/vim-css3-syntax
-Plug 'hail2u/vim-css3-syntax'     
+Plug 'hail2u/vim-css3-syntax'
 
 " https://github.com/cakebaker/scss-syntax.vim
-Plug 'cakebaker/scss-syntax.vim'     
+Plug 'cakebaker/scss-syntax.vim'
 
 " https://github.com/yuezk/vim-js
 Plug 'yuezk/vim-js'
@@ -110,25 +110,41 @@ Plug 'dbmrq/vim-ditto'
 " https://github.com/justinmk/vim-sneak
 Plug 'justinmk/vim-sneak'
 
+" https://github.com/itchyny/lightline.vim
 Plug 'itchyny/lightline.vim'
 
+" https://github.com/itchyny/vim-gitbranch
 Plug 'itchyny/vim-gitbranch'
 
+" https://github.com/sainnhe/artify.vim
 Plug 'sainnhe/artify.vim'
 
+" https://github.com/macthecadillac/lightline-gitdiff
 Plug 'macthecadillac/lightline-gitdiff'
 
+" https://github.com/maximbaz/lightline-ale
 Plug 'maximbaz/lightline-ale'
 
+" https://github.com/skywind3000/asyncrun.vim
+Plug 'skywind3000/asyncrun.vim'
+
+" https://github.com/albertomontesg/lightline-asyncrun
 Plug 'albertomontesg/lightline-asyncrun'
 
+" https://github.com/sainnhe/tmuxline.vim
 Plug 'sainnhe/tmuxline.vim'
 
-Plug 'ryanoasis/vim-devicons'
-
+" https://github.com/francoiscabrol/ranger.vim
 Plug 'francoiscabrol/ranger.vim'
 
+" https://github.com/rbgrouleff/bclose.vim
 Plug 'rbgrouleff/bclose.vim'
+
+" https://github.com/wakatime/vim-wakatime
+Plug 'wakatime/vim-wakatime'
+
+" https://github.com/ryanoasis/vim-devicons
+Plug 'ryanoasis/vim-devicons'
 
 " https://github.com/tiagofumo/vim-nerdtree-syntax-highlight
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -202,9 +218,8 @@ let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeIgnore = []
 let g:NERDTreeStatusline = ''
-" Automatically close nvim if NERDTree is only thing left open
 
-" change default arrows
+" remove default arrows
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
 
@@ -284,7 +299,7 @@ endfunction
 function! s:goyo_leave()
   set nu rnu
   exe 'CocCommand git.toggleGutters'
-  
+
   " Quit Vim if this is the only remaining buffer
   if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
     if b:quitting_bang
@@ -370,8 +385,8 @@ endfunction
 let g:ranger_map_keys = 0
 let g:NERDTreeHijackNetrw = 0
 let g:ranger_replace_netrw = 1
-map <leader>l :Ranger<cr>
-map <leader>L :RangerNewTab<cr>
+map <leader>n :Ranger<cr>
+map <leader>N :RangerNewTab<cr>x <c-w>x
 
 " }}}
 " vim-ditto config {{{
@@ -452,141 +467,8 @@ nmap <leader>di <Plug>ToggleDitto     " turn ditto on and off
 " placeholder
 
 " }}}
-
-" }}}
-" 3. general config {{{
-
-" colors
-if (has("termguicolors"))
-  set termguicolors
-endif
-set background=light
-let g:gruvbox_contrast_light = 'hard'
-colorscheme gruvbox
-
-" set relative numbers
-set number relativenumber
-
-" only enable relative numbers for focused, non-insert mode window
-augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
-augroup END
-
-" reload files changed outside of vim
-set autoread
-
-" save on losing focus, leaving buffer, or leaving insert mode
-au BufLeave,FocusLost,InsertLeave * :wa
-
-" don't redraw screen while running macros, registers, or other non-typed comments
-set lazyredraw
-
-" send buffers to stay in background (instead of unloading) when abandoned
-set hidden
-
-" map <leader>q and <leader>w to buffer prev/next buffer
-noremap <leader>q :bp<cr>
-noremap <leader>w :bn<cr>
-
-" find next match while typing search
-set incsearch
-
-" enable highlighting while searching
-set hlsearch
-
-" show matching brackets when text indicator is over them
-set showmatch
-
-" suggestion for normal mode commands
-set wildmode=list:longest
-set wildignore+=*.swp,*.bak,**/node_modules/**,**/.git/**
-
-" add current path to path
-set path+=**
-
-" indentation
-set expandtab       " use spaces instead of tabs
-set autoindent      " autoindent based on line above
-set smartindent     " smarter indent for C-like languages
-set smarttab        " smarter tab for C-like languages
-set shiftwidth=2    " when reading, tabs are 2 spaces
-set softtabstop=2   " in insert mode, tabs are 2 spaces
-
-" wrapping
-set wrap
-set textwidth=79
-set formatoptions=qrn1
-set colorcolumn=80
-
-" set syntax highlighting for config files
-autocmd BufNewFile,BufRead .aliases set filetype=sh
-autocmd BufNewFile,BufRead config set filetype=sh
-autocmd BufNewFile,BufRead *.code-workspace set filetype=json
-
-" turn on spell check for markdown files
-autocmd BufRead,BufNewFile *.md setlocal spell
-
-" For regular expressions turn magic on
-set magic
-
-" auto change current directory to directory of current file
-set autochdir
-
-" if the above causes problems with plugins, here's an alternative way
-" autocmd BufEnter * silent! lcd %:p:h
-
-" open new splits to right and below
-set splitbelow
-set splitright
-
-" highlight line where cursor is
-set cursorline
-
-" ignore case when searching 
-set ignorecase
-
-" enable case when searching if capital is typed
-set smartcase
-
-" no beeps
-set visualbell
-set noerrorbells
-
-" better history management
-set history=1000 "remember more commands and search history
-set undolevels=1000 "use many levels of undo
-set nobackup " stop vim from creating backup files
-set noswapfile " stop vim from creating swap files
-
-set guifont=FiraCode\ Nerd\ Font\ 12
-set conceallevel=2
-set foldenable
-set foldlevelstart=10
-set foldmethod=marker
-set foldnestmax=10
-set linebreak
-set rulerformat=%l,%v
-set showcmd
-set sidescroll=1
-set tabstop=2 " tab is two spaces
-set timeoutlen=1000
-
-" set host_prog path to python executable
-let g:python_host_prog = '/usr/bin/python2'
-let g:python3_host_prog = '/usr/bin/python3'
-
-" vimscript file settings 
-augroup filetype_vim
-  autocmd!
-  autocmd FileType vim setlocal foldmethod=marker
-augroup END
-
-" }}}
-" 4. lightline config {{{
-" {{{lightline.vim
-" {{{ functions
+" lightline.vim config {{{
+" functions {{{
 function! CocCurrentFunction() " {{{
   return get(b:, 'coc_current_function', '')
 endfunction " }}}
@@ -632,6 +514,7 @@ function! Artify_gitbranch() abort " {{{
   endif
 endfunction " }}}
  " }}}
+" settings {{{
 set laststatus=2  " Basic
 set noshowmode  " Disable show mode info
 augroup lightlineCustom
@@ -733,14 +616,151 @@ let g:lightline.component_visible_condition = {
       \ }
 " }}}
 " }}}
-" 5. functions {{{
+
+" }}}
+" 3. general config {{{
+
+" colors
+if (has("termguicolors"))
+  set termguicolors
+endif
+set background=light
+let g:gruvbox_contrast_light = 'hard'
+colorscheme gruvbox
+
+" set relative numbers
+set number relativenumber
+
+" only enable relative numbers for focused, non-insert mode window
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
+augroup END
+
+" reload files changed outside of vim
+set autoread
+
+" save on losing focus, leaving buffer, or leaving insert mode
+au BufLeave,FocusLost,InsertLeave * :wa
+
+" delete trailing whitespace and newlines on save
+autocmd BufWritePre * %s/\s\+$//e
+autocmd BufWritePre * %s/\n\+\%$//e
+
+" don't redraw screen while running macros, registers, or other non-typed comments
+set lazyredraw
+
+" send buffers to stay in background (instead of unloading) when abandoned
+set hidden
+
+" map <leader>q and <leader>w to buffer prev/next buffer
+noremap <leader>q :bp<cr>
+noremap <leader>w :bn<cr>
+
+" find next match while typing search
+set incsearch
+
+" enable highlighting while searching
+set hlsearch
+
+" show matching brackets when text indicator is over them
+set showmatch
+
+" suggestion for normal mode commands
+set wildmode=list:longest
+set wildignore+=*.swp,*.bak,**/node_modules/**,**/.git/**
+
+" add current path to path
+set path+=**
+
+" indentation
+set expandtab       " use spaces instead of tabs
+set autoindent      " autoindent based on line above
+set smartindent     " smarter indent for C-like languages
+set smarttab        " smarter tab for C-like languages
+set shiftwidth=2    " when reading, tabs are 2 spaces
+set softtabstop=2   " in insert mode, tabs are 2 spaces
+
+" wrapping
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+set colorcolumn=80
+
+" set syntax highlighting for config files
+autocmd BufNewFile,BufRead .aliases set filetype=sh
+autocmd BufNewFile,BufRead config set filetype=sh
+autocmd BufNewFile,BufRead *.code-workspace set filetype=json
+
+" turn on spell check for markdown files
+autocmd BufRead,BufNewFile *.md setlocal spell
+
+" For regular expressions turn magic on
+set magic
+
+" auto change current directory to directory of current file
+set autochdir
+
+" if the above causes problems with plugins, here's an alternative way
+" autocmd BufEnter * silent! lcd %:p:h
+
+" open new splits to right and below
+set splitbelow
+set splitright
+
+" highlight line where cursor is
+set cursorline
+
+" ignore case when searching
+set ignorecase
+
+" enable case when searching if capital is typed
+set smartcase
+
+" no beeps
+set visualbell
+set noerrorbells
+
+" better history management
+set history=1000 "remember more commands and search history
+set undolevels=1000 "use many levels of undo
+set nobackup " stop vim from creating backup files
+set noswapfile " stop vim from creating swap files
+
+set guifont=FiraCode\ Nerd\ Font\ 12
+set conceallevel=2
+set foldenable
+set foldlevelstart=10
+set foldmethod=marker
+set foldnestmax=10
+set linebreak
+set rulerformat=%l,%v
+set showcmd
+set sidescroll=1
+set tabstop=2 " tab is two spaces
+set timeoutlen=1000
+
+" set host_prog path to python executable
+let g:python_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/usr/bin/python3'
+
+" vimscript file settings
+augroup filetype_vim
+  autocmd!
+  autocmd FileType vim setlocal foldmethod=marker
+augroup END
+
+" }}}
+" 4. functions {{{
 
 " Make it so that if files are changed externally (ex: changing git branches) update the vim buffers automatically
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
 autocmd FileChangedShellPost *
   \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
-" integrated terminal {{{
+" integrated terminals {{{
+" pop-up, non-persistent terminal {{{
 
 " turn terminal to normal mode with escape
 tnoremap <esc> <c-\><c-n>
@@ -765,6 +785,8 @@ endfunction
 
 nnoremap <c-n> :call OpenTerminal()<cr>
 
+" }}}
+" dropdown, persistent terminal {{{
 nnoremap <silent> <m-z> :call nvim_open_win(bufnr('%'), v:true, {'relative': 'editor', 'anchor': 'NW', 'width': winwidth(0), 'height': 2*winheight(0)/5, 'row': 1, 'col': 0})<CR>:call TerminalToggle()<CR>
 tnoremap <silent> <m-z> <C-\><C-n>:call TerminalToggle()<CR>:q<CR>
 
@@ -833,6 +855,7 @@ function! TerminalToggle()
 endfunction
 
 " }}}
+" }}}
 " windows like clipboard {{{
 
 " yank to and paste from the clipboard without prepending "* to commands
@@ -846,15 +869,15 @@ exe 'ino <script> <c-V>' paste#paste_cmd['i']
 
 " }}}
 " }}}
-" 6. key maps {{{
+" 5. key maps {{{
 
-command PIU PlugInstall | PlugUpdate | PlugUpgrade
-map <F6> :setlocal spell! spelllang=en_us<cr>
+command! PIU PlugInstall | PlugUpdate | PlugUpgrade
+map! <F6> :setlocal spell! spelllang=en_us<cr>
 " map! <F5> :so $MYVIMRC<cr>
 nnoremap <leader>s :%s///g<left><left><left>
 
 " open nerdtree
-map <leader>n :NERDTreeToggle<cr>
+map <leader>m :NERDTreeToggle<cr>
 
 " add semicolon, colon, comma to eol
 nnoremap <leader>; m'A;<esc>`'
@@ -874,6 +897,8 @@ nnoremap <leader>h :nohlsearch<cr>
 " coc hotkeys
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
+
+" fzf hotkeys
 nnoremap <c-p> :GFiles<cr>
 
 " switch line downwards/upwards
@@ -881,6 +906,9 @@ nnoremap <leader>j ddp
 nnoremap <leader>k ddkP
 vnoremap J :m '>+1<cr>gv=gv
 vnoremap K :m '<-2<cr>gv=gv
+
+" auto resize all windows
+map <leader>= <c-w>=
 
 " map Y like D and C
 map Y y$
@@ -918,27 +946,52 @@ vnoremap $2 <esc>`>a]<esc>`<i[<esc>
 vnoremap $3 <esc>`>a}<esc>`<i{<esc>
 vnoremap $$ <esc>`>a"<esc>`<i"<esc>
 vnoremap $q <esc>`>a'<esc>`<i'<esc>
-vnoremap $e <esc>`>a"<esc>`<i"<esc>
+vnoremap $e <esc>`>a`<esc>`<i`<esc>
 
-inoremap <c-w><Space> <esc>/<++><enter>"_c4l
+" quick escape
 inoremap jk <esc>
+
+" force the habit
 inoremap <esc> <nop>
+
+" tab while in insert mode
 inoremap \<Tab> <esc>V><esc>la
 inoremap \<S-Tab> <esc>V<<esc>la
+
+" space space saves lives
 nnoremap <leader><leader> :w<cr>
 nnoremap ZZ :wq<cr>
+
+" better navigation
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 nnoremap <c-h> <c-w>h
+
+" better window movement {{{
+nnoremap <leader>S :vsp<cr>
+nnoremap <leader>V :sp<cr>
+
+" rotate upwards/leftwards
+nnoremap <leader>< <c-w>R
+
+" rotate downwards/rightwards
+nnoremap <leader>> <c-w><c-r>
+
+" exchange current window with next
+nnoremap <leader>x <c-w>x
+
+" }}}
+" better resizing
 nnoremap <m-j> :res -1<cr>
 nnoremap <m-k> :res +1<cr>
 nnoremap <m-l> :vertical res +1<cr>
 nnoremap <m-h> :vertical res -1<cr>
-" nnoremap <c-w>h <c-w>s
 
-autocmd FileType html inoremap ;i <em></em><Space><++><esc>FeT>i
-autocmd FileType html inoremap ;b <b></b><Space><++><esc>FbT>i
+" potential base for quick HTML expansion while in insert mode
+" inoremap <c-w><Space> <esc>/<++><enter>"_c4l
+" autocmd FileType html inoremap ;i <em></em><Space><++><esc>FeT>i
+" autocmd FileType html inoremap ;b <b></b><Space><++><esc>FbT>i
 
 if exists('g:loaded_webdevicons')
   call webdevicons#refresh()
@@ -975,4 +1028,3 @@ endif
 " pane/split movement?
 
 " }}}
-

@@ -109,6 +109,13 @@
 - rescuetime2 (yay)
 - installed the_silver_searcher
 - installed nethack
+- removed `mps-youtube` from `~/.local`
+- installed mps-youtube via pacman
+- uninstalled mps-youtube from pacman
+  - this doesn't work due to problem with mpv, and the main packages aren't being maintained
+  - the development branch of mps-youtube github repo works
+- installed mps-youtube development branch to `~/.local`
+-
 
 ## New Things To Explore
 
@@ -121,11 +128,13 @@
 - timewarrior
 - twine
 - filezilla
-- rescuetime
 - tor
 - ruby-dev
 - rvm
 
-## Problems to Investigate
+## Problems & Ideas to Ponder
 
-- it87
+- `:cleanhealth` in nvim shows something wrong with python2
+- list of apps to create an i3 hotkey for
+  - mps-youtube launching inside of kitty (possibly resized and floating?)
+  -

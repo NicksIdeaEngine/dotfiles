@@ -216,15 +216,15 @@ $smod3+semicolon \
 # {{{ 4. application management
 
 # app management
-$smod3+q    kill
-$mod3+d     $ex $scr/rofioneliner.sh
-$smod3+d    $ex $scr/rofidropmenu.sh
-$cmod3+d    $ex $scr/autoscriptmenu.sh
-$scmod3+d   $ex $scr/autorefmenu.sh
+$smod3+q          kill
+$mod3+d           $ex $scr/appfetch.sh
+$smod3+d          $ex $scr/projify.sh
+$cmod3+d          $ex $scr/scriptr.sh
+$scmod3+d         $ex $scr/cmdmenu.sh
 
 # start program launcher
 # $mod4+d $ex dmenu_recency
-$cmod4+b exec $terminal -e 'bmenu'
+$cmod4+b          exec $terminal -e 'bmenu'
 
 # launch categorized menu
 # bindsym $mod+Shift+z $ex morc_menu
@@ -245,6 +245,9 @@ $mod4+d           $ex   discord
 $mod4+s           $ex   slack
 $mod4+o           $ex   obs
 $mod4+i           $ex   zoom
+$mod4+m           $ex   "rm /home/efex/.config/mps-youtube/cache_py_* ; $terminal -e 'mpsyt'"
+$mod4+u           $ex   $scr/projify.sh wiki
+$mod4+y           $ex   $scr/projify.sh dots
 # $mod?+Ctrl+m    exec  $terminal -e 'alsamixer'
 # $mod4+f         exec  filezilla
 # $mod4+v         exec  virtualbox
@@ -257,10 +260,6 @@ $mod4+i           $ex   zoom
 # $mod?+F5        exec  $terminal -e 'mocp'
 # $scmod?+h       exec  xdg-open /usr/share/doc/manjaro/i3_help.pdf
 # $mod?+Ctrl+x    --release $ex xkill
-# $mod4+m         $ex   "vlc /home/efex/music/to-sort/current.xspf"
-
-# dunst test
-$mod4+u $ex "notify-send '.U. UwU :3'"
 
 # screenshots
 $br Mod3+Print \
@@ -288,6 +287,9 @@ $mod4+6     $ex $scr/alertr.sh --fanstatus --notify
 # monitor orientation since my primary is in the middle
 $ex xrandr --output HDMI-A-0 --auto --left-of DisplayPort-0
 
+# clear mpsyt cache
+$ex rm /home/efex/.config/mps-youtube/cache_py_*
+
 # turn num lock on
 $ex xdotool key --clearmodifiers Num_Lock
 
@@ -304,6 +306,7 @@ $ex xset dpms 0 0 1200
 # autostart apps
 $ex       $HOME/.fehbg
 $ex       sleep 10; $scr/sysbackup.sh
+$ex       sleep 10; $scr/watch_dropbox.sh
 $ex       /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 $ex       nm-applt
 $ex       xfce4-power-manager
@@ -353,20 +356,20 @@ for_window [class="Lightdm-settings"] floating enable
 for_window [class="Lxappearance"] floating enable sticky enable border normal
 for_window [class="Manjaro-hello"] floating enable
 for_window [class="Manjaro Settings Manager"] floating enable border normal
+for_window [title="mpsyt"] floating enable resize set 1000 600
 for_window [title="MuseScore: Play Panel"] floating enable
 for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
-for_window [title="About Pale Moon"] floating enable
 for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
 for_window [class="Simple-scan"] floating enable border normal
 for_window [class="(?i)System-config-printer.py"] floating enable border normal
-for_window [class="Skype"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [title="wiki"] floating enable resize 650 1250
 for_window [class="Xfburn"] floating enable
 
 # }}}

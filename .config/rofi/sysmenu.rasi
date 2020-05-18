@@ -3,8 +3,8 @@ configuration {
 }
 
 * {
-  background-color:	@bg1;
-  text-color: @color12;
+  background-color:	@dark-red;
+  text-color: @bg0;
   font:	@font-xlarge;
 }
 
@@ -12,8 +12,14 @@ window {
   anchor: center;
   location: center;
   width: 25%;
-  padding: 10px;
-  border: 0;
+  padding: 20px;
+  border: 10px;
+  border-color: @red;
+}
+
+listview {
+  border: 2px solid 0 0;
+  border-color: @bg0;
 }
 
 element {
@@ -21,9 +27,31 @@ element {
 }
 
 element selected {
-  background-color: @color12;
-  text-color: @bg1;
+  background-color: @bg0;
+  text-color: @fg0;
 }
 
-@import "config.rasi"
+inputbar {
+  spacing: 0;
+  text-color: @bg0;
+  padding: 2px;
+  children: [ prompt, textbox-prompt-sep, entry, case-indicator ];
+}
+
+case-indicator,
+entry,
+prompt,
+button {
+  spacing: 0;
+  text-color: @bg0;
+}
+
+textbox-prompt-sep {
+  expand: false;
+  str: ":";
+  text-color: @bg0;
+  margin: 0 0.3em 0 0;
+}
+
+@import "firacode.rasi"
 @import "gruvbox-light.rasi"

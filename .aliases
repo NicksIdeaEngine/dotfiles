@@ -7,12 +7,10 @@
 # 0. variables
 # 1. navigation
 # 2. config files
-# 3. reference files
-# 4. recent projects
-# 5. todotxt cli
-# 6. useful replacements
-# 7. git
-# 8. npm
+# 3. todotxt cli
+# 4. useful replacements
+# 5. git
+# 6. npm
 # y. system aliases
 # z. overflow
 
@@ -95,48 +93,7 @@ alias cfzp="vim ~/.zprofile"
 alias instst="cd ~/.local/st && sudo make install && alert 'st has been rebuilt'"
 
 # }}}
-# {{{ 3. reference files
-
-alias misc="vim $HOME/docs/misc.md"
-alias wiki="tmux new-session -s wiki -d 'nvim /home/efex/refs/index.md' \; attach"
-
-# }}}
-# {{{ 4. recent projects
-
-# check for vim session, or create one
-proj_launch() {
-  local proj_name="${1:-}"
-  local src_dir="/home/efex/proj/$proj_name"
-  cd $src_dir
-
-  if [[ -f $src_dir/Session.vim ]]; then
-    tmux new-session \
-      -s "$proj_name" \
-      -d "nvim -S $src_dir/Session.vim" \; \
-      attach
-        else
-    vim $src_dir
-  fi
-}
-
-# aliases for recent projects
-alias projls="echo 'a/sudoku b/pomodoro c/simonsays x/tictactoe y/learn-react-js z/portfolio bork sbox'"
-alias proja="proj_launch sudoku"
-alias projb="proj_launch fcc-pomodoro"
-alias projc="proj_launch fcc-simonsays"
-alias projd="proj_launch html5-web-components-fundamentals"
-alias projx="cd $cdir/examples/tictactoe && code tictactoe.code-workspace"
-alias projy="proj_launch learn-react-js"
-alias projz="proj_launch nickgarcia.me"
-alias bork="proj_launch borksism"
-alias sbox="proj_launch sandbox"
-alias spark="proj_launch spark"
-
-# open ricing workspace
-alias ricing="tmux new-session -s dotfiles -d 'nvim -S /home/efex/dots/Session.vim' \; attach"
-
-# }}}
-# {{{ 5. todotxt cli
+# {{{ 3. todotxt cli
 
 # todo.txt aliases
 alias _t="todo.sh -c -t -d ~/.config/todo/config"
@@ -181,7 +138,7 @@ t () {
 }
 
 # }}}
-# {{{ 6. useful replacements
+# {{{ 4. useful replacements
 
 # helpful reference for creating sym links
 alias lnls="echo 'ln -s <file to be linked> <location of the link>'"
@@ -210,10 +167,10 @@ alias sshrestart="sudo systemctl restart ssh.service"
 # project initialization
 projinit() {
   # first form will be for react, but later forms can take arguments for different projects
-  local proj_name="$1"
-  echo "Project name is $1"
+  local proj_name="${1:-}"
+  echo "Project name is $proj_name"
 
-  local spark_dir="/mnt/sdc1/dbx/code/showcase/spark"
+  local spark_dir="/home/efex/proj/spark"
   local new_dir="$(pwd)"
   echo "Project dir is $new_dir"
 
@@ -229,16 +186,19 @@ projinit() {
   fi
 
   for item in $spark_dir/{*,.*}; do
-    if [[ ! ${item##*/} == ".git" ]] && [[ ! ${item##*/} == "node_modules" ]] && [[ ! ${item##*/} == "package-lock.json" ]]; then
+    if [[ ! ${item##*/} == ".git" ]] && \
+      [[ ! ${item##*/} == "node_modules" ]] && \
+      [[ ! ${item##*/} == "package-lock.json" ]] && \
+      [[ ! ${item##*/} == "Session.vim" ]]; then
       echo "Copying ${item##*/} to destination..."
       cp -rv $item $new_dir/${item##*/}
       echo "Done!"
     fi
   done
 
-  sed -i "s/Spark/$1/g" "$new_dir/src/index.html"
-  sed -i "s/spark/$1/g" "$new_dir/package.json"
-  mv "$new_dir/spark.code-workspace" "$new_dir/$1.code-workspace"
+  sed -i "s/Spark/$proj_name/g" "$new_dir/src/index.html"
+  sed -i "s/spark/$proj_name/g" "$new_dir/package.json"
+  mv "$new_dir/spark.code-workspace" "$new_dir/$proj_name.code-workspace"
 
   cd $new_dir && npm install
 }
@@ -289,11 +249,11 @@ alias grabvid="youtube-dl --config-location ~/.config/youtube-dl/vidconfig"
 # clear youtube-dl cache
 alias ytdlcache="youtube-dl --rm-cache-dir && alert 'youtube-dl cache removed!'"
 
-# play playlists
-alias tosort="vlc /home/efex/music/to-sort/current.xspf &"
+# restart redshift with config
+alias reredsh="redshift -c /home/efex/.config/redshift.conf &!"
 
 # }}}
-# {{{ 7. git
+# {{{ 5. git
 
 alias ga="git add"
 alias gcm="git commit -m"
@@ -320,7 +280,7 @@ gitcfg () {
 }
 
 # }}}
-# {{{ 8. npm
+# {{{ 6. npm
 
 alias nis="npm install --save"
 alias nid="npm install --save-dev"

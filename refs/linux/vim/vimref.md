@@ -1,22 +1,5 @@
 # vim ref
 
-## Notes from Luke Smith's "After Vimtutor" Video
-
-- gk and gj: move **visual** line up/down instead of logical lines
-- <F5> now sources init.vim
-- <F6> calls spellcheck
-- d\$ and D will cut to end of line (leaves you in normal mode)
-- c\$ and C will replace to end of line (leaving you in insert mode)
-- i: inner. so _ciw_ is "change inner word" for replacing a word even if you're not at the beginning of it
-- a: around. so _daw_ is "delete around word" which removes extra spacing around a word, but not punctuation
-- using s with d and c: s can mean sentence, so _das_ is "delete around sentence"
-- using p with d and c: p can mean paragraph, so _dap_ is "delete around paragraph"
-- dot command is versatile. If I _ciw_ to change a word, than search for more uses of that word, I can use _n_ _dot command_ _n_ _dot command_ and so on to cycle through search results and repeat the same replacement
-- <leader>S begins the :%s///g command
-- `f*` and `t*` move to or just before the next character (\*)
-- `F*` and `T*` move backwards to or just after the previous character (\*)
-- `;` will mimic the previous `fFtT` command
-
 ## General Notes
 
 - ea: end of word, append
@@ -24,7 +7,6 @@
 - `:verbose imap <c-e>` gives you info on that key binding
 - `<c-o>`: back in history
 - `<c-i>`: forward in history
-- `<c-w>` and `=`: resize all windows based on splits
 - `vi{`: visualize inside curly brackets
 - `:sort` to sort selection
 - `:sort u` to sort selection, leaving only unique lines
@@ -32,7 +14,23 @@
 - `:m . -4` (m)ove current line (.) four lines up (-4)
 - `:-4,-3 t .` copy lines (-4) to (-3) (t)o current line (.)
 - `:buffers` to show buffers
-  - 
+  - `<leader>q` show previous buffer (`:bp<cr>`)
+  - `<leader>w` show next buffer (`:bn<cr>`)
+- `<m-z>` opens persistant terminal dropdown
+- `<leader>s` `:%s///g<left><left><left>`
+- `<leader>ev` edit `init.vim`
+- `<leader>sv` reload `init.vim`
+- `<leader>cd` to set directory to working directory of current file
+- `<leader>=` to autoalign all windows
+- `Y` for `y$` like `D` and `C`
+- `<leader>a` to select all
+- `<leader><leader>s` to sort css properties
+- `*` or `#` to search for current visual selection
+- `<leader>r` to search and replace selected text
+- `gV` to highlight last inserted text
+- `m` and char to mark parts of project, `\`` and char to move to marker
+- `<leader>S` split to the side
+- `<leader>V` split down vertically
 
 ### vim folds
 
@@ -71,6 +69,10 @@
 `<m-e>a` make anchor from URL
 `<m-e>A` make quoted text from a URL
 
+### vim-prettier
+
+<Leader>p to format
+
 ### vim-surround
 
 - `cs"'` changes `"Hello world!"` to `'Hello world!'`
@@ -83,6 +85,19 @@
 - `ds{ds)` changes `({ Hello } world!)` to `Hello world!`
 - `ysiw<em>` wraps word in emphasis tags
 - `VS<p class="important">` enters visual line mode, surrounds with `<p>` tags
+- surround visual selection in symbol
+  - `$1` for ()
+  - `$2` for []
+  - `$3` for {}
+  - `$$` for ""
+  - `$q` for ''
+  - `$e` for ``
+
+### ultisnips
+
+- `<tab>`: expands snippet
+- `<c-b>`: jumps to next placeholder
+- `<c-z>`: jumps to previous placeholder
 
 ### vim-commentary
 
@@ -94,6 +109,51 @@ _gc_ in visual mode changes selected lines to comment
 - `:Obsess` with optional file/directory name to start recording a session
 - `:Obsess!` to stop and throw it away.
 - Load session with `vim -S` or `:source` it
+
+### nerdtree
+
+- <Leader>n toggles NERDTree
+
+### markdown-preview
+
+still need to configure this!
+
+- nmap <C-s> <Plug>MarkdownPreview
+- nmap <M-s> <Plug>MarkdownPreviewStop
+- nmap <C-p> <Plug>MarkdownPreviewToggle
+
+### goyo.vim
+
+- `:Goyo` toggle goyo
+- `:Goyo [dimension]` turn on or resize goyo
+- `:Goyo!` turn off goyo
+- `<leader><leader>f` focus mode (just limelight)
+- `<leader><leader>r` reading mode (goyo and limelight)
+
+### fzf
+
+- `<leader>f` to open FZF
+- `<c-t>` open in new tab
+- `<c-c>` open in split
+- `<c-v>` open in vsplit
+
+### coc
+
+- `<leader>;` to highlight next completion option while in insert mode
+- `<c-n>` also higlights _next_ option, goes down in list
+- `<c-p>` forces completion to appear, also highlights _previous_ option
+- `<leader>gd` go to definition (targeted by cursor)
+- `<leader>gr` go to references (targeted by cursor)
+- `<c-p>` open git-based FZF
+
+### ranger
+
+- `<leader>l` :Ranger<cr>
+- `<leader>L` :RangerNewTab<cr>
+
+### vim-ditto
+
+- `<leader>di` turn ditto on and off (word repetition)
 
 ### todo.txt-vim
 
@@ -124,14 +184,6 @@ Mark as done:
 - `<localleader>X` Mark all tasks as done
 - `<localleader>D` Move completed tasks to done.txt
 
-### goyo.vim
-
-- `:Goyo` toggle goyo
-- `:Goyo [dimension]` turn on or resize goyo
-- `:Goyo!` turn off goyo
-- `<leader><leader>f` focus mode (just limelight)
-- `<leader><leader>r` reading mode (goyo and limelight)
-
 ### targets.vim
 
 - `cin)` change in next parentheses
@@ -141,14 +193,6 @@ Mark as done:
 - `2I)` selects contents within 2nd tier of surrounding parentheses
 - `2A)` selects around 2nd tier of surrounding parentheses plus whitespace on one side
 - [cheatsheet](https://github.com/wellle/targets.vim/blob/master/cheatsheet.md)
-
-### nerdtree
-
-- <Leader>n toggles NERDTree
-
-### vim-prettier
-
-<Leader>p to format
 
 ## Notes from How to Configure Vim like VSCode video by Ben Awad
 

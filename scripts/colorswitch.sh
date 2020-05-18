@@ -4,9 +4,14 @@ set -euo pipefail
 IFS=$'\n\t'
 
 switcher() {
-  cp "$HOME/.Xresources-$1" "$HOME/.Xresources"
-  cp "$HOME/.config/kitty/kitty-$1.conf" "$HOME/.config/kitty/kitty-colors.conf"
-  mv "$HOME/.cache/kitty-$2" "$HOME/.cache/kitty-$1"
+  local new_scheme="${1:-}"
+  local old_scheme="${2:-}"
+
+  cp "$HOME/.Xresources-$new_scheme" "$HOME/.Xresources"
+  cp "$HOME/.config/kitty/kitty-$new_scheme.conf" "$HOME/.config/kitty/kitty-colors.conf"
+  cp "$HOME/.tmux/lightline_visual_$new_scheme" "$HOME/.tmux/lightline_visual"
+  mv "$HOME/.cache/kitty-$old_scheme" "$HOME/.cache/kitty-$new_scheme"
+  sed -i "s/background=$old_scheme/background=$new_scheme/g" /home/efex/.config/nvim/init.vim
 }
 
 selector() {

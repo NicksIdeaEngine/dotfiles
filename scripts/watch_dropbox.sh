@@ -12,9 +12,33 @@ if [[ -f $watchlog ]]; then
   rm $watchlog
 fi
 
-find $dbx | entr -r \
+find $dbx \
+  ! -path "**/\.git" \
+  ! -path "**/\.git/**" \
+  ! -path "**/node\_modules" \
+  ! -path "**/node\_modules/**" \
+  ! -path "**/nvim/plugged" \
+  ! -path "**/nvim/plugged/**" \
+  ! -path "**/\.tmux/plugins" \
+  ! -path "**/\.tmux/plugins/**" \
+  ! -path "**/\.tmux/resurrect" \
+  ! -path "**/\.tmux/resurrect/**" \
+  ! -path "**/todo/\.actions\.d" \
+  ! -path "**/todo/\.actions\.d/**" \
+  | entr -r \
   rclone sync -v \
   --create-empty-src-dirs \
   $dbx $remote: \
   --filter-from $filter_file \
   --log-file=$watchlog
+
+# ! -path "**/\.git" \
+# ! -path "**/\.git/**" \
+# ! -path "**/node\_modules" \
+# ! -path "**/node\_modules/**" \
+# ! -path "**/nvim/plugged" \
+# ! -path "**/nvim/plugged/**" \
+# ! -path "**/\.tmux/plugins" \
+# ! -path "**/\.tmux/plugins/**" \
+# ! -path "**/todo/\.actions\.d" \
+# ! -path "**/todo/\.actions\.d/**" \

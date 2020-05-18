@@ -1,9 +1,10 @@
-refs/private
-scripts/private
 .config/i3/i3-resurrect
 .config/nvim/plugged
 .config/ranger/__pycache__
 .config/ranger/plugins
 .config/todo/.actions.d
 .config/todo/todo_description.png
-Session.vim
+.tmux/plugins
+.tmux/resurrect
+refs/private
+scripts/private

@@ -15,5 +15,5 @@
     "typescript.tsx"
   ],
   "diagnostic.virtualText": true,
-  "git.enableGutters": true
+  "git.enableGutters": false
 }
