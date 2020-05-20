@@ -1,0 +1,184 @@
+
+
+
+   <M-n>       *@:call AutoPairsJump()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 577
+   <M-p>       *@:call AutoPairsToggle()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 572
+v  <C-C>         "+y
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 763
+s  <C-H>       * <C-G>"_c
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim line 72
+x  <Tab>       * :call UltiSnips#SaveLastVisualSelection()<CR>gvs
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim line 64
+s  <Tab>       * <Esc>:call UltiSnips#ExpandSnippet()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim line 62
+s  <C-R>       * <C-G>"_c<C-R>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim line 73
+v  <C-X>         "+x
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 762
+v  <Space>r    * :call VisualSelection('replace')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 824
+   <Space>a    * ggVG
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 811
+   <Space>=      <C-W>=
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 805
+   <Space>w    * :bn<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 556
+   <Space>q    * :bp<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 555
+   <Space>N      :RangerNewTab<CR>x <C-W>x
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 352
+   <Space>n      :Ranger<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 351
+v  #           * :call VisualSelection('b')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 821
+v  $e          * <Esc>`>a`<Esc>`<i`<Esc>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 843
+v  $q          * <Esc>`>a'<Esc>`<i'<Esc>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 842
+v  $$          * <Esc>`>a"<Esc>`<i"<Esc>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 841
+v  $3          * <Esc>`>a}<Esc>`<i{<Esc>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 840
+v  $2          * <Esc>`>a]<Esc>`<i[<Esc>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 839
+v  $1          * <Esc>`>a)<Esc>`<i(<Esc>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 838
+x  %             <Plug>(MatchitVisualForward)
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 58
+v  *           * :call VisualSelection('f')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 820
+x  ,             <Plug>Sneak_,
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 388
+v  /           * /\v
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 835
+x  ;             <Plug>Sneak_;
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 382
+v  <             <gv
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 830
+v  >             >gv
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 831
+x  @(targets)  * :<C-U>call targets#do()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/targets.vim/plugin/targets.vim line 43
+x  A             targets#e('o', 'A', 'A')
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/targets.vim/plugin/targets.vim line 33
+x  I             targets#e('o', 'I', 'I')
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/targets.vim/plugin/targets.vim line 33
+v  J           * :m '>+1<CR>gv=gv
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 801
+v  K           * :m '<-2<CR>gv=gv
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 802
+x  S             <Plug>VSurround
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 608
+   Y             y$
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 808
+x  Z             <Plug>Sneak_S
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 400
+x  [%            <Plug>(MatchitVisualMultiBackward)
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 73
+x  ]%            <Plug>(MatchitVisualMultiForward)
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 74
+x  a%            <Plug>(MatchitVisualTextObject)
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 80
+x  a             targets#e('o', 'a', 'a')
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/targets.vim/plugin/targets.vim line 33
+v  gx            <Plug>NetrwBrowseXVis
+	Last set from /usr/share/nvim/runtime/plugin/netrwPlugin.vim line 88
+x  g%            <Plug>(MatchitVisualBackward)
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 59
+x  gc            <Plug>Commentary
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-commentary/plugin/commentary.vim line 107
+x  gS            <Plug>VgSurround
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 609
+x  i             targets#e('o', 'i', 'i')
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/targets.vim/plugin/targets.vim line 33
+x  s             <Plug>Sneak_s
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 397
+v  <Plug>(coc-snippets-select) * :<C-U>call coc#rpc#notify('doKeymap', ['snippets-select'])<CR>
+x  <Plug>(coc-git-chunk-outer) * :<C-U>call coc#rpc#request('doKeymap', ['git-chunk-outer'])<CR>
+x  <Plug>(coc-git-chunk-inner) * :<C-U>call coc#rpc#request('doKeymap', ['git-chunk-inner'])<CR>
+v  <Plug>NetrwBrowseXVis * :<C-U>call netrw#BrowseXVis()<CR>
+	Last set from /usr/share/nvim/runtime/plugin/netrwPlugin.vim line 90
+v  <Plug>(MatchitVisualTextObject)   <Plug>(MatchitVisualMultiBackward)o<Plug>(MatchitVisualMultiForward)
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 79
+v  <Plug>(MatchitVisualMultiForward) * :<C-U>call matchit#MultiMatch("W",  "n")<CR>m'gv``
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 67
+v  <Plug>(MatchitVisualMultiBackward) * :<C-U>call matchit#MultiMatch("bW", "n")<CR>m'gv``
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 66
+v  <Plug>(MatchitVisualBackward) * :<C-U>call matchit#Match_wrapper('',0,'v')<CR>m'gv``
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 52
+v  <Plug>(MatchitVisualForward) * :<C-U>call matchit#Match_wrapper('',1,'v')<CR>m'gv``
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 51
+x  <Plug>SneakPrevious   <Plug>Sneak_,
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 419
+x  <Plug>SneakNext   <Plug>Sneak_;
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 418
+x  <Plug>(SneakStreakBackward)   <Plug>SneakLabel_S
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 413
+x  <Plug>(SneakStreak)   <Plug>SneakLabel_s
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 412
+x  <Plug>VSneakPrevious   <Plug>Sneak_,
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 409
+x  <Plug>VSneakNext   <Plug>Sneak_;
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 408
+x  <Plug>VSneakBackward   <Plug>Sneak_S
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 407
+x  <Plug>VSneakForward   <Plug>Sneak_s
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 406
+x  <Plug>SneakLabel_S * :<C-U>call sneak#wrap(visualmode(), 2, 1, 2, 2)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 362
+x  <Plug>SneakLabel_s * :<C-U>call sneak#wrap(visualmode(), 2, 0, 2, 2)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 361
+x  <Plug>Sneak_T * :<C-U>call sneak#wrap(visualmode(), 1, 1, 0, 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 355
+x  <Plug>Sneak_t * :<C-U>call sneak#wrap(visualmode(), 1, 0, 0, 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 354
+x  <Plug>Sneak_F * :<C-U>call sneak#wrap(visualmode(), 1, 1, 1, 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 347
+x  <Plug>Sneak_f * :<C-U>call sneak#wrap(visualmode(), 1, 0, 1, 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 346
+x  <Plug>Sneak_, * :<C-U>call <SNR>59_rpt(visualmode(), 1)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 339
+x  <Plug>Sneak_; * :<C-U>call <SNR>59_rpt(visualmode(), 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 338
+x  <Plug>Sneak_S * :<C-U>call sneak#wrap(visualmode(), 2, 1, 2, 1)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 329
+x  <Plug>Sneak_s * :<C-U>call sneak#wrap(visualmode(), 2, 0, 2, 1)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 328
+v  <Plug>Ditto * :call ditto#dittoOp(visualmode(), 1)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-ditto/plugin/ditto.vim line 92
+v  <Plug>(coc-classobj-a) * :<C-U>call coc#rpc#request('selectSymbolRange', [v:false, visualmode(), ['Interface', 'Struct', 'Class']])<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 399
+v  <Plug>(coc-classobj-i) * :<C-U>call coc#rpc#request('selectSymbolRange', [v:true, visualmode(), ['Interface', 'Struct', 'Class']])<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 398
+v  <Plug>(coc-funcobj-a) * :<C-U>call coc#rpc#request('selectSymbolRange', [v:false, visualmode(), ['Method', 'Function']])<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 394
+v  <Plug>(coc-funcobj-i) * :<C-U>call coc#rpc#request('selectSymbolRange', [v:true, visualmode(), ['Method', 'Function']])<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 393
+v  <Plug>(coc-cursors-range) * :<C-U>call coc#rpc#request('cursorsSelect', [bufnr('%'), 'range', visualmode()])<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 389
+v  <Plug>(coc-codeaction-selected) * :<C-U>call       CocActionAsync('codeAction',         visualmode())<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 364
+v  <Plug>(coc-format-selected) * :<C-U>call       CocActionAsync('formatSelected',     visualmode())<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 363
+v  <Plug>(coc-range-select-backward) * :<C-U>call       CocAction('rangeSelect',     visualmode(), v:false)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 360
+v  <Plug>(coc-range-select) * :<C-U>call       CocAction('rangeSelect',     visualmode(), v:true)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 359
+x  <Plug>(fzf-maps-x) * :<C-U>call fzf#vim#maps('x', 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/fzf.vim/plugin/fzf.vim line 152
+x  <Plug>(Limelight) * :Limelight<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/limelight.vim/plugin/limelight.vim line 27
+x  <Plug>Commentary * <SNR>44_go()
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-commentary/plugin/commentary.vim line 99
+v  <Plug>VgSurround * :<C-U>call <SNR>43_opfunc(visualmode(),visualmode() ==# 'V' ? 0 : 1)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 595
+v  <Plug>VSurround * :<C-U>call <SNR>43_opfunc(visualmode(),visualmode() ==# 'V' ? 1 : 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 594
+s  <Del>       * <C-G>"_c
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim line 71
+s  <BS>        * <C-G>"_c
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim line 70
+s  <C-Tab>     * <Esc>:call UltiSnips#ListSnippets()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim line 67

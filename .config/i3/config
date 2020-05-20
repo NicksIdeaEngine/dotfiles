@@ -248,6 +248,7 @@ $mod4+i           $ex   zoom
 $mod4+m           $ex   "rm /home/efex/.config/mps-youtube/cache_py_* ; $terminal -e 'mpsyt'"
 $mod4+u           $ex   $scr/projify.sh wiki
 $mod4+y           $ex   $scr/projify.sh dots
+$mod4+t           $ex   $scr/projify.sh todo
 # $mod?+Ctrl+m    exec  $terminal -e 'alsamixer'
 # $mod4+f         exec  filezilla
 # $mod4+v         exec  virtualbox

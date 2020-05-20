@@ -1,0 +1,107 @@
+
+
+
+i  <M-n>       *@<Esc>:call AutoPairsJump()<CR>a
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 576
+i  <M-p>       *@AutoPairsToggle()
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 571
+i  <M-b>       *@<C-R>=AutoPairsBackInsert()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 566
+i  <M-e>       *@<C-R>=AutoPairsFastWrap()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 562
+i  <BS>        *@<C-R>=AutoPairsDelete()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 545
+i  <M-'>       *@<C-R>=AutoPairsMoveCharacter('''')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 539
+i  <M-">       *@<C-R>=AutoPairsMoveCharacter('"')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 539
+i  <M-}>       *@<C-R>=AutoPairsMoveCharacter('}')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 539
+i  <M-{>       *@<C-R>=AutoPairsMoveCharacter('{')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 539
+i  <M-]>       *@<C-R>=AutoPairsMoveCharacter(']')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 539
+i  <M-[>       *@<C-R>=AutoPairsMoveCharacter('[')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 539
+i  <M-)>       *@<C-R>=AutoPairsMoveCharacter(')')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 539
+i  <M-(>       *@<C-R>=AutoPairsMoveCharacter('(')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 539
+i  <SNR>39_AutoPairsOldCRWrapper73 &@pumvisible() ? coc#_select_confirm() : "\<C-G>u\<CR>"
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 658
+i  <C-H>       *@<C-R>=AutoPairsDelete()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 549
+i  <CR>        &@<SNR>39_AutoPairsOldCRWrapper73<SNR>39_AutoPairsReturn
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 662
+i  <Space>     *@<C-]><C-R>=AutoPairsSpace()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 558
+i  "           *@<C-R>=AutoPairsInsert('"')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 453
+i  '           *@<C-R>=AutoPairsInsert('''')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 453
+i  (           *@<C-R>=AutoPairsInsert('(')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 453
+i  )           *@<C-R>=AutoPairsInsert(')')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 453
+i  [           *@<C-R>=AutoPairsInsert('[')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 453
+i  ]           *@<C-R>=AutoPairsInsert(']')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 453
+i  `           *@<C-R>=AutoPairsInsert('`')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 453
+i  {           *@<C-R>=AutoPairsInsert('{')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 453
+i  }           *@<C-R>=AutoPairsInsert('}')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 453
+i  <Plug>(coc-snippets-expand-jump) * coc#_insert_key('request', 'snippets-expand-jump', 1)
+i  <Plug>(coc-snippets-expand) * coc#_insert_key('request', 'snippets-expand', 1)
+i  <Plug>CocRefresh * <C-R>=coc#_complete()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 386
+i  <Plug>(fzf-maps-i) * <C-O>:call fzf#vim#maps('i', 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/fzf.vim/plugin/fzf.vim line 151
+i  <Plug>(fzf-complete-buffer-line) * fzf#vim#complete#buffer_line()
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/fzf.vim/plugin/fzf.vim line 148
+i  <Plug>(fzf-complete-line) * fzf#vim#complete#line()
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/fzf.vim/plugin/fzf.vim line 147
+i  <Plug>(fzf-complete-file-ag) * fzf#vim#complete#path('ag -l -g ""')
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/fzf.vim/plugin/fzf.vim line 146
+i  <Plug>(fzf-complete-file) * fzf#vim#complete#path("find . -path '*/\.*' -prune -o -type f -print -o -type l -print | sed 's:^..::'")
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/fzf.vim/plugin/fzf.vim line 144
+i  <Plug>(fzf-complete-path) * fzf#vim#complete#path("find . -path '*/\.*' -prune -o -print | sed '1d;s:^..::'")
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/fzf.vim/plugin/fzf.vim line 143
+i  <Plug>(fzf-complete-word) * fzf#vim#complete#word()
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/fzf.vim/plugin/fzf.vim line 138
+i  <Plug>ISurround * <C-R>=<SNR>43_insert(1)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 597
+i  <Plug>Isurround * <C-R>=<SNR>43_insert()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 596
+i  <C-Tab>     * <C-R>=UltiSnips#ListSnippets()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim line 66
+i  <Plug>AutoPairsReturn & <SNR>39_AutoPairsReturn
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 670
+i  <SNR>39_AutoPairsReturn * <C-R>=AutoPairsReturn()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 669
+!  <F6>          :setlocal spell! spelllang=en_us<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 772
+i  <S-Tab>     * pumvisible() ? "\<C-P>" : "\<S-Tab>"
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 328
+i  <C-G>S        <Plug>ISurround
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 615
+i  <C-G>s        <Plug>Isurround
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 614
+i  <Tab>       * <C-R>=UltiSnips#ExpandSnippet()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim line 61
+i  <CR>        * pumvisible() ? coc#_select_confirm() : "\<C-G>u\<CR>"
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 334
+i  <C-S>         <Plug>Isurround
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 612
+i  <C-V>       & <C-\><C-O>"+gP
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 765
+i  <Esc>       * <Nop>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 849
+i  \<S-Tab>    * <Esc>V<<Esc>la
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 853
+i  \<Tab>      * <Esc>V><Esc>la
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 852
+i  jk          * <Esc>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 846

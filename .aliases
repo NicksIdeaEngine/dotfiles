@@ -235,6 +235,7 @@ alias lS="ls -1FSsh"
 
 # leave ranger and enter that directory in terminal
 alias ranger="source ranger"
+alias rn="source ranger"
 
 # use i3lock when afk
 alias afk="i3lock -ti /mnt/sdc1/Dropbox/pics/wallpaper/wall509.png"

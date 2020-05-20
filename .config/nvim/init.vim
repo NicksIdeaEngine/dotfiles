@@ -64,15 +64,6 @@ Plug 'tpope/vim-surround'
 " https://github.com/tpope/vim-commentary
 Plug 'tpope/vim-commentary'
 
-" https://github.com/tpope/vim-obsession
-Plug 'tpope/vim-obsession'
-
-" https://github.com/preservim/nerdtree
-Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
-
-" https://github.com/Xuyuanp/nerdtree-git-plugin
-Plug 'Xuyuanp/nerdtree-git-plugin'
-
 " https://github.com/vimwiki/vimwiki
 Plug 'vimwiki/vimwiki'
 
@@ -134,20 +125,20 @@ Plug 'albertomontesg/lightline-asyncrun'
 " https://github.com/sainnhe/tmuxline.vim
 Plug 'sainnhe/tmuxline.vim'
 
-" https://github.com/francoiscabrol/ranger.vim
-Plug 'francoiscabrol/ranger.vim'
-
 " https://github.com/rbgrouleff/bclose.vim
 Plug 'rbgrouleff/bclose.vim'
+
+" https://github.com/francoiscabrol/ranger.vim
+Plug 'francoiscabrol/ranger.vim'
 
 " https://github.com/wakatime/vim-wakatime
 Plug 'wakatime/vim-wakatime'
 
+" https://github.com/tpope/vim-obsession
+Plug 'tpope/vim-obsession'
+
 " https://github.com/ryanoasis/vim-devicons
 Plug 'ryanoasis/vim-devicons'
-
-" https://github.com/tiagofumo/vim-nerdtree-syntax-highlight
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 call plug#end()
 
@@ -209,48 +200,6 @@ let g:UltiSnipsJumpBackwardTrigger='<c-z>'
 
 " `:help obsession-status`
 " do I need something to create Session.vim file automatically?
-
-" }}}
-" nerdtree config {{{
-
-" always show hidden files
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeIgnore = []
-let g:NERDTreeStatusline = ''
-
-" remove default arrows
-let g:NERDTreeDirArrowExpandable = ''
-let g:NERDTreeDirArrowCollapsible = ''
-
-" start nerdtree if starting vim by opening a directory
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-
-" start nerdtree on start-up if no files specified
-" but not when opening a saved session
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && v:this_session == "" | NERDTree | endif
-
-" close nvim if the only window left is NERDTree
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" }}}
-" nerdtree-git-plugin config {{{
-
-let g:NERDTreeShowIgnoredStatus = 1
-
-" let g:NERDTreeIndicatorMapCustom = {
-"     \ "Modified"  : "✹",
-"     \ "Staged"    : "✚",
-"     \ "Untracked" : "✭",
-"     \ "Renamed"   : "➜",
-"     \ "Unmerged"  : "═",
-"     \ "Deleted"   : "✖",
-"     \ "Dirty"     : "✗",
-"     \ "Clean"     : "✔︎",
-"     \ "Ignored"   : "☒",
-"     \ "Unknown"   : "?"
-"     \ }
 
 " }}}
 " vimwiki config {{{
@@ -362,16 +311,30 @@ let g:coc_global_extensions=[
   \ 'coc-tsserver',
   \ ]
 
-inoremap <silent><expr> <leader>;
+nmap <leader><leader>c <Plug>(coc-codeaction)
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1] =~# '\s'
+endfunction
+
+inoremap <silent><expr> <tab>
   \ pumvisible() ? "\<c-n>" :
   \ <SID>check_back_space() ? "\<tab>" :
   \ coc#refresh()
-inoremap <expr><c-r> pumvisible() ? "\<c-p>" : "\<c-h>"
 
-function! s:check_back_space() abort
-  let col = col('.') -1
-  return !col || getline('.')[col - 1] =~# '\s'
-endfunction
+" use <tab> and <s-tab> to navigate completion list
+inoremap <expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+
+" use <cr> to confirm completion
+inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<c-g>u\<cr>"
+
+" make <cr> select first item and confirm if no item is selcted
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<c-g>u\<cr>"
+
+" close preview window when completion is done
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " let g:coc_snippet_next = '<c-semicolon>'
 " let g:coc_snippet_prev = '<m-semicolon>'
@@ -384,7 +347,7 @@ endfunction
 
 let g:ranger_map_keys = 0
 let g:NERDTreeHijackNetrw = 0
-let g:ranger_replace_netrw = 1
+" let g:ranger_replace_netrw = 1
 map <leader>n :Ranger<cr>
 map <leader>N :RangerNewTab<cr>x <c-w>x
 
@@ -394,72 +357,6 @@ map <leader>N :RangerNewTab<cr>x <c-w>x
 " vim-ditto settings https://github.com/dbmrq/vim-ditto
 au FileType markdown,text,tex DittoOn " turn on ditto's autocmds
 nmap <leader>di <Plug>ToggleDitto     " turn ditto on and off
-
-" }}}
-" vim-nerdtree-syntax-highlight config {{{
-
-" NERDTrees File highlighting
-" function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-"  exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
-"  exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
-" endfunction
-
-" call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
-" call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
-" call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
-" call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
-" call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
-" call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
-" call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
-" call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
-" call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
-" call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
-" call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
-" autocmd VimEnter * call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
-" " call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
-" call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
-" call NERDTreeHighlightFile('ds_store', 'Gray', 'none', '#686868', '#151515')
-" call NERDTreeHighlightFile('gitconfig', 'Gray', 'none', '#686868', '#151515')
-" call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#686868', '#151515')
-" call NERDTreeHighlightFile('bashrc', 'Gray', 'none', '#686868', '#151515')
-" call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#686868', '#151515')
-
-" " highlight full name, not just icons
-" let g:NERDTreeFileExtensionHighlightFullName = 1
-" let g:NERDTreeExactMatchHighlightFullName = 1
-" let g:NERDTreePatternMatchHighlightFullName = 1
-
-" let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
-" let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
-
-" " you can add these colors to your .vimrc to help customizing
-" let s:brown = "905532"
-" let s:aqua =  "3AFFDB"
-" let s:blue = "689FB6"
-" let s:darkBlue = "44788E"
-" let s:purple = "834F79"
-" let s:lightPurple = "834F79"
-" let s:red = "AE403F"
-" let s:beige = "F5C06F"
-" let s:yellow = "F09F17"
-" let s:orange = "D4843E"
-" let s:darkOrange = "F16529"
-" let s:pink = "CB6F6F"
-" let s:salmon = "EE6E73"
-" let s:green = "8FAA54"
-" let s:lightGreen = "31B53E"
-" let s:white = "FFFFFF"
-" let s:rspec_red = 'FE405F'
-" let s:git_orange = 'F54D27'
-
-" let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
-" let g:NERDTreeExtensionHighlightColor['css'] = s:blue " sets the color of css files to blue
-
-" let g:NERDTreeExactMatchHighlightColor = {} " this line is needed to avoid error
-" let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the color for .gitignore files
-
-" let g:NERDTreePatternMatchHighlightColor = {} " this line is needed to avoid error
-" let g:NERDTreePatternMatchHighlightColor['.*_spec\.rb$'] = s:rspec_red " sets the color for files ending with _spec.rb
 
 " }}}
 " vim-devicons config {{{
@@ -624,7 +521,7 @@ let g:lightline.component_visible_condition = {
 if (has("termguicolors"))
   set termguicolors
 endif
-set background=light
+set background=dark
 let g:gruvbox_contrast_light = 'hard'
 colorscheme gruvbox
 
@@ -859,13 +756,13 @@ endfunction
 " windows like clipboard {{{
 
 " yank to and paste from the clipboard without prepending "* to commands
-let &clipboard = has('unnamedplus') ? 'unnamedplus' : 'unnamed'
+" let &clipboard = has('unnamedplus') ? 'unnamedplus' : 'unnamed'
 
 " map c-x and c-v to work as they do in windows, only in insert mode
-vm <c-x> "+x
-vm <c-c> "+y
-cno <c-v> <c-r>+
-exe 'ino <script> <c-V>' paste#paste_cmd['i']
+" vm <c-x> "+x
+" vm <c-c> "+y
+" cno <c-v> <c-r>+
+" exe 'ino <script> <c-V>' paste#paste_cmd['i']
 
 " }}}
 " }}}
@@ -875,9 +772,6 @@ command! PIU PlugInstall | PlugUpdate | PlugUpgrade
 map! <F6> :setlocal spell! spelllang=en_us<cr>
 " map! <F5> :so $MYVIMRC<cr>
 nnoremap <leader>s :%s///g<left><left><left>
-
-" open nerdtree
-map <leader>m :NERDTreeToggle<cr>
 
 " add semicolon, colon, comma to eol
 nnoremap <leader>; m'A;<esc>`'
@@ -988,6 +882,10 @@ nnoremap <m-k> :res +1<cr>
 nnoremap <m-l> :vertical res +1<cr>
 nnoremap <m-h> :vertical res -1<cr>
 
+" webdev mappings
+nnoremap <leader><leader>a :AsyncRun npm run devserver<cr>
+nnoremap <leader><leader>q :AsyncStop<cr>
+
 " potential base for quick HTML expansion while in insert mode
 " inoremap <c-w><Space> <esc>/<++><enter>"_c4l
 " autocmd FileType html inoremap ;i <em></em><Space><++><esc>FeT>i
@@ -1000,24 +898,10 @@ endif
 " }}}
 " z. overflow {{{
 
-" `npm run devserver`
 " deploy workspace setups
 " snippets and snippet searching (with fzf?)
 " markdown open preview
-" vertical/horizontal split
-" moving editors around to different panes
-" beautify for HTML
-" eslint
 " indent rainbow
-" intellisense
-" working nerdtree icons
-" rescuetime
-" wakatime
-" remove vim and vim icon
-" remove the utf-8 section
-" add timers for rescuetime / wakatime
-" add todotxt.cli integration
-" ranger
 " image viewing?
 " startify
 " vim-which-key

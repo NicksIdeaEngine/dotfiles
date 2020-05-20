@@ -8,3 +8,5 @@
 .tmux/resurrect
 refs/private
 scripts/private
+Session.vim
+**/Session.vim

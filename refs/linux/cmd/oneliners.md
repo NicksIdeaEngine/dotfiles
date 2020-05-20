@@ -14,3 +14,11 @@ Needed when stuff in `/mnt/sdc1/dbx/*` somehow became a mix of `efex:efex` and `
 ## Adding lines of text to files at specific lines
 
 `sed -i "2i <text here>" <file/glob>`
+
+## Output Vim Mappings
+
+From within vim:
+
+`:redir! > map_keys.txt`
+`:silent verbose map`
+`:redir END`

@@ -7,6 +7,17 @@
     "javascriptreact",
     "typescript.tsx"
   ],
+  "coc.source.file.ignoreHidden": false,
+  "coc.source.file.priority": 1000,
+  "coc.source.around.priority": 1000,
+  "coc.source.buffer.priority": 1000,
+  "coc.source.issues.priority": 1000,
+  "tsserver.enable": true,
+  "diagnostic.virtualText": true,
+  "eslint.codeAction.disableRuleComment": {
+    "enable": true,
+    "location": "sameLine"
+  },
   "eslint.filetypes": [
     "javascript",
     "javascriptreact",
@@ -14,6 +25,6 @@
     "typescriptreact",
     "typescript.tsx"
   ],
-  "diagnostic.virtualText": true,
-  "git.enableGutters": false
+  "git.enableGutters": true,
+  "suggest.noselect": false
 }

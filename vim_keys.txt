@@ -1,0 +1,592 @@
+
+
+
+   <M-n>       *@:call AutoPairsJump()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 577
+   <M-p>       *@:call AutoPairsToggle()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 572
+v  <C-C>         "+y
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 763
+s  <C-H>       * <C-G>"_c
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim line 72
+n  <C-H>       * <C-W>h
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 863
+x  <Tab>       * :call UltiSnips#SaveLastVisualSelection()<CR>gvs
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim line 64
+s  <Tab>       * <Esc>:call UltiSnips#ExpandSnippet()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim line 62
+n  <NL>        * <C-W>j
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 860
+n  <C-K>       * <C-W>k
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 861
+n  <C-L>       * <C-W>l
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 862
+n  <C-N>       * :call OpenTerminal()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 683
+n  <C-P>       * :GFiles<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 796
+s  <C-R>       * <C-G>"_c<C-R>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim line 73
+v  <C-X>         "+x
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 762
+n  <Space>bd   * :Bclose<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/bclose.vim/plugin/bclose.vim line 79
+n  <Space>w<Space>m   <Plug>VimwikiMakeTomorrowDiaryNote
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vimwiki/plugin/vimwiki.vim line 355
+n  <Space>w<Space>y   <Plug>VimwikiMakeYesterdayDiaryNote
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vimwiki/plugin/vimwiki.vim line 349
+n  <Space>w<Space>t   <Plug>VimwikiTabMakeDiaryNote
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vimwiki/plugin/vimwiki.vim line 343
+n  <Space>w<Space>w   <Plug>VimwikiMakeDiaryNote
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vimwiki/plugin/vimwiki.vim line 338
+n  <Space>w<Space>i   <Plug>VimwikiDiaryGenerateLinks
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vimwiki/plugin/vimwiki.vim line 333
+n  <Space>wi     <Plug>VimwikiDiaryIndex
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vimwiki/plugin/vimwiki.vim line 328
+n  <Space>ws     <Plug>VimwikiUISelect
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vimwiki/plugin/vimwiki.vim line 323
+n  <Space>wt     <Plug>VimwikiTabIndex
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vimwiki/plugin/vimwiki.vim line 318
+n  <Space>ww     <Plug>VimwikiIndex
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vimwiki/plugin/vimwiki.vim line 313
+n  <Space>p      <Plug>(Prettier)
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-prettier/plugin/prettier.vim line 145
+n  <Space><Space>q * :AsyncStop<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 887
+n  <Space><Space>a * :AsyncRun npm run devserver<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 886
+n  <Space>x    * <C-W>x
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 876
+n  <Space>>    * <C-W><C-R>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 873
+n  <Space><    * <C-W>R
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 870
+n  <Space>V    * :sp<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 867
+n  <Space>S    * :vsp<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 866
+n  <Space><Space> * :w<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 856
+v  <Space>r    * :call VisualSelection('replace')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 824
+n  <Space>/    * za
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 817
+n  <Space><Space>s * ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 814
+   <Space>a    * ggVG
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 811
+   <Space>=      <C-W>=
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 805
+n  <Space>k    * ddkP
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 800
+n  <Space>j    * ddp
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 799
+n  <Space>gr     <Plug>(coc-references)
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 793
+n  <Space>gd     <Plug>(coc-definition)
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 792
+n  <Space>h    * :nohlsearch<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 789
+n  <Space>cd   * :cd %:p:h<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 786
+n  <Space>sv     :so $MYVIMRC<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 783
+n  <Space>ev     :e $MYVIMRC<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 782
+n  <Space>:    * m'A:<Esc>`'
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 779
+n  <Space>,    * m'A,<Esc>`'
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 778
+n  <Space>;    * m'A;<Esc>`'
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 777
+n  <Space>s    * :%s///g<Left><Left><Left>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 774
+   <Space>w    * :bn<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 556
+   <Space>q    * :bp<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 555
+n  <Space>di     <Plug>ToggleDitto     " turn ditto on and off
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 359
+   <Space>N      :RangerNewTab<CR>x <C-W>x
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 352
+   <Space>n      :Ranger<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 351
+n  <Space><Space>c   <Plug>(coc-codeaction)
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 314
+n  <Space>f    * :FZF<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 268
+n  <Space><Space>r * :<C-U>Goyo<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 236
+n  <Space><Space>f * :<C-U>Limelight!!<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 233
+n  <Space>     * <nop>      " remove default space bindings
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 20
+v  #           * :call VisualSelection('b')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 821
+v  $e          * <Esc>`>a`<Esc>`<i`<Esc>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 843
+v  $q          * <Esc>`>a'<Esc>`<i'<Esc>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 842
+v  $$          * <Esc>`>a"<Esc>`<i"<Esc>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 841
+v  $3          * <Esc>`>a}<Esc>`<i{<Esc>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 840
+v  $2          * <Esc>`>a]<Esc>`<i[<Esc>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 839
+v  $1          * <Esc>`>a)<Esc>`<i(<Esc>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 838
+o  %             <Plug>(MatchitOperationForward)
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 60
+x  %             <Plug>(MatchitVisualForward)
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 58
+n  %             <Plug>(MatchitNormalForward)
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 56
+v  *           * :call VisualSelection('f')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 820
+x  ,             <Plug>Sneak_,
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 388
+o  ,             <Plug>Sneak_,
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 387
+n  ,             <Plug>Sneak_,
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 386
+v  /           * /\v
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 835
+n  /           * /\v
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 834
+x  ;             <Plug>Sneak_;
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 382
+o  ;             <Plug>Sneak_;
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 381
+n  ;             <Plug>Sneak_;
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 380
+v  <             <gv
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 830
+v  >             >gv
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 831
+x  @(targets)  * :<C-U>call targets#do()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/targets.vim/plugin/targets.vim line 43
+o  @(targets)  * :<C-U>call targets#do()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/targets.vim/plugin/targets.vim line 42
+x  A             targets#e('o', 'A', 'A')
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/targets.vim/plugin/targets.vim line 33
+o  A             targets#e('o', 'A', 'A')
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/targets.vim/plugin/targets.vim line 32
+x  I             targets#e('o', 'I', 'I')
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/targets.vim/plugin/targets.vim line 33
+o  I             targets#e('o', 'I', 'I')
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/targets.vim/plugin/targets.vim line 32
+v  J           * :m '>+1<CR>gv=gv
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 801
+v  K           * :m '<-2<CR>gv=gv
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 802
+n  S             <Plug>Sneak_S
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 370
+x  S             <Plug>VSurround
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 608
+   Y             y$
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 808
+x  Z             <Plug>Sneak_S
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 400
+o  Z             <Plug>Sneak_S
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 376
+n  ZZ          * :wq<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 857
+o  [%            <Plug>(MatchitOperationMultiBackward)
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 75
+x  [%            <Plug>(MatchitVisualMultiBackward)
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 73
+n  [%            <Plug>(MatchitNormalMultiBackward)
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 71
+o  ]%            <Plug>(MatchitOperationMultiForward)
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 76
+x  ]%            <Plug>(MatchitVisualMultiForward)
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 74
+n  ]%            <Plug>(MatchitNormalMultiForward)
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 72
+x  a%            <Plug>(MatchitVisualTextObject)
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 80
+x  a             targets#e('o', 'a', 'a')
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/targets.vim/plugin/targets.vim line 33
+o  a             targets#e('o', 'a', 'a')
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/targets.vim/plugin/targets.vim line 32
+n  cS            <Plug>CSurround
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 602
+n  cs            <Plug>Csurround
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 601
+n  ds            <Plug>Dsurround
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 600
+v  gx            <Plug>NetrwBrowseXVis
+	Last set from /usr/share/nvim/runtime/plugin/netrwPlugin.vim line 88
+n  gx            <Plug>NetrwBrowseX
+	Last set from /usr/share/nvim/runtime/plugin/netrwPlugin.vim line 82
+o  g%            <Plug>(MatchitOperationBackward)
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 61
+x  g%            <Plug>(MatchitVisualBackward)
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 59
+n  g%            <Plug>(MatchitNormalBackward)
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 57
+n  gcu           <Plug>Commentary<Plug>Commentary
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-commentary/plugin/commentary.vim line 114
+n  gcc           <Plug>CommentaryLine
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-commentary/plugin/commentary.vim line 110
+o  gc            <Plug>Commentary
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-commentary/plugin/commentary.vim line 109
+n  gc            <Plug>Commentary
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-commentary/plugin/commentary.vim line 108
+x  gc            <Plug>Commentary
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-commentary/plugin/commentary.vim line 107
+x  gS            <Plug>VgSurround
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 609
+n  gV          * `[v`]
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 827
+x  i             targets#e('o', 'i', 'i')
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/targets.vim/plugin/targets.vim line 33
+o  i             targets#e('o', 'i', 'i')
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/targets.vim/plugin/targets.vim line 32
+x  s             <Plug>Sneak_s
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 397
+n  s             <Plug>Sneak_s
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 367
+n  ySS           <Plug>YSsurround
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 607
+n  ySs           <Plug>YSsurround
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 606
+n  yss           <Plug>Yssurround
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 605
+n  yS            <Plug>YSurround
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 604
+n  ys            <Plug>Ysurround
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 603
+o  z             <Plug>Sneak_s
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 373
+v  <Plug>(coc-snippets-select) * :<C-U>call coc#rpc#notify('doKeymap', ['snippets-select'])<CR>
+x  <Plug>(coc-git-chunk-outer) * :<C-U>call coc#rpc#request('doKeymap', ['git-chunk-outer'])<CR>
+o  <Plug>(coc-git-chunk-outer) * :<C-U>call coc#rpc#request('doKeymap', ['git-chunk-outer'])<CR>
+x  <Plug>(coc-git-chunk-inner) * :<C-U>call coc#rpc#request('doKeymap', ['git-chunk-inner'])<CR>
+o  <Plug>(coc-git-chunk-inner) * :<C-U>call coc#rpc#request('doKeymap', ['git-chunk-inner'])<CR>
+n  <Plug>(coc-git-commit) * :<C-U>call coc#rpc#notify('doKeymap', ['git-commit'])<CR>
+n  <Plug>(coc-git-chunkinfo) * :<C-U>call coc#rpc#notify('doKeymap', ['git-chunkinfo'])<CR>
+n  <Plug>(coc-git-prevchunk) * :<C-U>call coc#rpc#notify('doKeymap', ['git-prevchunk'])<CR>
+n  <Plug>(coc-git-nextchunk) * :<C-U>call coc#rpc#notify('doKeymap', ['git-nextchunk'])<CR>
+v  <Plug>NetrwBrowseXVis * :<C-U>call netrw#BrowseXVis()<CR>
+	Last set from /usr/share/nvim/runtime/plugin/netrwPlugin.vim line 90
+n  <Plug>NetrwBrowseX * :call netrw#BrowseX(expand((exists("g:netrw_gx")? g:netrw_gx : '<cfile>')),netrw#CheckIfRemote())<CR>
+	Last set from /usr/share/nvim/runtime/plugin/netrwPlugin.vim line 84
+v  <Plug>(MatchitVisualTextObject)   <Plug>(MatchitVisualMultiBackward)o<Plug>(MatchitVisualMultiForward)
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 79
+o  <Plug>(MatchitOperationMultiForward) * :<C-U>call matchit#MultiMatch("W",  "o")<CR>
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 69
+o  <Plug>(MatchitOperationMultiBackward) * :<C-U>call matchit#MultiMatch("bW", "o")<CR>
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 68
+v  <Plug>(MatchitVisualMultiForward) * :<C-U>call matchit#MultiMatch("W",  "n")<CR>m'gv``
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 67
+v  <Plug>(MatchitVisualMultiBackward) * :<C-U>call matchit#MultiMatch("bW", "n")<CR>m'gv``
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 66
+n  <Plug>(MatchitNormalMultiForward) * :<C-U>call matchit#MultiMatch("W",  "n")<CR>
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 65
+n  <Plug>(MatchitNormalMultiBackward) * :<C-U>call matchit#MultiMatch("bW", "n")<CR>
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 64
+o  <Plug>(MatchitOperationBackward) * :<C-U>call matchit#Match_wrapper('',0,'o')<CR>
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 54
+o  <Plug>(MatchitOperationForward) * :<C-U>call matchit#Match_wrapper('',1,'o')<CR>
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 53
+v  <Plug>(MatchitVisualBackward) * :<C-U>call matchit#Match_wrapper('',0,'v')<CR>m'gv``
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 52
+v  <Plug>(MatchitVisualForward) * :<C-U>call matchit#Match_wrapper('',1,'v')<CR>m'gv``
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 51
+n  <Plug>(MatchitNormalBackward) * :<C-U>call matchit#Match_wrapper('',0,'n')<CR>
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 50
+n  <Plug>(MatchitNormalForward) * :<C-U>call matchit#Match_wrapper('',1,'n')<CR>
+	Last set from /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 49
+o  <Plug>SneakPrevious   <Plug>Sneak_,
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 421
+o  <Plug>SneakNext   <Plug>Sneak_;
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 420
+x  <Plug>SneakPrevious   <Plug>Sneak_,
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 419
+x  <Plug>SneakNext   <Plug>Sneak_;
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 418
+n  <Plug>SneakPrevious   <Plug>Sneak_,
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 417
+n  <Plug>SneakNext   <Plug>Sneak_;
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 416
+o  <Plug>(SneakStreakBackward)   <Plug>SneakLabel_S
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 415
+o  <Plug>(SneakStreak)   <Plug>SneakLabel_s
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 414
+x  <Plug>(SneakStreakBackward)   <Plug>SneakLabel_S
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 413
+x  <Plug>(SneakStreak)   <Plug>SneakLabel_s
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 412
+n  <Plug>(SneakStreakBackward)   <Plug>SneakLabel_S
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 411
+n  <Plug>(SneakStreak)   <Plug>SneakLabel_s
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 410
+x  <Plug>VSneakPrevious   <Plug>Sneak_,
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 409
+x  <Plug>VSneakNext   <Plug>Sneak_;
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 408
+x  <Plug>VSneakBackward   <Plug>Sneak_S
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 407
+x  <Plug>VSneakForward   <Plug>Sneak_s
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 406
+n  <Plug>SneakBackward   <Plug>Sneak_S
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 405
+n  <Plug>SneakForward   <Plug>Sneak_s
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 404
+o  <Plug>SneakLabel_S * :<C-U>call sneak#wrap(v:operator, 2, 1, 2, 2)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 364
+o  <Plug>SneakLabel_s * :<C-U>call sneak#wrap(v:operator, 2, 0, 2, 2)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 363
+x  <Plug>SneakLabel_S * :<C-U>call sneak#wrap(visualmode(), 2, 1, 2, 2)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 362
+x  <Plug>SneakLabel_s * :<C-U>call sneak#wrap(visualmode(), 2, 0, 2, 2)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 361
+n  <Plug>SneakLabel_S * :<C-U>call sneak#wrap('', 2, 1, 2, 2)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 360
+n  <Plug>SneakLabel_s * :<C-U>call sneak#wrap('', 2, 0, 2, 2)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 359
+o  <Plug>Sneak_T * :<C-U>call sneak#wrap(v:operator, 1, 1, 0, 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 357
+o  <Plug>Sneak_t * :<C-U>call sneak#wrap(v:operator, 1, 0, 0, 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 356
+x  <Plug>Sneak_T * :<C-U>call sneak#wrap(visualmode(), 1, 1, 0, 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 355
+x  <Plug>Sneak_t * :<C-U>call sneak#wrap(visualmode(), 1, 0, 0, 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 354
+n  <Plug>Sneak_T * :<C-U>call sneak#wrap('', 1, 1, 0, 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 353
+n  <Plug>Sneak_t * :<C-U>call sneak#wrap('', 1, 0, 0, 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 352
+o  <Plug>Sneak_F * :<C-U>call sneak#wrap(v:operator, 1, 1, 1, 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 349
+o  <Plug>Sneak_f * :<C-U>call sneak#wrap(v:operator, 1, 0, 1, 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 348
+x  <Plug>Sneak_F * :<C-U>call sneak#wrap(visualmode(), 1, 1, 1, 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 347
+x  <Plug>Sneak_f * :<C-U>call sneak#wrap(visualmode(), 1, 0, 1, 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 346
+n  <Plug>Sneak_F * :<C-U>call sneak#wrap('', 1, 1, 1, 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 345
+n  <Plug>Sneak_f * :<C-U>call sneak#wrap('', 1, 0, 1, 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 344
+o  <Plug>Sneak_, * :<C-U>call <SNR>59_rpt(v:operator, 1)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 341
+o  <Plug>Sneak_; * :<C-U>call <SNR>59_rpt(v:operator, 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 340
+x  <Plug>Sneak_, * :<C-U>call <SNR>59_rpt(visualmode(), 1)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 339
+x  <Plug>Sneak_; * :<C-U>call <SNR>59_rpt(visualmode(), 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 338
+n  <Plug>Sneak_, * :<C-U>call <SNR>59_rpt('', 1)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 337
+n  <Plug>Sneak_; * :<C-U>call <SNR>59_rpt('', 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 336
+o  <Plug>SneakRepeat * :<C-U>call sneak#wrap(v:operator, sneak#util#getc(), sneak#util#getc(), sneak#util#getc(), sneak#util#getc())<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 333
+o  <Plug>Sneak_S * :<C-U>call sneak#wrap(v:operator, 2, 1, 2, 1)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 331
+o  <Plug>Sneak_s * :<C-U>call sneak#wrap(v:operator, 2, 0, 2, 1)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 330
+x  <Plug>Sneak_S * :<C-U>call sneak#wrap(visualmode(), 2, 1, 2, 1)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 329
+x  <Plug>Sneak_s * :<C-U>call sneak#wrap(visualmode(), 2, 0, 2, 1)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 328
+n  <Plug>Sneak_S * :<C-U>call sneak#wrap('', 2, 1, 2, 1)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 327
+n  <Plug>Sneak_s * :<C-U>call sneak#wrap('', 2, 0, 2, 1)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-sneak/plugin/sneak.vim line 326
+v  <Plug>Ditto * :call ditto#dittoOp(visualmode(), 1)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-ditto/plugin/ditto.vim line 92
+n  <Plug>Ditto * :set opfunc=ditto#dittoOp<CR>g@
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-ditto/plugin/ditto.vim line 89
+n  <Plug>DittoUpdate * :call ditto#dittoUpdate()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-ditto/plugin/ditto.vim line 86
+n  <Plug>ToggleDitto * :call ditto#toggleDitto()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-ditto/plugin/ditto.vim line 83
+n  <Plug>DittoOff * :call ditto#dittoOff()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-ditto/plugin/ditto.vim line 80
+n  <Plug>DittoOn * :call ditto#dittoOn()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-ditto/plugin/ditto.vim line 77
+n  <Plug>DittoPrev * :silent keepp call ditto#dittoSearch("?")<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-ditto/plugin/ditto.vim line 74
+n  <Plug>DittoNext * :silent keepp call ditto#dittoSearch("/")<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-ditto/plugin/ditto.vim line 71
+n  <Plug>DittoLess * :call ditto#dittoLess()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-ditto/plugin/ditto.vim line 68
+n  <Plug>DittoMore * :call ditto#dittoMore()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-ditto/plugin/ditto.vim line 65
+n  <Plug>DittoBad * :call ditto#addBadWord(expand("<cword>"))<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-ditto/plugin/ditto.vim line 62
+n  <Plug>DittoGood * :call ditto#addGoodWord(expand("<cword>"))<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-ditto/plugin/ditto.vim line 59
+o  <Plug>(coc-classobj-a) * :<C-U>call coc#rpc#request('selectSymbolRange', [v:false, '', ['Interface', 'Struct', 'Class']])<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 401
+o  <Plug>(coc-classobj-i) * :<C-U>call coc#rpc#request('selectSymbolRange', [v:true, '', ['Interface', 'Struct', 'Class']])<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 400
+v  <Plug>(coc-classobj-a) * :<C-U>call coc#rpc#request('selectSymbolRange', [v:false, visualmode(), ['Interface', 'Struct', 'Class']])<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 399
+v  <Plug>(coc-classobj-i) * :<C-U>call coc#rpc#request('selectSymbolRange', [v:true, visualmode(), ['Interface', 'Struct', 'Class']])<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 398
+o  <Plug>(coc-funcobj-a) * :<C-U>call coc#rpc#request('selectSymbolRange', [v:false, '', ['Method', 'Function']])<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 396
+o  <Plug>(coc-funcobj-i) * :<C-U>call coc#rpc#request('selectSymbolRange', [v:true, '', ['Method', 'Function']])<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 395
+v  <Plug>(coc-funcobj-a) * :<C-U>call coc#rpc#request('selectSymbolRange', [v:false, visualmode(), ['Method', 'Function']])<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 394
+v  <Plug>(coc-funcobj-i) * :<C-U>call coc#rpc#request('selectSymbolRange', [v:true, visualmode(), ['Method', 'Function']])<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 393
+n  <Plug>(coc-cursors-position) * :<C-U>call coc#rpc#request('cursorsSelect', [bufnr('%'), 'position', 'n'])<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 391
+n  <Plug>(coc-cursors-word) * :<C-U>call coc#rpc#request('cursorsSelect', [bufnr('%'), 'word', 'n'])<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 390
+v  <Plug>(coc-cursors-range) * :<C-U>call coc#rpc#request('cursorsSelect', [bufnr('%'), 'range', visualmode()])<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 389
+n  <Plug>(coc-cursors-operator) * :<C-U>set operatorfunc=<SNR>54_CursorRangeFromSelected<CR>g@
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 388
+n  <Plug>(coc-refactor) * :<C-U>call       CocActionAsync('refactor')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 385
+n  <Plug>(coc-command-repeat) * :<C-U>call       CocAction('repeatCommand')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 384
+n  <Plug>(coc-float-jump) * :<C-U>call       coc#util#float_jump()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 383
+n  <Plug>(coc-float-hide) * :<C-U>call       coc#util#float_hide()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 382
+n  <Plug>(coc-fix-current) * :<C-U>call       CocActionAsync('doQuickfix')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 381
+n  <Plug>(coc-openlink) * :<C-U>call       CocActionAsync('openLink')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 380
+n  <Plug>(coc-references) * :<C-U>call       CocActionAsync('jumpReferences')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 379
+n  <Plug>(coc-type-definition) * :<C-U>call       CocActionAsync('jumpTypeDefinition')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 378
+n  <Plug>(coc-implementation) * :<C-U>call       CocActionAsync('jumpImplementation')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 377
+n  <Plug>(coc-declaration) * :<C-U>call       CocActionAsync('jumpDeclaration')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 376
+n  <Plug>(coc-definition) * :<C-U>call       CocActionAsync('jumpDefinition')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 375
+n  <Plug>(coc-diagnostic-prev-error) * :<C-U>call       CocActionAsync('diagnosticPrevious', 'error')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 374
+n  <Plug>(coc-diagnostic-next-error) * :<C-U>call       CocActionAsync('diagnosticNext',     'error')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 373
+n  <Plug>(coc-diagnostic-prev) * :<C-U>call       CocActionAsync('diagnosticPrevious')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 372
+n  <Plug>(coc-diagnostic-next) * :<C-U>call       CocActionAsync('diagnosticNext')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 371
+n  <Plug>(coc-diagnostic-info) * :<C-U>call       CocActionAsync('diagnosticInfo')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 370
+n  <Plug>(coc-format) * :<C-U>call       CocActionAsync('format')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 369
+n  <Plug>(coc-format-selected) * :<C-U>set        operatorfunc=<SNR>54_FormatFromSelected<CR>g@
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 368
+n  <Plug>(coc-rename) * :<C-U>call       CocActionAsync('rename')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 367
+n  <Plug>(coc-codeaction) * :<C-U>call       CocActionAsync('codeAction',         '')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 366
+n  <Plug>(coc-codeaction-selected) * :<C-U>set        operatorfunc=<SNR>54_CodeActionFromSelected<CR>g@
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 365
+v  <Plug>(coc-codeaction-selected) * :<C-U>call       CocActionAsync('codeAction',         visualmode())<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 364
+v  <Plug>(coc-format-selected) * :<C-U>call       CocActionAsync('formatSelected',     visualmode())<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 363
+n  <Plug>(coc-codelens-action) * :<C-U>call       CocActionAsync('codeLensAction')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 362
+n  <Plug>(coc-range-select) * :<C-U>call       CocAction('rangeSelect',     '', v:true)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 361
+v  <Plug>(coc-range-select-backward) * :<C-U>call       CocAction('rangeSelect',     visualmode(), v:false)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 360
+v  <Plug>(coc-range-select) * :<C-U>call       CocAction('rangeSelect',     visualmode(), v:true)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/coc.nvim/plugin/coc.vim line 359
+o  <Plug>(fzf-maps-o) * <C-C>:<C-U>call fzf#vim#maps('o', 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/fzf.vim/plugin/fzf.vim line 153
+x  <Plug>(fzf-maps-x) * :<C-U>call fzf#vim#maps('x', 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/fzf.vim/plugin/fzf.vim line 152
+n  <Plug>(fzf-maps-n) * :<C-U>call fzf#vim#maps('n', 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/fzf.vim/plugin/fzf.vim line 150
+x  <Plug>(Limelight) * :Limelight<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/limelight.vim/plugin/limelight.vim line 27
+n  <Plug>(Limelight) * :set opfunc=limelight#operator<CR>g@
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/limelight.vim/plugin/limelight.vim line 26
+n  <Plug>VimwikiMakeTomorrowDiaryNote & :VimwikiMakeTomorrowDiaryNote<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vimwiki/plugin/vimwiki.vim line 358
+n  <Plug>VimwikiMakeYesterdayDiaryNote & :VimwikiMakeYesterdayDiaryNote<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vimwiki/plugin/vimwiki.vim line 352
+n  <Plug>VimwikiTabMakeDiaryNote & :VimwikiTabMakeDiaryNote<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vimwiki/plugin/vimwiki.vim line 346
+n  <Plug>VimwikiMakeDiaryNote & :VimwikiMakeDiaryNote<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vimwiki/plugin/vimwiki.vim line 340
+n  <Plug>VimwikiDiaryGenerateLinks & :VimwikiDiaryGenerateLinks<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vimwiki/plugin/vimwiki.vim line 335
+n  <Plug>VimwikiDiaryIndex & :VimwikiDiaryIndex<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vimwiki/plugin/vimwiki.vim line 330
+n  <Plug>VimwikiUISelect & :VimwikiUISelect<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vimwiki/plugin/vimwiki.vim line 325
+n  <Plug>VimwikiTabIndex & :VimwikiTabIndex<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vimwiki/plugin/vimwiki.vim line 320
+n  <Plug>VimwikiIndex & :VimwikiIndex<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vimwiki/plugin/vimwiki.vim line 315
+n  <Plug>CommentaryUndo   :echoerr "Change your <Plug>CommentaryUndo map to <Plug>Commentary<Plug>Commentary"<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-commentary/plugin/commentary.vim line 104
+n  <Plug>ChangeCommentary * c:<C-U>call <SNR>44_textobject(1)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-commentary/plugin/commentary.vim line 103
+o  <Plug>Commentary * :<C-U>call <SNR>44_textobject(get(v:, 'operator', '') ==# 'c')<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-commentary/plugin/commentary.vim line 102
+n  <Plug>CommentaryLine * <SNR>44_go() . '_'
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-commentary/plugin/commentary.vim line 101
+n  <Plug>Commentary * <SNR>44_go()
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-commentary/plugin/commentary.vim line 100
+x  <Plug>Commentary * <SNR>44_go()
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-commentary/plugin/commentary.vim line 99
+v  <Plug>VgSurround * :<C-U>call <SNR>43_opfunc(visualmode(),visualmode() ==# 'V' ? 0 : 1)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 595
+v  <Plug>VSurround * :<C-U>call <SNR>43_opfunc(visualmode(),visualmode() ==# 'V' ? 1 : 0)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 594
+n  <Plug>YSurround * <SNR>43_opfunc2('setup')
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 593
+n  <Plug>Ysurround * <SNR>43_opfunc('setup')
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 592
+n  <Plug>YSsurround * <SNR>43_opfunc2('setup').'_'
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 591
+n  <Plug>Yssurround * '^'.v:count1.<SNR>43_opfunc('setup').'g_'
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 590
+n  <Plug>CSurround * :<C-U>call <SNR>43_changesurround(1)<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 589
+n  <Plug>Csurround * :<C-U>call <SNR>43_changesurround()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 588
+n  <Plug>Dsurround * :<C-U>call <SNR>43_dosurround(<SNR>43_inputtarget())<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 587
+n  <Plug>SurroundRepeat * .
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-surround/plugin/surround.vim line 586
+s  <Del>       * <C-G>"_c
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim line 71
+s  <BS>        * <C-G>"_c
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim line 70
+s  <C-Tab>     * <Esc>:call UltiSnips#ListSnippets()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/ultisnips/autoload/UltiSnips/map_keys.vim line 67
+n  <Plug>(PrettierCliPath) * :PrettierCliPath<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-prettier/plugin/prettier.vim line 154
+n  <Plug>(PrettierCliVersion) * :PrettierCliVersion<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-prettier/plugin/prettier.vim line 153
+n  <Plug>(PrettierCli) * :PrettierCli<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-prettier/plugin/prettier.vim line 152
+n  <Plug>(PrettierVersion) * :PrettierVersion<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-prettier/plugin/prettier.vim line 151
+n  <Plug>(PrettierPartial) * :PrettierPartial<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-prettier/plugin/prettier.vim line 150
+n  <Plug>(PrettierFragment) * :PrettierFragment<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-prettier/plugin/prettier.vim line 149
+n  <Plug>(PrettierAsync) * :PrettierAsync<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-prettier/plugin/prettier.vim line 148
+n  <Plug>(Prettier) * :Prettier<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/plugged/vim-prettier/plugin/prettier.vim line 147
+n  <M-h>       * :vertical res -1<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 883
+n  <M-l>       * :vertical res +1<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 882
+n  <M-k>       * :res +1<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 881
+n  <M-j>       * :res -1<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 880
+n  <M-z>       * :call nvim_open_win(bufnr('%'), v:true, {'relative': 'editor', 'anchor': 'NW', 'width': winwidth(0), 'height': 2*winheight(0)/5, 'row': 1, 'col': 0})<CR>:call TerminalToggle()<CR>
+	Last set from /mnt/sdc1/dbx/dots/.config/nvim/init.vim line 687
