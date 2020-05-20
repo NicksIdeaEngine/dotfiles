@@ -1,3 +1,4 @@
+Session.vim
 .config/i3/i3-resurrect
 .config/nvim/plugged
 .config/ranger/__pycache__
@@ -8,5 +9,3 @@
 .tmux/resurrect
 refs/private
 scripts/private
-Session.vim
-**/Session.vim
