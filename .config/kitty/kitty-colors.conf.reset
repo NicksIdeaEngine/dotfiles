@@ -1,15 +1,15 @@
-# gruvbox-light colors for kitty
+# gruvbox colors for kitty
 
 background #f9f5d7
-selection_background #3c3836
+selection_background #282828
 
-foreground #3c3836
+foreground #282828
 selection_foreground #f9f5d7
 
 active_tab_foreground #f9f5d7
-active_tab_background #cc241d
+active_tab_background #8f3f71
 
-inactive_tab_foreground #3c3836
+inactive_tab_foreground #282828
 inactive_tab_background #d5c4a1
 
 cursor #d65d0e
@@ -19,7 +19,7 @@ url_color #458588
 url_style curly
 
 # bg hard contrast
-color0 #f9f5d7
+color0 #fbf1c7
 
 # red
 color1 #cc241d

@@ -346,8 +346,6 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 " ranger.vim config {{{
 
 let g:ranger_map_keys = 0
-let g:NERDTreeHijackNetrw = 0
-" let g:ranger_replace_netrw = 1
 map <leader>n :Ranger<cr>
 map <leader>N :RangerNewTab<cr>x <c-w>x
 
@@ -521,7 +519,7 @@ let g:lightline.component_visible_condition = {
 if (has("termguicolors"))
   set termguicolors
 endif
-set background=dark
+set background=light
 let g:gruvbox_contrast_light = 'hard'
 colorscheme gruvbox
 
@@ -784,6 +782,11 @@ nmap <silent> <leader>sv :so $MYVIMRC<cr>
 
 " change directory to folder of current file
 nnoremap <leader>cd :cd %:p:h<cr>
+
+" open file explorer (still exploring all 3)
+nnoremap <leader>m :Hex<cr>
+nnoremap <leader>M :Lex<cr>
+" nnoremap <leader>m :Sex<cr>
 
 " turn off search highlight
 nnoremap <leader>h :nohlsearch<cr>

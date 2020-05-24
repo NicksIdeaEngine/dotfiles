@@ -43,7 +43,7 @@ alias vds="cd ~/vids"
 alias wrt="cd ~/writing"
 alias cdir="cd $cdir"
 alias pdir="cd $pdir"
-alias pfol="cd $pdir/nickgarcia.me"
+alias pfol="cd $pdir/nickgarcia"
 alias userchrome="cd ~/.mozilla/firefox/65rf3aso.default-release/chrome"
 alias userchromedev="cd ~/.mozilla/firefox/ad1fuz9r.dev-edition-default/chrome"
 
@@ -167,11 +167,12 @@ alias sshrestart="sudo systemctl restart ssh.service"
 # project initialization
 projinit() {
   # first form will be for react, but later forms can take arguments for different projects
-  local proj_name="${1:-}"
+  proj_name="${1:-}"
+  proj_arg="${2:-}"
   echo "Project name is $proj_name"
 
-  local spark_dir="/home/efex/proj/spark"
-  local new_dir="$(pwd)"
+  spark_dir="/home/efex/proj/spark"
+  new_dir="$(pwd)"
   echo "Project dir is $new_dir"
 
   # developer cleaner
@@ -196,11 +197,15 @@ projinit() {
     fi
   done
 
-  sed -i "s/Spark/$proj_name/g" "$new_dir/src/index.html"
-  sed -i "s/spark/$proj_name/g" "$new_dir/package.json"
+  sed -i "s/Spark/${proj_name//\-/\-}/g" "$new_dir/src/index.html"
+  sed -i "s/spark/${proj_name//\-/\-}/g" "$new_dir/package.json"
   mv "$new_dir/spark.code-workspace" "$new_dir/$proj_name.code-workspace"
 
-  cd $new_dir && npm install
+  cd $new_dir
+
+  if [[ $proj_arg == "-n" ]]; then
+    npm install
+  fi
 }
 
 # pacman shortcuts

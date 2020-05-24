@@ -7,57 +7,70 @@ mod4 = Windows
 s = Shift
 c = Control
 
-| key   | mod3      | smod3      | cmod3      | scmod3   | mod4      | smod4 | cmod4    | scmod4 |
-| :---: | :-------: | :--------: | :--------: | :------: | :-------: | :---: | :------: | :----: |
-| z     | toglay    |            |            |          | i3rez     |       |          |        |
-| x     |           |            |            |          |           |       |          |        |
-| c     | code      | focchild   |            |          | i3load    |       |          |        |
-| v     | splitv    |            |            |          | vbox      |       |          |        |
-| b     |           |            |            |          |           |       |          |        |
-| n     | ranger    | nemo       |            |          |           |       |          |        |
-| m     | htop      | sysmon     |            |          | tosort    |       |          |        |
-| ,     |           |            |            |          |           |       |          |        |
-| .     |           |            |            |          |           |       |          |        |
-| /     | shscrtch  | mvscrtch   | flt2scrtch |          |           |       |          |        |
-| a     |           | focparnt   |            |          |           |       |          |        |
-| s     | splith    |            |            |          | slack     |       |          |        |
-| d     | rofone    | rofdrop    | autoscr    | autoref  | discord   |       |          |        |
-| f     | flscr     | flscr+     | flscr++    | flscr+++ | filezilla |       |          |        |
-| g     | chrome    | gapmode    |            |          |           |       |          |        |
-| h     | focusL    | moveL      | MshrinkW   | LshrinkW |           |       | SshrinkW |        |
-| j     | focusD    | moveD      | MshrinkH   | LshrinkH |           |       | SshrinkH |        |
-| k     | focusU    | moveU      | MgrowH     | LgrowH   |           |       | SgrowH   |        |
-| l     | focusR    | moveR      | MgrowW     | LgrowW   |           |       | SgrowW   | i3lock |
-| ;     | mrkswapee | doswaps    |            |          |           |       |          |        |
-| '     |           |            |            |          |           |       |          |        |
-| q     |           | kill       |            |          | quant     |       |          |        |
-| w     | ff        | ffdev      |            | tor      |           |       |          |        |
-| e     |           |            |            |          | i3exit    |       |          |        |
-| r     |           |            |            |          | i3boot    |       |          |        |
-| t     | terminal  | gterm      | st         | txtedit  |           |       |          |        |
-| y     |           |            |            |          |           |       |          |        |
-| u     |           |            |            |          |           |       |          |        |
-| i     |           | i3setup    |            |          | zoom      |       |          |        |
-| o     |           |            |            |          | obs       |       |          |        |
-| p     |           |            |            |          | repoly    |       |          |        |
-| [     | markinput |            |            |          |           |       |          |        |
-| ]     | swapinput |            |            |          |           |       |          |        |
-| \\    |           |            |            |          |           |       |          |        |
-| \`    |           |            |            |          |           |       |          |        |
-| 1     | wsp1      | mv2wsp1    |            |          |           |       |          |        |
-| 2     | wsp2      | mv2wsp2    |            |          |           |       |          |        |
-| 3     | wsp3      | mv2wsp3    |            |          |           |       |          |        |
-| 4     | wsp4      | mv2wsp4    |            |          |           |       |          |        |
-| 5     | wsp5      | mv2wsp5    |            |          |           |       |          |        |
-| 6     | wsp6      | mv2wsp6    |            |          |           |       |          |        |
-| 7     |           |            |            |          |           |       |          |        |
-| 8     |           |            |            |          |           |       |          |        |
-| 9     |           |            |            |          |           |       |          |        |
-| 0     |           |            |            | sysmenu  |           |       |          |        |
-| minus |           |            |            |          |           |       |          |        |
-| equal | calc      |            |            |          | calc      |       |          |        |
-| Tab   |           |            |            |          |           |       |          |        |
-| Rtn   | terminal  | gterm      | st         | txtedit  |           |       |          |        |
-| Esc   |           |            |            |          |           |       |          |        |
-| Space | flofoc    | togflo     |            |          |           |       |          |        |
-| Print | areashot  | windowshot | fullshot   |          |           |       |          |        |
+|    key     |          mod3          |          smod3           |           cmod3            |       scmod3        |           mod4           |           smod4            |              cmod4               |  scmod4  |
+| :--------: | :--------------------: | :----------------------: | :------------------------: | :-----------------: | :----------------------: | :------------------------: | :------------------------------: | :------: |
+|     a      |                        |       focus parent       |                            |                     |                          |                            |                                  |          |
+|     b      |                        |                          |                            |                     |                          |                            |              bmenu               |          |
+|     c      |        vs code         |       focus child        |                            |                     |     reload i3 config     |                            |                                  |          |
+|     d      |       projify.sh       |        scriptr.sh        |        appfetch.sh         |     cmdmenu.sh      |         discord          |                            |                                  |          |
+|     e      |                        |                          |                            |                     |         exit i3          |                            |                                  |          |
+|     f      |       fullscreen       |       fullscreen+        |        fullscreen++        |    fullscreen+++    |                          |                            |                                  |          |
+|     g      |         chrome         |        gaps mode         |                            |                     |                          |                            |                                  |          |
+|     h      |       focus left       |     move window left     |    medium shrink width     | large shrink width  |                          |                            |        small shrink width        |          |
+|     i      |                        |       i3setup mode       |                            |                     |           zoom           |                            |                                  |          |
+|     j      |       focus down       |     move window down     |    medium shrink height    | large shrink height |                          |                            |       small shrink height        |          |
+|     k      |        focus up        |      move window up      |     medium grow height     |  large grow height  |                          |                            |        small grow height         |          |
+|     l      |      focus right       |    move window right     |     medium grow width      |  large grow width   |                          |                            |         small grow width         | blurlock |
+|     m      |          htop          |                          |                            |                     |  mps-youtube [floating]  |                            |                                  |          |
+|     n      |         ranger         |                          |                            |                     |                          |                            |                                  |          |
+|     o      |                        |                          |                            |                     |           obs            |                            |                                  |          |
+|     p      |                        |                          |                            |                     |      toggle polybar      |                            |                                  |          |
+|     q      |                        |           kill           |                            |                     |                          |                            |                                  |          |
+|     r      |                        |                          |                            |                     |        restart i3        |                            |                                  |          |
+|     s      |    split horizontal    |                          |                            |                     |          slack           |                            |                                  |          |
+|     t      |        terminal        |    sensible terminal     |                            |                     |       launch todo        |                            |                                  |          |
+|     u      |                        |                          |                            |                     |       launch wiki        |                            |                                  |          |
+|     v      |     split vertical     |                          |                            |                     |                          |                            |                                  |          |
+|     w      |        firefox         |       firefox-dev        |                            |                     |                          |                            |                                  |          |
+|     x      |                        |                          |                            |                     |                          |                            |                                  |          |
+|     y      |                        |                          |                            |                     |     launch dotfiles      |                            |                                  |          |
+|     z      |     toggle layout      |                          |                            |                     |                          |                            |            morc_menu             |          |
+|     1      |       focus wsp1       |   move focused to wsp1   |                            |                     |    alert date & time     |                            |                                  |          |
+|     2      |       focus wsp2       |   move focused to wsp2   |                            |                     | switch audio to speakers | switch audio to headphones |                                  |          |
+|     3      |       focus wsp3       |   move focused to wsp3   |                            |                     |     alert cpu status     |                            |                                  |          |
+|     4      |       focus wsp4       |   move focused to wsp4   |                            |                     |     alert gpu status     |                            |                                  |          |
+|     5      |       focus wsp5       |   move focused to wsp5   |                            |                     |     alert fanstatus      |                            |                                  |          |
+|     6      |       focus wsp6       |   move focused to wsp6   |                            |                     |                          |                            |                                  |          |
+|     7      |       focus wsp7       |   move focused to wsp7   |                            |                     |                          |                            |                                  |          |
+|     8      |                        |                          |                            |                     |                          |                            |                                  |          |
+|     9      |                        |                          |                            |                     |                          |                            |                                  |          |
+|     0      |                        |                          |                            |     sysmenu.sh      |                          |                            |                                  |          |
+|   grave    |                        |                          |                            |                     |                          |                            |                                  |          |
+|   minus    |                        |                          |                            |                     |      colorswitch.sh      |                            |                                  |          |
+|   equal    |                        |                          |                            |                     |                          |                            |                                  |          |
+| braceleft  | mark window with input |                          |                            |                     |                          |                            |                                  |          |
+| braceright | swap window with input |                          |                            |                     |                          |                            |                                  |          |
+| backslash  |                        |                          |                            |                     |                          |                            |                                  |          |
+| semicolon  |     mark as swapee     |     swap with swapee     |                            |                     | move floating to center  |                            | move floating to absolute center |          |
+| apostrophe |                        |                          |                            |                     |                          |                            |                                  |          |
+|   comma    |                        |                          |                            |                     |                          |                            |                                  |          |
+|   period   |                        |                          |                            |                     |                          |                            |                                  |          |
+|   slash    |    show scratchpad     |    move to scratchpad    | all floating to scratchpad |                     |                          |                            |                                  |          |
+|    tab     |                        |                          |                            |                     |                          |                            |                                  |          |
+|   return   |        terminal        |    sensible terminal     |                            |                     |                          |                            |                                  |          |
+|   escape   |                        |                          |                            |                     |                          |                            |                                  |          |
+|   space    | toggle floating focus  | toggle tiling / floating |                            |                     |       resizer mode       |                            |                                  |          |
+|   print    |        areashot        |        windowshot        |          fullshot          |                     |                          |                            |                                  |          |
+|     F1     |                        |                          |                            |                     |                          |                            |                                  |          |
+|     F2     |                        |                          |                            |                     |                          |                            |                                  |          |
+|     F3     |                        |                          |                            |                     |                          |                            |                                  |          |
+|     F4     |                        |                          |                            |                     |                          |                            |                                  |          |
+|     F5     |                        |                          |                            |                     |                          |                            |                                  |          |
+|     F6     |                        |                          |                            |                     |                          |                            |                                  |          |
+|     F7     |                        |                          |                            |                     |                          |                            |                                  |          |
+|     F8     |                        |                          |                            |                     |                          |                            |                                  |          |
+|     F9     |                        |                          |                            |                     |                          |                            |                                  |          |
+|    F10     |                        |                          |                            |                     |                          |                            |                                  |          |
+|    F11     |                        |                          |                            |                     |                          |                            |                                  |          |
+|    F12     |                        |                          |                            |                     |                          |                            |                                  |          |
+|    menu    |                        |                          |                            |                     |                          |                            |                                  |          |

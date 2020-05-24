@@ -1,14 +1,10 @@
 :root {
-  /* arrow panels pop down from the menu and tools buttons */
   --arrowpanel-border-color: #458588ff !important;
   --arrowpanel-color: #3c3836ff !important;
   --arrowpanel-background: #f9f5d7ff !important;
-  /* */
   --autocomplete-popup-background: #f9f5d7ff !important;
   --autocomplete-popup-color: #3c3836ff !important;
-  /* */
   --chrome-content-separator-color: transparent !important;
-  /* */
   --chrome-nav-bar-controls-border-color: transparent !important;
   /* inactive tabs / top bar background color */
   --lwt-accent-color: #d5c4a1ff !important;
@@ -20,27 +16,17 @@
   --lwt-toolbarbutton-hover-background: #ebdbb2ff !important;
   /* top bar button fill color */
   --lwt-toolbarbutton-icon-fill: #458588ff !important;
-  /* */
   --moz-menubartext: #458588ff !important;
-  /* */
   --tab-min-height: 26px !important;
-  /* */
   --tabs-border: transparent !important;
-  /* */
   --toolbar-bgcolor: #f9f5d7ff !important;
-  /* */
   --toolbarbutton-border-radius: 0px !important;
-  /* */
   --toolbarbutton-inner-padding: 5px !important;
-  /* */
   --toolbarbutton-outer-padding: 0px !important;
-  /* */
   /* --toolbox-border-bottom-color: 0px !important; */
-  /* */
   --urlbar-separator-color: #665c54ff !important;
 }
 
-/* allows tab toolbar to appear while in fullscreen */
 #fullscr-toggler {
   height: 10px !important;
   margin-bottom: -10px !important;
@@ -49,7 +35,7 @@
   background: transparent !important;
 }
 
-/* Remove toolbar / content area border */
+/* Toolbar / content area border */
 #navigator-toolbox {
   border-bottom: 0px !important;
 }

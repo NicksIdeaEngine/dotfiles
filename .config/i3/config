@@ -33,7 +33,7 @@ set $smod4      bindsym Mod4+Shift
 set $cmod4      bindsym Mod4+Control
 set $scmod4     bindsym Mod4+Shift+Control
 
-# default terminal is suckless terminal
+# default terminal is kitty terminal
 set $terminal   kitty
 
 # set audio commands to easy variables
@@ -111,10 +111,10 @@ $mod3+k focus up
 $mod3+l focus right
 
 # move focused window
-$smod3+h move left
-$smod3+j move down
-$smod3+k move up
-$smod3+l move right
+$smod3+h move left 100px
+$smod3+j move down 100px
+$smod3+k move up 100px
+$smod3+l move right 100px
 
 # resizing
 $cmod4+h resize shrink width  1 px or 1 ppt
@@ -155,6 +155,12 @@ $smod3+space floating toggle
 
 # change focus between tiling / floating windows
 $mod3+space focus mode_toggle
+
+# move floating window to center of current output
+$mod4+semicolon move position center
+
+# move floating window to center of all outputs
+$cmod4+semicolon move absolute position center
 
 # focus the parent container
 $smod3+a focus parent
@@ -217,9 +223,9 @@ $smod3+semicolon \
 
 # app management
 $smod3+q          kill
-$mod3+d           $ex $scr/appfetch.sh
-$smod3+d          $ex $scr/projify.sh
-$cmod3+d          $ex $scr/scriptr.sh
+$mod3+d           $ex $scr/projify.sh
+$smod3+d          $ex $scr/scriptr.sh
+$cmod3+d          $ex $scr/appfetch.sh
 $scmod3+d         $ex $scr/cmdmenu.sh
 
 # start program launcher
@@ -227,7 +233,7 @@ $scmod3+d         $ex $scr/cmdmenu.sh
 $cmod4+b          exec $terminal -e 'bmenu'
 
 # launch categorized menu
-# bindsym $mod+Shift+z $ex morc_menu
+$cmod4+z          $ex morc_menu
 
 # app launching
 $mod3+n           exec  $terminal ranger
@@ -279,6 +285,7 @@ $smod4+9    $ex $scr/sink-switch.sh --headphones
 $mod4+8     $ex $scr/alertr.sh --cpustatus --notify
 $mod4+7     $ex $scr/alertr.sh --gpustatus --notify
 $mod4+6     $ex $scr/alertr.sh --fanstatus --notify
+$mod4+minus $ex $scr/colorswitch.sh
 # general computer stats report
 # redshift
 
@@ -287,9 +294,6 @@ $mod4+6     $ex $scr/alertr.sh --fanstatus --notify
 
 # monitor orientation since my primary is in the middle
 $ex xrandr --output HDMI-A-0 --auto --left-of DisplayPort-0
-
-# clear mpsyt cache
-$ex rm /home/efex/.config/mps-youtube/cache_py_*
 
 # turn num lock on
 $ex xdotool key --clearmodifiers Num_Lock
@@ -301,7 +305,6 @@ $exa pactl set-default-source $headmic
 $exa pactl set-sink-volume 0 '0%'
 
 # set default screen timeout settings
-# $ex xset s off
 $ex xset dpms 0 0 1200
 
 # autostart apps
@@ -317,6 +320,7 @@ $ex       rescuetime
 $ex       redshift -c /home/efex/.config/redshift.conf
 $ex       dunst
 $exa      fix_xcursor
+$exa      xrdb ~/.Xresources
 # $ex     nitrogen --restore; sleep 1; compton -b
 # $ex     manjaro-hello
 # $ex     blueman-applet
@@ -335,16 +339,18 @@ workspace 5 output DisplayPort-0
 workspace 6 output DisplayPort-1
 workspace 7 output HDMI-A-0
 
-# window rules
-for_window [title="System Monitor"] border pixel 0
+# window rules (set by Nick)
 for_window [title="Calculator"] floating enable
-for_window [class="mpv"] border pixel 0
-for_window [class="vlc"] border pixel 0
-for_window [class="Firefox"] border pixel 0
 for_window [class="discord"] floating enable
+for_window [class="Firefox"] border pixel 0
+for_window [title="mpsyt"] floating enable resize set 1000 600
+for_window [class="mpv"] border pixel 0
 for_window [class="Slack"] floating enable
+for_window [title="System Monitor"] border pixel 0
+for_window [class="vlc"] border pixel 0
+for_window [title="wiki"] floating enable resize 650 1250
 
-# Open specific applications in floating mode
+# Open specific applications in floating mode (Manjaro defaults)
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
@@ -357,7 +363,6 @@ for_window [class="Lightdm-settings"] floating enable
 for_window [class="Lxappearance"] floating enable sticky enable border normal
 for_window [class="Manjaro-hello"] floating enable
 for_window [class="Manjaro Settings Manager"] floating enable border normal
-for_window [title="mpsyt"] floating enable resize set 1000 600
 for_window [title="MuseScore: Play Panel"] floating enable
 for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Oblogout"] fullscreen enable
@@ -370,7 +375,6 @@ for_window [class="Simple-scan"] floating enable border normal
 for_window [class="(?i)System-config-printer.py"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
-for_window [title="wiki"] floating enable resize 650 1250
 for_window [class="Xfburn"] floating enable
 
 # }}}

@@ -27,4 +27,4 @@ configuration {
 }
 
 @import "firacode.rasi"
-@import "gruvbox-light.rasi"
+@import "gruvbox.rasi"

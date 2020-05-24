@@ -13,7 +13,7 @@ QUARTER="$(( ($MONTH-1)/3+1 ))"
 DEST="$HOME/zackups"
 
 # directories to grab from $HOME
-HOME_SPEC=(".config" ".config/google-chrome/Default" ".config/mpd" ".config/rclone" ".config/rescuetime" ".config/systemd/user" ".config/Twine" ".icons" ".local/share/applications" ".ssh" ".vim")
+HOME_SPEC=(".config" ".config/google-chrome/Default" ".config/mpd" ".config/rclone" ".config/rescuetime" ".config/systemd/user" ".config/Twine" ".local/share/applications" ".vim")
 
 # .config specifications
 CONFIG_SPEC=("autostart" "htop" "vlc" "redshift.conf" "user-dirs.dirs")
@@ -33,12 +33,6 @@ RESCUE_SPEC=(".rtgoals")
 # systemd spec
 SYSTEMD_SPEC=("dropbox-watch.service")
 
-# .icon specifications
-ICON_SPEC=("default" "st")
-
-# specs for kitty terminal
-# LOCAL_KITTY_SPEC=("layout.py")
-
 # specific directories to grab within .local/share/applications
 LOCAL_APP_SPEC=("firefox-developer.desktop" "kitty.desktop" "twine.desktop" "st.desktop")
 
@@ -49,7 +43,7 @@ VIM_SPEC=("autoload")
 DOTFILES=(".bash_history" ".git-credentials" ".gitconfig" ".histfile" ".lesshst" ".node_repl_history" ".npmrc" ".nvimlog" ".python_history" ".rvmrc" ".selected_editor" ".viminfo" ".wakatime.cfg" ".wget-hsts" ".Xclients" ".z" ".zsh_history")
 
 # quarterly backups
-QUARTER_SPEC=(".fonts" ".themes")
+QUARTER_SPEC=(".fonts" ".icons" ".moc" ".mplayer" ".ssh" ".themes")
 
 # backup one or more files or directories
 backup() {

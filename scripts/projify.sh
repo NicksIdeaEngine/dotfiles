@@ -9,6 +9,9 @@ arg="${1:-}"
 proj_launch() {
   local proj_name="${1:-}"
   local src_dir="/home/efex/proj/$proj_name"
+  if [[ ! -d $src_dir ]]; then
+    mkdir -p $src_dir
+  fi
   cd $src_dir
 
   if [[ -f $src_dir/Session.vim ]]; then

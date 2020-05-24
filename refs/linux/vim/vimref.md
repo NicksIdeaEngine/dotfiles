@@ -31,6 +31,8 @@
 - `m` and char to mark parts of project, `\`` and char to move to marker
 - `<leader>S` split to the side
 - `<leader>V` split down vertically
+- `<leader><leader>a` :AsyncRun npm run devserver
+- `<leader><leader>q` :AsyncStop
 
 ### vim folds
 
