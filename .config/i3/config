@@ -348,7 +348,7 @@ for_window [class="mpv"] border pixel 0
 for_window [class="Slack"] floating enable
 for_window [title="System Monitor"] border pixel 0
 for_window [class="vlc"] border pixel 0
-for_window [title="wiki"] floating enable resize 650 1250
+for_window [title="wiki"] floating enable resize set 850 1070
 
 # Open specific applications in floating mode (Manjaro defaults)
 for_window [title="alsamixer"] floating enable border pixel 1

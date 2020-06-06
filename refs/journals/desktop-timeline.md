@@ -115,7 +115,8 @@
   - this doesn't work due to problem with mpv, and the main packages aren't being maintained
   - the development branch of mps-youtube github repo works
 - installed mps-youtube development branch to `~/.local`
--
+- installed flake8 via `python -m pip install flake8`
+- installed `black` via `pip`
 
 ## New Things To Explore
 

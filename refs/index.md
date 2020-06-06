@@ -2,15 +2,20 @@
 
 ## Map
 
+### Quick Ref
+
+- [vimref](./linux/vim/vimref.md)
+- 
+
 ### Root
 
-- [markdown.md](markdown.md)
+- [webdev/](webdev/index.md)
+- [linux/](linux/index.md)
+- [journals/](journals/index.md)
+- [private/](private/index.md)
 - [tempref.md](tempref.md)
 - [archives/](archives/index.md)
-- [journals/](journals/index.md)
-- [linux/](linux/index.md)
-- [private/](private/index.md)
-- [webdev/](webdev/index.md)
+- [markdown.md](markdown.md)
 
 ## Key Bindings
 
@@ -36,4 +41,3 @@ For more keys, see `:h vimwiki-mappings`
 - `:VimwikiAll2HTML` -- Convert all your wiki links to HTML
 - `:help vimwiki-commands` -- list all commands
 - `:help vimwiki` -- General vimwiki help docs
-

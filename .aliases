@@ -190,7 +190,8 @@ projinit() {
     if [[ ! ${item##*/} == ".git" ]] && \
       [[ ! ${item##*/} == "node_modules" ]] && \
       [[ ! ${item##*/} == "package-lock.json" ]] && \
-      [[ ! ${item##*/} == "Session.vim" ]]; then
+      [[ ! ${item##*/} == "Session.vim" ]] && \
+      [[ ! ${item##*/} == "tags" ]]; then
       echo "Copying ${item##*/} to destination..."
       cp -rv $item $new_dir/${item##*/}
       echo "Done!"
@@ -203,9 +204,18 @@ projinit() {
 
   cd $new_dir
 
+  git init
+
   if [[ $proj_arg == "-n" ]]; then
     npm install
   fi
+}
+
+# recursively count files in target directory
+dircount() {
+  dir="${1:-}"
+
+  find $dir -type f ! -path "**/\.git" ! -path "**/\.git/**" ! -path "**/node\_modules" ! -path "**/node\_modules/**" | wc -l
 }
 
 # pacman shortcuts

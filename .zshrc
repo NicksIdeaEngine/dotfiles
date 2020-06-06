@@ -18,8 +18,13 @@ source <(navi widget zsh)
 # enable fzf with default options
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border=sharp --color='bg:237,bg+:236,info:143,border:240,spinner:108,hl:65,fg:252,header:65,fg+:252,pointer:161,marker:168,prompt:110,hl+:108' --tabstop=2"
 
+export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
+
 # Completion for kitty
 kitty + complete setup zsh | source /dev/stdin
+
+# VIM in shell
+# set editing-mode vi
 
 # Set theme. See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"

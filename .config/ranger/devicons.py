@@ -150,6 +150,7 @@ dir_node_exact_matches = {
     'public'                           : '',
     'reference'                        : '',
     'src'                              : '',
+    'static'                           : '',
 }
 
 file_node_exact_matches = {

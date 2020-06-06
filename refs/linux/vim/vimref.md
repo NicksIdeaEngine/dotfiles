@@ -28,7 +28,7 @@
 - `*` or `#` to search for current visual selection
 - `<leader>r` to search and replace selected text
 - `gV` to highlight last inserted text
-- `m` and char to mark parts of project, `\`` and char to move to marker
+- `m` and char to mark parts of project, and char to move to marker
 - `<leader>S` split to the side
 - `<leader>V` split down vertically
 - `<leader><leader>a` :AsyncRun npm run devserver
@@ -55,7 +55,9 @@
 
 ## Plugin Hotkeys
 
-### emmet-vim
+### mattn/emmet-vim
+
+https://github.com/mattn/emmet-vim
 
 `<m-e>,` to expand abbreviation
 `<m-e>,` also used to wrap selections
@@ -71,11 +73,75 @@
 `<m-e>a` make anchor from URL
 `<m-e>A` make quoted text from a URL
 
-### vim-prettier
+### editorconfig/editorconfig-vim
 
-<Leader>p to format
+https://github.com/editorconfig/editorconfig-vim
 
-### vim-surround
+### sheerun/vim-polyglot
+
+https://github.com/sheerun/vim-polyglot
+
+### alvan/vim-closetag
+
+https://github.com/alvan/vim-closetag
+
+### jiangmiao/auto-pairs
+
+https://github.com/jiangmiao/auto-pairs
+
+### dense-analysis/ale
+
+https://github.com/dense-analysis/ale
+
+- `:help ale-options` for global options
+- `:help ale-integration-options` for specific linter integration options
+- `:ALEInfo` to see what ALE has configured for current file
+- `<Plug>(ale_previous_wrap)`
+- `<Plug>(ale_next_wrap)`
+
+### prettier/vim-prettier
+
+https://github.com/prettier/vim-prettier
+
+`<Leader>p` to format
+
+### SirVer/ultisnips
+
+https://github.com/SirVer/ultisnips
+
+- `<tab>`: expands snippet
+- `<c-b>`: jumps to next placeholder
+- `<c-z>`: jumps to previous placeholder
+
+### mlaursen/vim-react-snippets
+
+https://github.com/mlaursen/vim-react-snippets
+
+### Shougo/deoplete.nvim
+
+https://github.com/Shougo/deoplete.nvim
+
+### ternjs/tern_for_vim
+
+https://github.com/ternjs/tern_for_vim
+
+`<LocalLeader>tD` - `:TernDoc`
+`<LocalLeader>tb` - `:TernDocBrowse`
+`<LocalLeader>tt` - `:TernType`
+`<LocalLeader>td` - `:TernDef`
+`<LocalLeader>tpd` - `:TernDefPreview`
+`<LocalLeader>tsd` - `:TernDefSplit`
+`<LocalLeader>ttd` - `:TernDefTab`
+`<LocalLeader>tr` - `:TernRefs`
+`<LocalLeader>tR` - `:TernRename`
+
+### carlitux/deoplete-ternjs
+
+https://github.com/carlitux/deoplete-ternjs
+
+### tpope/vim-surround
+
+https://github.com/tpope/vim-surround
 
 - `cs"'` changes `"Hello world!"` to `'Hello world!'`
 - `cs'<q>` to change to `<q>Hello world!</q>`
@@ -95,28 +161,20 @@
   - `$q` for ''
   - `$e` for ``
 
-### ultisnips
+### tpope/vim-commentary
 
-- `<tab>`: expands snippet
-- `<c-b>`: jumps to next placeholder
-- `<c-z>`: jumps to previous placeholder
-
-### vim-commentary
+https://github.com/tpope/vim-commentary
 
 _gcc_ in normal mode changes line to comment
 _gc_ in visual mode changes selected lines to comment
 
-### vim-obsession
+### vimwiki/vimwiki
 
-- `:Obsess` with optional file/directory name to start recording a session
-- `:Obsess!` to stop and throw it away.
-- Load session with `vim -S` or `:source` it
+https://github.com/vimwiki/vimwiki
 
-### nerdtree
+### iamcco/markdown-preview.nvim
 
-- <Leader>n toggles NERDTree
-
-### markdown-preview
+https://github.com/iamcco/markdown-preview.nvim
 
 still need to configure this!
 
@@ -124,40 +182,9 @@ still need to configure this!
 - nmap <M-s> <Plug>MarkdownPreviewStop
 - nmap <C-p> <Plug>MarkdownPreviewToggle
 
-### goyo.vim
+### freitass/todo.txt-vim
 
-- `:Goyo` toggle goyo
-- `:Goyo [dimension]` turn on or resize goyo
-- `:Goyo!` turn off goyo
-- `<leader><leader>f` focus mode (just limelight)
-- `<leader><leader>r` reading mode (goyo and limelight)
-
-### fzf
-
-- `<leader>f` to open FZF
-- `<c-t>` open in new tab
-- `<c-c>` open in split
-- `<c-v>` open in vsplit
-
-### coc
-
-- `<leader>;` to highlight next completion option while in insert mode
-- `<c-n>` also higlights _next_ option, goes down in list
-- `<c-p>` forces completion to appear, also highlights _previous_ option
-- `<leader>gd` go to definition (targeted by cursor)
-- `<leader>gr` go to references (targeted by cursor)
-- `<c-p>` open git-based FZF
-
-### ranger
-
-- `<leader>l` :Ranger<cr>
-- `<leader>L` :RangerNewTab<cr>
-
-### vim-ditto
-
-- `<leader>di` turn ditto on and off (word repetition)
-
-### todo.txt-vim
+https://github.com/freitass/todo.txt-vim
 
 Sorting tasks:
 
@@ -186,7 +213,44 @@ Mark as done:
 - `<localleader>X` Mark all tasks as done
 - `<localleader>D` Move completed tasks to done.txt
 
-### targets.vim
+### junegunn/goyo.vim
+
+https://github.com/junegunn/goyo.vim
+
+- `:Goyo` toggle goyo
+- `:Goyo [dimension]` turn on or resize goyo
+- `:Goyo!` turn off goyo
+- `<leader><leader>f` focus mode (just limelight)
+- `<leader><leader>r` reading mode (goyo and limelight)
+
+### junegunn/limelight.vim
+
+https://github.com/junegunn/limelight.vim
+
+### junegunn/fzf.vim
+
+https://github.com/junegunn/fzf.vim
+
+- `<leader>f` to open FZF
+- `<c-x>` open in new tab
+- `<c-c>` open in split
+- `<c-v>` open in vsplit
+- `:Rg` to use ripgrep with fzf
+  - `<cr>` to populate quickfix list
+  - `:cnext` and `:cprev` to navigate quickfix list
+- `:Helptags` to use fzf on Vim's `:help`
+- `:Snippets` for fzf snippets
+- `:Commits` for fzf commits
+- `:History:` for fzf command history
+- `:h fzf-vim-commands` for help with fzf vim commands
+
+### ludovicchabant/vim-gutentags
+
+
+
+### wellle/targets.vim
+
+https://github.com/wellle/targets.vim
 
 - `cin)` change in next parentheses
 - `da,` to delete item in comma separated list under cursor
@@ -195,6 +259,94 @@ Mark as done:
 - `2I)` selects contents within 2nd tier of surrounding parentheses
 - `2A)` selects around 2nd tier of surrounding parentheses plus whitespace on one side
 - [cheatsheet](https://github.com/wellle/targets.vim/blob/master/cheatsheet.md)
+
+### morhetz/gruvbox
+
+https://github.com/morhetz/gruvbox
+
+### neoclide/coc.nvim
+
+https://github.com/neoclide/coc.nvim
+
+- `<leader>;` to highlight next completion option while in insert mode
+- `<c-n>` also higlights _next_ option, goes down in list
+- `<c-p>` forces completion to appear, also highlights _previous_ option
+- `<leader>gd` go to definition (targeted by cursor)
+- `<leader>gr` go to references (targeted by cursor)
+- `<c-p>` open git-based FZF
+
+### tjdevries/coc-zsh
+
+https://github.com/tjdevries/coc-zsh
+
+### dbmrq/vim-ditto
+
+https://github.com/dbmrq/vim-ditto
+
+- `<leader>di` turn ditto on and off (word repetition)
+
+### justinmk/vim-sneak
+
+https://github.com/justinmk/vim-sneak
+
+### itchyny/lightline.vim
+
+https://github.com/itchyny/lightline.vim
+
+### itchyny/vim-gitbranch
+
+https://github.com/itchyny/vim-gitbranch
+
+### sainnhe/artify.vim
+
+https://github.com/sainnhe/artify.vim
+
+### macthecadillac/lightline-gitdiff
+
+https://github.com/macthecadillac/lightline-gitdiff
+
+### maximbaz/lightline-ale
+
+https://github.com/maximbaz/lightline-ale
+
+### skywind3000/asyncrun.vim
+
+https://github.com/skywind3000/asyncrun.vim
+
+### albertomontesg/lightline-asyncrun
+
+https://github.com/albertomontesg/lightline-asyncrun
+
+### sainnhe/tmuxline.vim
+
+https://github.com/sainnhe/tmuxline.vim
+
+### rbgrouleff/bclose.vim
+
+https://github.com/rbgrouleff/bclose.vim
+
+### francoiscabrol/ranger.vim
+
+https://github.com/francoiscabrol/ranger.vim
+
+- `<leader>l` :Ranger<cr>
+- `<leader>L` :RangerNewTab<cr>
+
+### wakatime/vim-wakatime
+
+https://github.com/wakatime/vim-wakatime
+
+### tpope/vim-obsession
+
+https://github.com/tpope/vim-obsession
+
+- `:Obsess` with optional file/directory name to start recording a session
+- `:Obsess!` to stop and throw it away.
+- Load session with `vim -S` or `:source` it
+
+### ryanoasis/vim-devicons
+
+https://github.com/ryanoasis/vim-devicons
 
 ## Notes from How to Configure Vim like VSCode video by Ben Awad
 

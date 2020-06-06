@@ -17,8 +17,9 @@ file_list=(
   ".config/polybar/colors.ini"
   ".tmux/lightline_visual"
   ".config/rofi/gruvbox.rasi"
-  ".mozilla/firefox/65rf3aso.default-release/chrome/userChrome.css"
 )
+
+# ".mozilla/firefox/65rf3aso.default-release/chrome/userChrome.css"
 
 switcher() {
   new_scheme_type=${1:-}
@@ -51,10 +52,11 @@ switcher() {
     done
   done
 
-  sed -i "s/background=$old_scheme_type/background=$new_scheme_type/g" /home/efex/.config/nvim/init.vim
+  sed -i "s/background=$old_scheme_type/background=$new_scheme_type/g" \
+    /home/efex/.config/nvim/plugin_config.vim
   mv "$HOME/.cache/kitty-$old_scheme_type" "$HOME/.cache/kitty-$new_scheme_type"
   i3-msg "restart"
-  xrdb ~/.Xresources
+  xrdb -merge ~/.Xresources
   mv "$HOME/.Xresources" "$dot_dir/.Xresources"
   ln -s /home/efex/dots/.Xresources /home/efex/.Xresources
 

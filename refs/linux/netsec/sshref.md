@@ -64,3 +64,5 @@ That will display the welcome page.
   - AllowTcpForwarding no
   - X11Forwarding no
   - AllowUsers <user>
+- `~/.ssh/known_hosts`
+- `~/.ssh/environment-sudopup`

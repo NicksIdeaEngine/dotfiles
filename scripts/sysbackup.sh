@@ -16,7 +16,7 @@ DEST="$HOME/zackups"
 HOME_SPEC=(".config" ".config/google-chrome/Default" ".config/mpd" ".config/rclone" ".config/rescuetime" ".config/systemd/user" ".config/Twine" ".local/share/applications" ".vim")
 
 # .config specifications
-CONFIG_SPEC=("autostart" "htop" "vlc" "redshift.conf" "user-dirs.dirs")
+CONFIG_SPEC=("autostart" "clipit" "htop" "vlc" "redshift.conf" "user-dirs.dirs")
 
 # google chrome specific file
 CHROME_SPEC=("Preferences")
@@ -129,7 +129,7 @@ clean_dir() {
 }
 
 # check for signal file to see if update is needed
-if [[ ! -f "$DEST/$DAYOFMONTH/$MONTH" ]]; then
+if [[ -f "$DEST/$DAYOFMONTH/$MONTH" ]]; then
   clean_dir "$DEST/$DAYOFMONTH" "$MONTH"
   start_daily "$DAYOFMONTH"
   DAILY_MSG="Rotating daily backup completed."
@@ -137,7 +137,7 @@ else
   DAILY_MSG="Rotating daily backup not needed."
 fi
 
-if [[ ! -f "$DEST/current/$DAYOFMONTH" ]]; then
+if [[ -f "$DEST/current/$DAYOFMONTH" ]]; then
   clean_dir "$DEST/current" "$DAYOFMONTH"
   start_daily "current"
   CURRENT_MSG="Current daily backup completed."
@@ -145,7 +145,7 @@ else
   CURRENT_MSG="Current daily backup not needed."
 fi
 
-if [[ ! -f "$DEST/quarterly/$QUARTER/$YEAR" ]]; then
+if [[ -f "$DEST/quarterly/$QUARTER/$YEAR" ]]; then
   clean_dir "$DEST/quarterly/$QUARTER" "$YEAR"
   start_quarterly "quarterly/$QUARTER"
   QUARTER_MSG="Quarterly backup completed."
