@@ -11,6 +11,7 @@
 
 - [webdev/](webdev/index.md)
 - [linux/](linux/index.md)
+- [rust](rust.md)
 - [journals/](journals/index.md)
 - [private/](private/index.md)
 - [tempref.md](tempref.md)

@@ -15,6 +15,9 @@ Plug 'alvan/vim-closetag'
 " https://github.com/jiangmiao/auto-pairs
 Plug 'jiangmiao/auto-pairs'
 
+" https://github.com/chiel92/vim-autoformat
+Plug 'chiel92/vim-autoformat'
+
 " https://github.com/sheerun/vim-polyglot
 Plug 'sheerun/vim-polyglot'
 
@@ -132,9 +135,6 @@ Plug 'tpope/vim-fugitive'
 
 " https://github.com/morhetz/gruvbox
 Plug 'morhetz/gruvbox'
-
-" https://github.com/lilydjwg/colorizer
-Plug 'lilydjwg/colorizer'
 
 " https://github.com/junegunn/goyo.vim
 Plug 'junegunn/goyo.vim'

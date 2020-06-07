@@ -10,5 +10,8 @@ export PATH="$HOME/bin:$PATH"
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
 
+# path for cargo/rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # t path
 # export PATH="/home/efex/.local/share/applications/tor-browser_en-US:$PATH"

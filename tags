@@ -246,6 +246,7 @@
 <Space>	old/example-2-init.vim	/^vnoremap <Space> za$/;"	m
 <Tab>	old/example-2-init.vim	/^nnoremap <Tab> %$/;"	m
 <Tab>	old/example-2-init.vim	/^vnoremap <Tab> %$/;"	m
+<c-e>	.config/nvim/keys.vim	/^nnoremap <c-e> 4<c-e>$/;"	m
 <c-h>	.config/nvim/keys.vim	/^nnoremap <c-h> <c-w>h$/;"	m
 <c-j>	.config/nvim/keys.vim	/^nnoremap <c-j> <c-w>j$/;"	m
 <c-j>	old/example-init.vim	/^    nmap <silent> <buffer> <c-j> <c-n>o$/;"	m
@@ -258,6 +259,7 @@
 <c-p>	old/example-init.vim	/^    nnoremap <silent> <buffer> <c-p> :call search('^  \\X*\\zs\\x', 'b')<cr>$/;"	m
 <c-u>	old/example-2-init.vim	/^inoremap <c-u> <esc>viwUea$/;"	m
 <c-u>	old/example-2-init.vim	/^nnoremap <c-u> viwUe$/;"	m
+<c-y>	.config/nvim/keys.vim	/^nnoremap <c-y> 4<c-y>$/;"	m
 <cr>	old/example-2-init.vim	/^inoremap <expr> <cr> pumvisible() ? "\\<c-y>" : "\\<cr>"$/;"	m
 <down>	old/example-init.vim	/^inoremap <expr> <down> pumvisible() ? "\\<Space>\\<Backspace>\\<down>" : "\\<down>"$/;"	m
 <esc>	.config/nvim/keys.vim	/^inoremap <esc> <nop>$/;"	m
@@ -269,6 +271,7 @@
 <leader>'	old/example-2-init.vim	/^vnoremap <leader>' <esc>a'<esc>gvo<esc>i'<esc>gvo<esc>ll$/;"	m
 <leader>,	.config/nvim/keys.vim	/^nnoremap <leader>, m'A,<esc>`'$/;"	m
 <leader>,	old/example-2-init.vim	/^nnoremap <leader>, :set cursorline!<cr>  " toggle highlighting the cursor line$/;"	m
+<leader>.	.config/nvim/functions.vim	/^nnoremap <silent> <leader>. :call nvim_open_win(bufnr('%'), v:true, {'relative': 'editor', 'anch/;"	m
 <leader>.	old/example-2-init.vim	/^nnoremap <leader>. :Tags<cr>$/;"	m
 <leader>/	.config/nvim/keys.vim	/^nnoremap <leader>\/ za$/;"	m
 <leader>/	old/example-2-init.vim	/^nnoremap <silent> <leader>\/ :nohlsearch<CR>$/;"	m
@@ -287,12 +290,12 @@
 <leader><Tab>	old/example-init.vim	/^vnoremap <silent> <leader><Tab> :Neoformat! &ft<CR>$/;"	m
 <leader><leader>	old/example-init.vim	/^nnoremap <silent> <leader><leader> :call quickmenu#toggle(0)<cr>$/;"	m
 <leader><leader>a	.config/nvim/keys.vim	/^nnoremap <leader><leader>a :AsyncRun gatsby develop<cr>$/;"	m
-<leader><leader>a	.config/nvim/keys.vim	/^nnoremap <leader><leader>a :AsyncRun npm run devserver<cr>$/;"	m
 <leader><leader>f	.config/nvim/plugin_config.vim	/^nnoremap <silent> <leader><leader>f :<c-u>Limelight!!<cr>$/;"	m
+<leader><leader>n	.config/nvim/keys.vim	/^nnoremap <leader><leader>n :setlocal number! relativenumber!<cr>$/;"	m
 <leader><leader>q	.config/nvim/keys.vim	/^nnoremap <leader><leader>q :AsyncStop<cr>$/;"	m
 <leader><leader>r	.config/nvim/plugin_config.vim	/^nnoremap <silent> <leader><leader>r :<c-u>Goyo<cr>$/;"	m
 <leader><leader>s	.config/nvim/keys.vim	/^nnoremap <leader><leader>s ?{<cr>jV\/^\\s*\\}?$<cr>k:sort<cr>:noh<cr>$/;"	m
-<leader>=	.config/nvim/keys.vim	/^map <leader>= <c-w>=$/;"	m
+<leader>=	.config/nvim/keys.vim	/^nnoremap <leader>= <c-w>=$/;"	m
 <leader>>	.config/nvim/keys.vim	/^nnoremap <leader>> <c-w><c-r>$/;"	m
 <leader>A	old/example-2-init.vim	/^nnoremap <leader>A :RopeAutoImport<cr>$/;"	m
 <leader>B	.config/nvim/keys.vim	/^noremap <leader>B :%bd\\|e#<cr>$/;"	m
@@ -363,6 +366,7 @@
 <leader>p	old/example-init.vim	/^vnoremap <leader>p "+p$/;"	m
 <leader>q	.config/nvim/keys.vim	/^noremap <leader>q :bp<cr>$/;"	m
 <leader>q	old/example-2-init.vim	/^nnoremap <leader>q :bd<CR>   " Quickly close the current buffer$/;"	m
+<leader>r	.config/nvim/keys.vim	/^nnoremap <leader>r :Autoformat<cr>$/;"	m
 <leader>r	old/example-2-init.vim	/^nnoremap <leader>r :let @\/='\\<<C-R>=expand("<cword>")<CR>\\>'<CR>:set hls<CR>:%s\/\/$/;"	m
 <leader>s	.config/nvim/keys.vim	/^nnoremap <leader>s :%s\/\/\/g<left><left><left>$/;"	m
 <leader>s	old/example-2-init.vim	/^nnoremap <leader>s vip!sort -f<CR><Esc>$/;"	m
@@ -372,6 +376,14 @@
 <leader>sv	.config/nvim/keys.vim	/^nmap <silent> <leader>sv :so $MYVIMRC<cr>$/;"	m
 <leader>sv	old/example-2-init.vim	/^nnoremap <silent> <leader>sv :so $MYVIMRC<CR>$/;"	m
 <leader>t	old/example-2-init.vim	/^nnoremap <leader>t :Files<cr>$/;"	m
+<leader>tc	.config/nvim/keys.vim	/^nnoremap <leader>tc :tabclose<cr>$/;"	m
+<leader>te	.config/nvim/keys.vim	/^nnoremap <leader>te :tabedit <c-r>=expand("%:p:h")<cr>\/$/;"	m
+<leader>th	.config/nvim/keys.vim	/^nnoremap <leader>th :tabprev$/;"	m
+<leader>tj	.config/nvim/keys.vim	/^nnoremap <leader>tj :exe "tabn ".g:lasttab<cr>$/;"	m
+<leader>tl	.config/nvim/keys.vim	/^nnoremap <leader>tl :tabnext$/;"	m
+<leader>tm	.config/nvim/keys.vim	/^nnoremap <leader>tm :tabmove$/;"	m
+<leader>tn	.config/nvim/keys.vim	/^nnoremap <leader>tn :tabnew<cr>$/;"	m
+<leader>to	.config/nvim/keys.vim	/^nnoremap <leader>to :tabonly<cr>$/;"	m
 <leader>v	old/example-2-init.vim	/^nnoremap <leader>v V`]$/;"	m
 <leader>w	.config/nvim/keys.vim	/^noremap <leader>w :bn<cr>$/;"	m
 <leader>w	old/example-2-init.vim	/^nnoremap <leader>w :ArgWrap<cr>$/;"	m
@@ -387,7 +399,6 @@
 <m-j>	.config/nvim/keys.vim	/^nnoremap <m-j> :res -1<cr>$/;"	m
 <m-k>	.config/nvim/keys.vim	/^nnoremap <m-k> :res +1<cr>$/;"	m
 <m-l>	.config/nvim/keys.vim	/^nnoremap <m-l> :vertical res +1<cr>$/;"	m
-<m-z>	.config/nvim/functions.vim	/^nnoremap <silent> <m-z> :call nvim_open_win(bufnr('%'), v:true, {'relative': 'editor', 'anchor':/;"	m
 <pagedown>	old/example-init.vim	/^nnoremap <silent> <pagedown> :<C-u>call comfortable_motion#flick(130)<CR>$/;"	m
 <pageup>	old/example-init.vim	/^nnoremap <silent> <pageup> :<C-u>call comfortable_motion#flick(-130)<CR>$/;"	m
 <right>	old/example-init.vim	/^inoremap <expr> <right> pumvisible() ? "\\<Space>\\<Backspace>\\<right>" : "\\<right>"$/;"	m
@@ -466,6 +477,7 @@ CURSOR_SAVE	.config/repos/st/st.c	/^	CURSOR_SAVE,$/;"	e	enum:cursor_movement	fil
 CURSOR_WRAPNEXT	.config/repos/st/st.c	/^	CURSOR_WRAPNEXT = 1,$/;"	e	enum:cursor_state	file:
 CXXFLAGS	.makepkg.conf	/^CXXFLAGS="-march=x86-64 -mtune=generic -O2 -pipe -fstack-protector-strong -fno-plt"$/;"	k
 Cache busting	refs/webdev/notes/index.md	/^#### Cache busting$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Production Build
+Cargo	refs/notes.md	/^### Cargo$/;"	S	section:Notes On Rust""Traversy Media's Rust Crash Course
 Cascading Style Sheets	refs/webdev/css/index.md	/^# Cascading Style Sheets$/;"	c
 Centralizing HTTP Requests	refs/webdev/notes/index.md	/^#### Centralizing HTTP Requests$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""HTTP Calls
 Challenge	refs/webdev/notes/index.md	/^#### Challenge$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Production Deploy
@@ -682,6 +694,7 @@ Map	refs/linux/dotfiles/index.md	/^## Map$/;"	s	chapter:The Endless Tinkering Of
 Map	refs/linux/index.md	/^## Map$/;"	s	chapter:Linux Exploration
 Map	refs/linux/netsec/index.md	/^## Map$/;"	s	chapter:Network Security
 Map	refs/linux/vim/index.md	/^## Map$/;"	s	chapter:Vim/Neovim
+Map	refs/rust.md	/^## Map$/;"	s	chapter:Rust Construction
 Map	refs/webdev/css/index.md	/^## Map$/;"	s	chapter:Cascading Style Sheets
 Map	refs/webdev/dev-env/index.md	/^## Map$/;"	s	chapter:Developer Environment
 Map	refs/webdev/html/index.md	/^## Map$/;"	s	chapter:Hyper Text Markup Language
@@ -709,6 +722,7 @@ New Things To Explore	refs/journals/desktop-timeline.md	/^## New Things To Explo
 Normal Mode	refs/index.md	/^### Normal Mode$/;"	S	section:Home of the Wiki""Key Bindings
 Notes	refs/archives/ubunturef.md	/^# Notes$/;"	c
 Notes	refs/webdev/notes/index.md	/^# Notes$/;"	c
+Notes On Rust	refs/notes.md	/^# Notes On Rust$/;"	c
 Notes from "Your Linux Toolbox" Zine Collection	refs/archives/ubunturef.md	/^## Notes from "Your Linux Toolbox" Zine Collection$/;"	s	chapter:Notes
 Notes from Anywhere Prior to Sorting	refs/linux/vim/temp-notes.md	/^# Notes from Anywhere Prior to Sorting$/;"	c
 Notes from How to Configure Vim like VSCode video by Ben Awad	refs/linux/vim/vimref.md	/^## Notes from How to Configure Vim like VSCode video by Ben Awad$/;"	s	chapter:vim ref
@@ -776,6 +790,7 @@ Reference File For All My Ricing	refs/linux/dotfiles/i3hotkeys.md	/^# Reference 
 Responsive Layout (7 days)	refs/webdev/notes/web-dev-2020.md	/^### Responsive Layout (7 days)$/;"	S	section:WebDev Journey""Fundamentals
 Roles Involved With Creating Websites & Apps	refs/webdev/notes/index.md	/^## Roles Involved With Creating Websites & Apps$/;"	s	chapter:Notes on UX Design Course
 Root	refs/index.md	/^### Root$/;"	S	section:Home of the Wiki""Map
+Rust Construction	refs/rust.md	/^# Rust Construction$/;"	c
 SRCEXT	.makepkg.conf	/^SRCEXT='.src.tar.gz'$/;"	k
 SSD Partitioning	refs/archives/desktop-distro-deploy.md	/^### SSD Partitioning$/;"	S	section:Instructions on Deploying New Manjaro Install""Step 1: Installation
 SSD Partitioning	refs/linux/dotfiles/distrodeploy.md	/^### SSD Partitioning$/;"	S	section:Instructions on Deploying New Manjaro Install""Step 1: Installation
@@ -879,6 +894,7 @@ Tool Selection	refs/webdev/notes/index.md	/^#### Tool Selection$/;"	t	subsection
 Tools for Creating Your Own Linux Distro	refs/archives/ubunturef.md	/^## Tools for Creating Your Own Linux Distro$/;"	s	chapter:Things to Investigate
 Transpiling	refs/webdev/dev-env/js-dev-env-starter-kit.md	/^## Transpiling$/;"	s	chapter:JavaScript Developer Environment Starter Kit
 Transpiling	refs/webdev/notes/index.md	/^### Transpiling$/;"	S	section:Notes on Building a JS Dev Environment""Intro
+Traversy Media's Rust Crash Course	refs/notes.md	/^## Traversy Media's Rust Crash Course$/;"	s	chapter:Notes On Rust
 UTF_INVALID	.config/repos/st/st.c	/^#define UTF_INVALID /;"	d	file:
 UTF_SIZ	.config/repos/st/st.c	/^#define UTF_SIZ /;"	d	file:
 Useful Commands	refs/journals/laptop-timeline.md	/^## Useful Commands$/;"	s	chapter:Laptop Timeline
@@ -915,8 +931,8 @@ You need a starter kit	refs/webdev/notes/index.md	/^### You need a starter kit$/
 YouTube Videos	refs/markdown.md	/^# YouTube Videos$/;"	c
 ZZ	.config/nvim/keys.vim	/^nnoremap ZZ :wq<cr>$/;"	m
 \\	old/example-2-init.vim	/^nnoremap \\ :Ag<SPACE>$/;"	m
-\\<S-Tab>	.config/nvim/keys.vim	/^inoremap \\<S-Tab> <esc>V<<esc>la$/;"	m
-\\<Tab>	.config/nvim/keys.vim	/^inoremap \\<Tab> <esc>V><esc>la$/;"	m
+\\<s-tab>	.config/nvim/keys.vim	/^inoremap \\<s-tab> <esc>V<<esc>la$/;"	m
+\\<tab>	.config/nvim/keys.vim	/^inoremap \\<tab> <esc>V><esc>la$/;"	m
 \x20              terminal	.config/ranger/rifle.conf	/^ext x?html?, has w3m,               terminal = w3m "$@"$/;"	k
 \x20             terminal	.config/ranger/rifle.conf	/^ext x?html?, has lynx,              terminal = lynx -- "$@"$/;"	k
 \x20            terminal	.config/ranger/rifle.conf	/^ext x?html?, has links,             terminal = links "$@"$/;"	k
@@ -1561,6 +1577,8 @@ g:elm_format_autosave	old/example-2-init.vim	/^let g:elm_format_autosave = 1$/;"
 g:expand_region_text_objects	old/example-2-init.vim	/^let g:expand_region_text_objects = {$/;"	v
 g:flake8_show_in_gutter	old/example-2-init.vim	/^let g:flake8_show_in_gutter=0$/;"	v
 g:flake8_show_quickfix	.config/nvim/plugin_config.vim	/^let g:flake8_show_quickfix=0$/;"	v
+g:formatdef_rustfmt	.config/nvim/plugin_config.vim	/^let g:formatdef_rustfmt = '"rustfmt"'$/;"	v
+g:formatters_rust	.config/nvim/plugin_config.vim	/^let g:formatters_rust = ['rustfmt']$/;"	v
 g:fzf_action	.config/nvim/plugin_config.vim	/^let g:fzf_action = {$/;"	v
 g:fzf_colors	.config/nvim/plugin_config.vim	/^let g:fzf_colors =$/;"	v
 g:gen_tags#blacklist	old/example-init.vim	/^    let g:gen_tags#blacklist = ['$HOME']$/;"	v
@@ -1598,6 +1616,7 @@ g:javascript_plugin_flow	old/example-2-init.vim	/^let g:javascript_plugin_flow =
 g:javascript_plugin_jsdoc	old/example-2-init.vim	/^let g:javascript_plugin_jsdoc = 0$/;"	v
 g:last_fold_column_width	old/example-2-init.vim	/^        let g:last_fold_column_width = &foldcolumn$/;"	v
 g:last_fold_column_width	old/example-2-init.vim	/^let g:last_fold_column_width = 4  " Pick a sane default for the foldcolumn$/;"	v
+g:lasttab	.config/nvim/keys.vim	/^let g:lasttab = 1$/;"	v
 g:lightline	.config/nvim/plugin_config.vim	/^let g:lightline = { 'colorscheme': "gruvbox" }$/;"	v
 g:lightline	.config/nvim/plugin_config.vim	/^let g:lightline.active = {$/;"	v
 g:lightline	.config/nvim/plugin_config.vim	/^let g:lightline.component = {$/;"	v

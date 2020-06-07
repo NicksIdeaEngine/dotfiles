@@ -7,6 +7,13 @@
 " editorconfig/editorconfig-vim {{{
 " https://github.com/editorconfig/editorconfig-vim
 " }}}
+" chiel92/vim-autoformat {{{
+" https://github.com/chiel92/vim-autoformat
+
+let g:formatdef_rustfmt = '"rustfmt"'
+let g:formatters_rust = ['rustfmt']
+
+" }}}
 " sheerun/vim-polyglot {{{
 " https://github.com/sheerun/vim-polyglot
 

@@ -45,7 +45,7 @@ set wrap                    " enable text wrapping
 set linebreak               " wrap long lines at a character in 'breakat'
 set textwidth=80            " set text to wrap past column 80
 set colorcolumn=+1          " add colored column at column 81
-set formatoptions=tcqon1    " set text formatting options
+set formatoptions=tcoqn1    " set text formatting options
 set magic                   " turn magic on for regular expressions
 " }}}
 " searching {{{

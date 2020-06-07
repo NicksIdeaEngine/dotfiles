@@ -7,6 +7,12 @@
 " toggle spellcheck
 map! <F6> :setlocal spell! spelllang=en_us<cr>
 
+" spellcheck shortcuts using <leader>
+" map <leader>sn ]s
+" map <leader>sp [s
+" map <leader>sa zg
+" map <leader>s? z=
+
 " Allow quick additions to the spelling dict
 " nnoremap <leader>g :spellgood <c-r><c-w>
 
@@ -50,6 +56,10 @@ nnoremap gV `[v`]
 vmap < <gv
 vmap > >gv
 
+" Speed up scrolling of the viewport slightly
+nnoremap <c-e> 4<c-e>
+nnoremap <c-y> 4<c-y>
+
 " quick escape
 inoremap jk <esc>
 
@@ -57,8 +67,24 @@ inoremap jk <esc>
 inoremap <esc> <nop>
 
 " tab while in insert mode
-inoremap \<Tab> <esc>V><esc>la
-inoremap \<S-Tab> <esc>V<<esc>la
+inoremap \<tab> <esc>V><esc>la
+inoremap \<s-tab> <esc>V<<esc>la
+
+" surround visual selection in symbol
+" vnoremap $1 <esc>`>a)<esc>`<i(<esc>
+" vnoremap $2 <esc>`>a]<esc>`<i[<esc>
+" vnoremap $3 <esc>`>a}<esc>`<i{<esc>
+" vnoremap $$ <esc>`>a"<esc>`<i"<esc>
+" vnoremap $q <esc>`>a'<esc>`<i'<esc>
+" vnoremap $e <esc>`>a`<esc>`<i`<esc>
+
+" Map auto complete of (, ", ', [
+" inoremap $1 ()<esc>i
+" inoremap $2 []<esc>i
+" inoremap $3 {}<esc>i
+" inoremap $4 {<esc>o}<esc>O
+" inoremap $q ''<esc>i
+" inoremap $e ""<esc>i
 
 " }}}
 " searching {{{
@@ -72,6 +98,13 @@ nnoremap <leader>s :%s///g<left><left><left>
 " smarter vim searching that turns off vim's default regex characters
 nnoremap / /\v
 vnoremap / /\v
+
+" search for current selection
+" vnoremap <silent> * :call VisualSelection('f')<cr>
+" vnoremap <silent> # :call VisualSelection('b')<cr>
+
+" search and replace selected text
+" vnoremap <silent> <leader>r :call VisualSelection('replace')<cr>
 
 " }}}
 " folding {{{
@@ -88,7 +121,7 @@ nnoremap z4 :set foldlevel=4<cr>
 nnoremap z5 :set foldlevel=5<cr>
 
 " }}}
-" windows, layout, & workspace {{{
+" tabs, windows, & layout {{{
 
 " better window navigation
 nnoremap <c-j> <c-w>j
@@ -116,7 +149,27 @@ nnoremap <m-l> :vertical res +1<cr>
 nnoremap <m-h> :vertical res -1<cr>
 
 " auto resize all windows
-map <leader>= <c-w>=
+nnoremap <leader>= <c-w>=
+
+" better tab management
+nnoremap <leader>tn :tabnew<cr>
+nnoremap <leader>to :tabonly<cr>
+nnoremap <leader>tc :tabclose<cr>
+nnoremap <leader>tm :tabmove
+nnoremap <leader>tl :tabnext
+nnoremap <leader>th :tabprev
+
+" Let 'tl' toggle between this and the last accessed tab
+let g:lasttab = 1
+nnoremap <leader>tj :exe "tabn ".g:lasttab<cr>
+au TabLeave * let g:lasttab = tabpagenr()
+
+" Opens a new tab with the current buffer's path
+" Super useful when editing files in the same directory
+nnoremap <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
+
+" Toggle line numbers
+nnoremap <leader><leader>n :setlocal number! relativenumber!<cr>
 
 " }}}
 " plugin specific {{{
@@ -130,6 +183,8 @@ command! PIU PlugInstall | PlugUpdate | PlugUpgrade
 " fzf hotkeys
 nnoremap <c-p> :GFiles<cr>
 
+nnoremap <leader>r :Autoformat<cr>
+
 " }}}
 " webdev mappings {{{
 
@@ -137,8 +192,7 @@ nnoremap <c-p> :GFiles<cr>
 nnoremap <leader><leader>s ?{<cr>jV/^\s*\}?$<cr>k:sort<cr>:noh<cr>
 
 " launch dev servers
-nnoremap <leader><leader>a :AsyncRun npm run devserver<cr>
-nnoremap <leader><leader>q :AsyncStop<cr>
+" nnoremap <leader><leader>a :AsyncRun npm run devserver<cr>
 nnoremap <leader><leader>a :AsyncRun gatsby develop<cr>
 nnoremap <leader><leader>q :AsyncStop<cr>
 
@@ -162,6 +216,14 @@ noremap <leader>B :%bd\|e#<cr>
 
 " show list of buffers
 " noremap <leader>w :ls<cr>
+
+" Specify the behavior when switching between buffers
+" not sure if this is needed
+" try
+"   set switchbuf=useopen,usetab,newtab
+"   set stal=2
+" catch
+" endtry
 
 " }}}
 " final touch {{{

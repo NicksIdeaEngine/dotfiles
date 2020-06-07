@@ -26,6 +26,9 @@ kitty + complete setup zsh | source /dev/stdin
 # VIM in shell
 # set editing-mode vi
 
+# rust env var
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+
 # Set theme. See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 

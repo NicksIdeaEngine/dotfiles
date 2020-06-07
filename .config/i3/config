@@ -285,6 +285,7 @@ $smod4+9    $ex $scr/sink-switch.sh --headphones
 $mod4+8     $ex $scr/alertr.sh --cpustatus --notify
 $mod4+7     $ex $scr/alertr.sh --gpustatus --notify
 $mod4+6     $ex $scr/alertr.sh --fanstatus --notify
+$mod4+1     $ex $scr/rotate-monitor.sh
 $mod4+minus $ex $scr/colorswitch.sh
 # general computer stats report
 # redshift

@@ -52,17 +52,16 @@ if has("autocmd")
     " bind <f1> to show the keyword under cursor
     autocmd filetype vim noremap <buffer> <F1> <esc>:help <c-r><c-w><cr>
     autocmd filetype vim noremap! <buffer> <F1> <esc>:help <c-r><c-w><cr>
-    autocmd filetype vim setlocal foldmethod=marker
   augroup end "}}}
   augroup css_files "{{{
     au!
-    autocmd filetype css,less setlocal foldmethod=marker foldmarker={,}
+    " enable folding via {}, and start with them open
+    autocmd filetype css,scss setlocal foldmarker={,}
+    autocmd filetype css,scss setlocal foldlevelstart=99
   augroup end "}}}
   augroup javascript_files "{{{
     au!
-    autocmd filetype javascript setlocal expandtab
     autocmd filetype javascript setlocal listchars=trail:·,extends:#,nbsp:·
-    autocmd filetype javascript setlocal foldmethod=marker
     autocmd filetype javascript setlocal foldmarker={,}
     autocmd filetype javascript setlocal foldlevelstart=99
   augroup end " }}}
@@ -74,8 +73,6 @@ if has("autocmd")
     autocmd filetype python setlocal shiftwidth=4
     autocmd filetype python setlocal softtabstop=4
     autocmd filetype python setlocal tabstop=4
-    autocmd filetype python setlocal expandtab
-    autocmd filetype python setlocal autoindent
     autocmd filetype python setlocal fileformat=unix
     autocmd filetype python match ErrorMsg '\%>120v.\+'
 
@@ -96,9 +93,21 @@ if has("autocmd")
   augroup rust_files "{{{
     au!
     " Auto-wrap text around 74 chars
-    autocmd filetype *.rs setlocal textwidth=74
-    autocmd filetype *.rs setlocal formatoptions+=nqt
-    autocmd filetype *.rs match ErrorMsg '\%>74v.\+'
+    autocmd filetype rust setlocal textwidth=74
+    " autocmd filetype rust setlocal formatoptions+=nqt
+    autocmd filetype rust setlocal foldmarker={,}
+    autocmd filetype rust setlocal foldlevelstart=99
+    autocmd filetype rust match ErrorMsg '\%>74v.\+'
+
+    " auto format using cargo fmt
+    autocmd BufWritePre *.rs execute ':Autoformat'
+
+    " racer mappings
+    " autocmd FileType rust nmap <buffer> gd         <Plug>(rust-def)
+    " autocmd FileType rust nmap <buffer> gs         <Plug>(rust-def-split)
+    " autocmd FileType rust nmap <buffer> gx         <Plug>(rust-def-vertical)
+    " autocmd FileType rust nmap <buffer> gt         <Plug>(rust-def-tab)
+    " autocmd FileType rust nmap <buffer> <leader>gd <Plug>(rust-doc)
   augroup end " }}}
 endif
 
@@ -132,8 +141,8 @@ nnoremap <c-n> :call OpenTerminal()<cr>
 " }}}
 " dropdown, persistent terminal {{{
 
-nnoremap <silent> <m-z> :call nvim_open_win(bufnr('%'), v:true, {'relative': 'editor', 'anchor': 'NW', 'width': winwidth(0), 'height': 2*winheight(0)/5, 'row': 1, 'col': 0})<CR>:call TerminalToggle()<CR>
-tnoremap <silent> <m-z> <C-\><C-n>:call TerminalToggle()<CR>:q<CR>
+nnoremap <silent> <leader>. :call nvim_open_win(bufnr('%'), v:true, {'relative': 'editor', 'anchor': 'NW', 'width': winwidth(0), 'height': 2*winheight(0)/5, 'row': 1, 'col': 0})<CR>:call TerminalToggle()<CR>
+tnoremap <silent> <leader>. <C-\><C-n>:call TerminalToggle()<CR>:q<CR>
 
 function! TerminalCreate() abort
   if !has('nvim')

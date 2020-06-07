@@ -5,126 +5,15 @@
 " This file is a temporary holder file for vimrc related ideas I want to review
 " and possibly use in my setup. This file isn't called by init.vim
 
-" plugin ideas {{{
-
-" markdown open preview
-" image viewing
-" echodoc
-" cope
-
-" Git
-" https://github.com/tpope/vim-fugitive
-" https://github.com/mhinz/vim-signify
-
-" rust {{{
-" could be used for autocompiling rust, but needs a weird hack from
-" https://seenaburns.com/vim-setup-for-rust/ to work
-" https://github.com/neomake/neomake
-" here's the hack:
-" " Neomake
-" Gross hack to stop Neomake running when exitting because it creates a zombie cargo check process which holds the lock and never exits. But then, if you only have QuitPre, closing one pane will disable neomake, so BufEnter reenables when you enter another buffer.
-" let s:quitting = 0
-" au QuitPre *.rs let s:quitting = 1
-" au BufEnter *.rs let s:quitting = 0
-" au BufWritePost *.rs if ! s:quitting | Neomake | else | echom "Neomake disabled"| endif
-" let g:neomake_warning_sign = {'text': '?'}
-
-" potentially use rusty-tags for ctags, or ~/.ctags file?
-" https://github.com/dan-t/rusty-tags
-
-" cargo watch
-" https://github.com/passcod/cargo-watch
-
-" }}}
-" vim-multiple-cursors {{{
-" let g:multi_cursor_use_default_mapping=0
-
-" Default mapping
-" let g:multi_cursor_start_word_key      = '<C-s>'
-" let g:multi_cursor_select_all_word_key = '<A-s>'
-" let g:multi_cursor_start_key           = 'g<C-s>'
-" let g:multi_cursor_select_all_key      = 'g<A-s>'
-" let g:multi_cursor_next_key            = '<C-s>'
-" let g:multi_cursor_prev_key            = '<C-p>'
-" let g:multi_cursor_skip_key            = '<C-x>'
-" let g:multi_cursor_quit_key            = '<Esc>'
-" }}}
-
-" }}}
 " keymap ideas {{{
 
-" better tab management
-" map <leader>tn :tabnew<cr>
-" map <leader>to :tabonly<cr>
-" map <leader>tc :tabclose<cr>
-" map <leader>tm :tabmove
-" map <leader>t<leader> :tabnext
-
-" Let 'tl' toggle between this and the last accessed tab
-" let g:lasttab = 1
-" nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
-" au TabLeave * let g:lasttab = tabpagenr()
-
-" Opens a new tab with the current buffer's path
-" Super useful when editing files in the same directory
-" map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
-
-" Specify the behavior when switching between buffers
-" try
-"   set switchbuf=useopen,usetab,newtab
-"   set stal=2
-" catch
-" endtry
-
-" Return to last edit position when opening files (You want this!)
-" au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
-" Pressing ,ss will toggle and untoggle spell checking
-" map <leader>ss :setlocal spell!<cr>
-
-" Shortcuts using <leader>
-" map <leader>sn ]s
-" map <leader>sp [s
-" map <leader>sa zg
-" map <leader>s? z=
-
-" surround visual selection in symbol
-" vnoremap $1 <esc>`>a)<esc>`<i(<esc>
-" vnoremap $2 <esc>`>a]<esc>`<i[<esc>
-" vnoremap $3 <esc>`>a}<esc>`<i{<esc>
-" vnoremap $$ <esc>`>a"<esc>`<i"<esc>
-" vnoremap $q <esc>`>a'<esc>`<i'<esc>
-" vnoremap $e <esc>`>a`<esc>`<i`<esc>
-
-" Map auto complete of (, ", ', [
-" inoremap $1 ()<esc>i
-" inoremap $2 []<esc>i
-" inoremap $3 {}<esc>i
-" inoremap $4 {<esc>o}<esc>O
-" inoremap $q ''<esc>i
-" inoremap $e ""<esc>i
-
 " iab xdate <C-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
-
-" search for current selection
-" vnoremap <silent> * :call VisualSelection('f')<cr>
-" vnoremap <silent> # :call VisualSelection('b')<cr>
-
-" search and replace selected text
-" vnoremap <silent> <leader>r :call VisualSelection('replace')<cr>
 
 " potential use with ale/tern completion?
 " inoremap <expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " inoremap <tab> <c-n>
 " inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 " inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<cr>"
-
-" Toggle line numbers
-" nnoremap <leader>N :setlocal number!<cr>
-
-" Speed up scrolling of the viewport slightly
-" nnoremap <C-e> 4<C-e>
-" nnoremap <C-y> 4<C-y>
 
 " Sort paragraphs
 " vnoremap <leader>s !sort -f<CR>gv
@@ -256,6 +145,48 @@
 " vnoremap <leader>a y:Ag <c-r><cr>:cw<cr>
 " nnoremap <leader>a :Ag <c-r><c-w>
 " nnoremap K *N:grep! "\b<c-r><c-w>\b"<cr>:cw<cr>
+
+" }}}
+" plugin ideas {{{
+
+" markdown open preview
+" image viewing
+" echodoc
+" cope
+
+" rust {{{
+" could be used for autocompiling rust, but needs a weird hack from
+" https://seenaburns.com/vim-setup-for-rust/ to work
+" https://github.com/neomake/neomake
+" here's the hack:
+" " Neomake
+" Gross hack to stop Neomake running when exitting because it creates a zombie cargo check process which holds the lock and never exits. But then, if you only have QuitPre, closing one pane will disable neomake, so BufEnter reenables when you enter another buffer.
+" let s:quitting = 0
+" au QuitPre *.rs let s:quitting = 1
+" au BufEnter *.rs let s:quitting = 0
+" au BufWritePost *.rs if ! s:quitting | Neomake | else | echom "Neomake disabled"| endif
+" let g:neomake_warning_sign = {'text': '?'}
+
+" potentially use rusty-tags for ctags, or ~/.ctags file?
+" https://github.com/dan-t/rusty-tags
+
+" cargo watch
+" https://github.com/passcod/cargo-watch
+
+" }}}
+" vim-multiple-cursors {{{
+" let g:multi_cursor_use_default_mapping=0
+
+" Default mapping
+" let g:multi_cursor_start_word_key      = '<C-s>'
+" let g:multi_cursor_select_all_word_key = '<A-s>'
+" let g:multi_cursor_start_key           = 'g<C-s>'
+" let g:multi_cursor_select_all_key      = 'g<A-s>'
+" let g:multi_cursor_next_key            = '<C-s>'
+" let g:multi_cursor_prev_key            = '<C-p>'
+" let g:multi_cursor_skip_key            = '<C-x>'
+" let g:multi_cursor_quit_key            = '<Esc>'
+" }}}
 
 " }}}
 " archives {{{
