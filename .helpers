@@ -1,0 +1,120 @@
+# .heleprs
+# created by Nick Garcia
+# https://github.com/NicksIdeaEngine/dotfiles
+
+# {{{ table of contents
+
+# 0.
+
+# }}}
+
+# todo.txt functions
+t () {
+  clear
+  if [ $# -eq 0 ]; then
+    todo.sh view project
+  else
+    todo.sh -c -t -d "~/.config/todo/config" "$@"
+  fi
+}
+
+mkcd() {
+  case "$1" in /*) :;; *) set -- "./$1";; esac
+  mkdir -p "$1" && cd "$1"
+}
+
+# ssh initialize for that session
+sshinit() {
+  eval "$(ssh-agent)"
+  ssh-add
+}
+
+# project initialization
+projinit() {
+  # first form will be for react, but later forms can
+  # take arguments for different projects
+  proj_name="${1:-}"
+  proj_arg="${2:-}"
+  echo "Project name is $proj_name"
+
+  spark_dir="/home/efex/proj/spark"
+  new_dir="$(pwd)"
+  echo "Project dir is $new_dir"
+
+  # developer cleaner
+  if [[ "$proj_name" == "--clean" ]]; then
+    echo "Removing visible files and directories..."
+    rm -rvf $new_dir/*
+    echo "Done!"
+    echo "Removing hidden files and directories..."
+    rm -rvf $new_dir/.*
+    echo "Done!"
+    return 0
+  fi
+
+  for item in $spark_dir/{*,.*}; do
+    if [[ ! ${item##*/} == ".git" ]] && \
+      [[ ! ${item##*/} == "node_modules" ]] && \
+      [[ ! ${item##*/} == "package-lock.json" ]] && \
+      [[ ! ${item##*/} == "Session.vim" ]] && \
+      [[ ! ${item##*/} == "tags" ]]; then
+      echo "Copying ${item##*/} to destination..."
+      cp -rv $item $new_dir/${item##*/}
+      echo "Done!"
+    fi
+  done
+
+  sed -i "s/Spark/${proj_name//\-/\-}/g" "$new_dir/src/index.html"
+  sed -i "s/spark/${proj_name//\-/\-}/g" "$new_dir/package.json"
+  mv "$new_dir/spark.code-workspace" "$new_dir/$proj_name.code-workspace"
+
+  cd $new_dir
+
+  git init
+
+  if [[ $proj_arg == "-n" ]]; then
+    npm install
+  fi
+}
+
+# recursively count files in target directory
+dircount() {
+  dir="${1:-}"
+
+  find $dir -type f \
+    ! -path "**/\.git" \
+    ! -path "**/\.git/**" \
+    ! -path "**/node\_modules" \
+    ! -path "**/node\_modules/**" \
+    | wc -l
+}
+
+gacmp () {
+  git add .
+  git commit -m "$1"
+  git push origin master
+}
+
+gitcfg () {
+  git init
+
+  git remote add origin "git@github.com:NicksIdeaEngine/$1.git"
+
+  git remote add github "git@github.com:NicksIdeaEngine/$1.git"
+  git remote set-url --add --push origin \
+    "git@github.com:NicksIdeaEngine/$1.git"
+
+  git remote add bb "git@bitbucket.org:nicksideaengine/$1.git"
+  git remote set-url --add --push origin \
+    "git@bitbucket.org:nicksideaengine/$1.git"
+
+  git remote add gitlab "git@gitlab.com:nicksideaengine/$1.git"
+  git remote set-url --add --push origin \
+    "git@gitlab.com:nicksideaengine/$1.git"
+
+  git remote show origin
+}
+
+# rered() {
+  # redshift -c /home/efex/.config/redshift.conf &!
+# }

@@ -11,15 +11,20 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
 augroup END
 
+" Use the the_silver_searcher if possible (much faster than Ack)
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep --smart-case'
+  set grepprg=ag\ --nogroup\ --nocolor
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
+
 " }}}
 " file support {{{
 
 " Make it so that if files are changed externally (ex: changing git branches)
 " update the vim buffers automatically
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI *
-      \ if mode() != 'c'
-        \ | checktime
-      \ | endif
+      \ if mode() != 'c' | checktime | endif
 autocmd FileChangedShellPost *
       \ echohl WarningMsg
       \ | echo "File changed on disk. Buffer reloaded."
@@ -45,6 +50,21 @@ autocmd BufNewFile,BufRead *.conf set filetype=dosini
 
 " turn on spell check for markdown files
 autocmd BufRead,BufNewFile *.md,*.mdx setlocal spell
+
+" turn on ditto's autocmds
+autocmd FileType markdown,text,tex DittoOn
+
+" start emmet for certain syntaxes
+autocmd FileType html,css,scss,js,jsx EmmetInstall
+
+" run prettier on every save
+autocmd BufWritePre *.html,*.css,*.scss,*.js,*.jsx,*.json,*.md,*.mdx PrettierAsync
+
+" check jsx (and js?) files with both stylelint and eslint
+augroup FiletypeGroup
+  autocmd!
+  au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+augroup END
 
 if has("autocmd")
   augroup vim_files "{{{
@@ -76,7 +96,7 @@ if has("autocmd")
     autocmd filetype python setlocal fileformat=unix
     autocmd filetype python match ErrorMsg '\%>120v.\+'
 
-    let python_highlight_all=1
+    " let python_highlight_all=1
 
     " run black before every save
     autocmd BufWritePre *.py execute ':Black'
@@ -94,7 +114,6 @@ if has("autocmd")
     au!
     " Auto-wrap text around 74 chars
     autocmd filetype rust setlocal textwidth=74
-    " autocmd filetype rust setlocal formatoptions+=nqt
     autocmd filetype rust setlocal foldmarker={,}
     autocmd filetype rust setlocal foldlevelstart=99
     autocmd filetype rust match ErrorMsg '\%>74v.\+'
@@ -151,15 +170,15 @@ function! TerminalCreate() abort
 
   if !exists('g:terminal')
     let g:terminal = {
-      \ 'opts': {},
-      \ 'term': {
-        \ 'loaded': v:null,
-        \ 'bufferid': v:null
-      \ },
-      \ 'origin': {
-        \ 'bufferid': v:null
-      \ }
-    \ }
+          \ 'opts': {},
+          \ 'term': {
+          \ 'loaded': v:null,
+          \ 'bufferid': v:null
+          \ },
+          \ 'origin': {
+          \ 'bufferid': v:null
+          \ }
+          \ }
 
     function! g:terminal.opts.on_exit(jobid, data, event) abort
       silent execute 'buffer' g:terminal.origin.bufferid
@@ -199,7 +218,7 @@ function! TerminalToggle()
   if g:terminal.term.bufferid ==# bufnr('')
     silent execute 'buffer' g:terminal.origin.bufferid
 
-  " Launch terminal buffer and start insert mode.
+    " Launch terminal buffer and start insert mode.
   else
     let g:terminal.origin.bufferid = bufnr('')
 

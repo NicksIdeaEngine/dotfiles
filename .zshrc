@@ -23,9 +23,6 @@ export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
 # Completion for kitty
 kitty + complete setup zsh | source /dev/stdin
 
-# VIM in shell
-# set editing-mode vi
-
 # rust env var
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
@@ -43,7 +40,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Standard plugins: ~/.oh-my-zsh/plugins/* | Custom plugins: ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(catimg colored-man-pages command-not-found frontend-search fzf git npm vi-mode vscode z)
+plugins=(cargo catimg colored-man-pages colorize command-not-found frontend-search fzf git heroku npm systemd vi-mode vscode yarn z)
 
 export FRONTEND_SEARCH_FALLBACK='duckduckgo'
 

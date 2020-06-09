@@ -53,6 +53,7 @@
 #urlbar-container	.mozilla/firefox/65rf3aso.default-release/chrome/userChrome.css	/^#urlbar-container,$/;"	i
 #urlbar-zoom-button	.mozilla/firefox/65rf3aso.default-release/chrome/userChrome.css	/^#urlbar-zoom-button,$/;"	i
 #urlbar[focused='true']	.mozilla/firefox/65rf3aso.default-release/chrome/userChrome.css	/^#urlbar[focused='true'],$/;"	i
+'	.config/nvim/keys.vim	/^nnoremap ' `$/;"	m
 '	old/example-2-init.vim	/^nnoremap ' `$/;"	m
 '	old/example-2-init.vim	/^vnoremap ' :s\/'\/’\/<cr>$/;"	m
 '	old/example-init.vim	/^map ' <Plug>Sneak_;$/;"	m
@@ -255,15 +256,16 @@
 <c-l>	.config/nvim/keys.vim	/^nnoremap <c-l> <c-w>l$/;"	m
 <c-n>	.config/nvim/functions.vim	/^nnoremap <c-n> :call OpenTerminal()<cr>$/;"	m
 <c-n>	old/example-init.vim	/^    nnoremap <silent> <buffer> <c-n> :call search('^  \\X*\\zs\\x')<cr>$/;"	m
-<c-p>	.config/nvim/keys.vim	/^nnoremap <c-p> :GFiles<cr>$/;"	m
+<c-p>	.config/nvim/plugin_config.vim	/^nnoremap <c-p> :GFiles<cr>$/;"	m
 <c-p>	old/example-init.vim	/^    nnoremap <silent> <buffer> <c-p> :call search('^  \\X*\\zs\\x', 'b')<cr>$/;"	m
 <c-u>	old/example-2-init.vim	/^inoremap <c-u> <esc>viwUea$/;"	m
 <c-u>	old/example-2-init.vim	/^nnoremap <c-u> viwUe$/;"	m
 <c-y>	.config/nvim/keys.vim	/^nnoremap <c-y> 4<c-y>$/;"	m
+<cr>	.config/nvim/keys.vim	/^inoremap <expr> <cr>    pumvisible() ? "\\<c-y>" : "\\<cr>"$/;"	m
 <cr>	old/example-2-init.vim	/^inoremap <expr> <cr> pumvisible() ? "\\<c-y>" : "\\<cr>"$/;"	m
 <down>	old/example-init.vim	/^inoremap <expr> <down> pumvisible() ? "\\<Space>\\<Backspace>\\<down>" : "\\<down>"$/;"	m
 <esc>	.config/nvim/keys.vim	/^inoremap <esc> <nop>$/;"	m
-<leader>	.config/nvim/plugin_config.vim	/^nnoremap <silent> <leader> :WhichKey "\\<space>"<cr>$/;"	m
+<leader>	.config/nvim/keys.vim	/^nnoremap <silent> <leader> :WhichKey "\\<space>"<cr>$/;"	m
 <leader>"	old/example-2-init.vim	/^nnoremap <leader>" viW<esc>a"<esc>gvo<esc>i"<esc>gvo<esc>3l$/;"	m
 <leader>"	old/example-2-init.vim	/^vnoremap <leader>" <esc>a"<esc>gvo<esc>i"<esc>gvo<esc>ll$/;"	m
 <leader>%	old/example-init.vim	/^nmap <leader>% ]%V[%$/;"	m
@@ -297,15 +299,20 @@
 <leader><leader>s	.config/nvim/keys.vim	/^nnoremap <leader><leader>s ?{<cr>jV\/^\\s*\\}?$<cr>k:sort<cr>:noh<cr>$/;"	m
 <leader>=	.config/nvim/keys.vim	/^nnoremap <leader>= <c-w>=$/;"	m
 <leader>>	.config/nvim/keys.vim	/^nnoremap <leader>> <c-w><c-r>$/;"	m
+<leader>A	.config/nvim/keys.vim	/^nnoremap <leader>A :Ag <c-r><c-w><cr>$/;"	m
+<leader>A	.config/nvim/keys.vim	/^vnoremap <leader>A y:Ag <c-r><cr>:cw<cr>$/;"	m
 <leader>A	old/example-2-init.vim	/^nnoremap <leader>A :RopeAutoImport<cr>$/;"	m
-<leader>B	.config/nvim/keys.vim	/^noremap <leader>B :%bd\\|e#<cr>$/;"	m
+<leader>B	.config/nvim/plugin_config.vim	/^nnoremap <leader>B :Buffers<cr>$/;"	m
+<leader>F	.config/nvim/plugin_config.vim	/^nnoremap <leader>F :FZF<cr>$/;"	m
+<leader>H	.config/nvim/plugin_config.vim	/^nnoremap <leader>H :History<cr>$/;"	m
 <leader>I	old/example-2-init.vim	/^nnoremap <leader>I :set list!<cr>$/;"	m
 <leader>M	.config/nvim/keys.vim	/^nnoremap <leader>M :Lex<cr>$/;"	m
-<leader>N	.config/nvim/plugin_config.vim	/^map <leader>N :RangerNewTab<cr>x <c-w>x$/;"	m
+<leader>N	.config/nvim/keys.vim	/^nnoremap <leader>N :RangerNewTab<cr>x <c-w>x$/;"	m
 <leader>N	old/example-2-init.vim	/^nnoremap <leader>N :NERDTreeClose<CR>$/;"	m
 <leader>N	old/example-2-init.vim	/^nnoremap <leader>N :setlocal number!<cr>$/;"	m
 <leader>Q	old/example-2-init.vim	/^nnoremap <leader>Q :q<CR>    " Quickly close the current window$/;"	m
 <leader>S	.config/nvim/keys.vim	/^nnoremap <leader>S :vsp<cr>$/;"	m
+<leader>T	.config/nvim/plugin_config.vim	/^nnoremap <leader>T :Tags<cr>$/;"	m
 <leader>V	.config/nvim/keys.vim	/^nnoremap <leader>V :sp<cr>$/;"	m
 <leader>W	old/example-2-init.vim	/^nnoremap <leader>W :%s\/\\s\\+$\/\/<CR>:let @\/=''<CR>$/;"	m
 <leader>]	old/example-init.vim	/^vmap <leader>] <C-n>$/;"	m
@@ -315,21 +322,25 @@
 <leader>b	old/example-2-init.vim	/^nnoremap <leader>b :Buffers<cr>$/;"	m
 <leader>ba	old/example-init.vim	/^nmap <leader>ba <Plug>(coc-bookmark-annotate)$/;"	m
 <leader>bb	old/example-init.vim	/^nnoremap <silent> <leader>bb :CocList bookmark<CR>$/;"	m
+<leader>bc	.config/nvim/keys.vim	/^nnoremap <leader>bc :%bd\\|e#<cr>$/;"	m
 <leader>bn	old/example-init.vim	/^nmap <leader>bn <Plug>(coc-bookmark-next)$/;"	m
 <leader>bp	old/example-init.vim	/^nmap <leader>bp <Plug>(coc-bookmark-prev)$/;"	m
+<leader>bt	.config/nvim/plugin_config.vim	/^nnoremap <leader>bt :BTags<cr>$/;"	m
 <leader>bt	old/example-init.vim	/^nmap <leader>bt <Plug>(coc-bookmark-toggle)$/;"	m
 <leader>c	old/example-2-init.vim	/^nnoremap <silent> <leader>c \/\\v^[<\\|=>]{7}([^=].+)?$<CR>$/;"	m
 <leader>c?	old/example-init.vim	/^nnoremap <silent> <leader>c? :<C-u>call Help_nerdcommenter()<CR>$/;"	m
+<leader>cc	.config/nvim/keys.vim	/^nnoremap <leader>cc :botright cope<cr>$/;"	m
 <leader>cd	.config/nvim/keys.vim	/^nnoremap <leader>cd :cd %:p:h<cr>$/;"	m
+<leader>co	.config/nvim/keys.vim	/^nnoremap <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg$/;"	m
 <leader>d	old/example-2-init.vim	/^nnoremap <silent> <leader>d "_d$/;"	m
 <leader>d	old/example-2-init.vim	/^vnoremap <silent> <leader>d "_d$/;"	m
-<leader>di	.config/nvim/plugin_config.vim	/^nmap <leader>di <Plug>ToggleDitto     " turn ditto on and off$/;"	m
+<leader>di	.config/nvim/keys.vim	/^nmap <leader>di <Plug>ToggleDitto     " turn ditto on and off$/;"	m
 <leader>e	old/example-init.vim	/^nnoremap <silent> <leader>e :<C-u>NnnPicker '%:p:h'<CR>$/;"	m
 <leader>ev	.config/nvim/keys.vim	/^nmap <silent> <leader>ev :e $MYVIMRC<cr>$/;"	m
 <leader>ev	old/example-2-init.vim	/^nnoremap <silent> <leader>ev :e $MYVIMRC<CR>$/;"	m
-<leader>f	.config/nvim/plugin_config.vim	/^nnoremap <leader>f :FZF<cr>$/;"	m
 <leader>f	old/example-2-init.vim	/^nnoremap <leader>f :call FoldColumnToggle()<cr>$/;"	m
 <leader>f	old/example-init.vim	/^nnoremap <silent> <leader>f :CocList<CR>$/;"	m
+<leader>g	.config/nvim/keys.vim	/^nnoremap <leader>g :Ack<space>$/;"	m
 <leader>g	old/example-2-init.vim	/^nnoremap <leader>g :spellgood <c-r><c-w>$/;"	m
 <leader>g<Tab>	old/example-init.vim	/^nmap <silent> <leader>g<Tab> :CocCommand git.browserOpen<CR>$/;"	m
 <leader>gc	old/example-init.vim	/^nmap <leader>gc <Plug>(coc-git-commit)$/;"	m
@@ -338,6 +349,7 @@
 <leader>gj	old/example-init.vim	/^nmap <leader>gj <Plug>(coc-git-nextchunk)$/;"	m
 <leader>gk	old/example-init.vim	/^nmap <leader>gk <Plug>(coc-git-prevchunk)$/;"	m
 <leader>h	.config/nvim/keys.vim	/^nnoremap <leader>h :nohlsearch<cr>$/;"	m
+<leader>i	.config/nvim/keys.vim	/^nnoremap <leader>i :cp<cr>$/;"	m
 <leader>j	.config/nvim/keys.vim	/^nnoremap <leader>j ddp$/;"	m
 <leader>k	.config/nvim/keys.vim	/^nnoremap <leader>k ddkP$/;"	m
 <leader>l?	old/example-init.vim	/^nnoremap <silent> <leader>l? :call Help_COC_LSP()<CR>$/;"	m
@@ -360,13 +372,14 @@
 <leader>lt	old/example-init.vim	/^nmap <leader>lt <Plug>(coc-type-definition)$/;"	m
 <leader>m	.config/nvim/keys.vim	/^nnoremap <leader>m :Hex<cr>$/;"	m
 <leader>m	old/example-2-init.vim	/^nnoremap <leader>m :NERDTreeClose<CR>:NERDTreeFind<CR>$/;"	m
-<leader>n	.config/nvim/plugin_config.vim	/^map <leader>n :Ranger<cr>$/;"	m
+<leader>n	.config/nvim/keys.vim	/^nnoremap <leader>n :Ranger<cr>$/;"	m
 <leader>n	old/example-2-init.vim	/^nnoremap <leader>n :NERDTreeFocus<CR>$/;"	m
+<leader>o	.config/nvim/keys.vim	/^nnoremap <leader>o :cn<cr>$/;"	m
 <leader>p	old/example-init.vim	/^nnoremap <leader>p "+p$/;"	m
 <leader>p	old/example-init.vim	/^vnoremap <leader>p "+p$/;"	m
-<leader>q	.config/nvim/keys.vim	/^noremap <leader>q :bp<cr>$/;"	m
+<leader>q	.config/nvim/keys.vim	/^nnoremap <leader>q :bp<cr>$/;"	m
 <leader>q	old/example-2-init.vim	/^nnoremap <leader>q :bd<CR>   " Quickly close the current buffer$/;"	m
-<leader>r	.config/nvim/keys.vim	/^nnoremap <leader>r :Autoformat<cr>$/;"	m
+<leader>r	.config/nvim/plugin_config.vim	/^nnoremap <leader>r :Autoformat<cr>$/;"	m
 <leader>r	old/example-2-init.vim	/^nnoremap <leader>r :let @\/='\\<<C-R>=expand("<cword>")<CR>\\>'<CR>:set hls<CR>:%s\/\/$/;"	m
 <leader>s	.config/nvim/keys.vim	/^nnoremap <leader>s :%s\/\/\/g<left><left><left>$/;"	m
 <leader>s	old/example-2-init.vim	/^nnoremap <leader>s vip!sort -f<CR><Esc>$/;"	m
@@ -385,7 +398,7 @@
 <leader>tn	.config/nvim/keys.vim	/^nnoremap <leader>tn :tabnew<cr>$/;"	m
 <leader>to	.config/nvim/keys.vim	/^nnoremap <leader>to :tabonly<cr>$/;"	m
 <leader>v	old/example-2-init.vim	/^nnoremap <leader>v V`]$/;"	m
-<leader>w	.config/nvim/keys.vim	/^noremap <leader>w :bn<cr>$/;"	m
+<leader>w	.config/nvim/keys.vim	/^nnoremap <leader>w :bn<cr>$/;"	m
 <leader>w	old/example-2-init.vim	/^nnoremap <leader>w :ArgWrap<cr>$/;"	m
 <leader>x	.config/nvim/keys.vim	/^nnoremap <leader>x <c-w>x$/;"	m
 <leader>x	old/example-2-init.vim	/^        vnoremap <leader>x :!tidy -q -i --show-errors 0 --show-body-only 1 --wrap 0<cr><cr>$/;"	m
@@ -394,16 +407,29 @@
 <leader>z	.config/nvim/keys.vim	/^nnoremap <leader>z :w<cr>$/;"	m
 <leader>z	old/example-2-init.vim	/^nnoremap <leader>z :%s#\\<<C-r>=expand("<cword>")<CR>\\>#$/;"	m
 <left>	old/example-init.vim	/^inoremap <expr> <left> pumvisible() ? "\\<Space>\\<Backspace>\\<left>" : "\\<left>"$/;"	m
-<localleader>	.config/nvim/plugin_config.vim	/^nnoremap <silent> <localleader> :WhichKey "\\\\"<cr>$/;"	m
+<localleader>	.config/nvim/keys.vim	/^nnoremap <silent> <localleader> :WhichKey "\\\\"<cr>$/;"	m
+<localleader><s-tab>	.config/nvim/keys.vim	/^inoremap <localleader><s-tab> <esc>V<<esc>la$/;"	m
+<localleader><tab>	.config/nvim/keys.vim	/^inoremap <localleader><tab> <esc>V><esc>la$/;"	m
+<m-H>	.config/nvim/keys.vim	/^inoremap <m-H> <ESC>I$/;"	m
+<m-J>	.config/nvim/keys.vim	/^inoremap <m-J> <down><down><down><down><down>$/;"	m
+<m-K>	.config/nvim/keys.vim	/^inoremap <m-K> <up><up><up><up><up>$/;"	m
+<m-L>	.config/nvim/keys.vim	/^inoremap <m-L> <ESC>A$/;"	m
+<m-h>	.config/nvim/keys.vim	/^imap <m-h> <left>$/;"	m
 <m-h>	.config/nvim/keys.vim	/^nnoremap <m-h> :vertical res -1<cr>$/;"	m
+<m-j>	.config/nvim/keys.vim	/^imap <m-j> <down>$/;"	m
 <m-j>	.config/nvim/keys.vim	/^nnoremap <m-j> :res -1<cr>$/;"	m
+<m-k>	.config/nvim/keys.vim	/^imap <m-k> <up>$/;"	m
 <m-k>	.config/nvim/keys.vim	/^nnoremap <m-k> :res +1<cr>$/;"	m
+<m-l>	.config/nvim/keys.vim	/^imap <m-l> <right>$/;"	m
 <m-l>	.config/nvim/keys.vim	/^nnoremap <m-l> :vertical res +1<cr>$/;"	m
 <pagedown>	old/example-init.vim	/^nnoremap <silent> <pagedown> :<C-u>call comfortable_motion#flick(130)<CR>$/;"	m
 <pageup>	old/example-init.vim	/^nnoremap <silent> <pageup> :<C-u>call comfortable_motion#flick(-130)<CR>$/;"	m
 <right>	old/example-init.vim	/^inoremap <expr> <right> pumvisible() ? "\\<Space>\\<Backspace>\\<right>" : "\\<right>"$/;"	m
+<s-tab>	.config/nvim/keys.vim	/^inoremap <expr> <s-tab> pumvisible() ? "\\<c-p>" : "\\<s-tab>"$/;"	m
 <s-tab>	old/example-2-init.vim	/^inoremap <expr> <s-tab> pumvisible() ? "\\<c-p>" : "\\<s-tab>"$/;"	m
 <space>	.config/nvim/general.vim	/^nnoremap <space> <nop>$/;"	m
+<tab>	.config/nvim/keys.vim	/^inoremap <expr> <tab>   pumvisible() ? "\\<c-n>" : "\\<tab>"$/;"	m
+<tab>	.config/nvim/keys.vim	/^inoremap <tab> <c-n>$/;"	m
 <tab>	old/example-2-init.vim	/^inoremap <tab> <c-n>$/;"	m
 <up>	old/example-init.vim	/^inoremap <expr> <up> pumvisible() ? "\\<Space>\\<Backspace>\\<up>" : "\\<up>"$/;"	m
 >	.config/nvim/keys.vim	/^vmap > >gv$/;"	m
@@ -547,12 +573,11 @@ Emphasis	refs/markdown.md	/^# Emphasis$/;"	c
 Error logging	refs/webdev/notes/index.md	/^#### Error logging$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Production Build
 Execution Contexts and Lexical Environments	refs/webdev/notes/index.md	/^### Execution Contexts and Lexical Environments$/;"	S	section:Notes""Vocabulary
 ExplorerStartify	old/example-init.vim	/^    function ExplorerStartify()$/;"	f
-FLAME donations	refs/tempref.md	/^## FLAME donations$/;"	s	chapter:Temp Notes
 Fan Setup	refs/archives/ubunturef.md	/^### Fan Setup$/;"	S	section:Notes""Desktop Specs
 Fan Setup	refs/journals/desktop-timeline.md	/^## Fan Setup$/;"	s	chapter:Timeline for Desktop
 Filechooser Settings	.config/gtk-2.0/gtkfilechooser.ini	/^[Filechooser Settings]$/;"	s
 Filesystem	refs/archives/ubunturef.md	/^### Filesystem$/;"	S	section:Notes""Desktop Specs
-FiletypeGroup	.config/nvim/plugin_config.vim	/^augroup FiletypeGroup$/;"	a
+FiletypeGroup	.config/nvim/functions.vim	/^augroup FiletypeGroup$/;"	a
 Flexbox Notes	refs/webdev/css/flexbox.md	/^# Flexbox Notes$/;"	c
 FoldColumnToggle	old/example-2-init.vim	/^function! FoldColumnToggle()$/;"	f
 ForceCloseRecursively	old/example-init.vim	/^function! ForceCloseRecursively()$/;"	f
@@ -748,7 +773,7 @@ Output Vim Mappings	refs/linux/cmd/oneliners.md	/^## Output Vim Mappings$/;"	s	c
 Overview	refs/linux/netsec/sshref.md	/^## Overview$/;"	s	chapter:SSH Notes!
 Overview	refs/webdev/css/flexbox.md	/^## Overview$/;"	s	chapter:Flexbox Notes
 Overview	refs/webdev/notes/index.md	/^#### Overview$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""HTTP Calls
-PIU	.config/nvim/keys.vim	/^command! PIU PlugInstall | PlugUpdate | PlugUpgrade$/;"	c
+PIU	.config/nvim/keys.vim	/^command! PIU PlugInstall | PlugUpdate | PlugUpgrade | UpdateRemotePlugins$/;"	c
 PKGEXT	.makepkg.conf	/^PKGEXT='.pkg.tar.xz'$/;"	k
 PU	old/example-init.vim	/^command PU PlugUpdate | PlugUpgrade | CocUpdate$/;"	c
 PURGE_TARGETS	.makepkg.conf	/^PURGE_TARGETS=(usr\/{,share}\/info\/dir .packlist *.pod)$/;"	k
@@ -931,8 +956,6 @@ You need a starter kit	refs/webdev/notes/index.md	/^### You need a starter kit$/
 YouTube Videos	refs/markdown.md	/^# YouTube Videos$/;"	c
 ZZ	.config/nvim/keys.vim	/^nnoremap ZZ :wq<cr>$/;"	m
 \\	old/example-2-init.vim	/^nnoremap \\ :Ag<SPACE>$/;"	m
-\\<s-tab>	.config/nvim/keys.vim	/^inoremap \\<s-tab> <esc>V<<esc>la$/;"	m
-\\<tab>	.config/nvim/keys.vim	/^inoremap \\<tab> <esc>V><esc>la$/;"	m
 \x20              terminal	.config/ranger/rifle.conf	/^ext x?html?, has w3m,               terminal = w3m "$@"$/;"	k
 \x20             terminal	.config/ranger/rifle.conf	/^ext x?html?, has lynx,              terminal = lynx -- "$@"$/;"	k
 \x20            terminal	.config/ranger/rifle.conf	/^ext x?html?, has links,             terminal = links "$@"$/;"	k
@@ -1121,6 +1144,7 @@ __anon125c4bfe0308	.config/repos/st/st.c	/^	struct {$/;"	s	struct:__anon125c4bfe
 __anon125c4bfe0408	.config/repos/st/st.c	/^typedef struct {$/;"	s	file:
 __anon125c4bfe0508	.config/repos/st/st.c	/^typedef struct {$/;"	s	file:
 __anon125c4bfe0608	.config/repos/st/st.c	/^typedef struct {$/;"	s	file:
+`	.config/nvim/keys.vim	/^nnoremap ` '$/;"	m
 `	old/example-2-init.vim	/^nnoremap ` '$/;"	m
 ac	.config/polybar/colors.ini	/^ac = #076678$/;"	k	section:color
 actionfps	.config/repos/st/config.h	/^static unsigned int actionfps = 30;$/;"	v	typeref:typename:unsigned int
@@ -1516,6 +1540,7 @@ g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols	old/example-init.vim	/^let
 g:WebDevIconsUnicodeDecorateFolderNodes	old/example-init.vim	/^let g:WebDevIconsUnicodeDecorateFolderNodes = 1$/;"	v
 g:WebDevIconsUnicodeDecorateFolderNodes	old/example-init.vim	/^let g:WebDevIconsUnicodeDecorateFolderNodes = v:true$/;"	v
 g:WebDevIconsUnicodeGlyphDoubleWidth	old/example-init.vim	/^let g:WebDevIconsUnicodeGlyphDoubleWidth = 1$/;"	v
+g:ackprg	.config/nvim/functions.vim	/^  let g:ackprg = 'ag --vimgrep --smart-case'$/;"	v
 g:ale_completion_enabled	.config/nvim/general.vim	/^let g:ale_completion_enabled = 1$/;"	v
 g:ale_completion_enabled	old/example-2-init.vim	/^let g:ale_completion_enabled = 0$/;"	v
 g:ale_echo_delay	old/example-init.vim	/^let g:ale_echo_delay = 0$/;"	v
@@ -1726,6 +1751,7 @@ g:quickfix_is_open	old/example-2-init.vim	/^        let g:quickfix_is_open = 1$/
 g:quickfix_is_open	old/example-2-init.vim	/^let g:quickfix_is_open = 0$/;"	v
 g:quickfix_return_to_window	old/example-2-init.vim	/^        let g:quickfix_return_to_window = winnr()$/;"	v
 g:quickmenu_options	old/example-init.vim	/^let g:quickmenu_options = 'HL'  " enable cursorline (L) and cmdline help (H)$/;"	v
+g:racer_experimental_completer	.config/nvim/plugin_config.vim	/^let g:racer_experimental_completer = 1$/;"	v
 g:ranger_map_keys	.config/nvim/plugin_config.vim	/^let g:ranger_map_keys = 0$/;"	v
 g:rust_use_custom_ctags_defs	old/example-init.vim	/^let g:rust_use_custom_ctags_defs = 1  " if using rust.vim$/;"	v
 g:sneak#label	.config/nvim/plugin_config.vim	/^let g:sneak#label = 1$/;"	v
@@ -2260,7 +2286,6 @@ purple	.config/polybar/colors.ini	/^dark-purple = #8f3f71$/;"	k	section:color
 purple	.config/polybar/colors.ini	/^purple =  #b16286$/;"	k	section:color
 python_files	.config/nvim/functions.vim	/^  augroup python_files "{{{$/;"	a
 python_files	old/example-2-init.vim	/^    augroup python_files "{{{$/;"	a
-python_highlight_all	.config/nvim/functions.vim	/^    let python_highlight_all=1$/;"	v
 q	.tmux/.tmux-example2.conf	/^set -g -a terminal-overrides ',*:Ss=\\E[%p1%d q:Se=\\E[2 q'$/;"	k
 q	old/example-init.vim	/^nnoremap <silent> q :q<CR>$/;"	m
 radius	.config/compton.airblader.conf	/^shadow-radius = 10;$/;"	k

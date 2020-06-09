@@ -4,7 +4,7 @@
 
 # {{{ table of contents
 
-# 0. variables
+# 0. globals
 # 1. navigation
 # 2. config files
 # 3. todotxt cli
@@ -15,11 +15,9 @@
 # z. overflow
 
 # }}}
-# {{{ 0. variables
+# {{{ 0. globals
 
 dbx="/mnt/sdc1/dbx"
-cdir="~/code"
-pdir="~/proj"
 alias sudo="sudo "
 alias {v,vi,vim}="nvim"
 
@@ -27,33 +25,34 @@ alias {v,vi,vim}="nvim"
 # {{{ 1. navigation
 
 # move to certain folders
-alias navls="echo 'dbx cfg doc dot dwn mzk pix ref scr tmp vds cdir pdir pfol userchrome[dev]'"
-alias dbx="cd $dbx"
-alias cfg="cd ~/.config"
-alias cpy="cd ~/writing/copywriting"
-alias doc="cd ~/docs"
-alias dot="cd ~/dots"
-alias dwn="cd ~/dwn"
-alias mzk="cd ~/music"
-alias pix="cd ~/pics"
-alias ref="cd ~/refs"
-alias scr="cd ~/scripts"
-alias tmp="cd ~/tmp"
-alias vds="cd ~/vids"
-alias wrt="cd ~/writing"
-alias cdir="cd $cdir"
-alias pdir="cd $pdir"
-alias pfol="cd $pdir/nickgarcia"
-alias userchrome="cd ~/.mozilla/firefox/65rf3aso.default-release/chrome"
-alias userchromedev="cd ~/.mozilla/firefox/ad1fuz9r.dev-edition-default/chrome"
+alias navls="echo 'dbx cfg cod doc dot dwn mzk pix prj pfl \
+                  \nref scr tmp vds wrt cpy userchrome[dev]'" \
+      dbx="cd $dbx" \
+      cfg="cd ~/.config" \
+      cod="cd ~/code" \
+      doc="cd ~/docs" \
+      dot="cd ~/dots" \
+      dwn="cd ~/dwn" \
+      mzk="cd ~/music" \
+      pix="cd ~/pics" \
+      prj="cd ~/proj" \
+      pfl="cd ~/proj/nickgarcia" \
+      ref="cd ~/refs" \
+      scr="cd ~/scripts" \
+      tmp="cd ~/tmp" \
+      vds="cd ~/vids" \
+      wrt="cd ~/writing" \
+      cpy="cd ~/writing/copywriting" \
+      userchrome="cd ~/.mozilla/firefox/65rf3aso.default-release/chrome" \
+      userchromedev="cd ~/.mozilla/firefox/ad1fuz9r.dev-edition-default/chrome"
 
 # sped up cd navigation
-alias cd.="cd .."
-alias cd..="cd .."
-alias {..,.1}="cd .."
-alias {...,.2}="cd ../.."
-alias {....,.3}="cd ../../.."
-alias {.....,.4}="cd ../../../.."
+alias cd.="cd .." \
+      cd..="cd .." \
+      {..,.1}="cd .." \
+      {...,.2}="cd ../.." \
+      {....,.3}="cd ../../.." \
+      {.....,.4}="cd ../../../.."
 
 # }}}
 # {{{ 2. config files
@@ -62,32 +61,34 @@ alias {.....,.4}="cd ../../../.."
 # alias quantify="code $dbx/quant/quant.code-workspace"
 
 # config editing binds
-alias cfls="echo 'Alias Bashrc Compton Dunst Firefox FirefoxDev I3wm Kitty Mpd Nvim Polybar Ranger St Tmux Vim Xresources Ytdl[S,V] Zshrc'"
-alias cfa="vim ~/.aliases"
-alias cfb="vim ~/.bashrc"
-alias cfbl="vim ~/.bash_logout"
-alias cfbp="vim ~/.bash_profile"
-alias cfc="vim ~/.config/compton.conf"
-alias cfd="vim ~/.config/dunst/dunstrc"
-alias cff="vim ~/.mozilla/firefox/65rf3aso.default-release/chrome/userChrome.css"
-alias cffd="vim ~/.mozilla/firefox/ad1fuz9r.dev-edition-default/chrome/userChrome.css"
-alias cfi="vim ~/.config/i3/config"
-alias cfk="vim ~/.config/kitty/kitty.conf"
-alias cfm="vim ~/.config/mpd/mpd.conf"
-alias cfn="vim ~/.config/nvim/init.vim"
-alias cfp="vim ~/.config/polybar/config.ini"
-alias cfpr="vim ~/.profile"
-alias cfr="vim ~/.config/ranger/rc.conf"
-alias cfrt="vim ~/.config/rescuetime/.rtgoals"
-alias cfs="vim ~/.local/st/config.h"
-alias cft="vim ~/.tmux.conf"
-alias cfv="vim ~/.vimrc"
-alias cfx="vim ~/.Xresources"
-alias cfys="vim ~/.config/youtube-dl/songconfig"
-alias cfyv="vim ~/.config/youtube-dl/vidconfig"
-alias cfz="vim ~/.zshrc"
-alias cfze="vim ~/.zshenv"
-alias cfzp="vim ~/.zprofile"
+alias cfls="echo 'Alias Bashrc[L,P] Compton Dunst Firefox FirefoxDev I3wm \
+                \nKitty Mpd Nvim Polybar PRofile Ranger RescueTime St Tmux \
+                \nVim Xresources Ytdl[S,V] Zshrc[E,P]'" \
+      cfa="vim ~/.aliases" \
+      cfb="vim ~/.bashrc" \
+      cfbl="vim ~/.bash_logout" \
+      cfbp="vim ~/.bash_profile" \
+      cfc="vim ~/.config/compton.conf" \
+      cfd="vim ~/.config/dunst/dunstrc" \
+      cff="vim ~/.mozilla/firefox/65rf3aso.default-release/chrome/userChrome.css" \
+      cffd="vim ~/.mozilla/firefox/ad1fuz9r.dev-edition-default/chrome/userChrome.css" \
+      cfi="vim ~/.config/i3/config" \
+      cfk="vim ~/.config/kitty/kitty.conf" \
+      cfm="vim ~/.config/mpd/mpd.conf" \
+      cfn="vim ~/.config/nvim/init.vim" \
+      cfp="vim ~/.config/polybar/config.ini" \
+      cfpr="vim ~/.profile" \
+      cfr="vim ~/.config/ranger/rc.conf" \
+      cfrt="vim ~/.config/rescuetime/.rtgoals" \
+      cfs="vim ~/.local/st/config.h" \
+      cft="vim ~/.tmux.conf" \
+      cfv="vim ~/.vimrc" \
+      cfx="vim ~/.Xresources" \
+      cfys="vim ~/.config/youtube-dl/songconfig" \
+      cfyv="vim ~/.config/youtube-dl/vidconfig" \
+      cfz="vim ~/.zshrc" \
+      cfze="vim ~/.zshenv" \
+      cfzp="vim ~/.zprofile"
 
 # recompile st terminal
 alias instst="cd ~/.local/st && sudo make install && alert 'st has been rebuilt'"
@@ -96,167 +97,81 @@ alias instst="cd ~/.local/st && sudo make install && alert 'st has been rebuilt'
 # {{{ 3. todotxt cli
 
 # todo.txt aliases
-alias _t="todo.sh -c -t -d ~/.config/todo/config"
-alias tls="echo 'todo: open todo.txt | t: show tasks by project | tg: graph \
+alias _t="todo.sh -c -t -d ~/.config/todo/config" \
+      tls="echo 'todo: open todo.txt | t: show tasks by project | tg: graph \
                \ntfg: config | tm: many | ta: wp add | tap: append | tdu: due \
-               \ntpp: prep | tp: pri | tv: view | tvp: view project | tdo: do'"
-alias todo="vim $HOME/todo/todo.txt"
-alias tpr="clear;todo.sh -c -t -d ~/.config/todo/config"
-alias tg="clear;todo.sh graph 30"
-alias tgr="clear;todo.sh graph"
-alias tgw="clear;todo.sh graph 7"
-alias tfg="vim ~/.config/todo/config"
-alias tfgalloc="vim ~/.config/todo/.actions.d/wp/allocations.conf"
-alias tm="_t many"
-alias ta="_t wp add"
-alias tap="todo.sh app"
-alias tdp="todo.sh depri"
-alias tdu="clear;todo.sh due"
-alias tpp="todo.sh prep"
-alias tp="todo.sh pri"
-alias trp="_t replace"
-alias tv="clear;todo.sh view"
-alias tvc="clear;todo.sh view context"
-alias tvp="clear;todo.sh view project"
-alias tdo="todo.sh again"
-alias tch="todo.sh chcon"
-alias talloc="todo.sh wp alloc"
-alias twl="todo.sh wp ls"
-alias tdn="todo.sh donow"
-alias tws="todo.sh wp summary"
-alias twg="todo.sh wp graph"
-alias tdump="vim $HOME/todo/dump.txt"
-
-# todo.txt functions
-t () {
-  clear
-  if [ $# -eq 0 ]; then
-    todo.sh view project
-  else
-    todo.sh -c -t -d "~/.config/todo/config" "$@"
-  fi
-}
+               \ntpp: prep | tp: pri | tv: view | tvp: view project | tdo: do'" \
+      todo="vim $HOME/todo/todo.txt" \
+      tpr="clear;todo.sh -c -t -d ~/.config/todo/config" \
+      tg="clear;todo.sh graph 30" \
+      tgr="clear;todo.sh graph" \
+      tgw="clear;todo.sh graph 7" \
+      tfg="vim ~/.config/todo/config" \
+      tfgalloc="vim ~/.config/todo/.actions.d/wp/allocations.conf" \
+      tm="_t many" \
+      ta="_t wp add" \
+      tap="todo.sh app" \
+      tdp="todo.sh depri" \
+      tdu="clear;todo.sh due" \
+      tpp="todo.sh prep" \
+      tp="todo.sh pri" \
+      trp="_t replace" \
+      tv="clear;todo.sh view" \
+      tvc="clear;todo.sh view context" \
+      tvp="clear;todo.sh view project" \
+      tdo="todo.sh again" \
+      tch="todo.sh chcon" \
+      talloc="todo.sh wp alloc" \
+      twl="todo.sh wp ls" \
+      tdn="todo.sh donow" \
+      tws="todo.sh wp summary" \
+      twg="todo.sh wp graph" \
+      tdump="vim $HOME/todo/dump.txt"
 
 # }}}
 # {{{ 4. useful replacements
 
 # helpful reference for creating sym links
-alias lnls="echo 'ln -s <file to be linked> <location of the link>'"
-# useful replacements
-alias c="clear"
-alias h="history"
-alias how='function hdi(){ howdoi $* -c -n 5; }; hdi'
-alias gcal="gcalcli"
-alias :q="exit"
-alias {md,mkdir}="mkdir -pv"
-alias {rd,rmdir}="rmdir -v"
-mkcd() {
-  case "$1" in /*) :;; *) set -- "./$1";; esac
-  mkdir -p "$1" && cd "$1"
-}
-alias sym="$HOME/scripts/symswitch.sh"
-# alias updatr="$HOME/scripts/updatr.sh"
-
-# ssh initialize for that session
-sshinit() {
-  eval "$(ssh-agent)"
-  ssh-add
-}
-alias sshrestart="sudo systemctl restart ssh.service"
-
-# project initialization
-projinit() {
-  # first form will be for react, but later forms can take arguments for different projects
-  proj_name="${1:-}"
-  proj_arg="${2:-}"
-  echo "Project name is $proj_name"
-
-  spark_dir="/home/efex/proj/spark"
-  new_dir="$(pwd)"
-  echo "Project dir is $new_dir"
-
-  # developer cleaner
-  if [[ "$proj_name" == "--clean" ]]; then
-    echo "Removing visible files and directories..."
-    rm -rvf $new_dir/*
-    echo "Done!"
-    echo "Removing hidden files and directories..."
-    rm -rvf $new_dir/.*
-    echo "Done!"
-    return 0
-  fi
-
-  for item in $spark_dir/{*,.*}; do
-    if [[ ! ${item##*/} == ".git" ]] && \
-      [[ ! ${item##*/} == "node_modules" ]] && \
-      [[ ! ${item##*/} == "package-lock.json" ]] && \
-      [[ ! ${item##*/} == "Session.vim" ]] && \
-      [[ ! ${item##*/} == "tags" ]]; then
-      echo "Copying ${item##*/} to destination..."
-      cp -rv $item $new_dir/${item##*/}
-      echo "Done!"
-    fi
-  done
-
-  sed -i "s/Spark/${proj_name//\-/\-}/g" "$new_dir/src/index.html"
-  sed -i "s/spark/${proj_name//\-/\-}/g" "$new_dir/package.json"
-  mv "$new_dir/spark.code-workspace" "$new_dir/$proj_name.code-workspace"
-
-  cd $new_dir
-
-  git init
-
-  if [[ $proj_arg == "-n" ]]; then
-    npm install
-  fi
-}
-
-# recursively count files in target directory
-dircount() {
-  dir="${1:-}"
-
-  find $dir -type f ! -path "**/\.git" ! -path "**/\.git/**" ! -path "**/node\_modules" ! -path "**/node\_modules/**" | wc -l
-}
+alias lnls="echo 'ln -s <file to be linked> <location of the link>'" \
+      c="clear" \
+      h="history" \
+      how='function hdi(){ howdoi $* -c -n 5; }; hdi' \
+      gcal="gcalcli" \
+      :q="exit" \
+      {md,mkdir}="mkdir -pv" \
+      {rd,rmdir}="rmdir -v" \
+      sym="$HOME/scripts/symswitch.sh" \
+      updatr="$HOME/scripts/updatr.sh" \
+      sshrestart="sudo systemctl restart ssh.service"
 
 # pacman shortcuts
-alias pmss="pacman -Ss"
-alias pmqs="pacman -Qs"
-alias pmsyu="sudo pacman -Syu"
-alias pmrsu="sudo pacman -Rsu"
+alias pmss="pacman -Ss" \
+      pmqs="pacman -Qs" \
+      pmsyu="sudo pacman -Syu" \
+      pmrsu="sudo pacman -Rsu"
 
 
 # ask when deleting multiple
-alias rm="rm -I"
-alias rmf="rm -Irvf"
-
-# rclone aliases and functions
-# rpurge() {
-#   rclone purge "dbx:$1"
-#   sudo rm -rvf "/mnt/sdc1/dbx/$1"
-# }
+alias rm="rm -I" \
+      rmf="rm -Irvf"
 
 # some more ls aliases
-alias ll="ls -halF"
-alias la="ls -A"
-alias l="ls -hlF"
-alias lsa="ls -lah"
-alias lsd="ls -lF | grep '^d'"
-alias lr="ls -tRFh"
-alias ldot="ls -ld .*"
-alias lS="ls -1FSsh"
-
-# autoload default tmux config file
-# alias tmux="tmux"
+alias ll="ls -halF" \
+      la="ls -A" \
+      l="ls -hlF" \
+      lsa="ls -lah" \
+      lsd="ls -lF | grep '^d'" \
+      lr="ls -tRFh" \
+      ldot="ls -ld .*" \
+      lS="ls -1FSsh"
 
 # leave ranger and enter that directory in terminal
-alias ranger="source ranger"
-alias rn="source ranger"
+alias ranger="source ranger" \
+      rn="source ranger"
 
 # use i3lock when afk
 alias afk="i3lock -ti /mnt/sdc1/Dropbox/pics/wallpaper/wall509.png"
 
-# grabbing audio from youtube
-# link to my "To DL" playlist
 alias grablist="youtube-dl --config-location ~/.config/youtube-dl/songconfig \"https://www.youtube.com/playlist?list=PLedhaNZS3z5JfQ8lQIY3Drq3bvNX2TKSP\" && alert 'grablist complete'"
 alias grabsong="youtube-dl --config-location ~/.config/youtube-dl/songconfig \"https://\" && alert 'grabsong complete'"
 # alias grabvid="youtube-dl --config-location ~/.config/youtube-dl/vidconfig \"https://\" && alert 'grabvid complete'"
@@ -266,41 +181,31 @@ alias grabvid="youtube-dl --config-location ~/.config/youtube-dl/vidconfig"
 alias ytdlcache="youtube-dl --rm-cache-dir && alert 'youtube-dl cache removed!'"
 
 # restart redshift with config
-alias reredsh="redshift -c /home/efex/.config/redshift.conf &!"
+alias rered="redshift -c /home/efex/.config/redshift.conf &!"
 
 # }}}
 # {{{ 5. git
 
-alias ga="git add"
-alias gcm="git commit -m"
-alias gacm="git add . && git commit -m"
-alias gph="git push origin master"
-alias gpl="git pull origin master"
-alias gplr="git pull --rebase origin"
-gacmp () {
-  git add .
-  git commit -m "$1"
-  git push origin master
-}
-alias gst="git status"
-alias gfa="git fetch --all"
-gitcfg () {
-  git remote add origin "git@github.com:NicksIdeaEngine/$1.git"
-  git remote add github "git@github.com:NicksIdeaEngine/$1.git"
-  git remote set-url --add --push origin "git@github.com:NicksIdeaEngine/$1.git"
-  git remote add bb "git@bitbucket.org:nicksideaengine/$1.git"
-  git remote set-url --add --push origin "git@bitbucket.org:nicksideaengine/$1.git"
-  git remote add gitlab "git@gitlab.com:nicksideaengine/$1.git"
-  git remote set-url --add --push origin "git@gitlab.com:nicksideaengine/$1.git"
-  git remote show origin
-}
+alias ga="git add" \
+      gcm="git commit -m" \
+      gacm="git add . && git commit -m" \
+      gph="git push origin master" \
+      gpl="git pull origin master" \
+      gplr="git pull --rebase origin" \
+      gst="git status" \
+      gfa="git fetch --all"
 
 # }}}
 # {{{ 6. npm
 
-alias nis="npm install --save"
-alias nid="npm install --save-dev"
-alias nrd="npm run devserver"
+alias nis="npm install --save" \
+      nid="npm install --save-dev" \
+      nrd="npm run devserver" \
+      ndv="npm run develop" \
+      nst="npm start" \
+      nbd="npm run build" \
+      nsr="npm run serve" \
+      ncl="npm run clean"
 
 # }}}
 # {{{ y. system aliases
@@ -318,12 +223,8 @@ alias acrit='notify-send --urgency=critical -i "$([ $? = 0 ] && echo terminal ||
 alias fresh="source ~/.zshrc;clear"
 
 # system tools
-alias aptdate="sudo apt update && sudo apt upgrade && alert 'Update and upgrade complete!'"
-alias aptcheck="sudo du -sh /var/cache/apt"
-alias aptclean="sudo apt autoremove && sudo apt clean && alert 'apt autoremove and clean are complete!'"
 alias cachecheck="du -sh /home/efex/.cache/thumbnails/"
 alias cacheclean="rm -rf /home/efex/.cache/thumbnails/* && alert 'cacheclean is complete!'"
-alias imagecheck="dpkg --list 'linux-image*' && echo 'use \"sudo dpkg --purge linux-image-*\" to remove'"
 alias snupdate="sudo snap refresh"
 alias snapcheck="du -h /var/lib/snapd/snaps"
 alias snapclean="sudo $HOME/scripts/snapclean.sh && alert 'snapclean is complete!'"
@@ -361,37 +262,6 @@ alias headphones="pactl set-default-sink alsa_output.usb-Logitech_Logitech_G430_
 # alias NE="2> /dev/null"
 # alias NUL="> /dev/null 2>&1"
 # alias P="2>&1| pygmentize -l pytb"
-# Aliases for apt / apt-get
-# alias as [search term]        Search for packages
-# alias ad      Update packages
-# alias adg     Updgrade packages
-# alias ai [packages to install]        Install package(s)
-# alias ar [package to remove]  Remove package
-# alias app     Apt policy
-# alias acs [search term]       Search packages in cache
-# alias ac      Clean apt cache
-# alias age [parameters]        apt-get [parameters]
-# alias api [parameters]        aptitude [parameters]
-# alias aps [search term]       Search with aptitude
-# alias afs [search term]       Search files in packages
-# alias asrc [parameters]       apt-get source [parameters]
-# alias aac     Autoclean
-# alias abd     Build dependencies
-# alias adu     Update & (safe)upgrade
-# alias afu     Update & full-upgrade
-# alias ag      Upgrade (safe)
-# alias ail [list of packages]  Install all packages in list
-# alias ap      Purge
-# alias ads     Dselect upgrade
-# alias dia     Install all ./*.deb
-# alias di [glob]       Install all glob
-# alias kclean  Remove unused kernel images
-# alias allpkgs         Print all installed packages
-# alias mydeb   Create .deb package
-# alias apt-list-packages       List packages by size
-# alias kerndeb         Kernel-package building shortcut
-# alias apt-copy        Creates script to install all current packages on other machine
-# alias apt-history     Prints apt history
 
 # Git Aliases
 # alias gs='git status'

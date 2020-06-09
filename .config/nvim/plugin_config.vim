@@ -6,6 +6,7 @@
 
 " editorconfig/editorconfig-vim {{{
 " https://github.com/editorconfig/editorconfig-vim
+
 " }}}
 " chiel92/vim-autoformat {{{
 " https://github.com/chiel92/vim-autoformat
@@ -22,12 +23,12 @@ let g:polyglot_disabled = ['rust']
 " }}}
 " alvan/vim-closetag {{{
 " https://github.com/alvan/vim-closetag
+
 " Update closetag to also work on js and html files, don't want ts since <> is used for type args
 let g:closetag_filenames='*.html,*.js,*.jsx'
 let g:closetag_regions = {
     \ 'javascript.jsx': 'jsxRegion',
-    \ 'javascriptreact': 'jsxRegion',
-    \ }
+    \ 'javascriptreact': 'jsxRegion' }
 
 " non-closing tags case sensitive (<Link> !== <link>)
 let g:closetag_emptyTags_caseSensitive = 1
@@ -35,9 +36,11 @@ let g:closetag_emptyTags_caseSensitive = 1
 " }}}
 " jiangmiao/auto-pairs {{{
 " https://github.com/jiangmiao/auto-pairs
+
 " }}}
 " prettier/vim-prettier {{{
 " https://github.com/prettier/vim-prettier
+
 " make prettier asynchronous
 let g:prettier#exec_cmd_async = 1
 
@@ -47,9 +50,6 @@ let g:prettier#autoformat_config_files = ['prettier.config.js', '.prettierrc']
 
 " disable auto opening of quickfix
 let g:prettier#quickfix_enabled = 0
-
-" run prettier on every save
-autocmd BufWritePre *.js,*.jsx,*.css,*.scss,*.json,*.md,*.yaml,*.html PrettierAsync
 
 " }}}
 " nvie/vim-flake8 {{{
@@ -61,14 +61,19 @@ let g:flake8_show_quickfix=0
 " }}}
 " psf/black {{{
 " https://github.com/psf/black
+
 " }}}
 " rust-lang/rust.vim {{{
 " https://github.com/rust-lang/rust.vim
+
 " }}}
 " racer-rust/vim-racer {{{
 " https://github.com/racer-rust/vim-racer
 
-" let g:racer_experimental_completer = 1
+let g:racer_experimental_completer = 1
+
+" formatting for rust
+nnoremap <leader>r :Autoformat<cr>
 
 " }}}
 
@@ -83,7 +88,6 @@ let g:user_emmet_mode='a'
 
 " only enable for specific filetypes
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,scss,js,jsx EmmetInstall
 
 " rebind leader to alt-e
 let g:user_emmet_leader_key = '<m-e>'
@@ -107,26 +111,17 @@ let g:ale_fixers = {
       \ 'graphql': ['eslint', 'prettier'],
       \ 'javascript.jsx': ['eslint', 'prettier'],
       \ 'javascript': ['eslint', 'prettier'],
-      \ 'typescript': ['eslint', 'prettier'],
-      \ }
+      \ 'typescript': ['eslint', 'prettier'] }
 
 let g:ale_linter_aliases = {
       \ 'jsx': ['css', 'javascript'],
-      \ 'js': ['css', 'javascript'],
-      \ }
+      \ 'js': ['css', 'javascript'] }
 
 let g:ale_linters = {
       \ 'graphql': ['eslint', 'flow'],
       \ 'javascript.jsx': ['eslint', 'flow'],
       \ 'javascript': ['eslint', 'flow'],
-      \ 'typescript': ['typescript'],
-      \ }
-
-" check jsx (and js?) files with both stylelint and eslint
-augroup FiletypeGroup
-  autocmd!
-  au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
-augroup END
+      \ 'typescript': ['typescript'] }
 
 " setting default error message format
 " let g:ale_echo_msg_error_str = 'E'
@@ -141,6 +136,7 @@ augroup END
 " }}}
 " SirVer/ultisnips {{{
 " https://github.com/SirVer/ultisnips
+
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<c-b>'
 let g:UltiSnipsJumpBackwardTrigger='<c-z>'
@@ -148,16 +144,17 @@ let g:UltiSnipsJumpBackwardTrigger='<c-z>'
 " }}}
 " mlaursen/vim-react-snippets {{{
 " https://github.com/mlaursen/vim-react-snippets
+
 " }}}
 " Shougo/deoplete.nvim {{{
 " https://github.com/Shougo/deoplete.nvim
+
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#custom#option = {
       \ 'smart_case': v:true,
       \ 'camel_case': v:true,
       \ 'ignore_case': v:true,
-      \ 'refresh_always': v:true,
-      \ }
+      \ 'refresh_always': v:true }
 let g:deoplete#max_abbr_width = 0
 let g:deoplete#max_menu_width = 0
 let g:deoplete#custom#var = get(g:,'deoplete#omni#input_patterns', {})
@@ -165,6 +162,7 @@ let g:deoplete#custom#var = get(g:,'deoplete#omni#input_patterns', {})
 " }}}
 " ternjs/tern_for_vim {{{
 " https://github.com/ternjs/tern_for_vim
+
 let g:tern_request_timeout = 1
 let g:tern_request_timeout = 6000
 " let g:tern#command = ["tern"]
@@ -173,6 +171,7 @@ let g:tern#arguments = ["--persistent"]
 " }}}
 " carlitux/deoplete-ternjs {{{
 " https://github.com/carlitux/deoplete-ternjs
+
 " }}}
 
 " }}}
@@ -181,22 +180,23 @@ let g:tern#arguments = ["--persistent"]
 " junegunn/fzf {{{
 " https://github.com/junegunn/fzf
 
-nnoremap <leader>f :FZF<cr>
+" git based FZF
+nnoremap <c-p> :GFiles<cr>
 
-" search in project
-" nnoremap <c-p> :Files<cr>
+" default FZF
+nnoremap <leader>F :FZF<cr>
 
 " search through open buffers
-" nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>B :Buffers<cr>
 
 " search through buffers history
-" nnoremap <leader>h :History<cr>
+nnoremap <leader>H :History<cr>
 
 " search for tags in current buffer
-" nnoremap <leader>t :BTags<cr>
+nnoremap <leader>bt :BTags<cr>
 
 " search for tags across project
-" nnoremap <leader>T :Tags<cr>
+nnoremap <leader>T :Tags<cr>
 
 " define in-fzf keybindings
 let g:fzf_action = {
@@ -204,10 +204,6 @@ let g:fzf_action = {
   \ 'ctrl-c': 'split',
   \ 'ctrl-v': 'vsplit'
   \ }
-
-" possibly handled via .zshrc?
-" let $FZF_DEFAULT_COMMAND = 'rg --files --follow --hidden'
-" let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " matching fzf colors to theme
 let g:fzf_colors =
@@ -242,12 +238,12 @@ let g:sneak#label = 1
 " }}}
 " rbgrouleff/bclose.vim {{{
 " https://github.com/rbgrouleff/bclose.vim
+
 " }}}
 " francoiscabrol/ranger.vim {{{
 " https://github.com/francoiscabrol/ranger.vim
+
 let g:ranger_map_keys = 0
-map <leader>n :Ranger<cr>
-map <leader>N :RangerNewTab<cr>x <c-w>x
 
 " }}}
 
@@ -256,6 +252,7 @@ map <leader>N :RangerNewTab<cr>x <c-w>x
 
 " vimwiki/vimwiki {{{
 " https://github.com/vimwiki/vimwiki
+
 let g:vimwiki_list = [{'path': '~/refs/', 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_diary_months = {
   \ 1: 'January', 2: 'February', 3: 'March', 4: 'April', 5: 'May',
@@ -265,9 +262,11 @@ let g:vimwiki_diary_months = {
 " }}}
 " freitass/todo.txt-vim {{{
 " https://github.com/freitass/todo.txt-vim
+
 " }}}
 " wakatime/vim-wakatime {{{
 " https://github.com/wakatime/vim-wakatime
+
 " }}}
 
 " }}}
@@ -278,20 +277,19 @@ let g:vimwiki_diary_months = {
 
 let g:mapleader = "\<space>"
 let g:maplocalleader = "\\"
-nnoremap <silent> <leader> :WhichKey "\<space>"<cr>
-nnoremap <silent> <localleader> :WhichKey "\\"<cr>
 
 " }}}
 " tpope/vim-surround {{{
 " https://github.com/tpope/vim-surround
+
 " }}}
 " tpope/vim-commentary {{{
 " https://github.com/tpope/vim-commentary
-" example of adding favorite filetype support
-" autocmd FileType apache setlocal commentstring=#\ %s
+
 " }}}
 " iamcco/markdown-preview.nvim {{{
 " https://github.com/iamcco/markdown-preview.nvim
+
 " example
 " nmap <C-s> <Plug>MarkdownPreview
 " nmap <M-s> <Plug>MarkdownPreviewStop
@@ -300,22 +298,19 @@ nnoremap <silent> <localleader> :WhichKey "\\"<cr>
 " }}}
 " wellle/targets.vim {{{
 " https://github.com/wellle/targets.vim
+
 " }}}
 " dbmrq/vim-ditto {{{
 " https://github.com/dbmrq/vim-ditto
-" vim-ditto settings https://github.com/dbmrq/vim-ditto
-au FileType markdown,text,tex DittoOn " turn on ditto's autocmds
-nmap <leader>di <Plug>ToggleDitto     " turn ditto on and off
 
 " }}}
 " tpope/vim-obsession {{{
 " https://github.com/tpope/vim-obsession
-" `:help obsession-status`
-" do I need something to create Session.vim file automatically?
 
 " }}}
 " skywind3000/asyncrun.vim {{{
 " https://github.com/skywind3000/asyncrun.vim
+
 " }}}
 
 " }}}
@@ -360,7 +355,7 @@ function! s:goyo_enter()
 endfunction
 
 function! s:goyo_leave()
-  set nu rnu
+  set number relativenumber
 
   " Quit Vim if this is the only remaining buffer
   if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
@@ -378,12 +373,15 @@ autocmd! User GoyoLeave call <SID>goyo_leave()
 " }}}
 " junegunn/limelight.vim {{{
 " https://github.com/junegunn/limelight.vim
+
 " }}}
 " sainnhe/artify.vim {{{
 " https://github.com/sainnhe/artify.vim
+
 " }}}
 " itchyny/lightline.vim {{{
 " https://github.com/itchyny/lightline.vim
+
 " functions {{{
 function! Devicons_Filetype() " {{{
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
@@ -524,18 +522,23 @@ let g:lightline.component_type = {
 " }}}
 " itchyny/vim-gitbranch {{{
 " https://github.com/itchyny/vim-gitbranch
+
 " }}}
 " maximbaz/lightline-ale {{{
 " https://github.com/maximbaz/lightline-ale
+
 " }}}
 " albertomontesg/lightline-asyncrun {{{
 " https://github.com/albertomontesg/lightline-asyncrun
+
 " }}}
 " sainnhe/tmuxline.vim {{{
 " https://github.com/sainnhe/tmuxline.vim
+
 " }}}
 " ryanoasis/vim-devicons {{{
 " https://github.com/ryanoasis/vim-devicons
+
 " }}}
 
 " }}}

@@ -82,19 +82,19 @@ default_orientation horizontal
 # floating_maximum_size 1250 x 1000
 
 # reload the configuration file
-$mod4+c reload
+$mod4+c     reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-$mod4+r restart
+$mod4+r     restart
 
 # exit i3 (logs you out of your X session)
-$mod4+e exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes' 'i3-msg exit'"
+$mod4+e     exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes' 'i3-msg exit'"
 
 # open sys menu
-$scmod3+0 $ex $scr/sysmenu.sh --menu
+$scmod3+0   $ex $scr/sysmenu.sh --menu
 
 # toggle polybar
-$mod4+p $ex $scr/toggle-polybar.sh
+$mod4+p     $ex $scr/toggle-polybar.sh
 
 # volume changing
 bindsym $volup      $ex pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -105,32 +105,32 @@ bindsym $mute       $ex pactl set-sink-mute @DEFAULT_SINK@ toggle
 # {{{ 2. window navigation & management
 
 # change focus
-$mod3+h focus left
-$mod3+j focus down
-$mod3+k focus up
-$mod3+l focus right
+$mod3+h     focus left
+$mod3+j     focus down
+$mod3+k     focus up
+$mod3+l     focus right
 
 # move focused window
-$smod3+h move left 100px
-$smod3+j move down 100px
-$smod3+k move up 100px
-$smod3+l move right 100px
+$smod3+h    move left 100px
+$smod3+j    move down 100px
+$smod3+k    move up 100px
+$smod3+l    move right 100px
 
 # resizing
-$cmod4+h resize shrink width  1 px or 1 ppt
-$cmod4+j resize shrink height 1 px or 1 ppt
-$cmod4+k resize grow   height 1 px or 1 ppt
-$cmod4+l resize grow   width  1 px or 1 ppt
+$cmod4+h    resize shrink width  1 px or 1 ppt
+$cmod4+j    resize shrink height 1 px or 1 ppt
+$cmod4+k    resize grow   height 1 px or 1 ppt
+$cmod4+l    resize grow   width  1 px or 1 ppt
 
-$cmod3+h resize shrink width  5 px or 5 ppt
-$cmod3+j resize shrink height 5 px or 5 ppt
-$cmod3+k resize grow   height 5 px or 5 ppt
-$cmod3+l resize grow   width  5 px or 5 ppt
+$cmod3+h    resize shrink width  5 px or 5 ppt
+$cmod3+j    resize shrink height 5 px or 5 ppt
+$cmod3+k    resize grow   height 5 px or 5 ppt
+$cmod3+l    resize grow   width  5 px or 5 ppt
 
-$scmod3+h resize shrink width  25 px or 25 ppt
-$scmod3+j resize shrink height 25 px or 25 ppt
-$scmod3+k resize grow   height 25 px or 25 ppt
-$scmod3+l resize grow   width  25 px or 25 ppt
+$scmod3+h   resize shrink width  25 px or 25 ppt
+$scmod3+j   resize shrink height 25 px or 25 ppt
+$scmod3+k   resize grow   height 25 px or 25 ppt
+$scmod3+l   resize grow   width  25 px or 25 ppt
 
 # enter fullscreen mode for the focused container
 $mod3+f                                               fullscreen toggle
@@ -139,13 +139,13 @@ $cmod3+f                  focus parent; focus parent; fullscreen toggle
 $scmod3+f   focus parent; focus parent; focus parent; fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-$mod3+z layout toggle tabbed splith splitv
+$mod3+z     layout toggle tabbed splith splitv
 
 # set to horizontal split
-$mod3+s split h
+$mod3+s     split h
 
 # set to vertical split
-$mod3+v split v
+$mod3+v     split v
 
 # floating management
 floating_modifier $mod3key
@@ -163,35 +163,35 @@ $mod4+semicolon move position center
 $cmod4+semicolon move absolute position center
 
 # focus the parent container
-$smod3+a focus parent
+$smod3+a    focus parent
 
 # focus the child container
-$smod3+c focus child
+$smod3+c    focus child
 
 # }}}
 # {{{ 3. workspaces
 
 # switch to workspace
-$mod3+1 workspace 1
-$mod3+2 workspace 2
-$mod3+3 workspace 3
-$mod3+4 workspace 4
-$mod3+5 workspace 5
-$mod3+6 workspace 6
-$mod3+7 workspace 7
-# $modX+Y workspace next
-# $modX+Y workspace next_on_output
-# $modX+Y workspace previous
-# $modX+Y workspace previous_on_output
+$mod3+1     workspace 1
+$mod3+2     workspace 2
+$mod3+3     workspace 3
+$mod3+4     workspace 4
+$mod3+5     workspace 5
+$mod3+6     workspace 6
+$mod3+7     workspace 7
+# $modX+Y     workspace next
+# $modX+Y     workspace next_on_output
+# $modX+Y     workspace previous
+# $modX+Y     workspace previous_on_output
 
 # move focused container to workspace
-$smod3+1 move container to workspace 1; workspace 1
-$smod3+2 move container to workspace 2; workspace 2
-$smod3+3 move container to workspace 3; workspace 3
-$smod3+4 move container to workspace 4; workspace 4
-$smod3+5 move container to workspace 5; workspace 5
-$smod3+6 move container to workspace 6; workspace 6
-$smod3+7 move container to workspace 7; workspace 7
+$smod3+1    move container to workspace 1; workspace 1
+$smod3+2    move container to workspace 2; workspace 2
+$smod3+3    move container to workspace 3; workspace 3
+$smod3+4    move container to workspace 4; workspace 4
+$smod3+5    move container to workspace 5; workspace 5
+$smod3+6    move container to workspace 6; workspace 6
+$smod3+7    move container to workspace 7; workspace 7
 # $modX+Y move workspace next
 # $modX+Y move workspace next_on_output
 # $modX+Y move workspace previous
@@ -203,20 +203,16 @@ $smod3+slash    move scratchpad
 $cmod3+slash    [floating] move scratchpad
 
 # mark window with name from your input
-$mod3+braceleft \
-  exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
+$mod3+braceleft exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
 
 # swap window with name from your input
-$mod3+braceright \
-  exec i3-input -F 'swap container with mark %s' -l 1 -P 'Mark: '
+$mod3+braceright exec i3-input -F 'swap with mark %s' -l 1 -P 'Mark: '
 
 # mark a window with 'swapee'
-$mod3+semicolon \
-  mark --add --toggle swapee
+$mod3+semicolon mark --add --toggle swapee
 
 # then swap another window with the marked window
-$smod3+semicolon \
-  swap container with mark swapee
+$smod3+semicolon swap container with mark swapee
 
 # }}}
 # {{{ 4. application management
@@ -269,12 +265,9 @@ $mod4+t           $ex   $scr/projify.sh todo
 # $mod?+Ctrl+x    --release $ex xkill
 
 # screenshots
-$br Mod3+Print \
-  $ex scrot -q 100 -s -e 'mv $f ~/dwn/shots'
-$br Mod3+Shift+Print \
-  $ex scrot -q 100 -u -e 'mv $f ~/dwn/shots'
-$br Mod3+Control+Print \
-  $ex scrot -q 100 -m -e 'mv $f ~/dwn/shots'
+$br Mod3+Print          $ex scrot -q 100 -s -e 'mv $f ~/dwn/shots'
+$br Mod3+Shift+Print    $ex scrot -q 100 -u -e 'mv $f ~/dwn/shots'
+$br Mod3+Control+Print  $ex scrot -q 100 -m -e 'mv $f ~/dwn/shots'
 
 # }}}
 # {{{ 5. scripts
@@ -473,83 +466,6 @@ mode "$mode_i3setup" {
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 	$smod3+i mode "default"
-}
-
-# }}}
-# {{{ i3-resurrect mode
-
-# i3-resurrect config
-set $i3rez_save_config \
-  -d /home/efex/.config/i3/i3-resurrect --swallow=class,instance,title
-set $i3rez_restore_config \
-  -d /home/efex/.config/i3/i3-resurrect
-
-# general, save, and retore modes
-set $i3rez_mode \
-  Save (s) | Restore (r)
-set $i3rez_save \
-  Save WS (1) (2) (3) (4) (5) (6) (7)
-set $i3rez_restore \
-  Restore WS Apps (1) (2) (3) (4) (5) (6) (7) | \
-  Restore WS Layout (shift+) (1) (2) (3) (4) (5) (6) (7)
-
-$mod4+z mode $i3rez_mode
-
-mode "$i3rez_mode" {
-  bindsym s       mode "$i3rez_save"
-  bindsym r       mode "$i3rez_restore"
-  bindsym Return  mode "default"
-  bindsym Escape  mode "default"
-}
-
-# Save workspace mode.
-mode "$i3rez_save" {
-  bindsym 1 $ex "i3-resurrect save -w 1 $i3rez_save_config"
-  bindsym 2 $ex "i3-resurrect save -w 2 $i3rez_save_config"
-  bindsym 3 $ex "i3-resurrect save -w 3 $i3rez_save_config"
-  bindsym 4 $ex "i3-resurrect save -w 4 $i3rez_save_config"
-  bindsym 5 $ex "i3-resurrect save -w 5 $i3rez_save_config"
-  bindsym 6 $ex "i3-resurrect save -w 6 $i3rez_save_config"
-  bindsym 7 $ex "i3-resurrect save -w 7 $i3rez_save_config"
-
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
-}
-
-# Restore workspace mode.
-mode "$i3rez_restore" {
-  bindsym 1 $ex \
-    "i3-resurrect restore -w 1 $i3rez_restore_config --programs-only"
-  bindsym 2 $ex \
-    "i3-resurrect restore -w 2 $i3rez_restore_config --programs-only"
-  bindsym 3 $ex \
-    "i3-resurrect restore -w 3 $i3rez_restore_config --programs-only"
-  bindsym 4 $ex \
-    "i3-resurrect restore -w 4 $i3rez_restore_config --programs-only"
-  bindsym 5 $ex \
-    "i3-resurrect restore -w 5 $i3rez_restore_config --programs-only"
-  bindsym 6 $ex \
-    "i3-resurrect restore -w 6 $i3rez_restore_config --programs-only"
-  bindsym 7 $ex \
-    "i3-resurrect restore -w 7 $i3rez_restore_config --programs-only"
-
-  bindsym Shift+1 $ex \
-    "i3-resurrect restore -w 1 $i3rez_restore_config --layout-only"
-  bindsym Shift+2 $ex \
-    "i3-resurrect restore -w 2 $i3rez_restore_config --layout-only"
-  bindsym Shift+3 $ex \
-    "i3-resurrect restore -w 3 $i3rez_restore_config --layout-only"
-  bindsym Shift+4 $ex \
-    "i3-resurrect restore -w 4 $i3rez_restore_config --layout-only"
-  bindsym Shift+5 $ex \
-    "i3-resurrect restore -w 5 $i3rez_restore_config --layout-only"
-  bindsym Shift+6 $ex \
-    "i3-resurrect restore -w 6 $i3rez_restore_config --layout-only"
-  bindsym Shift+7 $ex \
-    "i3-resurrect restore -w 7 $i3rez_restore_config --layout-only"
-
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
 }
 
 # }}}

@@ -16,6 +16,10 @@ map! <F6> :setlocal spell! spelllang=en_us<cr>
 " Allow quick additions to the spelling dict
 " nnoremap <leader>g :spellgood <c-r><c-w>
 
+" swap implementations of ` and ' jump to markers
+nnoremap ' `
+nnoremap ` '
+
 " open file explorer (still exploring all 3)
 nnoremap <leader>m :Hex<cr>
 nnoremap <leader>M :Lex<cr>
@@ -60,6 +64,16 @@ vmap > >gv
 nnoremap <c-e> 4<c-e>
 nnoremap <c-y> 4<c-y>
 
+" move easily while in insert mode
+imap <m-h> <left>
+imap <m-j> <down>
+imap <m-k> <up>
+imap <m-l> <right>
+inoremap <m-H> <ESC>I
+inoremap <m-J> <down><down><down><down><down>
+inoremap <m-K> <up><up><up><up><up>
+inoremap <m-L> <ESC>A
+
 " quick escape
 inoremap jk <esc>
 
@@ -67,8 +81,8 @@ inoremap jk <esc>
 inoremap <esc> <nop>
 
 " tab while in insert mode
-inoremap \<tab> <esc>V><esc>la
-inoremap \<s-tab> <esc>V<<esc>la
+inoremap <localleader><tab> <esc>V><esc>la
+inoremap <localleader><s-tab> <esc>V<<esc>la
 
 " surround visual selection in symbol
 " vnoremap $1 <esc>`>a)<esc>`<i(<esc>
@@ -86,6 +100,19 @@ inoremap \<s-tab> <esc>V<<esc>la
 " inoremap $q ''<esc>i
 " inoremap $e ""<esc>i
 
+" use tab/s-tab/cr to enter/navigate/select from autocompletion
+inoremap <expr> <tab>   pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+inoremap <expr> <cr>    pumvisible() ? "\<c-y>" : "\<cr>"
+inoremap <tab> <c-n>
+
+" Sort paragraphs
+" vnoremap <leader>s !sort -f<CR>gv
+" nnoremap <leader>s vip!sort -f<CR><Esc>
+
+" make p in Visual mode replace the selected text with the yank register
+" vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
+
 " }}}
 " searching {{{
 
@@ -99,12 +126,24 @@ nnoremap <leader>s :%s///g<left><left><left>
 nnoremap / /\v
 vnoremap / /\v
 
-" search for current selection
-" vnoremap <silent> * :call VisualSelection('f')<cr>
-" vnoremap <silent> # :call VisualSelection('b')<cr>
+" Open Ack and put the cursor in the right position
+nnoremap <leader>g :Ack<space>
 
-" search and replace selected text
-" vnoremap <silent> <leader>r :call VisualSelection('replace')<cr>
+" When you search with Ack, display your results in cope by doing:
+nnoremap <leader>cc :botright cope<cr>
+
+nnoremap <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
+
+" To go to the next search result do:
+nnoremap <leader>o :cn<cr>
+
+" To go to the previous search results do:
+nnoremap <leader>i :cp<cr>
+
+" ag for word under cursor
+vnoremap <leader>A y:Ag <c-r><cr>:cw<cr>
+nnoremap <leader>A :Ag <c-r><c-w><cr>
+" nnoremap K *N:grep! "\b<c-r><c-w>\b"<cr>:cw<cr>
 
 " }}}
 " folding {{{
@@ -174,16 +213,18 @@ nnoremap <leader><leader>n :setlocal number! relativenumber!<cr>
 " }}}
 " plugin specific {{{
 
-command! PIU PlugInstall | PlugUpdate | PlugUpgrade
+command! PIU PlugInstall | PlugUpdate | PlugUpgrade | UpdateRemotePlugins
 
-" coc hotkeys
-" nmap <leader>gd <Plug>(coc-definition)
-" nmap <leader>gr <Plug>(coc-references)
+" ranger
+nnoremap <leader>n :Ranger<cr>
+nnoremap <leader>N :RangerNewTab<cr>x <c-w>x
 
-" fzf hotkeys
-nnoremap <c-p> :GFiles<cr>
+" vim-which-key
+nnoremap <silent> <leader> :WhichKey "\<space>"<cr>
+nnoremap <silent> <localleader> :WhichKey "\\"<cr>
 
-nnoremap <leader>r :Autoformat<cr>
+" vim-ditto
+nmap <leader>di <Plug>ToggleDitto     " turn ditto on and off
 
 " }}}
 " webdev mappings {{{
@@ -208,11 +249,11 @@ nnoremap <leader><leader>q :AsyncStop<cr>
 " nnoremap <leader>q :bd<CR>   " Quickly close the current buffer
 
 " switch to prev/next buffer
-noremap <leader>q :bp<cr>
-noremap <leader>w :bn<cr>
+nnoremap <leader>q :bp<cr>
+nnoremap <leader>w :bn<cr>
 
 " close all buffers but this one
-noremap <leader>B :%bd\|e#<cr>
+nnoremap <leader>bc :%bd\|e#<cr>
 
 " show list of buffers
 " noremap <leader>w :ls<cr>

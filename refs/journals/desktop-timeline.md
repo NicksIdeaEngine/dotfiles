@@ -117,6 +117,7 @@
 - installed mps-youtube development branch to `~/.local`
 - installed flake8 via `python -m pip install flake8`
 - installed `black` via `pip`
+- installed ack
 
 ## New Things To Explore
 

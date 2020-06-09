@@ -76,6 +76,9 @@ Plug 'ludovicchabant/vim-gutentags'
 " https://github.com/justinmk/vim-sneak
 Plug 'justinmk/vim-sneak'
 
+" https://github.com/mileszs/ack.vim
+Plug 'mileszs/ack.vim'
+
 " https://github.com/rbgrouleff/bclose.vim
 Plug 'rbgrouleff/bclose.vim'
 
