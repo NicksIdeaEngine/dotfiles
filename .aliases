@@ -172,8 +172,11 @@ alias ranger="source ranger" \
 # use i3lock when afk
 alias afk="i3lock -ti /mnt/sdc1/Dropbox/pics/wallpaper/wall509.png"
 
+alias tosort="vlc /home/efex/music/to-sort/*"
+
 alias grablist="youtube-dl --config-location ~/.config/youtube-dl/songconfig \"https://www.youtube.com/playlist?list=PLedhaNZS3z5JfQ8lQIY3Drq3bvNX2TKSP\" && alert 'grablist complete'"
-alias grabsong="youtube-dl --config-location ~/.config/youtube-dl/songconfig \"https://\" && alert 'grabsong complete'"
+# alias grabsong="youtube-dl --config-location ~/.config/youtube-dl/songconfig \"https://\" && alert 'grabsong complete'"
+alias grabsong="youtube-dl --config-location ~/.config/youtube-dl/songconfig"
 # alias grabvid="youtube-dl --config-location ~/.config/youtube-dl/vidconfig \"https://\" && alert 'grabvid complete'"
 alias grabvid="youtube-dl --config-location ~/.config/youtube-dl/vidconfig"
 

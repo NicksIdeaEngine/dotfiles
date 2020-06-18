@@ -8,19 +8,6 @@
 " https://github.com/editorconfig/editorconfig-vim
 
 " }}}
-" chiel92/vim-autoformat {{{
-" https://github.com/chiel92/vim-autoformat
-
-let g:formatdef_rustfmt = '"rustfmt"'
-let g:formatters_rust = ['rustfmt']
-
-" }}}
-" sheerun/vim-polyglot {{{
-" https://github.com/sheerun/vim-polyglot
-
-let g:polyglot_disabled = ['rust']
-
-" }}}
 " alvan/vim-closetag {{{
 " https://github.com/alvan/vim-closetag
 
@@ -38,6 +25,19 @@ let g:closetag_emptyTags_caseSensitive = 1
 " https://github.com/jiangmiao/auto-pairs
 
 " }}}
+" chiel92/vim-autoformat {{{
+" https://github.com/chiel92/vim-autoformat
+
+let g:formatdef_rustfmt = '"rustfmt"'
+let g:formatters_rust = ['rustfmt']
+
+" }}}
+" sheerun/vim-polyglot {{{
+" https://github.com/sheerun/vim-polyglot
+
+let g:polyglot_disabled = ['rust']
+
+" }}}
 " prettier/vim-prettier {{{
 " https://github.com/prettier/vim-prettier
 
@@ -51,6 +51,9 @@ let g:prettier#autoformat_config_files = ['prettier.config.js', '.prettierrc']
 " disable auto opening of quickfix
 let g:prettier#quickfix_enabled = 0
 
+" run prettier on every save
+autocmd BufWritePre *.html,*.css,*.scss,*.js,*.jsx,*.json,*.md,*.mdx PrettierAsync
+
 " }}}
 " nvie/vim-flake8 {{{
 " https://github.com/nvie/vim-flake8
@@ -58,9 +61,15 @@ let g:prettier#quickfix_enabled = 0
 " disable autopopup quickfix window
 let g:flake8_show_quickfix=0
 
+" run flake8 on every save
+autocmd BufWritePost *.py call flake8#Flake8()
+
 " }}}
 " psf/black {{{
 " https://github.com/psf/black
+
+" run black before every save
+autocmd BufWritePre *.py execute ':Black'
 
 " }}}
 " rust-lang/rust.vim {{{
@@ -71,9 +80,6 @@ let g:flake8_show_quickfix=0
 " https://github.com/racer-rust/vim-racer
 
 let g:racer_experimental_completer = 1
-
-" formatting for rust
-nnoremap <leader>r :Autoformat<cr>
 
 " }}}
 
@@ -90,7 +96,10 @@ let g:user_emmet_mode='a'
 let g:user_emmet_install_global = 0
 
 " rebind leader to alt-e
-let g:user_emmet_leader_key = '<m-e>'
+let g:user_emmet_leader_key = '<m-i>'
+
+" start emmet for certain syntaxes
+autocmd FileType html,css,scss,js,jsx EmmetInstall
 
 " }}}
 " dense-analysis/ale {{{
@@ -129,9 +138,9 @@ let g:ale_linters = {
 " let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 " setting keybindings for navigating between errors
-" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-" nmap <silent> <C-j> <Plug>(ale_next_wrap)
-" nmap <F6> <Plug>(ale_fix)
+" nnoremap <silent> <c-k> <Plug>(ale_previous_wrap)
+" nnoremap <silent> <c-j> <Plug>(ale_next_wrap)
+" nnoremap <F6> <Plug>(ale_fix)
 
 " }}}
 " SirVer/ultisnips {{{
@@ -177,26 +186,12 @@ let g:tern#arguments = ["--persistent"]
 " }}}
 " searching code & files {{{
 
+" airblade/vim-rooter {{{
+" https://github.com/airblade/vim-rooter
+
+" }}}
 " junegunn/fzf {{{
 " https://github.com/junegunn/fzf
-
-" git based FZF
-nnoremap <c-p> :GFiles<cr>
-
-" default FZF
-nnoremap <leader>F :FZF<cr>
-
-" search through open buffers
-nnoremap <leader>B :Buffers<cr>
-
-" search through buffers history
-nnoremap <leader>H :History<cr>
-
-" search for tags in current buffer
-nnoremap <leader>bt :BTags<cr>
-
-" search for tags across project
-nnoremap <leader>T :Tags<cr>
 
 " define in-fzf keybindings
 let g:fzf_action = {
@@ -220,6 +215,31 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --smart-case -l -g ""'
+
+" git based FZF
+nnoremap <leader>fg :GFiles<cr>
+
+" default FZF
+nnoremap <leader>fz :FZF<cr>
+
+" search through open buffers
+nnoremap <leader>fb :Buffers<cr>
+
+" search through buffers history
+nnoremap <leader>fh :History<cr>
+
+" search for tags across project
+nnoremap <leader>ft :Tags<cr>
+
+" search for tags in current buffer
+nnoremap <leader>FT :BTags<cr>
+
+" ag for word under cursor
+vnoremap <leader>FA y:Ag <c-r><cr>:cw<cr>
+nnoremap <leader>FA :Ag <c-r><c-w><cr>
+" nnoremap K *N:grep! "\b<c-r><c-w>\b"<cr>:cw<cr>
+
 " }}}
 " ludovicchabant/vim-gutentags {{{
 " https://github.com/ludovicchabant/vim-gutentags
@@ -234,6 +254,29 @@ let g:gutentags_file_list_command = "rg --files --follow --hidden -g '!.git'"
 " https://github.com/justinmk/vim-sneak
 
 let g:sneak#label = 1
+
+" }}}
+" mileszs/ack.vim {{{
+" https://github.com/mileszs/ack.vim
+
+" Use the the_silver_searcher if possible (much faster than Ack)
+if executable('ag')
+  let g:ackprg = 'ag --hidden --vimgrep --smart-case'
+  set grepprg=ag\ --hidden\ --vimgrep\ --smart-case
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
+
+" Open Ack and put the cursor in the right position
+nnoremap <leader>fa :Ack<space>
+
+" When you search with Ack, display your results in cope by doing:
+nnoremap <leader>cc :botright cope<cr>
+
+" To go to the next search result do:
+nnoremap <leader>o :cn<cr>
+
+" To go to the previous search results do:
+nnoremap <leader>i :cp<cr>
 
 " }}}
 " rbgrouleff/bclose.vim {{{
@@ -253,11 +296,15 @@ let g:ranger_map_keys = 0
 " vimwiki/vimwiki {{{
 " https://github.com/vimwiki/vimwiki
 
-let g:vimwiki_list = [{'path': '~/refs/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{'path': '~/refs/', 'syntax': 'markdown', 'ext': '.wiki'}]
 let g:vimwiki_diary_months = {
   \ 1: 'January', 2: 'February', 3: 'March', 4: 'April', 5: 'May',
   \ 6: 'June', 7: 'July', 8: 'August', 9: 'September', 10: 'October',
   \ 11: 'November', 12: 'December' }
+
+autocmd FileType vimwiki nnoremap <leader>wi :VimwikiUISelect<cr>
+autocmd FileType vimwiki nnoremap <leader>wv :VimwikiSplitLink<cr>
+autocmd FileType vimwiki nnoremap <leader>ws :VimwikiVSplitLink<cr>
 
 " }}}
 " freitass/todo.txt-vim {{{
@@ -278,6 +325,10 @@ let g:vimwiki_diary_months = {
 let g:mapleader = "\<space>"
 let g:maplocalleader = "\\"
 
+" vim-which-key
+nnoremap <silent> <leader> :WhichKey "\<space>"<cr>
+nnoremap <silent> <localleader> :WhichKey "\\"<cr>
+
 " }}}
 " tpope/vim-surround {{{
 " https://github.com/tpope/vim-surround
@@ -285,6 +336,10 @@ let g:maplocalleader = "\\"
 " }}}
 " tpope/vim-commentary {{{
 " https://github.com/tpope/vim-commentary
+
+" }}}
+" tpope/vim-repeat {{{
+" https://github.com/tpope/vim-repeat
 
 " }}}
 " iamcco/markdown-preview.nvim {{{
@@ -303,6 +358,12 @@ let g:maplocalleader = "\\"
 " dbmrq/vim-ditto {{{
 " https://github.com/dbmrq/vim-ditto
 
+" turn on ditto's autocmds
+autocmd FileType markdown,text,tex DittoOn
+
+" vim-ditto
+nnoremap <leader>di <Plug>ToggleDitto
+
 " }}}
 " tpope/vim-obsession {{{
 " https://github.com/tpope/vim-obsession
@@ -312,12 +373,20 @@ let g:maplocalleader = "\\"
 " https://github.com/skywind3000/asyncrun.vim
 
 " }}}
+" airblade/vim-gitgutter {{{
+" https://github.com/airblade/vim-gitgutter
+
+" }}}
+" tpope/vim-fugitive {{{
+" https://github.com/tpope/vim-fugitive
+
+" }}}
 
 " }}}
 " aesthetics {{{
 
-" morhetz/gruvbox {{{
-" https://github.com/morhetz/gruvbox
+" gruvbox-community/gruvbox {{{
+" https://github.com/gruvbox-community/gruvbox
 
 if (has("termguicolors"))
   set termguicolors
@@ -334,16 +403,11 @@ let g:goyo_width = 95
 let g:goyo_height = 85
 let g:goyo_linenr = 0
 
+" toggle limelight alongside goyo
 augroup goyoCustom
   autocmd! User GoyoEnter Limelight
   autocmd! User GoyoLeave Limelight!
 augroup END
-
-" focus mode
-nnoremap <silent> <leader><leader>f :<c-u>Limelight!!<cr>
-
-" reading mode
-nnoremap <silent> <leader><leader>r :<c-u>Goyo<cr>
 
 " ensure `:q` quits even when Goyo is active
 function! s:goyo_enter()
@@ -370,9 +434,15 @@ endfunction
 autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
 
+" toggle goyo
+nnoremap <silent> <leader><leader>r :<c-u>Goyo<cr>
+
 " }}}
 " junegunn/limelight.vim {{{
 " https://github.com/junegunn/limelight.vim
+
+" toggle limelight
+nnoremap <silent> <leader><leader>f :<c-u>Limelight!!<cr>
 
 " }}}
 " sainnhe/artify.vim {{{

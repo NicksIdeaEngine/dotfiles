@@ -2,16 +2,16 @@
 -x
 
 # embed thumbnail as cover art
-# --embed-thumbnail
+--embed-thumbnail
 
 # use regx to grab metadata from title
 --metadata-from-title "%(artist)s - %(title)s"
 
 # use m4a format
---audio-format best
+--audio-format m4a
 
 # use medium quality
---audio-quality 256K
+--audio-quality 5
 
 # add meta data
 --add-metadata

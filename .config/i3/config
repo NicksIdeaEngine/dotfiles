@@ -248,6 +248,7 @@ $mod4+s           $ex   slack
 $mod4+o           $ex   obs
 $mod4+i           $ex   zoom
 $mod4+m           $ex   "rm /home/efex/.config/mps-youtube/cache_py_* ; $terminal -e 'mpsyt'"
+$smod4+m          $ex   vlc /home/efex/music/to-sort/*
 $mod4+u           $ex   $scr/projify.sh wiki
 $mod4+y           $ex   $scr/projify.sh dots
 $mod4+t           $ex   $scr/projify.sh todo
@@ -278,10 +279,12 @@ $smod4+9    $ex $scr/sink-switch.sh --headphones
 $mod4+8     $ex $scr/alertr.sh --cpustatus --notify
 $mod4+7     $ex $scr/alertr.sh --gpustatus --notify
 $mod4+6     $ex $scr/alertr.sh --fanstatus --notify
+$mod4+5     $ex redshift -c /home/efex/.config/redshift.conf
+$mod4+4     $ex $scr/dbxlong_applet.sh
 $mod4+1     $ex $scr/rotate-monitor.sh
 $mod4+minus $ex $scr/colorswitch.sh
+$mod4+slash $ex $scr/hotki.sh
 # general computer stats report
-# redshift
 
 # }}}
 # {{{ 9. startup
@@ -293,7 +296,7 @@ $ex xrandr --output HDMI-A-0 --auto --left-of DisplayPort-0
 $ex xdotool key --clearmodifiers Num_Lock
 
 # set default sink to speakers and source to headset mic
-$exa pulseaudio -D && $scr/polybarstart.sh
+$exa pulseaudio -D
 $exa pactl set-default-sink $speakers
 $exa pactl set-default-source $headmic
 $exa pactl set-sink-volume 0 '0%'
@@ -304,7 +307,7 @@ $ex xset dpms 0 0 1200
 # autostart apps
 $ex       $HOME/.fehbg
 $ex       sleep 10; $scr/sysbackup.sh
-$ex       sleep 10; $scr/watch_dropbox.sh
+$ex       sleep 10; $scr/dbx_applet.sh --watch
 $ex       /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 $ex       nm-applt
 $ex       xfce4-power-manager
@@ -340,8 +343,7 @@ for_window [class="Firefox"] border pixel 0
 for_window [title="mpsyt"] floating enable resize set 1000 600
 for_window [class="mpv"] border pixel 0
 for_window [class="Slack"] floating enable
-for_window [title="System Monitor"] border pixel 0
-for_window [class="vlc"] border pixel 0
+for_window [class="vlc"] floating enable resize set 845 600
 for_window [title="wiki"] floating enable resize set 850 1070
 
 # Open specific applications in floating mode (Manjaro defaults)

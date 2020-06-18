@@ -13,16 +13,13 @@ QUARTER="$(( ($MONTH-1)/3+1 ))"
 DEST="$HOME/zackups"
 
 # directories to grab from $HOME
-HOME_SPEC=(".config" ".config/google-chrome/Default" ".config/mpd" ".config/rclone" ".config/rescuetime" ".config/systemd/user" ".config/Twine" ".local/share/applications" ".vim")
+HOME_SPEC=(".config" ".config/google-chrome/Default" ".config/rclone" ".config/rescuetime" ".local/share/applications")
 
 # .config specifications
-CONFIG_SPEC=("autostart" "clipit" "htop" "vlc" "redshift.conf" "user-dirs.dirs")
+CONFIG_SPEC=("clipit" "redshift.conf" "user-dirs.dirs")
 
 # google chrome specific file
 CHROME_SPEC=("Preferences")
-
-# mpd spec
-MPD_SPEC=("mpd.conf")
 
 # rclone spec
 RCLONE_SPEC=("filter-from.txt" "rclone.conf")
@@ -30,20 +27,14 @@ RCLONE_SPEC=("filter-from.txt" "rclone.conf")
 # RescueTime.com spec
 RESCUE_SPEC=(".rtgoals")
 
-# systemd spec
-SYSTEMD_SPEC=("dropbox-watch.service")
-
 # specific directories to grab within .local/share/applications
-LOCAL_APP_SPEC=("firefox-developer.desktop" "kitty.desktop" "twine.desktop" "st.desktop")
-
-# .vim spec
-VIM_SPEC=("autoload")
+LOCAL_APP_SPEC=("kitty.desktop" "st.desktop")
 
 # dotfiles in $HOME
-DOTFILES=(".bash_history" ".git-credentials" ".gitconfig" ".histfile" ".lesshst" ".node_repl_history" ".npmrc" ".nvimlog" ".python_history" ".rvmrc" ".selected_editor" ".viminfo" ".wakatime.cfg" ".wget-hsts" ".Xclients" ".z" ".zsh_history")
+DOTFILES=(".npmrc" ".viminfo" ".z" ".zsh_history")
 
 # quarterly backups
-QUARTER_SPEC=(".fonts" ".icons" ".moc" ".mplayer" ".ssh" ".themes")
+QUARTER_SPEC=(".fonts" ".icons" ".moc" ".mplayer" ".themes" ".bash_history" ".git-credentials" ".gitconfig" ".rusttags" ".wakatime.cfg" ".wget-hsts" ".Xclients")
 
 # backup one or more files or directories
 backup() {
@@ -86,24 +77,12 @@ start_daily() {
         backup "$arg1" "$I" "${CONFIG_SPEC[@]}" ;;
       ".config/google-chrome/Default" )
         backup "$arg1" "$I" "${CHROME_SPEC[@]}" ;;
-      ".config/mpd" )
-        backup "$arg1" "$I" "${MPD_SPEC[@]}" ;;
       ".config/rclone" )
         backup "$arg1" "$I" "${RCLONE_SPEC[@]}" ;;
       ".config/rescuetime" )
         backup "$arg1" "$I" "${RESCUE_SPEC[@]}" ;;
-      ".config/systemd/user" )
-        backup "$arg1" "$I" "${SYSTEMD_SPEC[@]}" ;;
-      ".config/Twine" )
-        backup "$arg1" "$I" "${TWINE_SPEC[@]}" ;;
-      ".icons" )
-        backup "$arg1" "$I" "${ICON_SPEC[@]}" ;;
-      ".local/kitty/kitty" )
-        backup "$arg1" "$I" "${LOCAL_KITTY_SPEC[@]}" ;;
       ".local/share/applications" )
         backup "$arg1" "$I" "${LOCAL_APP_SPEC[@]}" ;;
-      ".vim" )
-        backup "$arg1" "$I" "${VIM_SPEC[@]}" ;;
       * )
         backup "$arg1" "" "$I" ;;
     esac
@@ -129,7 +108,7 @@ clean_dir() {
 }
 
 # check for signal file to see if update is needed
-if [[ -f "$DEST/$DAYOFMONTH/$MONTH" ]]; then
+if [[ ! -f "$DEST/$DAYOFMONTH/$MONTH" ]]; then
   clean_dir "$DEST/$DAYOFMONTH" "$MONTH"
   start_daily "$DAYOFMONTH"
   DAILY_MSG="Rotating daily backup completed."
@@ -137,7 +116,7 @@ else
   DAILY_MSG="Rotating daily backup not needed."
 fi
 
-if [[ -f "$DEST/current/$DAYOFMONTH" ]]; then
+if [[ ! -f "$DEST/current/$DAYOFMONTH" ]]; then
   clean_dir "$DEST/current" "$DAYOFMONTH"
   start_daily "current"
   CURRENT_MSG="Current daily backup completed."
@@ -145,7 +124,7 @@ else
   CURRENT_MSG="Current daily backup not needed."
 fi
 
-if [[ -f "$DEST/quarterly/$QUARTER/$YEAR" ]]; then
+if [[ ! -f "$DEST/quarterly/$QUARTER/$YEAR" ]]; then
   clean_dir "$DEST/quarterly/$QUARTER" "$YEAR"
   start_quarterly "quarterly/$QUARTER"
   QUARTER_MSG="Quarterly backup completed."

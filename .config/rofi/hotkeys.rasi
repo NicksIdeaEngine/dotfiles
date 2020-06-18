@@ -1,0 +1,58 @@
+configuration {
+  lines: 41;
+  columns: 3;
+}
+
+* {
+  background-color:	@bg2;
+  text-color:	@fg1;
+  font:	"FiraCode Nerd Font 12";
+}
+
+window {
+  anchor: center;
+  location: center;
+  width: 70%;
+  padding: 5px;
+  border: 10px;
+  border-color:	@fg3;
+}
+
+listview {
+  border: 0px solid 0 0;
+  border-color: @fg4;
+}
+
+element {
+  padding: 2px;
+}
+
+element selected {
+  background-color: @fg4;
+  text-color: @bg0;
+}
+
+inputbar {
+  spacing: 0;
+  text-color: @bg0;
+  padding: 2px;
+  children: [ prompt, textbox-prompt-sep, entry, case-indicator ];
+}
+
+case-indicator,
+entry,
+prompt,
+button {
+  spacing: 0;
+  text-color: @bg0;
+}
+
+textbox-prompt-sep {
+  expand: false;
+  str: ":";
+  text-color: @bg0;
+  margin: 0 0.3em 0 0;
+}
+
+@import "firacode.rasi"
+@import "gruvbox.rasi"

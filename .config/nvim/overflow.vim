@@ -7,10 +7,8 @@
 
 " plugin ideas {{{
 
-" markdown open preview
 " image viewing
 " echodoc
-" cope
 
 " rust {{{
 " could be used for autocompiling rust, but needs a weird hack from
@@ -105,43 +103,6 @@
 
 " https://github.com/rust-lang/rust.vim
 " Plug 'rust-lang/rust.vim'
-
-" }}}
-" neoclide/coc.nvim {{{
-" https://github.com/neoclide/coc.nvim
-
-" let g:coc_global_extensions=[]
-
-" nmap <leader><leader>c <Plug>(coc-codeaction)
-
-" function! s:check_back_space() abort
-"   let col = col('.') - 1
-"   return !col || getline('.')[col - 1] =~# '\s'
-" endfunction
-
-" inoremap <silent><expr> <tab>
-"   \ pumvisible() ? "\<c-n>" :
-"   \ <SID>check_back_space() ? "\<tab>" :
-"   \ coc#refresh()
-
-" use <tab> and <s-tab> to navigate completion list
-" inoremap <expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
-" inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-
-" use <cr> to confirm completion
-" inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<c-g>u\<cr>"
-
-" make <cr> select first item and confirm if no item is selcted
-" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<c-g>u\<cr>"
-
-" close preview window when completion is done
-" autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
-
-" let g:coc_snippet_next = '<c-semicolon>'
-" let g:coc_snippet_prev = '<m-semicolon>'
-
-" use <c-space> to trigger completion
-" inoremap <silent><expr> <c-space> coc#refresh()
 
 " }}}
 " }}}

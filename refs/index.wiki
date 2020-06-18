@@ -1,0 +1,53 @@
+# Home of the Wiki
+
+## Map
+
+### Quick Ref
+
+- [vim ref](./linux/vim/vimref.wiki)
+- [desktop timeline](journals/desktop-timeline.wiki)
+- [linux cmd book](linux/cmd/linux-cmd-book.wiki)
+- [html ref](webdev/html/htmlref.wiki)
+- [css ref](webdev/css/cssref.wiki)
+- [js ref](webdev/js/jsref.wiki)
+- [react ref](webdev/react/reactref.wiki)
+- [webdev journey notes](webdev/notes/index.wiki)
+
+### Root
+
+- [webdev/](webdev/index.wiki)
+- [linux/](linux/index.wiki)
+- [rust/](rust/index.wiki)
+- [git/](git/index.wiki)
+- [hotkeys/](hotkeys/index.wiki)
+- [wiki templates/](wikitemplates/index.wiki)
+- [markdown ref](markdown.md)
+- [archives/](archives/index.wiki)
+- [journals/](journals/index.wiki)
+- [private/](private/index.wiki)
+- [temp](tempref.wiki)
+
+## Key Bindings
+
+### Normal Mode
+
+- `<Leader>ww` -- Open default wiki index file.
+- `<Leader>wt` -- Open default wiki index file in a new tab.
+- `<Leader>wi` -- Select and open wiki index file.
+- `<Leader>wd` -- Delete wiki file you are in.
+- `<Leader>wr` -- Rename wiki file you are in.
+- `<Enter>` -- Follow/Create wiki link
+- `<Leader>wv` -- Split to side and follow/create wiki link
+- `<Leader>ws` -- Split down and follow/create wiki link
+- `<Backspace>` -- Go back to parent(previous) wiki link
+- `<Tab>` -- Find next wiki link
+- `<Shift-Tab>` -- Find previous wiki link
+
+For more keys, see `:h vimwiki-mappings`
+
+### Commands
+
+- `:Vimwiki2HTML` -- Convert current wiki link to HTML
+- `:VimwikiAll2HTML` -- Convert all your wiki links to HTML
+- `:help vimwiki-commands` -- list all commands
+- `:help vimwiki` -- General vimwiki help docs

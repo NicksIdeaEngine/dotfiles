@@ -3,23 +3,23 @@
 ! bg shades
 *background: #f9f5d7
 *bg: #f9f5d7
-*bg0: #fbf1c7
-*bg1: #ebdbb2
-*bg2: #d5c4a1
-*bg3: #bdae93
-*bg4: #a89984
+*bg0: #282828
+*bg1: #3c3836
+*bg2: #504945
+*bg3: #665c54
+*bg4: #7c6f64
 
 ! fg shades
-*foreground: #282828
-*fg: #282828
-*fg0: #282828
-*fg1: #3c3836
-*fg2: #504945
-*fg3: #665c54
-*fg4: #7c6f64
+*foreground: #fbf1c7
+*fg: #fbf1c7
+*fg0: #fbf1c7
+*fg1: #ebdbb2
+*fg2: #d5c4a1
+*fg3: #bdae93
+*fg4: #a89984
 
 ! bg hard contrast
-*color0:  #fbf1c7
+*color0:  #282828
 
 ! red
 *color1:  #cc241d
@@ -46,8 +46,8 @@
 *aqua:  #689d6a
 
 ! dark gray
-*color7:  #7c6f64
-*dark-gray:  #7c6f64
+*color7:  #a89984
+*dark-gray:  #a89984
 
 ! light gray
 *color8:  #928374
@@ -78,7 +78,7 @@
 *dark-aqua: #427b58
 
 ! fg
-*color15: #3c3836
+*color15: #ebdbb2
 
 ! orange
 *color16: #d65d0e

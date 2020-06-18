@@ -6,7 +6,7 @@
 
 let mapleader="\<space>"
 let maplocalleader="\\"
-nnoremap <space> <nop>
+nmap <space> <nop>
 filetype plugin indent on
 syntax on
 

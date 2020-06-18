@@ -8,7 +8,6 @@
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	/0c78c0c4/
 "	old/example-init.vim	/^map " <Plug>Sneak_,$/;"	m
-"My Favorite Vim Tricks" from Makc (YouTube)	refs/linux/vim/temp-notes.md	/^## "My Favorite Vim Tricks" from Makc (YouTube)$/;"	s	chapter:Notes from Anywhere Prior to Sorting
 #PanelUI-button	.mozilla/firefox/65rf3aso.default-release/chrome/userChrome.css	/^#PanelUI-button,$/;"	i
 #PersonalToolbar	.mozilla/firefox/65rf3aso.default-release/chrome/userChrome.css	/^#PersonalToolbar {$/;"	i
 #TabsToolbar	.mozilla/firefox/65rf3aso.default-release/chrome/userChrome.css	/^#TabsToolbar {$/;"	i
@@ -53,14 +52,18 @@
 #urlbar-container	.mozilla/firefox/65rf3aso.default-release/chrome/userChrome.css	/^#urlbar-container,$/;"	i
 #urlbar-zoom-button	.mozilla/firefox/65rf3aso.default-release/chrome/userChrome.css	/^#urlbar-zoom-button,$/;"	i
 #urlbar[focused='true']	.mozilla/firefox/65rf3aso.default-release/chrome/userChrome.css	/^#urlbar[focused='true'],$/;"	i
+$$	.config/nvim/keys.vim	/^vnoremap $$ <esc>`>a"<esc>`<i"<esc>$/;"	m
+$1	.config/nvim/keys.vim	/^vnoremap $1 <esc>`>a)<esc>`<i(<esc>$/;"	m
+$2	.config/nvim/keys.vim	/^vnoremap $2 <esc>`>a]<esc>`<i[<esc>$/;"	m
+$3	.config/nvim/keys.vim	/^vnoremap $3 <esc>`>a}<esc>`<i{<esc>$/;"	m
+$FZF_DEFAULT_COMMAND	.config/nvim/plugin_config.vim	/^let $FZF_DEFAULT_COMMAND = 'ag --hidden --smart-case -l -g ""'$/;"	v
+$e	.config/nvim/keys.vim	/^vnoremap $e <esc>`>a`<esc>`<i`<esc>$/;"	m
+$q	.config/nvim/keys.vim	/^vnoremap $q <esc>`>a'<esc>`<i'<esc>$/;"	m
 '	.config/nvim/keys.vim	/^nnoremap ' `$/;"	m
 '	old/example-2-init.vim	/^nnoremap ' `$/;"	m
 '	old/example-2-init.vim	/^vnoremap ' :s\/'\/’\/<cr>$/;"	m
 '	old/example-init.vim	/^map ' <Plug>Sneak_;$/;"	m
 *|*.textbox-input::-moz-placeholder	.mozilla/firefox/65rf3aso.default-release/chrome/userChrome.css	/^*|*.textbox-input::-moz-placeholder {$/;"	c
-- !vs code	refs/journals/laptop-timeline.md	/^- !vs code$/;"	s	chapter:Laptop Timeline
-- npm	refs/journals/laptop-timeline.md	/^- npm$/;"	s	chapter:Laptop Timeline
-- pCloud	refs/archives/ubunturef.md	/^- pCloud$/;"	s	chapter:Things to Investigate
 .autocomplete-history-dropmarker	.mozilla/firefox/65rf3aso.default-release/chrome/userChrome.css	/^.autocomplete-history-dropmarker,$/;"	c
 .tab-background	.mozilla/firefox/65rf3aso.default-release/chrome/userChrome.css	/^.tab-background,$/;"	c
 .tab-content	.mozilla/firefox/65rf3aso.default-release/chrome/userChrome.css	/^.tab-content {$/;"	c
@@ -140,7 +143,7 @@
 ;	old/example-2-init.vim	/^nnoremap ; :$/;"	m
 ;	old/example-init.vim	/^nnoremap ; :$/;"	m
 ;	old/example-init.vim	/^vnoremap ; :$/;"	m
-<	.config/nvim/keys.vim	/^vmap < <gv$/;"	m
+<	.config/nvim/keys.vim	/^vnoremap < <gv$/;"	m
 <2-LeftMouse>	old/example-init.vim	/^nmap <2-LeftMouse> ]%V[%$/;"	m
 <A-,>	old/example-init.vim	/^nnoremap <silent> <A-,> :<C-u>wincmd <<CR>$/;"	m
 <A-->	old/example-init.vim	/^nnoremap <silent> <A--> :<C-u>wincmd -<CR>$/;"	m
@@ -222,7 +225,7 @@
 <C-z>	old/example-init.vim	/^imap <expr> <C-z> pumvisible() ? "\\<C-e>" : "<C-z>"$/;"	m
 <CR>	old/example-init.vim	/^imap <expr> <CR> pumvisible() ? "\\<Space>\\<Backspace>\\<CR>" : "\\<CR>"$/;"	m
 <F1>	old/example-2-init.vim	/^noremap! <F1> <Esc>$/;"	m
-<F6>	.config/nvim/keys.vim	/^map! <F6> :setlocal spell! spelllang=en_us<cr>$/;"	m
+<F6>	.config/nvim/keys.vim	/^nnoremap <F6> :setlocal spell! spelllang=en_us<cr>$/;"	m
 <Leader>t	old/example-init.vim	/^nmap <silent> <Leader>t <Plug>TranslateW$/;"	m
 <Leader>t	old/example-init.vim	/^vmap <silent> <Leader>t <Plug>TranslateWV$/;"	m
 <PageDown>	old/example-init.vim	/^    imap <buffer><PageDown> <Plug>(committia-scroll-diff-down-half)$/;"	m
@@ -256,7 +259,6 @@
 <c-l>	.config/nvim/keys.vim	/^nnoremap <c-l> <c-w>l$/;"	m
 <c-n>	.config/nvim/functions.vim	/^nnoremap <c-n> :call OpenTerminal()<cr>$/;"	m
 <c-n>	old/example-init.vim	/^    nnoremap <silent> <buffer> <c-n> :call search('^  \\X*\\zs\\x')<cr>$/;"	m
-<c-p>	.config/nvim/plugin_config.vim	/^nnoremap <c-p> :GFiles<cr>$/;"	m
 <c-p>	old/example-init.vim	/^    nnoremap <silent> <buffer> <c-p> :call search('^  \\X*\\zs\\x', 'b')<cr>$/;"	m
 <c-u>	old/example-2-init.vim	/^inoremap <c-u> <esc>viwUea$/;"	m
 <c-u>	old/example-2-init.vim	/^nnoremap <c-u> viwUe$/;"	m
@@ -264,8 +266,8 @@
 <cr>	.config/nvim/keys.vim	/^inoremap <expr> <cr>    pumvisible() ? "\\<c-y>" : "\\<cr>"$/;"	m
 <cr>	old/example-2-init.vim	/^inoremap <expr> <cr> pumvisible() ? "\\<c-y>" : "\\<cr>"$/;"	m
 <down>	old/example-init.vim	/^inoremap <expr> <down> pumvisible() ? "\\<Space>\\<Backspace>\\<down>" : "\\<down>"$/;"	m
-<esc>	.config/nvim/keys.vim	/^inoremap <esc> <nop>$/;"	m
-<leader>	.config/nvim/keys.vim	/^nnoremap <silent> <leader> :WhichKey "\\<space>"<cr>$/;"	m
+<esc>	.config/nvim/keys.vim	/^imap <esc> <nop>$/;"	m
+<leader>	.config/nvim/plugin_config.vim	/^nnoremap <silent> <leader> :WhichKey "\\<space>"<cr>$/;"	m
 <leader>"	old/example-2-init.vim	/^nnoremap <leader>" viW<esc>a"<esc>gvo<esc>i"<esc>gvo<esc>3l$/;"	m
 <leader>"	old/example-2-init.vim	/^vnoremap <leader>" <esc>a"<esc>gvo<esc>i"<esc>gvo<esc>ll$/;"	m
 <leader>%	old/example-init.vim	/^nmap <leader>% ]%V[%$/;"	m
@@ -291,56 +293,61 @@
 <leader><Tab>	old/example-init.vim	/^nnoremap <silent> <leader><Tab> :<C-u>call Neoformat_Default_Filetype_Formatter()<CR>$/;"	m
 <leader><Tab>	old/example-init.vim	/^vnoremap <silent> <leader><Tab> :Neoformat! &ft<CR>$/;"	m
 <leader><leader>	old/example-init.vim	/^nnoremap <silent> <leader><leader> :call quickmenu#toggle(0)<cr>$/;"	m
-<leader><leader>a	.config/nvim/keys.vim	/^nnoremap <leader><leader>a :AsyncRun gatsby develop<cr>$/;"	m
+<leader><leader>Z	.config/nvim/keys.vim	/^nnoremap <leader><leader>Z :qa<cr>$/;"	m
+<leader><leader>a	.config/nvim/keys.vim	/^noremap <leader><leader>a ggVG$/;"	m
 <leader><leader>f	.config/nvim/plugin_config.vim	/^nnoremap <silent> <leader><leader>f :<c-u>Limelight!!<cr>$/;"	m
+<leader><leader>gd	.config/nvim/keys.vim	/^nnoremap <leader><leader>gd :AsyncRun gatsby develop<cr>$/;"	m
 <leader><leader>n	.config/nvim/keys.vim	/^nnoremap <leader><leader>n :setlocal number! relativenumber!<cr>$/;"	m
+<leader><leader>nrd	.config/nvim/keys.vim	/^nnoremap <leader><leader>nrd :AsyncRun npm run devserver<cr>$/;"	m
+<leader><leader>ns	.config/nvim/keys.vim	/^nnoremap <leader><leader>ns :AsyncRun npm start<cr>$/;"	m
 <leader><leader>q	.config/nvim/keys.vim	/^nnoremap <leader><leader>q :AsyncStop<cr>$/;"	m
 <leader><leader>r	.config/nvim/plugin_config.vim	/^nnoremap <silent> <leader><leader>r :<c-u>Goyo<cr>$/;"	m
 <leader><leader>s	.config/nvim/keys.vim	/^nnoremap <leader><leader>s ?{<cr>jV\/^\\s*\\}?$<cr>k:sort<cr>:noh<cr>$/;"	m
 <leader>=	.config/nvim/keys.vim	/^nnoremap <leader>= <c-w>=$/;"	m
 <leader>>	.config/nvim/keys.vim	/^nnoremap <leader>> <c-w><c-r>$/;"	m
-<leader>A	.config/nvim/keys.vim	/^nnoremap <leader>A :Ag <c-r><c-w><cr>$/;"	m
-<leader>A	.config/nvim/keys.vim	/^vnoremap <leader>A y:Ag <c-r><cr>:cw<cr>$/;"	m
 <leader>A	old/example-2-init.vim	/^nnoremap <leader>A :RopeAutoImport<cr>$/;"	m
-<leader>B	.config/nvim/plugin_config.vim	/^nnoremap <leader>B :Buffers<cr>$/;"	m
-<leader>F	.config/nvim/plugin_config.vim	/^nnoremap <leader>F :FZF<cr>$/;"	m
-<leader>H	.config/nvim/plugin_config.vim	/^nnoremap <leader>H :History<cr>$/;"	m
+<leader>FA	.config/nvim/plugin_config.vim	/^nnoremap <leader>FA :Ag <c-r><c-w><cr>$/;"	m
+<leader>FA	.config/nvim/plugin_config.vim	/^vnoremap <leader>FA y:Ag <c-r><cr>:cw<cr>$/;"	m
+<leader>FS	.config/nvim/keys.vim	/^nnoremap <leader>FS         :RangerNewTab<cr>x <c-w>x$/;"	m
+<leader>FT	.config/nvim/plugin_config.vim	/^nnoremap <leader>FT :BTags<cr>$/;"	m
 <leader>I	old/example-2-init.vim	/^nnoremap <leader>I :set list!<cr>$/;"	m
-<leader>M	.config/nvim/keys.vim	/^nnoremap <leader>M :Lex<cr>$/;"	m
-<leader>N	.config/nvim/keys.vim	/^nnoremap <leader>N :RangerNewTab<cr>x <c-w>x$/;"	m
 <leader>N	old/example-2-init.vim	/^nnoremap <leader>N :NERDTreeClose<CR>$/;"	m
 <leader>N	old/example-2-init.vim	/^nnoremap <leader>N :setlocal number!<cr>$/;"	m
 <leader>Q	old/example-2-init.vim	/^nnoremap <leader>Q :q<CR>    " Quickly close the current window$/;"	m
 <leader>S	.config/nvim/keys.vim	/^nnoremap <leader>S :vsp<cr>$/;"	m
-<leader>T	.config/nvim/plugin_config.vim	/^nnoremap <leader>T :Tags<cr>$/;"	m
 <leader>V	.config/nvim/keys.vim	/^nnoremap <leader>V :sp<cr>$/;"	m
 <leader>W	old/example-2-init.vim	/^nnoremap <leader>W :%s\/\\s\\+$\/\/<CR>:let @\/=''<CR>$/;"	m
+<leader>Z	.config/nvim/keys.vim	/^nnoremap <leader>Z :wq<cr>$/;"	m
 <leader>]	old/example-init.vim	/^vmap <leader>] <C-n>$/;"	m
-<leader>a	.config/nvim/keys.vim	/^noremap <leader>a ggVG$/;"	m
 <leader>a	old/example-2-init.vim	/^nnoremap <leader>a :Ag <c-r><c-w>$/;"	m
 <leader>a	old/example-2-init.vim	/^vnoremap <leader>a y:Ag <c-r><cr>:cw<cr>$/;"	m
+<leader>af	.config/nvim/keys.vim	/^nnoremap <leader>af :Autoformat<cr>$/;"	m
 <leader>b	old/example-2-init.vim	/^nnoremap <leader>b :Buffers<cr>$/;"	m
 <leader>ba	old/example-init.vim	/^nmap <leader>ba <Plug>(coc-bookmark-annotate)$/;"	m
 <leader>bb	old/example-init.vim	/^nnoremap <silent> <leader>bb :CocList bookmark<CR>$/;"	m
 <leader>bc	.config/nvim/keys.vim	/^nnoremap <leader>bc :%bd\\|e#<cr>$/;"	m
+<leader>bl	.config/nvim/keys.vim	/^nnoremap <leader>bl :ls<cr>$/;"	m
 <leader>bn	old/example-init.vim	/^nmap <leader>bn <Plug>(coc-bookmark-next)$/;"	m
 <leader>bp	old/example-init.vim	/^nmap <leader>bp <Plug>(coc-bookmark-prev)$/;"	m
-<leader>bt	.config/nvim/plugin_config.vim	/^nnoremap <leader>bt :BTags<cr>$/;"	m
 <leader>bt	old/example-init.vim	/^nmap <leader>bt <Plug>(coc-bookmark-toggle)$/;"	m
 <leader>c	old/example-2-init.vim	/^nnoremap <silent> <leader>c \/\\v^[<\\|=>]{7}([^=].+)?$<CR>$/;"	m
 <leader>c?	old/example-init.vim	/^nnoremap <silent> <leader>c? :<C-u>call Help_nerdcommenter()<CR>$/;"	m
-<leader>cc	.config/nvim/keys.vim	/^nnoremap <leader>cc :botright cope<cr>$/;"	m
+<leader>cc	.config/nvim/plugin_config.vim	/^nnoremap <leader>cc :botright cope<cr>$/;"	m
 <leader>cd	.config/nvim/keys.vim	/^nnoremap <leader>cd :cd %:p:h<cr>$/;"	m
-<leader>co	.config/nvim/keys.vim	/^nnoremap <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg$/;"	m
 <leader>d	old/example-2-init.vim	/^nnoremap <silent> <leader>d "_d$/;"	m
 <leader>d	old/example-2-init.vim	/^vnoremap <silent> <leader>d "_d$/;"	m
-<leader>di	.config/nvim/keys.vim	/^nmap <leader>di <Plug>ToggleDitto     " turn ditto on and off$/;"	m
+<leader>di	.config/nvim/plugin_config.vim	/^nnoremap <leader>di <Plug>ToggleDitto$/;"	m
 <leader>e	old/example-init.vim	/^nnoremap <silent> <leader>e :<C-u>NnnPicker '%:p:h'<CR>$/;"	m
-<leader>ev	.config/nvim/keys.vim	/^nmap <silent> <leader>ev :e $MYVIMRC<cr>$/;"	m
 <leader>ev	old/example-2-init.vim	/^nnoremap <silent> <leader>ev :e $MYVIMRC<CR>$/;"	m
 <leader>f	old/example-2-init.vim	/^nnoremap <leader>f :call FoldColumnToggle()<cr>$/;"	m
 <leader>f	old/example-init.vim	/^nnoremap <silent> <leader>f :CocList<CR>$/;"	m
-<leader>g	.config/nvim/keys.vim	/^nnoremap <leader>g :Ack<space>$/;"	m
+<leader>fa	.config/nvim/plugin_config.vim	/^nnoremap <leader>fa :Ack<space>$/;"	m
+<leader>fb	.config/nvim/plugin_config.vim	/^nnoremap <leader>fb :Buffers<cr>$/;"	m
+<leader>fg	.config/nvim/plugin_config.vim	/^nnoremap <leader>fg :GFiles<cr>$/;"	m
+<leader>fh	.config/nvim/plugin_config.vim	/^nnoremap <leader>fh :History<cr>$/;"	m
+<leader>fs	.config/nvim/keys.vim	/^nnoremap <leader>fs         :Ranger<cr>$/;"	m
+<leader>ft	.config/nvim/plugin_config.vim	/^nnoremap <leader>ft :Tags<cr>$/;"	m
+<leader>fz	.config/nvim/plugin_config.vim	/^nnoremap <leader>fz :FZF<cr>$/;"	m
 <leader>g	old/example-2-init.vim	/^nnoremap <leader>g :spellgood <c-r><c-w>$/;"	m
 <leader>g<Tab>	old/example-init.vim	/^nmap <silent> <leader>g<Tab> :CocCommand git.browserOpen<CR>$/;"	m
 <leader>gc	old/example-init.vim	/^nmap <leader>gc <Plug>(coc-git-commit)$/;"	m
@@ -348,8 +355,8 @@
 <leader>gi	old/example-init.vim	/^nmap <leader>gi <Plug>(coc-git-chunkinfo)$/;"	m
 <leader>gj	old/example-init.vim	/^nmap <leader>gj <Plug>(coc-git-nextchunk)$/;"	m
 <leader>gk	old/example-init.vim	/^nmap <leader>gk <Plug>(coc-git-prevchunk)$/;"	m
-<leader>h	.config/nvim/keys.vim	/^nnoremap <leader>h :nohlsearch<cr>$/;"	m
-<leader>i	.config/nvim/keys.vim	/^nnoremap <leader>i :cp<cr>$/;"	m
+<leader>hi	.config/nvim/keys.vim	/^nnoremap <leader>hi :nohlsearch<cr>$/;"	m
+<leader>i	.config/nvim/plugin_config.vim	/^nnoremap <leader>i :cp<cr>$/;"	m
 <leader>j	.config/nvim/keys.vim	/^nnoremap <leader>j ddp$/;"	m
 <leader>k	.config/nvim/keys.vim	/^nnoremap <leader>k ddkP$/;"	m
 <leader>l?	old/example-init.vim	/^nnoremap <silent> <leader>l? :call Help_COC_LSP()<CR>$/;"	m
@@ -370,31 +377,32 @@
 <leader>lk	old/example-init.vim	/^nnoremap <silent> <leader>lk :ALEPrevious<CR>$/;"	m
 <leader>lr	old/example-init.vim	/^nmap <leader>lr <Plug>(coc-references)$/;"	m
 <leader>lt	old/example-init.vim	/^nmap <leader>lt <Plug>(coc-type-definition)$/;"	m
-<leader>m	.config/nvim/keys.vim	/^nnoremap <leader>m :Hex<cr>$/;"	m
 <leader>m	old/example-2-init.vim	/^nnoremap <leader>m :NERDTreeClose<CR>:NERDTreeFind<CR>$/;"	m
-<leader>n	.config/nvim/keys.vim	/^nnoremap <leader>n :Ranger<cr>$/;"	m
 <leader>n	old/example-2-init.vim	/^nnoremap <leader>n :NERDTreeFocus<CR>$/;"	m
-<leader>o	.config/nvim/keys.vim	/^nnoremap <leader>o :cn<cr>$/;"	m
+<leader>o	.config/nvim/plugin_config.vim	/^nnoremap <leader>o :cn<cr>$/;"	m
 <leader>p	old/example-init.vim	/^nnoremap <leader>p "+p$/;"	m
 <leader>p	old/example-init.vim	/^vnoremap <leader>p "+p$/;"	m
 <leader>q	.config/nvim/keys.vim	/^nnoremap <leader>q :bp<cr>$/;"	m
 <leader>q	old/example-2-init.vim	/^nnoremap <leader>q :bd<CR>   " Quickly close the current buffer$/;"	m
-<leader>r	.config/nvim/plugin_config.vim	/^nnoremap <leader>r :Autoformat<cr>$/;"	m
 <leader>r	old/example-2-init.vim	/^nnoremap <leader>r :let @\/='\\<<C-R>=expand("<cword>")<CR>\\>'<CR>:set hls<CR>:%s\/\/$/;"	m
-<leader>s	.config/nvim/keys.vim	/^nnoremap <leader>s :%s\/\/\/g<left><left><left>$/;"	m
 <leader>s	old/example-2-init.vim	/^nnoremap <leader>s vip!sort -f<CR><Esc>$/;"	m
 <leader>s	old/example-2-init.vim	/^vnoremap <leader>s !sort -f<CR>gv$/;"	m
+<leader>sa	.config/nvim/keys.vim	/^nnoremap <leader>sa zg$/;"	m
 <leader>sh	old/example-2-init.vim	/^nnoremap <leader>sh :execute "leftabove vsplit" bufname('#')<cr>$/;"	m
 <leader>sl	old/example-2-init.vim	/^nnoremap <leader>sl :execute "rightbelow vsplit" bufname('#')<cr>$/;"	m
-<leader>sv	.config/nvim/keys.vim	/^nmap <silent> <leader>sv :so $MYVIMRC<cr>$/;"	m
+<leader>sn	.config/nvim/keys.vim	/^nnoremap <leader>sn ]s$/;"	m
+<leader>sp	.config/nvim/keys.vim	/^nnoremap <leader>sp [s$/;"	m
+<leader>sr	.config/nvim/keys.vim	/^nnoremap <leader>sr :%s\/\/\/g<left><left><left>$/;"	m
+<leader>ss	.config/nvim/keys.vim	/^nnoremap <leader>ss z=$/;"	m
+<leader>sv	.config/nvim/keys.vim	/^nnoremap <silent> <leader>sv :so $MYVIMRC<cr>$/;"	m
 <leader>sv	old/example-2-init.vim	/^nnoremap <silent> <leader>sv :so $MYVIMRC<CR>$/;"	m
 <leader>t	old/example-2-init.vim	/^nnoremap <leader>t :Files<cr>$/;"	m
 <leader>tc	.config/nvim/keys.vim	/^nnoremap <leader>tc :tabclose<cr>$/;"	m
 <leader>te	.config/nvim/keys.vim	/^nnoremap <leader>te :tabedit <c-r>=expand("%:p:h")<cr>\/$/;"	m
-<leader>th	.config/nvim/keys.vim	/^nnoremap <leader>th :tabprev$/;"	m
+<leader>th	.config/nvim/keys.vim	/^nnoremap <leader>th :tabprev<cr>$/;"	m
 <leader>tj	.config/nvim/keys.vim	/^nnoremap <leader>tj :exe "tabn ".g:lasttab<cr>$/;"	m
-<leader>tl	.config/nvim/keys.vim	/^nnoremap <leader>tl :tabnext$/;"	m
-<leader>tm	.config/nvim/keys.vim	/^nnoremap <leader>tm :tabmove$/;"	m
+<leader>tl	.config/nvim/keys.vim	/^nnoremap <leader>tl :tabnext<cr>$/;"	m
+<leader>tm	.config/nvim/keys.vim	/^nnoremap <leader>tm :tabmove<cr>$/;"	m
 <leader>tn	.config/nvim/keys.vim	/^nnoremap <leader>tn :tabnew<cr>$/;"	m
 <leader>to	.config/nvim/keys.vim	/^nnoremap <leader>to :tabonly<cr>$/;"	m
 <leader>v	old/example-2-init.vim	/^nnoremap <leader>v V`]$/;"	m
@@ -407,43 +415,42 @@
 <leader>z	.config/nvim/keys.vim	/^nnoremap <leader>z :w<cr>$/;"	m
 <leader>z	old/example-2-init.vim	/^nnoremap <leader>z :%s#\\<<C-r>=expand("<cword>")<CR>\\>#$/;"	m
 <left>	old/example-init.vim	/^inoremap <expr> <left> pumvisible() ? "\\<Space>\\<Backspace>\\<left>" : "\\<left>"$/;"	m
-<localleader>	.config/nvim/keys.vim	/^nnoremap <silent> <localleader> :WhichKey "\\\\"<cr>$/;"	m
+<localleader>	.config/nvim/plugin_config.vim	/^nnoremap <silent> <localleader> :WhichKey "\\\\"<cr>$/;"	m
 <localleader><s-tab>	.config/nvim/keys.vim	/^inoremap <localleader><s-tab> <esc>V<<esc>la$/;"	m
 <localleader><tab>	.config/nvim/keys.vim	/^inoremap <localleader><tab> <esc>V><esc>la$/;"	m
-<m-H>	.config/nvim/keys.vim	/^inoremap <m-H> <ESC>I$/;"	m
+<localleader>e	.config/nvim/keys.vim	/^inoremap <localleader>e :call$/;"	m
+<localleader>xh	.config/nvim/keys.vim	/^nnoremap <localleader>xh    :Hex<cr>$/;"	m
+<localleader>xl	.config/nvim/keys.vim	/^nnoremap <localleader>xl    :Lex<cr>$/;"	m
+<localleader>xs	.config/nvim/keys.vim	/^nnoremap <localleader>xs    :Sex<cr>$/;"	m
+<m-H>	.config/nvim/keys.vim	/^inoremap <m-H> <esc>I$/;"	m
 <m-J>	.config/nvim/keys.vim	/^inoremap <m-J> <down><down><down><down><down>$/;"	m
 <m-K>	.config/nvim/keys.vim	/^inoremap <m-K> <up><up><up><up><up>$/;"	m
-<m-L>	.config/nvim/keys.vim	/^inoremap <m-L> <ESC>A$/;"	m
-<m-h>	.config/nvim/keys.vim	/^imap <m-h> <left>$/;"	m
+<m-L>	.config/nvim/keys.vim	/^inoremap <m-L> <esc>A$/;"	m
+<m-h>	.config/nvim/keys.vim	/^inoremap <m-h> <left>$/;"	m
 <m-h>	.config/nvim/keys.vim	/^nnoremap <m-h> :vertical res -1<cr>$/;"	m
-<m-j>	.config/nvim/keys.vim	/^imap <m-j> <down>$/;"	m
+<m-j>	.config/nvim/keys.vim	/^inoremap <m-j> <down>$/;"	m
 <m-j>	.config/nvim/keys.vim	/^nnoremap <m-j> :res -1<cr>$/;"	m
-<m-k>	.config/nvim/keys.vim	/^imap <m-k> <up>$/;"	m
+<m-k>	.config/nvim/keys.vim	/^inoremap <m-k> <up>$/;"	m
 <m-k>	.config/nvim/keys.vim	/^nnoremap <m-k> :res +1<cr>$/;"	m
-<m-l>	.config/nvim/keys.vim	/^imap <m-l> <right>$/;"	m
+<m-l>	.config/nvim/keys.vim	/^inoremap <m-l> <right>$/;"	m
 <m-l>	.config/nvim/keys.vim	/^nnoremap <m-l> :vertical res +1<cr>$/;"	m
 <pagedown>	old/example-init.vim	/^nnoremap <silent> <pagedown> :<C-u>call comfortable_motion#flick(130)<CR>$/;"	m
 <pageup>	old/example-init.vim	/^nnoremap <silent> <pageup> :<C-u>call comfortable_motion#flick(-130)<CR>$/;"	m
 <right>	old/example-init.vim	/^inoremap <expr> <right> pumvisible() ? "\\<Space>\\<Backspace>\\<right>" : "\\<right>"$/;"	m
 <s-tab>	.config/nvim/keys.vim	/^inoremap <expr> <s-tab> pumvisible() ? "\\<c-p>" : "\\<s-tab>"$/;"	m
 <s-tab>	old/example-2-init.vim	/^inoremap <expr> <s-tab> pumvisible() ? "\\<c-p>" : "\\<s-tab>"$/;"	m
-<space>	.config/nvim/general.vim	/^nnoremap <space> <nop>$/;"	m
+<space>	.config/nvim/general.vim	/^nmap <space> <nop>$/;"	m
 <tab>	.config/nvim/keys.vim	/^inoremap <expr> <tab>   pumvisible() ? "\\<c-n>" : "\\<tab>"$/;"	m
 <tab>	.config/nvim/keys.vim	/^inoremap <tab> <c-n>$/;"	m
 <tab>	old/example-2-init.vim	/^inoremap <tab> <c-n>$/;"	m
 <up>	old/example-init.vim	/^inoremap <expr> <up> pumvisible() ? "\\<Space>\\<Backspace>\\<up>" : "\\<up>"$/;"	m
->	.config/nvim/keys.vim	/^vmap > >gv$/;"	m
+>	.config/nvim/keys.vim	/^vnoremap > >gv$/;"	m
 ?	old/example-init.vim	/^        nnoremap <silent><buffer> ? :<C-u>call Help_vim_manpager()<CR>$/;"	m
 ?	old/example-init.vim	/^    nnoremap <silent><buffer> ? :call Help_GV()<CR>$/;"	m
 ?	old/example-init.vim	/^nnoremap <silent> ? :let g:CocHoverEnable = g:CocHoverEnable == 1 ? 0 : 1<CR>$/;"	m
-Active Learning	refs/webdev/js/jsref.md	/^# Active Learning$/;"	c
-Adding lines of text to files at specific lines	refs/linux/cmd/oneliners.md	/^## Adding lines of text to files at specific lines$/;"	s	chapter:Best Bash / Shell One Liners
 Ag	old/example-2-init.vim	/^command -nargs=+ -complete=file -bar Ag silent! grep! <args> | cwindow | redraw!$/;"	c
-All About That Scriptin'	refs/linux/dotfiles/myScripts.md	/^# All About That Scriptin'$/;"	c
 Alt-H1	refs/markdown.md	/^# Alt-H1$/;"	c
 Alt-H2	refs/markdown.md	/^## Alt-H2$/;"	s	chapter:Alt-H1
-Archives	refs/archives/index.md	/^# Archives$/;"	c
-Archives	refs/linux/dotfiles/myScripts.md	/^## Archives$/;"	s	chapter:All About That Scriptin'
 Artify_active_tab_num	.config/nvim/plugin_config.vim	/^function! Artify_active_tab_num(n) abort " {{{$/;"	f
 Artify_active_tab_num	old/example-init.vim	/^function! Artify_active_tab_num(n) abort"{{{$/;"	f
 Artify_col_num	.config/nvim/plugin_config.vim	/^function! Artify_col_num() abort " {{{$/;"	f
@@ -461,20 +468,9 @@ Artify_line_num	.config/nvim/plugin_config.vim	/^function! Artify_line_num() abo
 Artify_line_num	old/example-init.vim	/^function! Artify_line_num() abort"{{{$/;"	f
 Artify_line_percent	.config/nvim/plugin_config.vim	/^function! Artify_line_percent() abort " {{{$/;"	f
 Artify_line_percent	old/example-init.vim	/^function! Artify_line_percent() abort"{{{$/;"	f
-Asking good questions	refs/archives/ubunturef.md	/^##### Asking good questions$/;"	T	subsubsection:Notes""Notes from "Your Linux Toolbox" Zine Collection""tcpdump""So You Want To Be A Wizard
-Authentication Methods	refs/linux/netsec/sshref.md	/^### Authentication Methods$/;"	S	section:SSH Notes!""Overview
-Automated deployment	refs/webdev/notes/index.md	/^#### Automated deployment$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Production Deploy
-Automation	refs/webdev/dev-env/js-dev-env-starter-kit.md	/^## Automation$/;"	s	chapter:JavaScript Developer Environment Starter Kit
-Automation	refs/webdev/notes/index.md	/^### Automation$/;"	S	section:Notes on Building a JS Dev Environment""Intro
 BUILDENV	.makepkg.conf	/^BUILDENV=(!distcc color !ccache check !sign)$/;"	k
 Base16	.config/oomox/ui_config.json	/^{"window_width": 1918, "window_height": 1035, "preset_list_minimal_width": 150, "preset_list_wid/;"	b	object:preset_list_sections_expanded
-Basic Deployment (5 days)	refs/webdev/notes/web-dev-2020.md	/^### Basic Deployment (5 days)$/;"	S	section:WebDev Journey""Fundamentals
-Basic Front-End Web Developer	refs/webdev/notes/web-dev-2020.md	/^### Basic Front-End Web Developer$/;"	S	section:WebDev Journey""Fundamentals
-Best Bash / Shell One Liners	refs/linux/cmd/oneliners.md	/^# Best Bash \/ Shell One Liners$/;"	c
 Blockquotes	refs/markdown.md	/^# Blockquotes$/;"	c
-Bundle splitting (called "chunking" in webpack)	refs/webdev/notes/index.md	/^#### Bundle splitting (called "chunking" in webpack)$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Production Build
-Bundling	refs/webdev/dev-env/js-dev-env-starter-kit.md	/^## Bundling$/;"	s	chapter:JavaScript Developer Environment Starter Kit
-Bundling	refs/webdev/notes/index.md	/^### Bundling$/;"	S	section:Notes on Building a JS Dev Environment""Intro
 CARCH	.makepkg.conf	/^CARCH="x86_64"$/;"	k
 CFLAGS	.makepkg.conf	/^CFLAGS="-march=x86-64 -mtune=generic -O2 -pipe -fstack-protector-strong -fno-plt"$/;"	k
 CHOST	.makepkg.conf	/^CHOST="x86_64-pc-linux-gnu"$/;"	k
@@ -502,18 +498,6 @@ CURSOR_ORIGIN	.config/repos/st/st.c	/^	CURSOR_ORIGIN   = 2$/;"	e	enum:cursor_sta
 CURSOR_SAVE	.config/repos/st/st.c	/^	CURSOR_SAVE,$/;"	e	enum:cursor_movement	file:
 CURSOR_WRAPNEXT	.config/repos/st/st.c	/^	CURSOR_WRAPNEXT = 1,$/;"	e	enum:cursor_state	file:
 CXXFLAGS	.makepkg.conf	/^CXXFLAGS="-march=x86-64 -mtune=generic -O2 -pipe -fstack-protector-strong -fno-plt"$/;"	k
-Cache busting	refs/webdev/notes/index.md	/^#### Cache busting$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Production Build
-Cargo	refs/notes.md	/^### Cargo$/;"	S	section:Notes On Rust""Traversy Media's Rust Crash Course
-Cascading Style Sheets	refs/webdev/css/index.md	/^# Cascading Style Sheets$/;"	c
-Centralizing HTTP Requests	refs/webdev/notes/index.md	/^#### Centralizing HTTP Requests$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""HTTP Calls
-Challenge	refs/webdev/notes/index.md	/^#### Challenge$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Production Deploy
-Change Owner / Group Recursively	refs/linux/cmd/oneliners.md	/^## Change Owner \/ Group Recursively$/;"	s	chapter:Best Bash / Shell One Liners
-Changing File/Directory User:Group Recursively	refs/linux/cmd/oneliners.md	/^## Changing File\/Directory User:Group Recursively$/;"	s	chapter:Best Bash / Shell One Liners
-Chapter 1	refs/linux/cmd/linux-cmd-book.md	/^#### Chapter 1$/;"	t	subsection:Notes from The Linux Command Line Book""Useful Commands To Remember
-Chapter 2	refs/linux/cmd/linux-cmd-book.md	/^#### Chapter 2$/;"	t	subsection:Notes from The Linux Command Line Book""Useful Commands To Remember
-Chapter 3	refs/linux/cmd/linux-cmd-book.md	/^#### Chapter 3$/;"	t	subsection:Notes from The Linux Command Line Book""Useful Commands To Remember
-Chapter 4	refs/linux/cmd/linux-cmd-book.md	/^#### Chapter 4$/;"	t	subsection:Notes from The Linux Command Line Book""Useful Commands To Remember
-Client/Server Communication	refs/linux/netsec/sshref.md	/^### Client\/Server Communication$/;"	S	section:SSH Notes!""Overview
 CloseOnLastTab	old/example-init.vim	/^function! CloseOnLastTab()$/;"	f
 CocCurrentFunction	old/example-init.vim	/^function! CocCurrentFunction()"{{{$/;"	f
 CocFloatingLockToggle	old/example-init.vim	/^function! CocFloatingLockToggle() abort"{{{$/;"	f
@@ -521,37 +505,15 @@ CocHighlight	old/example-init.vim	/^function! CocHighlight() abort"{{{$/;"	f
 CocHover	old/example-init.vim	/^function! CocHover() abort"{{{$/;"	f
 Code and Syntax Highlighting	refs/markdown.md	/^# Code and Syntax Highlighting$/;"	c
 ColorScheme	old/example-init.vim	/^function! ColorScheme()$/;"	f
-Command Line	refs/linux/cmd/index.md	/^# Command Line$/;"	c
-Command Line Applications	refs/linux/cmd/cmd-apps.md	/^# Command Line Applications$/;"	c
-Commands	refs/index.md	/^### Commands$/;"	S	section:Home of the Wiki""Key Bindings
-Configuring Webpack	refs/webdev/notes/index.md	/^#### Configuring Webpack$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Bundling
-Creating a Mock API Data Schema	refs/webdev/notes/index.md	/^#### Creating a Mock API Data Schema$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""HTTP Calls
-Currently Installed	refs/linux/cmd/cmd-apps.md	/^## Currently Installed$/;"	s	chapter:Command Line Applications
-Currently Used	refs/linux/dotfiles/myScripts.md	/^## Currently Used$/;"	s	chapter:All About That Scriptin'
 DBGSRCDIR	.makepkg.conf	/^DBGSRCDIR="\/usr\/src\/debug"$/;"	k
 DEBUG_CFLAGS	.makepkg.conf	/^DEBUG_CFLAGS="-g -fvar-tracking-assignments"$/;"	k
 DEBUG_CXXFLAGS	.makepkg.conf	/^DEBUG_CXXFLAGS="-g -fvar-tracking-assignments"$/;"	k
 DLAGENTS	.makepkg.conf	/^DLAGENTS=('file::\/usr\/bin\/curl -gqC - -o %o %u'$/;"	k
 DOC_DIRS	.makepkg.conf	/^DOC_DIRS=(usr\/{,local\/}{,share\/}{doc,gtk-doc} opt\/*\/{doc,gtk-doc})$/;"	k
-Data generation	refs/webdev/notes/index.md	/^#### Data generation$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""HTTP Calls
-Debugging: Love Your Bugs	refs/archives/ubunturef.md	/^##### Debugging: Love Your Bugs$/;"	T	subsubsection:Notes""Notes from "Your Linux Toolbox" Zine Collection""tcpdump""So You Want To Be A Wizard
-Decision	refs/webdev/notes/index.md	/^#### Decision #1: Testing Framework$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Testing and Continuous Integration
-Decision	refs/webdev/notes/index.md	/^#### Decision #2: Assertion Library$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Testing and Continuous Integration
-Decision	refs/webdev/notes/index.md	/^#### Decision #3: Helper Libraries$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Testing and Continuous Integration
-Decision	refs/webdev/notes/index.md	/^#### Decision #4: Where to Run Tests$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Testing and Continuous Integration
-Decision	refs/webdev/notes/index.md	/^#### Decision #5: Where do test files belong?$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Testing and Continuous Integration
-Decision	refs/webdev/notes/index.md	/^#### Decision #6: When should tests run?$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Testing and Continuous Integration
-Desktop Specs	refs/archives/ubunturef.md	/^## Desktop Specs$/;"	s	chapter:Notes
-Developer Environment	refs/webdev/dev-env/index.md	/^# Developer Environment$/;"	c
-Development Web Server	refs/webdev/dev-env/js-dev-env-starter-kit.md	/^## Development Web Server$/;"	s	chapter:JavaScript Developer Environment Starter Kit
-Development Web Server	refs/webdev/notes/index.md	/^### Development Web Server$/;"	S	section:Notes on Building a JS Dev Environment""Intro
+Description	old/systemd/user/dropbox-watch.service	/^Description=Dropbox Daemon                                                                     $/;"	k	section:Unit
 Devicons_Fileformat	old/example-init.vim	/^function! Devicons_Fileformat()"{{{$/;"	f
 Devicons_Filetype	.config/nvim/plugin_config.vim	/^function! Devicons_Filetype() " {{{$/;"	f
 Devicons_Filetype	old/example-init.vim	/^function! Devicons_Filetype()"{{{$/;"	f
-Distro Tweaks	refs/archives/desktop-distro-deploy.md	/^### Distro Tweaks$/;"	S	section:Instructions on Deploying New Manjaro Install""Step 2: Initial Post-Install Setup
-Distro Tweaks	refs/linux/dotfiles/distrodeploy.md	/^### Distro Tweaks$/;"	S	section:Instructions on Deploying New Manjaro Install""Step 2: Initial Post-Install Setup
-Diving In	refs/linux/netsec/sshref.md	/^## Diving In$/;"	s	chapter:SSH Notes!
-Dynamic HTML	refs/webdev/notes/index.md	/^#### Dynamic HTML$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Production Build
 E	old/example-init.vim	/^        nnoremap <silent><buffer> E :<C-u>set modifiable<CR>$/;"	m
 E	old/example-init.vim	/^command! -nargs=1 E  edit  suda:\/\/<args>$/;"	c
 E	old/example-init.vim	/^nnoremap E :<C-u>InlineEdit<CR>$/;"	m
@@ -566,38 +528,20 @@ ESC_STR	.config/repos/st/st.c	/^	ESC_STR        = 4,  \/* OSC, PM, APC *\/$/;"	e
 ESC_STR_END	.config/repos/st/st.c	/^	ESC_STR_END    = 16, \/* a final string was encountered *\/$/;"	e	enum:escape_state	file:
 ESC_TEST	.config/repos/st/st.c	/^	ESC_TEST       = 32, \/* Enter in test mode *\/$/;"	e	enum:escape_state	file:
 ESC_UTF8	.config/repos/st/st.c	/^	ESC_UTF8       = 64,$/;"	e	enum:escape_state	file:
-ESLint Configuration Decisions	refs/webdev/notes/index.md	/^#### ESLint Configuration Decisions$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Linting
-Editors & Configuration	refs/webdev/dev-env/js-dev-env-starter-kit.md	/^## Editors & Configuration$/;"	s	chapter:JavaScript Developer Environment Starter Kit
-Editors and Configuration	refs/webdev/notes/index.md	/^### Editors and Configuration$/;"	S	section:Notes on Building a JS Dev Environment""Intro
 Emphasis	refs/markdown.md	/^# Emphasis$/;"	c
-Error logging	refs/webdev/notes/index.md	/^#### Error logging$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Production Build
-Execution Contexts and Lexical Environments	refs/webdev/notes/index.md	/^### Execution Contexts and Lexical Environments$/;"	S	section:Notes""Vocabulary
+ExecStart	old/systemd/user/dropbox-watch.service	/^ExecStart=\/home\/efex\/scripts\/watch_dropbox.sh                                               /;"	k	section:Service
 ExplorerStartify	old/example-init.vim	/^    function ExplorerStartify()$/;"	f
-Fan Setup	refs/archives/ubunturef.md	/^### Fan Setup$/;"	S	section:Notes""Desktop Specs
-Fan Setup	refs/journals/desktop-timeline.md	/^## Fan Setup$/;"	s	chapter:Timeline for Desktop
 Filechooser Settings	.config/gtk-2.0/gtkfilechooser.ini	/^[Filechooser Settings]$/;"	s
-Filesystem	refs/archives/ubunturef.md	/^### Filesystem$/;"	S	section:Notes""Desktop Specs
-FiletypeGroup	.config/nvim/functions.vim	/^augroup FiletypeGroup$/;"	a
-Flexbox Notes	refs/webdev/css/flexbox.md	/^# Flexbox Notes$/;"	c
 FoldColumnToggle	old/example-2-init.vim	/^function! FoldColumnToggle()$/;"	f
 ForceCloseRecursively	old/example-init.vim	/^function! ForceCloseRecursively()$/;"	f
-Framework: Mocha	refs/webdev/notes/index.md	/^#### Framework: Mocha$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Testing and Continuous Integration
-Front End JS Framework (5 days)	refs/webdev/notes/web-dev-2020.md	/^### Front End JS Framework (5 days)$/;"	S	section:WebDev Journey""What To Learn Next
-Full Fledged Front-End Web Developer (6 days)	refs/webdev/notes/web-dev-2020.md	/^### Full Fledged Front-End Web Developer (6 days)$/;"	S	section:WebDev Journey""What To Learn Next
 Func_emmet_vim	old/example-init.vim	/^function Func_emmet_vim()$/;"	f
 Func_vim_closetag	old/example-init.vim	/^function! Func_vim_closetag()$/;"	f
 Func_vim_json	old/example-init.vim	/^function! Func_vim_json()$/;"	f
-Fundamentals	refs/webdev/notes/web-dev-2020.md	/^## Fundamentals$/;"	s	chapter:WebDev Journey
-GRAND TOTAL TIME ESTIMATE: 75 days	refs/webdev/notes/web-dev-2020.md	/^#### GRAND TOTAL TIME ESTIMATE: 75 days$/;"	t	subsection:WebDev Journey""What To Learn Next""Full Fledged Front-End Web Developer (6 days)
 Gbranch	old/example-init.vim	/^command Gbranch Twiggy$/;"	c
-General Notes	refs/linux/vim/vimref.md	/^## General Notes$/;"	s	chapter:vim ref
-Generating Keys	refs/linux/netsec/sshref.md	/^### Generating Keys$/;"	S	section:SSH Notes!""Overview
 GeometryHeight	.config/gtk-2.0/gtkfilechooser.ini	/^GeometryHeight=641$/;"	k	section:Filechooser Settings
 GeometryWidth	.config/gtk-2.0/gtkfilechooser.ini	/^GeometryWidth=948$/;"	k	section:Filechooser Settings
 GeometryX	.config/gtk-2.0/gtkfilechooser.ini	/^GeometryX=2506$/;"	k	section:Filechooser Settings
 GeometryY	.config/gtk-2.0/gtkfilechooser.ini	/^GeometryY=307$/;"	k	section:Filechooser Settings
-Git & Tooling (13 days)	refs/webdev/notes/web-dev-2020.md	/^### Git & Tooling (13 days)$/;"	S	section:WebDev Journey""Fundamentals
-Git Commands Quick Ref	refs/webdev/notes/index.md	/^# Git Commands Quick Ref$/;"	c
 GitStatus	.config/nvim/plugin_config.vim	/^function! GitStatus() " {{{$/;"	f
 Gitbranch	.config/nvim/plugin_config.vim	/^function! Gitbranch() abort " {{{$/;"	f
 H	old/example-2-init.vim	/^nnoremap H 0$/;"	m
@@ -610,12 +554,6 @@ H4	refs/markdown.md	/^#### H4$/;"	t	subsection:H1""H2""H3
 H5	refs/markdown.md	/^##### H5$/;"	T	subsubsection:H1""H2""H3""H4
 H6	refs/markdown.md	/^###### H6$/;"	u	l4subsection:H1""H2""H3""H4""H5
 HISTSIZE	.config/repos/st/st.c	/^#define HISTSIZE /;"	d	file:
-HTML & CSS (13 days)	refs/webdev/notes/web-dev-2020.md	/^### HTML & CSS (13 days)$/;"	S	section:WebDev Journey""Fundamentals
-HTML / CSS Framework (5 days)	refs/webdev/notes/web-dev-2020.md	/^### HTML \/ CSS Framework (5 days)$/;"	S	section:WebDev Journey""Fundamentals
-HTTP Call Approaches	refs/webdev/notes/index.md	/^#### HTTP Call Approaches$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""HTTP Calls
-HTTP Calls	refs/webdev/dev-env/js-dev-env-starter-kit.md	/^## HTTP Calls$/;"	s	chapter:JavaScript Developer Environment Starter Kit
-HTTP Calls	refs/webdev/notes/index.md	/^### HTTP Calls$/;"	S	section:Notes on Building a JS Dev Environment""Intro
-Handling starter kit updates	refs/webdev/notes/index.md	/^#### Handling starter kit updates$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Production Deploy
 Headers	refs/markdown.md	/^# Headers$/;"	c
 Help_COC_LSP	old/example-init.vim	/^function Help_COC_LSP()$/;"	f
 Help_GV	old/example-init.vim	/^function! Help_GV()$/;"	f
@@ -631,12 +569,8 @@ Help_vim_plug	old/example-init.vim	/^function Help_vim_plug() abort$/;"	f
 Help_vim_sneak	old/example-init.vim	/^function! Help_vim_sneak()$/;"	f
 Help_vim_surround	old/example-init.vim	/^function! Help_vim_surround()$/;"	f
 Help_vim_visual_multi	old/example-init.vim	/^function! Help_vim_visual_multi()$/;"	f
-Helpful Commands	refs/linux/temp.md	/^## Helpful Commands$/;"	s	chapter:Temporary Notes
-Home of the Wiki	refs/index.md	/^# Home of the Wiki$/;"	c
 Horizontal Rule	refs/markdown.md	/^# Horizontal Rule$/;"	c
-How to be a Wizard Programmer	refs/archives/ubunturef.md	/^##### How to be a Wizard Programmer$/;"	T	subsubsection:Notes""Notes from "Your Linux Toolbox" Zine Collection""tcpdump""So You Want To Be A Wizard
 HumanSize	old/example-init.vim	/^fun! HumanSize(bytes) abort$/;"	f
-Hyper Text Markup Language	refs/webdev/html/index.md	/^# Hyper Text Markup Language$/;"	c
 I	.tmux/.tmux-example2.conf	/^setw -g window-status-current-format " #F#I:#W#F "$/;"	k
 I	.tmux/.tmux-example2.conf	/^setw -g window-status-format " #F#I:#W#F "$/;"	k
 INTEGRITY_CHECK	.makepkg.conf	/^INTEGRITY_CHECK=(md5)$/;"	k
@@ -646,57 +580,31 @@ ISCONTROLC1	.config/repos/st/st.c	/^#define ISCONTROLC1(/;"	d	file:
 ISDELIM	.config/repos/st/st.c	/^#define ISDELIM(/;"	d	file:
 ISO14755CMD	.config/repos/st/st.c	/^#define ISO14755CMD	/;"	d	file:
 IS_SET	.config/repos/st/st.c	/^#define IS_SET(/;"	d	file:
-Ideas	refs/archives/ubunturef.md	/^# Ideas$/;"	c
-Ideas	refs/linux/dotfiles/myScripts.md	/^## Ideas$/;"	s	chapter:All About That Scriptin'
 Images	refs/markdown.md	/^# Images$/;"	c
-Immutable Data Structures	refs/tempref.md	/^## Immutable Data Structures$/;"	s	chapter:Temp Notes
-Improving your debugging	refs/archives/ubunturef.md	/^###### Improving your debugging$/;"	u	l4subsection:Notes""Notes from "Your Linux Toolbox" Zine Collection""tcpdump""So You Want To Be A Wizard""Debugging: Love Your Bugs
 InitCtags	old/example-init.vim	/^function! InitCtags()$/;"	f
 InitGtags	old/example-init.vim	/^function! InitGtags()$/;"	f
 InitIndentGuides	old/example-init.vim	/^function! InitIndentGuides()$/;"	f
 Init_gen_tags	old/example-init.vim	/^function! Init_gen_tags()$/;"	f
 Inline HTML	refs/markdown.md	/^# Inline HTML$/;"	c
-Inspiration	refs/webdev/notes/index.md	/^#### Inspiration$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Production Deploy
-Install	refs/journals/desktop-timeline.md	/^## Install$/;"	s	chapter:Timeline for Desktop
-Installation Timeline	refs/archives/ubunturef.md	/^# Installation Timeline$/;"	c
-Installs From Pacman	refs/archives/desktop-distro-deploy.md	/^### Installs From Pacman$/;"	S	section:Instructions on Deploying New Manjaro Install""Step 3: Package Installation
-Installs From Pacman	refs/linux/dotfiles/distrodeploy.md	/^### Installs From Pacman$/;"	S	section:Instructions on Deploying New Manjaro Install""Step 3: Package Installation
-Instructions on Deploying New Manjaro Install	refs/archives/desktop-distro-deploy.md	/^# Instructions on Deploying New Manjaro Install$/;"	c
-Instructions on Deploying New Manjaro Install	refs/linux/dotfiles/distrodeploy.md	/^# Instructions on Deploying New Manjaro Install$/;"	c
-Intro	refs/webdev/notes/index.md	/^## Intro$/;"	s	chapter:Notes on Building a JS Dev Environment
-Issue: ESLint doesn't support many experimental JavaScript features	refs/webdev/notes/index.md	/^#### Issue: ESLint doesn't support many experimental JavaScript features$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Linting
-Issue: ESLint doesn't watch files.	refs/webdev/notes/index.md	/^#### Issue: ESLint doesn't watch files.$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Linting
+Install	old/systemd/user/dropbox-watch.service	/^[Install]                                                                                      $/;"	s
 J	.config/nvim/keys.vim	/^vnoremap J :m '>+1<cr>gv=gv$/;"	m
 J	old/example-init.vim	/^    nnoremap <silent> <buffer> J :call <sid>scroll_preview(1)<cr>$/;"	m
 J	old/example-init.vim	/^nnoremap J <Esc>5<down>$/;"	m
 J	old/example-init.vim	/^vnoremap J 5<down>$/;"	m
-JavaScript	refs/webdev/js/index.md	/^# JavaScript$/;"	c
-JavaScript Developer Environment Starter Kit	refs/webdev/dev-env/js-dev-env-starter-kit.md	/^# JavaScript Developer Environment Starter Kit$/;"	c
-JavaScript Testing Styles	refs/webdev/notes/index.md	/^#### JavaScript Testing Styles$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Testing and Continuous Integration
-Journals	refs/journals/index.md	/^# Journals$/;"	c
 K	.config/nvim/keys.vim	/^vnoremap K :m '<-2<cr>gv=gv$/;"	m
 K	old/example-2-init.vim	/^nnoremap K *N:grep! "\\b<c-r><c-w>\\b"<cr>:cw<cr>$/;"	m
 K	old/example-init.vim	/^        nnoremap <silent><buffer> K zz:<C-u>call smooth_scroll#up(&scroll, 10, 1)<CR>$/;"	m
 K	old/example-init.vim	/^    nnoremap <silent> <buffer> K :call <sid>scroll_preview(0)<cr>$/;"	m
 K	old/example-init.vim	/^nnoremap K <Esc>5<up>$/;"	m
 K	old/example-init.vim	/^vnoremap K 5<up>$/;"	m
-Key Bindings	refs/index.md	/^## Key Bindings$/;"	s	chapter:Home of the Wiki
 L	old/example-2-init.vim	/^nnoremap L \$$/;"	m
 L	old/example-init.vim	/^nnoremap L <Esc>\$$/;"	m
 L	old/example-init.vim	/^vnoremap L \$$/;"	m
 LDFLAGS	.makepkg.conf	/^LDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now"$/;"	k
-Laptop Timeline	refs/journals/laptop-timeline.md	/^# Laptop Timeline$/;"	c
-Life Cycle Methods	refs/webdev/react/reactref.md	/^## Life Cycle Methods$/;"	s	chapter:React Notes
 Line Breaks	refs/markdown.md	/^# Line Breaks$/;"	c
 Links	refs/markdown.md	/^# Links$/;"	c
-Linters	refs/webdev/notes/index.md	/^#### Linters$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Linting
-Linting	refs/webdev/dev-env/js-dev-env-starter-kit.md	/^## Linting$/;"	s	chapter:JavaScript Developer Environment Starter Kit
-Linting	refs/webdev/notes/index.md	/^### Linting$/;"	S	section:Notes on Building a JS Dev Environment""Intro
-Linux Diagnostic Stuff to Check Out	refs/archives/ubunturef.md	/^### Linux Diagnostic Stuff to Check Out$/;"	S	section:Notes""Notes from "Your Linux Toolbox" Zine Collection
-Linux Exploration	refs/linux/index.md	/^# Linux Exploration$/;"	c
 Lists	refs/markdown.md	/^# Lists$/;"	c
 LocationMode	.config/gtk-2.0/gtkfilechooser.ini	/^LocationMode=path-bar$/;"	k	section:Filechooser Settings
-Looking at fan speeds and system temperatures	refs/archives/ubunturef.md	/^### Looking at fan speeds and system temperatures$/;"	S	section:Notes""Desktop Specs
 MAKEFLAGS	.makepkg.conf	/^MAKEFLAGS="-j$(($(nproc)+1))"$/;"	k
 MAN_DIRS	.makepkg.conf	/^MAN_DIRS=({usr{,\/local}{,\/share},opt\/*}\/{man,info})$/;"	k
 MODE_ALTSCREEN	.config/repos/st/st.c	/^	MODE_ALTSCREEN   = 1 << 2,$/;"	e	enum:term_mode	file:
@@ -708,28 +616,6 @@ MODE_SIXEL	.config/repos/st/st.c	/^	MODE_SIXEL       = 1 << 7,$/;"	e	enum:term_m
 MODE_UTF8	.config/repos/st/st.c	/^	MODE_UTF8        = 1 << 6,$/;"	e	enum:term_mode	file:
 MODE_WRAP	.config/repos/st/st.c	/^	MODE_WRAP        = 1 << 0,$/;"	e	enum:term_mode	file:
 MODKEY	.config/repos/st/config.h	/^#define MODKEY /;"	d
-Main Todotxt Commands	refs/linux/cmd/todoref.md	/^## Main Todotxt Commands$/;"	s	chapter:Todotxt-cli Reference File
-Manual Installs	refs/archives/desktop-distro-deploy.md	/^### Manual Installs$/;"	S	section:Instructions on Deploying New Manjaro Install""Step 3: Package Installation
-Manual Installs	refs/linux/dotfiles/distrodeploy.md	/^### Manual Installs$/;"	S	section:Instructions on Deploying New Manjaro Install""Step 3: Package Installation
-Map	refs/archives/index.md	/^## Map$/;"	s	chapter:Archives
-Map	refs/index.md	/^## Map$/;"	s	chapter:Home of the Wiki
-Map	refs/journals/index.md	/^## Map$/;"	s	chapter:Journals
-Map	refs/linux/cmd/index.md	/^## Map$/;"	s	chapter:Command Line
-Map	refs/linux/dotfiles/index.md	/^## Map$/;"	s	chapter:The Endless Tinkering Of My System
-Map	refs/linux/index.md	/^## Map$/;"	s	chapter:Linux Exploration
-Map	refs/linux/netsec/index.md	/^## Map$/;"	s	chapter:Network Security
-Map	refs/linux/vim/index.md	/^## Map$/;"	s	chapter:Vim/Neovim
-Map	refs/rust.md	/^## Map$/;"	s	chapter:Rust Construction
-Map	refs/webdev/css/index.md	/^## Map$/;"	s	chapter:Cascading Style Sheets
-Map	refs/webdev/dev-env/index.md	/^## Map$/;"	s	chapter:Developer Environment
-Map	refs/webdev/html/index.md	/^## Map$/;"	s	chapter:Hyper Text Markup Language
-Map	refs/webdev/index.md	/^## Map$/;"	s	chapter:Web Development
-Map	refs/webdev/js/index.md	/^## Map$/;"	s	chapter:JavaScript
-Map	refs/webdev/notes/index.md	/^## Map$/;"	s	chapter:Notes
-Map	refs/webdev/react/index.md	/^## Map$/;"	s	chapter:ReactJS
-Minification	refs/webdev/notes/index.md	/^#### Minification$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Production Build
-Misc HTML Notes	refs/webdev/notes/index.md	/^# Misc HTML Notes$/;"	c
-Misc Notes	refs/linux/netsec/sshref.md	/^# Misc Notes$/;"	c
 MyFoldText	old/example-2-init.vim	/^function! MyFoldText()$/;"	f
 N	old/example-2-init.vim	/^nnoremap N N:call PulseCursorLine()<cr>$/;"	m
 NERDTreeBookmarksFile	old/example-2-init.vim	/^let NERDTreeBookmarksFile=expand("$HOME\/.vim\/NERDTreeBookmarks")$/;"	v
@@ -742,138 +628,41 @@ NERDTreeShowFiles	old/example-2-init.vim	/^let NERDTreeShowFiles=1$/;"	v
 NERDTreeShowHidden	old/example-2-init.vim	/^let NERDTreeShowHidden=1$/;"	v
 NUMMAXLEN	.config/repos/st/st.c	/^#define NUMMAXLEN(/;"	d	file:
 Neoformat_Default_Filetype_Formatter	old/example-init.vim	/^function! Neoformat_Default_Filetype_Formatter()$/;"	f
-Network Security	refs/linux/netsec/index.md	/^# Network Security$/;"	c
-New Things To Explore	refs/journals/desktop-timeline.md	/^## New Things To Explore$/;"	s	chapter:Timeline for Desktop
-Normal Mode	refs/index.md	/^### Normal Mode$/;"	S	section:Home of the Wiki""Key Bindings
-Notes	refs/archives/ubunturef.md	/^# Notes$/;"	c
-Notes	refs/webdev/notes/index.md	/^# Notes$/;"	c
-Notes On Rust	refs/notes.md	/^# Notes On Rust$/;"	c
-Notes from "Your Linux Toolbox" Zine Collection	refs/archives/ubunturef.md	/^## Notes from "Your Linux Toolbox" Zine Collection$/;"	s	chapter:Notes
-Notes from Anywhere Prior to Sorting	refs/linux/vim/temp-notes.md	/^# Notes from Anywhere Prior to Sorting$/;"	c
-Notes from How to Configure Vim like VSCode video by Ben Awad	refs/linux/vim/vimref.md	/^## Notes from How to Configure Vim like VSCode video by Ben Awad$/;"	s	chapter:vim ref
-Notes from JavaScript Closures from CodingBlocks.net	refs/webdev/notes/index.md	/^# Notes from JavaScript Closures from CodingBlocks.net$/;"	c
-Notes from JavaScript: Getting Started	refs/webdev/js/pluralsight-js-getting-started.md	/^# Notes from JavaScript: Getting Started$/;"	c
-Notes from Luke Smith's "After Vimtutor" Video	refs/linux/vim/temp-notes.md	/^## Notes from Luke Smith's "After Vimtutor" Video$/;"	s	chapter:Notes from Anywhere Prior to Sorting
-Notes from The Linux Command Line Book	refs/linux/cmd/linux-cmd-book.md	/^## Notes from The Linux Command Line Book$/;"	s
-Notes on Building a JS Dev Environment	refs/webdev/notes/index.md	/^# Notes on Building a JS Dev Environment$/;"	c
-Notes on UX Design Course	refs/webdev/notes/index.md	/^# Notes on UX Design Course$/;"	c
-Notice	refs/webdev/js/pluralsight-js-getting-started.md	/^## Notice$/;"	s	chapter:Notes from JavaScript: Getting Started
 OPTIONS	.makepkg.conf	/^OPTIONS=(strip docs !libtool !staticlibs emptydirs zipman purge !debug)$/;"	k
 OPTION_EXPORT_CINNAMON_THEME	.config/oomox/export_config/arc_theme.json	/^{"OPTION_EXPORT_CINNAMON_THEME": false, "OPTION_EXPORT_GNOME_SHELL_THEME": true, "OPTION_EXPORT_/;"	b
 OPTION_EXPORT_GNOME_SHELL_THEME	.config/oomox/export_config/arc_theme.json	/^{"OPTION_EXPORT_CINNAMON_THEME": false, "OPTION_EXPORT_GNOME_SHELL_THEME": true, "OPTION_EXPORT_/;"	b
 OPTION_EXPORT_XFWM_THEME	.config/oomox/export_config/arc_theme.json	/^{"OPTION_EXPORT_CINNAMON_THEME": false, "OPTION_EXPORT_GNOME_SHELL_THEME": true, "OPTION_EXPORT_/;"	b
-Old Timeline	refs/journals/laptop-timeline.md	/^## Old Timeline$/;"	s	chapter:Laptop Timeline
 OpenTerminal	.config/nvim/functions.vim	/^function! OpenTerminal()$/;"	f
-Option 1: Yeoman	refs/webdev/notes/index.md	/^##### Option 1: Yeoman$/;"	T	subsubsection:Notes on Building a JS Dev Environment""Intro""Production Deploy""Handling starter kit updates
-Option 2: Github	refs/webdev/notes/index.md	/^##### Option 2: Github$/;"	T	subsubsection:Notes on Building a JS Dev Environment""Intro""Production Deploy""Handling starter kit updates
-Option 3: npm	refs/webdev/notes/index.md	/^##### Option 3: npm$/;"	T	subsubsection:Notes on Building a JS Dev Environment""Intro""Production Deploy""Handling starter kit updates
-Other advanced React topics to learn	refs/webdev/react/reactref.md	/^## Other advanced React topics to learn$/;"	s	chapter:React Notes
-Our Plan for Mocking HTTP	refs/webdev/notes/index.md	/^#### Our Plan for Mocking HTTP$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""HTTP Calls
-Output Vim Mappings	refs/linux/cmd/oneliners.md	/^## Output Vim Mappings$/;"	s	chapter:Best Bash / Shell One Liners
-Overview	refs/linux/netsec/sshref.md	/^## Overview$/;"	s	chapter:SSH Notes!
-Overview	refs/webdev/css/flexbox.md	/^## Overview$/;"	s	chapter:Flexbox Notes
-Overview	refs/webdev/notes/index.md	/^#### Overview$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""HTTP Calls
 PIU	.config/nvim/keys.vim	/^command! PIU PlugInstall | PlugUpdate | PlugUpgrade | UpdateRemotePlugins$/;"	c
 PKGEXT	.makepkg.conf	/^PKGEXT='.pkg.tar.xz'$/;"	k
 PU	old/example-init.vim	/^command PU PlugUpdate | PlugUpgrade | CocUpdate$/;"	c
 PURGE_TARGETS	.makepkg.conf	/^PURGE_TARGETS=(usr\/{,share}\/info\/dir .packlist *.pod)$/;"	k
-Package Management	refs/webdev/dev-env/js-dev-env-starter-kit.md	/^## Package Management$/;"	s	chapter:JavaScript Developer Environment Starter Kit
-Package Management	refs/webdev/notes/index.md	/^### Package Management$/;"	S	section:Notes on Building a JS Dev Environment""Intro
-Package Tweaks	refs/archives/desktop-distro-deploy.md	/^#### Package Tweaks$/;"	t	subsection:Instructions on Deploying New Manjaro Install""Step 3: Package Installation""Manual Installs
-Package Tweaks	refs/linux/dotfiles/distrodeploy.md	/^#### Package Tweaks$/;"	t	subsection:Instructions on Deploying New Manjaro Install""Step 3: Package Installation""Manual Installs
-Packages to Install	refs/journals/desktop-timeline.md	/^## Packages to Install$/;"	s	chapter:Timeline for Desktop
 PlugDiffExtra	old/example-init.vim	/^augroup PlugDiffExtra$/;"	a
 PlugGx	old/example-init.vim	/^augroup PlugGx$/;"	a
-Plugin Hotkeys	refs/linux/vim/vimref.md	/^## Plugin Hotkeys$/;"	s	chapter:vim ref
-Plugins	refs/linux/cmd/todoref.md	/^## Plugins$/;"	s	chapter:Todotxt-cli Reference File
 PomodoroStatus	old/example-init.vim	/^function! PomodoroStatus() abort"{{{$/;"	f
-Post Install	refs/journals/desktop-timeline.md	/^## Post Install$/;"	s	chapter:Timeline for Desktop
-Potential Installs	refs/linux/cmd/cmd-apps.md	/^## Potential Installs$/;"	s	chapter:Command Line Applications
-Practical HTML 5 has examples of:	refs/webdev/notes/index.md	/^## Practical HTML 5 has examples of:$/;"	s	chapter:Notes
-Problems & Ideas to Ponder	refs/journals/desktop-timeline.md	/^## Problems & Ideas to Ponder$/;"	s	chapter:Timeline for Desktop
-Production Build	refs/webdev/dev-env/js-dev-env-starter-kit.md	/^## Production Build$/;"	s	chapter:JavaScript Developer Environment Starter Kit
-Production Build	refs/webdev/notes/index.md	/^### Production Build$/;"	S	section:Notes on Building a JS Dev Environment""Intro
-Production Deploy	refs/webdev/dev-env/js-dev-env-starter-kit.md	/^## Production Deploy$/;"	s	chapter:JavaScript Developer Environment Starter Kit
-Production Deploy	refs/webdev/notes/index.md	/^### Production Deploy$/;"	S	section:Notes on Building a JS Dev Environment""Intro
-Profiling & Tracing With Perf	refs/archives/ubunturef.md	/^#### Profiling & Tracing With Perf$/;"	t	subsection:Notes""Notes from "Your Linux Toolbox" Zine Collection""tcpdump
-Project Ideas	refs/webdev/notes/index.md	/^## Project Ideas$/;"	s	chapter:Notes
-Project Structure	refs/webdev/dev-env/js-dev-env-starter-kit.md	/^## Project Structure$/;"	s	chapter:JavaScript Developer Environment Starter Kit
-Project Structure	refs/webdev/notes/index.md	/^### Project Structure$/;"	S	section:Notes on Building a JS Dev Environment""Intro
 PulseCursorLine	old/example-2-init.vim	/^function! PulseCursorLine()$/;"	f
 Q	old/example-2-init.vim	/^nnoremap Q gwap$/;"	m
 Q	old/example-2-init.vim	/^vnoremap Q gw$/;"	m
 Q	old/example-init.vim	/^command Q q!$/;"	c
 Q	old/example-init.vim	/^nnoremap <silent> Q :q!<CR>$/;"	m
-Quick Ref	refs/index.md	/^### Quick Ref$/;"	S	section:Home of the Wiki""Map
 Random	.config/oomox/ui_config.json	/^{"window_width": 1918, "window_height": 1035, "preset_list_minimal_width": 150, "preset_list_wid/;"	b	object:preset_list_sections_expanded
-Rclone / Dropbox	refs/archives/desktop-distro-deploy.md	/^### Rclone \/ Dropbox$/;"	S	section:Instructions on Deploying New Manjaro Install""Step 3: Package Installation
-Rclone / Dropbox	refs/linux/dotfiles/distrodeploy.md	/^### Rclone \/ Dropbox$/;"	S	section:Instructions on Deploying New Manjaro Install""Step 3: Package Installation
-React Notes	refs/webdev/react/reactref.md	/^# React Notes$/;"	c
-ReactJS	refs/webdev/react/index.md	/^# ReactJS$/;"	c
-Read the source code	refs/archives/ubunturef.md	/^##### Read the source code$/;"	T	subsubsection:Notes""Notes from "Your Linux Toolbox" Zine Collection""tcpdump""So You Want To Be A Wizard
-Reference File For All My Ricing	refs/linux/dotfiles/i3hotkeys.md	/^# Reference File For All My Ricing$/;"	c
-Responsive Layout (7 days)	refs/webdev/notes/web-dev-2020.md	/^### Responsive Layout (7 days)$/;"	S	section:WebDev Journey""Fundamentals
-Roles Involved With Creating Websites & Apps	refs/webdev/notes/index.md	/^## Roles Involved With Creating Websites & Apps$/;"	s	chapter:Notes on UX Design Course
-Root	refs/index.md	/^### Root$/;"	S	section:Home of the Wiki""Map
-Rust Construction	refs/rust.md	/^# Rust Construction$/;"	c
+Restart	old/systemd/user/dropbox-watch.service	/^Restart=always                                                                                 $/;"	k	section:Service
 SRCEXT	.makepkg.conf	/^SRCEXT='.src.tar.gz'$/;"	k
-SSD Partitioning	refs/archives/desktop-distro-deploy.md	/^### SSD Partitioning$/;"	S	section:Instructions on Deploying New Manjaro Install""Step 1: Installation
-SSD Partitioning	refs/linux/dotfiles/distrodeploy.md	/^### SSD Partitioning$/;"	S	section:Instructions on Deploying New Manjaro Install""Step 1: Installation
-SSH Notes!	refs/linux/netsec/sshref.md	/^# SSH Notes!$/;"	c
 STREscape	.config/repos/st/st.c	/^} STREscape;$/;"	t	typeref:struct:__anon125c4bfe0608	file:
 STRIP_BINARIES	.makepkg.conf	/^STRIP_BINARIES="--strip-all"$/;"	k
 STRIP_SHARED	.makepkg.conf	/^STRIP_SHARED="--strip-unneeded"$/;"	k
 STRIP_STATIC	.makepkg.conf	/^STRIP_STATIC="--strip-debug"$/;"	k
 STR_ARG_SIZ	.config/repos/st/st.c	/^#define STR_ARG_SIZ /;"	d	file:
 STR_BUF_SIZ	.config/repos/st/st.c	/^#define STR_BUF_SIZ /;"	d	file:
-SUB TOTAL TIME ESTIMATE:  60 DAYS	refs/webdev/notes/web-dev-2020.md	/^#### SUB TOTAL TIME ESTIMATE:  60 DAYS$/;"	t	subsection:WebDev Journey""Fundamentals""Basic Front-End Web Developer
-SUPER HELPFUL MAN PAGE KEY	refs/linux/cmd/tmuxref.md	/^## SUPER HELPFUL MAN PAGE KEY$/;"	s	chapter:Tmux Notes
-Sass Pre-Processor (6 days)	refs/webdev/notes/web-dev-2020.md	/^### Sass Pre-Processor (6 days)$/;"	S	section:WebDev Journey""Fundamentals
-Script ideas	refs/archives/ubunturef.md	/^## Script ideas$/;"	s	chapter:Notes
-Section 10: Scope and Hoisting	refs/webdev/js/pluralsight-js-getting-started.md	/^## Section 10: Scope and Hoisting$/;"	s	chapter:Notes from JavaScript: Getting Started
-Section 3: Working with JavaScript Files	refs/webdev/js/pluralsight-js-getting-started.md	/^## Section 3: Working with JavaScript Files$/;"	s	chapter:Notes from JavaScript: Getting Started
-Section 4: Variables and Constants	refs/webdev/js/pluralsight-js-getting-started.md	/^## Section 4: Variables and Constants$/;"	s	chapter:Notes from JavaScript: Getting Started
-Section 5: Types and Operators	refs/webdev/js/pluralsight-js-getting-started.md	/^## Section 5: Types and Operators$/;"	s	chapter:Notes from JavaScript: Getting Started
-Section 6: Program Flow	refs/webdev/js/pluralsight-js-getting-started.md	/^## Section 6: Program Flow$/;"	s	chapter:Notes from JavaScript: Getting Started
-Section 7: Functions	refs/webdev/js/pluralsight-js-getting-started.md	/^## Section 7: Functions$/;"	s	chapter:Notes from JavaScript: Getting Started
-Section 8: Objects and the DOM	refs/webdev/js/pluralsight-js-getting-started.md	/^## Section 8: Objects and the DOM$/;"	s	chapter:Notes from JavaScript: Getting Started
-Section 9: Arrays	refs/webdev/js/pluralsight-js-getting-started.md	/^## Section 9: Arrays$/;"	s	chapter:Notes from JavaScript: Getting Started
-Select a Bundler	refs/webdev/notes/index.md	/^#### Select a Bundler$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Bundling
-Selecting a Module Format	refs/webdev/notes/index.md	/^#### Selecting a Module Format$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Bundling
 Selection	.config/repos/st/st.c	/^} Selection;$/;"	t	typeref:struct:__anon125c4bfe0208	file:
-Separating the UI from the API	refs/webdev/notes/index.md	/^#### Separating the UI from the API$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Production Deploy
-Serving up the mock data	refs/webdev/notes/index.md	/^#### Serving up the mock data$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""HTTP Calls
-Set Up GitHub	refs/webdev/dev-env/js-dev-env-starter-kit.md	/^## Set Up GitHub$/;"	s	chapter:JavaScript Developer Environment Starter Kit
-Setting Up GitHub	refs/webdev/notes/index.md	/^### Setting Up GitHub$/;"	S	section:Notes on Building a JS Dev Environment""Intro
-Setting up CI Servers	refs/webdev/notes/index.md	/^#### Setting up CI Servers$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Testing and Continuous Integration
-Setting up ESLint	refs/webdev/notes/index.md	/^#### Setting up ESLint$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Linting
-Setting up Fetch	refs/webdev/notes/index.md	/^#### Setting up Fetch$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""HTTP Calls
+Service	old/systemd/user/dropbox-watch.service	/^[Service]                                                                                      $/;"	s
 Settings	.config/gtk-3.0/settings.ini	/^[Settings]$/;"	s
 Settings	.config/gtk-4.0/settings.ini	/^[Settings]$/;"	s
-Shougo/deoplete.nvim	refs/linux/vim/vimref.md	/^### Shougo\/deoplete.nvim$/;"	S	section:vim ref""Plugin Hotkeys
 ShowHidden	.config/gtk-2.0/gtkfilechooser.ini	/^ShowHidden=false$/;"	k	section:Filechooser Settings
 ShowSizeColumn	.config/gtk-2.0/gtkfilechooser.ini	/^ShowSizeColumn=true$/;"	k	section:Filechooser Settings
-SirVer/ultisnips	refs/linux/vim/vimref.md	/^### SirVer\/ultisnips$/;"	S	section:vim ref""Plugin Hotkeys
-So You Want To Be A Wizard	refs/archives/ubunturef.md	/^#### So You Want To Be A Wizard$/;"	t	subsection:Notes""Notes from "Your Linux Toolbox" Zine Collection""tcpdump
 SortColumn	.config/gtk-2.0/gtkfilechooser.ini	/^SortColumn=name$/;"	k	section:Filechooser Settings
 SortOrder	.config/gtk-2.0/gtkfilechooser.ini	/^SortOrder=ascending$/;"	k	section:Filechooser Settings
-Sourcemaps	refs/webdev/notes/index.md	/^#### Sourcemaps$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Bundling
 StartupMode	.config/gtk-2.0/gtkfilechooser.ini	/^StartupMode=recent$/;"	k	section:Filechooser Settings
-State Mangement (4 days)	refs/webdev/notes/web-dev-2020.md	/^### State Mangement (4 days)$/;"	S	section:WebDev Journey""What To Learn Next
-Step 0: Pre Setup Notes	refs/archives/desktop-distro-deploy.md	/^## Step 0: Pre Setup Notes$/;"	s	chapter:Instructions on Deploying New Manjaro Install
-Step 0: Pre Setup Notes	refs/linux/dotfiles/distrodeploy.md	/^## Step 0: Pre Setup Notes$/;"	s	chapter:Instructions on Deploying New Manjaro Install
-Step 1: Installation	refs/archives/desktop-distro-deploy.md	/^## Step 1: Installation$/;"	s	chapter:Instructions on Deploying New Manjaro Install
-Step 1: Installation	refs/linux/dotfiles/distrodeploy.md	/^## Step 1: Installation$/;"	s	chapter:Instructions on Deploying New Manjaro Install
-Step 2: Initial Post-Install Setup	refs/archives/desktop-distro-deploy.md	/^## Step 2: Initial Post-Install Setup$/;"	s	chapter:Instructions on Deploying New Manjaro Install
-Step 2: Initial Post-Install Setup	refs/linux/dotfiles/distrodeploy.md	/^## Step 2: Initial Post-Install Setup$/;"	s	chapter:Instructions on Deploying New Manjaro Install
-Step 3: Package Installation	refs/archives/desktop-distro-deploy.md	/^## Step 3: Package Installation$/;"	s	chapter:Instructions on Deploying New Manjaro Install
-Step 3: Package Installation	refs/linux/dotfiles/distrodeploy.md	/^## Step 3: Package Installation$/;"	s	chapter:Instructions on Deploying New Manjaro Install
-Step 4: Dotfiles, Backup, Home, & Repo Deploy	refs/archives/desktop-distro-deploy.md	/^## Step 4: Dotfiles, Backup, Home, & Repo Deploy$/;"	s	chapter:Instructions on Deploying New Manjaro Install
-Step 4: Dotfiles, Backup, Home, & Repo Deploy	refs/linux/dotfiles/distrodeploy.md	/^## Step 4: Dotfiles, Backup, Home, & Repo Deploy$/;"	s	chapter:Instructions on Deploying New Manjaro Install
-Step 5: QA Checklist	refs/archives/desktop-distro-deploy.md	/^## Step 5: QA Checklist$/;"	s	chapter:Instructions on Deploying New Manjaro Install
-Step 5: QA Checklist	refs/linux/dotfiles/distrodeploy.md	/^## Step 5: QA Checklist$/;"	s	chapter:Instructions on Deploying New Manjaro Install
-Step 6: Make another snapshot	refs/archives/desktop-distro-deploy.md	/^## Step 6: Make another snapshot$/;"	s	chapter:Instructions on Deploying New Manjaro Install
-Step 6: Make another snapshot	refs/linux/dotfiles/distrodeploy.md	/^## Step 6: Make another snapshot$/;"	s	chapter:Instructions on Deploying New Manjaro Install
 SwitchColorScheme	old/example-init.vim	/^function! SwitchColorScheme(name)$/;"	f
 SwitchLightlineColorScheme	old/example-init.vim	/^function! SwitchLightlineColorScheme(color)"{{{$/;"	f
 SynStack	old/example-2-init.vim	/^function! SynStack ()$/;"	f
@@ -885,76 +674,25 @@ TLINE_HIST	.config/repos/st/st.c	/^#define TLINE_HIST(/;"	d	file:
 Tab_num	.config/nvim/plugin_config.vim	/^function! Tab_num(n) abort " {{{$/;"	f
 Tables	refs/markdown.md	/^# Tables$/;"	c
 TagbarInit	old/example-init.vim	/^function! TagbarInit()$/;"	f
-Temp Notes	refs/tempref.md	/^# Temp Notes$/;"	c
-Temp Ref	refs/webdev/tempref.md	/^# Temp Ref$/;"	c
-Temporary Notes	refs/linux/temp.md	/^# Temporary Notes$/;"	c
 Term	.config/repos/st/st.c	/^} Term;$/;"	t	typeref:struct:__anon125c4bfe0408	file:
 TerminalCreate	.config/nvim/functions.vim	/^function! TerminalCreate() abort$/;"	f
 TerminalCreate	old/example-init.vim	/^function! TerminalCreate() abort$/;"	f
 TerminalToggle	.config/nvim/functions.vim	/^function! TerminalToggle()$/;"	f
 TerminalToggle	old/example-init.vim	/^function! TerminalToggle()$/;"	f
-Test These Things With Live USB	refs/archives/desktop-distro-deploy.md	/^### Test These Things With Live USB$/;"	S	section:Instructions on Deploying New Manjaro Install""Step 0: Pre Setup Notes
-Testing & Continuous Integration	refs/webdev/dev-env/js-dev-env-starter-kit.md	/^## Testing & Continuous Integration$/;"	s	chapter:JavaScript Developer Environment Starter Kit
-Testing and Continuous Integration	refs/webdev/notes/index.md	/^### Testing and Continuous Integration$/;"	S	section:Notes on Building a JS Dev Environment""Intro
-The Endless Tinkering Of My System	refs/linux/dotfiles/index.md	/^# The Endless Tinkering Of My System$/;"	c
-The UX Brief	refs/webdev/notes/index.md	/^## The UX Brief$/;"	s	chapter:Notes on UX Design Course
-The UX Persona	refs/webdev/notes/index.md	/^## The UX Persona$/;"	s	chapter:Notes on UX Design Course
-Things to Investigate	refs/archives/ubunturef.md	/^# Things to Investigate$/;"	c
-Timeline	refs/journals/laptop-timeline.md	/^## Timeline$/;"	s	chapter:Laptop Timeline
-Timeline for Desktop	refs/journals/desktop-timeline.md	/^# Timeline for Desktop$/;"	c
-Timeshift	refs/archives/desktop-distro-deploy.md	/^### Timeshift$/;"	S	section:Instructions on Deploying New Manjaro Install""Step 2: Initial Post-Install Setup
-Timeshift	refs/linux/dotfiles/distrodeploy.md	/^### Timeshift$/;"	S	section:Instructions on Deploying New Manjaro Install""Step 2: Initial Post-Install Setup
-Tips for reading code	refs/archives/ubunturef.md	/^##### Tips for reading code$/;"	T	subsubsection:Notes""Notes from "Your Linux Toolbox" Zine Collection""tcpdump""So You Want To Be A Wizard
-Tmux Notes	refs/linux/cmd/tmuxref.md	/^# Tmux Notes$/;"	c
-Tmux Plugins	refs/linux/cmd/tmuxref.md	/^## Tmux Plugins$/;"	s	chapter:Tmux Notes
-Tmux basics	refs/linux/cmd/tmuxref.md	/^## Tmux basics$/;"	s	chapter:Tmux Notes
-Tmux window management	refs/linux/cmd/tmuxref.md	/^## Tmux window management$/;"	s	chapter:Tmux Notes
-To Be Installed	refs/journals/laptop-timeline.md	/^## To Be Installed$/;"	s	chapter:Laptop Timeline
-Todotxt-cli Reference File	refs/linux/cmd/todoref.md	/^# Todotxt-cli Reference File$/;"	c
 ToggleCocExplorer	old/example-init.vim	/^function ToggleCocExplorer()$/;"	f
 ToggleIndent	old/example-init.vim	/^function! ToggleIndent()$/;"	f
 ToggleTagbar	old/example-init.vim	/^function! ToggleTagbar()$/;"	f
 Toggle_Pomodoro	old/example-init.vim	/^function! Toggle_Pomodoro()$/;"	f
-Tool Selection	refs/webdev/notes/index.md	/^#### Tool Selection$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Testing and Continuous Integration
-Tools for Creating Your Own Linux Distro	refs/archives/ubunturef.md	/^## Tools for Creating Your Own Linux Distro$/;"	s	chapter:Things to Investigate
-Transpiling	refs/webdev/dev-env/js-dev-env-starter-kit.md	/^## Transpiling$/;"	s	chapter:JavaScript Developer Environment Starter Kit
-Transpiling	refs/webdev/notes/index.md	/^### Transpiling$/;"	S	section:Notes on Building a JS Dev Environment""Intro
-Traversy Media's Rust Crash Course	refs/notes.md	/^## Traversy Media's Rust Crash Course$/;"	s	chapter:Notes On Rust
 UTF_INVALID	.config/repos/st/st.c	/^#define UTF_INVALID /;"	d	file:
 UTF_SIZ	.config/repos/st/st.c	/^#define UTF_SIZ /;"	d	file:
-Useful Commands	refs/journals/laptop-timeline.md	/^## Useful Commands$/;"	s	chapter:Laptop Timeline
-Useful Commands To Remember	refs/linux/cmd/linux-cmd-book.md	/^### Useful Commands To Remember$/;"	S	section:Notes from The Linux Command Line Book
-Useful Commands for X Window Manager	refs/linux/temp.md	/^## Useful Commands for X Window Manager$/;"	s	chapter:Temporary Notes
-Using randomized data helps test:	refs/webdev/notes/index.md	/^#### Using randomized data helps test:$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""HTTP Calls
+Unit	old/systemd/user/dropbox-watch.service	/^[Unit]                                                                                         $/;"	s
 VCSCLIENTS	.makepkg.conf	/^VCSCLIENTS=('bzr::bzr'$/;"	k
-Vanilla JavaScript (11 days)	refs/webdev/notes/web-dev-2020.md	/^### Vanilla JavaScript (11 days)$/;"	S	section:WebDev Journey""Fundamentals
-Vim/Neovim	refs/linux/vim/index.md	/^# Vim\/Neovim$/;"	c
-Vocabulary	refs/webdev/notes/index.md	/^## Vocabulary$/;"	s	chapter:Notes
 W	old/example-init.vim	/^command W w suda:\/\/%$/;"	c
-Web Development	refs/webdev/index.md	/^# Web Development$/;"	c
-WebDev Journey	refs/webdev/notes/web-dev-2020.md	/^# WebDev Journey$/;"	c
-What About Windows?	refs/linux/netsec/sshref.md	/^### What About Windows?$/;"	S	section:SSH Notes!""Overview
-What To Learn Next	refs/webdev/notes/web-dev-2020.md	/^## What To Learn Next$/;"	s	chapter:WebDev Journey
-What belongs in your starter kit?	refs/webdev/notes/index.md	/^### What belongs in your starter kit?$/;"	S	section:Notes on Building a JS Dev Environment""Intro
-What is SSH?	refs/linux/netsec/sshref.md	/^#### What is SSH?$/;"	t	section:SSH Notes!""Overview
-When to invest in understanding?	refs/archives/ubunturef.md	/^##### When to invest in understanding?$/;"	T	subsubsection:Notes""Notes from "Your Linux Toolbox" Zine Collection""tcpdump""So You Want To Be A Wizard
-Why Continuous Integration?	refs/webdev/notes/index.md	/^#### Why Continuous Integration?$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Testing and Continuous Integration
-Why Use ES6 Modules?	refs/webdev/notes/index.md	/^#### Why Use ES6 Modules?$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Bundling
-Why a Starter Kit?	refs/webdev/notes/index.md	/^## Why a Starter Kit?$/;"	s	chapter:Notes on Building a JS Dev Environment
-Why bundle?	refs/webdev/notes/index.md	/^#### Why bundle?$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Bundling
-Why lint via an automated build process?	refs/webdev/notes/index.md	/^#### Why lint via an automated build process?$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Linting
-Why mock HTTP?	refs/webdev/notes/index.md	/^#### Why mock HTTP?$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""HTTP Calls
-Why send a polyfill to everyone?	refs/webdev/notes/index.md	/^#### Why send a polyfill to everyone?$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""HTTP Calls
-Why use a linter?	refs/webdev/notes/index.md	/^#### Why use a linter?$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Linting
-Wildcards	refs/linux/cmd/linux-cmd-book.md	/^##### Wildcards$/;"	T	subsubsection:Notes from The Linux Command Line Book""Useful Commands To Remember""Chapter 4
-Workflow Overview	refs/linux/cmd/todoref.md	/^## Workflow Overview$/;"	s	chapter:Todotxt-cli Reference File
+WantedBy	old/systemd/user/dropbox-watch.service	/^WantedBy=default.target$/;"	k	section:Install
 X	.config/ranger/rifle.conf	/^ext s[wmf]c, has snes9x-gtk,X = snes9x-gtk "$1"$/;"	k
-Y	.config/nvim/keys.vim	/^map Y y\$$/;"	m
+Y	.config/nvim/keys.vim	/^nnoremap Y y\$$/;"	m
 Y	old/example-2-init.vim	/^nnoremap Y y\$$/;"	m
-You can extract and minify CSS separately	refs/webdev/notes/index.md	/^#### You can extract and minify CSS separately$/;"	t	subsection:Notes on Building a JS Dev Environment""Intro""Production Build
-You need a starter kit	refs/webdev/notes/index.md	/^### You need a starter kit$/;"	S	section:Notes on Building a JS Dev Environment""Intro
 YouTube Videos	refs/markdown.md	/^# YouTube Videos$/;"	c
-ZZ	.config/nvim/keys.vim	/^nnoremap ZZ :wq<cr>$/;"	m
 \\	old/example-2-init.vim	/^nnoremap \\ :Ag<SPACE>$/;"	m
 \x20              terminal	.config/ranger/rifle.conf	/^ext x?html?, has w3m,               terminal = w3m "$@"$/;"	k
 \x20             terminal	.config/ranger/rifle.conf	/^ext x?html?, has lynx,              terminal = lynx -- "$@"$/;"	k
@@ -1148,17 +886,10 @@ __anon125c4bfe0608	.config/repos/st/st.c	/^typedef struct {$/;"	s	file:
 `	old/example-2-init.vim	/^nnoremap ` '$/;"	m
 ac	.config/polybar/colors.ini	/^ac = #076678$/;"	k	section:color
 actionfps	.config/repos/st/config.h	/^static unsigned int actionfps = 30;$/;"	v	typeref:typename:unsigned int
-again	refs/linux/cmd/todoref.md	/^### again$/;"	S	section:Todotxt-cli Reference File""Plugins
-again aliases	refs/linux/cmd/todoref.md	/^#### again aliases$/;"	t	subsection:Todotxt-cli Reference File""Plugins""again
-again notes	refs/linux/cmd/todoref.md	/^#### again notes$/;"	t	subsection:Todotxt-cli Reference File""Plugins""again
-albertomontesg/lightline-asyncrun	refs/linux/vim/vimref.md	/^### albertomontesg\/lightline-asyncrun$/;"	S	section:vim ref""Plugin Hotkeys
-aliases	refs/linux/cmd/todoref.md	/^#### aliases$/;"	t	subsection:Todotxt-cli Reference File""Plugins""due
-align-items	refs/webdev/css/flexbox.md	/^### align-items$/;"	S	section:Flexbox Notes""Overview
 allowaltscreen	.config/repos/st/config.h	/^int allowaltscreen = 1;$/;"	v	typeref:typename:int
 alpha	.config/repos/st/config.h	/^float alpha = 1;$/;"	v	typeref:typename:float
 alt	.config/repos/st/st.c	/^	Line *alt;    \/* alternate screen *\/$/;"	m	struct:__anon125c4bfe0408	typeref:typename:Line *	file:
 alt	.config/repos/st/st.c	/^	int alt;$/;"	m	struct:__anon125c4bfe0208	typeref:typename:int	file:
-alvan/vim-closetag	refs/linux/vim/vimref.md	/^### alvan\/vim-closetag$/;"	S	section:vim ref""Plugin Hotkeys
 an(	old/example-2-init.vim	/^onoremap an( :<c-u>normal! 0f(va(<cr>$/;"	m
 anf	old/example-2-init.vim	/^onoremap anf :<c-u>normal! 0f(hvaw<cr>$/;"	m
 ant	old/example-2-init.vim	/^onoremap ant :<c-u>normal! 0f<vat<cr>$/;"	m
@@ -1234,14 +965,10 @@ bottom	.config/polybar/config.ini	/^radius-bottom = 0.0$/;"	k	section:bar/mandel
 buf	.config/repos/st/st.c	/^	char buf[ESC_BUF_SIZ]; \/* raw string *\/$/;"	m	struct:__anon125c4bfe0508	typeref:typename:char[]	file:
 buf	.config/repos/st/st.c	/^	char buf[STR_BUF_SIZ]; \/* raw string *\/$/;"	m	struct:__anon125c4bfe0608	typeref:typename:char[]	file:
 c	.config/repos/st/st.c	/^	TCursor c;    \/* cursor *\/$/;"	m	struct:__anon125c4bfe0408	typeref:typename:TCursor	file:
-carlitux/deoplete-ternjs	refs/linux/vim/vimref.md	/^### carlitux\/deoplete-ternjs$/;"	S	section:vim ref""Plugin Hotkeys
 center	.config/polybar/config.ini	/^fixed-center = true$/;"	k	section:bar/mandelight
 center	.config/polybar/config.ini	/^modules-center = cpu memory network$/;"	k	section:bar/mandelight
 charset	.config/repos/st/st.c	/^	int charset;  \/* current charset *\/$/;"	m	struct:__anon125c4bfe0408	typeref:typename:int	file:
 charset	.config/repos/st/st.c	/^enum charset {$/;"	g	file:
-chcon	refs/linux/cmd/todoref.md	/^### chcon$/;"	S	section:Todotxt-cli Reference File""Plugins
-chcon aliases	refs/linux/cmd/todoref.md	/^#### chcon aliases$/;"	t	subsection:Todotxt-cli Reference File""Plugins""chcon
-chcon notes	refs/linux/cmd/todoref.md	/^#### chcon notes$/;"	t	subsection:Todotxt-cli Reference File""Plugins""chcon
 chscale	.config/repos/st/config.h	/^static float chscale = 1.0;$/;"	v	typeref:typename:float
 class	.config/i3/layouts/2-panel-workflow.json	/^                       "class": "^kitty$",$/;"	s	object:nodes.0.nodes.0.swallows.0
 class	.config/i3/layouts/2-panel-workflow.json	/^                       "class": "^kitty$",$/;"	s	object:nodes.1.nodes.0.swallows.0
@@ -1308,7 +1035,7 @@ csiescseq	.config/repos/st/st.c	/^static CSIEscape csiescseq;$/;"	v	typeref:type
 csihandle	.config/repos/st/st.c	/^csihandle(void)$/;"	f	typeref:typename:void
 csiparse	.config/repos/st/st.c	/^csiparse(void)$/;"	f	typeref:typename:void
 csireset	.config/repos/st/st.c	/^csireset(void)$/;"	f	typeref:typename:void
-css_files	.config/nvim/functions.vim	/^  augroup css_files "{{{$/;"	a
+css_files	.config/nvim/functions.vim	/^  augroup css_files " {{{$/;"	a
 css_files	old/example-2-init.vim	/^    augroup css_files "{{{$/;"	a
 current_border_width	.config/i3/layouts/2-panel-workflow.json	/^                    "current_border_width": 5,$/;"	n	object:nodes.0.nodes.0
 current_border_width	.config/i3/layouts/2-panel-workflow.json	/^                    "current_border_width": 5,$/;"	n	object:nodes.1.nodes.0
@@ -1326,14 +1053,17 @@ cursorthickness	.config/repos/st/config.h	/^static unsigned int cursorthickness 
 cwscale	.config/repos/st/config.h	/^static float cwscale = 1.0;$/;"	v	typeref:typename:float
 dbe	.config/compton.airblader.conf	/^dbe = false;$/;"	k
 dbe	.config/compton.conf	/^dbe = false;$/;"	k
-dbmrq/vim-ditto	refs/linux/vim/vimref.md	/^### dbmrq\/vim-ditto$/;"	S	section:vim ref""Plugin Hotkeys
+dbx_pull	scripts/dbx_applet.sh	/^dbx_pull() {$/;"	f
+dbx_push	scripts/dbx_applet.sh	/^dbx_push() {$/;"	f
+dbx_watch	scripts/dbx_applet.sh	/^dbx_watch() {$/;"	f
+dbxlong_pull	scripts/dbxlong_applet.sh	/^dbxlong_pull() {$/;"	f
+dbxlong_push	scripts/dbxlong_applet.sh	/^dbxlong_push() {$/;"	f
 defaultattr	.config/repos/st/config.h	/^static unsigned int defaultattr = 11;$/;"	v	typeref:typename:unsigned int
 defaultbg	.config/repos/st/config.h	/^unsigned int defaultbg = 256;$/;"	v	typeref:typename:unsigned int
 defaultcs	.config/repos/st/config.h	/^static unsigned int defaultcs = 258;$/;"	v	typeref:typename:unsigned int
 defaultfg	.config/repos/st/config.h	/^unsigned int defaultfg = 257;$/;"	v	typeref:typename:unsigned int
 defaultrcs	.config/repos/st/config.h	/^static unsigned int defaultrcs = 0;$/;"	v	typeref:typename:unsigned int
 delta	.config/compton.airblader.conf	/^fade-delta = 7;$/;"	k
-dense-analysis/ale	refs/linux/vim/vimref.md	/^### dense-analysis\/ale$/;"	S	section:vim ref""Plugin Hotkeys
 deploy_backup	scripts/distrodeploy.sh	/^deploy_backup() {$/;"	f
 deploy_dots	scripts/distrodeploy.sh	/^deploy_dots() {$/;"	f
 deploy_home_links	scripts/distrodeploy.sh	/^deploy_home_links() {$/;"	f
@@ -1367,16 +1097,11 @@ disk_display	.config/neofetch/config.conf	/^disk_display="off"$/;"	k
 disk_show	.config/neofetch/config.conf	/^disk_show=('\/')$/;"	k
 disk_subtitle	.config/neofetch/config.conf	/^disk_subtitle="mount"$/;"	k
 distro_shorthand	.config/neofetch/config.conf	/^distro_shorthand="off"$/;"	k
-donow	refs/linux/cmd/todoref.md	/^### donow$/;"	S	section:Todotxt-cli Reference File""Plugins
-donow aliases	refs/linux/cmd/todoref.md	/^#### donow aliases$/;"	t	subsection:Todotxt-cli Reference File""Plugins""donow
-donow notes	refs/linux/cmd/todoref.md	/^#### donow notes$/;"	t	subsection:Todotxt-cli Reference File""Plugins""donow
 doubleclicktimeout	.config/repos/st/config.h	/^static unsigned int doubleclicktimeout = 300;$/;"	v	typeref:typename:unsigned int
 down	.config/polybar/config.ini	/^scroll-down =$/;"	k	section:bar/mandelight
 draw	.config/repos/st/st.c	/^draw(void)$/;"	f	typeref:typename:void
 drawregion	.config/repos/st/st.c	/^drawregion(int x1, int y1, int x2, int y2)$/;"	f	typeref:typename:void
-due	refs/linux/cmd/todoref.md	/^### due$/;"	S	section:Todotxt-cli Reference File""Plugins
 dump	.config/ranger/scope.sh	/^dump() { \/bin\/echo "$output"; }$/;"	f
-editorconfig/editorconfig-vim	refs/linux/vim/vimref.md	/^### editorconfig\/editorconfig-vim$/;"	S	section:vim ref""Plugin Hotkeys
 enable	.config/nvim/coc-settings.json	/^    "enable": true,$/;"	b	object:eslint.codeAction.disableRuleComment
 esc	.config/repos/st/st.c	/^	int esc;      \/* escape state flags *\/$/;"	m	struct:__anon125c4bfe0408	typeref:typename:int	file:
 escape_state	.config/repos/st/st.c	/^enum escape_state {$/;"	g	file:
@@ -1435,7 +1160,6 @@ file_node_exact_matches	.config/ranger/devicons.py	/^file_node_exact_matches = {
 file_node_extensions	.config/ranger/devicons.py	/^file_node_extensions = {$/;"	v
 fixed	.config/compton.airblader.conf	/^blur-background-fixed = true;$/;"	k
 fl	old/example-init.vim	/^nnoremap <silent> fl :CocList lines<CR>$/;"	m
-flex-direction	refs/webdev/css/flexbox.md	/^### flex-direction$/;"	S	section:Flexbox Notes""Overview
 floating	.config/i3/layouts/2-panel-workflow.json	/^                    "floating": "auto_off",$/;"	s	object:nodes.0.nodes.0
 floating	.config/i3/layouts/2-panel-workflow.json	/^                    "floating": "auto_off",$/;"	s	object:nodes.1.nodes.0
 floating	.config/i3/layouts/2-panel-workflow.json	/^            "floating": "auto_off",$/;"	s	object:nodes.0
@@ -1479,8 +1203,6 @@ format	.config/polybar/modules.ini	/^format = <label-state> <label-mode>$/;"	k	s
 format	.config/polybar/modules.ini	/^format = <label>$/;"	k	section:module/cpu
 format	.config/polybar/modules.ini	/^format = <label>$/;"	k	section:module/date
 format	.config/polybar/modules.ini	/^format = <label>$/;"	k	section:module/memory
-francoiscabrol/ranger.vim	refs/linux/vim/vimref.md	/^### francoiscabrol\/ranger.vim$/;"	S	section:vim ref""Plugin Hotkeys
-freitass/todo.txt-vim	refs/linux/vim/vimref.md	/^### freitass\/todo.txt-vim$/;"	S	section:vim ref""Plugin Hotkeys
 front	.config/compton.airblader.conf	/^glx-copy-from-front = false;$/;"	k
 front	.config/compton.conf	/^glx-copy-from-front = false;$/;"	k
 ft	old/example-init.vim	/^nnoremap <silent> ft :CocList outline<CR>$/;"	m
@@ -1540,7 +1262,7 @@ g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols	old/example-init.vim	/^let
 g:WebDevIconsUnicodeDecorateFolderNodes	old/example-init.vim	/^let g:WebDevIconsUnicodeDecorateFolderNodes = 1$/;"	v
 g:WebDevIconsUnicodeDecorateFolderNodes	old/example-init.vim	/^let g:WebDevIconsUnicodeDecorateFolderNodes = v:true$/;"	v
 g:WebDevIconsUnicodeGlyphDoubleWidth	old/example-init.vim	/^let g:WebDevIconsUnicodeGlyphDoubleWidth = 1$/;"	v
-g:ackprg	.config/nvim/functions.vim	/^  let g:ackprg = 'ag --vimgrep --smart-case'$/;"	v
+g:ackprg	.config/nvim/plugin_config.vim	/^  let g:ackprg = 'ag --hidden --vimgrep --smart-case'$/;"	v
 g:ale_completion_enabled	.config/nvim/general.vim	/^let g:ale_completion_enabled = 1$/;"	v
 g:ale_completion_enabled	old/example-2-init.vim	/^let g:ale_completion_enabled = 0$/;"	v
 g:ale_echo_delay	old/example-init.vim	/^let g:ale_echo_delay = 0$/;"	v
@@ -1844,7 +1566,7 @@ g:undotree_DiffpanelHeight	old/example-init.vim	/^let g:undotree_DiffpanelHeight
 g:undotree_SplitWidth	old/example-init.vim	/^let g:undotree_SplitWidth = 35$/;"	v
 g:undotree_WindowLayout	old/example-init.vim	/^let g:undotree_WindowLayout = 3$/;"	v
 g:user_emmet_install_global	.config/nvim/plugin_config.vim	/^let g:user_emmet_install_global = 0$/;"	v
-g:user_emmet_leader_key	.config/nvim/plugin_config.vim	/^let g:user_emmet_leader_key = '<m-e>'$/;"	v
+g:user_emmet_leader_key	.config/nvim/plugin_config.vim	/^let g:user_emmet_leader_key = '<m-i>'$/;"	v
 g:user_emmet_leader_key	old/example-init.vim	/^    let g:user_emmet_leader_key='<A-z>'$/;"	v
 g:user_emmet_mode	.config/nvim/plugin_config.vim	/^let g:user_emmet_mode='a'$/;"	v
 g:user_emmet_mode	old/example-init.vim	/^    let g:user_emmet_mode='in'  "enable in insert and normal mode$/;"	v
@@ -1861,7 +1583,7 @@ g:vimade	old/example-init.vim	/^let g:vimade = {}$/;"	v
 g:vimade	old/example-init.vim	/^let g:vimade.enablesigns = 1$/;"	v
 g:vimade	old/example-init.vim	/^let g:vimade.fadelevel = 0.6$/;"	v
 g:vimwiki_diary_months	.config/nvim/plugin_config.vim	/^let g:vimwiki_diary_months = {$/;"	v
-g:vimwiki_list	.config/nvim/plugin_config.vim	/^let g:vimwiki_list = [{'path': '~\/refs\/', 'syntax': 'markdown', 'ext': '.md'}]$/;"	v
+g:vimwiki_list	.config/nvim/plugin_config.vim	/^let g:vimwiki_list = [{'path': '~\/refs\/', 'syntax': 'markdown', 'ext': '.wiki'}]$/;"	v
 g:vtm_default_engines	old/example-init.vim	/^let g:vtm_default_engines = ['youdao', 'bing']$/;"	v
 g:vtm_default_mapping	old/example-init.vim	/^let g:vtm_default_mapping = 0$/;"	v
 g:yankring_history_dir	old/example-2-init.vim	/^let g:yankring_history_dir = '$HOME\/.vim\/.tmp'$/;"	v
@@ -1888,9 +1610,6 @@ goyoCustom	.config/nvim/plugin_config.vim	/^augroup goyoCustom$/;"	a
 goyoCustom	old/example-init.vim	/^augroup goyoCustom$/;"	a
 gpu_brand	.config/neofetch/config.conf	/^gpu_brand="on"$/;"	k
 gpu_type	.config/neofetch/config.conf	/^gpu_type="all"$/;"	k
-graph	refs/linux/cmd/todoref.md	/^### graph$/;"	S	section:Todotxt-cli Reference File""Plugins
-graph aliases	refs/linux/cmd/todoref.md	/^#### graph aliases$/;"	t	subsection:Todotxt-cli Reference File""Plugins""graph
-graph notes	refs/linux/cmd/todoref.md	/^#### graph notes$/;"	t	subsection:Todotxt-cli Reference File""Plugins""graph
 gray	.config/polybar/colors.ini	/^dark-gray =  #7c6f64$/;"	k	section:color
 gray	.config/polybar/colors.ini	/^light-gray =  #928374$/;"	k	section:color
 green	.config/compton.airblader.conf	/^shadow-green = 0.12;$/;"	k
@@ -1916,10 +1635,8 @@ hintstyle	.config/gtk-3.0/settings.ini	/^gtk-xft-hintstyle=hintmedium$/;"	k	sect
 hist	.config/repos/st/st.c	/^	Line hist[HISTSIZE]; \/* history buffer *\/$/;"	m	struct:__anon125c4bfe0408	typeref:typename:Line[]	file:
 histi	.config/repos/st/st.c	/^	int histi;    \/* history index *\/$/;"	m	struct:__anon125c4bfe0408	typeref:typename:int	file:
 html_files	old/example-2-init.vim	/^    augroup html_files "{{{$/;"	a
-i3 Hotkeys	refs/linux/dotfiles/i3hotkeys.md	/^## i3 Hotkeys$/;"	s	chapter:Reference File For All My Ricing
 ia	old/example-2-init.vim	/^onoremap ia :<c-u>execute "normal! ?[,(]\\rwv\/[),]\\rh"<cr>$/;"	m
 ia	old/example-2-init.vim	/^vnoremap ia :<c-u>execute "normal! ?[,(]\\rwv\/[),]\\rh"<cr>$/;"	m
-iamcco/markdown-preview.nvim	refs/linux/vim/vimref.md	/^### iamcco\/markdown-preview.nvim$/;"	S	section:vim ref""Plugin Hotkeys
 icharset	.config/repos/st/st.c	/^	int icharset; \/* selected charset for sequence *\/$/;"	m	struct:__anon125c4bfe0408	typeref:typename:int	file:
 ignoremod	.config/repos/st/config.h	/^static uint ignoremod = Mod2Mask|XK_SWITCH_MOD;$/;"	v	typeref:typename:uint
 image_backend	.config/neofetch/config.conf	/^image_backend="ascii"$/;"	k
@@ -1960,21 +1677,13 @@ ipc	.config/polybar/config.ini	/^enable-ipc = true$/;"	k	section:bar/mandelight
 is_vim	.tmux/.tmux-example.conf	/^is_vim='echo "#{pane_current_command}" | grep -iqE "(^|\\\/)g?(view|n?vim?x?)(diff)?$"'$/;"	k
 is_vim	.tmux/.tmux-example2.conf	/^is_vim="ps -o state= -o comm= -t '#{pane_tty}' \\$/;"	k
 iso14755	.config/repos/st/st.c	/^iso14755(const Arg *arg)$/;"	f	typeref:typename:void
-itchyny/lightline.vim	refs/linux/vim/vimref.md	/^### itchyny\/lightline.vim$/;"	S	section:vim ref""Plugin Hotkeys
-itchyny/vim-gitbranch	refs/linux/vim/vimref.md	/^### itchyny\/vim-gitbranch$/;"	S	section:vim ref""Plugin Hotkeys
 j	old/example-2-init.vim	/^nnoremap j gj$/;"	m
-javascript_files	.config/nvim/functions.vim	/^  augroup javascript_files "{{{$/;"	a
+javascript_files	.config/nvim/functions.vim	/^  augroup javascript_files " {{{$/;"	a
 javascript_files	old/example-2-init.vim	/^    augroup javascript_files "{{{$/;"	a
-jiangmiao/auto-pairs	refs/linux/vim/vimref.md	/^### jiangmiao\/auto-pairs$/;"	S	section:vim ref""Plugin Hotkeys
 jj	old/example-2-init.vim	/^inoremap jj <Esc>$/;"	m
 jk	.config/nvim/keys.vim	/^inoremap jk <esc>$/;"	m
 join pane from	.tmux/.tmux-example2.conf	/^bind j command-prompt -p "join pane from:"  "join-pane -s '%%'"$/;"	k
 js_files	old/example-2-init.vim	/^    augroup js_files "{{{$/;"	a
-junegunn/fzf.vim	refs/linux/vim/vimref.md	/^### junegunn\/fzf.vim$/;"	S	section:vim ref""Plugin Hotkeys
-junegunn/goyo.vim	refs/linux/vim/vimref.md	/^### junegunn\/goyo.vim$/;"	S	section:vim ref""Plugin Hotkeys
-junegunn/limelight.vim	refs/linux/vim/vimref.md	/^### junegunn\/limelight.vim$/;"	S	section:vim ref""Plugin Hotkeys
-justify-content	refs/webdev/css/flexbox.md	/^### justify-content$/;"	S	section:Flexbox Notes""Overview
-justinmk/vim-sneak	refs/linux/vim/vimref.md	/^### justinmk\/vim-sneak$/;"	S	section:vim ref""Plugin Hotkeys
 k	old/example-2-init.vim	/^nnoremap k gk$/;"	m
 kern	.config/compton.airblader.conf	/^blur-kern = "7x7box";$/;"	k
 kern	.config/compton.conf	/^blur-kern = "3x3box";$/;"	k
@@ -2019,12 +1728,7 @@ line	.config/repos/st/st.c	/^	Line *line;   \/* screen *\/$/;"	m	struct:__anon12
 load_menu	scripts/archives/dropboxsyncmenu.sh	/^load_menu() {$/;"	f
 locale	.config/polybar/config.ini	/^locale = en_US.UTF-8$/;"	k	section:bar/mandelight
 location	.config/nvim/coc-settings.json	/^    "location": "sameLine"$/;"	s	object:eslint.codeAction.disableRuleComment
-ludovicchabant/vim-gutentags	refs/linux/vim/vimref.md	/^### ludovicchabant\/vim-gutentags$/;"	S	section:vim ref""Plugin Hotkeys
-macthecadillac/lightline-gitdiff	refs/linux/vim/vimref.md	/^### macthecadillac\/lightline-gitdiff$/;"	S	section:vim ref""Plugin Hotkeys
 manPagerCustom	old/example-init.vim	/^    augroup manPagerCustom$/;"	a
-many	refs/linux/cmd/todoref.md	/^### many$/;"	S	section:Todotxt-cli Reference File""Plugins
-many aliases	refs/linux/cmd/todoref.md	/^#### many aliases$/;"	t	subsection:Todotxt-cli Reference File""Plugins""many
-many notes	refs/linux/cmd/todoref.md	/^#### many notes$/;"	t	subsection:Todotxt-cli Reference File""Plugins""many
 map	.config/ranger/rc.bak.conf	/^map :  console$/;"	k
 map	.config/ranger/rc.bak.conf	/^map =  chmod$/;"	k
 map	.config/ranger/rc.conf	/^map :  console$/;"	k
@@ -2117,9 +1821,7 @@ maplocalleader	old/example-2-init.vim	/^let maplocalleader="\\\\"$/;"	v
 mappedkeys	.config/repos/st/config.h	/^static KeySym mappedkeys[] = { -1 };$/;"	v	typeref:typename:KeySym[]
 margin	.config/polybar/config.ini	/^format-margin =$/;"	k	section:settings
 markdown_files	old/example-2-init.vim	/^    augroup markdown_files "{{{$/;"	a
-mattn/emmet-vim	refs/linux/vim/vimref.md	/^### mattn\/emmet-vim$/;"	S	section:vim ref""Plugin Hotkeys
 max	.config/polybar/modules.ini	/^use-ui-max = true$/;"	k	section:module/pulseaudio
-maximbaz/lightline-ale	refs/linux/vim/vimref.md	/^### maximbaz\/lightline-ale$/;"	S	section:vim ref""Plugin Hotkeys
 maxsize	.config/polybar/config.ini	/^tray-maxsize = 16$/;"	k	section:bar/mandelight
 memory_display	.config/neofetch/config.conf	/^memory_display="off"$/;"	k
 memory_percent	.config/neofetch/config.conf	/^memory_percent="off"$/;"	k
@@ -2136,7 +1838,6 @@ middle	.config/polybar/user_modules.ini	/^click-middle = \/home\/efex\/scripts\/
 middle	.config/polybar/user_modules.ini	/^click-middle = \/home\/efex\/scripts\/xfluxstatus.sh --off &$/;"	k	section:module/xfluxstatus
 mk	old/example-2-init.vim	/^nnoremap mk :make<CR>$/;"	m
 mkeys	.config/repos/st/config.h	/^MouseKey mkeys[] = {$/;"	v	typeref:typename:MouseKey[]
-mlaursen/vim-react-snippets	refs/linux/vim/vimref.md	/^### mlaursen\/vim-react-snippets$/;"	S	section:vim ref""Plugin Hotkeys
 mode	.config/polybar/modules.ini	/^label-mode = %mode%$/;"	k	section:module/i3
 mode	.config/repos/st/st.c	/^	char mode[2];$/;"	m	struct:__anon125c4bfe0508	typeref:typename:char[2]	file:
 mode	.config/repos/st/st.c	/^	int mode;     \/* terminal mode flags *\/$/;"	m	struct:__anon125c4bfe0408	typeref:typename:int	file:
@@ -2156,7 +1857,6 @@ module/redshiftstatus	.config/polybar/user_modules.ini	/^[module\/redshiftstatus
 module/rescuetimestatus	.config/polybar/user_modules.ini	/^[module\/rescuetimestatus]$/;"	s
 module/sinkswitch	.config/polybar/user_modules.ini	/^[module\/sinkswitch]$/;"	s
 module/xfluxstatus	.config/polybar/user_modules.ini	/^[module\/xfluxstatus]$/;"	s
-morhetz/gruvbox	refs/linux/vim/vimref.md	/^### morhetz\/gruvbox$/;"	S	section:vim ref""Plugin Hotkeys
 mounted	.config/polybar/modules.ini	/^format-mounted = <label-mounted>$/;"	k	section:module/filesystem
 mounted	.config/polybar/modules.ini	/^label-mounted = " %percentage_used%%"$/;"	k	section:module/filesystem
 mousebg	.config/repos/st/config.h	/^static unsigned int mousebg = 0;$/;"	v	typeref:typename:unsigned int
@@ -2186,7 +1886,6 @@ narg	.config/repos/st/st.c	/^	int narg;              \/* nb of args *\/$/;"	m	st
 narg	.config/repos/st/st.c	/^	int narg;              \/* nb of args *\/$/;"	m	struct:__anon125c4bfe0608	typeref:typename:int	file:
 nb	.config/repos/st/st.c	/^	} nb, ne, ob, oe;$/;"	m	struct:__anon125c4bfe0208	typeref:struct:__anon125c4bfe0208::__anon125c4bfe0308	file:
 ne	.config/repos/st/st.c	/^	} nb, ne, ob, oe;$/;"	m	struct:__anon125c4bfe0208	typeref:struct:__anon125c4bfe0208::__anon125c4bfe0308	file:
-neoclide/coc.nvim	refs/linux/vim/vimref.md	/^### neoclide\/coc.nvim$/;"	S	section:vim ref""Plugin Hotkeys
 nodes	.config/i3/layouts/2-panel-workflow.json	/^            "nodes": [$/;"	a	object:nodes.0
 nodes	.config/i3/layouts/2-panel-workflow.json	/^            "nodes": [$/;"	a	object:nodes.1
 nodes	.config/i3/layouts/2-panel-workflow.json	/^    "nodes": [$/;"	a
@@ -2199,7 +1898,6 @@ nodes	.config/i3/layouts/4-panel-workflow.json	/^            "nodes": [$/;"	a	ob
 nodes	.config/i3/layouts/4-panel-workflow.json	/^            "nodes": [$/;"	a	object:nodes.0
 nodes	.config/i3/layouts/4-panel-workflow.json	/^            "nodes": [$/;"	a	object:nodes.1
 nodes	.config/i3/layouts/4-panel-workflow.json	/^    "nodes": [$/;"	a
-notes	refs/linux/cmd/todoref.md	/^#### notes$/;"	t	subsection:Todotxt-cli Reference File""Plugins""due
 numbertoggle	.config/nvim/functions.vim	/^augroup numbertoggle$/;"	a
 o	old/example-init.vim	/^        nmap <silent><buffer> o <CR>$/;"	m
 ob	.config/repos/st/st.c	/^	} nb, ne, ob, oe;$/;"	m	struct:__anon125c4bfe0208	typeref:struct:__anon125c4bfe0208::__anon125c4bfe0308	file:
@@ -2222,6 +1920,7 @@ overlay	.config/compton.conf	/^paint-on-overlay = true;$/;"	k
 overline	.config/polybar/config.ini	/^compositing-overline = over$/;"	k	section:settings
 overline	.config/polybar/config.ini	/^format-overline =$/;"	k	section:settings
 override	.config/compton.conf	/^inactive-opacity-override = false;$/;"	k
+p	.config/nvim/keys.vim	/^vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>$/;"	m
 p	old/example-2-init.vim	/^vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>$/;"	m
 package_managers	.config/neofetch/config.conf	/^package_managers="on"$/;"	k
 padding	.config/polybar/config.ini	/^format-padding =$/;"	k	section:settings
@@ -2273,7 +1972,6 @@ preset_list_minimal_width	.config/oomox/ui_config.json	/^{"window_width": 1918, 
 preset_list_sections_expanded	.config/oomox/ui_config.json	/^{"window_width": 1918, "window_height": 1035, "preset_list_minimal_width": 150, "preset_list_wid/;"	o
 preset_list_width	.config/oomox/ui_config.json	/^{"window_width": 1918, "window_height": 1035, "preset_list_minimal_width": 150, "preset_list_wid/;"	n
 presets	.config/oomox/ui_config.json	/^{"window_width": 1918, "window_height": 1035, "preset_list_minimal_width": 150, "preset_list_wid/;"	b	object:preset_list_sections_expanded
-prettier/vim-prettier	refs/linux/vim/vimref.md	/^### prettier\/vim-prettier$/;"	S	section:vim ref""Plugin Hotkeys
 printscreen	.config/repos/st/st.c	/^printscreen(const Arg *arg)$/;"	f	typeref:typename:void
 printsel	.config/repos/st/st.c	/^printsel(const Arg *arg)$/;"	f	typeref:typename:void
 priv	.config/repos/st/st.c	/^	char priv;$/;"	m	struct:__anon125c4bfe0508	typeref:typename:char	file:
@@ -2284,7 +1982,7 @@ public_ip_host	.config/neofetch/config.conf	/^public_ip_host="http:\/\/ident.me"
 public_ip_timeout	.config/neofetch/config.conf	/^public_ip_timeout=2$/;"	k
 purple	.config/polybar/colors.ini	/^dark-purple = #8f3f71$/;"	k	section:color
 purple	.config/polybar/colors.ini	/^purple =  #b16286$/;"	k	section:color
-python_files	.config/nvim/functions.vim	/^  augroup python_files "{{{$/;"	a
+python_files	.config/nvim/functions.vim	/^  augroup python_files " {{{$/;"	a
 python_files	old/example-2-init.vim	/^    augroup python_files "{{{$/;"	a
 q	.tmux/.tmux-example2.conf	/^set -g -a terminal-overrides ',*:Ss=\\E[%p1%d q:Se=\\E[2 q'$/;"	k
 q	old/example-init.vim	/^nnoremap <silent> q :q<CR>$/;"	m
@@ -2292,7 +1990,6 @@ radius	.config/compton.airblader.conf	/^shadow-radius = 10;$/;"	k
 radius	.config/compton.conf	/^shadow-radius = 7;$/;"	k
 rate	.config/compton.airblader.conf	/^refresh-rate = 0;$/;"	k
 rate	.config/compton.conf	/^refresh-rate = 0;$/;"	k
-rbgrouleff/bclose.vim	refs/linux/vim/vimref.md	/^### rbgrouleff\/bclose.vim$/;"	S	section:vim ref""Plugin Hotkeys
 red	.config/compton.airblader.conf	/^shadow-red = 0.11;$/;"	k
 red	.config/polybar/colors.ini	/^dark-red =  #9d0006$/;"	k	section:color
 red	.config/polybar/colors.ini	/^red =  #cc241d$/;"	k	section:color
@@ -2325,8 +2022,7 @@ rows	.config/repos/st/config.h	/^static unsigned int rows = 24;$/;"	v	typeref:ty
 rst_files	old/example-2-init.vim	/^    augroup rst_files "{{{$/;"	a
 ruby_files	old/example-2-init.vim	/^    augroup ruby_files "{{{$/;"	a
 rule	.config/compton.airblader.conf	/^opacity-rule = [$/;"	k
-rust_files	.config/nvim/functions.vim	/^  augroup rust_files "{{{$/;"	a
-ryanoasis/vim-devicons	refs/linux/vim/vimref.md	/^### ryanoasis\/vim-devicons$/;"	S	section:vim ref""Plugin Hotkeys
+rust_files	.config/nvim/functions.vim	/^  augroup rust_files " {{{$/;"	a
 s:DetectHTMLVariant	old/example-2-init.vim	/^        fun! s:DetectHTMLVariant()$/;"	f
 s:DetectPythonVariant	old/example-2-init.vim	/^        fun! s:DetectPythonVariant()$/;"	f
 s:GV_Mappings	old/example-init.vim	/^function! s:GV_Mappings() abort$/;"	f
@@ -2343,8 +2039,6 @@ s:startify_mappings	old/example-init.vim	/^    function! s:startify_mappings() a
 s:tagbar_mappings	old/example-init.vim	/^function! s:tagbar_mappings() abort$/;"	f
 s:vim_manpager_mappings	old/example-init.vim	/^    function! s:vim_manpager_mappings() abort$/;"	f
 safepipe	.config/ranger/scope.sh	/^safepipe() { "$@"; test $? = 0 -o $? = 141; }$/;"	f
-sainnhe/artify.vim	refs/linux/vim/vimref.md	/^### sainnhe\/artify.vim$/;"	S	section:vim ref""Plugin Hotkeys
-sainnhe/tmuxline.vim	refs/linux/vim/vimref.md	/^### sainnhe\/tmuxline.vim$/;"	S	section:vim ref""Plugin Hotkeys
 scale	.config/polybar/config.ini	/^tray-scale = 1.0$/;"	k	section:bar/mandelight
 scr	.config/repos/st/st.c	/^	int scr;      \/* scroll back *\/$/;"	m	struct:__anon125c4bfe0408	typeref:typename:int	file:
 scroll	.config/polybar/config.ini	/^cursor-scroll =$/;"	k	section:bar/mandelight
@@ -2371,7 +2065,6 @@ shadow	.config/compton.conf	/^no-dnd-shadow = true;$/;"	k
 shadow	.config/compton.conf	/^no-dock-shadow = true;$/;"	k
 shadow	.config/compton.conf	/^shadow = true;$/;"	k
 shaped	.config/compton.airblader.conf	/^shadow-ignore-shaped = true;$/;"	k
-sheerun/vim-polyglot	refs/linux/vim/vimref.md	/^### sheerun\/vim-polyglot$/;"	S	section:vim ref""Plugin Hotkeys
 shell	.config/repos/st/config.h	/^static char *shell = "\/bin\/zsh";$/;"	v	typeref:typename:char *
 shell_path	.config/neofetch/config.conf	/^shell_path="off"$/;"	k
 shell_version	.config/neofetch/config.conf	/^shell_version="on"$/;"	k
@@ -2382,7 +2075,6 @@ size	.config/gtk-3.0/settings.ini	/^gtk-cursor-theme-size=0$/;"	k	section:Settin
 size	.config/gtk-3.0/settings.ini	/^gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR$/;"	k	section:Settings
 size	.config/polybar/config.ini	/^border-bottom-size = 5$/;"	k	section:bar/mandelight
 size	.config/polybar/config.ini	/^overline-size = 2$/;"	k	section:bar/mandelight
-skywind3000/asyncrun.vim	refs/linux/vim/vimref.md	/^### skywind3000\/asyncrun.vim$/;"	S	section:vim ref""Plugin Hotkeys
 snap	.config/repos/st/st.c	/^	int snap;$/;"	m	struct:__anon125c4bfe0208	typeref:typename:int	file:
 song_format	.config/neofetch/config.conf	/^song_format="%artist% - %album% - %title%"$/;"	k
 song_shorthand	.config/neofetch/config.conf	/^song_shorthand="off"$/;"	k
@@ -2455,7 +2147,6 @@ tagbarCustom	old/example-init.vim	/^augroup tagbarCustom$/;"	a
 tattrset	.config/repos/st/st.c	/^tattrset(int attr)$/;"	f	typeref:typename:int
 tclearregion	.config/repos/st/st.c	/^tclearregion(int x1, int y1, int x2, int y2)$/;"	f	typeref:typename:void
 tcontrolcode	.config/repos/st/st.c	/^tcontrolcode(uchar ascii)$/;"	f	typeref:typename:void
-tcpdump	refs/archives/ubunturef.md	/^### tcpdump$/;"	S	section:Notes""Notes from "Your Linux Toolbox" Zine Collection
 tcursor	.config/repos/st/st.c	/^tcursor(int mode)$/;"	f	typeref:typename:void
 tdectest	.config/repos/st/st.c	/^tdectest(char c)$/;"	f	typeref:typename:void
 tdefcolor	.config/repos/st/st.c	/^tdefcolor(int *attr, int *npar, int l)$/;"	f	typeref:typename:int32_t
@@ -2475,7 +2166,6 @@ terminal	.config/ranger/rifle.conf	/^mime ^ranger\/x-terminal-emulator, has xfce
 terminal.opts.on_exit	.config/nvim/functions.vim	/^    function! g:terminal.opts.on_exit(jobid, data, event) abort$/;"	f
 terminal.opts.on_exit	old/example-init.vim	/^        function! g:terminal.opts.on_exit(jobid, data, event) abort$/;"	f
 termname	.config/repos/st/config.h	/^char *termname = "st-256color";$/;"	v	typeref:typename:char *
-ternjs/tern_for_vim	refs/linux/vim/vimref.md	/^### ternjs\/tern_for_vim$/;"	S	section:vim ref""Plugin Hotkeys
 textile_files	old/example-2-init.vim	/^    augroup textile_files "{{{$/;"	a
 tfulldirt	.config/repos/st/st.c	/^tfulldirt(void)$/;"	f	typeref:typename:void
 theme	.config/gtk-3.0/settings.ini	/^gtk-application-prefer-dark-theme=0$/;"	k	section:Settings
@@ -2493,20 +2183,15 @@ title	.config/i3/layouts/4-panel-workflow.json	/^                       "title":
 title	.config/i3/layouts/4-panel-workflow.json	/^                       "title": "^box$"$/;"	s	object:0.nodes.0.swallows.0
 title	.config/i3/layouts/4-panel-workflow.json	/^                       "title": "^hub$"$/;"	s	object:nodes.0.nodes.0.swallows.0
 title	.config/i3/layouts/4-panel-workflow.json	/^                       "title": "^sub$"$/;"	s	object:nodes.1.nodes.0.swallows.0
-tjdevries/coc-zsh	refs/linux/vim/vimref.md	/^### tjdevries\/coc-zsh$/;"	S	section:vim ref""Plugin Hotkeys
 tlinehistlen	.config/repos/st/st.c	/^tlinehistlen(int y)$/;"	f	typeref:typename:int
 tlinelen	.config/repos/st/st.c	/^tlinelen(int y)$/;"	f	typeref:typename:int
 tmoveato	.config/repos/st/st.c	/^tmoveato(int x, int y)$/;"	f	typeref:typename:void
 tmoveto	.config/repos/st/st.c	/^tmoveto(int x, int y)$/;"	f	typeref:typename:void
-tmux-contiuum	refs/linux/cmd/tmuxref.md	/^### tmux-contiuum$/;"	S	section:Tmux Notes""Tmux Plugins
 tnew	.config/repos/st/st.c	/^tnew(int col, int row)$/;"	f	typeref:typename:void
 tnewline	.config/repos/st/st.c	/^tnewline(int first_col)$/;"	f	typeref:typename:void
 toggleprinter	.config/repos/st/st.c	/^toggleprinter(const Arg *arg)$/;"	f	typeref:typename:void
 top	.config/polybar/config.ini	/^radius-top = 0.0$/;"	k	section:bar/mandelight
 top	.config/repos/st/st.c	/^	int top;      \/* top    scroll limit *\/$/;"	m	struct:__anon125c4bfe0408	typeref:typename:int	file:
-tpope/vim-commentary	refs/linux/vim/vimref.md	/^### tpope\/vim-commentary$/;"	S	section:vim ref""Plugin Hotkeys
-tpope/vim-obsession	refs/linux/vim/vimref.md	/^### tpope\/vim-obsession$/;"	S	section:vim ref""Plugin Hotkeys
-tpope/vim-surround	refs/linux/vim/vimref.md	/^### tpope\/vim-surround$/;"	S	section:vim ref""Plugin Hotkeys
 tprinter	.config/repos/st/st.c	/^tprinter(char *s, size_t len)$/;"	f	typeref:typename:void
 tputc	.config/repos/st/st.c	/^tputc(Rune u)$/;"	f	typeref:typename:void
 tputtab	.config/repos/st/st.c	/^tputtab(int n)$/;"	f	typeref:typename:void
@@ -2602,25 +2287,17 @@ utmp	.config/repos/st/config.h	/^char *utmp = NULL;$/;"	v	typeref:typename:char 
 v	old/example-2-init.vim	/^vmap v <Plug>(expand_region_expand)$/;"	m
 value	.config/polybar/config.ini	/^dim-value = 1.0$/;"	k	section:bar/mandelight
 values	.config/polybar/modules.ini	/^fixed-values = true$/;"	k	section:module/filesystem
-view	refs/linux/cmd/todoref.md	/^### view$/;"	S	section:Todotxt-cli Reference File""Plugins
-view aliases	refs/linux/cmd/todoref.md	/^#### view aliases$/;"	t	subsection:Todotxt-cli Reference File""Plugins""view
-view notes	refs/linux/cmd/todoref.md	/^#### view notes$/;"	t	subsection:Todotxt-cli Reference File""Plugins""view
-vim folds	refs/linux/vim/vimref.md	/^### vim folds$/;"	S	section:vim ref""General Notes
-vim ref	refs/linux/vim/vimref.md	/^# vim ref$/;"	c
 vimPlugMappings	old/example-init.vim	/^augroup vimPlugMappings$/;"	a
-vim_files	.config/nvim/functions.vim	/^  augroup vim_files "{{{$/;"	a
+vim_files	.config/nvim/functions.vim	/^  augroup vim_files " {{{$/;"	a
 vim_files	old/example-2-init.vim	/^    augroup vim_files "{{{$/;"	a
 vim_plug_auto_install	old/example-init.vim	/^    augroup vim_plug_auto_install$/;"	a
 vimadeCustom	old/example-init.vim	/^augroup vimadeCustom$/;"	a
-vimwiki/vimwiki	refs/linux/vim/vimref.md	/^### vimwiki\/vimwiki$/;"	S	section:vim ref""Plugin Hotkeys
 visible	.config/polybar/modules.ini	/^label-visible = %index%$/;"	k	section:module/i3
 volume	.config/polybar/modules.ini	/^format-volume = <ramp-volume> <label-volume>$/;"	k	section:module/pulseaudio
 vsync	.config/compton.airblader.conf	/^vsync = true;$/;"	k
 vsync	.config/compton.conf	/^vsync = "none";$/;"	k
 vtiden	.config/repos/st/config.h	/^char *vtiden = "\\033[?6c";$/;"	v	typeref:typename:char *
 w!!	old/example-2-init.vim	/^cnoremap w!! w !sudo tee % >\/dev\/null$/;"	m
-wakatime/vim-wakatime	refs/linux/vim/vimref.md	/^### wakatime\/vim-wakatime$/;"	S	section:vim ref""Plugin Hotkeys
-wellle/targets.vim	refs/linux/vim/vimref.md	/^### wellle\/targets.vim$/;"	S	section:vim ref""Plugin Hotkeys
 white	.config/polybar/colors.ini	/^white = #fff$/;"	k	section:color
 width	.config/i3/layouts/2-panel-workflow.json	/^                       "width": 800,$/;"	n	object:nodes.0.nodes.0.geometry
 width	.config/i3/layouts/2-panel-workflow.json	/^                       "width": 800,$/;"	n	object:nodes.1.nodes.0.geometry
@@ -2638,9 +2315,6 @@ window_width	.config/oomox/ui_config.json	/^{"window_width": 1918, "window_heigh
 wintypes	.config/compton.airblader.conf	/^wintypes: {$/;"	k
 wintypes	.config/compton.conf	/^wintypes:$/;"	k
 worddelimiters	.config/repos/st/config.h	/^wchar_t *worddelimiters = L" ";$/;"	v	typeref:typename:wchar_t *
-wp	refs/linux/cmd/todoref.md	/^### wp$/;"	S	section:Todotxt-cli Reference File""Plugins
-wp aliases	refs/linux/cmd/todoref.md	/^#### wp aliases$/;"	t	subsection:Todotxt-cli Reference File""Plugins""wp
-wp notes	refs/linux/cmd/todoref.md	/^#### wp notes$/;"	t	subsection:Todotxt-cli Reference File""Plugins""wp
 x	.config/compton.airblader.conf	/^shadow-offset-x = -5;$/;"	k
 x	.config/compton.conf	/^shadow-offset-x = -7;$/;"	k
 x	.config/i3/layouts/2-panel-workflow.json	/^                       "x": 0,$/;"	n	object:nodes.0.nodes.0.geometry

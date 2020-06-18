@@ -1,0 +1,7 @@
+# Vim/Neovim
+
+## Map
+
+- [vimref](vimref.wiki)
+- [temp notes](temp-notes.wiki)
+- [vim hotkeys](vimhotkeys.wiki)

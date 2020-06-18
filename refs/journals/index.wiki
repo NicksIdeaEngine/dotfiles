@@ -1,0 +1,8 @@
+# Journals
+
+Files where I'm tracking something over a long period of time.
+
+## Map
+
+- [desktop timeline.wiki](desktop-timeline.wiki)
+- [laptop timeline.wiki](laptop-timeline.wiki)

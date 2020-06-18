@@ -1,0 +1,10 @@
+# Temp Ref
+
+## Jr Dev Job Hunt Notes
+
+- html dom and underlying event model
+- angular
+- browser idiosyncrasies
+- model-view-controller and test-driven development
+- caching concepts and awareness of performance bottlenecks in web application development
+- Craft?

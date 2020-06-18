@@ -1,0 +1,6 @@
+# Hotkey Reference
+
+- [i3 hotkeys](linux/dotfiles/i3hotkeys.wiki)
+- [vim hotkeys](linux/vim/hotkeys.wiki)
+- [kitty hotkeys]()
+- [tmux hotkeys]()

@@ -1,0 +1,127 @@
+# Portfolio Path
+
+## Outline
+
+- Homepage
+- Portfolio
+- Resume
+- Journey
+  - Companies
+  - Hobbies
+- services
+- Contact
+- Articles
+  - Project Euler
+  - Informative Articles
+  - Puzzles & Practice
+
+## Components
+
+- Header:
+  - Nav (shrink from scrolling)
+  - Logo
+- project tile (small / medium / large)
+- contact form
+- Pop-up / social widget(v0.2.0)
+- Back to top widget(v0.2.0)
+- Footer:
+  - Nav (simple list)
+  - Copyright
+  - Disclaimers/policies
+  - Social icons
+
+## Homepage
+
+Parallax styled page with these sections:
+
+- Header
+- Summary of me:
+  - Web Developer
+  - Large picture of me
+  - Nick Garcia
+- My work:
+  - Showcase top 3 projects
+  - Include mention of what they involve (webpack, react, etc)
+- Goal:
+  - State what you're looking for. A team and company environment where I can apply and grow my skills as a web developer while contributing to meaningful projects.
+- Content:
+  - Hidden until read, but this can showcase your latest content pieces
+- Contact:
+  - Links to GitHub, LinkedIn, contact form, twitter, etc
+- Footer
+
+## Portfolio
+
+- Header
+- Grid-based layout of project tiles
+  - Include tags to show what they involve
+- Filter feature to filter results by tag
+- Footer
+
+## Services
+
+- website creation
+- copywriting
+- sales funnels
+- online advertising
+- hosting & domain name
+
+## My Story
+
+Here's where they'll get to know me personally. Give plenty of info but not too many words. A story should capture and keep attention.
+
+### Companies
+
+- SEO > Social Media Marketing > Copywriting
+- Flow Arts Institute:
+  - Organizer > Director > GM > Owner > CTO
+
+### Hobbies
+
+- Twisty puzzles
+- Sudoku
+- Yoga
+- Poi
+- Juggling
+- Cooking
+- Hiking
+- Dogs
+- Sci-Fi / Fantasy
+- Linux
+
+## Resume
+
+- header
+- downloadable resume
+- embedded resume
+  - eventually a digital one
+- footer
+
+## Contact
+
+- Social widgets
+- Contact form
+- Email
+
+## Content
+
+### Coding Challenges
+
+- Project Euler
+- LeetCode
+- CodeWars
+- Daily Coding Problem Newsletter
+
+### Informative Articles
+
+- My ReactJS Workspace Setup
+- Dotfiles & Distro Setup
+- How I Made This Portfolio Site
+- 100 Days Of Code
+- Improving How You Practice Coding
+
+### Puzzles & Practice
+
+- Twisty Puzzles
+- Sudoku
+- Brain Teasers

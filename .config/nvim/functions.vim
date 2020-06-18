@@ -11,13 +11,6 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
 augroup END
 
-" Use the the_silver_searcher if possible (much faster than Ack)
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep --smart-case'
-  set grepprg=ag\ --nogroup\ --nocolor
-  set grepformat=%f:%l:%c:%m,%f:%l:%m
-endif
-
 " }}}
 " file support {{{
 
@@ -51,82 +44,64 @@ autocmd BufNewFile,BufRead *.conf set filetype=dosini
 " turn on spell check for markdown files
 autocmd BufRead,BufNewFile *.md,*.mdx setlocal spell
 
-" turn on ditto's autocmds
-autocmd FileType markdown,text,tex DittoOn
-
-" start emmet for certain syntaxes
-autocmd FileType html,css,scss,js,jsx EmmetInstall
-
-" run prettier on every save
-autocmd BufWritePre *.html,*.css,*.scss,*.js,*.jsx,*.json,*.md,*.mdx PrettierAsync
-
-" check jsx (and js?) files with both stylelint and eslint
-augroup FiletypeGroup
-  autocmd!
-  au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
-augroup END
-
 if has("autocmd")
-  augroup vim_files "{{{
-    au!
+  augroup vim_files " {{{
+    autocmd!
     " bind <f1> to show the keyword under cursor
-    autocmd filetype vim noremap <buffer> <F1> <esc>:help <c-r><c-w><cr>
-    autocmd filetype vim noremap! <buffer> <F1> <esc>:help <c-r><c-w><cr>
-  augroup end "}}}
-  augroup css_files "{{{
-    au!
-    " enable folding via {}, and start with them open
-    autocmd filetype css,scss setlocal foldmarker={,}
-    autocmd filetype css,scss setlocal foldlevelstart=99
-  augroup end "}}}
-  augroup javascript_files "{{{
-    au!
-    autocmd filetype javascript setlocal listchars=trail:·,extends:#,nbsp:·
-    autocmd filetype javascript setlocal foldmarker={,}
-    autocmd filetype javascript setlocal foldlevelstart=99
+    autocmd FileType vim noremap <buffer> <F1> <esc>:help <c-r><c-w><cr>
+    autocmd FileType vim noremap! <buffer> <F1> <esc>:help <c-r><c-w><cr>
   augroup end " }}}
-  augroup python_files "{{{
-    au!
+  augroup css_files " {{{
+    autocmd!
+    " enable folding via {}, and start with them open
+    autocmd FileType css,scss setlocal foldmarker={,}
+    autocmd FileType css,scss setlocal foldlevelstart=99
+  augroup end " }}}
+  augroup javascript_files " {{{
+    autocmd!
+    autocmd FileType javascript setlocal listchars=trail:·,extends:#,nbsp:·
+    autocmd FileType javascript setlocal foldmarker={,}
+    autocmd FileType javascript setlocal foldlevelstart=99
+    autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+    autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+    autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+  augroup end " }}}
+  augroup python_files " {{{
+    autocmd!
     " disable autowrapping, 1 tab = 4 spaces
-    autocmd filetype python setlocal formatoptions-=t
-    autocmd filetype python setlocal textwidth=78
-    autocmd filetype python setlocal shiftwidth=4
-    autocmd filetype python setlocal softtabstop=4
-    autocmd filetype python setlocal tabstop=4
-    autocmd filetype python setlocal fileformat=unix
-    autocmd filetype python match ErrorMsg '\%>120v.\+'
+    autocmd FileType python setlocal formatoptions-=t
+    autocmd FileType python setlocal textwidth=78
+    autocmd FileType python setlocal shiftwidth=4
+    autocmd FileType python setlocal softtabstop=4
+    autocmd FileType python setlocal tabstop=4
+    autocmd FileType python setlocal fileformat=unix
+    autocmd FileType python match ErrorMsg '\%>120v.\+'
 
     " let python_highlight_all=1
 
-    " run black before every save
-    autocmd BufWritePre *.py execute ':Black'
-
-    " run flake8 on every save
-    autocmd BufWritePost *.py call flake8#Flake8()
-
     " Python runners
-    autocmd filetype python noremap <buffer> <F5> :w<CR>:!python %<CR>
-    autocmd filetype python inoremap <buffer> <F5> <Esc>:w<CR>:!python %<CR>
-    autocmd filetype python noremap <buffer> <S-F5> :w<CR>:!ipython %<CR>
-    autocmd filetype python inoremap <buffer> <S-F5> <Esc>:w<CR>:!ipython %<CR>
+    autocmd FileType python noremap <buffer> <F5> :w<cr>:!python %<cr>
+    autocmd FileType python inoremap <buffer> <F5> <esc>:w<cr>:!python %<cr>
+    autocmd FileType python noremap <buffer> <S-F5> :w<cr>:!ipython %<cr>
+    autocmd FileType python inoremap <buffer> <S-F5> <esc>:w<cr>:!ipython %<cr>
   augroup end " }}}
-  augroup rust_files "{{{
-    au!
+  augroup rust_files " {{{
+    autocmd!
     " Auto-wrap text around 74 chars
-    autocmd filetype rust setlocal textwidth=74
-    autocmd filetype rust setlocal foldmarker={,}
-    autocmd filetype rust setlocal foldlevelstart=99
-    autocmd filetype rust match ErrorMsg '\%>74v.\+'
+    autocmd FileType rust setlocal textwidth=74
+    autocmd FileType rust setlocal foldmarker={,}
+    autocmd FileType rust setlocal foldlevelstart=99
+    autocmd FileType rust match ErrorMsg '\%>74v.\+'
 
     " auto format using cargo fmt
     autocmd BufWritePre *.rs execute ':Autoformat'
 
     " racer mappings
-    " autocmd FileType rust nmap <buffer> gd         <Plug>(rust-def)
-    " autocmd FileType rust nmap <buffer> gs         <Plug>(rust-def-split)
-    " autocmd FileType rust nmap <buffer> gx         <Plug>(rust-def-vertical)
-    " autocmd FileType rust nmap <buffer> gt         <Plug>(rust-def-tab)
-    " autocmd FileType rust nmap <buffer> <leader>gd <Plug>(rust-doc)
+    " autocmd FileType rust nnoremap <buffer> gd         <Plug>(rust-def)
+    " autocmd FileType rust nnoremap <buffer> gs         <Plug>(rust-def-split)
+    " autocmd FileType rust nnoremap <buffer> gx         <Plug>(rust-def-vertical)
+    " autocmd FileType rust nnoremap <buffer> gt         <Plug>(rust-def-tab)
+    " autocmd FileType rust nnoremap <buffer> <leader>gd <Plug>(rust-doc)
   augroup end " }}}
 endif
 
@@ -147,7 +122,7 @@ tnoremap <c-h> <c-\><c-n><c-w>h
 tnoremap <c-n> :q<cr>
 
 " start terminal in insert mode
-au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+autocmd BufEnter * if &buftype == 'terminal' | :startinsert | endif
 
 " open terminal on <c-n>
 function! OpenTerminal()
@@ -160,8 +135,8 @@ nnoremap <c-n> :call OpenTerminal()<cr>
 " }}}
 " dropdown, persistent terminal {{{
 
-nnoremap <silent> <leader>. :call nvim_open_win(bufnr('%'), v:true, {'relative': 'editor', 'anchor': 'NW', 'width': winwidth(0), 'height': 2*winheight(0)/5, 'row': 1, 'col': 0})<CR>:call TerminalToggle()<CR>
-tnoremap <silent> <leader>. <C-\><C-n>:call TerminalToggle()<CR>:q<CR>
+nnoremap <silent> <leader>. :call nvim_open_win(bufnr('%'), v:true, {'relative': 'editor', 'anchor': 'NW', 'width': winwidth(0), 'height': 2*winheight(0)/5, 'row': 1, 'col': 0})<cr>:call TerminalToggle()<cr>
+tnoremap <silent> <leader>. <c-\><c-n>:call TerminalToggle()<cr>:q<cr>
 
 function! TerminalCreate() abort
   if !has('nvim')

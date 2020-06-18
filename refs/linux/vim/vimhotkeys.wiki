@@ -1,0 +1,24 @@
+# Vim Hotkey Reference
+
+## General
+
+- `:PIU` full plugin install/update/upgrade/remote
+- `<f6>` toggle spellcheck:
+- `<leader>`:
+  - `sn` next spelling error
+  - `sp` previous spelling error
+  - `sa` add spelling
+  - `ss` search for similarly spelled words
+  - `fs` ranger
+  - `FS` ranger new tab
+  - `sv` reload nvim config
+  - `cd` set directory to current file's directory
+  - `z` save file
+  - `Z` save and quit
+  - `a` select all
+  - `<leader>`:
+    - `Z` quit all
+- `<localleader>`:
+  - `xl` lex file system
+  - `xh` hex file system
+  - `xs` sex file system

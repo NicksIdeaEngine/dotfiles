@@ -1,0 +1,12 @@
+# Linux Exploration
+
+I love exploring Linux. Here is an ongoing record of that journey.
+
+## Map
+
+- [cmd](cmd/index.wiki)
+- [netsec](netsec/index.wiki)
+- [dotfiles](dotfiles/index.wiki)
+- [vim](vim/index.wiki)
+- [tempref](tempref.wiki)
+

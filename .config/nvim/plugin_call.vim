@@ -24,6 +24,9 @@ Plug 'sheerun/vim-polyglot'
 " https://github.com/prettier/vim-prettier
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
+" https://github.com/styled-components/vim-styled-components
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
 " https://github.com/nvie/vim-flake8
 Plug 'nvie/vim-flake8'
 
@@ -136,8 +139,8 @@ Plug 'tpope/vim-fugitive'
 " }}}
 " aesthetics {{{
 
-" https://github.com/morhetz/gruvbox
-Plug 'morhetz/gruvbox'
+" https://github.com/gruvbox-community/gruvbox
+Plug 'gruvbox-community/gruvbox'
 
 " https://github.com/junegunn/goyo.vim
 Plug 'junegunn/goyo.vim'
