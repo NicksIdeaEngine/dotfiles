@@ -2,12 +2,6 @@
 # created by Nick Garcia
 # https://github.com/NicksIdeaEngine/dotfiles
 
-# {{{ table of contents
-
-# 0.
-
-# }}}
-
 # todo.txt functions
 t () {
   clear
@@ -53,7 +47,8 @@ projinit() {
   fi
 
   for item in $spark_dir/{*,.*}; do
-    if [[ ! ${item##*/} == ".git" ]] && \
+    if [[ ! ${item##*/} == ".cache" ]] && \
+      [[ ! ${item##*/} == ".git" ]] && \
       [[ ! ${item##*/} == "node_modules" ]] && \
       [[ ! ${item##*/} == "package-lock.json" ]] && \
       [[ ! ${item##*/} == "Session.vim" ]] && \

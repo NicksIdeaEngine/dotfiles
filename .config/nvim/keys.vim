@@ -168,7 +168,7 @@ nnoremap <leader><leader>n :setlocal number! relativenumber!<cr>
 nnoremap <leader><leader>s ?{<cr>jV/^\s*\}?$<cr>k:sort<cr>:noh<cr>
 
 " emmet expansion
-inoremap <localleader>e :call
+" inoremap <localleader>e
 
 " launch dev servers
 nnoremap <leader><leader>ns :AsyncRun npm start<cr>

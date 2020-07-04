@@ -1,0 +1,301 @@
+# Data Structures: Easy to Advanced
+
+[Notes from this video from FCC](https://www.youtube.com/watch?v=RBSGKlAvoiM)
+
+## Abstract Data Types
+
+An abstract data type (ADT) is an abstraction of a data structure which provides only the interface to which a data structure must adhere to. The interface doesn't give specifics about how something should be implemented or in what programming language.
+
+Examples:
+
+| Abstraction (ADT) |                      Implementation (DS)                      |
+|:-----------------:|:-------------------------------------------------------------:|
+|       List        |                  Dyanmic Array, Linked List                   |
+|       Queue       | Linked List based Queue, Array based Queue, Stack based Queue |
+|        Map        |                Tree Map, Hash Map / Hash Table                |
+|      Vehicle      |                 Golf Cart, Bicycle, Smart Car                 |
+
+## Big-O Notation
+
+Big-O Notation gives an upper bound of the complexity in the worst case, helping to quantify performance as the input size becomes arbitrarily large.
+
+`n` - The size of the input
+
+Complexities listed from least to most complex:
+
+- Constant time: O(1)
+- Logarithmic time: O(log(n))
+- Linear time: O(n)
+- Linearithmic time: O(nlog(n))
+- Quadric time: O(n^2)
+- Cubic time: O(n^3)
+- Exponential time: O(b^n), b > 1
+- Factorial time: O(n!)
+
+### Big-O Properties
+
+`O(n + c) = O(n)`
+`O(cn) = O(n), c > 0`
+
+Let `f` be a function that describes the running time of a particular algorithm for an input size of n:
+
+`f(n) = 7log(n)^3 + 15n^2 + 2n^3 + 8`
+`O(f(n)) = O(n^3)`
+
+### Big-O Examples
+
+The following run in constant time: O(1)
+
+```python
+    a := 1
+    b := 2
+    c := a + 5 * b
+    i := 0
+    While i < 11 Do
+      i = i + 1
+```
+
+The following run in linear time: O(n)
+
+```python
+    i := 0
+    While i < n Do
+      i = i + 1
+```
+
+Results in this for Big-O Notation:
+
+```
+    f(n) = n
+    O(f(n)) = O(n)
+```
+
+and...
+
+```python
+    i := 0
+    While i < n Do
+      i = i + 3
+```
+
+Results in this for Big-O Notation:
+
+```
+    f(n) = n/3
+    O(f(n)) = O(n)
+```
+
+Both of the following run in quadratic time. The first may be obvious since `n` work done `n` times is `n * n = O(n^2)`, but what about the second one?
+
+```python
+    For (i := 0; i < n; i = i + 1)
+      For (j := 0; j < n; j = j + 1)
+```
+
+`f(n) = n * n = n^2, O(f(n)) = O(n^2)`
+
+```python
+    For (i := 0; i < n; i = i + 1)
+      For (j := i; j < n; j = j + 1)
+```
+
+For a moment just focus on the second loop. Since `i` goes from `[0,n)` the amount of looping done is directly determined by what `i` is. remark that if `i = 0`, we do `n` work, if `i = 1`, we do `n-1` work, etc.
+
+So the question then becomes what is: `(n) + (n-1) + (n-2) + (n-3) + ... + 3 + 2 + 1`?
+
+This turns out to be `n(n+1)/2`, so `O(n(n+1)/2) = O((n^2)/2 + n/2) = O(n^2)`
+
+Suppose we have a sorted array and we want to find the index of a particular value in the array, if it exists. What is the time complexity of the following algorithm?
+
+```python
+    low := 0
+    high := n - 1
+    While low <= high Do
+      mid := (low + high) / 2
+      If array[mid] == value: return mid
+      Else If array[mid] < value: lo = mid + 1
+      Else If array[mid] > value: hi = mid - 1
+    return -1 // value not found
+```
+
+Complexity Answer: `O(log2(n)) = O(log(n))`
+
+```python
+    i := 0
+    While i < n Do
+      j = 0
+      While j < 3*n Do
+        j = j + 1
+      j = 0
+      While j < 2*n Do
+        j = j + 1
+      i = i + 1
+```
+
+Complexity Answer: `f(n) = n * (3n + 2n) = 5n^2, O(f(n)) = O(n^2)`
+
+```python
+    i := 0
+    While i < 3 * n Do
+      j := 10
+      While j <= 50 Do
+        j = j + 1
+      j = 0
+      While j < n*n*n Do
+        j = j + 2
+      i = i + 1
+```
+
+Complexity Answer: `f(n) = 3n * (40 + (n^3)/2) = 3n/40 + (3n^4)/2, O(f(n)) = O(n^4)`
+
+Other examples:
+
+- Finding all subsets of a set - `O(2^n)`
+- Finding all permutations of a string - `O(n!)`
+- Sorting using mergesort - `O(nlog(n))`
+- Iterating over all the cells in a matrix of size n by m - `O(nm)`
+
+## Static and Dynamic Arrays
+
+Outline:
+
+- Discussion and examples about arrays
+  - What is an array?
+  - When and where is an array used?
+  - Complexity analysis
+  - Static array usage example
+- Dynamic Array implementation details
+- Code implementation
+
+### Discussion and Examples
+
+**Static Array**: Fixed length container containing `n` elements that is *indexable* from the range `[0, n-1]`
+
+### When & Where Are Static Arrays Used?
+
+1. storing and accessing sequential data
+2. temporarily storing objects
+3. used by IO routines as buffers
+4. lookup tables and inverse lookup tables
+5. can be used to return multiple values from a function
+6. used in dynamic programming to cache answers to subproblems
+
+Complexity Calculation:
+
+|           | static array | dynamic array |
+|:---------:|:------------:|:-------------:|
+|  access   |    `O(1)`    |    `O(1)`     |
+|  search   |    `O(n)`    |    `O(n)`     |
+| insertion |     N/A      |    `O(n)`     |
+| appending |     N/A      |    `O(1)`     |
+| deletion  |     N/A      |    `O(n)`     |
+
+`a = [44, 12, -5, 17, 6, 0, 3, 9, 100]`
+`i = [ 0,  1,  2,  3, 4, 5, 6, 7,   8]`
+
+Elements in `a` are referenced by their index. There is no other way to access elements in an array. Array indexing is zero-based, meaning the first element is found in position zero.
+
+### Operations on Dynamic Arrays
+
+**Dynamic Array**: Can grow and shrink in size.
+
+```python
+    A = [34, 4]
+    A.add(-7)
+    A = [34, 4, -7]
+    A.add(34)
+    A = [34, 4, -7, 34]
+    A.remove(4)
+    A = [34, -7, 34]
+```
+
+Q: How can we implement a dynamic array?
+
+A: One way is to use a static array!
+
+1. Create a static array with an initial capacity.
+2. Add elements to the underlying static array, keeping track of the number of elements.
+3. If adding another element will exceed the capacity, then create a new static array with twice the capacity and copy he original elements into it.
+
+Suppose we create a dynamic array with an initial capacity of two and then begin adding elements to it.
+
+*(`@` is an empty placeholder position)
+
+```python
+    [@, @] -> [7, @] -> [7, -9] -> [7, -9, 3, @] -> [7, -9, 3, 12] -> [7, -9, 3, 12, 5, @, @, @] -> [7, -9, 3, 12, 5, -6, @, @]
+```
+
+### Source Code Link
+
+Implementation source code and tests are [found here](https://github.com/williamfiset/data-structures)
+
+## Singly and Doubly Linked Lists
+
+Outline:
+
+- Discussion about Singly & Doubly Linked lists
+  - What is a linked list?
+  - Where are linked lists used?
+  - Terminology
+  - Singly Linked vs Doubly Linked
+- Implementation details
+  - How to insert new elements
+  - How to remove elements
+- Complexity analysis
+- Code implementation (doubly linked list)
+
+### Discussion
+
+**Linked List**: a sequential list of nodes that holds data which point to other nodes also containing data
+
+`(data) -> (data) -> (data) -> (data) -> null`
+
+The last node is null so it is known when there are no more nodes.
+
+### Where are linked lists used?
+
+- used in many List, Queue, & Stack Implementations
+- great for creating circular lists
+- can easily model real world objects such as trains
+- used in separate chaining, which is present in certain Hashtable implementations to deal with hashing collisions
+- often used in the implementation of adjacency lists for graphs
+
+### Terminology
+
+**Head**: the first node in a linked list
+**Tail**: the last node in a linked list
+**Pointer**: reference to another node
+**Node**: an object containing data and pointers
+
+### Singly vs Doubly Linked Lists
+
+**Singly Linked Lists** only hold a reference to the next node. In the implementation you always maintain a reference to the head and tail of the linked list for quick additions / removals.
+
+With a **Doubly Linked List** each node holds a reference to the next and previous node. In the implementation you always maintain a reference to the head and the tail of the doubly linked list for quick additions / removals.
+
+#### Pros & Cons
+
+|               |                    Pros                     |                  Cons                  |
+|:-------------:|:-------------------------------------------:|:--------------------------------------:|
+| Singly Linked | uses less memory and simpler implementation | cannot easily access previous elements |
+| doubly linked |         can be traversed backwards          |            takes 2x memory             |
+
+### Inserting Singly Linked List
+
+Insert 11 where the third node is.
+
+`[5] -> [23] -> [7] -> [13]`
+
+The list would create a traverser pointer and iterate through the list until it reached the second node (right **before** the third), then change the `next` pointer for `[23]` to `[11]` and point `[11]` to `[7]`
+
+`[5] -> [23] -> [11] -> [7] -> [13]`
+
+### Inserting Doubly Linked List
+
+Insert 11 where the third node is.
+
+`[5] <-> [23] <-> [7] <-> [13]`
+
+The list would create a traverser pointer and iterate through the list until it reached the second node, then point the  `next` pointer for `[11]` to `[7]`, the `previous` pointer for `[11]` to `[23]`, change `[23]` `next` to `[11]`, and change `[7]` `previous` to `[11]`
+
+stopped at 43m 09s

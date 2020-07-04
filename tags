@@ -106,6 +106,7 @@ $q	.config/nvim/keys.vim	/^vnoremap $q <esc>`>a'<esc>`<i'<esc>$/;"	m
 0	.config/i3/layouts/4-panel-workflow.json	/^        {$/;"	o	array:nodes
 0	.config/nvim/coc-settings.json	/^    "javascript",$/;"	s	array:coc.preferences.formatOnSaveFiletypes
 0	.config/nvim/coc-settings.json	/^    "javascript",$/;"	s	array:eslint.filetypes
+0	.config/nvim/plugin_config.vim	/^inoremap <expr>0 pumvisible() ? deoplete#insert_candidate(0) : '0'$/;"	m
 0	.config/polybar/config.ini	/^font-0 = "Fira Code:size=10;3"$/;"	k	section:bar/mandelight
 0	.config/polybar/modules.ini	/^mount-0 = \/$/;"	k	section:module/filesystem
 0	.config/polybar/modules.ini	/^ramp-signal-0 = $/;"	k	section:module/network
@@ -116,25 +117,34 @@ $q	.config/nvim/keys.vim	/^vnoremap $q <esc>`>a'<esc>`<i'<esc>$/;"	m
 1	.config/i3/layouts/4-panel-workflow.json	/^        {$/;"	o	array:nodes
 1	.config/nvim/coc-settings.json	/^    "javascriptreact",$/;"	s	array:eslint.filetypes
 1	.config/nvim/coc-settings.json	/^    "typescript",$/;"	s	array:coc.preferences.formatOnSaveFiletypes
+1	.config/nvim/plugin_config.vim	/^inoremap <expr>1 pumvisible() ? deoplete#insert_candidate(1) : '1'$/;"	m
 1	.config/polybar/config.ini	/^font-1 = "FiraCode Nerd Font:size=12;2"$/;"	k	section:bar/mandelight
 1	.config/polybar/modules.ini	/^mount-1 = \/home$/;"	k	section:module/filesystem
 1	.config/polybar/modules.ini	/^ramp-signal-1 = $/;"	k	section:module/network
 1	.config/polybar/modules.ini	/^ramp-volume-1 = $/;"	k	section:module/pulseaudio
 2	.config/nvim/coc-settings.json	/^    "typescript",$/;"	s	array:eslint.filetypes
 2	.config/nvim/coc-settings.json	/^    "typescriptreact",$/;"	s	array:coc.preferences.formatOnSaveFiletypes
+2	.config/nvim/plugin_config.vim	/^inoremap <expr>2 pumvisible() ? deoplete#insert_candidate(2) : '2'$/;"	m
 2	.config/polybar/config.ini	/^font-2 = "TerminessTTF Nerd Font:size=12;2"$/;"	k	section:bar/mandelight
 2	.config/polybar/modules.ini	/^mount-2 = \/mnt\/sdc1$/;"	k	section:module/filesystem
 2	.config/polybar/modules.ini	/^ramp-signal-2 = $/;"	k	section:module/network
 2	.config/polybar/modules.ini	/^ramp-volume-2 = $/;"	k	section:module/pulseaudio
 3	.config/nvim/coc-settings.json	/^    "json",$/;"	s	array:coc.preferences.formatOnSaveFiletypes
 3	.config/nvim/coc-settings.json	/^    "typescriptreact",$/;"	s	array:eslint.filetypes
+3	.config/nvim/plugin_config.vim	/^inoremap <expr>3 pumvisible() ? deoplete#insert_candidate(3) : '3'$/;"	m
 3	.config/polybar/modules.ini	/^ramp-signal-3 = $/;"	k	section:module/network
 3	.config/polybar/modules.ini	/^ramp-volume-3 = $/;"	k	section:module/pulseaudio
 4	.config/nvim/coc-settings.json	/^    "javascriptreact",$/;"	s	array:coc.preferences.formatOnSaveFiletypes
 4	.config/nvim/coc-settings.json	/^    "typescript.tsx"$/;"	s	array:eslint.filetypes
+4	.config/nvim/plugin_config.vim	/^inoremap <expr>4 pumvisible() ? deoplete#insert_candidate(4) : '4'$/;"	m
 4	.config/polybar/modules.ini	/^ramp-signal-4 = $/;"	k	section:module/network
 4	.config/polybar/modules.ini	/^ramp-volume-4 = $/;"	k	section:module/pulseaudio
 5	.config/nvim/coc-settings.json	/^    "typescript.tsx"$/;"	s	array:coc.preferences.formatOnSaveFiletypes
+5	.config/nvim/plugin_config.vim	/^inoremap <expr>5 pumvisible() ? deoplete#insert_candidate(5) : '5'$/;"	m
+6	.config/nvim/plugin_config.vim	/^inoremap <expr>6 pumvisible() ? deoplete#insert_candidate(6) : '6'$/;"	m
+7	.config/nvim/plugin_config.vim	/^inoremap <expr>7 pumvisible() ? deoplete#insert_candidate(7) : '7'$/;"	m
+8	.config/nvim/plugin_config.vim	/^inoremap <expr>8 pumvisible() ? deoplete#insert_candidate(8) : '8'$/;"	m
+9	.config/nvim/plugin_config.vim	/^inoremap <expr>9 pumvisible() ? deoplete#insert_candidate(9) : '9'$/;"	m
 :root	.mozilla/firefox/65rf3aso.default-release/chrome/userChrome.css	/^:root {$/;"	s
 :root[uidensity='compact'] #PersonalToolbar	.mozilla/firefox/65rf3aso.default-release/chrome/userChrome.css	/^:root[uidensity='compact'] #PersonalToolbar {$/;"	i
 :root[uidensity='compact'] #nav-bar .toolbarbutton-1	.mozilla/firefox/65rf3aso.default-release/chrome/userChrome.css	/^:root[uidensity='compact'] #nav-bar .toolbarbutton-1 {$/;"	c
@@ -223,6 +233,7 @@ $q	.config/nvim/keys.vim	/^vnoremap $q <esc>`>a'<esc>`<i'<esc>$/;"	m
 <C-w>	old/example-2-init.vim	/^nnoremap <C-w> :filetype detect<cr>:redraw!<cr>$/;"	m
 <C-y>	old/example-2-init.vim	/^nnoremap <C-y> 2<C-y>$/;"	m
 <C-z>	old/example-init.vim	/^imap <expr> <C-z> pumvisible() ? "\\<C-e>" : "<C-z>"$/;"	m
+<CR>	.config/nvim/plugin_config.vim	/^inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>$/;"	m
 <CR>	old/example-init.vim	/^imap <expr> <CR> pumvisible() ? "\\<Space>\\<Backspace>\\<CR>" : "\\<CR>"$/;"	m
 <F1>	old/example-2-init.vim	/^noremap! <F1> <Esc>$/;"	m
 <F6>	.config/nvim/keys.vim	/^nnoremap <F6> :setlocal spell! spelllang=en_us<cr>$/;"	m
@@ -418,7 +429,6 @@ $q	.config/nvim/keys.vim	/^vnoremap $q <esc>`>a'<esc>`<i'<esc>$/;"	m
 <localleader>	.config/nvim/plugin_config.vim	/^nnoremap <silent> <localleader> :WhichKey "\\\\"<cr>$/;"	m
 <localleader><s-tab>	.config/nvim/keys.vim	/^inoremap <localleader><s-tab> <esc>V<<esc>la$/;"	m
 <localleader><tab>	.config/nvim/keys.vim	/^inoremap <localleader><tab> <esc>V><esc>la$/;"	m
-<localleader>e	.config/nvim/keys.vim	/^inoremap <localleader>e :call$/;"	m
 <localleader>xh	.config/nvim/keys.vim	/^nnoremap <localleader>xh    :Hex<cr>$/;"	m
 <localleader>xl	.config/nvim/keys.vim	/^nnoremap <localleader>xl    :Lex<cr>$/;"	m
 <localleader>xs	.config/nvim/keys.vim	/^nnoremap <localleader>xs    :Sex<cr>$/;"	m
@@ -510,7 +520,6 @@ DEBUG_CFLAGS	.makepkg.conf	/^DEBUG_CFLAGS="-g -fvar-tracking-assignments"$/;"	k
 DEBUG_CXXFLAGS	.makepkg.conf	/^DEBUG_CXXFLAGS="-g -fvar-tracking-assignments"$/;"	k
 DLAGENTS	.makepkg.conf	/^DLAGENTS=('file::\/usr\/bin\/curl -gqC - -o %o %u'$/;"	k
 DOC_DIRS	.makepkg.conf	/^DOC_DIRS=(usr\/{,local\/}{,share\/}{doc,gtk-doc} opt\/*\/{doc,gtk-doc})$/;"	k
-Description	old/systemd/user/dropbox-watch.service	/^Description=Dropbox Daemon                                                                     $/;"	k	section:Unit
 Devicons_Fileformat	old/example-init.vim	/^function! Devicons_Fileformat()"{{{$/;"	f
 Devicons_Filetype	.config/nvim/plugin_config.vim	/^function! Devicons_Filetype() " {{{$/;"	f
 Devicons_Filetype	old/example-init.vim	/^function! Devicons_Filetype()"{{{$/;"	f
@@ -529,7 +538,6 @@ ESC_STR_END	.config/repos/st/st.c	/^	ESC_STR_END    = 16, \/* a final string was
 ESC_TEST	.config/repos/st/st.c	/^	ESC_TEST       = 32, \/* Enter in test mode *\/$/;"	e	enum:escape_state	file:
 ESC_UTF8	.config/repos/st/st.c	/^	ESC_UTF8       = 64,$/;"	e	enum:escape_state	file:
 Emphasis	refs/markdown.md	/^# Emphasis$/;"	c
-ExecStart	old/systemd/user/dropbox-watch.service	/^ExecStart=\/home\/efex\/scripts\/watch_dropbox.sh                                               /;"	k	section:Service
 ExplorerStartify	old/example-init.vim	/^    function ExplorerStartify()$/;"	f
 Filechooser Settings	.config/gtk-2.0/gtkfilechooser.ini	/^[Filechooser Settings]$/;"	s
 FoldColumnToggle	old/example-2-init.vim	/^function! FoldColumnToggle()$/;"	f
@@ -586,7 +594,6 @@ InitGtags	old/example-init.vim	/^function! InitGtags()$/;"	f
 InitIndentGuides	old/example-init.vim	/^function! InitIndentGuides()$/;"	f
 Init_gen_tags	old/example-init.vim	/^function! Init_gen_tags()$/;"	f
 Inline HTML	refs/markdown.md	/^# Inline HTML$/;"	c
-Install	old/systemd/user/dropbox-watch.service	/^[Install]                                                                                      $/;"	s
 J	.config/nvim/keys.vim	/^vnoremap J :m '>+1<cr>gv=gv$/;"	m
 J	old/example-init.vim	/^    nnoremap <silent> <buffer> J :call <sid>scroll_preview(1)<cr>$/;"	m
 J	old/example-init.vim	/^nnoremap J <Esc>5<down>$/;"	m
@@ -646,7 +653,6 @@ Q	old/example-2-init.vim	/^vnoremap Q gw$/;"	m
 Q	old/example-init.vim	/^command Q q!$/;"	c
 Q	old/example-init.vim	/^nnoremap <silent> Q :q!<CR>$/;"	m
 Random	.config/oomox/ui_config.json	/^{"window_width": 1918, "window_height": 1035, "preset_list_minimal_width": 150, "preset_list_wid/;"	b	object:preset_list_sections_expanded
-Restart	old/systemd/user/dropbox-watch.service	/^Restart=always                                                                                 $/;"	k	section:Service
 SRCEXT	.makepkg.conf	/^SRCEXT='.src.tar.gz'$/;"	k
 STREscape	.config/repos/st/st.c	/^} STREscape;$/;"	t	typeref:struct:__anon125c4bfe0608	file:
 STRIP_BINARIES	.makepkg.conf	/^STRIP_BINARIES="--strip-all"$/;"	k
@@ -655,7 +661,6 @@ STRIP_STATIC	.makepkg.conf	/^STRIP_STATIC="--strip-debug"$/;"	k
 STR_ARG_SIZ	.config/repos/st/st.c	/^#define STR_ARG_SIZ /;"	d	file:
 STR_BUF_SIZ	.config/repos/st/st.c	/^#define STR_BUF_SIZ /;"	d	file:
 Selection	.config/repos/st/st.c	/^} Selection;$/;"	t	typeref:struct:__anon125c4bfe0208	file:
-Service	old/systemd/user/dropbox-watch.service	/^[Service]                                                                                      $/;"	s
 Settings	.config/gtk-3.0/settings.ini	/^[Settings]$/;"	s
 Settings	.config/gtk-4.0/settings.ini	/^[Settings]$/;"	s
 ShowHidden	.config/gtk-2.0/gtkfilechooser.ini	/^ShowHidden=false$/;"	k	section:Filechooser Settings
@@ -685,10 +690,8 @@ ToggleTagbar	old/example-init.vim	/^function! ToggleTagbar()$/;"	f
 Toggle_Pomodoro	old/example-init.vim	/^function! Toggle_Pomodoro()$/;"	f
 UTF_INVALID	.config/repos/st/st.c	/^#define UTF_INVALID /;"	d	file:
 UTF_SIZ	.config/repos/st/st.c	/^#define UTF_SIZ /;"	d	file:
-Unit	old/systemd/user/dropbox-watch.service	/^[Unit]                                                                                         $/;"	s
 VCSCLIENTS	.makepkg.conf	/^VCSCLIENTS=('bzr::bzr'$/;"	k
 W	old/example-init.vim	/^command W w suda:\/\/%$/;"	c
-WantedBy	old/systemd/user/dropbox-watch.service	/^WantedBy=default.target$/;"	k	section:Install
 X	.config/ranger/rifle.conf	/^ext s[wmf]c, has snes9x-gtk,X = snes9x-gtk "$1"$/;"	k
 Y	.config/nvim/keys.vim	/^nnoremap Y y\$$/;"	m
 Y	old/example-2-init.vim	/^nnoremap Y y\$$/;"	m
@@ -1603,6 +1606,7 @@ get_chip	scripts/archives/find-driver.sh	/^function get_chip() {$/;"	f
 getsel	.config/repos/st/st.c	/^getsel(void)$/;"	f	typeref:typename:char *
 gi	old/example-init.vim	/^nnoremap <silent> gi :<c-u>call <SID>go_indent(v:count1, 1)<cr>$/;"	m
 git.enableGutters	.config/nvim/coc-settings.json	/^  "git.enableGutters": true,$/;"	b
+git_check	scripts/gitup.sh	/^git_check() {$/;"	f
 git_files	old/example-2-init.vim	/^    augroup git_files "{{{$/;"	a
 global/wm	.config/polybar/config.ini	/^[global\/wm]$/;"	s
 gm	old/example-2-init.vim	/^map gm :call SynStack()<CR>$/;"	m
@@ -1820,6 +1824,7 @@ maplocalleader	.config/nvim/general.vim	/^let maplocalleader="\\\\"$/;"	v
 maplocalleader	old/example-2-init.vim	/^let maplocalleader="\\\\"$/;"	v
 mappedkeys	.config/repos/st/config.h	/^static KeySym mappedkeys[] = { -1 };$/;"	v	typeref:typename:KeySym[]
 margin	.config/polybar/config.ini	/^format-margin =$/;"	k	section:settings
+markdown_files	.config/nvim/functions.vim	/^  augroup markdown_files " {{{$/;"	a
 markdown_files	old/example-2-init.vim	/^    augroup markdown_files "{{{$/;"	a
 max	.config/polybar/modules.ini	/^use-ui-max = true$/;"	k	section:module/pulseaudio
 maxsize	.config/polybar/config.ini	/^tray-maxsize = 16$/;"	k	section:bar/mandelight
@@ -2031,6 +2036,7 @@ s:go_indent	old/example-init.vim	/^function! s:go_indent(times, dir)$/;"	f
 s:goyo_enter	.config/nvim/plugin_config.vim	/^function! s:goyo_enter()$/;"	f
 s:goyo_leave	.config/nvim/plugin_config.vim	/^function! s:goyo_leave()$/;"	f
 s:indent_len	old/example-init.vim	/^function! s:indent_len(str)$/;"	f
+s:my_cr_function	.config/nvim/plugin_config.vim	/^function! s:my_cr_function() abort$/;"	f
 s:plug_doc	old/example-init.vim	/^function! s:plug_doc()$/;"	f
 s:plug_gx	old/example-init.vim	/^function! s:plug_gx()$/;"	f
 s:scroll_preview	old/example-init.vim	/^function! s:scroll_preview(down)$/;"	f

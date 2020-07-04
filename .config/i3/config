@@ -319,7 +319,6 @@ $ex       dunst
 $exa      fix_xcursor
 $exa      xrdb ~/.Xresources
 # $ex     nitrogen --restore; sleep 1; compton -b
-# $ex     manjaro-hello
 # $ex     blueman-applet
 # $exa    sbxkb
 # $ex     start_conky_maia
@@ -615,5 +614,36 @@ mode "$mode_gaps_left" {
 # }}}
 # }}}
 # {{{ z. overflow
+# set $mouseMover Mouse movement : quit (c)     move far (hjkl)     move close (hjkl+shift/v)        click (i) click&exit(spacebar/enter)   right click (shift+spacebar / I)       scrollUp/Down (o/p)
 
+# bindsym $mod+c mode "$mouseMover"
+
+# mode "$mouseMover" {
+#   bindsym c mode "default"
+#   bindsym Escape mode "default"
+
+#   bindsym space exec xdotool click 1 ; mode "default"
+#   bindsym enter exec xdotool click 1 ; mode "default"
+#   bindsym i exec xdotool click 1
+
+#   bindsym shift+space exec xdotool click 3
+#   bindsym shift+i exec xdotool click 3
+
+#   bindsym o exec xdotool click 4
+#   bindsym p exec xdotool click 5
+
+#   bindsym h exec xdotool mousemove_relative -- -200 0
+#   bindsym j exec xdotool mousemove_relative 0 200
+#   bindsym k exec xdotool mousemove_relative 0 -200
+#   bindsym l exec xdotool mousemove_relative 200 0
+
+#   bindsym shift+h exec xdotool mousemove_relative -- -25 0
+#   bindsym shift+j exec xdotool mousemove_relative 0 25
+#   bindsym shift+k exec xdotool mousemove_relative 0 -25
+#   bindsym shift+l exec xdotool mousemove_relative 25 0
+#   bindsym v+h exec xdotool mousemove_relative -- -25 0
+#   bindsym v+j exec xdotool mousemove_relative 0 25
+#   bindsym v+k exec xdotool mousemove_relative 0 -25
+#   bindsym v+l exec xdotool mousemove_relative 25 0
+#  }
 # }}}

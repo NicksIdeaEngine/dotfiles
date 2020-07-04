@@ -8,5 +8,6 @@
 - [html](html/index.wiki)
 - [js](js/index.wiki)
 - [notes](notes/index.wiki)
+- [algorithms & data structures](algorithms/index.wiki)
 - [react](react/index.wiki)
 - [portfolio index](portfolio/index.wiki)

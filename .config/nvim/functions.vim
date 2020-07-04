@@ -41,15 +41,17 @@ autocmd BufNewFile,BufRead *.code-workspace set filetype=json
 autocmd BufNewFile,BufRead *.tern-project set filetype=json
 autocmd BufNewFile,BufRead *.conf set filetype=dosini
 
-" turn on spell check for markdown files
-autocmd BufRead,BufNewFile *.md,*.mdx setlocal spell
-
 if has("autocmd")
   augroup vim_files " {{{
     autocmd!
     " bind <f1> to show the keyword under cursor
     autocmd FileType vim noremap <buffer> <F1> <esc>:help <c-r><c-w><cr>
     autocmd FileType vim noremap! <buffer> <F1> <esc>:help <c-r><c-w><cr>
+  augroup end " }}}
+  augroup markdown_files " {{{
+    autocmd!
+    autocmd BufNewFile,BufRead *.{md,mdx,wiki} setlocal spell
+    autocmd FileType markdown,markdown.mdx,vimwiki setlocal formatoptions=n1
   augroup end " }}}
   augroup css_files " {{{
     autocmd!
@@ -59,12 +61,12 @@ if has("autocmd")
   augroup end " }}}
   augroup javascript_files " {{{
     autocmd!
-    autocmd FileType javascript setlocal listchars=trail:·,extends:#,nbsp:·
-    autocmd FileType javascript setlocal foldmarker={,}
-    autocmd FileType javascript setlocal foldlevelstart=99
     autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
     autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
     autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+    autocmd FileType javascript setlocal listchars=trail:·,extends:#,nbsp:·
+    autocmd FileType javascript setlocal foldmarker={,}
+    autocmd FileType javascript setlocal foldlevelstart=99
   augroup end " }}}
   augroup python_files " {{{
     autocmd!

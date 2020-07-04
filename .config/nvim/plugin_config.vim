@@ -52,7 +52,7 @@ let g:prettier#autoformat_config_files = ['prettier.config.js', '.prettierrc']
 let g:prettier#quickfix_enabled = 0
 
 " run prettier on every save
-autocmd BufWritePre *.html,*.css,*.scss,*.js,*.jsx,*.json,*.md,*.mdx PrettierAsync
+autocmd BufWritePre *.html,*.css,*.scss,*.js,*.jsx,*.json,*.md,*.mdx,*.wiki PrettierAsync
 
 " }}}
 " nvie/vim-flake8 {{{
@@ -160,6 +160,7 @@ let g:UltiSnipsJumpBackwardTrigger='<c-z>'
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#custom#option = {
+      \ 'auto_complete': v:false,
       \ 'smart_case': v:true,
       \ 'camel_case': v:true,
       \ 'ignore_case': v:true,
@@ -167,6 +168,26 @@ let g:deoplete#custom#option = {
 let g:deoplete#max_abbr_width = 0
 let g:deoplete#max_menu_width = 0
 let g:deoplete#custom#var = get(g:,'deoplete#omni#input_patterns', {})
+
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+
+function! s:my_cr_function() abort
+  return deoplete#close_popup() . "\<CR>"
+endfunction
+
+call g:deoplete#custom#option('candidate_marks', ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'])
+
+inoremap <expr>0 pumvisible() ? deoplete#insert_candidate(0) : '0'
+inoremap <expr>1 pumvisible() ? deoplete#insert_candidate(1) : '1'
+inoremap <expr>2 pumvisible() ? deoplete#insert_candidate(2) : '2'
+inoremap <expr>3 pumvisible() ? deoplete#insert_candidate(3) : '3'
+inoremap <expr>4 pumvisible() ? deoplete#insert_candidate(4) : '4'
+inoremap <expr>5 pumvisible() ? deoplete#insert_candidate(5) : '5'
+inoremap <expr>6 pumvisible() ? deoplete#insert_candidate(6) : '6'
+inoremap <expr>7 pumvisible() ? deoplete#insert_candidate(7) : '7'
+inoremap <expr>8 pumvisible() ? deoplete#insert_candidate(8) : '8'
+inoremap <expr>9 pumvisible() ? deoplete#insert_candidate(9) : '9'
 
 " }}}
 " ternjs/tern_for_vim {{{

@@ -12,7 +12,6 @@ dark_scheme=("#1d2021" "#3c3836" "#504945" "#665c54" "#7c6f64" "#fbf1c7" "#d5c4a
 placeholders=()
 
 file_list=(
-  ".Xresources"
   ".config/kitty/kitty-colors.conf"
   ".config/polybar/colors.ini"
   ".tmux/lightline_visual"
@@ -56,9 +55,6 @@ switcher() {
     /home/efex/.config/nvim/plugin_config.vim
   mv "$HOME/.cache/kitty-$old_scheme_type" "$HOME/.cache/kitty-$new_scheme_type"
   i3-msg "restart"
-  xrdb -merge ~/.Xresources
-  mv "$HOME/.Xresources" "$dot_dir/.Xresources"
-  ln -s /home/efex/dots/.Xresources /home/efex/.Xresources
 
   notify-send --urgency=normal "from $old_scheme_type to $new_scheme_type"
 }

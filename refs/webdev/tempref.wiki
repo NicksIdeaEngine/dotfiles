@@ -8,3 +8,46 @@
 - model-view-controller and test-driven development
 - caching concepts and awareness of performance bottlenecks in web application development
 - Craft?
+
+## Notes from Frontend Dev Video
+
+[This video](https://www.youtube.com/watch?v=78PHGXdcc50)
+
+### What to know to be a Frontend Developer
+
+#### Javascript
+
+- ES6+
+  - let & const
+  - closures
+  - classes
+    - prototypal inheritance
+  - promises
+  - async & await
+  - fetch API
+  - arrow functions
+  - modules (import/export)
+  - template string
+  - spread operator
+- version control
+- npm/yarn
+  - semantic versioning
+  - npm scripts
+- linux
+- webpack
+- one JS framework (react)
+
+#### CSS
+
+- display property
+- position property
+- z-index
+- flex box / css grids
+
+#### Other
+
+- svg/canvas
+- task runner (grunt/gulp)
+- service workers
+- test framework (jest)
+- mobile dev

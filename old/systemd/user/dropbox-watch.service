@@ -1,9 +1,0 @@
-[Unit]                                                                                         
-Description=Dropbox Daemon                                                                     
-                                                                                               
-[Service]                                                                                      
-ExecStart=/home/efex/scripts/watch_dropbox.sh                                                  
-Restart=always                                                                                 
-                                                                                               
-[Install]                                                                                      
-WantedBy=default.target

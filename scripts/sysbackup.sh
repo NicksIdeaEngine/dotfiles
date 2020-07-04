@@ -22,7 +22,7 @@ CONFIG_SPEC=("clipit" "redshift.conf" "user-dirs.dirs")
 CHROME_SPEC=("Preferences")
 
 # rclone spec
-RCLONE_SPEC=("filter-from.txt" "rclone.conf")
+RCLONE_SPEC=("dbx-filter.txt" "dbxlong-filter.txt" "rclone.conf")
 
 # RescueTime.com spec
 RESCUE_SPEC=(".rtgoals")
