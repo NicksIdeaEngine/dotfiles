@@ -22,4 +22,3 @@
 - `row-reverse`: lay out the main axis from right to left
 - `column`: lay out the main axis from top to bottom
 - `column-reverse`: lay out the main axis from bottom to top
-

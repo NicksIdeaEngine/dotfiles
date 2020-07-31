@@ -176,18 +176,18 @@ function! s:my_cr_function() abort
   return deoplete#close_popup() . "\<CR>"
 endfunction
 
-call g:deoplete#custom#option('candidate_marks', ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'])
+" call g:deoplete#custom#option('candidate_marks', ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'])
 
-inoremap <expr>0 pumvisible() ? deoplete#insert_candidate(0) : '0'
-inoremap <expr>1 pumvisible() ? deoplete#insert_candidate(1) : '1'
-inoremap <expr>2 pumvisible() ? deoplete#insert_candidate(2) : '2'
-inoremap <expr>3 pumvisible() ? deoplete#insert_candidate(3) : '3'
-inoremap <expr>4 pumvisible() ? deoplete#insert_candidate(4) : '4'
-inoremap <expr>5 pumvisible() ? deoplete#insert_candidate(5) : '5'
-inoremap <expr>6 pumvisible() ? deoplete#insert_candidate(6) : '6'
-inoremap <expr>7 pumvisible() ? deoplete#insert_candidate(7) : '7'
-inoremap <expr>8 pumvisible() ? deoplete#insert_candidate(8) : '8'
-inoremap <expr>9 pumvisible() ? deoplete#insert_candidate(9) : '9'
+" inoremap <expr>0 pumvisible() ? deoplete#insert_candidate(0) : '0'
+" inoremap <expr>1 pumvisible() ? deoplete#insert_candidate(1) : '1'
+" inoremap <expr>2 pumvisible() ? deoplete#insert_candidate(2) : '2'
+" inoremap <expr>3 pumvisible() ? deoplete#insert_candidate(3) : '3'
+" inoremap <expr>4 pumvisible() ? deoplete#insert_candidate(4) : '4'
+" inoremap <expr>5 pumvisible() ? deoplete#insert_candidate(5) : '5'
+" inoremap <expr>6 pumvisible() ? deoplete#insert_candidate(6) : '6'
+" inoremap <expr>7 pumvisible() ? deoplete#insert_candidate(7) : '7'
+" inoremap <expr>8 pumvisible() ? deoplete#insert_candidate(8) : '8'
+" inoremap <expr>9 pumvisible() ? deoplete#insert_candidate(9) : '9'
 
 " }}}
 " ternjs/tern_for_vim {{{
@@ -412,7 +412,7 @@ nnoremap <leader>di <Plug>ToggleDitto
 if (has("termguicolors"))
   set termguicolors
 endif
-set background=light
+set background=dark
 let g:gruvbox_contrast_light = 'hard'
 colorscheme gruvbox
 

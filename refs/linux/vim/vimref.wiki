@@ -33,6 +33,7 @@
 - `<leader>V` split down vertically
 - `<leader><leader>a` :AsyncRun gatsby develop
 - `<leader><leader>q` :AsyncStop
+- If you record a macro into `q` you can `"qp` to paste the contents of that macro into editor for editing
 
 ### vim folds
 

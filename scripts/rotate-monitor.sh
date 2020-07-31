@@ -3,7 +3,7 @@
 # set -euo pipefail
 # IFS=$'\n\t'
 
-screen="DisplayPort-0"
+screen="HDMI-A-0"
 
 descr=$(xrandr | grep "$screen")
 
@@ -23,5 +23,5 @@ else
 fi
 
 xrandr --output $screen --rotate $rotate
-xrandr --output HDMI-A-0 --auto --left-of DisplayPort-0
-xrandr --output DisplayPort-1 --auto --right-of DisplayPort-0
+xrandr --output DisplayPort-0 --auto --left-of $screen
+xrandr --output DisplayPort-1 --auto --right-of $screen

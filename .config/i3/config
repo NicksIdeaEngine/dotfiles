@@ -27,14 +27,19 @@ set $cmod3      bindsym Mod3+Control
 set $scmod3     bindsym Mod3+Shift+Control
 
 # windows key is used for deep management
-set $mod4key    Mod4
-set $mod4       bindsym Mod4
-set $smod4      bindsym Mod4+Shift
-set $cmod4      bindsym Mod4+Control
-set $scmod4     bindsym Mod4+Shift+Control
+set $mod2key    Mod2
+set $mod2       bindsym Mod2
+set $smod2      bindsym Mod2+Shift
+set $cmod2      bindsym Mod2+Control
+set $scmod2     bindsym Mod2+Shift+Control
 
 # default terminal is kitty terminal
 set $terminal   kitty
+
+# set screens to variables for easier orientation and workspace assignment
+set $lscreen    DisplayPort-0
+set $rscreen    DisplayPort-1
+set $mscreen    HDMI-A-0
 
 # set audio commands to easy variables
 set $volup      XF86AudioRaiseVolume
@@ -82,19 +87,19 @@ default_orientation horizontal
 # floating_maximum_size 1250 x 1000
 
 # reload the configuration file
-$mod4+c     reload
+$mod2+c     reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-$mod4+r     restart
+$mod2+r     restart
 
 # exit i3 (logs you out of your X session)
-$mod4+e     exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes' 'i3-msg exit'"
+$mod2+e     exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes' 'i3-msg exit'"
 
 # open sys menu
 $scmod3+0   $ex $scr/sysmenu.sh --menu
 
 # toggle polybar
-$mod4+p     $ex $scr/toggle-polybar.sh
+$mod2+p     $ex $scr/toggle-polybar.sh
 
 # volume changing
 bindsym $volup      $ex pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -117,10 +122,10 @@ $smod3+k    move up 100px
 $smod3+l    move right 100px
 
 # resizing
-$cmod4+h    resize shrink width  1 px or 1 ppt
-$cmod4+j    resize shrink height 1 px or 1 ppt
-$cmod4+k    resize grow   height 1 px or 1 ppt
-$cmod4+l    resize grow   width  1 px or 1 ppt
+$cmod2+h    resize shrink width  1 px or 1 ppt
+$cmod2+j    resize shrink height 1 px or 1 ppt
+$cmod2+k    resize grow   height 1 px or 1 ppt
+$cmod2+l    resize grow   width  1 px or 1 ppt
 
 $cmod3+h    resize shrink width  5 px or 5 ppt
 $cmod3+j    resize shrink height 5 px or 5 ppt
@@ -157,10 +162,10 @@ $smod3+space floating toggle
 $mod3+space focus mode_toggle
 
 # move floating window to center of current output
-$mod4+semicolon move position center
+$mod2+semicolon move position center
 
 # move floating window to center of all outputs
-$cmod4+semicolon move absolute position center
+$cmod2+semicolon move absolute position center
 
 # focus the parent container
 $smod3+a    focus parent
@@ -225,11 +230,11 @@ $cmod3+d          $ex $scr/appfetch.sh
 $scmod3+d         $ex $scr/cmdmenu.sh
 
 # start program launcher
-# $mod4+d $ex dmenu_recency
-$cmod4+b          exec $terminal -e 'bmenu'
+# $mod2+d $ex dmenu_recency
+$cmod2+b          exec $terminal -e 'bmenu'
 
 # launch categorized menu
-$cmod4+z          $ex morc_menu
+$cmod2+z          $ex morc_menu
 
 # app launching
 $mod3+n           exec  $terminal ranger
@@ -242,23 +247,23 @@ $mod3+t           $ex   $terminal
 $smod3+t          exec  i3-sensible-terminal
 $mod3+m           exec  $terminal htop
 $mod3+g           exec  google-chrome-stable
-$scmod4+l         $ex   blurlock
-$mod4+d           $ex   discord
-$mod4+s           $ex   slack
-$mod4+o           $ex   obs
-$mod4+i           $ex   zoom
-$mod4+m           $ex   "rm /home/efex/.config/mps-youtube/cache_py_* ; $terminal -e 'mpsyt'"
-$smod4+m          $ex   vlc /home/efex/music/to-sort/*
-$mod4+u           $ex   $scr/projify.sh wiki
-$mod4+y           $ex   $scr/projify.sh dots
-$mod4+t           $ex   $scr/projify.sh todo
+$scmod2+l         $ex   blurlock
+$mod2+d           $ex   discord
+$mod2+s           $ex   slack
+$mod2+o           $ex   obs
+$mod2+z           $ex   zoom
+$mod2+m           $ex   "rm /home/efex/.config/mps-youtube/cache_py_* ; $terminal -e 'mpsyt'"
+$smod2+m          $ex   vlc /home/efex/music/to-sort/*
+$mod2+u           $ex   $scr/projify.sh wiki
+$mod2+y           $ex   $scr/projify.sh dots
+$mod2+t           $ex   $scr/projify.sh todo
 # $mod?+Ctrl+m    exec  $terminal -e 'alsamixer'
-# $mod4+f         exec  filezilla
-# $mod4+v         exec  virtualbox
+# $mod2+f         exec  filezilla
+# $mod2+v         exec  virtualbox
 # $mod3+equal     exec  gnome-calculator
 # $scmod3+w       $ex   start-tor-browser
 # $cmod3+t        $ex   st
-# $mod4+t         exec  gnome-text-editor
+# $mod2+t         exec  gnome-text-editor
 # $mod?+F3        exec  pcmanfm
 # $smod?+F3       exec  pcmanfm_pkexec
 # $mod?+F5        exec  $terminal -e 'mocp'
@@ -273,24 +278,28 @@ $br Mod3+Control+Print  $ex scrot -q 100 -m -e 'mv $f ~/dwn/shots'
 # }}}
 # {{{ 5. scripts
 
-$mod4+0     $ex $scr/alertr.sh --date --notify
-$mod4+9     $ex $scr/sink-switch.sh --speakers
-$smod4+9    $ex $scr/sink-switch.sh --headphones
-$mod4+8     $ex $scr/alertr.sh --cpustatus --notify
-$mod4+7     $ex $scr/alertr.sh --gpustatus --notify
-$mod4+6     $ex $scr/alertr.sh --fanstatus --notify
-$mod4+5     $ex redshift -c /home/efex/.config/redshift.conf
-$mod4+4     $ex $scr/dbxlong_applet.sh
-$mod4+1     $ex $scr/rotate-monitor.sh
-$mod4+minus $ex $scr/colorswitch.sh
-$mod4+slash $ex $scr/hotki.sh
+$mod2+0     $ex $scr/alertr.sh --date --notify
+$mod2+9     $ex $scr/sink-switch.sh --speakers
+$smod2+9    $ex $scr/sink-switch.sh --headphones
+$mod2+8     $ex $scr/alertr.sh --cpustatus --notify
+$mod2+7     $ex $scr/alertr.sh --gpustatus --notify
+$mod2+6     $ex $scr/alertr.sh --fanstatus --notify
+$mod2+5     $ex redshift -c /home/efex/.config/redshift.conf
+$mod2+4     $ex $scr/dbxlong_applet.sh
+$mod2+2     $ex $scr/screen_shift.sh
+$mod2+1     $ex $scr/rotate-monitor.sh
+$mod2+minus $ex $scr/colorswitch.sh
+$mod2+slash $ex $scr/hotki.sh
 # general computer stats report
 
 # }}}
 # {{{ 9. startup
 
 # monitor orientation since my primary is in the middle
-$ex xrandr --output HDMI-A-0 --auto --left-of DisplayPort-0
+# $ex xrandr --output DisplayPort-1 --primary --output HDMI-A-0 --auto --left-of DisplayPort-1 --output HDMI-A-1 --auto --right-of DisplayPort-1
+$ex xrandr --output $mscreen --primary \
+  --output $lscreen --auto --left-of $mscreen \
+  --output $rscreen --auto --right-of $mscreen
 
 # turn num lock on
 $ex xdotool key --clearmodifiers Num_Lock
@@ -327,13 +336,13 @@ $exa      xrdb ~/.Xresources
 # $exa    ff-theme-util
 
 # set default workspaces
-workspace 1 output HDMI-A-0
-workspace 2 output DisplayPort-0
-workspace 3 output DisplayPort-1
-workspace 4 output HDMI-A-0
-workspace 5 output DisplayPort-0
-workspace 6 output DisplayPort-1
-workspace 7 output HDMI-A-0
+workspace 1 output $lscreen
+workspace 2 output $mscreen
+workspace 3 output $rscreen
+workspace 4 output $lscreen
+workspace 5 output $mscreen
+workspace 6 output $rscreen
+workspace 7 output $lscreen
 
 # window rules (set by Nick)
 for_window [title="Calculator"] floating enable
@@ -426,12 +435,12 @@ client.background     #ffffff
 # {{{ floating resizer
 
 # set floating window size to comfy default
-# $mod4+space $ex $scr/float-resize.sh 53 74
+# $mod2+space $ex $scr/float-resize.sh 53 74
 # for_window [class="kitty" floating] resize set 500 1000
 
 set $mode_resizer (1) Wiki (2) YT (3) 1080p (4) (5) (6) (7) (8) (9)
 
-$mod4+space mode "$mode_resizer"
+$mod2+space mode "$mode_resizer"
 
 mode "$mode_resizer" {
   bindsym 1 $ex $scr/float-resize.sh 53 74
@@ -439,35 +448,35 @@ mode "$mode_resizer" {
   bindsym 3 $ex $scr/float-resize.sh 119 74
   bindsym Return mode "default"
   bindsym Escape mode "default"
-  $mod4+space mode "default"
+  $mod2+space mode "default"
 }
 
 # }}}
 # {{{ i3setup mode
 
-set $mode_i3setup Deploy Layout: (2)-panel (3)-panel (4)-panel | Deploy Container: prime_a (a) prime_b (s) aside_a (d) aside_b (f)
+# set $mode_i3setup Deploy Layout: (2)-panel (3)-panel (4)-panel | Deploy Container: prime_a (a) prime_b (s) aside_a (d) aside_b (f)
 
-$smod3+i mode "$mode_i3setup"
+# $smod3+i mode "$mode_i3setup"
 
-mode "$mode_i3setup" {
-  # save layout: `i3-save-tree --workspace X > ~/.config/i3/layouts/temp.json`
-  bindsym a $ex "kitty --class=kitty --name=hub -T=hub"
-  bindsym s $ex "kitty --class=kitty --name=sub -T=sub"
-  bindsym d $ex "kitty --class=kitty --name=box -T=box"
-  bindsym f $ex "kitty --class=kitty --name=bar -T=bar"
-  # bindsym 1 $ex \
-  # "i3-msg 'append_layout /home/efex/.config/i3/layouts/1-panel-workflow.json'"
-  bindsym 2 $ex \
-    "i3-msg 'append_layout /home/efex/.config/i3/layouts/2-panel-workflow.json'"
-  bindsym 3 $ex \
-    "i3-msg 'append_layout /home/efex/.config/i3/layouts/3-panel-workflow.json'"
-  bindsym 4 $ex \
-    "i3-msg 'append_layout /home/efex/.config/i3/layouts/4-panel-workflow.json'"
+# mode "$mode_i3setup" {
+#   # save layout: `i3-save-tree --workspace X > ~/.config/i3/layouts/temp.json`
+#   bindsym a $ex "kitty --class=kitty --name=hub -T=hub"
+#   bindsym s $ex "kitty --class=kitty --name=sub -T=sub"
+#   bindsym d $ex "kitty --class=kitty --name=box -T=box"
+#   bindsym f $ex "kitty --class=kitty --name=bar -T=bar"
+#   # bindsym 1 $ex \
+#   # "i3-msg 'append_layout /home/efex/.config/i3/layouts/1-panel-workflow.json'"
+#   bindsym 2 $ex \
+#     "i3-msg 'append_layout /home/efex/.config/i3/layouts/2-panel-workflow.json'"
+#   bindsym 3 $ex \
+#     "i3-msg 'append_layout /home/efex/.config/i3/layouts/3-panel-workflow.json'"
+#   bindsym 4 $ex \
+#     "i3-msg 'append_layout /home/efex/.config/i3/layouts/4-panel-workflow.json'"
 
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-	$smod3+i mode "default"
-}
+# 	bindsym Return mode "default"
+# 	bindsym Escape mode "default"
+# 	$smod3+i mode "default"
+# }
 
 # }}}
 # {{{ gaps mode

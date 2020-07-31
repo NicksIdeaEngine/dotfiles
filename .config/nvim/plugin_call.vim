@@ -98,7 +98,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'freitass/todo.txt-vim'
 
 " https://github.com/wakatime/vim-wakatime
-Plug 'wakatime/vim-wakatime'
+" Plug 'wakatime/vim-wakatime'
 
 " }}}
 " utils {{{
