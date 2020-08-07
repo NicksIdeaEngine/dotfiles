@@ -538,8 +538,8 @@ Func_vim_json	old/example-init.vim	/^function! Func_vim_json()$/;"	f
 Gbranch	old/example-init.vim	/^command Gbranch Twiggy$/;"	c
 GeometryHeight	.config/gtk-2.0/gtkfilechooser.ini	/^GeometryHeight=641$/;"	k	section:Filechooser Settings
 GeometryWidth	.config/gtk-2.0/gtkfilechooser.ini	/^GeometryWidth=948$/;"	k	section:Filechooser Settings
-GeometryX	.config/gtk-2.0/gtkfilechooser.ini	/^GeometryX=2506$/;"	k	section:Filechooser Settings
-GeometryY	.config/gtk-2.0/gtkfilechooser.ini	/^GeometryY=307$/;"	k	section:Filechooser Settings
+GeometryX	.config/gtk-2.0/gtkfilechooser.ini	/^GeometryX=2240$/;"	k	section:Filechooser Settings
+GeometryY	.config/gtk-2.0/gtkfilechooser.ini	/^GeometryY=0$/;"	k	section:Filechooser Settings
 GitStatus	.config/nvim/plugin_config.vim	/^function! GitStatus() " {{{$/;"	f
 Gitbranch	.config/nvim/plugin_config.vim	/^function! Gitbranch() abort " {{{$/;"	f
 H	old/example-2-init.vim	/^nnoremap H 0$/;"	m
