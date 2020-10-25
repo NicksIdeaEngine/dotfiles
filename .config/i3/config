@@ -37,9 +37,9 @@ set $scmod2     bindsym Mod2+Shift+Control
 set $terminal   kitty
 
 # set screens to variables for easier orientation and workspace assignment
-set $lscreen    DisplayPort-0
-set $rscreen    DisplayPort-1
-set $mscreen    HDMI-A-0
+set $lscreen    DisplayPort-1
+set $rscreen    DisplayPort-0
+set $mscreen    HDMI-A-1
 
 # set audio commands to easy variables
 set $volup      XF86AudioRaiseVolume

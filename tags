@@ -877,7 +877,7 @@ __anon125c4bfe0508	.config/repos/st/st.c	/^typedef struct {$/;"	s	file:
 __anon125c4bfe0608	.config/repos/st/st.c	/^typedef struct {$/;"	s	file:
 `	.config/nvim/keys.vim	/^nnoremap ` '$/;"	m
 `	old/example-2-init.vim	/^nnoremap ` '$/;"	m
-ac	.config/polybar/colors.ini	/^ac = #83a598$/;"	k	section:color
+ac	.config/polybar/colors.ini	/^ac = #076678$/;"	k	section:color
 actionfps	.config/repos/st/config.h	/^static unsigned int actionfps = 30;$/;"	v	typeref:typename:unsigned int
 allowaltscreen	.config/repos/st/config.h	/^int allowaltscreen = 1;$/;"	v	typeref:typename:int
 alpha	.config/repos/st/config.h	/^float alpha = 1;$/;"	v	typeref:typename:float
@@ -888,7 +888,7 @@ anf	old/example-2-init.vim	/^onoremap anf :<c-u>normal! 0f(hvaw<cr>$/;"	m
 ant	old/example-2-init.vim	/^onoremap ant :<c-u>normal! 0f<vat<cr>$/;"	m
 antialias	.config/gtk-3.0/settings.ini	/^gtk-xft-antialias=1$/;"	k	section:Settings
 aqua	.config/polybar/colors.ini	/^aqua =  #689d6a$/;"	k	section:color
-aqua	.config/polybar/colors.ini	/^dark-aqua = #8ec07c$/;"	k	section:color
+aqua	.config/polybar/colors.ini	/^dark-aqua = #427b58$/;"	k	section:color
 ar-button	.mozilla/firefox/65rf3aso.default-release/chrome/userChrome.css	/^ar-button,$/;"	s
 arg	.config/repos/st/st.c	/^	int arg[ESC_ARG_SIZ];$/;"	m	struct:__anon125c4bfe0508	typeref:typename:int[]	file:
 args	.config/repos/st/st.c	/^	char *args[STR_ARG_SIZ];$/;"	m	struct:__anon125c4bfe0608	typeref:typename:char * []	file:
@@ -903,7 +903,7 @@ b:vcm_tab_complete	old/example-2-init.vim	/^let b:vcm_tab_complete = "omni"$/;"	
 backend	.config/compton.airblader.conf	/^backend = "glx";$/;"	k
 backend	.config/compton.conf	/^backend = "xrender";$/;"	k
 background	.config/compton.airblader.conf	/^blur-background = false;$/;"	k
-background	.config/polybar/colors.ini	/^background = #1d2021$/;"	k	section:color
+background	.config/polybar/colors.ini	/^background = #f9f5d7$/;"	k	section:color
 background	.config/polybar/config.ini	/^background = ${color.bg}$/;"	k	section:bar/mandelight
 background	.config/polybar/config.ini	/^compositing-background = source$/;"	k	section:settings
 background	.config/polybar/config.ini	/^format-background =$/;"	k	section:settings
@@ -926,12 +926,12 @@ base64dec	.config/repos/st/st.c	/^base64dec(const char *src)$/;"	f	typeref:typen
 base64dec_getc	.config/repos/st/st.c	/^base64dec_getc(const char **src)$/;"	f	typeref:typename:char
 battery_display	.config/neofetch/config.conf	/^battery_display="off"$/;"	k
 bellvolume	.config/repos/st/config.h	/^static int bellvolume = 0;$/;"	v	typeref:typename:int
-bg	.config/polybar/colors.ini	/^bg = #1d2021$/;"	k	section:color
-bg0	.config/polybar/colors.ini	/^bg0 = #282828$/;"	k	section:color
-bg1	.config/polybar/colors.ini	/^bg1 = #3c3836$/;"	k	section:color
-bg2	.config/polybar/colors.ini	/^bg2 = #504945$/;"	k	section:color
-bg3	.config/polybar/colors.ini	/^bg3 = #665c54$/;"	k	section:color
-bg4	.config/polybar/colors.ini	/^bg4 = #7c6f64$/;"	k	section:color
+bg	.config/polybar/colors.ini	/^bg = #f9f5d7$/;"	k	section:color
+bg0	.config/polybar/colors.ini	/^bg0 = #fbf1c7$/;"	k	section:color
+bg1	.config/polybar/colors.ini	/^bg1 = #ebdbb2$/;"	k	section:color
+bg2	.config/polybar/colors.ini	/^bg2 = #d5c4a1$/;"	k	section:color
+bg3	.config/polybar/colors.ini	/^bg3 = #bdae93$/;"	k	section:color
+bg4	.config/polybar/colors.ini	/^bg4 = #a89984$/;"	k	section:color
 black	.config/polybar/colors.ini	/^black = #000$/;"	k	section:color
 blinktimeout	.config/repos/st/config.h	/^static unsigned int blinktimeout = 800;$/;"	v	typeref:typename:unsigned int
 block_height	.config/neofetch/config.conf	/^block_height=1$/;"	k
@@ -939,7 +939,7 @@ block_range	.config/neofetch/config.conf	/^block_range=(0 7)$/;"	k
 block_width	.config/neofetch/config.conf	/^block_width=3$/;"	k
 blue	.config/compton.airblader.conf	/^shadow-blue = 0.13;$/;"	k
 blue	.config/polybar/colors.ini	/^blue =  #458588$/;"	k	section:color
-blue	.config/polybar/colors.ini	/^dark-blue = #83a598$/;"	k	section:color
+blue	.config/polybar/colors.ini	/^dark-blue = #076678$/;"	k	section:color
 bold	.config/neofetch/config.conf	/^bold="on"$/;"	k
 border	.config/i3/layouts/2-panel-workflow.json	/^                    "border": "pixel",$/;"	s	object:nodes.0.nodes.0
 border	.config/i3/layouts/2-panel-workflow.json	/^                    "border": "pixel",$/;"	s	object:nodes.1.nodes.0
@@ -987,24 +987,24 @@ col	.config/repos/st/st.c	/^	int col;      \/* nb col *\/$/;"	m	struct:__anon125
 color	.config/polybar/colors.ini	/^[color]$/;"	s
 color	.config/polybar/config.ini	/^border-color = ${color.ac}$/;"	k	section:bar/mandelight
 color	.config/polybar/config.ini	/^overline-color = ${color.ac}$/;"	k	section:bar/mandelight
-color0	.config/polybar/colors.ini	/^color0 =  #282828$/;"	k	section:color
+color0	.config/polybar/colors.ini	/^color0 =  #fbf1c7$/;"	k	section:color
 color1	.config/polybar/colors.ini	/^color1 =  #cc241d$/;"	k	section:color
-color10	.config/polybar/colors.ini	/^color10 = #b8bb26$/;"	k	section:color
-color11	.config/polybar/colors.ini	/^color11 = #fabd2f$/;"	k	section:color
-color12	.config/polybar/colors.ini	/^color12 = #83a598$/;"	k	section:color
-color13	.config/polybar/colors.ini	/^color13 = #d3869b$/;"	k	section:color
-color14	.config/polybar/colors.ini	/^color14 = #8ec07c$/;"	k	section:color
-color15	.config/polybar/colors.ini	/^color15 = #ebdbb2$/;"	k	section:color
+color10	.config/polybar/colors.ini	/^color10 = #79740e$/;"	k	section:color
+color11	.config/polybar/colors.ini	/^color11 = #b57614$/;"	k	section:color
+color12	.config/polybar/colors.ini	/^color12 = #076678$/;"	k	section:color
+color13	.config/polybar/colors.ini	/^color13 = #8f3f71$/;"	k	section:color
+color14	.config/polybar/colors.ini	/^color14 = #427b58$/;"	k	section:color
+color15	.config/polybar/colors.ini	/^color15 = #3c3836$/;"	k	section:color
 color16	.config/polybar/colors.ini	/^color16 = #d65d0e$/;"	k	section:color
-color17	.config/polybar/colors.ini	/^color17 = #fe8019$/;"	k	section:color
+color17	.config/polybar/colors.ini	/^color17 = #af3a03$/;"	k	section:color
 color2	.config/polybar/colors.ini	/^color2 =  #98971a$/;"	k	section:color
 color3	.config/polybar/colors.ini	/^color3 =  #d79921$/;"	k	section:color
 color4	.config/polybar/colors.ini	/^color4 =  #458588$/;"	k	section:color
 color5	.config/polybar/colors.ini	/^color5 =  #b16286$/;"	k	section:color
 color6	.config/polybar/colors.ini	/^color6 =  #689d6a$/;"	k	section:color
-color7	.config/polybar/colors.ini	/^color7 =  #a89984$/;"	k	section:color
+color7	.config/polybar/colors.ini	/^color7 =  #7c6f64$/;"	k	section:color
 color8	.config/polybar/colors.ini	/^color8 =  #928374$/;"	k	section:color
-color9	.config/polybar/colors.ini	/^color9 =  #fb4934$/;"	k	section:color
+color9	.config/polybar/colors.ini	/^color9 =  #9d0006$/;"	k	section:color
 color_blocks	.config/neofetch/config.conf	/^color_blocks="on"$/;"	k
 colorname	.config/repos/st/config.h	/^static const char *colorname[] = {$/;"	v	typeref:typename:const char * []
 colors	.config/neofetch/config.conf	/^colors=(distro)$/;"	k
@@ -1138,13 +1138,13 @@ fading	.config/compton.airblader.conf	/^fading = false;$/;"	k
 fading	.config/compton.conf	/^fading = true;$/;"	k
 fb	old/example-init.vim	/^nnoremap <silent> fb :CocList buffers<CR>$/;"	m
 ff	old/example-init.vim	/^nnoremap <silent> ff :CocList files<CR>$/;"	m
-fg	.config/polybar/colors.ini	/^fg = #fbf1c7$/;"	k	section:color
+fg	.config/polybar/colors.ini	/^fg = #282828$/;"	k	section:color
 fg	old/example-init.vim	/^nnoremap <silent> fg :CocList grep<CR>$/;"	m
-fg0	.config/polybar/colors.ini	/^fg0 = #fbf1c7$/;"	k	section:color
-fg1	.config/polybar/colors.ini	/^fg1 = #ebdbb2$/;"	k	section:color
-fg2	.config/polybar/colors.ini	/^fg2 = #d5c4a1$/;"	k	section:color
-fg3	.config/polybar/colors.ini	/^fg3 = #bdae93$/;"	k	section:color
-fg4	.config/polybar/colors.ini	/^fg4 = #a89984$/;"	k	section:color
+fg0	.config/polybar/colors.ini	/^fg0 = #282828$/;"	k	section:color
+fg1	.config/polybar/colors.ini	/^fg1 = #3c3836$/;"	k	section:color
+fg2	.config/polybar/colors.ini	/^fg2 = #504945$/;"	k	section:color
+fg3	.config/polybar/colors.ini	/^fg3 = #665c54$/;"	k	section:color
+fg4	.config/polybar/colors.ini	/^fg4 = #7c6f64$/;"	k	section:color
 fh	old/example-init.vim	/^nnoremap <silent> fh :CocList helptags<CR>$/;"	m
 file	.config/polybar/config.ini	/^include-file = ~\/.config\/polybar\/colors.ini$/;"	k	section:global/wm
 file	.config/polybar/config.ini	/^include-file = ~\/.config\/polybar\/modules.ini$/;"	k	section:global/wm
@@ -1185,7 +1185,7 @@ font2	.config/repos/st/config.h	/^static char *font2[] = { "PowerlineSymbols:pix
 for	.config/polybar/config.ini	/^throttle-input-for = 30$/;"	k	section:settings
 for	.config/polybar/config.ini	/^throttle-output-for = 10$/;"	k	section:settings
 forceselmod	.config/repos/st/config.h	/^static uint forceselmod = ShiftMask;$/;"	v	typeref:typename:uint
-foreground	.config/polybar/colors.ini	/^foreground = #fbf1c7$/;"	k	section:color
+foreground	.config/polybar/colors.ini	/^foreground = #282828$/;"	k	section:color
 foreground	.config/polybar/config.ini	/^compositing-foreground = over$/;"	k	section:settings
 foreground	.config/polybar/config.ini	/^foreground = ${color.fg}$/;"	k	section:bar/mandelight
 foreground	.config/polybar/config.ini	/^format-foreground =$/;"	k	section:settings
@@ -1604,10 +1604,10 @@ goyoCustom	.config/nvim/plugin_config.vim	/^augroup goyoCustom$/;"	a
 goyoCustom	old/example-init.vim	/^augroup goyoCustom$/;"	a
 gpu_brand	.config/neofetch/config.conf	/^gpu_brand="on"$/;"	k
 gpu_type	.config/neofetch/config.conf	/^gpu_type="all"$/;"	k
-gray	.config/polybar/colors.ini	/^dark-gray =  #a89984$/;"	k	section:color
+gray	.config/polybar/colors.ini	/^dark-gray =  #7c6f64$/;"	k	section:color
 gray	.config/polybar/colors.ini	/^light-gray =  #928374$/;"	k	section:color
 green	.config/compton.airblader.conf	/^shadow-green = 0.12;$/;"	k
-green	.config/polybar/colors.ini	/^dark-green = #b8bb26$/;"	k	section:color
+green	.config/polybar/colors.ini	/^dark-green = #79740e$/;"	k	section:color
 green	.config/polybar/colors.ini	/^green =  #98971a$/;"	k	section:color
 gtk2	.config/neofetch/config.conf	/^gtk2="on"$/;"	k
 gtk3	.config/neofetch/config.conf	/^gtk3="on"$/;"	k
@@ -1823,7 +1823,7 @@ memory_percent	.config/neofetch/config.conf	/^memory_percent="off"$/;"	k
 menu_launcher	scripts/colorswitch.sh	/^menu_launcher() {$/;"	f
 method	.config/compton.conf	/^blur-method = "kawase";$/;"	k
 method	.config/compton.conf	/^glx-swap-method = "undefined";$/;"	k
-mf	.config/polybar/colors.ini	/^mf = #504945$/;"	k	section:color
+mf	.config/polybar/colors.ini	/^mf = #d5c4a1$/;"	k	section:color
 middle	.config/polybar/config.ini	/^click-middle =$/;"	k	section:bar/mandelight
 middle	.config/polybar/config.ini	/^double-click-middle =$/;"	k	section:bar/mandelight
 middle	.config/polybar/user_modules.ini	/^click-middle = \/home\/efex\/scripts\/dropboxsyncmenu.sh$/;"	k	section:module/dropboxstatus
@@ -1907,7 +1907,7 @@ opacity	.config/compton.conf	/^frame-opacity = 1;$/;"	k
 opacity	.config/compton.conf	/^inactive-opacity = 1;$/;"	k
 opacity	.config/compton.conf	/^menu-opacity = 1;$/;"	k
 openurlcmd	.config/repos/st/config.h	/^static char *openurlcmd[] = { "\/bin\/sh", "-c",$/;"	v	typeref:typename:char * []
-orange	.config/polybar/colors.ini	/^dark-orange = #fe8019$/;"	k	section:color
+orange	.config/polybar/colors.ini	/^dark-orange = #af3a03$/;"	k	section:color
 orange	.config/polybar/colors.ini	/^orange = #d65d0e$/;"	k	section:color
 os_arch	.config/neofetch/config.conf	/^os_arch="on"$/;"	k
 output	.config/polybar/config.ini	/^throttle-output = 5$/;"	k	section:settings
@@ -1975,7 +1975,7 @@ proj_menu	scripts/projify.sh	/^proj_menu() {$/;"	f
 prompt_example	.p10k.zsh	/^  function prompt_example() {$/;"	f
 public_ip_host	.config/neofetch/config.conf	/^public_ip_host="http:\/\/ident.me"$/;"	k
 public_ip_timeout	.config/neofetch/config.conf	/^public_ip_timeout=2$/;"	k
-purple	.config/polybar/colors.ini	/^dark-purple = #d3869b$/;"	k	section:color
+purple	.config/polybar/colors.ini	/^dark-purple = #8f3f71$/;"	k	section:color
 purple	.config/polybar/colors.ini	/^purple =  #b16286$/;"	k	section:color
 python_files	.config/nvim/functions.vim	/^  augroup python_files " {{{$/;"	a
 python_files	old/example-2-init.vim	/^    augroup python_files "{{{$/;"	a
@@ -1986,7 +1986,7 @@ radius	.config/compton.conf	/^shadow-radius = 7;$/;"	k
 rate	.config/compton.airblader.conf	/^refresh-rate = 0;$/;"	k
 rate	.config/compton.conf	/^refresh-rate = 0;$/;"	k
 red	.config/compton.airblader.conf	/^shadow-red = 0.11;$/;"	k
-red	.config/polybar/colors.ini	/^dark-red =  #fb4934$/;"	k	section:color
+red	.config/polybar/colors.ini	/^dark-red =  #9d0006$/;"	k	section:color
 red	.config/polybar/colors.ini	/^red =  #cc241d$/;"	k	section:color
 redirect	.config/polybar/config.ini	/^override-redirect = false$/;"	k	section:bar/mandelight
 redraw	.config/repos/st/st.c	/^redraw(void)$/;"	f	typeref:typename:void
@@ -2349,7 +2349,7 @@ y	.config/polybar/config.ini	/^offset-y = 0$/;"	k	section:bar/mandelight
 y	.config/polybar/config.ini	/^tray-offset-y = 0$/;"	k	section:bar/mandelight
 y	.config/repos/st/st.c	/^		int x, y;$/;"	m	struct:__anon125c4bfe0208::__anon125c4bfe0308	typeref:typename:int	file:
 y	.config/repos/st/st.c	/^	int y;$/;"	m	struct:__anon125c4bfe0108	typeref:typename:int	file:
-yellow	.config/polybar/colors.ini	/^dark-yellow = #fabd2f$/;"	k	section:color
+yellow	.config/polybar/colors.ini	/^dark-yellow = #b57614$/;"	k	section:color
 yellow	.config/polybar/colors.ini	/^yellow =  #d79921$/;"	k	section:color
 yoffset	.config/neofetch/config.conf	/^yoffset=0$/;"	k
 z0	.config/nvim/keys.vim	/^nnoremap z0 :set foldlevel=0<cr>$/;"	m

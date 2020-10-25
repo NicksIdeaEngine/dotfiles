@@ -412,7 +412,7 @@ nnoremap <leader>di <Plug>ToggleDitto
 if (has("termguicolors"))
   set termguicolors
 endif
-set background=dark
+set background=light
 let g:gruvbox_contrast_light = 'hard'
 colorscheme gruvbox
 
