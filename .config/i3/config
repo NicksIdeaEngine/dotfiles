@@ -297,9 +297,9 @@ $mod2+slash $ex $scr/hotki.sh
 
 # monitor orientation since my primary is in the middle
 # $ex xrandr --output DisplayPort-1 --primary --output HDMI-A-0 --auto --left-of DisplayPort-1 --output HDMI-A-1 --auto --right-of DisplayPort-1
-$ex xrandr --output $mscreen --primary \
-  --output $lscreen --auto --left-of $mscreen \
-  --output $rscreen --auto --right-of $mscreen
+$ex xrandr --output $rscreen --primary \
+  --output $mscreen --auto --left-of $rscreen \
+  --output $lscreen --auto --left-of $mscreen
 
 # turn num lock on
 $ex xdotool key --clearmodifiers Num_Lock
