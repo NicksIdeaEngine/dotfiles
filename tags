@@ -301,6 +301,7 @@ $q	.config/nvim/keys.vim	/^vnoremap $q <esc>`>a'<esc>`<i'<esc>$/;"	m
 <leader><leader>n	.config/nvim/keys.vim	/^nnoremap <leader><leader>n :setlocal number! relativenumber!<cr>$/;"	m
 <leader><leader>nrd	.config/nvim/keys.vim	/^nnoremap <leader><leader>nrd :AsyncRun npm run devserver<cr>$/;"	m
 <leader><leader>ns	.config/nvim/keys.vim	/^nnoremap <leader><leader>ns :AsyncRun npm start<cr>$/;"	m
+<leader><leader>o	.config/nvim/plugin_config.vim	/^nnoremap <leader><leader>o :Obsess<cr>$/;"	m
 <leader><leader>q	.config/nvim/keys.vim	/^nnoremap <leader><leader>q :AsyncStop<cr>$/;"	m
 <leader><leader>r	.config/nvim/plugin_config.vim	/^nnoremap <silent> <leader><leader>r :<c-u>Goyo<cr>$/;"	m
 <leader><leader>s	.config/nvim/keys.vim	/^nnoremap <leader><leader>s ?{<cr>jV\/^\\s*\\}?$<cr>k:sort<cr>:noh<cr>$/;"	m
@@ -1695,10 +1696,10 @@ layout	.config/i3/layouts/3-panel-workflow.json	/^            "layout": "splith"
 layout	.config/i3/layouts/3-panel-workflow.json	/^            "layout": "splith",$/;"	s	object:1
 layout	.config/i3/layouts/3-panel-workflow.json	/^            "layout": "splith",$/;"	s	object:nodes.0
 layout	.config/i3/layouts/3-panel-workflow.json	/^    "layout": "splitv",$/;"	s
-layout	.config/i3/layouts/4-panel-workflow.json	/^            "layout": "splith",$/;"	s	object:0
-layout	.config/i3/layouts/4-panel-workflow.json	/^            "layout": "splith",$/;"	s	object:1
-layout	.config/i3/layouts/4-panel-workflow.json	/^            "layout": "splith",$/;"	s	object:nodes.0
-layout	.config/i3/layouts/4-panel-workflow.json	/^            "layout": "splith",$/;"	s	object:nodes.1
+layout	.config/i3/layouts/4-panel-workflow.json	/^            "layout": "tabbed",$/;"	s	object:0
+layout	.config/i3/layouts/4-panel-workflow.json	/^            "layout": "tabbed",$/;"	s	object:1
+layout	.config/i3/layouts/4-panel-workflow.json	/^            "layout": "tabbed",$/;"	s	object:nodes.0
+layout	.config/i3/layouts/4-panel-workflow.json	/^            "layout": "tabbed",$/;"	s	object:nodes.1
 layout	.config/i3/layouts/4-panel-workflow.json	/^    "layout": "splitv",$/;"	s
 leader	.config/compton.airblader.conf	/^detect-client-leader = true;$/;"	k
 leader	.config/compton.conf	/^detect-client-leader = true;$/;"	k
@@ -1943,10 +1944,10 @@ percent	.config/i3/layouts/4-panel-workflow.json	/^                    "percent"
 percent	.config/i3/layouts/4-panel-workflow.json	/^                    "percent": 1,$/;"	n	object:1.nodes.0
 percent	.config/i3/layouts/4-panel-workflow.json	/^                    "percent": 1,$/;"	n	object:nodes.0.nodes.0
 percent	.config/i3/layouts/4-panel-workflow.json	/^                    "percent": 1,$/;"	n	object:nodes.1.nodes.0
-percent	.config/i3/layouts/4-panel-workflow.json	/^            "percent": 0.16,$/;"	n	object:nodes.1
-percent	.config/i3/layouts/4-panel-workflow.json	/^            "percent": 0.21,$/;"	n	object:0
-percent	.config/i3/layouts/4-panel-workflow.json	/^            "percent": 0.79,$/;"	n	object:1
-percent	.config/i3/layouts/4-panel-workflow.json	/^            "percent": 0.84,$/;"	n	object:nodes.0
+percent	.config/i3/layouts/4-panel-workflow.json	/^            "percent": 0.14,$/;"	n	object:nodes.1
+percent	.config/i3/layouts/4-panel-workflow.json	/^            "percent": 0.19,$/;"	n	object:0
+percent	.config/i3/layouts/4-panel-workflow.json	/^            "percent": 0.81,$/;"	n	object:1
+percent	.config/i3/layouts/4-panel-workflow.json	/^            "percent": 0.86,$/;"	n	object:nodes.0
 percent	.config/i3/layouts/4-panel-workflow.json	/^    "percent": 0.83,$/;"	n
 php	.config/ranger/rifle.conf	/^!mime ^text, label editor, ext xml|json|csv|tex|py|pl|rb|js|sh|php = ${VISUAL:-$EDITOR} -- "$@"$/;"	k
 php	.config/ranger/rifle.conf	/^!mime ^text, label pager,  ext xml|json|csv|tex|py|pl|rb|js|sh|php = "$PAGER" -- "$@"$/;"	k

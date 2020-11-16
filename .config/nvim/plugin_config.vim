@@ -389,6 +389,8 @@ nnoremap <leader>di <Plug>ToggleDitto
 " tpope/vim-obsession {{{
 " https://github.com/tpope/vim-obsession
 
+nnoremap <leader><leader>o :Obsess<cr>
+
 " }}}
 " skywind3000/asyncrun.vim {{{
 " https://github.com/skywind3000/asyncrun.vim

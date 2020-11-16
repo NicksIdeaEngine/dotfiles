@@ -11,8 +11,8 @@
             // splith split container with 1 children
             "border": "pixel",
             "floating": "auto_off",
-            "layout": "splith",
-            "percent": 0.84,
+            "layout": "tabbed",
+            "percent": 0.86,
             "type": "con",
             "nodes": [
                 {
@@ -42,8 +42,8 @@
             // splith split container with 1 children
             "border": "pixel",
             "floating": "auto_off",
-            "layout": "splith",
-            "percent": 0.16,
+            "layout": "tabbed",
+            "percent": 0.14,
             "type": "con",
             "nodes": [
                 {
@@ -84,8 +84,8 @@
             // splith split container with 1 children
             "border": "pixel",
             "floating": "auto_off",
-            "layout": "splith",
-            "percent": 0.21,
+            "layout": "tabbed",
+            "percent": 0.19,
             "type": "con",
             "nodes": [
                 {
@@ -115,8 +115,8 @@
             // splith split container with 1 children
             "border": "pixel",
             "floating": "auto_off",
-            "layout": "splith",
-            "percent": 0.79,
+            "layout": "tabbed",
+            "percent": 0.81,
             "type": "con",
             "nodes": [
                 {
@@ -144,4 +144,3 @@
         }
     ]
 }
-

@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =7
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/mnt/sdc1/dbx/proj/practice'
+let g:netrw_dirhist_9='/mnt/sdc1/dbx/proj/reactcc'
+let g:netrw_dirhist_8='/mnt/sdc1/dbx/proj/nickgarcia'
 let g:netrw_dirhist_7='/home/efex/tmp'
 let g:netrw_dirhist_6='/mnt/sdc1/dbx/proj/todo'
 let g:netrw_dirhist_5='/mnt/sdc1/dbx/proj/sandbox'
@@ -7,6 +10,3 @@ let g:netrw_dirhist_4='/mnt/sdc1/dbx/code/examples/tictactoe/src'
 let g:netrw_dirhist_3='/mnt/sdc1/dbx/code/examples/tictactoe'
 let g:netrw_dirhist_2='/mnt/sdc1/dbx/proj/tictactoe/bak'
 let g:netrw_dirhist_1='/mnt/sdc1/dbx/proj/tictactoe/bak/js'
-let g:netrw_dirhist_0='/mnt/sdc1/dbx/proj/tictactoe/bak'
-let g:netrw_dirhist_9='/mnt/sdc1/dbx/proj/tictactoe'
-let g:netrw_dirhist_8='/mnt/sdc1/dbx/dots/.config/nvim'

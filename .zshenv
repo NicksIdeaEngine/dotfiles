@@ -6,6 +6,9 @@ export PATH="$HOME/.local/share/applications:$PATH"
 
 export PATH="$HOME/bin:$PATH"
 
+# adding yarn bin folder
+export PATH="$(yarn global bin):$PATH"
+
 # Path for "go get" binaries
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"

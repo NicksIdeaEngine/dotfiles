@@ -208,7 +208,9 @@ alias nis="npm install --save" \
       nst="npm start" \
       nbd="npm run build" \
       nsr="npm run serve" \
-      ncl="npm run clean"
+      ncl="npm run clean" \
+      nup="npm update" \
+      naf="npm audit fix"
 
 # }}}
 # {{{ y. system aliases

@@ -39,6 +39,7 @@ autocmd BufNewFile,BufRead config set filetype=sh
 autocmd BufNewFile,BufRead *.bash* set filetype=sh
 autocmd BufNewFile,BufRead *.code-workspace set filetype=json
 autocmd BufNewFile,BufRead *.tern-project set filetype=json
+autocmd BufNewFile,BufRead *.babelrc set filetype=json
 autocmd BufNewFile,BufRead *.conf set filetype=dosini
 
 if has("autocmd")

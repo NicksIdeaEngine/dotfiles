@@ -76,13 +76,13 @@ title_align center
 # general settings
 gaps outer 0
 gaps inner 0
-default_border pixel 5
-default_floating_border pixel 5
+default_border pixel 4
+default_floating_border pixel 4
 hide_edge_borders both
 popup_during_fullscreen smart
 workspace_auto_back_and_forth yes
-workspace_layout default
 default_orientation horizontal
+workspace_layout tabbed
 # floating_minimum_size 750 x 500
 # floating_maximum_size 1250 x 1000
 
@@ -352,7 +352,7 @@ for_window [title="mpsyt"] floating enable resize set 1000 600
 for_window [class="mpv"] border pixel 0
 for_window [class="Slack"] floating enable
 for_window [class="vlc"] floating enable resize set 845 600
-for_window [title="wiki"] floating enable resize set 850 1070
+for_window [title="wiki"] floating enable resize set 858 1088
 
 # Open specific applications in floating mode (Manjaro defaults)
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -454,29 +454,29 @@ mode "$mode_resizer" {
 # }}}
 # {{{ i3setup mode
 
-# set $mode_i3setup Deploy Layout: (2)-panel (3)-panel (4)-panel | Deploy Container: prime_a (a) prime_b (s) aside_a (d) aside_b (f)
+set $mode_i3setup Deploy Layout: (2)-panel (3)-panel (4)-panel | Deploy Container: prime_a (a) prime_b (s) aside_a (d) aside_b (f)
 
-# $smod3+i mode "$mode_i3setup"
+$smod3+i mode "$mode_i3setup"
 
-# mode "$mode_i3setup" {
-#   # save layout: `i3-save-tree --workspace X > ~/.config/i3/layouts/temp.json`
-#   bindsym a $ex "kitty --class=kitty --name=hub -T=hub"
-#   bindsym s $ex "kitty --class=kitty --name=sub -T=sub"
-#   bindsym d $ex "kitty --class=kitty --name=box -T=box"
-#   bindsym f $ex "kitty --class=kitty --name=bar -T=bar"
-#   # bindsym 1 $ex \
-#   # "i3-msg 'append_layout /home/efex/.config/i3/layouts/1-panel-workflow.json'"
-#   bindsym 2 $ex \
-#     "i3-msg 'append_layout /home/efex/.config/i3/layouts/2-panel-workflow.json'"
-#   bindsym 3 $ex \
-#     "i3-msg 'append_layout /home/efex/.config/i3/layouts/3-panel-workflow.json'"
-#   bindsym 4 $ex \
-#     "i3-msg 'append_layout /home/efex/.config/i3/layouts/4-panel-workflow.json'"
+mode "$mode_i3setup" {
+  # save layout: `i3-save-tree --workspace X > ~/.config/i3/layouts/temp.json`
+  bindsym a $ex "kitty --class=kitty --name=hub -T=hub"
+  bindsym s $ex "kitty --class=kitty --name=sub -T=sub"
+  bindsym d $ex "kitty --class=kitty --name=box -T=box"
+  bindsym f $ex "kitty --class=kitty --name=bar -T=bar"
+  # bindsym 1 $ex \
+  # "i3-msg 'append_layout /home/efex/.config/i3/layouts/1-panel-workflow.json'"
+  bindsym 2 $ex \
+    "i3-msg 'append_layout /home/efex/.config/i3/layouts/2-panel-workflow.json'"
+  bindsym 3 $ex \
+    "i3-msg 'append_layout /home/efex/.config/i3/layouts/3-panel-workflow.json'"
+  bindsym 4 $ex \
+    "i3-msg 'append_layout /home/efex/.config/i3/layouts/4-panel-workflow.json'"
 
-# 	bindsym Return mode "default"
-# 	bindsym Escape mode "default"
-# 	$smod3+i mode "default"
-# }
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	$smod3+i mode "default"
+}
 
 # }}}
 # {{{ gaps mode
