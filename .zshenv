@@ -16,5 +16,7 @@ export PATH="$GOPATH/bin:$PATH"
 # path for cargo/rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# source /usr/share/nvm/nvm.sh
+
 # t path
 # export PATH="/home/efex/.local/share/applications/tor-browser_en-US:$PATH"
