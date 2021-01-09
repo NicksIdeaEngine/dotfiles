@@ -315,7 +315,7 @@ let g:ranger_map_keys = 0
 " vimwiki/vimwiki {{{
 " https://github.com/vimwiki/vimwiki
 
-let g:vimwiki_list = [{'path': '~/refs/', 'syntax': 'markdown', 'ext': '.wiki'}]
+let g:vimwiki_list = [{'path': '~/refs/', 'syntax': 'markdown', 'ext': '.mkdn'}]
 let g:vimwiki_diary_months = {
   \ 1: 'January', 2: 'February', 3: 'March', 4: 'April', 5: 'May',
   \ 6: 'June', 7: 'July', 8: 'August', 9: 'September', 10: 'October',
