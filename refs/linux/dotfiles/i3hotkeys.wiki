@@ -7,7 +7,7 @@ mod4 = Windows
 s = Shift
 c = Control
 
-| key        | mod3                   | smod3                    | cmod3                      | scmod3              | mod4                     | smod4                      | cmod4                            | scmod4   |
+| key        | mod3                   | smod3                    | cmod3                      | scmod3              | mod2                     | smod2                      | cmod2                            | scmod2   |
 | :--------: | :--------------------: | :----------------------: | :------------------------: | :-----------------: | :----------------------: | :------------------------: | :------------------------------: | :------: |
 | a          |                        | focus parent             |                            |                     |                          |                            |                                  |          |
 | b          |                        |                          |                            |                     |                          |                            | bmenu                            |          |
@@ -19,8 +19,8 @@ c = Control
 | h          | focus left             | move window left         | medium shrink width        | large shrink width  |                          |                            | small shrink width               |          |
 | i          |                        | i3setup mode             |                            |                     |                          |                            |                                  |          |
 | j          | focus down             | move window down         | medium shrink height       | large shrink height |                          |                            | small shrink height              |          |
-| k          | focus up               | move window up           | medium grow height         | large grow height   |                          |                            | small grow height                |          |
-| l          | focus right            | move window right        | medium grow width          | large grow width    |                          |                            | small grow width                 | blurlock |
+| k          | focus up               | move window up           | medium grow height         | large grow height   | clickup                  |                            | small grow height                |          |
+| l          | focus right            | move window right        | medium grow width          | large grow width    | local-by-flywheel        |                            | small grow width                 | blurlock |
 | m          | htop                   |                          |                            |                     | mps-youtube [floating]   |                            |                                  |          |
 | n          | ranger                 |                          |                            |                     |                          |                            |                                  |          |
 | o          |                        |                          |                            |                     | obs                      |                            |                                  |          |

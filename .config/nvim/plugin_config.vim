@@ -35,8 +35,6 @@ let g:formatters_rust = ['rustfmt']
 " sheerun/vim-polyglot {{{
 " https://github.com/sheerun/vim-polyglot
 
-let g:polyglot_disabled = ['rust']
-
 " }}}
 " prettier/vim-prettier {{{
 " https://github.com/prettier/vim-prettier

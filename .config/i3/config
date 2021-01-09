@@ -37,9 +37,9 @@ set $scmod2     bindsym Mod2+Shift+Control
 set $terminal   kitty
 
 # set screens to variables for easier orientation and workspace assignment
-set $lscreen    DisplayPort-1
-set $rscreen    DisplayPort-0
-set $mscreen    HDMI-A-1
+set $lscreen    HDMI-A-0
+set $rscreen    HDMI-A-1
+set $mscreen    DisplayPort-1
 
 # set audio commands to easy variables
 set $volup      XF86AudioRaiseVolume
@@ -252,6 +252,8 @@ $mod2+d           $ex   discord
 $mod2+s           $ex   slack
 $mod2+o           $ex   obs
 $mod2+z           $ex   zoom
+$mod2+k           $ex   clickup
+$mod2+l           $ex   local-by-flywheel
 $mod2+m           $ex   "rm /home/efex/.config/mps-youtube/cache_py_* ; $terminal -e 'mpsyt'"
 $smod2+m          $ex   vlc /home/efex/music/to-sort/*
 $mod2+u           $ex   $scr/projify.sh wiki
@@ -296,10 +298,7 @@ $mod2+slash $ex $scr/hotki.sh
 # {{{ 9. startup
 
 # monitor orientation since my primary is in the middle
-# $ex xrandr --output DisplayPort-1 --primary --output HDMI-A-0 --auto --left-of DisplayPort-1 --output HDMI-A-1 --auto --right-of DisplayPort-1
-$ex xrandr --output $rscreen --primary \
-  --output $mscreen --auto --left-of $rscreen \
-  --output $lscreen --auto --left-of $mscreen
+$ex ~/.screenlayout/wide.sh
 
 # turn num lock on
 $ex xdotool key --clearmodifiers Num_Lock
@@ -325,6 +324,7 @@ $ex       clipit
 $ex       rescuetime
 $ex       redshift -c /home/efex/.config/redshift.conf
 $ex       dunst
+$ex       sleep 2; $scr/toggle-polybar.sh
 $exa      fix_xcursor
 $exa      xrdb ~/.Xresources
 # $ex     nitrogen --restore; sleep 1; compton -b

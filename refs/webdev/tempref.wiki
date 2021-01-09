@@ -51,3 +51,28 @@
 - service workers
 - test framework (jest)
 - mobile dev
+
+## WordPress Website Migration
+
+From one domain with wordpress to a new domain with wordpress
+
+1. Backup old domain database tables
+  - cPanel > phpMyAdmin > Databases > old domain database
+  - Select all tables and export via "Quick" and SQL options
+2. Backup old domain static files
+  - Using Filezilla, back up entire folder that's in public_html
+3. Create database on new domain
+  - cPanel > MySQL Database Wizard > new database
+  - create new database, new user, all privileges
+4. Edit old domain wp-config.php
+  - enter database name, username, and password
+5. Upload static files to new domain
+  - in the appropriate public_html/directory
+6. Upload database to new domain
+  - cPanel > phpMyAdmin > Databases > new domain database
+  - Go to Import and upload the old database files
+7. Run a broken link checker on new domain
+8. Manually go through pages to make sure everything is displaying and working right
+9. Manually check wordpress settings
+10. Manually check internal links
+11. Check SEO

@@ -539,7 +539,7 @@ Func_vim_json	old/example-init.vim	/^function! Func_vim_json()$/;"	f
 Gbranch	old/example-init.vim	/^command Gbranch Twiggy$/;"	c
 GeometryHeight	.config/gtk-2.0/gtkfilechooser.ini	/^GeometryHeight=641$/;"	k	section:Filechooser Settings
 GeometryWidth	.config/gtk-2.0/gtkfilechooser.ini	/^GeometryWidth=948$/;"	k	section:Filechooser Settings
-GeometryX	.config/gtk-2.0/gtkfilechooser.ini	/^GeometryX=2240$/;"	k	section:Filechooser Settings
+GeometryX	.config/gtk-2.0/gtkfilechooser.ini	/^GeometryX=2551$/;"	k	section:Filechooser Settings
 GeometryY	.config/gtk-2.0/gtkfilechooser.ini	/^GeometryY=0$/;"	k	section:Filechooser Settings
 GitStatus	.config/nvim/plugin_config.vim	/^function! GitStatus() " {{{$/;"	f
 Gitbranch	.config/nvim/plugin_config.vim	/^function! Gitbranch() abort " {{{$/;"	f
@@ -1425,7 +1425,7 @@ g:neoformat_basic_format_trim	old/example-init.vim	/^let g:neoformat_basic_forma
 g:nnn#action	old/example-init.vim	/^let g:nnn#action = {$/;"	v
 g:nnn#command	old/example-init.vim	/^let g:nnn#command = 'PAGER= nnn'$/;"	v
 g:nnn#set_default_mappings	old/example-init.vim	/^let g:nnn#set_default_mappings = 0$/;"	v
-g:polyglot_disabled	.config/nvim/plugin_config.vim	/^let g:polyglot_disabled = ['rust']$/;"	v
+g:polyglot_disabled	.config/nvim/general.vim	/^let g:polyglot_disabled = ['rust']$/;"	v
 g:polyglot_disabled	old/example-init.vim	/^let g:polyglot_disabled = [ 'c', 'cpp' ]$/;"	v
 g:pomodoro_time_slack	old/example-init.vim	/^let g:pomodoro_time_slack = 5$/;"	v
 g:pomodoro_time_work	old/example-init.vim	/^let g:pomodoro_time_work = 25$/;"	v

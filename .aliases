@@ -10,7 +10,7 @@
 # 3. todotxt cli
 # 4. useful replacements
 # 5. git
-# 6. npm
+# 6. npm / yarn
 # y. system aliases
 # z. overflow
 
@@ -199,7 +199,7 @@ alias ga="git add" \
       gfa="git fetch --all"
 
 # }}}
-# {{{ 6. npm
+# {{{ 6. npm / yarn
 
 alias nis="npm install --save" \
       nid="npm install --save-dev" \
@@ -211,6 +211,18 @@ alias nis="npm install --save" \
       ncl="npm run clean" \
       nup="npm update" \
       naf="npm audit fix"
+
+alias yi="yarn install" \
+      ya="yarn add" \
+      yad="yarn add --dev" \
+      yga="yarn global add" \
+      yr="yarn run" \
+      yre="yarn run example" \
+      ys="yarn start" \
+      yis="yarn install && yarn start" \
+      yt="yarn test" \
+      yit="yarn install && yarn test" \
+      yrv="yarn remove"
 
 # }}}
 # {{{ y. system aliases

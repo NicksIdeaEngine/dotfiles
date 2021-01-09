@@ -20,6 +20,9 @@ let g:python3_host_prog = '/usr/bin/python3'
 " this setting must be set before ale is loaded
 let g:ale_completion_enabled = 1
 
+" must be called before vim-polyglot is loaded
+let g:polyglot_disabled = ['rust']
+
 " }}}
 " settings {{{
 
