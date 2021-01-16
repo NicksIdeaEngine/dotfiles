@@ -140,4 +140,48 @@
 - `:cleanhealth` in nvim shows something wrong with python2
 - list of apps to create an i3 hotkey for
   - mps-youtube launching inside of kitty (possibly resized and floating?)
-  -
+
+## Quick Notes
+
+- ctags
+- ddgr (duck duck go)
+- bauh
+- bauh-cli
+- bauh-tray
+- black
+- black-primer
+- blackd
+- clickup
+- flake8
+- gcalcli
+- howdoi
+- kitty
+- mpsyt
+- polypane
+- pycodestyle
+- pyflakes
+- pygmentize
+- pylupdate5
+- pyrcc5
+- pyrsa-decrypt
+- pyrsa-encrypt
+- pyrsa-keygen
+- pyrsa-priv2pub
+- pyrsa-sign
+- pyrsa-verify
+- pyuic5
+- ueberzug
+- wally
+- youtube-dl
+- zoom
+- discord
+- slack
+- tandem
+- navi
+- st
+- tor
+- zenpower
+- it87
+- rustup
+- local-by-flywheel
+- 
