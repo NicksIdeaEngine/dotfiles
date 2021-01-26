@@ -1,1 +1,0 @@
-/home/efex/dots/.config/nvim/init.vim

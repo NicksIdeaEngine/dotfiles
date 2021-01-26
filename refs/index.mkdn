@@ -4,28 +4,28 @@
 
 ### Quick Ref
 
-- [vim ref](./linux/vim/vimref.wiki)
-- [desktop timeline](journals/desktop-timeline.wiki)
-- [linux cmd book](linux/cmd/linux-cmd-book.wiki)
-- [html ref](webdev/html/htmlref.wiki)
-- [css ref](webdev/css/cssref.wiki)
-- [js ref](webdev/js/jsref.wiki)
-- [react ref](webdev/react/reactref.wiki)
-- [webdev journey notes](webdev/notes/index.wiki)
+- [vim ref](./linux/vim/vimref.mkdn)
+- [desktop timeline](journals/desktop-timeline.mkdn)
+- [linux cmd book](linux/cmd/linux-cmd-book.mkdn)
+- [html ref](webdev/html/htmlref.mkdn)
+- [css ref](webdev/css/cssref.mkdn)
+- [js ref](webdev/js/jsref.mkdn)
+- [react ref](webdev/react/reactref.mkdn)
+- [webdev journey notes](webdev/notes/index.mkdn)
 
 ### Root
 
-- [webdev/](webdev/index.wiki)
-- [linux/](linux/index.wiki)
-- [rust/](rust/index.wiki)
-- [git/](git/index.wiki)
-- [hotkeys/](hotkeys/index.wiki)
-- [wiki templates/](wikitemplates/index.wiki)
+- [webdev/](webdev/index.mkdn)
+- [linux/](linux/index.mkdn)
+- [rust/](rust/index.mkdn)
+- [git/](git/index.mkdn)
+- [hotkeys/](hotkeys/index.mkdn)
+- [wiki templates/](wikitemplates/index.mkdn)
 - [markdown ref](markdown.md)
-- [archives/](archives/index.wiki)
-- [journals/](journals/index.wiki)
-- [private/](private/index.wiki)
-- [temp](tempref.wiki)
+- [archives/](archives/index.mkdn)
+- [journals/](journals/index.mkdn)
+- [private/](private/index.mkdn)
+- [temp](tempref.mkdn)
 
 ## Key Bindings
 

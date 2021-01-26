@@ -4,9 +4,9 @@ I love exploring Linux. Here is an ongoing record of that journey.
 
 ## Map
 
-- [cmd](cmd/index.wiki)
-- [netsec](netsec/index.wiki)
-- [dotfiles](dotfiles/index.wiki)
-- [vim](vim/index.wiki)
-- [tempref](tempref.wiki)
+- [cmd](cmd/index.mkdn)
+- [netsec](netsec/index.mkdn)
+- [dotfiles](dotfiles/index.mkdn)
+- [vim](vim/index.mkdn)
+- [tempref](tempref.mkdn)
 

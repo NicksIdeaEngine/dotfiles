@@ -1,2 +1,2 @@
-#!/bin/zsh
+#!/bin/bash
 feh --no-fehbg --bg-fill '/home/efex/pics/to-sort/wall901.png'

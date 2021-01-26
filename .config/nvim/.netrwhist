@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/mnt/sdc1/dbx/proj/wiki'
 let g:netrw_dirhist_3='/mnt/sdc1/dbx/proj/pomopomo/bak'
 let g:netrw_dirhist_2='/mnt/sdc1/dbx/proj/pomopomo'
 let g:netrw_dirhist_1='/mnt/sdc1/dbx/proj/pomopomo/bak'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_8='/mnt/sdc1/dbx/proj/real-estate'
 let g:netrw_dirhist_7='/mnt/sdc1/dbx/proj/calcinator/bak'
 let g:netrw_dirhist_6='/mnt/sdc1/dbx/proj/calcinator'
 let g:netrw_dirhist_5='/mnt/sdc1/dbx/proj/ruff-realty'
-let g:netrw_dirhist_4='/mnt/sdc1/dbx/proj/card-game-course'

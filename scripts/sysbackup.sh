@@ -13,28 +13,36 @@ QUARTER="$(( ($MONTH-1)/3+1 ))"
 DEST="$HOME/zackups"
 
 # directories to grab from $HOME
-HOME_SPEC=(".config" ".config/google-chrome/Default" ".config/rclone" ".config/rescuetime" ".local/share/applications")
+# HOME_SPEC=(".config" ".config/google-chrome/Default" ".config/rclone" ".config/rescuetime" ".local/share/applications")
+HOME_SPEC=(".config" ".config/rclone")
 
 # .config specifications
-CONFIG_SPEC=("clipit" "redshift.conf" "user-dirs.dirs")
+CONFIG_SPEC=("redshift.conf" "user-dirs.dirs")
 
 # google chrome specific file
-CHROME_SPEC=("Preferences")
+# CHROME_SPEC=("Preferences")
 
 # rclone spec
 RCLONE_SPEC=("dbx-filter.txt" "dbxlong-filter.txt" "rclone.conf")
 
 # RescueTime.com spec
-RESCUE_SPEC=(".rtgoals")
+# RESCUE_SPEC=(".rtgoals")
 
 # specific directories to grab within .local/share/applications
-LOCAL_APP_SPEC=("kitty.desktop" "st.desktop")
+# LOCAL_APP_SPEC=("kitty.desktop" "st.desktop")
 
 # dotfiles in $HOME
-DOTFILES=(".npmrc" ".viminfo" ".z" ".zsh_history")
+DOTFILES=(
+  ".lesshst"
+  ".Xresources"
+  ".Xresourcesreset"
+  ".z"
+  ".zsh_history"
+)
 
 # quarterly backups
-QUARTER_SPEC=(".fonts" ".icons" ".moc" ".mplayer" ".themes" ".bash_history" ".git-credentials" ".gitconfig" ".rusttags" ".wakatime.cfg" ".wget-hsts" ".Xclients")
+# QUARTER_SPEC=(".fonts" ".icons" ".moc" ".mplayer" ".themes" ".bash_history" ".git-credentials" ".gitconfig" ".rusttags" ".wakatime.cfg" ".wget-hsts" ".Xclients")
+QUARTER_SPEC=(".fonts" ".bash_history")
 
 # backup one or more files or directories
 backup() {
@@ -108,7 +116,7 @@ clean_dir() {
 }
 
 # check for signal file to see if update is needed
-if [[ ! -f "$DEST/$DAYOFMONTH/$MONTH" ]]; then
+if [[ -f "$DEST/$DAYOFMONTH/$MONTH" ]]; then
   clean_dir "$DEST/$DAYOFMONTH" "$MONTH"
   start_daily "$DAYOFMONTH"
   DAILY_MSG="Rotating daily backup completed."
@@ -116,7 +124,7 @@ else
   DAILY_MSG="Rotating daily backup not needed."
 fi
 
-if [[ ! -f "$DEST/current/$DAYOFMONTH" ]]; then
+if [[ -f "$DEST/current/$DAYOFMONTH" ]]; then
   clean_dir "$DEST/current" "$DAYOFMONTH"
   start_daily "current"
   CURRENT_MSG="Current daily backup completed."
@@ -124,7 +132,7 @@ else
   CURRENT_MSG="Current daily backup not needed."
 fi
 
-if [[ ! -f "$DEST/quarterly/$QUARTER/$YEAR" ]]; then
+if [[ -f "$DEST/quarterly/$QUARTER/$YEAR" ]]; then
   clean_dir "$DEST/quarterly/$QUARTER" "$YEAR"
   start_quarterly "quarterly/$QUARTER"
   QUARTER_MSG="Quarterly backup completed."

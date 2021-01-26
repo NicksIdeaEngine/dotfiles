@@ -18,10 +18,20 @@ arg="${1:-}"
 
 dbx_push() {
   notify-send --urgency=normal "push begins"
+  rclone sync -v \
+    --create-empty-src-dirs \
+    $dbx $remote: \
+    --filter-from $filter_file \
+    --log-file=$push_log
 }
 
 dbx_pull() {
   notify-send --urgency=normal "pull begins"
+  rclone sync -v \
+    --create-empty-src-dirs \
+    $remote: $dbx \
+    --filter-from $filter_file \
+    --log-file="$pull_log"
 }
 
 dbx_watch() {
@@ -50,7 +60,7 @@ dbx_watch() {
 }
 
 if [[ -z $arg ]]; then
-  selection="$(rofi -theme sysmenu -sep '|' -dmenu -p 'dbxlong' <<<'push|pull|watch')"
+  selection="$(rofi -theme sysmenu -sep '|' -dmenu -p 'dbx' <<<'push|pull|watch')"
 else
   selection=$arg
 fi

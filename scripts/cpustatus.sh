@@ -5,8 +5,8 @@ IFS=$'\n\t'
 
 arg="${1:-}"
 
-TEMP="$(( $(cat /sys/class/hwmon/hwmon0/temp1_input) / 1000))"
-FAN="$(cat /sys/class/hwmon/hwmon0/fan1_input)"
+TEMP="$(( $(cat /sys/class/hwmon/hwmon3/temp1_input) / 1000))"
+FAN="$(cat /sys/class/hwmon/hwmon3/fan1_input)"
 
 case "$arg" in
   --poly)

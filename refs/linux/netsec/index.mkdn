@@ -2,5 +2,5 @@
 
 ## Map
 
-- [sshref.wiki](sshref.wiki)
+- [sshref](sshref.mkdn)
 

@@ -3,8 +3,8 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-TEMP="$(( $(cat /sys/class/hwmon/hwmon3/temp1_input) / 1000))"
-FAN="$(cat /sys/class/hwmon/hwmon3/fan1_input)"
+TEMP="$(( $(cat /sys/class/hwmon/hwmon2/temp1_input) / 1000))"
+FAN="$(cat /sys/class/hwmon/hwmon2/fan1_input)"
 
 arg="${1:-}"
 

@@ -74,8 +74,8 @@ font pango:FiraCode Nerd Font 10
 title_align center
 
 # general settings
-gaps outer 0
-gaps inner 0
+# gaps outer 0
+# gaps inner 0
 default_border pixel 4
 default_floating_border pixel 4
 hide_edge_borders both
@@ -231,15 +231,16 @@ $scmod3+d         $ex $scr/cmdmenu.sh
 
 # start program launcher
 # $mod2+d $ex dmenu_recency
-$cmod2+b          exec $terminal -e 'bmenu'
+# $cmod2+b          exec $terminal -e 'bmenu'
+$cmod2+b          exec dmenu_run
 
 # launch categorized menu
-$cmod2+z          $ex morc_menu
+# $cmod2+z          $ex morc_menu
 
 # app launching
 $mod3+n           exec  $terminal ranger
 $mod3+w           exec  firefox
-$smod3+w          $ex   firefox-developer-edition
+$smod3+w          $ex   firefox-developer
 $mod3+c           $ex   code
 $mod3+Return      $ex   $terminal
 $smod3+Return     exec  i3-sensible-terminal
@@ -247,18 +248,22 @@ $mod3+t           $ex   $terminal
 $smod3+t          exec  i3-sensible-terminal
 $mod3+m           exec  $terminal htop
 $mod3+g           exec  google-chrome-stable
-$scmod2+l         $ex   blurlock
+# $scmod2+l         $ex   blurlock
 $mod2+d           $ex   discord
 $mod2+s           $ex   slack
 $mod2+o           $ex   obs
 $mod2+z           $ex   zoom
+$mod2+j           $ex   tandem
 $mod2+k           $ex   clickup
 $mod2+l           $ex   local-by-flywheel
 $mod2+m           $ex   "rm /home/efex/.config/mps-youtube/cache_py_* ; $terminal -e 'mpsyt'"
-$smod2+m          $ex   vlc /home/efex/music/to-sort/*
 $mod2+u           $ex   $scr/projify.sh wiki
 $mod2+y           $ex   $scr/projify.sh dots
 $mod2+t           $ex   $scr/projify.sh todo
+$smod2+m          $ex   vlc /home/efex/music/to-sort/*
+$cmod2+p          $ex   copyq show
+$cmod2+t          $ex   thinkorswim
+$cmod2+w          $ex   webull
 # $mod?+Ctrl+m    exec  $terminal -e 'alsamixer'
 # $mod2+f         exec  filezilla
 # $mod2+v         exec  virtualbox
@@ -288,6 +293,7 @@ $mod2+7     $ex $scr/alertr.sh --gpustatus --notify
 $mod2+6     $ex $scr/alertr.sh --fanstatus --notify
 $mod2+5     $ex redshift -c /home/efex/.config/redshift.conf
 $mod2+4     $ex $scr/dbxlong_applet.sh
+$mod2+3     $ex $scr/dbx_applet.sh
 $mod2+2     $ex $scr/screen_shift.sh
 $mod2+1     $ex $scr/rotate-monitor.sh
 $mod2+minus $ex $scr/colorswitch.sh
@@ -301,7 +307,7 @@ $mod2+slash $ex $scr/hotki.sh
 $ex ~/.screenlayout/wide.sh
 
 # turn num lock on
-$ex xdotool key --clearmodifiers Num_Lock
+# $ex xdotool key --clearmodifiers Num_Lock
 
 # set default sink to speakers and source to headset mic
 $exa pulseaudio -D
@@ -310,23 +316,26 @@ $exa pactl set-default-source $headmic
 $exa pactl set-sink-volume 0 '0%'
 
 # set default screen timeout settings
-$ex xset dpms 0 0 1200
+$ex xset dpms 0 0 0
+$ex xset s off -dpms
 
 # autostart apps
 $ex       $HOME/.fehbg
 $ex       sleep 10; $scr/sysbackup.sh
 $ex       sleep 10; $scr/dbx_applet.sh --watch
-$ex       /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-$ex       nm-applt
-$ex       xfce4-power-manager
-$ex       pamac-tray
-$ex       clipit
+# $ex       /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+$ex       nm-applet
+# $ex       xfce4-power-manager
+# $ex       pamac-tray
+# $ex       clipit
+$ex       copyq
 $ex       rescuetime
 $ex       redshift -c /home/efex/.config/redshift.conf
-$ex       dunst
+# $ex       dunst
 $ex       sleep 2; $scr/toggle-polybar.sh
-$exa      fix_xcursor
+# $exa      fix_xcursor
 $exa      xrdb ~/.Xresources
+# $ex     xss-lock --transfer-sleep-lock -- i3lock --nofork
 # $ex     nitrogen --restore; sleep 1; compton -b
 # $ex     blueman-applet
 # $exa    sbxkb
@@ -351,6 +360,7 @@ for_window [class="Firefox"] border pixel 0
 for_window [title="mpsyt"] floating enable resize set 1000 600
 for_window [class="mpv"] border pixel 0
 for_window [class="Slack"] floating enable
+for_window [class="Tandem"] floating enable
 for_window [class="vlc"] floating enable resize set 845 600
 for_window [title="wiki"] floating enable resize set 858 1088
 
@@ -365,13 +375,10 @@ for_window [class="GParted"] floating enable border normal
 for_window [title="i3_help"] floating enable sticky enable border normal
 for_window [class="Lightdm-settings"] floating enable
 for_window [class="Lxappearance"] floating enable sticky enable border normal
-for_window [class="Manjaro-hello"] floating enable
-for_window [class="Manjaro Settings Manager"] floating enable border normal
 for_window [title="MuseScore: Play Panel"] floating enable
 for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
-for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal

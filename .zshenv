@@ -6,12 +6,13 @@ export PATH="$HOME/.local/share/applications:$PATH"
 
 export PATH="$HOME/bin:$PATH"
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # adding yarn bin folder
-export PATH="$(yarn global bin):$PATH"
+# export PATH="$(yarn global bin):$PATH"
 
 # Path for "go get" binaries
-export GOPATH="$HOME/go"
-export PATH="$GOPATH/bin:$PATH"
+export PATH="$PATH:/usr/local/go/bin"
 
 # path for cargo/rust
 export PATH="$HOME/.cargo/bin:$PATH"
