@@ -4,15 +4,6 @@
 
 ### Quick Ref
 
-- [vim ref](./linux/vim/vimref.mkdn)
-- [desktop timeline](journals/desktop-timeline.mkdn)
-- [linux cmd book](linux/cmd/linux-cmd-book.mkdn)
-- [html ref](webdev/html/htmlref.mkdn)
-- [css ref](webdev/css/cssref.mkdn)
-- [js ref](webdev/js/jsref.mkdn)
-- [react ref](webdev/react/reactref.mkdn)
-- [webdev journey notes](webdev/notes/index.mkdn)
-
 ### Root
 
 - [webdev/](webdev/index.mkdn)
