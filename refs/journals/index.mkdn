@@ -4,5 +4,6 @@ Files where I'm tracking something over a long period of time.
 
 ## Map
 
-- [desktop timeline.wiki](desktop-timeline.wiki)
-- [laptop timeline.wiki](laptop-timeline.wiki)
+- [desktop timeline](desktop-timeline.mkdn)
+- [laptop timeline](laptop-timeline.mkdn)
+- [reinstall-2021](reinstall-2021.mkdn)

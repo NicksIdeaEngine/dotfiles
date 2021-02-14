@@ -360,7 +360,6 @@ for_window [class="Firefox"] border pixel 0
 for_window [title="mpsyt"] floating enable resize set 1000 600
 for_window [class="mpv"] border pixel 0
 for_window [class="Slack"] floating enable
-for_window [class="Tandem"] floating enable
 for_window [class="vlc"] floating enable resize set 845 600
 for_window [title="wiki"] floating enable resize set 858 1088
 

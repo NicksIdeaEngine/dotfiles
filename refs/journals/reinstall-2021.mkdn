@@ -1,0 +1,234 @@
+# Installing Ubuntu 20.04
+
+Because 20.10 had small, tedious issues.
+
+## Pre-install
+
+### USB Setup
+
+Using a 4Gb USB drive for installing ubuntu 20.04
+
+* Format & partition the drive
+  * `lsblk` to see blocks
+  * `sudo umount /dev/sdd{,2}` to unmount
+  * `sudo parted /dev/sdd --align opt mklabel msdos 0 4G` to create partition table
+  * `sudo parted /dev/sdd -a opt mkpart primary 2048s 4G` to create partition
+  * `lsblk` again to confirm changes
+* Create filesystem
+  * `sudo mkfs.vfat -F 32 -n 'UBUNTU-20.04.1-LTS' /dev/sdd1`
+* Burn iso to drive
+  * `sudo dd bs=4M if=/home/efex/dwn/ubuntu-20.04.1-desktop-amd64.iso of=/dev/sdd status=progress && sync`
+
+## Install Time
+
+### Drive Setup
+
+#### /dev/sda setup
+
+* 512000 bytes for /boot
+* 157286400 bytes for /
+* 311741645 bytes for /home
+* 18874368 bytes for swap
+
+**Run updates after initial install**
+
+#### HDD Drive & Timeshift Setup
+
+For /dev/sdc
+
+* `sudo fdisk /dev/sdc`
+  * `d`
+  * `o`
+  * `n`
+  * select defaults, then `yes` to remove ext4 signature
+* `mkdir /mnt/sdc1`
+* add `/dev/sdc1 /mnt/sdc1 auto nosuid,nodev,nofail,x-gvfs-show 0 0` to `/etc/fstab`
+* `sudo apt install timeshift`
+* take first manual snapshot and set up recurring daily / monthly backups
+
+### Dotfiles Phase 1 & Home Dir Setup
+
+#### Dotfiles
+
+sudo apt install git
+mkdir /mnt/sdc1/dbx
+mkdir /mnt/sdc1/dbxlong
+mkdir /mnt/sdc1/dbx/dots
+git clone https://github.com/NicksIdeaEngine/dotfiles.git /mnt/sdc1/dbx/dots
+
+#### Home Dir Setup
+
+rmdir /home/efex/Documents
+rmdir /home/efex/Pictures
+rmdir /home/efex/Music
+rmdir /home/efex/Videos
+mv /home/efex/Downloads /home/efex/dwn
+
+mkdir /mnt/sdc1/dbx/code
+ln -s /mnt/sdc1/dbx/code /home/efex/code
+ln -s /mnt/sdc1/dbx /home/efex/dbx
+ln -s /mnt/sdc1/dbxlong /home/efex/dbxlong
+mkdir /mnt/sdc1/dbx/docs
+ln -s /mnt/sdc1/dbx/docs /home/efex/docs
+ln -s /mnt/sdc1/dbx/dots /home/efex/dots
+mkdir /mnt/sdc1/dbxlong/music
+ln -s /mnt/sdc1/dbxlong/music /home/efex/music
+mkdir /mnt/sdc1/dbxlong/pics
+ln -s /mnt/sdc1/dbxlong/pics /home/efex/pics
+mkdir /mnt/sdc1/dbx/proj
+ln -s /mnt/sdc1/dbx/proj /home/efex/proj
+mkdir /mnt/sdc1/dbx/quant
+ln -s /mnt/sdc1/dbx/quant /home/efex/quant
+ln -s /mnt/sdc1/dbx/dots/refs /home/efex/refs
+ln -s /mnt/sdc1/dbx/dots/scripts /home/efex/scripts
+mkdir /mnt/sdc1/dbx/tmp
+ln -s /mnt/sdc1/dbx/tmp /home/efex/tmp
+mkdir /mnt/sdc1/dbx/todo
+ln -s /mnt/sdc1/dbx/todo /home/efex/todo
+mkdir /mnt/sdc1/dbxlong/vids
+ln -s /mnt/sdc1/dbxlong/vids /home/efex/vids
+mkdir /mnt/sdc1/dbx/zackups
+ln -s /mnt/sdc1/dbx/zackups /home/efex/zackups
+
+ln -s /home/efex/dots/.aliases /home/efex/.aliases
+ln -s /home/efex/dots/.bash_logout /home/efex/.bash_logout
+ln -s /home/efex/dots/.bash_profile /home/efex/.bash_profile
+ln -s /home/efex/dots/.bashrc /home/efex/.bashrc
+ln -s /home/efex/dots/.dir_colors /home/efex/.dir_colors
+ln -s /home/efex/dots/.fehbg /home/efex/.fehbg
+ln -s /home/efex/dots/.helpers /home/efex/.helpers
+ln -s /home/efex/dots/.p10k.zsh /home/efex/.p10k.zsh
+ln -s /home/efex/dots/.profile /home/efex/.profile
+ln -s /home/efex/dots/.tmux.conf /home/efex/.tmux.conf
+ln -s /home/efex/dots/.xinitrc /home/efex/.xinitrc
+ln -s /home/efex/dots/.Xmodmap /home/efex/.Xmodmap
+ln -s /home/efex/dots/.zprofile /home/efex/.zprofile
+ln -s /home/efex/dots/.zshenv /home/efex/.zshenv
+ln -s /home/efex/dots/.zshrc /home/efex/.zshrc
+
+ln -s /home/efex/dots/.config/i3 /home/efex/.config/i3
+ln -s /home/efex/dots/.config/kitty /home/efex/.config/kitty
+ln -s /home/efex/dots/.config/nvim /home/efex/.config/nvim
+ln -s /home/efex/dots/.config/polybar /home/efex/.config/polybar
+ln -s /home/efex/dots/.config/ranger /home/efex/.config/ranger
+ln -s /home/efex/dots/.config/rofi /home/efex/.config/rofi
+ln -s /home/efex/dots/.config/todo /home/efex/.config/todo
+ln -s /home/efex/dots/.config/youtube-dl /home/efex/.config/youtube-dl
+ln -s /home/efex/dots/.config/compton.airblader.conf /home/efex/.config/compton.airblader.conf
+ln -s /home/efex/dots/.config/compton.conf /home/efex/.config/compton.conf
+
+ln -s /home/efex/dots/.mozilla/firefox/x.default-release/chrome /home/efex/.mozilla/firefox/x.default-release/chrome
+
+### Dropbox Setup
+
+curl https://rclone.org/install.sh | sudo bash
+rclone config
+
+### install packages
+
+sudo apt install arandr i3 ranger neovim rofi polybar nnn feh tmux ttf-mscorefonts-installer youtube-dl vlc libreoffice gimp gnome-tweak-tool flatpak gnome-software-plugin-flatpak neofetch kitty arandr zsh curl unrar fzf python3-pip redshift entr mesa-utils p7zip-full filezilla ubuntu-make htop ruby-full dkms software-properties-common rustc cargo golang automake scrot php
+
+cargo install navi
+pip3 install --user mps-youtube
+pip install black
+python3 -m pip install flake8
+git clone https://github.com/a1wong/it87.git /home/efex/.local/it87
+sudo npm install -g neovim
+sudo gem install neovim
+pip install pynvim
+sudo npm install -g yarn
+pip install howdoi
+
+#### ohmyzsh
+
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+#### nvim
+
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+#### tpm for tmux
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+#### devicons
+
+git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
+
+#### nodejs
+
+curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+#### obs-studio
+
+sudo add-apt-repository ppa:obsproject/obs-studio
+sudo apt install obs-studio
+
+#### clickup
+
+install deb
+ln -s /home/efex/.local/bin/clickup-desktop-2.0.21-x86_64.AppImage /home/efex/.local/bin/clickup
+
+#### local by flywheel
+
+install deb
+sudo ln -s /opt/Local/local /usr/bin/local-by-flywheel
+
+#### todotxt
+
+unpack todo*.tar.gz
+make
+make install
+make test CONFIG_DIR=/home/efex/.config/todo
+
+#### python
+
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt install python3.9
+
+#### ctags
+
+git clone https://github.com/universal-ctags/ctags.git /home/efex/.local/ctags
+cd /home/efex/.local/ctags
+./autogen.sh
+./configure --prefix=/usr/local
+sudo make install
+
+#### copyq
+
+sudo add-apt-repository ppa:hluk/copyq
+sudo apt update
+sudo apt install copyq
+
+#### thinkorswim
+
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0xB1998361219BD9C9
+install deb
+update
+ln -s /home/efex/.local/tos/thinkorswim /home/efex/.local/bin/thinkorswim
+**might not be needed**
+sudo update-alternatives --config java
+sudo update-alternatives --config javac
+
+#### deep edits
+
+* add `fs.inotify.max_user_watches=650650` to `/etc/sysctl.d/90-override.conf`
+
+#### webull
+
+* install deb
+* `ln -s /usr/local/WebullDesktop/WebullDesktop /home/efex/.local/bin/webull`
+
+##### wine
+
+sudo dpkg --add-architecture i386
+wget -nc https://dl.winehq.org/wine-builds/winehq.key
+sudo apt-key add winehq.key
+sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
+sudo apt install --install-recommends winehq-stable
+
+#### firefox dev
+
+umake web firefox-dev

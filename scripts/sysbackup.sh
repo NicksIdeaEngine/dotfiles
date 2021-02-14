@@ -14,7 +14,7 @@ DEST="$HOME/zackups"
 
 # directories to grab from $HOME
 # HOME_SPEC=(".config" ".config/google-chrome/Default" ".config/rclone" ".config/rescuetime" ".local/share/applications")
-HOME_SPEC=(".config" ".config/rclone")
+HOME_SPEC=(".config" ".config/rclone" ".config/gtk-3.0" ".screenlayout")
 
 # .config specifications
 CONFIG_SPEC=("redshift.conf" "user-dirs.dirs")
@@ -22,8 +22,14 @@ CONFIG_SPEC=("redshift.conf" "user-dirs.dirs")
 # google chrome specific file
 # CHROME_SPEC=("Preferences")
 
+# gtk-3.0 spec
+GTK_SPEC=("bookmarks")
+
 # rclone spec
 RCLONE_SPEC=("dbx-filter.txt" "dbxlong-filter.txt" "rclone.conf")
+
+# screenlayout spec
+SCREEN_SPEC=("wide.sh")
 
 # RescueTime.com spec
 # RESCUE_SPEC=(".rtgoals")
@@ -33,7 +39,9 @@ RCLONE_SPEC=("dbx-filter.txt" "dbxlong-filter.txt" "rclone.conf")
 
 # dotfiles in $HOME
 DOTFILES=(
-  ".lesshst"
+  ".bash_history"
+  ".gitconfig"
+  ".wakatime.cfg"
   ".Xresources"
   ".Xresourcesreset"
   ".z"
@@ -42,7 +50,7 @@ DOTFILES=(
 
 # quarterly backups
 # QUARTER_SPEC=(".fonts" ".icons" ".moc" ".mplayer" ".themes" ".bash_history" ".git-credentials" ".gitconfig" ".rusttags" ".wakatime.cfg" ".wget-hsts" ".Xclients")
-QUARTER_SPEC=(".fonts" ".bash_history")
+QUARTER_SPEC=(".fonts")
 
 # backup one or more files or directories
 backup() {
@@ -83,14 +91,14 @@ start_daily() {
     case "$I" in
       ".config" )
         backup "$arg1" "$I" "${CONFIG_SPEC[@]}" ;;
-      ".config/google-chrome/Default" )
-        backup "$arg1" "$I" "${CHROME_SPEC[@]}" ;;
+      ".config/gtk-3.0" )
+        backup "$arg1" "$I" "${GTK_SPEC[@]}" ;;
       ".config/rclone" )
         backup "$arg1" "$I" "${RCLONE_SPEC[@]}" ;;
-      ".config/rescuetime" )
-        backup "$arg1" "$I" "${RESCUE_SPEC[@]}" ;;
-      ".local/share/applications" )
-        backup "$arg1" "$I" "${LOCAL_APP_SPEC[@]}" ;;
+      ".config/screenlayout" )
+        backup "$arg1" "$I" "${SCREEN_SPEC[@]}" ;;
+      # ".local/share/applications" )
+      #   backup "$arg1" "$I" "${LOCAL_APP_SPEC[@]}" ;;
       * )
         backup "$arg1" "" "$I" ;;
     esac
@@ -116,7 +124,7 @@ clean_dir() {
 }
 
 # check for signal file to see if update is needed
-if [[ -f "$DEST/$DAYOFMONTH/$MONTH" ]]; then
+if [[ ! -f "$DEST/$DAYOFMONTH/$MONTH" ]]; then
   clean_dir "$DEST/$DAYOFMONTH" "$MONTH"
   start_daily "$DAYOFMONTH"
   DAILY_MSG="Rotating daily backup completed."
@@ -124,7 +132,7 @@ else
   DAILY_MSG="Rotating daily backup not needed."
 fi
 
-if [[ -f "$DEST/current/$DAYOFMONTH" ]]; then
+if [[ ! -f "$DEST/current/$DAYOFMONTH" ]]; then
   clean_dir "$DEST/current" "$DAYOFMONTH"
   start_daily "current"
   CURRENT_MSG="Current daily backup completed."
@@ -132,7 +140,7 @@ else
   CURRENT_MSG="Current daily backup not needed."
 fi
 
-if [[ -f "$DEST/quarterly/$QUARTER/$YEAR" ]]; then
+if [[ ! -f "$DEST/quarterly/$QUARTER/$YEAR" ]]; then
   clean_dir "$DEST/quarterly/$QUARTER" "$YEAR"
   start_quarterly "quarterly/$QUARTER"
   QUARTER_MSG="Quarterly backup completed."
